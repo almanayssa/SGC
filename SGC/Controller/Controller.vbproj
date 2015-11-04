@@ -9,7 +9,8 @@
     </SchemaVersion>
     <ProjectGuid>{7B393E8C-AB81-40CD-B95A-C067470199B6}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Controller</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>Controller</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
