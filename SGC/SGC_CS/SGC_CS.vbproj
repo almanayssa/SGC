@@ -48,7 +48,11 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\icono.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -72,6 +76,28 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controles\SGCTextBox.Designer.vb">
+      <DependentUpon>SGCTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="General\frmLogin.designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\frmPadre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\MDI.designer.vb">
+      <DependentUpon>MDI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\MDI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\Modulo_Parametros.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -89,6 +115,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controles\SGCTextBox.resx">
+      <DependentUpon>SGCTextBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmPadre.resx">
+      <DependentUpon>frmPadre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\MDI.resx">
+      <DependentUpon>MDI.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -107,6 +145,20 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Buscar\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\bosque_fondo.jpg" />
+    <Content Include="Resources\btn_agregar.png" />
+    <Content Include="Resources\btn_buscar.png" />
+    <Content Include="Resources\btn_cancelar.png" />
+    <Content Include="Resources\btn_eliminar.png" />
+    <Content Include="Resources\btn_grabar.png" />
+    <Content Include="Resources\diseño_login.jpg" />
+    <Content Include="Resources\icono.ico" />
+    <Content Include="Resources\Limpiar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
