@@ -9,7 +9,8 @@
     </SchemaVersion>
     <ProjectGuid>{9A398ECE-58F1-4D2F-912E-450189B644C1}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Model</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>Model</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
