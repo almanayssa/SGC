@@ -22,15 +22,64 @@ Partial Class frmLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmLogin))
-        Me.btnEntrar = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.tbxContrasena = New System.Windows.Forms.TextBox()
-        Me.tbxUsuario = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.txtUsuario = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtContrasena = New SGC_CS.SGCTextBox(Me.components)
+        Me.lblUsuario = New SGC_CS.SGCLabel(Me.components)
+        Me.lblContrasena = New SGC_CS.SGCLabel(Me.components)
+        Me.btnEntrar = New SGC_CS.SGCButton(Me.components)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SGC_CS.My.Resources.Resources.diseño_login
+        Me.PictureBox1.InitialImage = Global.SGC_CS.My.Resources.Resources.diseño_login
+        Me.PictureBox1.Location = New System.Drawing.Point(24, 24)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(105, 99)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 152
+        Me.PictureBox1.TabStop = False
+        '
+        'txtUsuario
+        '
+        Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtUsuario.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Location = New System.Drawing.Point(229, 28)
+        Me.txtUsuario.Name = "txtUsuario"
+        Me.txtUsuario.Size = New System.Drawing.Size(151, 26)
+        Me.txtUsuario.TabIndex = 153
+        '
+        'txtContrasena
+        '
+        Me.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtContrasena.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContrasena.Location = New System.Drawing.Point(229, 60)
+        Me.txtContrasena.Name = "txtContrasena"
+        Me.txtContrasena.Size = New System.Drawing.Size(151, 26)
+        Me.txtContrasena.TabIndex = 154
+        '
+        'lblUsuario
+        '
+        Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.Location = New System.Drawing.Point(139, 30)
+        Me.lblUsuario.Name = "lblUsuario"
+        Me.lblUsuario.Size = New System.Drawing.Size(60, 18)
+        Me.lblUsuario.TabIndex = 155
+        Me.lblUsuario.Text = "Usuario:"
+        '
+        'lblContrasena
+        '
+        Me.lblContrasena.AutoSize = True
+        Me.lblContrasena.Location = New System.Drawing.Point(139, 62)
+        Me.lblContrasena.Name = "lblContrasena"
+        Me.lblContrasena.Size = New System.Drawing.Size(82, 18)
+        Me.lblContrasena.TabIndex = 156
+        Me.lblContrasena.Text = "Contraseña:"
         '
         'btnEntrar
         '
@@ -39,78 +88,29 @@ Partial Class frmLogin
         Me.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEntrar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEntrar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnEntrar.Location = New System.Drawing.Point(207, 94)
+        Me.btnEntrar.Location = New System.Drawing.Point(229, 96)
         Me.btnEntrar.Name = "btnEntrar"
-        Me.btnEntrar.Size = New System.Drawing.Size(75, 26)
-        Me.btnEntrar.TabIndex = 4
+        Me.btnEntrar.Size = New System.Drawing.Size(78, 31)
+        Me.btnEntrar.TabIndex = 157
         Me.btnEntrar.Text = "Entrar"
+        Me.btnEntrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEntrar.UseVisualStyleBackColor = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label2.Location = New System.Drawing.Point(143, 65)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 18)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Contraseña:"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label1.Location = New System.Drawing.Point(143, 32)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 18)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Usuario:"
-        '
-        'tbxContrasena
-        '
-        Me.tbxContrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxContrasena.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxContrasena.Location = New System.Drawing.Point(227, 62)
-        Me.tbxContrasena.Name = "tbxContrasena"
-        Me.tbxContrasena.Size = New System.Drawing.Size(121, 26)
-        Me.tbxContrasena.TabIndex = 1
-        Me.tbxContrasena.UseSystemPasswordChar = True
-        '
-        'tbxUsuario
-        '
-        Me.tbxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.tbxUsuario.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxUsuario.Location = New System.Drawing.Point(227, 29)
-        Me.tbxUsuario.Name = "tbxUsuario"
-        Me.tbxUsuario.Size = New System.Drawing.Size(121, 26)
-        Me.tbxUsuario.TabIndex = 0
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = My.Resources.Resources.diseño_login
-        Me.PictureBox1.InitialImage = My.Resources.Resources.diseño_login
-        Me.PictureBox1.Location = New System.Drawing.Point(22, 21)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(105, 99)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 152
-        Me.PictureBox1.TabStop = False
         '
         'frmLogin
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(379, 144)
+        Me.ClientSize = New System.Drawing.Size(404, 150)
         Me.Controls.Add(Me.btnEntrar)
+        Me.Controls.Add(Me.lblContrasena)
+        Me.Controls.Add(Me.lblUsuario)
+        Me.Controls.Add(Me.txtContrasena)
+        Me.Controls.Add(Me.txtUsuario)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.tbxContrasena)
-        Me.Controls.Add(Me.tbxUsuario)
+        Me.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "frmLogin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
@@ -119,11 +119,11 @@ Partial Class frmLogin
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnEntrar As System.Windows.Forms.Button
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents tbxContrasena As System.Windows.Forms.TextBox
-    Friend WithEvents tbxUsuario As System.Windows.Forms.TextBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents txtUsuario As SGC_CS.SGCTextBox
+    Friend WithEvents txtContrasena As SGC_CS.SGCTextBox
+    Friend WithEvents lblUsuario As SGC_CS.SGCLabel
+    Friend WithEvents lblContrasena As SGC_CS.SGCLabel
+    Friend WithEvents btnEntrar As SGC_CS.SGCButton
 
 End Class

@@ -20,11 +20,11 @@ Public Class frmLogin
     Private Function ValidarCamposRequeridos() As Boolean
         Dim flag As Boolean = False
 
-        If tbxUsuario.Text.Trim = String.Empty Then
+        If txtUsuario.Text.Trim = String.Empty Then
             flag = True
         End If
 
-        If tbxContrasena.Text.Trim = String.Empty Then
+        If txtContrasena.Text.Trim = String.Empty Then
             flag = True
         End If
 
@@ -54,7 +54,7 @@ Public Class frmLogin
 
 #Region "Metodos Controles"
 
-    Private Sub btnEntrar_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnEntrar.Click
+    Private Sub btnEntrar_Click_1(sender As System.Object, e As System.EventArgs) Handles btnEntrar.Click
         IniciarSesion()
     End Sub
 

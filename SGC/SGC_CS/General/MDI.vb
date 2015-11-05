@@ -119,34 +119,34 @@ Public Class MDI
 
 #Region "Metodos Menu"
 
-    Private Sub RegistroDeActividadToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles RegistroDeActividadToolStripMenuItem.Click
+    Private Sub RegistroDeActividadToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub RegistroDeInscripcionToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles RegistroDeInscripcionToolStripMenuItem.Click
+    Private Sub RegistroDeInscripcionToolStripMenuItem_Click(ByVal sender As Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub PlanificaciónAnualToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlanificaciónAnualToolStripMenuItem.Click
+    Private Sub PlanificaciónAnualToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub HabilitarActividadToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HabilitarActividadToolStripMenuItem.Click
+    Private Sub HabilitarActividadToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub PresidenciaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresidenciaToolStripMenuItem.Click
+    Private Sub PresidenciaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub PresupuestoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PresupuestoToolStripMenuItem.Click
+    Private Sub PresupuestoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
 #End Region
 
-    Private Sub RegistroDeActividadRecurrenteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegistroDeActividadRecurrenteToolStripMenuItem.Click
-        
+    Private Sub RegistroDeActividadRecurrenteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
 End Class

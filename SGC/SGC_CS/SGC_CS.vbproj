@@ -121,6 +121,12 @@
     <Compile Include="General\frmPadre.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="General\frmPopup.Designer.vb">
+      <DependentUpon>frmPopup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="General\frmPopup.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="General\MDI.designer.vb">
       <DependentUpon>MDI.vb</DependentUpon>
     </Compile>
@@ -165,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="General\frmPadre.resx">
       <DependentUpon>frmPadre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\frmPopup.resx">
+      <DependentUpon>frmPopup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="General\MDI.resx">
       <DependentUpon>MDI.vb</DependentUpon>

@@ -197,24 +197,6 @@ Partial Class MDI
         Me.Sistemas = New System.Windows.Forms.ToolStripMenuItem()
         Me.MantenimientoGestion = New System.Windows.Forms.ToolStripMenuItem()
         Me.TipoGestion = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ComitesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistroDeActividadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistroDeActividadRecurrenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PlanificaciónAnualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AprobacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PresidenciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GerenciaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DirectorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PresupuestoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HabilitarActividadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistroDeInscripcionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AntiguoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ReclamacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GestionReclamacion = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluacionComite = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PlanificacionSol = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CentralizarPlanesRecl = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MantenimientoReclamaciones = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesGerencialesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteSuspension = New System.Windows.Forms.ToolStripMenuItem()
@@ -274,6 +256,13 @@ Partial Class MDI
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.lblProgress = New System.Windows.Forms.ToolStripStatusLabel()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
+        Me.GestionReclamacion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EvaluacionComite = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlanificacionSol = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CentralizarPlanesRecl = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MantenimientoReclamaciones = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReclamacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ComitesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -1384,118 +1373,6 @@ Partial Class MDI
         Me.TipoGestion.Size = New System.Drawing.Size(203, 22)
         Me.TipoGestion.Text = "Registro Tipo de Gestión"
         '
-        'ComitesToolStripMenuItem1
-        '
-        Me.ComitesToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeActividadToolStripMenuItem, Me.RegistroDeActividadRecurrenteToolStripMenuItem, Me.PlanificaciónAnualToolStripMenuItem, Me.AprobacionesToolStripMenuItem, Me.PresupuestoToolStripMenuItem, Me.HabilitarActividadToolStripMenuItem, Me.RegistroDeInscripcionToolStripMenuItem, Me.AntiguoToolStripMenuItem})
-        Me.ComitesToolStripMenuItem1.Name = "ComitesToolStripMenuItem1"
-        Me.ComitesToolStripMenuItem1.Size = New System.Drawing.Size(63, 20)
-        Me.ComitesToolStripMenuItem1.Text = "Comités"
-        '
-        'RegistroDeActividadToolStripMenuItem
-        '
-        Me.RegistroDeActividadToolStripMenuItem.Name = "RegistroDeActividadToolStripMenuItem"
-        Me.RegistroDeActividadToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.RegistroDeActividadToolStripMenuItem.Text = "Registro de Actividad"
-        '
-        'RegistroDeActividadRecurrenteToolStripMenuItem
-        '
-        Me.RegistroDeActividadRecurrenteToolStripMenuItem.Name = "RegistroDeActividadRecurrenteToolStripMenuItem"
-        Me.RegistroDeActividadRecurrenteToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.RegistroDeActividadRecurrenteToolStripMenuItem.Text = "Registro de Actividad Recurrente"
-        '
-        'PlanificaciónAnualToolStripMenuItem
-        '
-        Me.PlanificaciónAnualToolStripMenuItem.Name = "PlanificaciónAnualToolStripMenuItem"
-        Me.PlanificaciónAnualToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.PlanificaciónAnualToolStripMenuItem.Text = "Planificación Anual"
-        '
-        'AprobacionesToolStripMenuItem
-        '
-        Me.AprobacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PresidenciaToolStripMenuItem, Me.GerenciaToolStripMenuItem, Me.DirectorioToolStripMenuItem})
-        Me.AprobacionesToolStripMenuItem.Name = "AprobacionesToolStripMenuItem"
-        Me.AprobacionesToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.AprobacionesToolStripMenuItem.Text = "Aprobaciones"
-        '
-        'PresidenciaToolStripMenuItem
-        '
-        Me.PresidenciaToolStripMenuItem.Name = "PresidenciaToolStripMenuItem"
-        Me.PresidenciaToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.PresidenciaToolStripMenuItem.Text = "Presidencia General"
-        '
-        'GerenciaToolStripMenuItem
-        '
-        Me.GerenciaToolStripMenuItem.Name = "GerenciaToolStripMenuItem"
-        Me.GerenciaToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.GerenciaToolStripMenuItem.Text = "Gerencia"
-        '
-        'DirectorioToolStripMenuItem
-        '
-        Me.DirectorioToolStripMenuItem.Name = "DirectorioToolStripMenuItem"
-        Me.DirectorioToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.DirectorioToolStripMenuItem.Text = "Directorio"
-        '
-        'PresupuestoToolStripMenuItem
-        '
-        Me.PresupuestoToolStripMenuItem.Name = "PresupuestoToolStripMenuItem"
-        Me.PresupuestoToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.PresupuestoToolStripMenuItem.Text = "Presupuesto"
-        '
-        'HabilitarActividadToolStripMenuItem
-        '
-        Me.HabilitarActividadToolStripMenuItem.Name = "HabilitarActividadToolStripMenuItem"
-        Me.HabilitarActividadToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.HabilitarActividadToolStripMenuItem.Text = "Habilitar Actividad"
-        '
-        'RegistroDeInscripcionToolStripMenuItem
-        '
-        Me.RegistroDeInscripcionToolStripMenuItem.Name = "RegistroDeInscripcionToolStripMenuItem"
-        Me.RegistroDeInscripcionToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.RegistroDeInscripcionToolStripMenuItem.Text = "Registro de Inscripción"
-        '
-        'AntiguoToolStripMenuItem
-        '
-        Me.AntiguoToolStripMenuItem.Name = "AntiguoToolStripMenuItem"
-        Me.AntiguoToolStripMenuItem.Size = New System.Drawing.Size(246, 22)
-        Me.AntiguoToolStripMenuItem.Text = "Antiguo"
-        '
-        'ReclamacionesToolStripMenuItem
-        '
-        Me.ReclamacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionReclamacion, Me.EvaluacionComite, Me.PlanificacionSol, Me.CentralizarPlanesRecl, Me.MantenimientoReclamaciones})
-        Me.ReclamacionesToolStripMenuItem.Enabled = False
-        Me.ReclamacionesToolStripMenuItem.Name = "ReclamacionesToolStripMenuItem"
-        Me.ReclamacionesToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
-        Me.ReclamacionesToolStripMenuItem.Text = "Reclamaciones"
-        '
-        'GestionReclamacion
-        '
-        Me.GestionReclamacion.Name = "GestionReclamacion"
-        Me.GestionReclamacion.Size = New System.Drawing.Size(391, 22)
-        Me.GestionReclamacion.Text = "Registro, Validación y Derivación de Reclamación"
-        '
-        'EvaluacionComite
-        '
-        Me.EvaluacionComite.Name = "EvaluacionComite"
-        Me.EvaluacionComite.Size = New System.Drawing.Size(391, 22)
-        Me.EvaluacionComite.Text = "Evaluación de Validación y Derivación de Reclamación"
-        '
-        'PlanificacionSol
-        '
-        Me.PlanificacionSol.Name = "PlanificacionSol"
-        Me.PlanificacionSol.Size = New System.Drawing.Size(391, 22)
-        Me.PlanificacionSol.Text = "Planificación de Solución a Reclamación"
-        '
-        'CentralizarPlanesRecl
-        '
-        Me.CentralizarPlanesRecl.Name = "CentralizarPlanesRecl"
-        Me.CentralizarPlanesRecl.Size = New System.Drawing.Size(391, 22)
-        Me.CentralizarPlanesRecl.Text = "Gestión de Planes y Generación de Respuesta a Reclamación"
-        '
-        'MantenimientoReclamaciones
-        '
-        Me.MantenimientoReclamaciones.Name = "MantenimientoReclamaciones"
-        Me.MantenimientoReclamaciones.Size = New System.Drawing.Size(391, 22)
-        Me.MantenimientoReclamaciones.Text = "Mantenimiento Reclamaciones"
-        '
         'ReportesToolStripMenuItem3
         '
         Me.ReportesToolStripMenuItem3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ReportesGerencialesToolStripMenuItem, Me.ReportesInstitucionalesToolStripMenuItem, Me.CobranzasToolStripMenuItem})
@@ -1951,6 +1828,50 @@ Partial Class MDI
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
+        'GestionReclamacion
+        '
+        Me.GestionReclamacion.Name = "GestionReclamacion"
+        Me.GestionReclamacion.Size = New System.Drawing.Size(391, 22)
+        Me.GestionReclamacion.Text = "Registro, Validación y Derivación de Reclamación"
+        '
+        'EvaluacionComite
+        '
+        Me.EvaluacionComite.Name = "EvaluacionComite"
+        Me.EvaluacionComite.Size = New System.Drawing.Size(391, 22)
+        Me.EvaluacionComite.Text = "Evaluación de Validación y Derivación de Reclamación"
+        '
+        'PlanificacionSol
+        '
+        Me.PlanificacionSol.Name = "PlanificacionSol"
+        Me.PlanificacionSol.Size = New System.Drawing.Size(391, 22)
+        Me.PlanificacionSol.Text = "Planificación de Solución a Reclamación"
+        '
+        'CentralizarPlanesRecl
+        '
+        Me.CentralizarPlanesRecl.Name = "CentralizarPlanesRecl"
+        Me.CentralizarPlanesRecl.Size = New System.Drawing.Size(391, 22)
+        Me.CentralizarPlanesRecl.Text = "Gestión de Planes y Generación de Respuesta a Reclamación"
+        '
+        'MantenimientoReclamaciones
+        '
+        Me.MantenimientoReclamaciones.Name = "MantenimientoReclamaciones"
+        Me.MantenimientoReclamaciones.Size = New System.Drawing.Size(391, 22)
+        Me.MantenimientoReclamaciones.Text = "Mantenimiento Reclamaciones"
+        '
+        'ReclamacionesToolStripMenuItem
+        '
+        Me.ReclamacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionReclamacion, Me.EvaluacionComite, Me.PlanificacionSol, Me.CentralizarPlanesRecl, Me.MantenimientoReclamaciones})
+        Me.ReclamacionesToolStripMenuItem.Enabled = False
+        Me.ReclamacionesToolStripMenuItem.Name = "ReclamacionesToolStripMenuItem"
+        Me.ReclamacionesToolStripMenuItem.Size = New System.Drawing.Size(98, 20)
+        Me.ReclamacionesToolStripMenuItem.Text = "Reclamaciones"
+        '
+        'ComitesToolStripMenuItem1
+        '
+        Me.ComitesToolStripMenuItem1.Name = "ComitesToolStripMenuItem1"
+        Me.ComitesToolStripMenuItem1.Size = New System.Drawing.Size(63, 20)
+        Me.ComitesToolStripMenuItem1.Text = "Comités"
+        '
         'MDI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2205,12 +2126,6 @@ Partial Class MDI
     Friend WithEvents MantenimientoDocumentoExpediente As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MantenimientoDocExpXIngreso As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents MantenimientoGrupoTipoIngreso As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ReclamacionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GestionReclamacion As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EvaluacionComite As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents CentralizarPlanesRecl As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PlanificacionSol As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MantenimientoReclamaciones As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExpedienteActualizacion As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReportesToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReportesGerencialesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -2219,16 +2134,11 @@ Partial Class MDI
     Friend WithEvents CobranzasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarPagosWeb As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ComitesToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegistroDeActividadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegistroDeInscripcionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PlanificaciónAnualToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents HabilitarActividadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AprobacionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PresidenciaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GerenciaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DirectorioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PresupuestoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RegistroDeActividadRecurrenteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents AntiguoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ReclamacionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GestionReclamacion As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EvaluacionComite As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PlanificacionSol As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CentralizarPlanesRecl As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MantenimientoReclamaciones As System.Windows.Forms.ToolStripMenuItem
 
 End Class
