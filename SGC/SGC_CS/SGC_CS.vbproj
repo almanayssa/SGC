@@ -76,6 +76,36 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controles\SGCButton.Designer.vb">
+      <DependentUpon>SGCButton.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\SGCComboBox.Designer.vb">
+      <DependentUpon>SGCComboBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCComboBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\SGCDataGridView.Designer.vb">
+      <DependentUpon>SGCDataGridView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCDataGridView.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\SGCGroupBox.Designer.vb">
+      <DependentUpon>SGCGroupBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCGroupBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controles\SGCLabel.Designer.vb">
+      <DependentUpon>SGCLabel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCLabel.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\SGCTextBox.Designer.vb">
       <DependentUpon>SGCTextBox.vb</DependentUpon>
     </Compile>
@@ -115,6 +145,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controles\SGCButton.resx">
+      <DependentUpon>SGCButton.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\SGCComboBox.resx">
+      <DependentUpon>SGCComboBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\SGCDataGridView.resx">
+      <DependentUpon>SGCDataGridView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\SGCGroupBox.resx">
+      <DependentUpon>SGCGroupBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCTextBox.resx">
       <DependentUpon>SGCTextBox.vb</DependentUpon>
     </EmbeddedResource>
