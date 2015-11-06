@@ -41,7 +41,14 @@
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.SuspendLayout()
+        '
+        'SGCLabel
+        '
+        Me.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ForeColor = System.Drawing.Color.SteelBlue
+        Me.ResumeLayout(False)
+
     End Sub
 
 End Class

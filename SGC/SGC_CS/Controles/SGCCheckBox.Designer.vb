@@ -1,5 +1,5 @@
-﻿Partial Class SGCTextBox
-    Inherits System.Windows.Forms.TextBox
+﻿Partial Class SGCCheckBox
+    Inherits System.Windows.Forms.CheckBox
 
     <System.Diagnostics.DebuggerNonUserCode()> _
     Public Sub New(ByVal container As System.ComponentModel.IContainer)
@@ -43,11 +43,13 @@
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'SGCTextBox
+        'SGCCheckBox
         '
-        Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.AutoSize = True
+        Me.BackColor = System.Drawing.Color.White
         Me.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Black
+        Me.UseVisualStyleBackColor = True
         Me.ResumeLayout(False)
 
     End Sub

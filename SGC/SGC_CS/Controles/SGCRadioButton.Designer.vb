@@ -1,5 +1,5 @@
-﻿Partial Class SGCTextBox
-    Inherits System.Windows.Forms.TextBox
+﻿Partial Class SGCRadioButton
+    Inherits System.Windows.Forms.RadioButton
 
     <System.Diagnostics.DebuggerNonUserCode()> _
     Public Sub New(ByVal container As System.ComponentModel.IContainer)
@@ -41,15 +41,7 @@
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.SuspendLayout()
-        '
-        'SGCTextBox
-        '
-        Me.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ForeColor = System.Drawing.Color.Black
-        Me.ResumeLayout(False)
-
+        components = New System.ComponentModel.Container()
     End Sub
 
 End Class
