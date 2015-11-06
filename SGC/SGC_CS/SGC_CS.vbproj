@@ -166,6 +166,18 @@
     <Compile Include="Inscripción\frmSuscripcionComite.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mantenimiento\frmCronogramaEspacios.Designer.vb">
+      <DependentUpon>frmCronogramaEspacios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmCronogramaEspacios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegistroEspacio.Designer.vb">
+      <DependentUpon>frmRegistroEspacio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegistroEspacio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Plan Anual\frmConsultaPlanAnual.Designer.vb">
       <DependentUpon>frmConsultaPlanAnual.vb</DependentUpon>
     </Compile>
@@ -333,6 +345,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan Anual\frmConsultaPlanAnual.resx">
+      <DependentUpon>frmConsultaPlanAnual.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,29 @@ Partial Class frmConsultaPlanAnual
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
+        Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SuspendLayout()
+        '
+        'SgcGroupBox1
+        '
+        Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcGroupBox1.Location = New System.Drawing.Point(73, 85)
+        Me.SgcGroupBox1.Name = "SgcGroupBox1"
+        Me.SgcGroupBox1.Size = New System.Drawing.Size(896, 100)
+        Me.SgcGroupBox1.TabIndex = 8
+        Me.SgcGroupBox1.TabStop = False
+        Me.SgcGroupBox1.Text = "SgcGroupBox1"
+        '
+        'frmConsultaPlanAnual
+        '
+        Me.ClientSize = New System.Drawing.Size(1016, 738)
+        Me.Controls.Add(Me.SgcGroupBox1)
+        Me.Name = "frmConsultaPlanAnual"
+        Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
+        Me.ResumeLayout(False)
+
     End Sub
+    Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
 
 End Class

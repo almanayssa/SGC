@@ -164,6 +164,35 @@ Partial Class MDI
         Me.ListadoAlojamiento = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReporteOcupabilidadBungalows = New System.Windows.Forms.ToolStripMenuItem()
         Me.ComitesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlanificaciónAnualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroPlanAnualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultaPlanAnualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PresupuestoPlanAnualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EvaluaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EvaluacionPresidenciaGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EvaluacionConsejoDirectivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ActividadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultaDeActividadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroActividadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultDeActividadesRecurrentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroDeActividadRecurrenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HabilitarActividadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EvaluaciónToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EvaluacionPresidenteGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EvaluacionGerenciaGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EvaluacionConsejoDirectivoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InscripciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroDeInscripciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SuscripciónAComitéToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EjecuciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrarPersonalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrarIncidenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistrarEncuestaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MantenimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultaDeEspaciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RegistroDeEspacioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReclamacionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestionReclamacion = New System.Windows.Forms.ToolStripMenuItem()
         Me.EvaluacionComite = New System.Windows.Forms.ToolStripMenuItem()
@@ -229,35 +258,6 @@ Partial Class MDI
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.lblProgress = New System.Windows.Forms.ToolStripStatusLabel()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
-        Me.PlanificaciónAnualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ActividadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.InscripciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EjecuciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MantenimientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistroPlanAnualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultaPlanAnualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PresupuestoPlanAnualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultaDeActividadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistroActividadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultDeActividadesRecurrentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistroDeActividadRecurrenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluaciónPresidenciaGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluaciónConsejoDirectivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HabilitarActividadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluaciónToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluaciónPresidenteGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluaciónGerenciaGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EvaluaciónConsejoDirectivoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistroDeInscripciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistroDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SuscripciónAComitéToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistrarPersonalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistrarIncidenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistrarEncuestaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultaDeEspaciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RegistroDeEspacioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -1159,6 +1159,187 @@ Partial Class MDI
         Me.ComitesToolStripMenuItem1.Size = New System.Drawing.Size(63, 20)
         Me.ComitesToolStripMenuItem1.Text = "Comités"
         '
+        'PlanificaciónAnualToolStripMenuItem
+        '
+        Me.PlanificaciónAnualToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroPlanAnualToolStripMenuItem, Me.ConsultaPlanAnualToolStripMenuItem, Me.PresupuestoPlanAnualToolStripMenuItem, Me.EvaluaciónToolStripMenuItem})
+        Me.PlanificaciónAnualToolStripMenuItem.Name = "PlanificaciónAnualToolStripMenuItem"
+        Me.PlanificaciónAnualToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.PlanificaciónAnualToolStripMenuItem.Text = "Planificación Anual"
+        '
+        'RegistroPlanAnualToolStripMenuItem
+        '
+        Me.RegistroPlanAnualToolStripMenuItem.Name = "RegistroPlanAnualToolStripMenuItem"
+        Me.RegistroPlanAnualToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.RegistroPlanAnualToolStripMenuItem.Text = "Registro Plan Anual"
+        '
+        'ConsultaPlanAnualToolStripMenuItem
+        '
+        Me.ConsultaPlanAnualToolStripMenuItem.Name = "ConsultaPlanAnualToolStripMenuItem"
+        Me.ConsultaPlanAnualToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.ConsultaPlanAnualToolStripMenuItem.Text = "Consulta Plan Anual"
+        '
+        'PresupuestoPlanAnualToolStripMenuItem
+        '
+        Me.PresupuestoPlanAnualToolStripMenuItem.Name = "PresupuestoPlanAnualToolStripMenuItem"
+        Me.PresupuestoPlanAnualToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.PresupuestoPlanAnualToolStripMenuItem.Text = "Presupuesto Plan Anual"
+        '
+        'EvaluaciónToolStripMenuItem
+        '
+        Me.EvaluaciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EvaluacionPresidenciaGeneralToolStripMenuItem, Me.EvaluacionConsejoDirectivoToolStripMenuItem})
+        Me.EvaluaciónToolStripMenuItem.Name = "EvaluaciónToolStripMenuItem"
+        Me.EvaluaciónToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.EvaluaciónToolStripMenuItem.Text = "Evaluación"
+        '
+        'EvaluacionPresidenciaGeneralToolStripMenuItem
+        '
+        Me.EvaluacionPresidenciaGeneralToolStripMenuItem.Name = "EvaluacionPresidenciaGeneralToolStripMenuItem"
+        Me.EvaluacionPresidenciaGeneralToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.EvaluacionPresidenciaGeneralToolStripMenuItem.Text = "Evaluación Presidencia General"
+        '
+        'EvaluacionConsejoDirectivoToolStripMenuItem
+        '
+        Me.EvaluacionConsejoDirectivoToolStripMenuItem.Name = "EvaluacionConsejoDirectivoToolStripMenuItem"
+        Me.EvaluacionConsejoDirectivoToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.EvaluacionConsejoDirectivoToolStripMenuItem.Text = "Evaluación Consejo Directivo"
+        '
+        'ActividadesToolStripMenuItem
+        '
+        Me.ActividadesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeActividadesToolStripMenuItem, Me.RegistroActividadToolStripMenuItem, Me.ConsultDeActividadesRecurrentesToolStripMenuItem, Me.RegistroDeActividadRecurrenteToolStripMenuItem, Me.HabilitarActividadToolStripMenuItem, Me.EvaluaciónToolStripMenuItem1})
+        Me.ActividadesToolStripMenuItem.Name = "ActividadesToolStripMenuItem"
+        Me.ActividadesToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.ActividadesToolStripMenuItem.Text = "Actividades"
+        '
+        'ConsultaDeActividadesToolStripMenuItem
+        '
+        Me.ConsultaDeActividadesToolStripMenuItem.Name = "ConsultaDeActividadesToolStripMenuItem"
+        Me.ConsultaDeActividadesToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.ConsultaDeActividadesToolStripMenuItem.Text = "Consulta de Actividades"
+        '
+        'RegistroActividadToolStripMenuItem
+        '
+        Me.RegistroActividadToolStripMenuItem.Name = "RegistroActividadToolStripMenuItem"
+        Me.RegistroActividadToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.RegistroActividadToolStripMenuItem.Text = "Registro Actividad"
+        '
+        'ConsultDeActividadesRecurrentesToolStripMenuItem
+        '
+        Me.ConsultDeActividadesRecurrentesToolStripMenuItem.Name = "ConsultDeActividadesRecurrentesToolStripMenuItem"
+        Me.ConsultDeActividadesRecurrentesToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.ConsultDeActividadesRecurrentesToolStripMenuItem.Text = "Consulta de Actividades Recurrentes"
+        '
+        'RegistroDeActividadRecurrenteToolStripMenuItem
+        '
+        Me.RegistroDeActividadRecurrenteToolStripMenuItem.Name = "RegistroDeActividadRecurrenteToolStripMenuItem"
+        Me.RegistroDeActividadRecurrenteToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.RegistroDeActividadRecurrenteToolStripMenuItem.Text = "Registro de Actividad Recurrente"
+        '
+        'HabilitarActividadToolStripMenuItem
+        '
+        Me.HabilitarActividadToolStripMenuItem.Name = "HabilitarActividadToolStripMenuItem"
+        Me.HabilitarActividadToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.HabilitarActividadToolStripMenuItem.Text = "Habilitar Actividad"
+        '
+        'EvaluaciónToolStripMenuItem1
+        '
+        Me.EvaluaciónToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EvaluacionPresidenteGeneralToolStripMenuItem, Me.EvaluacionGerenciaGeneralToolStripMenuItem, Me.EvaluacionConsejoDirectivoToolStripMenuItem1})
+        Me.EvaluaciónToolStripMenuItem1.Name = "EvaluaciónToolStripMenuItem1"
+        Me.EvaluaciónToolStripMenuItem1.Size = New System.Drawing.Size(266, 22)
+        Me.EvaluaciónToolStripMenuItem1.Text = "Evaluación"
+        '
+        'EvaluacionPresidenteGeneralToolStripMenuItem
+        '
+        Me.EvaluacionPresidenteGeneralToolStripMenuItem.Name = "EvaluacionPresidenteGeneralToolStripMenuItem"
+        Me.EvaluacionPresidenteGeneralToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.EvaluacionPresidenteGeneralToolStripMenuItem.Text = "Evaluación Presidente General"
+        '
+        'EvaluacionGerenciaGeneralToolStripMenuItem
+        '
+        Me.EvaluacionGerenciaGeneralToolStripMenuItem.Name = "EvaluacionGerenciaGeneralToolStripMenuItem"
+        Me.EvaluacionGerenciaGeneralToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
+        Me.EvaluacionGerenciaGeneralToolStripMenuItem.Text = "Evaluación Gerencia General"
+        '
+        'EvaluacionConsejoDirectivoToolStripMenuItem1
+        '
+        Me.EvaluacionConsejoDirectivoToolStripMenuItem1.Name = "EvaluacionConsejoDirectivoToolStripMenuItem1"
+        Me.EvaluacionConsejoDirectivoToolStripMenuItem1.Size = New System.Drawing.Size(232, 22)
+        Me.EvaluacionConsejoDirectivoToolStripMenuItem1.Text = "Evaluación Consejo Directivo"
+        '
+        'InscripciónToolStripMenuItem
+        '
+        Me.InscripciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeInscripciónToolStripMenuItem, Me.RegistroDePagoToolStripMenuItem, Me.SuscripciónAComitéToolStripMenuItem})
+        Me.InscripciónToolStripMenuItem.Name = "InscripciónToolStripMenuItem"
+        Me.InscripciónToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.InscripciónToolStripMenuItem.Text = "Inscripción"
+        '
+        'RegistroDeInscripciónToolStripMenuItem
+        '
+        Me.RegistroDeInscripciónToolStripMenuItem.Name = "RegistroDeInscripciónToolStripMenuItem"
+        Me.RegistroDeInscripciónToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.RegistroDeInscripciónToolStripMenuItem.Text = "Registro de Inscripción"
+        '
+        'RegistroDePagoToolStripMenuItem
+        '
+        Me.RegistroDePagoToolStripMenuItem.Name = "RegistroDePagoToolStripMenuItem"
+        Me.RegistroDePagoToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.RegistroDePagoToolStripMenuItem.Text = "Registro de Pago"
+        '
+        'SuscripciónAComitéToolStripMenuItem
+        '
+        Me.SuscripciónAComitéToolStripMenuItem.Name = "SuscripciónAComitéToolStripMenuItem"
+        Me.SuscripciónAComitéToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.SuscripciónAComitéToolStripMenuItem.Text = "Suscripción a Comité"
+        '
+        'EjecuciónToolStripMenuItem
+        '
+        Me.EjecuciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem, Me.RegistrarPersonalToolStripMenuItem, Me.RegistrarIncidenciasToolStripMenuItem, Me.RegistrarEncuestaToolStripMenuItem})
+        Me.EjecuciónToolStripMenuItem.Name = "EjecuciónToolStripMenuItem"
+        Me.EjecuciónToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.EjecuciónToolStripMenuItem.Text = "Ejecución"
+        '
+        'RegistrarAsistenciaDeParticipantesToolStripMenuItem
+        '
+        Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem.Name = "RegistrarAsistenciaDeParticipantesToolStripMenuItem"
+        Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem.Text = "Registrar Asistencia de Participantes"
+        '
+        'RegistrarPersonalToolStripMenuItem
+        '
+        Me.RegistrarPersonalToolStripMenuItem.Name = "RegistrarPersonalToolStripMenuItem"
+        Me.RegistrarPersonalToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.RegistrarPersonalToolStripMenuItem.Text = "Registrar Asistencia de Personal"
+        '
+        'RegistrarIncidenciasToolStripMenuItem
+        '
+        Me.RegistrarIncidenciasToolStripMenuItem.Name = "RegistrarIncidenciasToolStripMenuItem"
+        Me.RegistrarIncidenciasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.RegistrarIncidenciasToolStripMenuItem.Text = "Registrar Incidencias"
+        '
+        'RegistrarEncuestaToolStripMenuItem
+        '
+        Me.RegistrarEncuestaToolStripMenuItem.Name = "RegistrarEncuestaToolStripMenuItem"
+        Me.RegistrarEncuestaToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
+        Me.RegistrarEncuestaToolStripMenuItem.Text = "Registrar Encuesta"
+        '
+        'MantenimientoToolStripMenuItem
+        '
+        Me.MantenimientoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeEspaciosToolStripMenuItem, Me.RegistroDeEspacioToolStripMenuItem})
+        Me.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem"
+        Me.MantenimientoToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.MantenimientoToolStripMenuItem.Text = "Mantenimiento"
+        '
+        'ConsultaDeEspaciosToolStripMenuItem
+        '
+        Me.ConsultaDeEspaciosToolStripMenuItem.Name = "ConsultaDeEspaciosToolStripMenuItem"
+        Me.ConsultaDeEspaciosToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.ConsultaDeEspaciosToolStripMenuItem.Text = "Cronograma de Espacio"
+        '
+        'RegistroDeEspacioToolStripMenuItem
+        '
+        Me.RegistroDeEspacioToolStripMenuItem.Name = "RegistroDeEspacioToolStripMenuItem"
+        Me.RegistroDeEspacioToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.RegistroDeEspacioToolStripMenuItem.Text = "Registro de Espacio"
+        '
         'ReclamacionesToolStripMenuItem
         '
         Me.ReclamacionesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GestionReclamacion, Me.EvaluacionComite, Me.PlanificacionSol, Me.CentralizarPlanesRecl, Me.MantenimientoReclamaciones})
@@ -1652,187 +1833,6 @@ Partial Class MDI
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
-        'PlanificaciónAnualToolStripMenuItem
-        '
-        Me.PlanificaciónAnualToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroPlanAnualToolStripMenuItem, Me.ConsultaPlanAnualToolStripMenuItem, Me.PresupuestoPlanAnualToolStripMenuItem, Me.EvaluaciónToolStripMenuItem})
-        Me.PlanificaciónAnualToolStripMenuItem.Name = "PlanificaciónAnualToolStripMenuItem"
-        Me.PlanificaciónAnualToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.PlanificaciónAnualToolStripMenuItem.Text = "Planificación Anual"
-        '
-        'ActividadesToolStripMenuItem
-        '
-        Me.ActividadesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeActividadesToolStripMenuItem, Me.RegistroActividadToolStripMenuItem, Me.ConsultDeActividadesRecurrentesToolStripMenuItem, Me.RegistroDeActividadRecurrenteToolStripMenuItem, Me.HabilitarActividadToolStripMenuItem, Me.EvaluaciónToolStripMenuItem1})
-        Me.ActividadesToolStripMenuItem.Name = "ActividadesToolStripMenuItem"
-        Me.ActividadesToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.ActividadesToolStripMenuItem.Text = "Actividades"
-        '
-        'InscripciónToolStripMenuItem
-        '
-        Me.InscripciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistroDeInscripciónToolStripMenuItem, Me.RegistroDePagoToolStripMenuItem, Me.SuscripciónAComitéToolStripMenuItem})
-        Me.InscripciónToolStripMenuItem.Name = "InscripciónToolStripMenuItem"
-        Me.InscripciónToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.InscripciónToolStripMenuItem.Text = "Inscripción"
-        '
-        'EjecuciónToolStripMenuItem
-        '
-        Me.EjecuciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem, Me.RegistrarPersonalToolStripMenuItem, Me.RegistrarIncidenciasToolStripMenuItem, Me.RegistrarEncuestaToolStripMenuItem})
-        Me.EjecuciónToolStripMenuItem.Name = "EjecuciónToolStripMenuItem"
-        Me.EjecuciónToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.EjecuciónToolStripMenuItem.Text = "Ejecución"
-        '
-        'MantenimientoToolStripMenuItem
-        '
-        Me.MantenimientoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeEspaciosToolStripMenuItem, Me.RegistroDeEspacioToolStripMenuItem})
-        Me.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem"
-        Me.MantenimientoToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
-        Me.MantenimientoToolStripMenuItem.Text = "Mantenimiento"
-        '
-        'RegistroPlanAnualToolStripMenuItem
-        '
-        Me.RegistroPlanAnualToolStripMenuItem.Name = "RegistroPlanAnualToolStripMenuItem"
-        Me.RegistroPlanAnualToolStripMenuItem.Size = New System.Drawing.Size(177, 22)
-        Me.RegistroPlanAnualToolStripMenuItem.Text = "Registro Plan Anual"
-        '
-        'ConsultaPlanAnualToolStripMenuItem
-        '
-        Me.ConsultaPlanAnualToolStripMenuItem.Name = "ConsultaPlanAnualToolStripMenuItem"
-        Me.ConsultaPlanAnualToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
-        Me.ConsultaPlanAnualToolStripMenuItem.Text = "Consulta Plan Anual"
-        '
-        'PresupuestoPlanAnualToolStripMenuItem
-        '
-        Me.PresupuestoPlanAnualToolStripMenuItem.Name = "PresupuestoPlanAnualToolStripMenuItem"
-        Me.PresupuestoPlanAnualToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
-        Me.PresupuestoPlanAnualToolStripMenuItem.Text = "Presupuesto Plan Anual"
-        '
-        'ConsultaDeActividadesToolStripMenuItem
-        '
-        Me.ConsultaDeActividadesToolStripMenuItem.Name = "ConsultaDeActividadesToolStripMenuItem"
-        Me.ConsultaDeActividadesToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.ConsultaDeActividadesToolStripMenuItem.Text = "Consulta de Actividades"
-        '
-        'RegistroActividadToolStripMenuItem
-        '
-        Me.RegistroActividadToolStripMenuItem.Name = "RegistroActividadToolStripMenuItem"
-        Me.RegistroActividadToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.RegistroActividadToolStripMenuItem.Text = "Registro Actividad"
-        '
-        'ConsultDeActividadesRecurrentesToolStripMenuItem
-        '
-        Me.ConsultDeActividadesRecurrentesToolStripMenuItem.Name = "ConsultDeActividadesRecurrentesToolStripMenuItem"
-        Me.ConsultDeActividadesRecurrentesToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
-        Me.ConsultDeActividadesRecurrentesToolStripMenuItem.Text = "Consulta de Actividades Recurrentes"
-        '
-        'RegistroDeActividadRecurrenteToolStripMenuItem
-        '
-        Me.RegistroDeActividadRecurrenteToolStripMenuItem.Name = "RegistroDeActividadRecurrenteToolStripMenuItem"
-        Me.RegistroDeActividadRecurrenteToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.RegistroDeActividadRecurrenteToolStripMenuItem.Text = "Registro de Actividad Recurrente"
-        '
-        'EvaluaciónToolStripMenuItem
-        '
-        Me.EvaluaciónToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EvaluaciónPresidenciaGeneralToolStripMenuItem, Me.EvaluaciónConsejoDirectivoToolStripMenuItem})
-        Me.EvaluaciónToolStripMenuItem.Name = "EvaluaciónToolStripMenuItem"
-        Me.EvaluaciónToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
-        Me.EvaluaciónToolStripMenuItem.Text = "Evaluación"
-        '
-        'EvaluaciónPresidenciaGeneralToolStripMenuItem
-        '
-        Me.EvaluaciónPresidenciaGeneralToolStripMenuItem.Name = "EvaluaciónPresidenciaGeneralToolStripMenuItem"
-        Me.EvaluaciónPresidenciaGeneralToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
-        Me.EvaluaciónPresidenciaGeneralToolStripMenuItem.Text = "Evaluación Presidencia General"
-        '
-        'EvaluaciónConsejoDirectivoToolStripMenuItem
-        '
-        Me.EvaluaciónConsejoDirectivoToolStripMenuItem.Name = "EvaluaciónConsejoDirectivoToolStripMenuItem"
-        Me.EvaluaciónConsejoDirectivoToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
-        Me.EvaluaciónConsejoDirectivoToolStripMenuItem.Text = "Evaluación Consejo Directivo"
-        '
-        'HabilitarActividadToolStripMenuItem
-        '
-        Me.HabilitarActividadToolStripMenuItem.Name = "HabilitarActividadToolStripMenuItem"
-        Me.HabilitarActividadToolStripMenuItem.Size = New System.Drawing.Size(260, 22)
-        Me.HabilitarActividadToolStripMenuItem.Text = "Habilitar Actividad"
-        '
-        'EvaluaciónToolStripMenuItem1
-        '
-        Me.EvaluaciónToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EvaluaciónPresidenteGeneralToolStripMenuItem, Me.EvaluaciónGerenciaGeneralToolStripMenuItem, Me.EvaluaciónConsejoDirectivoToolStripMenuItem1})
-        Me.EvaluaciónToolStripMenuItem1.Name = "EvaluaciónToolStripMenuItem1"
-        Me.EvaluaciónToolStripMenuItem1.Size = New System.Drawing.Size(260, 22)
-        Me.EvaluaciónToolStripMenuItem1.Text = "Evaluación"
-        '
-        'EvaluaciónPresidenteGeneralToolStripMenuItem
-        '
-        Me.EvaluaciónPresidenteGeneralToolStripMenuItem.Name = "EvaluaciónPresidenteGeneralToolStripMenuItem"
-        Me.EvaluaciónPresidenteGeneralToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
-        Me.EvaluaciónPresidenteGeneralToolStripMenuItem.Text = "Evaluación Presidente General"
-        '
-        'EvaluaciónGerenciaGeneralToolStripMenuItem
-        '
-        Me.EvaluaciónGerenciaGeneralToolStripMenuItem.Name = "EvaluaciónGerenciaGeneralToolStripMenuItem"
-        Me.EvaluaciónGerenciaGeneralToolStripMenuItem.Size = New System.Drawing.Size(232, 22)
-        Me.EvaluaciónGerenciaGeneralToolStripMenuItem.Text = "Evaluación Gerencia General"
-        '
-        'EvaluaciónConsejoDirectivoToolStripMenuItem1
-        '
-        Me.EvaluaciónConsejoDirectivoToolStripMenuItem1.Name = "EvaluaciónConsejoDirectivoToolStripMenuItem1"
-        Me.EvaluaciónConsejoDirectivoToolStripMenuItem1.Size = New System.Drawing.Size(232, 22)
-        Me.EvaluaciónConsejoDirectivoToolStripMenuItem1.Text = "Evaluación Consejo Directivo"
-        '
-        'RegistroDeInscripciónToolStripMenuItem
-        '
-        Me.RegistroDeInscripciónToolStripMenuItem.Name = "RegistroDeInscripciónToolStripMenuItem"
-        Me.RegistroDeInscripciónToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.RegistroDeInscripciónToolStripMenuItem.Text = "Registro de Inscripción"
-        '
-        'RegistroDePagoToolStripMenuItem
-        '
-        Me.RegistroDePagoToolStripMenuItem.Name = "RegistroDePagoToolStripMenuItem"
-        Me.RegistroDePagoToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.RegistroDePagoToolStripMenuItem.Text = "Registro de Pago"
-        '
-        'SuscripciónAComitéToolStripMenuItem
-        '
-        Me.SuscripciónAComitéToolStripMenuItem.Name = "SuscripciónAComitéToolStripMenuItem"
-        Me.SuscripciónAComitéToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
-        Me.SuscripciónAComitéToolStripMenuItem.Text = "Suscripción a Comité"
-        '
-        'RegistrarAsistenciaDeParticipantesToolStripMenuItem
-        '
-        Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem.Name = "RegistrarAsistenciaDeParticipantesToolStripMenuItem"
-        Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
-        Me.RegistrarAsistenciaDeParticipantesToolStripMenuItem.Text = "Registrar Asistencia de Participantes"
-        '
-        'RegistrarPersonalToolStripMenuItem
-        '
-        Me.RegistrarPersonalToolStripMenuItem.Name = "RegistrarPersonalToolStripMenuItem"
-        Me.RegistrarPersonalToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
-        Me.RegistrarPersonalToolStripMenuItem.Text = "Registrar Asistencia de Personal"
-        '
-        'RegistrarIncidenciasToolStripMenuItem
-        '
-        Me.RegistrarIncidenciasToolStripMenuItem.Name = "RegistrarIncidenciasToolStripMenuItem"
-        Me.RegistrarIncidenciasToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
-        Me.RegistrarIncidenciasToolStripMenuItem.Text = "Registrar Incidencias"
-        '
-        'RegistrarEncuestaToolStripMenuItem
-        '
-        Me.RegistrarEncuestaToolStripMenuItem.Name = "RegistrarEncuestaToolStripMenuItem"
-        Me.RegistrarEncuestaToolStripMenuItem.Size = New System.Drawing.Size(263, 22)
-        Me.RegistrarEncuestaToolStripMenuItem.Text = "Registrar Encuesta"
-        '
-        'ConsultaDeEspaciosToolStripMenuItem
-        '
-        Me.ConsultaDeEspaciosToolStripMenuItem.Name = "ConsultaDeEspaciosToolStripMenuItem"
-        Me.ConsultaDeEspaciosToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.ConsultaDeEspaciosToolStripMenuItem.Text = "Cronograma de Espacio"
-        '
-        'RegistroDeEspacioToolStripMenuItem
-        '
-        Me.RegistroDeEspacioToolStripMenuItem.Name = "RegistroDeEspacioToolStripMenuItem"
-        Me.RegistroDeEspacioToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
-        Me.RegistroDeEspacioToolStripMenuItem.Text = "Registro de Espacio"
-        '
         'MDI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2076,17 +2076,17 @@ Partial Class MDI
     Friend WithEvents ConsultaPlanAnualToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PresupuestoPlanAnualToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EvaluaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EvaluaciónPresidenciaGeneralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EvaluaciónConsejoDirectivoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EvaluacionPresidenciaGeneralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EvaluacionConsejoDirectivoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultaDeActividadesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroActividadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultDeActividadesRecurrentesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroDeActividadRecurrenteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HabilitarActividadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EvaluaciónToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EvaluaciónPresidenteGeneralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EvaluaciónGerenciaGeneralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EvaluaciónConsejoDirectivoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EvaluacionPresidenteGeneralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EvaluacionGerenciaGeneralToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EvaluacionConsejoDirectivoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroDeInscripciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroDePagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SuscripciónAComitéToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
