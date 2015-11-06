@@ -76,6 +76,48 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actividad\frmConsultaActividad.Designer.vb">
+      <DependentUpon>frmConsultaActividad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Actividad\frmConsultaActividad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Actividad\frmRegistroActividad.Designer.vb">
+      <DependentUpon>frmRegistroActividad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Actividad\frmRegistroActividad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan Anual\frmConsultaPlanAnual.Designer.vb">
+      <DependentUpon>frmConsultaPlanAnual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Plan Anual\frmConsultaPlanAnual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan Anual\frmPlanEvaluacionCD.Designer.vb">
+      <DependentUpon>frmPlanEvaluacionCD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Plan Anual\frmPlanEvaluacionCD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan Anual\frmPlanEvaluacionPGC.Designer.vb">
+      <DependentUpon>frmPlanEvaluacionPGC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Plan Anual\frmPlanEvaluacionPGC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan Anual\frmPresupuestoPlanAnual.Designer.vb">
+      <DependentUpon>frmPresupuestoPlanAnual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Plan Anual\frmPresupuestoPlanAnual.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Plan Anual\frmRegistroPlanAnual.Designer.vb">
+      <DependentUpon>frmRegistroPlanAnual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Plan Anual\frmRegistroPlanAnual.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Controles\SGCButton.Designer.vb">
       <DependentUpon>SGCButton.vb</DependentUpon>
     </Compile>
