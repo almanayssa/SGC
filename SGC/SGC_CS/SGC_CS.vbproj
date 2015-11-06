@@ -130,6 +130,12 @@
     <Compile Include="Controles\SGCTabControl.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\SGCToolStrip.Designer.vb">
+      <DependentUpon>SGCToolStrip.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCToolStrip.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ejecucion\frmRegistroAsistenciaParticipantes.Designer.vb">
       <DependentUpon>frmRegistroAsistenciaParticipantes.vb</DependentUpon>
     </Compile>
@@ -325,6 +331,9 @@
     <EmbeddedResource Include="Controles\SGCDataGridView.resx">
       <DependentUpon>SGCDataGridView.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\SGCDateTimePicker.resx">
+      <DependentUpon>SGCDateTimePicker.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCGroupBox.resx">
       <DependentUpon>SGCGroupBox.vb</DependentUpon>
     </EmbeddedResource>
@@ -336,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCTextBox.resx">
       <DependentUpon>SGCTextBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\SGCToolStrip.resx">
+      <DependentUpon>SGCToolStrip.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="General\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
@@ -357,6 +369,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Plan Anual\frmConsultaPlanAnual.resx">
       <DependentUpon>frmConsultaPlanAnual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan Anual\frmPlanEvaluacionCD.resx">
+      <DependentUpon>frmPlanEvaluacionCD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan Anual\frmPlanEvaluacionPGC.resx">
+      <DependentUpon>frmPlanEvaluacionPGC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan Anual\frmPresupuestoPlanAnual.resx">
+      <DependentUpon>frmPresupuestoPlanAnual.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan Anual\frmRegistroPlanAnual.resx">
+      <DependentUpon>frmRegistroPlanAnual.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

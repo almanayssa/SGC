@@ -1,5 +1,5 @@
-﻿Partial Class SGCDateTimePicker
-    Inherits System.Windows.Forms.DateTimePicker
+﻿Partial Class SGCToolStrip
+    Inherits System.Windows.Forms.ToolStrip
 
     <System.Diagnostics.DebuggerNonUserCode()> _
     Public Sub New(ByVal container As System.ComponentModel.IContainer)
@@ -43,11 +43,12 @@
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'SGCDateTimePicker
+        'SGCToolStrip
         '
+        Me.BackColor = System.Drawing.Color.Silver
+        Me.Dock = System.Windows.Forms.DockStyle.None
         Me.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Size = New System.Drawing.Size(100, 26)
+        Me.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.ResumeLayout(False)
 
     End Sub

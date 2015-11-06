@@ -20,7 +20,7 @@ Partial Class frmConsultaPlanAnual
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
@@ -35,6 +35,7 @@ Partial Class frmConsultaPlanAnual
         Me.tpAprobadas = New System.Windows.Forms.TabPage()
         Me.tpRechazadas = New System.Windows.Forms.TabPage()
         Me.btnNuevo = New SGC_CS.SGCButton(Me.components)
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.tcPlanAnual.SuspendLayout()
         Me.tpTodos.SuspendLayout()
@@ -51,7 +52,7 @@ Partial Class frmConsultaPlanAnual
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 70)
         Me.SgcGroupBox1.Name = "SgcGroupBox1"
-        Me.SgcGroupBox1.Size = New System.Drawing.Size(896, 79)
+        Me.SgcGroupBox1.Size = New System.Drawing.Size(900, 79)
         Me.SgcGroupBox1.TabIndex = 8
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Filtros"
@@ -143,9 +144,9 @@ Partial Class frmConsultaPlanAnual
         'SgcDataGridView1
         '
         Me.SgcDataGridView1.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -206,9 +207,22 @@ Partial Class frmConsultaPlanAnual
         Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnNuevo.UseVisualStyleBackColor = False
         '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(433, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(191, 23)
+        Me.lblTitulo.TabIndex = 11
+        Me.lblTitulo.Text = "Consulta de Plan Anual"
+        '
         'frmConsultaPlanAnual
         '
         Me.ClientSize = New System.Drawing.Size(1016, 738)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.btnNuevo)
         Me.Controls.Add(Me.tcPlanAnual)
         Me.Controls.Add(Me.SgcGroupBox1)
@@ -216,12 +230,14 @@ Partial Class frmConsultaPlanAnual
         Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
         Me.Controls.SetChildIndex(Me.tcPlanAnual, 0)
         Me.Controls.SetChildIndex(Me.btnNuevo, 0)
+        Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
         Me.tcPlanAnual.ResumeLayout(False)
         Me.tpTodos.ResumeLayout(False)
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
@@ -238,5 +254,6 @@ Partial Class frmConsultaPlanAnual
     Friend WithEvents tpEvaluacion As System.Windows.Forms.TabPage
     Friend WithEvents tpAprobadas As System.Windows.Forms.TabPage
     Friend WithEvents tpRechazadas As System.Windows.Forms.TabPage
+    Friend WithEvents lblTitulo As SGC_CS.SGCLabel
 
 End Class
