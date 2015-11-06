@@ -45,10 +45,12 @@
         '
         'SGCComboBox
         '
+        Me.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.Black
         Me.FormattingEnabled = True
+        Me.Size = New System.Drawing.Size(121, 21)
         Me.ResumeLayout(False)
 
     End Sub
