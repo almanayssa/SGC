@@ -124,6 +124,12 @@
     <Compile Include="Actividad\frmRegistroActividadRecurrente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controles\SGCTabControl.Designer.vb">
+      <DependentUpon>SGCTabControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCTabControl.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ejecucion\frmRegistroAsistenciaParticipantes.Designer.vb">
       <DependentUpon>frmRegistroAsistenciaParticipantes.vb</DependentUpon>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCLabel.resx">
       <DependentUpon>SGCLabel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controles\SGCTabControl.resx">
+      <DependentUpon>SGCTabControl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCTextBox.resx">
       <DependentUpon>SGCTextBox.vb</DependentUpon>

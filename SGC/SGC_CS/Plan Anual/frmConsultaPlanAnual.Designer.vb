@@ -20,28 +20,223 @@ Partial Class frmConsultaPlanAnual
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
+        Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
+        Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
+        Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
+        Me.tcPlanAnual = New SGC_CS.SGCTabControl(Me.components)
+        Me.tpTodos = New System.Windows.Forms.TabPage()
+        Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.tpRegistrados = New System.Windows.Forms.TabPage()
+        Me.tpEvaluacion = New System.Windows.Forms.TabPage()
+        Me.tpAprobadas = New System.Windows.Forms.TabPage()
+        Me.tpRechazadas = New System.Windows.Forms.TabPage()
+        Me.btnNuevo = New SGC_CS.SGCButton(Me.components)
+        Me.SgcGroupBox1.SuspendLayout()
+        Me.tcPlanAnual.SuspendLayout()
+        Me.tpTodos.SuspendLayout()
+        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
+        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox2)
+        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
+        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox1)
+        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox1.Location = New System.Drawing.Point(73, 85)
+        Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 70)
         Me.SgcGroupBox1.Name = "SgcGroupBox1"
-        Me.SgcGroupBox1.Size = New System.Drawing.Size(896, 100)
+        Me.SgcGroupBox1.Size = New System.Drawing.Size(896, 79)
         Me.SgcGroupBox1.TabIndex = 8
         Me.SgcGroupBox1.TabStop = False
-        Me.SgcGroupBox1.Text = "SgcGroupBox1"
+        Me.SgcGroupBox1.Text = "Filtros"
+        '
+        'SgcButton1
+        '
+        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton1.Location = New System.Drawing.Point(722, 27)
+        Me.SgcButton1.Name = "SgcButton1"
+        Me.SgcButton1.Size = New System.Drawing.Size(120, 31)
+        Me.SgcButton1.TabIndex = 4
+        Me.SgcButton1.Text = "Buscar"
+        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton1.UseVisualStyleBackColor = False
+        '
+        'SgcComboBox2
+        '
+        Me.SgcComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.SgcComboBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcComboBox2.ForeColor = System.Drawing.Color.Black
+        Me.SgcComboBox2.FormattingEnabled = True
+        Me.SgcComboBox2.Location = New System.Drawing.Point(470, 31)
+        Me.SgcComboBox2.Name = "SgcComboBox2"
+        Me.SgcComboBox2.Size = New System.Drawing.Size(121, 26)
+        Me.SgcComboBox2.TabIndex = 3
+        '
+        'SgcLabel2
+        '
+        Me.SgcLabel2.AutoSize = True
+        Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel2.Location = New System.Drawing.Point(393, 34)
+        Me.SgcLabel2.Name = "SgcLabel2"
+        Me.SgcLabel2.Size = New System.Drawing.Size(37, 18)
+        Me.SgcLabel2.TabIndex = 2
+        Me.SgcLabel2.Text = "Año:"
+        '
+        'SgcComboBox1
+        '
+        Me.SgcComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.SgcComboBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcComboBox1.ForeColor = System.Drawing.Color.Black
+        Me.SgcComboBox1.FormattingEnabled = True
+        Me.SgcComboBox1.Location = New System.Drawing.Point(99, 30)
+        Me.SgcComboBox1.Name = "SgcComboBox1"
+        Me.SgcComboBox1.Size = New System.Drawing.Size(121, 26)
+        Me.SgcComboBox1.TabIndex = 1
+        '
+        'SgcLabel1
+        '
+        Me.SgcLabel1.AutoSize = True
+        Me.SgcLabel1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel1.Location = New System.Drawing.Point(19, 34)
+        Me.SgcLabel1.Name = "SgcLabel1"
+        Me.SgcLabel1.Size = New System.Drawing.Size(57, 18)
+        Me.SgcLabel1.TabIndex = 0
+        Me.SgcLabel1.Text = "Comite:"
+        '
+        'tcPlanAnual
+        '
+        Me.tcPlanAnual.Controls.Add(Me.tpTodos)
+        Me.tcPlanAnual.Controls.Add(Me.tpRegistrados)
+        Me.tcPlanAnual.Controls.Add(Me.tpEvaluacion)
+        Me.tcPlanAnual.Controls.Add(Me.tpAprobadas)
+        Me.tcPlanAnual.Controls.Add(Me.tpRechazadas)
+        Me.tcPlanAnual.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tcPlanAnual.Location = New System.Drawing.Point(60, 203)
+        Me.tcPlanAnual.Name = "tcPlanAnual"
+        Me.tcPlanAnual.SelectedIndex = 0
+        Me.tcPlanAnual.Size = New System.Drawing.Size(896, 395)
+        Me.tcPlanAnual.TabIndex = 9
+        '
+        'tpTodos
+        '
+        Me.tpTodos.Controls.Add(Me.SgcDataGridView1)
+        Me.tpTodos.Location = New System.Drawing.Point(4, 27)
+        Me.tpTodos.Name = "tpTodos"
+        Me.tpTodos.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpTodos.Size = New System.Drawing.Size(888, 364)
+        Me.tpTodos.TabIndex = 0
+        Me.tpTodos.Text = "Todos"
+        Me.tpTodos.UseVisualStyleBackColor = True
+        '
+        'SgcDataGridView1
+        '
+        Me.SgcDataGridView1.AllowUserToAddRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SgcDataGridView1.Location = New System.Drawing.Point(9, 11)
+        Me.SgcDataGridView1.Name = "SgcDataGridView1"
+        Me.SgcDataGridView1.Size = New System.Drawing.Size(873, 343)
+        Me.SgcDataGridView1.TabIndex = 0
+        '
+        'tpRegistrados
+        '
+        Me.tpRegistrados.Location = New System.Drawing.Point(4, 27)
+        Me.tpRegistrados.Name = "tpRegistrados"
+        Me.tpRegistrados.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpRegistrados.Size = New System.Drawing.Size(888, 411)
+        Me.tpRegistrados.TabIndex = 1
+        Me.tpRegistrados.Text = "Registrados"
+        Me.tpRegistrados.UseVisualStyleBackColor = True
+        '
+        'tpEvaluacion
+        '
+        Me.tpEvaluacion.Location = New System.Drawing.Point(4, 27)
+        Me.tpEvaluacion.Name = "tpEvaluacion"
+        Me.tpEvaluacion.Size = New System.Drawing.Size(888, 411)
+        Me.tpEvaluacion.TabIndex = 2
+        Me.tpEvaluacion.Text = "En Evaluación"
+        Me.tpEvaluacion.UseVisualStyleBackColor = True
+        '
+        'tpAprobadas
+        '
+        Me.tpAprobadas.Location = New System.Drawing.Point(4, 27)
+        Me.tpAprobadas.Name = "tpAprobadas"
+        Me.tpAprobadas.Size = New System.Drawing.Size(888, 411)
+        Me.tpAprobadas.TabIndex = 3
+        Me.tpAprobadas.Text = "Aprobadas"
+        Me.tpAprobadas.UseVisualStyleBackColor = True
+        '
+        'tpRechazadas
+        '
+        Me.tpRechazadas.Location = New System.Drawing.Point(4, 27)
+        Me.tpRechazadas.Name = "tpRechazadas"
+        Me.tpRechazadas.Size = New System.Drawing.Size(888, 411)
+        Me.tpRechazadas.TabIndex = 4
+        Me.tpRechazadas.Text = "Rechazadas"
+        Me.tpRechazadas.UseVisualStyleBackColor = True
+        '
+        'btnNuevo
+        '
+        Me.btnNuevo.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnNuevo.Location = New System.Drawing.Point(60, 161)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(176, 31)
+        Me.btnNuevo.TabIndex = 10
+        Me.btnNuevo.Text = "Registrar Plan Anual"
+        Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNuevo.UseVisualStyleBackColor = False
         '
         'frmConsultaPlanAnual
         '
         Me.ClientSize = New System.Drawing.Size(1016, 738)
+        Me.Controls.Add(Me.btnNuevo)
+        Me.Controls.Add(Me.tcPlanAnual)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Name = "frmConsultaPlanAnual"
         Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
+        Me.Controls.SetChildIndex(Me.tcPlanAnual, 0)
+        Me.Controls.SetChildIndex(Me.btnNuevo, 0)
+        Me.SgcGroupBox1.ResumeLayout(False)
+        Me.SgcGroupBox1.PerformLayout()
+        Me.tcPlanAnual.ResumeLayout(False)
+        Me.tpTodos.ResumeLayout(False)
+        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
+    Friend WithEvents tcPlanAnual As SGC_CS.SGCTabControl
+    Friend WithEvents tpTodos As System.Windows.Forms.TabPage
+    Friend WithEvents tpRegistrados As System.Windows.Forms.TabPage
+    Friend WithEvents btnNuevo As SGC_CS.SGCButton
+    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
+    Friend WithEvents SgcComboBox2 As SGC_CS.SGCComboBox
+    Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
+    Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
+    Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
+    Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
+    Friend WithEvents tpEvaluacion As System.Windows.Forms.TabPage
+    Friend WithEvents tpAprobadas As System.Windows.Forms.TabPage
+    Friend WithEvents tpRechazadas As System.Windows.Forms.TabPage
 
 End Class
