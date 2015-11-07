@@ -49,6 +49,7 @@ Partial Class frmLogin
         '
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtUsuario.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.ForeColor = System.Drawing.Color.Black
         Me.txtUsuario.Location = New System.Drawing.Point(229, 28)
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(151, 26)
@@ -58,14 +59,18 @@ Partial Class frmLogin
         '
         Me.txtContrasena.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtContrasena.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtContrasena.ForeColor = System.Drawing.Color.Black
         Me.txtContrasena.Location = New System.Drawing.Point(229, 60)
         Me.txtContrasena.Name = "txtContrasena"
+        Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContrasena.Size = New System.Drawing.Size(151, 26)
         Me.txtContrasena.TabIndex = 154
         '
         'lblUsuario
         '
         Me.lblUsuario.AutoSize = True
+        Me.lblUsuario.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblUsuario.ForeColor = System.Drawing.Color.SteelBlue
         Me.lblUsuario.Location = New System.Drawing.Point(139, 30)
         Me.lblUsuario.Name = "lblUsuario"
         Me.lblUsuario.Size = New System.Drawing.Size(60, 18)
@@ -75,6 +80,8 @@ Partial Class frmLogin
         'lblContrasena
         '
         Me.lblContrasena.AutoSize = True
+        Me.lblContrasena.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblContrasena.ForeColor = System.Drawing.Color.SteelBlue
         Me.lblContrasena.Location = New System.Drawing.Point(139, 62)
         Me.lblContrasena.Name = "lblContrasena"
         Me.lblContrasena.Size = New System.Drawing.Size(82, 18)

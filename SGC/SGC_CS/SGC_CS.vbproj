@@ -361,6 +361,9 @@
     <EmbeddedResource Include="General\MDI.resx">
       <DependentUpon>MDI.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmRegistroEspacio.resx">
+      <DependentUpon>frmRegistroEspacio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -406,6 +409,11 @@
     <Content Include="Resources\diseño_login.jpg" />
     <Content Include="Resources\icono.ico" />
     <Content Include="Resources\Limpiar.png" />
+    <Content Include="Resources\menu_cancel.png" />
+    <Content Include="Resources\menu_editar.png" />
+    <Content Include="Resources\menu_eliminar.png" />
+    <Content Include="Resources\menu_limpiar.png" />
+    <Content Include="Resources\menu_validar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

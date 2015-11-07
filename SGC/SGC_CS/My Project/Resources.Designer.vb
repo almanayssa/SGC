@@ -149,5 +149,55 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menu_cancel() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menu_cancel", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menu_editar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menu_editar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menu_eliminar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menu_eliminar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menu_limpiar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menu_limpiar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property menu_validar() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("menu_validar", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
     End Module
 End Namespace

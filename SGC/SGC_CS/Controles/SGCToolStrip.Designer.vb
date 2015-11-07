@@ -48,7 +48,9 @@
         Me.BackColor = System.Drawing.Color.Silver
         Me.Dock = System.Windows.Forms.DockStyle.None
         Me.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ImageScalingSize = New System.Drawing.Size(30, 30)
         Me.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
+        Me.Size = New System.Drawing.Size(100, 34)
         Me.ResumeLayout(False)
 
     End Sub
