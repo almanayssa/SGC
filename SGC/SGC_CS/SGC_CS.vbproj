@@ -124,6 +124,12 @@
     <Compile Include="Actividad\frmRegistroActividadRecurrente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controles\SGCPanel.Designer.vb">
+      <DependentUpon>SGCPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\SGCTabControl.Designer.vb">
       <DependentUpon>SGCTabControl.vb</DependentUpon>
     </Compile>
@@ -319,6 +325,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Actividad\frmConsultaActividad.resx">
+      <DependentUpon>frmConsultaActividad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actividad\frmConsultaActividadRecurrente.resx">
+      <DependentUpon>frmConsultaActividadRecurrente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actividad\frmRegistroActividad.resx">
+      <DependentUpon>frmRegistroActividad.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCButton.resx">
       <DependentUpon>SGCButton.vb</DependentUpon>
     </EmbeddedResource>
@@ -340,6 +355,9 @@
     <EmbeddedResource Include="Controles\SGCLabel.resx">
       <DependentUpon>SGCLabel.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\SGCPanel.resx">
+      <DependentUpon>SGCPanel.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCTabControl.resx">
       <DependentUpon>SGCTabControl.vb</DependentUpon>
     </EmbeddedResource>
@@ -360,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="General\MDI.resx">
       <DependentUpon>MDI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmCronogramaEspacios.resx">
+      <DependentUpon>frmCronogramaEspacios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmRegistroEspacio.resx">
       <DependentUpon>frmRegistroEspacio.vb</DependentUpon>

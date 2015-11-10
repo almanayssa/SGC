@@ -4,29 +4,12 @@ Imports System.Drawing.Color
 Imports System.ComponentModel
 
 Public Class MDI
-    'Dim X As New Configuration.AppSettingsReader
-    'Dim cad As String = X.GetValue("conexion", Type.GetType("System.String"))
-    'Dim bd As String = X.GetValue("bd", Type.GetType("System.String"))
-
-    'Dim cnx As New SqlConnection(cad)
-
+    
 #Region "Cargar"
 
     Private Sub MDI_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Me.Text = "Bienvenido - Versión 1.0"
-
-        'Me.lblTipoC.Margin = New System.Windows.Forms.Padding(Me.Width - 300, 3, 0, 2)
-        'lblMdi.Text = "Conectado a: " & bd
-        'If Modulo_Parametros.area_usuario = "CAJA" Or Modulo_Parametros.area_usuario = "COBRANZA" Then
-        '    lblTipoC.Text = "Tipo de Cambio:"
-        '    If Modulo_Parametros.tipo_cambio = 0 Then
-        '        lblValorTC.Text = "S/V"
-        '    Else
-        '        lblValorTC.Text = CStr(Format(Modulo_Parametros.tipo_cambio, "####.000"))
-        '    End If
-
-        'End If
 
     End Sub
 
