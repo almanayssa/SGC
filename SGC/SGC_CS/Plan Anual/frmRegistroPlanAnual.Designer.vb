@@ -20,9 +20,10 @@ Partial Class frmRegistroPlanAnual
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SgcButton6 = New SGC_CS.SGCButton(Me.components)
         Me.SgcButton3 = New SGC_CS.SGCButton(Me.components)
         Me.SgcButton2 = New SGC_CS.SGCButton(Me.components)
         Me.SgcLabel7 = New SGC_CS.SGCLabel(Me.components)
@@ -42,7 +43,6 @@ Partial Class frmRegistroPlanAnual
         Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcButton5 = New SGC_CS.SGCButton(Me.components)
         Me.SgcButton4 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcButton6 = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -85,6 +85,21 @@ Partial Class frmRegistroPlanAnual
         Me.SgcGroupBox1.TabIndex = 13
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Plan Anual"
+        '
+        'SgcButton6
+        '
+        Me.SgcButton6.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton6.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton6.Location = New System.Drawing.Point(736, 104)
+        Me.SgcButton6.Name = "SgcButton6"
+        Me.SgcButton6.Size = New System.Drawing.Size(125, 31)
+        Me.SgcButton6.TabIndex = 15
+        Me.SgcButton6.Text = "Presupuesto"
+        Me.SgcButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton6.UseVisualStyleBackColor = False
         '
         'SgcButton3
         '
@@ -180,6 +195,7 @@ Partial Class frmRegistroPlanAnual
         '
         'SgcComboBox2
         '
+        Me.SgcComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SgcComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.SgcComboBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcComboBox2.ForeColor = System.Drawing.Color.Black
@@ -202,6 +218,7 @@ Partial Class frmRegistroPlanAnual
         '
         'SgcComboBox1
         '
+        Me.SgcComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SgcComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.SgcComboBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcComboBox1.ForeColor = System.Drawing.Color.Black
@@ -274,9 +291,9 @@ Partial Class frmRegistroPlanAnual
         'SgcDataGridView1
         '
         Me.SgcDataGridView1.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -314,21 +331,6 @@ Partial Class frmRegistroPlanAnual
         Me.SgcButton4.Text = "Grabar"
         Me.SgcButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.SgcButton4.UseVisualStyleBackColor = False
-        '
-        'SgcButton6
-        '
-        Me.SgcButton6.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton6.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton6.Location = New System.Drawing.Point(736, 104)
-        Me.SgcButton6.Name = "SgcButton6"
-        Me.SgcButton6.Size = New System.Drawing.Size(125, 31)
-        Me.SgcButton6.TabIndex = 15
-        Me.SgcButton6.Text = "Presupuesto"
-        Me.SgcButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton6.UseVisualStyleBackColor = False
         '
         'frmRegistroPlanAnual
         '
