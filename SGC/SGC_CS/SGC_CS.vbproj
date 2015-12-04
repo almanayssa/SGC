@@ -325,11 +325,23 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Actividad\frmActEvaluacionCD.resx">
+      <DependentUpon>frmActEvaluacionCD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actividad\frmActEvaluacionGG.resx">
+      <DependentUpon>frmActEvaluacionGG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actividad\frmActEvaluacionPGC.resx">
+      <DependentUpon>frmActEvaluacionPGC.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmConsultaActividad.resx">
       <DependentUpon>frmConsultaActividad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmConsultaActividadRecurrente.resx">
       <DependentUpon>frmConsultaActividadRecurrente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actividad\frmHabilitarActividad.resx">
+      <DependentUpon>frmHabilitarActividad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmRegistroActividad.resx">
       <DependentUpon>frmRegistroActividad.vb</DependentUpon>
@@ -378,6 +390,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="General\MDI.resx">
       <DependentUpon>MDI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inscripción\frmRegistroInscripcion.resx">
+      <DependentUpon>frmRegistroInscripcion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmCronogramaEspacios.resx">
       <DependentUpon>frmCronogramaEspacios.vb</DependentUpon>
