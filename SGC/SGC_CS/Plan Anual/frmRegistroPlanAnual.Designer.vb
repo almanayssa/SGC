@@ -257,6 +257,7 @@ Partial Class frmRegistroPlanAnual
         'SgcTextBox1
         '
         Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SgcTextBox1.Enabled = False
         Me.SgcTextBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcTextBox1.ForeColor = System.Drawing.Color.Black
         Me.SgcTextBox1.Location = New System.Drawing.Point(127, 38)
