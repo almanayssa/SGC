@@ -1,3 +1,6 @@
-﻿Public Class BancoBE
+﻿Namespace SGC.Model.Entidades
+    Public Class BancoBE
 
-End Class
+    End Class
+End Namespace
+

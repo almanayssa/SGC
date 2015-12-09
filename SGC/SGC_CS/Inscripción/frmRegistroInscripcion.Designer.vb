@@ -20,10 +20,10 @@ Partial Class frmRegistroInscripcion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
@@ -35,7 +35,6 @@ Partial Class frmRegistroInscripcion
         Me.SgcTextBox4 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcTextBox2 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel11 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcNumericUpDown1 = New SGC_CS.SGCNumericUpDown(Me.components)
         Me.SgcComboBox3 = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
@@ -44,9 +43,11 @@ Partial Class frmRegistroInscripcion
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcNumericUpDown1 = New SGC_CS.SGCNumericUpDown(Me.components)
         Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView2 = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox4 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SgcButton2 = New SGC_CS.SGCButton(Me.components)
         Me.SgcTextBox5 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcTextBox6 = New SGC_CS.SGCTextBox(Me.components)
@@ -58,7 +59,6 @@ Partial Class frmRegistroInscripcion
         Me.SgcDataGridView4 = New SGC_CS.SGCDataGridView(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcButton2 = New SGC_CS.SGCButton(Me.components)
         Me.tsMenu.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -133,9 +133,9 @@ Partial Class frmRegistroInscripcion
         'SgcDataGridView1
         '
         Me.SgcDataGridView1.AllowUserToAddRows = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -208,13 +208,6 @@ Partial Class frmRegistroInscripcion
         Me.SgcLabel11.Size = New System.Drawing.Size(63, 18)
         Me.SgcLabel11.TabIndex = 16
         Me.SgcLabel11.Text = "Nombre:"
-        '
-        'SgcNumericUpDown1
-        '
-        Me.SgcNumericUpDown1.Location = New System.Drawing.Point(207, 25)
-        Me.SgcNumericUpDown1.Name = "SgcNumericUpDown1"
-        Me.SgcNumericUpDown1.Size = New System.Drawing.Size(69, 26)
-        Me.SgcNumericUpDown1.TabIndex = 11
         '
         'SgcComboBox3
         '
@@ -306,6 +299,13 @@ Partial Class frmRegistroInscripcion
         Me.SgcLabel1.TabIndex = 0
         Me.SgcLabel1.Text = "Codigo:"
         '
+        'SgcNumericUpDown1
+        '
+        Me.SgcNumericUpDown1.Location = New System.Drawing.Point(207, 25)
+        Me.SgcNumericUpDown1.Name = "SgcNumericUpDown1"
+        Me.SgcNumericUpDown1.Size = New System.Drawing.Size(69, 26)
+        Me.SgcNumericUpDown1.TabIndex = 11
+        '
         'SgcGroupBox3
         '
         Me.SgcGroupBox3.Controls.Add(Me.SgcDataGridView2)
@@ -320,9 +320,9 @@ Partial Class frmRegistroInscripcion
         'SgcDataGridView2
         '
         Me.SgcDataGridView2.AllowUserToAddRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView2.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.SgcDataGridView2.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -345,6 +345,21 @@ Partial Class frmRegistroInscripcion
         Me.SgcGroupBox4.TabIndex = 22
         Me.SgcGroupBox4.TabStop = False
         Me.SgcGroupBox4.Text = "Socio"
+        '
+        'SgcButton2
+        '
+        Me.SgcButton2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton2.Location = New System.Drawing.Point(227, 33)
+        Me.SgcButton2.Name = "SgcButton2"
+        Me.SgcButton2.Size = New System.Drawing.Size(43, 31)
+        Me.SgcButton2.TabIndex = 21
+        Me.SgcButton2.Text = "Buscar"
+        Me.SgcButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton2.UseVisualStyleBackColor = False
         '
         'SgcTextBox5
         '
@@ -413,9 +428,9 @@ Partial Class frmRegistroInscripcion
         'SgcDataGridView3
         '
         Me.SgcDataGridView3.AllowUserToAddRows = False
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.SgcDataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -438,9 +453,9 @@ Partial Class frmRegistroInscripcion
         'SgcDataGridView4
         '
         Me.SgcDataGridView4.AllowUserToAddRows = False
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView4.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView4.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.SgcDataGridView4.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -468,28 +483,13 @@ Partial Class frmRegistroInscripcion
         Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Location = New System.Drawing.Point(227, 33)
+        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.SgcButton1.Location = New System.Drawing.Point(215, 33)
         Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(43, 31)
-        Me.SgcButton1.TabIndex = 27
-        Me.SgcButton1.Text = "Buscar"
+        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
+        Me.SgcButton1.TabIndex = 25
         Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.SgcButton1.UseVisualStyleBackColor = False
-        '
-        'SgcButton2
-        '
-        Me.SgcButton2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton2.Location = New System.Drawing.Point(227, 33)
-        Me.SgcButton2.Name = "SgcButton2"
-        Me.SgcButton2.Size = New System.Drawing.Size(43, 31)
-        Me.SgcButton2.TabIndex = 21
-        Me.SgcButton2.Text = "Buscar"
-        Me.SgcButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton2.UseVisualStyleBackColor = False
         '
         'frmRegistroInscripcion
         '
@@ -566,7 +566,7 @@ Partial Class frmRegistroInscripcion
     Friend WithEvents SgcGroupBox7 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcDataGridView4 As SGC_CS.SGCDataGridView
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
     Friend WithEvents SgcButton2 As SGC_CS.SGCButton
+    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
 
 End Class

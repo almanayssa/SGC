@@ -1,3 +1,6 @@
-﻿Public Class CatTipoActividadBE
+﻿Namespace SGC.Model.Entidades
+    Public Class CatTipoActividadBE
 
-End Class
+    End Class
+
+End Namespace

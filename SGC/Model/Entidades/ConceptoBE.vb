@@ -1,3 +1,6 @@
-﻿Public Class ConceptoBE
+﻿Namespace SGC.Model.Entidades
+    Public Class ConceptoBE
 
-End Class
+    End Class
+End Namespace
+

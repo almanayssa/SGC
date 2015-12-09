@@ -20,15 +20,15 @@ Partial Class frmSuscripcionComite
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox4 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcButton2 = New SGC_CS.SGCButton(Me.components)
         Me.SgcTextBox5 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcTextBox6 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel16 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView3 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox4.SuspendLayout()
         Me.SgcGroupBox6.SuspendLayout()
         CType(Me.SgcDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -36,7 +36,7 @@ Partial Class frmSuscripcionComite
         '
         'SgcGroupBox4
         '
-        Me.SgcGroupBox4.Controls.Add(Me.SgcButton2)
+        Me.SgcGroupBox4.Controls.Add(Me.SgcButton1)
         Me.SgcGroupBox4.Controls.Add(Me.SgcTextBox5)
         Me.SgcGroupBox4.Controls.Add(Me.SgcLabel6)
         Me.SgcGroupBox4.Controls.Add(Me.SgcTextBox6)
@@ -48,21 +48,6 @@ Partial Class frmSuscripcionComite
         Me.SgcGroupBox4.TabIndex = 23
         Me.SgcGroupBox4.TabStop = False
         Me.SgcGroupBox4.Text = "Socio"
-        '
-        'SgcButton2
-        '
-        Me.SgcButton2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton2.Location = New System.Drawing.Point(227, 33)
-        Me.SgcButton2.Name = "SgcButton2"
-        Me.SgcButton2.Size = New System.Drawing.Size(43, 31)
-        Me.SgcButton2.TabIndex = 21
-        Me.SgcButton2.Text = "Buscar"
-        Me.SgcButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton2.UseVisualStyleBackColor = False
         '
         'SgcTextBox5
         '
@@ -120,9 +105,9 @@ Partial Class frmSuscripcionComite
         'SgcDataGridView3
         '
         Me.SgcDataGridView3.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.SgcDataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -130,6 +115,21 @@ Partial Class frmSuscripcionComite
         Me.SgcDataGridView3.Name = "SgcDataGridView3"
         Me.SgcDataGridView3.Size = New System.Drawing.Size(443, 283)
         Me.SgcDataGridView3.TabIndex = 1
+        '
+        'SgcButton1
+        '
+        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.SgcButton1.Location = New System.Drawing.Point(215, 33)
+        Me.SgcButton1.Name = "SgcButton1"
+        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
+        Me.SgcButton1.TabIndex = 25
+        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton1.UseVisualStyleBackColor = False
         '
         'frmSuscripcionComite
         '
@@ -147,12 +147,12 @@ Partial Class frmSuscripcionComite
 
     End Sub
     Friend WithEvents SgcGroupBox4 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcButton2 As SGC_CS.SGCButton
     Friend WithEvents SgcTextBox5 As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
     Friend WithEvents SgcTextBox6 As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel16 As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox6 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcDataGridView3 As SGC_CS.SGCDataGridView
+    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
 
 End Class

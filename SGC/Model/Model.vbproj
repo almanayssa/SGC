@@ -72,7 +72,6 @@
     <Compile Include="Entidades\ActividadRecurrenteBE.vb" />
     <Compile Include="Entidades\ActividadRestriccionesBE.vb" />
     <Compile Include="Entidades\AreasBE.vb" />
-    <Compile Include="Entidades\ArticuloBE.vb" />
     <Compile Include="Entidades\ArticuloCobranzaBE.vb" />
     <Compile Include="Entidades\BancoBE.vb" />
     <Compile Include="Entidades\CanjeAdelantosBE.vb" />

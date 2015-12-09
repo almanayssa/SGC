@@ -129,6 +129,7 @@ Partial Class frmBuscarArticulo
         Me.Controls.Add(Me.SgcGroupBox2)
         Me.Controls.Add(Me.SgcDataGridView1)
         Me.Name = "frmBuscarArticulo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar Artículo"
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox2.ResumeLayout(False)

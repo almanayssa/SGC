@@ -23,7 +23,11 @@ Partial Class frmConsultaActividadRecurrente
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SgcComboBox4 = New SGC_CS.SGCComboBox(Me.components)
+        Me.SgcLabel13 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SgcRadioButton2 = New SGC_CS.SGCRadioButton(Me.components)
+        Me.SgcRadioButton1 = New SGC_CS.SGCRadioButton(Me.components)
         Me.SgcLabel12 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcTextBox4 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcTextBox2 = New SGC_CS.SGCTextBox(Me.components)
@@ -49,16 +53,13 @@ Partial Class frmConsultaActividadRecurrente
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcRadioButton2 = New SGC_CS.SGCRadioButton(Me.components)
-        Me.SgcRadioButton1 = New SGC_CS.SGCRadioButton(Me.components)
-        Me.SgcLabel13 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox4 = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView3 = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox4 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcButton6 = New SGC_CS.SGCButton(Me.components)
+        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox2.SuspendLayout()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcPanel2.SuspendLayout()
@@ -85,8 +86,32 @@ Partial Class frmConsultaActividadRecurrente
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Programación"
         '
+        'SgcComboBox4
+        '
+        Me.SgcComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.SgcComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.SgcComboBox4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcComboBox4.ForeColor = System.Drawing.Color.Black
+        Me.SgcComboBox4.FormattingEnabled = True
+        Me.SgcComboBox4.Location = New System.Drawing.Point(152, 36)
+        Me.SgcComboBox4.Name = "SgcComboBox4"
+        Me.SgcComboBox4.Size = New System.Drawing.Size(121, 26)
+        Me.SgcComboBox4.TabIndex = 1
+        '
+        'SgcLabel13
+        '
+        Me.SgcLabel13.AutoSize = True
+        Me.SgcLabel13.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel13.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel13.Location = New System.Drawing.Point(29, 39)
+        Me.SgcLabel13.Name = "SgcLabel13"
+        Me.SgcLabel13.Size = New System.Drawing.Size(85, 18)
+        Me.SgcLabel13.TabIndex = 0
+        Me.SgcLabel13.Text = "Recurrencia:"
+        '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
         Me.SgcGroupBox1.Controls.Add(Me.SgcRadioButton2)
         Me.SgcGroupBox1.Controls.Add(Me.SgcRadioButton1)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel12)
@@ -117,6 +142,28 @@ Partial Class frmConsultaActividadRecurrente
         Me.SgcGroupBox1.TabIndex = 10
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Datos"
+        '
+        'SgcRadioButton2
+        '
+        Me.SgcRadioButton2.AutoSize = True
+        Me.SgcRadioButton2.Location = New System.Drawing.Point(398, 37)
+        Me.SgcRadioButton2.Name = "SgcRadioButton2"
+        Me.SgcRadioButton2.Size = New System.Drawing.Size(95, 22)
+        Me.SgcRadioButton2.TabIndex = 24
+        Me.SgcRadioButton2.TabStop = True
+        Me.SgcRadioButton2.Text = "Por Detalle"
+        Me.SgcRadioButton2.UseVisualStyleBackColor = True
+        '
+        'SgcRadioButton1
+        '
+        Me.SgcRadioButton1.AutoSize = True
+        Me.SgcRadioButton1.Location = New System.Drawing.Point(282, 37)
+        Me.SgcRadioButton1.Name = "SgcRadioButton1"
+        Me.SgcRadioButton1.Size = New System.Drawing.Size(108, 22)
+        Me.SgcRadioButton1.TabIndex = 23
+        Me.SgcRadioButton1.TabStop = True
+        Me.SgcRadioButton1.Text = "Por Actividad"
+        Me.SgcRadioButton1.UseVisualStyleBackColor = True
         '
         'SgcLabel12
         '
@@ -381,51 +428,6 @@ Partial Class frmConsultaActividadRecurrente
         Me.SgcLabel1.TabIndex = 0
         Me.SgcLabel1.Text = "Codigo:"
         '
-        'SgcRadioButton2
-        '
-        Me.SgcRadioButton2.AutoSize = True
-        Me.SgcRadioButton2.Location = New System.Drawing.Point(398, 37)
-        Me.SgcRadioButton2.Name = "SgcRadioButton2"
-        Me.SgcRadioButton2.Size = New System.Drawing.Size(95, 22)
-        Me.SgcRadioButton2.TabIndex = 24
-        Me.SgcRadioButton2.TabStop = True
-        Me.SgcRadioButton2.Text = "Por Detalle"
-        Me.SgcRadioButton2.UseVisualStyleBackColor = True
-        '
-        'SgcRadioButton1
-        '
-        Me.SgcRadioButton1.AutoSize = True
-        Me.SgcRadioButton1.Location = New System.Drawing.Point(282, 37)
-        Me.SgcRadioButton1.Name = "SgcRadioButton1"
-        Me.SgcRadioButton1.Size = New System.Drawing.Size(108, 22)
-        Me.SgcRadioButton1.TabIndex = 23
-        Me.SgcRadioButton1.TabStop = True
-        Me.SgcRadioButton1.Text = "Por Actividad"
-        Me.SgcRadioButton1.UseVisualStyleBackColor = True
-        '
-        'SgcLabel13
-        '
-        Me.SgcLabel13.AutoSize = True
-        Me.SgcLabel13.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel13.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel13.Location = New System.Drawing.Point(29, 39)
-        Me.SgcLabel13.Name = "SgcLabel13"
-        Me.SgcLabel13.Size = New System.Drawing.Size(85, 18)
-        Me.SgcLabel13.TabIndex = 0
-        Me.SgcLabel13.Text = "Recurrencia:"
-        '
-        'SgcComboBox4
-        '
-        Me.SgcComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox4.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox4.FormattingEnabled = True
-        Me.SgcComboBox4.Location = New System.Drawing.Point(152, 36)
-        Me.SgcComboBox4.Name = "SgcComboBox4"
-        Me.SgcComboBox4.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox4.TabIndex = 1
-        '
         'SgcGroupBox3
         '
         Me.SgcGroupBox3.Controls.Add(Me.SgcDataGridView3)
@@ -502,9 +504,24 @@ Partial Class frmConsultaActividadRecurrente
         Me.SgcButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.SgcButton6.UseVisualStyleBackColor = False
         '
+        'SgcButton1
+        '
+        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.SgcButton1.Location = New System.Drawing.Point(215, 33)
+        Me.SgcButton1.Name = "SgcButton1"
+        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
+        Me.SgcButton1.TabIndex = 24
+        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton1.UseVisualStyleBackColor = False
+        '
         'frmConsultaActividadRecurrente
         '
-        Me.ClientSize = New System.Drawing.Size(1016, 738)
+        Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.Controls.Add(Me.SgcGroupBox6)
         Me.Controls.Add(Me.SgcGroupBox4)
         Me.Controls.Add(Me.SgcGroupBox3)
@@ -572,5 +589,6 @@ Partial Class frmConsultaActividadRecurrente
     Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox6 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcButton6 As SGC_CS.SGCButton
+    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
 
 End Class

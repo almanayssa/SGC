@@ -21,230 +21,231 @@ Partial Class frmBuscarActividad
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcLabel5 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcDateTimePicker4 = New SGC_CS.SGCDateTimePicker(Me.components)
-        Me.SgcDateTimePicker3 = New SGC_CS.SGCDateTimePicker(Me.components)
-        Me.SgcDateTimePicker2 = New SGC_CS.SGCDateTimePicker(Me.components)
-        Me.SgcDateTimePicker1 = New SGC_CS.SGCDateTimePicker(Me.components)
-        Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
-        Me.SgcGroupBox2.SuspendLayout()
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbxFiltros = New SGC_CS.SGCGroupBox(Me.components)
+        Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
+        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
+        Me.lblFechaRealizacionA = New SGC_CS.SGCLabel(Me.components)
+        Me.lblFechaCreacionA = New SGC_CS.SGCLabel(Me.components)
+        Me.dtpFecRealizacionHasta = New SGC_CS.SGCDateTimePicker(Me.components)
+        Me.dtpFecRealizacionDesde = New SGC_CS.SGCDateTimePicker(Me.components)
+        Me.dtpFecCreacionHasta = New SGC_CS.SGCDateTimePicker(Me.components)
+        Me.dtpFecCreacionDesde = New SGC_CS.SGCDateTimePicker(Me.components)
+        Me.lblNombre = New SGC_CS.SGCLabel(Me.components)
+        Me.lblFechaRealizacion = New SGC_CS.SGCLabel(Me.components)
+        Me.lblComite = New SGC_CS.SGCLabel(Me.components)
+        Me.lblFechaCreacion = New SGC_CS.SGCLabel(Me.components)
+        Me.cboComite = New SGC_CS.SGCComboBox(Me.components)
+        Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
+        Me.gbxFiltros.SuspendLayout()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'SgcGroupBox2
+        'gbxFiltros
         '
-        Me.SgcGroupBox2.Controls.Add(Me.SgcTextBox1)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcButton1)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcLabel6)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcLabel5)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDateTimePicker4)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDateTimePicker3)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDateTimePicker2)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDateTimePicker1)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcLabel4)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcLabel1)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcLabel2)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcLabel3)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcComboBox1)
-        Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox2.Location = New System.Drawing.Point(12, 12)
-        Me.SgcGroupBox2.Name = "SgcGroupBox2"
-        Me.SgcGroupBox2.Size = New System.Drawing.Size(392, 207)
-        Me.SgcGroupBox2.TabIndex = 19
-        Me.SgcGroupBox2.TabStop = False
-        Me.SgcGroupBox2.Text = "Filtros"
+        Me.gbxFiltros.Controls.Add(Me.txtNombre)
+        Me.gbxFiltros.Controls.Add(Me.btnBuscar)
+        Me.gbxFiltros.Controls.Add(Me.lblFechaRealizacionA)
+        Me.gbxFiltros.Controls.Add(Me.lblFechaCreacionA)
+        Me.gbxFiltros.Controls.Add(Me.dtpFecRealizacionHasta)
+        Me.gbxFiltros.Controls.Add(Me.dtpFecRealizacionDesde)
+        Me.gbxFiltros.Controls.Add(Me.dtpFecCreacionHasta)
+        Me.gbxFiltros.Controls.Add(Me.dtpFecCreacionDesde)
+        Me.gbxFiltros.Controls.Add(Me.lblNombre)
+        Me.gbxFiltros.Controls.Add(Me.lblFechaRealizacion)
+        Me.gbxFiltros.Controls.Add(Me.lblComite)
+        Me.gbxFiltros.Controls.Add(Me.lblFechaCreacion)
+        Me.gbxFiltros.Controls.Add(Me.cboComite)
+        Me.gbxFiltros.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbxFiltros.Location = New System.Drawing.Point(12, 12)
+        Me.gbxFiltros.Name = "gbxFiltros"
+        Me.gbxFiltros.Size = New System.Drawing.Size(392, 207)
+        Me.gbxFiltros.TabIndex = 19
+        Me.gbxFiltros.TabStop = False
+        Me.gbxFiltros.Text = "Filtros"
         '
-        'SgcTextBox1
+        'txtNombre
         '
-        Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox1.Enabled = False
-        Me.SgcTextBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox1.Location = New System.Drawing.Point(153, 127)
-        Me.SgcTextBox1.Name = "SgcTextBox1"
-        Me.SgcTextBox1.Size = New System.Drawing.Size(121, 26)
-        Me.SgcTextBox1.TabIndex = 23
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombre.Enabled = False
+        Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.ForeColor = System.Drawing.Color.Black
+        Me.txtNombre.Location = New System.Drawing.Point(153, 127)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(121, 26)
+        Me.txtNombre.TabIndex = 23
         '
-        'SgcButton1
+        'btnBuscar
         '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Location = New System.Drawing.Point(153, 159)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(75, 31)
-        Me.SgcButton1.TabIndex = 20
-        Me.SgcButton1.Text = "Buscar"
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscar.Location = New System.Drawing.Point(153, 159)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 31)
+        Me.btnBuscar.TabIndex = 20
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'SgcLabel6
+        'lblFechaRealizacionA
         '
-        Me.SgcLabel6.AutoSize = True
-        Me.SgcLabel6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel6.Location = New System.Drawing.Point(261, 101)
-        Me.SgcLabel6.Name = "SgcLabel6"
-        Me.SgcLabel6.Size = New System.Drawing.Size(15, 18)
-        Me.SgcLabel6.TabIndex = 21
-        Me.SgcLabel6.Text = "a"
+        Me.lblFechaRealizacionA.AutoSize = True
+        Me.lblFechaRealizacionA.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaRealizacionA.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblFechaRealizacionA.Location = New System.Drawing.Point(261, 101)
+        Me.lblFechaRealizacionA.Name = "lblFechaRealizacionA"
+        Me.lblFechaRealizacionA.Size = New System.Drawing.Size(15, 18)
+        Me.lblFechaRealizacionA.TabIndex = 21
+        Me.lblFechaRealizacionA.Text = "a"
         '
-        'SgcLabel5
+        'lblFechaCreacionA
         '
-        Me.SgcLabel5.AutoSize = True
-        Me.SgcLabel5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel5.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel5.Location = New System.Drawing.Point(261, 67)
-        Me.SgcLabel5.Name = "SgcLabel5"
-        Me.SgcLabel5.Size = New System.Drawing.Size(15, 18)
-        Me.SgcLabel5.TabIndex = 20
-        Me.SgcLabel5.Text = "a"
+        Me.lblFechaCreacionA.AutoSize = True
+        Me.lblFechaCreacionA.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaCreacionA.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblFechaCreacionA.Location = New System.Drawing.Point(261, 67)
+        Me.lblFechaCreacionA.Name = "lblFechaCreacionA"
+        Me.lblFechaCreacionA.Size = New System.Drawing.Size(15, 18)
+        Me.lblFechaCreacionA.TabIndex = 20
+        Me.lblFechaCreacionA.Text = "a"
         '
-        'SgcDateTimePicker4
+        'dtpFecRealizacionHasta
         '
-        Me.SgcDateTimePicker4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcDateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.SgcDateTimePicker4.Location = New System.Drawing.Point(286, 95)
-        Me.SgcDateTimePicker4.Name = "SgcDateTimePicker4"
-        Me.SgcDateTimePicker4.Size = New System.Drawing.Size(100, 26)
-        Me.SgcDateTimePicker4.TabIndex = 15
+        Me.dtpFecRealizacionHasta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFecRealizacionHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecRealizacionHasta.Location = New System.Drawing.Point(286, 95)
+        Me.dtpFecRealizacionHasta.Name = "dtpFecRealizacionHasta"
+        Me.dtpFecRealizacionHasta.Size = New System.Drawing.Size(100, 26)
+        Me.dtpFecRealizacionHasta.TabIndex = 15
         '
-        'SgcDateTimePicker3
+        'dtpFecRealizacionDesde
         '
-        Me.SgcDateTimePicker3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcDateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.SgcDateTimePicker3.Location = New System.Drawing.Point(153, 95)
-        Me.SgcDateTimePicker3.Name = "SgcDateTimePicker3"
-        Me.SgcDateTimePicker3.Size = New System.Drawing.Size(100, 26)
-        Me.SgcDateTimePicker3.TabIndex = 14
+        Me.dtpFecRealizacionDesde.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFecRealizacionDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecRealizacionDesde.Location = New System.Drawing.Point(153, 95)
+        Me.dtpFecRealizacionDesde.Name = "dtpFecRealizacionDesde"
+        Me.dtpFecRealizacionDesde.Size = New System.Drawing.Size(100, 26)
+        Me.dtpFecRealizacionDesde.TabIndex = 14
         '
-        'SgcDateTimePicker2
+        'dtpFecCreacionHasta
         '
-        Me.SgcDateTimePicker2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcDateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.SgcDateTimePicker2.Location = New System.Drawing.Point(286, 63)
-        Me.SgcDateTimePicker2.Name = "SgcDateTimePicker2"
-        Me.SgcDateTimePicker2.Size = New System.Drawing.Size(100, 26)
-        Me.SgcDateTimePicker2.TabIndex = 13
+        Me.dtpFecCreacionHasta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFecCreacionHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecCreacionHasta.Location = New System.Drawing.Point(286, 63)
+        Me.dtpFecCreacionHasta.Name = "dtpFecCreacionHasta"
+        Me.dtpFecCreacionHasta.Size = New System.Drawing.Size(100, 26)
+        Me.dtpFecCreacionHasta.TabIndex = 13
         '
-        'SgcDateTimePicker1
+        'dtpFecCreacionDesde
         '
-        Me.SgcDateTimePicker1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.SgcDateTimePicker1.Location = New System.Drawing.Point(153, 63)
-        Me.SgcDateTimePicker1.Name = "SgcDateTimePicker1"
-        Me.SgcDateTimePicker1.Size = New System.Drawing.Size(100, 26)
-        Me.SgcDateTimePicker1.TabIndex = 12
+        Me.dtpFecCreacionDesde.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dtpFecCreacionDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecCreacionDesde.Location = New System.Drawing.Point(153, 63)
+        Me.dtpFecCreacionDesde.Name = "dtpFecCreacionDesde"
+        Me.dtpFecCreacionDesde.Size = New System.Drawing.Size(100, 26)
+        Me.dtpFecCreacionDesde.TabIndex = 12
         '
-        'SgcLabel4
+        'lblNombre
         '
-        Me.SgcLabel4.AutoSize = True
-        Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel4.Location = New System.Drawing.Point(20, 129)
-        Me.SgcLabel4.Name = "SgcLabel4"
-        Me.SgcLabel4.Size = New System.Drawing.Size(63, 18)
-        Me.SgcLabel4.TabIndex = 11
-        Me.SgcLabel4.Text = "Nombre:"
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblNombre.Location = New System.Drawing.Point(20, 129)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(63, 18)
+        Me.lblNombre.TabIndex = 11
+        Me.lblNombre.Text = "Nombre:"
         '
-        'SgcLabel1
+        'lblFechaRealizacion
         '
-        Me.SgcLabel1.AutoSize = True
-        Me.SgcLabel1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel1.Location = New System.Drawing.Point(20, 101)
-        Me.SgcLabel1.Name = "SgcLabel1"
-        Me.SgcLabel1.Size = New System.Drawing.Size(121, 18)
-        Me.SgcLabel1.TabIndex = 10
-        Me.SgcLabel1.Text = "Fecha Realización:"
+        Me.lblFechaRealizacion.AutoSize = True
+        Me.lblFechaRealizacion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaRealizacion.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblFechaRealizacion.Location = New System.Drawing.Point(20, 101)
+        Me.lblFechaRealizacion.Name = "lblFechaRealizacion"
+        Me.lblFechaRealizacion.Size = New System.Drawing.Size(121, 18)
+        Me.lblFechaRealizacion.TabIndex = 10
+        Me.lblFechaRealizacion.Text = "Fecha Realización:"
         '
-        'SgcLabel2
+        'lblComite
         '
-        Me.SgcLabel2.AutoSize = True
-        Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel2.Location = New System.Drawing.Point(20, 36)
-        Me.SgcLabel2.Name = "SgcLabel2"
-        Me.SgcLabel2.Size = New System.Drawing.Size(57, 18)
-        Me.SgcLabel2.TabIndex = 6
-        Me.SgcLabel2.Text = "Comité:"
+        Me.lblComite.AutoSize = True
+        Me.lblComite.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblComite.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblComite.Location = New System.Drawing.Point(20, 36)
+        Me.lblComite.Name = "lblComite"
+        Me.lblComite.Size = New System.Drawing.Size(57, 18)
+        Me.lblComite.TabIndex = 6
+        Me.lblComite.Text = "Comité:"
         '
-        'SgcLabel3
+        'lblFechaCreacion
         '
-        Me.SgcLabel3.AutoSize = True
-        Me.SgcLabel3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel3.Location = New System.Drawing.Point(20, 69)
-        Me.SgcLabel3.Name = "SgcLabel3"
-        Me.SgcLabel3.Size = New System.Drawing.Size(105, 18)
-        Me.SgcLabel3.TabIndex = 7
-        Me.SgcLabel3.Text = "Fecha Creación:"
+        Me.lblFechaCreacion.AutoSize = True
+        Me.lblFechaCreacion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFechaCreacion.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblFechaCreacion.Location = New System.Drawing.Point(20, 69)
+        Me.lblFechaCreacion.Name = "lblFechaCreacion"
+        Me.lblFechaCreacion.Size = New System.Drawing.Size(105, 18)
+        Me.lblFechaCreacion.TabIndex = 7
+        Me.lblFechaCreacion.Text = "Fecha Creación:"
         '
-        'SgcComboBox1
+        'cboComite
         '
-        Me.SgcComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox1.FormattingEnabled = True
-        Me.SgcComboBox1.Location = New System.Drawing.Point(132, 28)
-        Me.SgcComboBox1.Name = "SgcComboBox1"
-        Me.SgcComboBox1.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox1.TabIndex = 8
+        Me.cboComite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboComite.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboComite.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboComite.ForeColor = System.Drawing.Color.Black
+        Me.cboComite.FormattingEnabled = True
+        Me.cboComite.Location = New System.Drawing.Point(153, 28)
+        Me.cboComite.Name = "cboComite"
+        Me.cboComite.Size = New System.Drawing.Size(121, 26)
+        Me.cboComite.TabIndex = 8
         '
-        'SgcDataGridView1
+        'dgvListado
         '
-        Me.SgcDataGridView1.AllowUserToAddRows = False
+        Me.dgvListado.AllowUserToAddRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SgcDataGridView1.Location = New System.Drawing.Point(12, 225)
-        Me.SgcDataGridView1.Name = "SgcDataGridView1"
-        Me.SgcDataGridView1.Size = New System.Drawing.Size(392, 194)
-        Me.SgcDataGridView1.TabIndex = 22
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Location = New System.Drawing.Point(12, 225)
+        Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.Size = New System.Drawing.Size(392, 194)
+        Me.dgvListado.TabIndex = 22
         '
         'frmBuscarActividad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
         Me.ClientSize = New System.Drawing.Size(425, 430)
-        Me.Controls.Add(Me.SgcDataGridView1)
-        Me.Controls.Add(Me.SgcGroupBox2)
+        Me.Controls.Add(Me.dgvListado)
+        Me.Controls.Add(Me.gbxFiltros)
         Me.Name = "frmBuscarActividad"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar Actividad"
-        Me.SgcGroupBox2.ResumeLayout(False)
-        Me.SgcGroupBox2.PerformLayout()
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gbxFiltros.ResumeLayout(False)
+        Me.gbxFiltros.PerformLayout()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
-    Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
-    Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
-    Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
-    Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
-    Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
-    Friend WithEvents SgcLabel5 As SGC_CS.SGCLabel
-    Friend WithEvents SgcDateTimePicker4 As SGC_CS.SGCDateTimePicker
-    Friend WithEvents SgcDateTimePicker3 As SGC_CS.SGCDateTimePicker
-    Friend WithEvents SgcDateTimePicker2 As SGC_CS.SGCDateTimePicker
-    Friend WithEvents SgcDateTimePicker1 As SGC_CS.SGCDateTimePicker
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
-    Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
-    Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
+    Friend WithEvents gbxFiltros As SGC_CS.SGCGroupBox
+    Friend WithEvents lblComite As SGC_CS.SGCLabel
+    Friend WithEvents lblFechaCreacion As SGC_CS.SGCLabel
+    Friend WithEvents cboComite As SGC_CS.SGCComboBox
+    Friend WithEvents lblNombre As SGC_CS.SGCLabel
+    Friend WithEvents lblFechaRealizacion As SGC_CS.SGCLabel
+    Friend WithEvents lblFechaRealizacionA As SGC_CS.SGCLabel
+    Friend WithEvents lblFechaCreacionA As SGC_CS.SGCLabel
+    Friend WithEvents dtpFecRealizacionHasta As SGC_CS.SGCDateTimePicker
+    Friend WithEvents dtpFecRealizacionDesde As SGC_CS.SGCDateTimePicker
+    Friend WithEvents dtpFecCreacionHasta As SGC_CS.SGCDateTimePicker
+    Friend WithEvents dtpFecCreacionDesde As SGC_CS.SGCDateTimePicker
+    Friend WithEvents btnBuscar As SGC_CS.SGCButton
+    Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
+    Friend WithEvents txtNombre As SGC_CS.SGCTextBox
 
 End Class

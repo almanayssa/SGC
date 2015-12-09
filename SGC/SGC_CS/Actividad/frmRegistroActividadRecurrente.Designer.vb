@@ -82,6 +82,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.chkMiercoles = New System.Windows.Forms.CheckBox()
         Me.chkMartes = New System.Windows.Forms.CheckBox()
         Me.chkLunes = New System.Windows.Forms.CheckBox()
+        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.tsMenu.SuspendLayout()
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.SgcNumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -177,6 +178,7 @@ Partial Class frmRegistroActividadRecurrente
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
         Me.SgcGroupBox1.Controls.Add(Me.SgcNumericUpDown2)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel6)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel12)
@@ -755,6 +757,21 @@ Partial Class frmRegistroActividadRecurrente
         Me.chkLunes.Text = "Lunes"
         Me.chkLunes.UseVisualStyleBackColor = True
         '
+        'SgcButton1
+        '
+        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.SgcButton1.Location = New System.Drawing.Point(215, 35)
+        Me.SgcButton1.Name = "SgcButton1"
+        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
+        Me.SgcButton1.TabIndex = 46
+        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton1.UseVisualStyleBackColor = False
+        '
         'frmRegistroActividadRecurrente
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -848,5 +865,6 @@ Partial Class frmRegistroActividadRecurrente
     Friend WithEvents chkMiercoles As System.Windows.Forms.CheckBox
     Friend WithEvents chkMartes As System.Windows.Forms.CheckBox
     Friend WithEvents chkLunes As System.Windows.Forms.CheckBox
+    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
 
 End Class

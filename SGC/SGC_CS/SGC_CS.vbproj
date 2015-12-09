@@ -142,16 +142,34 @@
     <Compile Include="Busqueda\frmBuscarArticulo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Busqueda\frmBuscarComite.Designer.vb">
-      <DependentUpon>frmBuscarComite.vb</DependentUpon>
+    <Compile Include="Busqueda\frmBuscarEspacio.Designer.vb">
+      <DependentUpon>frmBuscarEspacio.vb</DependentUpon>
     </Compile>
-    <Compile Include="Busqueda\frmBuscarComite.vb">
+    <Compile Include="Busqueda\frmBuscarEspacio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarFamiliares.Designer.vb">
+      <DependentUpon>frmBuscarFamiliares.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarFamiliares.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarPersonal.Designer.vb">
+      <DependentUpon>frmBuscarPersonal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarPersonal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Busqueda\frmBuscarPlan.Designer.vb">
       <DependentUpon>frmBuscarPlan.vb</DependentUpon>
     </Compile>
     <Compile Include="Busqueda\frmBuscarPlan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarRecurso.Designer.vb">
+      <DependentUpon>frmBuscarRecurso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarRecurso.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controles\SGCPanel.Designer.vb">
@@ -388,11 +406,20 @@
     <EmbeddedResource Include="Busqueda\frmBuscarArticulo.resx">
       <DependentUpon>frmBuscarArticulo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Busqueda\frmBuscarComite.resx">
-      <DependentUpon>frmBuscarComite.vb</DependentUpon>
+    <EmbeddedResource Include="Busqueda\frmBuscarEspacio.resx">
+      <DependentUpon>frmBuscarEspacio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBuscarFamiliares.resx">
+      <DependentUpon>frmBuscarFamiliares.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBuscarPersonal.resx">
+      <DependentUpon>frmBuscarPersonal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBuscarPlan.resx">
       <DependentUpon>frmBuscarPlan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBuscarRecurso.resx">
+      <DependentUpon>frmBuscarRecurso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCButton.resx">
       <DependentUpon>SGCButton.vb</DependentUpon>
@@ -426,6 +453,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCToolStrip.resx">
       <DependentUpon>SGCToolStrip.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejecucion\frmRegistroAsistenciaParticipantes.resx">
+      <DependentUpon>frmRegistroAsistenciaParticipantes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejecucion\frmRegistroAsistenciaPersonal.resx">
+      <DependentUpon>frmRegistroAsistenciaPersonal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="General\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>

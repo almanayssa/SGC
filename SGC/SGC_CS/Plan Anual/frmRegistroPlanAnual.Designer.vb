@@ -36,13 +36,13 @@ Partial Class frmRegistroPlanAnual
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcButton5 = New SGC_CS.SGCButton(Me.components)
         Me.SgcButton4 = New SGC_CS.SGCButton(Me.components)
+        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,6 +62,7 @@ Partial Class frmRegistroPlanAnual
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
         Me.SgcGroupBox1.Controls.Add(Me.SgcButton6)
         Me.SgcGroupBox1.Controls.Add(Me.SgcButton3)
         Me.SgcGroupBox1.Controls.Add(Me.SgcButton2)
@@ -75,7 +76,6 @@ Partial Class frmRegistroPlanAnual
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel3)
         Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox1)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
         Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox1)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -239,21 +239,6 @@ Partial Class frmRegistroPlanAnual
         Me.SgcLabel2.TabIndex = 3
         Me.SgcLabel2.Text = "Comité:"
         '
-        'SgcButton1
-        '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Location = New System.Drawing.Point(254, 34)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(43, 31)
-        Me.SgcButton1.TabIndex = 2
-        Me.SgcButton1.Text = "Buscar"
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
-        '
         'SgcTextBox1
         '
         Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -333,9 +318,24 @@ Partial Class frmRegistroPlanAnual
         Me.SgcButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.SgcButton4.UseVisualStyleBackColor = False
         '
+        'SgcButton1
+        '
+        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.SgcButton1.Location = New System.Drawing.Point(254, 35)
+        Me.SgcButton1.Name = "SgcButton1"
+        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
+        Me.SgcButton1.TabIndex = 25
+        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton1.UseVisualStyleBackColor = False
+        '
         'frmRegistroPlanAnual
         '
-        Me.ClientSize = New System.Drawing.Size(1016, 738)
+        Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.Controls.Add(Me.SgcGroupBox2)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Controls.Add(Me.lblTitulo)
@@ -362,7 +362,6 @@ Partial Class frmRegistroPlanAnual
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
     Friend WithEvents SgcButton3 As SGC_CS.SGCButton
     Friend WithEvents SgcButton2 As SGC_CS.SGCButton
     Friend WithEvents SgcLabel7 As SGC_CS.SGCLabel
@@ -373,5 +372,6 @@ Partial Class frmRegistroPlanAnual
     Friend WithEvents SgcButton5 As SGC_CS.SGCButton
     Friend WithEvents SgcButton4 As SGC_CS.SGCButton
     Friend WithEvents SgcButton6 As SGC_CS.SGCButton
+    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
 
 End Class
