@@ -1,3 +1,3 @@
-﻿Public Class TIpoTransaccionBE
+﻿Public Class TipoTransaccionBE
 
 End Class
