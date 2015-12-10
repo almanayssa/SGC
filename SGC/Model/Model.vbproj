@@ -133,8 +133,12 @@
     <Compile Include="Entidades\TipoRegistroInvitadoBE.vb" />
     <Compile Include="Entidades\TipoTransaccionBE.vb" />
     <Compile Include="Entidades\TransaccionBE.vb" />
+    <Compile Include="Interfaces\ICatTipoActividad.vb" />
+    <Compile Include="Interfaces\ITipoActividad.vb" />
+    <Compile Include="Metodos\CatTipoActividadDL.vb" />
     <Compile Include="Metodos\ComiteDL.vb" />
     <Compile Include="Interfaces\IComite.vb" />
+    <Compile Include="Metodos\TipoActividadDL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

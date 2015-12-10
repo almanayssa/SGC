@@ -54,13 +54,13 @@ Partial Class frmRegistroActividad
         Me.btnQuitarTipoPersonal = New SGC_CS.SGCButton(Me.components)
         Me.btnAgregarTipoPersonal = New SGC_CS.SGCButton(Me.components)
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
-        Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
-        Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.sbEditar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
+        Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbPresupuesto = New System.Windows.Forms.ToolStripButton()
+        Me.tsbEditar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbReprogramacion = New System.Windows.Forms.ToolStripButton()
         Me.tcPlanAnual = New SGC_CS.SGCTabControl(Me.components)
         Me.tpRestricciones = New System.Windows.Forms.TabPage()
         Me.tpTipoPersonal = New System.Windows.Forms.TabPage()
@@ -112,7 +112,7 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 91)
         Me.SgcGroupBox1.Name = "SgcGroupBox1"
-        Me.SgcGroupBox1.Size = New System.Drawing.Size(532, 209)
+        Me.SgcGroupBox1.Size = New System.Drawing.Size(532, 226)
         Me.SgcGroupBox1.TabIndex = 8
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Datos"
@@ -167,8 +167,9 @@ Partial Class frmRegistroActividad
         Me.txtDescripcion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.ForeColor = System.Drawing.Color.Black
         Me.txtDescripcion.Location = New System.Drawing.Point(109, 166)
+        Me.txtDescripcion.Multiline = True
         Me.txtDescripcion.Name = "txtDescripcion"
-        Me.txtDescripcion.Size = New System.Drawing.Size(384, 26)
+        Me.txtDescripcion.Size = New System.Drawing.Size(384, 48)
         Me.txtDescripcion.TabIndex = 19
         '
         'txtNombre
@@ -197,7 +198,7 @@ Partial Class frmRegistroActividad
         Me.lblSoles.AutoSize = True
         Me.lblSoles.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSoles.ForeColor = System.Drawing.Color.Black
-        Me.lblSoles.Location = New System.Drawing.Point(445, 37)
+        Me.lblSoles.Location = New System.Drawing.Point(446, 73)
         Me.lblSoles.Name = "lblSoles"
         Me.lblSoles.Size = New System.Drawing.Size(56, 18)
         Me.lblSoles.TabIndex = 14
@@ -205,7 +206,7 @@ Partial Class frmRegistroActividad
         '
         'nudPago
         '
-        Me.nudPago.Location = New System.Drawing.Point(369, 35)
+        Me.nudPago.Location = New System.Drawing.Point(370, 71)
         Me.nudPago.Name = "nudPago"
         Me.nudPago.Size = New System.Drawing.Size(69, 26)
         Me.nudPago.TabIndex = 11
@@ -215,7 +216,7 @@ Partial Class frmRegistroActividad
         Me.lblPago.AutoSize = True
         Me.lblPago.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPago.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblPago.Location = New System.Drawing.Point(279, 37)
+        Me.lblPago.Location = New System.Drawing.Point(280, 73)
         Me.lblPago.Name = "lblPago"
         Me.lblPago.Size = New System.Drawing.Size(42, 18)
         Me.lblPago.TabIndex = 8
@@ -224,11 +225,12 @@ Partial Class frmRegistroActividad
         'cboCategoria
         '
         Me.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboCategoria.Enabled = False
         Me.cboCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.cboCategoria.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboCategoria.ForeColor = System.Drawing.Color.Black
         Me.cboCategoria.FormattingEnabled = True
-        Me.cboCategoria.Location = New System.Drawing.Point(369, 66)
+        Me.cboCategoria.Location = New System.Drawing.Point(369, 37)
         Me.cboCategoria.Name = "cboCategoria"
         Me.cboCategoria.Size = New System.Drawing.Size(121, 26)
         Me.cboCategoria.TabIndex = 7
@@ -238,7 +240,7 @@ Partial Class frmRegistroActividad
         Me.lblCategoria.AutoSize = True
         Me.lblCategoria.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCategoria.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblCategoria.Location = New System.Drawing.Point(279, 69)
+        Me.lblCategoria.Location = New System.Drawing.Point(280, 40)
         Me.lblCategoria.Name = "lblCategoria"
         Me.lblCategoria.Size = New System.Drawing.Size(71, 18)
         Me.lblCategoria.TabIndex = 6
@@ -445,7 +447,7 @@ Partial Class frmRegistroActividad
         Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
         Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbLimpiar, Me.sbGuardar, Me.ToolStripButton3, Me.sbEditar, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton4})
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbLimpiar, Me.tsbGuardar, Me.tsbPresupuesto, Me.tsbEditar, Me.tsbEliminar, Me.tsbCancelar, Me.tsbReprogramacion})
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 51)
         Me.tsMenu.Name = "tsMenu"
@@ -453,78 +455,78 @@ Partial Class frmRegistroActividad
         Me.tsMenu.TabIndex = 17
         Me.tsMenu.Text = "SgcToolStrip1"
         '
-        'sbLimpiar
+        'tsbLimpiar
         '
-        Me.sbLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbLimpiar.Image = Global.SGC_CS.My.Resources.Resources.menu_limpiar
-        Me.sbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbLimpiar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbLimpiar.Name = "sbLimpiar"
-        Me.sbLimpiar.Size = New System.Drawing.Size(88, 34)
-        Me.sbLimpiar.Text = "Limpiar"
+        Me.tsbLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbLimpiar.Image = Global.SGC_CS.My.Resources.Resources.menu_limpiar
+        Me.tsbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbLimpiar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbLimpiar.Name = "tsbLimpiar"
+        Me.tsbLimpiar.Size = New System.Drawing.Size(88, 34)
+        Me.tsbLimpiar.Text = "Limpiar"
         '
-        'sbGuardar
+        'tsbGuardar
         '
-        Me.sbGuardar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbGuardar.Image = Global.SGC_CS.My.Resources.Resources.menu_validar
-        Me.sbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbGuardar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbGuardar.Name = "sbGuardar"
-        Me.sbGuardar.Size = New System.Drawing.Size(92, 34)
-        Me.sbGuardar.Text = "Guardar"
+        Me.tsbGuardar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbGuardar.Image = Global.SGC_CS.My.Resources.Resources.menu_validar
+        Me.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbGuardar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbGuardar.Name = "tsbGuardar"
+        Me.tsbGuardar.Size = New System.Drawing.Size(92, 34)
+        Me.tsbGuardar.Text = "Guardar"
         '
-        'ToolStripButton3
+        'tsbPresupuesto
         '
-        Me.ToolStripButton3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(120, 34)
-        Me.ToolStripButton3.Text = "Presupuesto"
+        Me.tsbPresupuesto.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbPresupuesto.Image = CType(resources.GetObject("tsbPresupuesto.Image"), System.Drawing.Image)
+        Me.tsbPresupuesto.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbPresupuesto.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbPresupuesto.Name = "tsbPresupuesto"
+        Me.tsbPresupuesto.Size = New System.Drawing.Size(120, 34)
+        Me.tsbPresupuesto.Text = "Presupuesto"
         '
-        'sbEditar
+        'tsbEditar
         '
-        Me.sbEditar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbEditar.Image = Global.SGC_CS.My.Resources.Resources.menu_editar
-        Me.sbEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbEditar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbEditar.Name = "sbEditar"
-        Me.sbEditar.Size = New System.Drawing.Size(101, 34)
-        Me.sbEditar.Text = "Modificar"
-        Me.sbEditar.Visible = False
+        Me.tsbEditar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbEditar.Image = Global.SGC_CS.My.Resources.Resources.menu_editar
+        Me.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbEditar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbEditar.Name = "tsbEditar"
+        Me.tsbEditar.Size = New System.Drawing.Size(78, 34)
+        Me.tsbEditar.Text = "Editar"
+        Me.tsbEditar.Visible = False
         '
-        'ToolStripButton1
+        'tsbEliminar
         '
-        Me.ToolStripButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton1.Image = Global.SGC_CS.My.Resources.Resources.menu_eliminar
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(93, 34)
-        Me.ToolStripButton1.Text = "Eliminar"
-        Me.ToolStripButton1.Visible = False
+        Me.tsbEliminar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbEliminar.Image = Global.SGC_CS.My.Resources.Resources.menu_eliminar
+        Me.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbEliminar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbEliminar.Name = "tsbEliminar"
+        Me.tsbEliminar.Size = New System.Drawing.Size(93, 34)
+        Me.tsbEliminar.Text = "Eliminar"
+        Me.tsbEliminar.Visible = False
         '
-        'ToolStripButton2
+        'tsbCancelar
         '
-        Me.ToolStripButton2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton2.Image = Global.SGC_CS.My.Resources.Resources.menu_cancel
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(95, 34)
-        Me.ToolStripButton2.Text = "Cancelar"
-        Me.ToolStripButton2.Visible = False
+        Me.tsbCancelar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbCancelar.Image = Global.SGC_CS.My.Resources.Resources.menu_cancel
+        Me.tsbCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbCancelar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbCancelar.Name = "tsbCancelar"
+        Me.tsbCancelar.Size = New System.Drawing.Size(95, 34)
+        Me.tsbCancelar.Text = "Cancelar"
+        Me.tsbCancelar.Visible = False
         '
-        'ToolStripButton4
+        'tsbReprogramacion
         '
-        Me.ToolStripButton4.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton4.Image = CType(resources.GetObject("ToolStripButton4.Image"), System.Drawing.Image)
-        Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton4.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton4.Name = "ToolStripButton4"
-        Me.ToolStripButton4.Size = New System.Drawing.Size(143, 34)
-        Me.ToolStripButton4.Text = "Reprogramación"
+        Me.tsbReprogramacion.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbReprogramacion.Image = CType(resources.GetObject("tsbReprogramacion.Image"), System.Drawing.Image)
+        Me.tsbReprogramacion.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbReprogramacion.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbReprogramacion.Name = "tsbReprogramacion"
+        Me.tsbReprogramacion.Size = New System.Drawing.Size(143, 34)
+        Me.tsbReprogramacion.Text = "Reprogramación"
         '
         'tcPlanAnual
         '
@@ -532,10 +534,10 @@ Partial Class frmRegistroActividad
         Me.tcPlanAnual.Controls.Add(Me.tpTipoPersonal)
         Me.tcPlanAnual.Controls.Add(Me.tpRecursos)
         Me.tcPlanAnual.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tcPlanAnual.Location = New System.Drawing.Point(60, 306)
+        Me.tcPlanAnual.Location = New System.Drawing.Point(60, 323)
         Me.tcPlanAnual.Name = "tcPlanAnual"
         Me.tcPlanAnual.SelectedIndex = 0
-        Me.tcPlanAnual.Size = New System.Drawing.Size(900, 264)
+        Me.tcPlanAnual.Size = New System.Drawing.Size(900, 247)
         Me.tcPlanAnual.TabIndex = 18
         '
         'tpRestricciones
@@ -544,7 +546,7 @@ Partial Class frmRegistroActividad
         Me.tpRestricciones.Location = New System.Drawing.Point(4, 27)
         Me.tpRestricciones.Name = "tpRestricciones"
         Me.tpRestricciones.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpRestricciones.Size = New System.Drawing.Size(892, 233)
+        Me.tpRestricciones.Size = New System.Drawing.Size(892, 216)
         Me.tpRestricciones.TabIndex = 0
         Me.tpRestricciones.Text = "Restricciones"
         Me.tpRestricciones.UseVisualStyleBackColor = True
@@ -554,7 +556,7 @@ Partial Class frmRegistroActividad
         Me.tpTipoPersonal.Controls.Add(Me.SgcGroupBox7)
         Me.tpTipoPersonal.Location = New System.Drawing.Point(4, 27)
         Me.tpTipoPersonal.Name = "tpTipoPersonal"
-        Me.tpTipoPersonal.Size = New System.Drawing.Size(892, 233)
+        Me.tpTipoPersonal.Size = New System.Drawing.Size(892, 216)
         Me.tpTipoPersonal.TabIndex = 2
         Me.tpTipoPersonal.Text = "Tipo de Personal"
         Me.tpTipoPersonal.UseVisualStyleBackColor = True
@@ -591,7 +593,7 @@ Partial Class frmRegistroActividad
         Me.tpRecursos.Controls.Add(Me.SgcGroupBox5)
         Me.tpRecursos.Location = New System.Drawing.Point(4, 27)
         Me.tpRecursos.Name = "tpRecursos"
-        Me.tpRecursos.Size = New System.Drawing.Size(892, 233)
+        Me.tpRecursos.Size = New System.Drawing.Size(892, 216)
         Me.tpRecursos.TabIndex = 3
         Me.tpRecursos.Text = "Recursos"
         Me.tpRecursos.UseVisualStyleBackColor = True
@@ -711,12 +713,12 @@ Partial Class frmRegistroActividad
     Friend WithEvents btnQuitarTipoPersonal As SGC_CS.SGCButton
     Friend WithEvents btnAgregarTipoPersonal As SGC_CS.SGCButton
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
-    Friend WithEvents sbLimpiar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents sbGuardar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents sbEditar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbEditar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbEliminar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbCancelar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbPresupuesto As System.Windows.Forms.ToolStripButton
     Friend WithEvents tcPlanAnual As SGC_CS.SGCTabControl
     Friend WithEvents tpRestricciones As System.Windows.Forms.TabPage
     Friend WithEvents tpTipoPersonal As System.Windows.Forms.TabPage
@@ -732,6 +734,6 @@ Partial Class frmRegistroActividad
     Friend WithEvents nudVacantes As SGC_CS.SGCNumericUpDown
     Friend WithEvents lblVacantes As SGC_CS.SGCLabel
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
-    Friend WithEvents ToolStripButton4 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbReprogramacion As System.Windows.Forms.ToolStripButton
 
 End Class
