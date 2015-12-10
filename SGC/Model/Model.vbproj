@@ -130,7 +130,6 @@
     <Compile Include="Entidades\SocioBE.vb" />
     <Compile Include="Entidades\EspacioBE.vb" />
     <Compile Include="Entidades\TipoRegistroInvitadoBE.vb" />
-    <Compile Include="Entidades\TIpoTransaccionBE.vb" />
     <Compile Include="Entidades\TransaccionBE.vb" />
     <Compile Include="Metodos\ComiteDL.vb" />
     <Compile Include="Interfaces\IComite.vb" />
