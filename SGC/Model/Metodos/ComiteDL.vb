@@ -15,7 +15,7 @@ Namespace SGC.Model.Metodos
         Public Function ListarComites() As System.Collections.Generic.List(Of Entidades.ComiteBE) Implements Interfaces.IComite.ListarComites
             Dim oListadoComites As New List(Of ComiteBE)
             Dim oComite As ComiteBE
-            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGS").ConnectionString
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
             Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_COMITES", sqlConn)
             Dim dr As SqlDataReader = Nothing
