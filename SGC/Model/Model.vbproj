@@ -97,6 +97,7 @@
     <Compile Include="Entidades\CargoComiteBE.vb" />
     <Compile Include="Entidades\CondicionSocioBE.vb" />
     <Compile Include="Entidades\FamiliaBE.vb" />
+    <Compile Include="Entidades\IncidenciaBE.vb" />
     <Compile Include="Entidades\InscripcionBE.vb" />
     <Compile Include="Entidades\InscripcionDetalleBE.vb" />
     <Compile Include="Entidades\InvitadoBE.vb" />
