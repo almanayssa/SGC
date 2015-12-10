@@ -1,3 +1,6 @@
-﻿Public Class PersonalBE
+﻿Namespace SGC.Model.Entidades
+    Public Class PersonalBE
 
-End Class
+    End Class
+End Namespace
+

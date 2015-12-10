@@ -1,3 +1,6 @@
-﻿Public Class DetallePresupuestoActBE
+﻿Namespace SGC.Model.Entidades
+    Public Class DetallePresupuestoActBE
 
-End Class
+    End Class
+End Namespace
+

@@ -1,5 +1,5 @@
 ﻿Namespace SGC.Model.Entidades
-    Public Class EncuestaDetalleBE
+    Public Class SeguimientoEvaluacionPlanBE
 
     End Class
 End Namespace

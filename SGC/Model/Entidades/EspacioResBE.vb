@@ -1,3 +1,6 @@
-﻿Public Class EspacioResBE
+﻿Namespace SGC.Model.Entidades
+    Public Class EspacioResBE
 
-End Class
+    End Class
+End Namespace
+

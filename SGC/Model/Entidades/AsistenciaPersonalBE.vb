@@ -1,5 +1,5 @@
 ﻿Namespace SGC.Model.Entidades
-    Public Class EncuestaDetalleBE
+    Public Class AsistenciaPersonalBE
 
     End Class
 End Namespace

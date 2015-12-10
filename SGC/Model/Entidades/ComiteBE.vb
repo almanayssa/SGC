@@ -1,11 +1,7 @@
 ﻿Namespace SGS.Model.Entidades
-
     Public Class ComiteBE
 
         Private _id_comite As String
-        Private _nombre As String
-        Private _cta_contable As String
-
         Public Property id_comite() As String
             Get
                 Return _id_comite
@@ -15,6 +11,7 @@
             End Set
         End Property
 
+        Private _nombre As String
         Public Property nombre() As String
             Get
                 Return _nombre
@@ -24,6 +21,7 @@
             End Set
         End Property
 
+        Private _cta_contable As String
         Public Property cta_contable() As String
             Get
                 Return _cta_contable

@@ -1,3 +1,6 @@
-﻿Public Class InscripcionBE
+﻿Namespace SGC.Model.Entidades
+    Public Class InscripcionBE
 
-End Class
+    End Class
+End Namespace
+

@@ -1,3 +1,6 @@
-﻿Public Class TipoBancoBE
+﻿Namespace SGC.Model.Entidades
+    Public Class TipoBancoBE
 
-End Class
+    End Class
+End Namespace
+

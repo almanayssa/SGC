@@ -1,3 +1,6 @@
-﻿Public Class EstadoDocBE
+﻿Namespace SGC.Model.Entidades
+    Public Class EstadoDocBE
 
-End Class
+    End Class
+End Namespace
+

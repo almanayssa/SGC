@@ -1,5 +1,4 @@
 ﻿Namespace SGS.Model.Entidades
-
     Public Class PersonaBE
 
         Private _id_persona As String

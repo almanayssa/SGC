@@ -1,3 +1,6 @@
-﻿Public Class EntidadBE
+﻿Namespace SGC.Model.Entidades
+    Public Class EntidadBE
 
-End Class
+    End Class
+End Namespace
+

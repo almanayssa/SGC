@@ -1,3 +1,6 @@
-﻿Public Class PresupuestoActividadBE
+﻿Namespace SGC.Model.Entidades
+    Public Class PresupuestoActividadBE
 
-End Class
+    End Class
+End Namespace
+

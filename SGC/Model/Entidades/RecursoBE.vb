@@ -1,3 +1,6 @@
-﻿Public Class RecursoBE
+﻿Namespace SGC.Model.Entidades
+    Public Class RecursoBE
 
-End Class
+    End Class
+End Namespace
+

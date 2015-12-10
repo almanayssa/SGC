@@ -1,3 +1,6 @@
-﻿Public Class DocVenBE
+﻿Namespace SGC.Model.Entidades
+    Public Class DocVenBE
 
-End Class
+    End Class
+End Namespace
+

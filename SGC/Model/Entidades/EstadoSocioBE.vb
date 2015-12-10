@@ -1,3 +1,6 @@
-﻿Public Class EstadoSocioBE
+﻿Namespace SGC.Model.Entidades
+    Public Class EstadoSocioBE
 
-End Class
+    End Class
+End Namespace
+

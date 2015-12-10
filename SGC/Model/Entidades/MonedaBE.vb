@@ -1,3 +1,6 @@
-﻿Public Class MonedaBE
+﻿Namespace SGC.Model.Entidades
+    Public Class MonedaBE
 
-End Class
+    End Class
+End Namespace
+

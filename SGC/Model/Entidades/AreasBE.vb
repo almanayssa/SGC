@@ -1,5 +1,4 @@
 ﻿Namespace SGC.Model.Entidades
-
     Public Class AreasBE
 
         Private _id_area As Integer

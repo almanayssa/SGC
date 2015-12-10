@@ -1,3 +1,6 @@
-﻿Public Class TransaccionBE
+﻿Namespace SGC.Model.Entidades
+    Public Class TransaccionBE
 
-End Class
+    End Class
+End Namespace
+

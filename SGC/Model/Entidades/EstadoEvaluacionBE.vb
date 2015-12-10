@@ -1,3 +1,6 @@
-﻿Public Class EstadoEvaluacionBE
+﻿Namespace SGC.Model.Entidades
+    Public Class EstadoEvaluacionBE
 
-End Class
+    End Class
+End Namespace
+

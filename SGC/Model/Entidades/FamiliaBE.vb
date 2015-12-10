@@ -1,3 +1,6 @@
-﻿Public Class FamiliaBE
+﻿Namespace SGC.Model.Entidades
+    Public Class FamiliaBE
 
-End Class
+    End Class
+End Namespace
+

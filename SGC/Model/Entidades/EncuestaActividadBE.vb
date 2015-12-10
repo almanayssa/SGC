@@ -1,3 +1,6 @@
-﻿Public Class EncuestaActividadBE
+﻿Namespace SGC.Model.Entidades
+    Public Class EncuestaActividadBE
 
-End Class
+    End Class
+End Namespace
+

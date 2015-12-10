@@ -81,13 +81,113 @@
             End Set
         End Property
 
-        Private newPropertyValue As String
-        Public Property NewProperty() As String
+        Private _id_correlativo As String
+        Public Property id_correlativo() As String
             Get
-                Return newPropertyValue
+                Return _id_correlativo
             End Get
             Set(ByVal value As String)
-                newPropertyValue = value
+                _id_correlativo = value
+            End Set
+        End Property
+
+        Private _id_tipo_doc As String
+        Public Property id_tipo_doc() As String
+            Get
+                Return _id_tipo_doc
+            End Get
+            Set(ByVal value As String)
+                _id_tipo_doc = value
+            End Set
+        End Property
+
+        Private _id_articulo As Integer
+        Public Property id_articulo() As Integer
+            Get
+                Return _id_articulo
+            End Get
+            Set(ByVal value As Integer)
+                _id_articulo = value
+            End Set
+        End Property
+
+        Private _id_subconcepto As Integer
+        Public Property id_subconcepto() As Integer
+            Get
+                Return _id_subconcepto
+            End Get
+            Set(ByVal value As Integer)
+                _id_subconcepto = value
+            End Set
+        End Property
+
+        Private _id_concepto As Integer
+        Public Property id_concepto() As Integer
+            Get
+                Return _id_concepto
+            End Get
+            Set(ByVal value As Integer)
+                _id_concepto = value
+            End Set
+        End Property
+
+        Private _id_moneda As String
+        Public Property id_moneda() As String
+            Get
+                Return _id_moneda
+            End Get
+            Set(ByVal value As String)
+                _id_moneda = value
+            End Set
+        End Property
+
+        Private _precio_art_pro As Decimal
+        Public Property precio_art_pro() As Decimal
+            Get
+                Return _precio_art_pro
+            End Get
+            Set(ByVal value As Decimal)
+                _precio_art_pro = value
+            End Set
+        End Property
+
+        Private _cant_art_pro As Integer
+        Public Property cant_art_pro() As Integer
+            Get
+                Return _cant_art_pro
+            End Get
+            Set(ByVal value As Integer)
+                _cant_art_pro = value
+            End Set
+        End Property
+
+        Private _obs_art_pro As String
+        Public Property obs_art_pro() As String
+            Get
+                Return _obs_art_pro
+            End Get
+            Set(ByVal value As String)
+                _obs_art_pro = value
+            End Set
+        End Property
+
+        Private _id_provision As String
+        Public Property id_provision() As String
+            Get
+                Return _id_provision
+            End Get
+            Set(ByVal value As String)
+                _id_provision = value
+            End Set
+        End Property
+
+        Private _fec_ven_pro As DateTime
+        Public Property fec_ven_pro() As DateTime
+            Get
+                Return _fec_ven_pro
+            End Get
+            Set(ByVal value As DateTime)
+                _fec_ven_pro = value
             End Set
         End Property
 

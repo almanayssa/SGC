@@ -1,3 +1,6 @@
-﻿Public Class EstadoEspacioBE
+﻿Namespace SGC.Model.Entidades
+    Public Class EstadoEspacioBE
 
-End Class
+    End Class
+End Namespace
+

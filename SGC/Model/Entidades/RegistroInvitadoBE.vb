@@ -1,3 +1,6 @@
-﻿Public Class RegistroInvitadoBE
+﻿Namespace SGC.Model.Entidades
+    Public Class RegistroInvitadoBE
 
-End Class
+    End Class
+End Namespace
+

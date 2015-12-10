@@ -1,3 +1,6 @@
-﻿Public Class EstadoInvitadoBE
+﻿Namespace SGC.Model.Entidades
+    Public Class EstadoInvitadoBE
 
-End Class
+    End Class
+End Namespace
+

@@ -1,3 +1,6 @@
-﻿Public Class PersonalXActividadBE
+﻿Namespace SGC.Model.Entidades
+    Public Class PersonalXActividadBE
 
-End Class
+    End Class
+End Namespace
+

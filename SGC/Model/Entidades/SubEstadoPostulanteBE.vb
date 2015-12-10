@@ -1,3 +1,6 @@
-﻿Public Class SubEstadoPostulanteBE
+﻿Namespace SGC.Model.Entidades
+    Public Class SubEstadoPostulanteBE
 
-End Class
+    End Class
+End Namespace
+
