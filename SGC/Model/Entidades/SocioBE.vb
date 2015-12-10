@@ -2,18 +2,6 @@
     Public Class SocioBE
 
         Private _id_socio As String
-        Private _id_persona As String
-        Private _id_tipo As String
-        Private _id_condicion As String
-        Private _id_estado As String
-        Private _fec_reg As Date
-        Private _id_subestado As String
-        Private _id_accion As String
-        Private _flg_carnet As Boolean
-        Private _cant_inv_lib As Integer
-        Private _contrasena As String
-        Private _id_carnet As String
-
         Public Property id_socio As String
             Get
                 Return _id_socio
@@ -23,6 +11,7 @@
             End Set
         End Property
 
+        Private _id_persona As String
         Public Property id_persona As String
             Get
                 Return _id_persona
@@ -32,6 +21,7 @@
             End Set
         End Property
 
+        Private _id_tipo As String
         Public Property id_tipo As String
             Get
                 Return _id_tipo
@@ -41,6 +31,7 @@
             End Set
         End Property
 
+        Private _id_condicion As String
         Public Property id_condicion As String
             Get
                 Return _id_condicion
@@ -50,6 +41,7 @@
             End Set
         End Property
 
+        Private _id_estado As String
         Public Property id_estado As String
             Get
                 Return _id_estado
@@ -59,15 +51,17 @@
             End Set
         End Property
 
-        Public Property fec_reg As Date
+        Private _fec_reg As DateTime
+        Public Property fec_reg As DateTime
             Get
                 Return _fec_reg
             End Get
-            Set(ByVal value As Date)
+            Set(ByVal value As DateTime)
                 _fec_reg = value
             End Set
         End Property
 
+        Private _id_subestado As String
         Public Property id_subestado As String
             Get
                 Return _id_subestado
@@ -77,6 +71,7 @@
             End Set
         End Property
 
+        Private _id_accion As String
         Public Property id_accion As String
             Get
                 Return _id_accion
@@ -86,6 +81,7 @@
             End Set
         End Property
 
+        Private _flg_carnet As Boolean
         Public Property flg_carnet As Boolean
             Get
                 Return _flg_carnet
@@ -95,6 +91,7 @@
             End Set
         End Property
 
+        Private _cant_inv_lib As Integer
         Public Property cant_inv_lib As Integer
             Get
                 Return _cant_inv_lib
@@ -104,6 +101,7 @@
             End Set
         End Property
 
+        Private _contrasena As String
         Public Property contrasena As String
             Get
                 Return _contrasena
@@ -113,6 +111,7 @@
             End Set
         End Property
 
+        Private _id_carnet As String
         Public Property id_carnet As String
             Get
                 Return _id_carnet
