@@ -83,7 +83,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RecursoBL.vb" />
+    <Compile Include="RestriccionesBL.vb" />
     <Compile Include="TipoActividadBL.vb" />
+    <Compile Include="TipoPersonalBL.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

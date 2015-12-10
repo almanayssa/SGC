@@ -24,18 +24,16 @@ Partial Class frmBuscarActividad
         Me.gbxFiltros = New SGC_CS.SGCGroupBox(Me.components)
         Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
-        Me.lblFechaRealizacionA = New SGC_CS.SGCLabel(Me.components)
-        Me.lblFechaCreacionA = New SGC_CS.SGCLabel(Me.components)
-        Me.dtpFecRealizacionHasta = New SGC_CS.SGCDateTimePicker(Me.components)
-        Me.dtpFecRealizacionDesde = New SGC_CS.SGCDateTimePicker(Me.components)
-        Me.dtpFecCreacionHasta = New SGC_CS.SGCDateTimePicker(Me.components)
-        Me.dtpFecCreacionDesde = New SGC_CS.SGCDateTimePicker(Me.components)
         Me.lblNombre = New SGC_CS.SGCLabel(Me.components)
-        Me.lblFechaRealizacion = New SGC_CS.SGCLabel(Me.components)
         Me.lblComite = New SGC_CS.SGCLabel(Me.components)
-        Me.lblFechaCreacion = New SGC_CS.SGCLabel(Me.components)
         Me.cboComite = New SGC_CS.SGCComboBox(Me.components)
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colComite = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFechaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFechaFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colHoraFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxFiltros.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,21 +42,13 @@ Partial Class frmBuscarActividad
         '
         Me.gbxFiltros.Controls.Add(Me.txtNombre)
         Me.gbxFiltros.Controls.Add(Me.btnBuscar)
-        Me.gbxFiltros.Controls.Add(Me.lblFechaRealizacionA)
-        Me.gbxFiltros.Controls.Add(Me.lblFechaCreacionA)
-        Me.gbxFiltros.Controls.Add(Me.dtpFecRealizacionHasta)
-        Me.gbxFiltros.Controls.Add(Me.dtpFecRealizacionDesde)
-        Me.gbxFiltros.Controls.Add(Me.dtpFecCreacionHasta)
-        Me.gbxFiltros.Controls.Add(Me.dtpFecCreacionDesde)
         Me.gbxFiltros.Controls.Add(Me.lblNombre)
-        Me.gbxFiltros.Controls.Add(Me.lblFechaRealizacion)
         Me.gbxFiltros.Controls.Add(Me.lblComite)
-        Me.gbxFiltros.Controls.Add(Me.lblFechaCreacion)
         Me.gbxFiltros.Controls.Add(Me.cboComite)
         Me.gbxFiltros.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxFiltros.Location = New System.Drawing.Point(12, 12)
         Me.gbxFiltros.Name = "gbxFiltros"
-        Me.gbxFiltros.Size = New System.Drawing.Size(392, 207)
+        Me.gbxFiltros.Size = New System.Drawing.Size(645, 131)
         Me.gbxFiltros.TabIndex = 19
         Me.gbxFiltros.TabStop = False
         Me.gbxFiltros.Text = "Filtros"
@@ -69,7 +59,7 @@ Partial Class frmBuscarActividad
         Me.txtNombre.Enabled = False
         Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
-        Me.txtNombre.Location = New System.Drawing.Point(153, 127)
+        Me.txtNombre.Location = New System.Drawing.Point(153, 58)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(121, 26)
         Me.txtNombre.TabIndex = 23
@@ -81,7 +71,7 @@ Partial Class frmBuscarActividad
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnBuscar.Location = New System.Drawing.Point(153, 159)
+        Me.btnBuscar.Location = New System.Drawing.Point(153, 90)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(75, 31)
         Me.btnBuscar.TabIndex = 20
@@ -89,85 +79,16 @@ Partial Class frmBuscarActividad
         Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'lblFechaRealizacionA
-        '
-        Me.lblFechaRealizacionA.AutoSize = True
-        Me.lblFechaRealizacionA.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaRealizacionA.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblFechaRealizacionA.Location = New System.Drawing.Point(261, 101)
-        Me.lblFechaRealizacionA.Name = "lblFechaRealizacionA"
-        Me.lblFechaRealizacionA.Size = New System.Drawing.Size(15, 18)
-        Me.lblFechaRealizacionA.TabIndex = 21
-        Me.lblFechaRealizacionA.Text = "a"
-        '
-        'lblFechaCreacionA
-        '
-        Me.lblFechaCreacionA.AutoSize = True
-        Me.lblFechaCreacionA.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaCreacionA.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblFechaCreacionA.Location = New System.Drawing.Point(261, 67)
-        Me.lblFechaCreacionA.Name = "lblFechaCreacionA"
-        Me.lblFechaCreacionA.Size = New System.Drawing.Size(15, 18)
-        Me.lblFechaCreacionA.TabIndex = 20
-        Me.lblFechaCreacionA.Text = "a"
-        '
-        'dtpFecRealizacionHasta
-        '
-        Me.dtpFecRealizacionHasta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFecRealizacionHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecRealizacionHasta.Location = New System.Drawing.Point(286, 95)
-        Me.dtpFecRealizacionHasta.Name = "dtpFecRealizacionHasta"
-        Me.dtpFecRealizacionHasta.Size = New System.Drawing.Size(100, 26)
-        Me.dtpFecRealizacionHasta.TabIndex = 15
-        '
-        'dtpFecRealizacionDesde
-        '
-        Me.dtpFecRealizacionDesde.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFecRealizacionDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecRealizacionDesde.Location = New System.Drawing.Point(153, 95)
-        Me.dtpFecRealizacionDesde.Name = "dtpFecRealizacionDesde"
-        Me.dtpFecRealizacionDesde.Size = New System.Drawing.Size(100, 26)
-        Me.dtpFecRealizacionDesde.TabIndex = 14
-        '
-        'dtpFecCreacionHasta
-        '
-        Me.dtpFecCreacionHasta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFecCreacionHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecCreacionHasta.Location = New System.Drawing.Point(286, 63)
-        Me.dtpFecCreacionHasta.Name = "dtpFecCreacionHasta"
-        Me.dtpFecCreacionHasta.Size = New System.Drawing.Size(100, 26)
-        Me.dtpFecCreacionHasta.TabIndex = 13
-        '
-        'dtpFecCreacionDesde
-        '
-        Me.dtpFecCreacionDesde.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFecCreacionDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecCreacionDesde.Location = New System.Drawing.Point(153, 63)
-        Me.dtpFecCreacionDesde.Name = "dtpFecCreacionDesde"
-        Me.dtpFecCreacionDesde.Size = New System.Drawing.Size(100, 26)
-        Me.dtpFecCreacionDesde.TabIndex = 12
-        '
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblNombre.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblNombre.Location = New System.Drawing.Point(20, 129)
+        Me.lblNombre.Location = New System.Drawing.Point(20, 66)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(63, 18)
         Me.lblNombre.TabIndex = 11
         Me.lblNombre.Text = "Nombre:"
-        '
-        'lblFechaRealizacion
-        '
-        Me.lblFechaRealizacion.AutoSize = True
-        Me.lblFechaRealizacion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaRealizacion.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblFechaRealizacion.Location = New System.Drawing.Point(20, 101)
-        Me.lblFechaRealizacion.Name = "lblFechaRealizacion"
-        Me.lblFechaRealizacion.Size = New System.Drawing.Size(121, 18)
-        Me.lblFechaRealizacion.TabIndex = 10
-        Me.lblFechaRealizacion.Text = "Fecha Realización:"
         '
         'lblComite
         '
@@ -179,17 +100,6 @@ Partial Class frmBuscarActividad
         Me.lblComite.Size = New System.Drawing.Size(57, 18)
         Me.lblComite.TabIndex = 6
         Me.lblComite.Text = "Comité:"
-        '
-        'lblFechaCreacion
-        '
-        Me.lblFechaCreacion.AutoSize = True
-        Me.lblFechaCreacion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFechaCreacion.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblFechaCreacion.Location = New System.Drawing.Point(20, 69)
-        Me.lblFechaCreacion.Name = "lblFechaCreacion"
-        Me.lblFechaCreacion.Size = New System.Drawing.Size(105, 18)
-        Me.lblFechaCreacion.TabIndex = 7
-        Me.lblFechaCreacion.Text = "Fecha Creación:"
         '
         'cboComite
         '
@@ -212,15 +122,46 @@ Partial Class frmBuscarActividad
         Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListado.Location = New System.Drawing.Point(12, 225)
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colComite, Me.colNombre, Me.colFechaInicio, Me.colHoraInicio, Me.colFechaFin, Me.colHoraFin})
+        Me.dgvListado.Location = New System.Drawing.Point(12, 149)
         Me.dgvListado.Name = "dgvListado"
-        Me.dgvListado.Size = New System.Drawing.Size(392, 194)
+        Me.dgvListado.Size = New System.Drawing.Size(645, 270)
         Me.dgvListado.TabIndex = 22
+        '
+        'colComite
+        '
+        Me.colComite.HeaderText = "Comité"
+        Me.colComite.Name = "colComite"
+        '
+        'colNombre
+        '
+        Me.colNombre.HeaderText = "Descripción"
+        Me.colNombre.Name = "colNombre"
+        '
+        'colFechaInicio
+        '
+        Me.colFechaInicio.HeaderText = "F. Inicio"
+        Me.colFechaInicio.Name = "colFechaInicio"
+        '
+        'colHoraInicio
+        '
+        Me.colHoraInicio.HeaderText = "H. Inicio"
+        Me.colHoraInicio.Name = "colHoraInicio"
+        '
+        'colFechaFin
+        '
+        Me.colFechaFin.HeaderText = "F. Fin"
+        Me.colFechaFin.Name = "colFechaFin"
+        '
+        'colHoraFin
+        '
+        Me.colHoraFin.HeaderText = "H. Fin"
+        Me.colHoraFin.Name = "colHoraFin"
         '
         'frmBuscarActividad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
-        Me.ClientSize = New System.Drawing.Size(425, 430)
+        Me.ClientSize = New System.Drawing.Size(666, 430)
         Me.Controls.Add(Me.dgvListado)
         Me.Controls.Add(Me.gbxFiltros)
         Me.Name = "frmBuscarActividad"
@@ -234,18 +175,16 @@ Partial Class frmBuscarActividad
     End Sub
     Friend WithEvents gbxFiltros As SGC_CS.SGCGroupBox
     Friend WithEvents lblComite As SGC_CS.SGCLabel
-    Friend WithEvents lblFechaCreacion As SGC_CS.SGCLabel
     Friend WithEvents cboComite As SGC_CS.SGCComboBox
     Friend WithEvents lblNombre As SGC_CS.SGCLabel
-    Friend WithEvents lblFechaRealizacion As SGC_CS.SGCLabel
-    Friend WithEvents lblFechaRealizacionA As SGC_CS.SGCLabel
-    Friend WithEvents lblFechaCreacionA As SGC_CS.SGCLabel
-    Friend WithEvents dtpFecRealizacionHasta As SGC_CS.SGCDateTimePicker
-    Friend WithEvents dtpFecRealizacionDesde As SGC_CS.SGCDateTimePicker
-    Friend WithEvents dtpFecCreacionHasta As SGC_CS.SGCDateTimePicker
-    Friend WithEvents dtpFecCreacionDesde As SGC_CS.SGCDateTimePicker
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
     Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
     Friend WithEvents txtNombre As SGC_CS.SGCTextBox
+    Friend WithEvents colComite As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFechaInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colHoraInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFechaFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colHoraFin As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

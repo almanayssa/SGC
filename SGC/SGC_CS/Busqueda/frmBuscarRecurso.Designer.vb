@@ -25,6 +25,7 @@ Partial Class frmBuscarRecurso
         Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
         Me.lblNombre = New SGC_CS.SGCLabel(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
+        Me.colDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
         Me.gbxFiltros.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -46,7 +47,6 @@ Partial Class frmBuscarRecurso
         'txtNombre
         '
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre.Enabled = False
         Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
         Me.txtNombre.Location = New System.Drawing.Point(132, 25)
@@ -80,17 +80,27 @@ Partial Class frmBuscarRecurso
         Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
+        'colDescripcion
+        '
+        Me.colDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcion.HeaderText = "Descripción"
+        Me.colDescripcion.Name = "colDescripcion"
+        Me.colDescripcion.ReadOnly = True
+        '
         'dgvListado
         '
         Me.dgvListado.AllowUserToAddRows = False
+        Me.dgvListado.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
         Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDescripcion})
         Me.dgvListado.Location = New System.Drawing.Point(12, 124)
         Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.ReadOnly = True
         Me.dgvListado.Size = New System.Drawing.Size(404, 223)
         Me.dgvListado.TabIndex = 26
         '
@@ -113,6 +123,7 @@ Partial Class frmBuscarRecurso
     Friend WithEvents txtNombre As SGC_CS.SGCTextBox
     Friend WithEvents lblNombre As SGC_CS.SGCLabel
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
+    Friend WithEvents colDescripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
 
 End Class

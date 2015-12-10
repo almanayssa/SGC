@@ -31,22 +31,22 @@
             End Set
         End Property
 
-        Private _hora_ini As DateTime
-        Public Property hora_ini() As DateTime
+        Private _hora_ini As TimeSpan
+        Public Property hora_ini() As TimeSpan
             Get
                 Return _hora_ini
             End Get
-            Set(ByVal value As DateTime)
+            Set(ByVal value As TimeSpan)
                 _hora_ini = value
             End Set
         End Property
 
-        Private _hora_fin As DateTime
-        Public Property hora_fin() As DateTime
+        Private _hora_fin As TimeSpan
+        Public Property hora_fin() As TimeSpan
             Get
                 Return _hora_fin
             End Get
-            Set(ByVal value As DateTime)
+            Set(ByVal value As TimeSpan)
                 _hora_fin = value
             End Set
         End Property
@@ -71,12 +71,12 @@
             End Set
         End Property
 
-        Private _id_cattipo_act As Integer
-        Public Property id_cattipo_act() As Integer
+        Private _id_cattipo_act As Integer?
+        Public Property id_cattipo_act() As Integer?
             Get
                 Return _id_cattipo_act
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_cattipo_act = value
             End Set
         End Property
@@ -180,6 +180,47 @@
                 _vacantes = value
             End Set
         End Property
+
+        Private _ListaTipoPersonal As List(Of TipoPersonalBE)
+        Public Property ListaTipoPersonal() As List(Of TipoPersonalBE)
+            Get
+                Return _ListaTipoPersonal
+            End Get
+            Set(ByVal value As List(Of TipoPersonalBE))
+                _ListaTipoPersonal = value
+            End Set
+        End Property
+
+        Private _ListaRecursos As List(Of RecursoBE)
+        Public Property ListaRecursos() As List(Of RecursoBE)
+            Get
+                Return _ListaRecursos
+            End Get
+            Set(ByVal value As List(Of RecursoBE))
+                _ListaRecursos = value
+            End Set
+        End Property
+
+        Private _ListaRestricciones As List(Of RestriccionesBE)
+        Public Property ListaRestricciones() As List(Of RestriccionesBE)
+            Get
+                Return _ListaRestricciones
+            End Get
+            Set(ByVal value As List(Of RestriccionesBE))
+                _ListaRestricciones = value
+            End Set
+        End Property
+
+        Private _nombrecomite As String
+        Public Property nombrecomite() As String
+            Get
+                Return _nombrecomite
+            End Get
+            Set(ByVal value As String)
+                _nombrecomite = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 

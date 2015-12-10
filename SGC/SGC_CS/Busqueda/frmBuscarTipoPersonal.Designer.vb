@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmBuscarPersonal
+Partial Class frmBuscarTipoPersonal
     Inherits SGC_CS.frmPopup
 
     'Form overrides dispose to clean up the component list.

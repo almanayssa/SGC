@@ -26,7 +26,7 @@ Partial Class frmRegistroActividad
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
+        Me.btnBuscarActividad = New SGC_CS.SGCButton(Me.components)
         Me.nudVacantes = New SGC_CS.SGCNumericUpDown(Me.components)
         Me.lblVacantes = New SGC_CS.SGCLabel(Me.components)
         Me.lblDescripcion = New SGC_CS.SGCLabel(Me.components)
@@ -48,8 +48,6 @@ Partial Class frmRegistroActividad
         Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
         Me.btnEscoger = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.btnQuitarRestriccion = New SGC_CS.SGCButton(Me.components)
-        Me.btnAgregarRestriccion = New SGC_CS.SGCButton(Me.components)
         Me.dgvRestricciones = New SGC_CS.SGCDataGridView(Me.components)
         Me.btnQuitarTipoPersonal = New SGC_CS.SGCButton(Me.components)
         Me.btnAgregarTipoPersonal = New SGC_CS.SGCButton(Me.components)
@@ -65,12 +63,32 @@ Partial Class frmRegistroActividad
         Me.tpRestricciones = New System.Windows.Forms.TabPage()
         Me.tpTipoPersonal = New System.Windows.Forms.TabPage()
         Me.SgcGroupBox7 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnBuscarPersonal = New SGC_CS.SGCButton(Me.components)
+        Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
+        Me.txtCantidadPersonal = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtDescripcionPersonal = New SGC_CS.SGCTextBox(Me.components)
+        Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.dgvTipoPersonal = New SGC_CS.SGCDataGridView(Me.components)
         Me.tpRecursos = New System.Windows.Forms.TabPage()
         Me.SgcGroupBox5 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnBuscarRecurso = New SGC_CS.SGCButton(Me.components)
+        Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
+        Me.txtCantidadRecurso = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtDescripcionRecurso = New SGC_CS.SGCTextBox(Me.components)
+        Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.dgvRecursos = New SGC_CS.SGCDataGridView(Me.components)
         Me.btnQuitarRecurso = New SGC_CS.SGCButton(Me.components)
         Me.btnAgregarRecurso = New SGC_CS.SGCButton(Me.components)
+        Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.colRestriccionID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDescripcionRestriccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCondicionRestriccion = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.colCantidadRestriccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFlgCondicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDescripcionPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCantidadPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDescripcionRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCantidadRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudPago, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -91,7 +109,7 @@ Partial Class frmRegistroActividad
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
+        Me.SgcGroupBox1.Controls.Add(Me.btnBuscarActividad)
         Me.SgcGroupBox1.Controls.Add(Me.nudVacantes)
         Me.SgcGroupBox1.Controls.Add(Me.lblVacantes)
         Me.SgcGroupBox1.Controls.Add(Me.lblDescripcion)
@@ -117,20 +135,20 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Datos"
         '
-        'btnBuscar
+        'btnBuscarActividad
         '
-        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnBuscar.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.btnBuscar.Location = New System.Drawing.Point(215, 35)
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(45, 31)
-        Me.btnBuscar.TabIndex = 24
-        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBuscar.UseVisualStyleBackColor = False
+        Me.btnBuscarActividad.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscarActividad.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscarActividad.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarActividad.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarActividad.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscarActividad.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.btnBuscarActividad.Location = New System.Drawing.Point(215, 35)
+        Me.btnBuscarActividad.Name = "btnBuscarActividad"
+        Me.btnBuscarActividad.Size = New System.Drawing.Size(45, 31)
+        Me.btnBuscarActividad.TabIndex = 24
+        Me.btnBuscarActividad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscarActividad.UseVisualStyleBackColor = False
         '
         'nudVacantes
         '
@@ -356,8 +374,6 @@ Partial Class frmRegistroActividad
         '
         'SgcGroupBox3
         '
-        Me.SgcGroupBox3.Controls.Add(Me.btnQuitarRestriccion)
-        Me.SgcGroupBox3.Controls.Add(Me.btnAgregarRestriccion)
         Me.SgcGroupBox3.Controls.Add(Me.dgvRestricciones)
         Me.SgcGroupBox3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox3.Location = New System.Drawing.Point(11, 3)
@@ -366,36 +382,6 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox3.TabIndex = 10
         Me.SgcGroupBox3.TabStop = False
         Me.SgcGroupBox3.Text = "Restricciones"
-        '
-        'btnQuitarRestriccion
-        '
-        Me.btnQuitarRestriccion.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnQuitarRestriccion.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnQuitarRestriccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuitarRestriccion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuitarRestriccion.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnQuitarRestriccion.Location = New System.Drawing.Point(778, 176)
-        Me.btnQuitarRestriccion.Name = "btnQuitarRestriccion"
-        Me.btnQuitarRestriccion.Size = New System.Drawing.Size(75, 31)
-        Me.btnQuitarRestriccion.TabIndex = 12
-        Me.btnQuitarRestriccion.Text = "Quitar"
-        Me.btnQuitarRestriccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnQuitarRestriccion.UseVisualStyleBackColor = False
-        '
-        'btnAgregarRestriccion
-        '
-        Me.btnAgregarRestriccion.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAgregarRestriccion.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnAgregarRestriccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarRestriccion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarRestriccion.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnAgregarRestriccion.Location = New System.Drawing.Point(697, 176)
-        Me.btnAgregarRestriccion.Name = "btnAgregarRestriccion"
-        Me.btnAgregarRestriccion.Size = New System.Drawing.Size(75, 31)
-        Me.btnAgregarRestriccion.TabIndex = 11
-        Me.btnAgregarRestriccion.Text = "Agregar"
-        Me.btnAgregarRestriccion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAgregarRestriccion.UseVisualStyleBackColor = False
         '
         'dgvRestricciones
         '
@@ -406,9 +392,10 @@ Partial Class frmRegistroActividad
         Me.dgvRestricciones.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRestricciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRestricciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRestricciones.Location = New System.Drawing.Point(17, 25)
+        Me.dgvRestricciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSeleccionar, Me.colRestriccionID, Me.colDescripcionRestriccion, Me.colCondicionRestriccion, Me.colCantidadRestriccion, Me.colFlgCondicion})
+        Me.dgvRestricciones.Location = New System.Drawing.Point(17, 21)
         Me.dgvRestricciones.Name = "dgvRestricciones"
-        Me.dgvRestricciones.Size = New System.Drawing.Size(836, 145)
+        Me.dgvRestricciones.Size = New System.Drawing.Size(836, 182)
         Me.dgvRestricciones.TabIndex = 3
         '
         'btnQuitarTipoPersonal
@@ -418,9 +405,10 @@ Partial Class frmRegistroActividad
         Me.btnQuitarTipoPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnQuitarTipoPersonal.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnQuitarTipoPersonal.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnQuitarTipoPersonal.Location = New System.Drawing.Point(365, 62)
+        Me.btnQuitarTipoPersonal.Image = Global.SGC_CS.My.Resources.Resources.btn_eliminar
+        Me.btnQuitarTipoPersonal.Location = New System.Drawing.Point(292, 52)
         Me.btnQuitarTipoPersonal.Name = "btnQuitarTipoPersonal"
-        Me.btnQuitarTipoPersonal.Size = New System.Drawing.Size(75, 31)
+        Me.btnQuitarTipoPersonal.Size = New System.Drawing.Size(90, 31)
         Me.btnQuitarTipoPersonal.TabIndex = 12
         Me.btnQuitarTipoPersonal.Text = "Quitar"
         Me.btnQuitarTipoPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -433,9 +421,10 @@ Partial Class frmRegistroActividad
         Me.btnAgregarTipoPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregarTipoPersonal.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarTipoPersonal.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnAgregarTipoPersonal.Location = New System.Drawing.Point(365, 25)
+        Me.btnAgregarTipoPersonal.Image = Global.SGC_CS.My.Resources.Resources.btn_agregar
+        Me.btnAgregarTipoPersonal.Location = New System.Drawing.Point(292, 17)
         Me.btnAgregarTipoPersonal.Name = "btnAgregarTipoPersonal"
-        Me.btnAgregarTipoPersonal.Size = New System.Drawing.Size(75, 31)
+        Me.btnAgregarTipoPersonal.Size = New System.Drawing.Size(90, 31)
         Me.btnAgregarTipoPersonal.TabIndex = 12
         Me.btnAgregarTipoPersonal.Text = "Agregar"
         Me.btnAgregarTipoPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -537,7 +526,7 @@ Partial Class frmRegistroActividad
         Me.tcPlanAnual.Location = New System.Drawing.Point(60, 323)
         Me.tcPlanAnual.Name = "tcPlanAnual"
         Me.tcPlanAnual.SelectedIndex = 0
-        Me.tcPlanAnual.Size = New System.Drawing.Size(900, 247)
+        Me.tcPlanAnual.Size = New System.Drawing.Size(900, 257)
         Me.tcPlanAnual.TabIndex = 18
         '
         'tpRestricciones
@@ -546,7 +535,7 @@ Partial Class frmRegistroActividad
         Me.tpRestricciones.Location = New System.Drawing.Point(4, 27)
         Me.tpRestricciones.Name = "tpRestricciones"
         Me.tpRestricciones.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpRestricciones.Size = New System.Drawing.Size(892, 216)
+        Me.tpRestricciones.Size = New System.Drawing.Size(892, 226)
         Me.tpRestricciones.TabIndex = 0
         Me.tpRestricciones.Text = "Restricciones"
         Me.tpRestricciones.UseVisualStyleBackColor = True
@@ -556,23 +545,85 @@ Partial Class frmRegistroActividad
         Me.tpTipoPersonal.Controls.Add(Me.SgcGroupBox7)
         Me.tpTipoPersonal.Location = New System.Drawing.Point(4, 27)
         Me.tpTipoPersonal.Name = "tpTipoPersonal"
-        Me.tpTipoPersonal.Size = New System.Drawing.Size(892, 216)
+        Me.tpTipoPersonal.Size = New System.Drawing.Size(892, 226)
         Me.tpTipoPersonal.TabIndex = 2
         Me.tpTipoPersonal.Text = "Tipo de Personal"
         Me.tpTipoPersonal.UseVisualStyleBackColor = True
         '
         'SgcGroupBox7
         '
+        Me.SgcGroupBox7.Controls.Add(Me.btnBuscarPersonal)
+        Me.SgcGroupBox7.Controls.Add(Me.SgcLabel3)
+        Me.SgcGroupBox7.Controls.Add(Me.txtCantidadPersonal)
+        Me.SgcGroupBox7.Controls.Add(Me.txtDescripcionPersonal)
+        Me.SgcGroupBox7.Controls.Add(Me.SgcLabel4)
         Me.SgcGroupBox7.Controls.Add(Me.dgvTipoPersonal)
         Me.SgcGroupBox7.Controls.Add(Me.btnQuitarTipoPersonal)
         Me.SgcGroupBox7.Controls.Add(Me.btnAgregarTipoPersonal)
         Me.SgcGroupBox7.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox7.Location = New System.Drawing.Point(9, 3)
         Me.SgcGroupBox7.Name = "SgcGroupBox7"
-        Me.SgcGroupBox7.Size = New System.Drawing.Size(454, 213)
+        Me.SgcGroupBox7.Size = New System.Drawing.Size(393, 210)
         Me.SgcGroupBox7.TabIndex = 14
         Me.SgcGroupBox7.TabStop = False
         Me.SgcGroupBox7.Text = "Tipo de Personal"
+        '
+        'btnBuscarPersonal
+        '
+        Me.btnBuscarPersonal.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscarPersonal.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscarPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarPersonal.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarPersonal.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscarPersonal.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.btnBuscarPersonal.Location = New System.Drawing.Point(241, 17)
+        Me.btnBuscarPersonal.Name = "btnBuscarPersonal"
+        Me.btnBuscarPersonal.Size = New System.Drawing.Size(45, 31)
+        Me.btnBuscarPersonal.TabIndex = 30
+        Me.btnBuscarPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscarPersonal.UseVisualStyleBackColor = False
+        '
+        'SgcLabel3
+        '
+        Me.SgcLabel3.AutoSize = True
+        Me.SgcLabel3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel3.Location = New System.Drawing.Point(12, 53)
+        Me.SgcLabel3.Name = "SgcLabel3"
+        Me.SgcLabel3.Size = New System.Drawing.Size(67, 18)
+        Me.SgcLabel3.TabIndex = 29
+        Me.SgcLabel3.Text = "Cantidad:"
+        '
+        'txtCantidadPersonal
+        '
+        Me.txtCantidadPersonal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCantidadPersonal.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidadPersonal.ForeColor = System.Drawing.Color.Black
+        Me.txtCantidadPersonal.Location = New System.Drawing.Point(96, 51)
+        Me.txtCantidadPersonal.Name = "txtCantidadPersonal"
+        Me.txtCantidadPersonal.Size = New System.Drawing.Size(48, 26)
+        Me.txtCantidadPersonal.TabIndex = 28
+        '
+        'txtDescripcionPersonal
+        '
+        Me.txtDescripcionPersonal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDescripcionPersonal.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcionPersonal.ForeColor = System.Drawing.Color.Black
+        Me.txtDescripcionPersonal.Location = New System.Drawing.Point(96, 19)
+        Me.txtDescripcionPersonal.Name = "txtDescripcionPersonal"
+        Me.txtDescripcionPersonal.Size = New System.Drawing.Size(139, 26)
+        Me.txtDescripcionPersonal.TabIndex = 27
+        '
+        'SgcLabel4
+        '
+        Me.SgcLabel4.AutoSize = True
+        Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel4.Location = New System.Drawing.Point(12, 23)
+        Me.SgcLabel4.Name = "SgcLabel4"
+        Me.SgcLabel4.Size = New System.Drawing.Size(84, 18)
+        Me.SgcLabel4.TabIndex = 26
+        Me.SgcLabel4.Text = "Descripción:"
         '
         'dgvTipoPersonal
         '
@@ -583,9 +634,10 @@ Partial Class frmRegistroActividad
         Me.dgvTipoPersonal.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvTipoPersonal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvTipoPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTipoPersonal.Location = New System.Drawing.Point(15, 25)
+        Me.dgvTipoPersonal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDescripcionPersonal, Me.colCantidadPersonal})
+        Me.dgvTipoPersonal.Location = New System.Drawing.Point(15, 89)
         Me.dgvTipoPersonal.Name = "dgvTipoPersonal"
-        Me.dgvTipoPersonal.Size = New System.Drawing.Size(342, 171)
+        Me.dgvTipoPersonal.Size = New System.Drawing.Size(367, 107)
         Me.dgvTipoPersonal.TabIndex = 1
         '
         'tpRecursos
@@ -593,23 +645,85 @@ Partial Class frmRegistroActividad
         Me.tpRecursos.Controls.Add(Me.SgcGroupBox5)
         Me.tpRecursos.Location = New System.Drawing.Point(4, 27)
         Me.tpRecursos.Name = "tpRecursos"
-        Me.tpRecursos.Size = New System.Drawing.Size(892, 216)
+        Me.tpRecursos.Size = New System.Drawing.Size(892, 226)
         Me.tpRecursos.TabIndex = 3
         Me.tpRecursos.Text = "Recursos"
         Me.tpRecursos.UseVisualStyleBackColor = True
         '
         'SgcGroupBox5
         '
+        Me.SgcGroupBox5.Controls.Add(Me.btnBuscarRecurso)
+        Me.SgcGroupBox5.Controls.Add(Me.SgcLabel2)
+        Me.SgcGroupBox5.Controls.Add(Me.txtCantidadRecurso)
+        Me.SgcGroupBox5.Controls.Add(Me.txtDescripcionRecurso)
+        Me.SgcGroupBox5.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox5.Controls.Add(Me.dgvRecursos)
         Me.SgcGroupBox5.Controls.Add(Me.btnQuitarRecurso)
         Me.SgcGroupBox5.Controls.Add(Me.btnAgregarRecurso)
         Me.SgcGroupBox5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox5.Location = New System.Drawing.Point(9, 3)
         Me.SgcGroupBox5.Name = "SgcGroupBox5"
-        Me.SgcGroupBox5.Size = New System.Drawing.Size(454, 213)
+        Me.SgcGroupBox5.Size = New System.Drawing.Size(396, 213)
         Me.SgcGroupBox5.TabIndex = 15
         Me.SgcGroupBox5.TabStop = False
         Me.SgcGroupBox5.Text = "Recursos"
+        '
+        'btnBuscarRecurso
+        '
+        Me.btnBuscarRecurso.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscarRecurso.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscarRecurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarRecurso.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarRecurso.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscarRecurso.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.btnBuscarRecurso.Location = New System.Drawing.Point(241, 16)
+        Me.btnBuscarRecurso.Name = "btnBuscarRecurso"
+        Me.btnBuscarRecurso.Size = New System.Drawing.Size(45, 31)
+        Me.btnBuscarRecurso.TabIndex = 25
+        Me.btnBuscarRecurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscarRecurso.UseVisualStyleBackColor = False
+        '
+        'SgcLabel2
+        '
+        Me.SgcLabel2.AutoSize = True
+        Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel2.Location = New System.Drawing.Point(12, 52)
+        Me.SgcLabel2.Name = "SgcLabel2"
+        Me.SgcLabel2.Size = New System.Drawing.Size(67, 18)
+        Me.SgcLabel2.TabIndex = 16
+        Me.SgcLabel2.Text = "Cantidad:"
+        '
+        'txtCantidadRecurso
+        '
+        Me.txtCantidadRecurso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCantidadRecurso.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCantidadRecurso.ForeColor = System.Drawing.Color.Black
+        Me.txtCantidadRecurso.Location = New System.Drawing.Point(96, 50)
+        Me.txtCantidadRecurso.Name = "txtCantidadRecurso"
+        Me.txtCantidadRecurso.Size = New System.Drawing.Size(48, 26)
+        Me.txtCantidadRecurso.TabIndex = 15
+        '
+        'txtDescripcionRecurso
+        '
+        Me.txtDescripcionRecurso.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDescripcionRecurso.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcionRecurso.ForeColor = System.Drawing.Color.Black
+        Me.txtDescripcionRecurso.Location = New System.Drawing.Point(96, 18)
+        Me.txtDescripcionRecurso.Name = "txtDescripcionRecurso"
+        Me.txtDescripcionRecurso.Size = New System.Drawing.Size(139, 26)
+        Me.txtDescripcionRecurso.TabIndex = 14
+        '
+        'SgcLabel1
+        '
+        Me.SgcLabel1.AutoSize = True
+        Me.SgcLabel1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel1.Location = New System.Drawing.Point(12, 22)
+        Me.SgcLabel1.Name = "SgcLabel1"
+        Me.SgcLabel1.Size = New System.Drawing.Size(84, 18)
+        Me.SgcLabel1.TabIndex = 13
+        Me.SgcLabel1.Text = "Descripción:"
         '
         'dgvRecursos
         '
@@ -620,9 +734,10 @@ Partial Class frmRegistroActividad
         Me.dgvRecursos.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRecursos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRecursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRecursos.Location = New System.Drawing.Point(15, 25)
+        Me.dgvRecursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDescripcionRecurso, Me.colCantidadRecurso})
+        Me.dgvRecursos.Location = New System.Drawing.Point(15, 88)
         Me.dgvRecursos.Name = "dgvRecursos"
-        Me.dgvRecursos.Size = New System.Drawing.Size(342, 171)
+        Me.dgvRecursos.Size = New System.Drawing.Size(366, 119)
         Me.dgvRecursos.TabIndex = 1
         '
         'btnQuitarRecurso
@@ -632,9 +747,10 @@ Partial Class frmRegistroActividad
         Me.btnQuitarRecurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnQuitarRecurso.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnQuitarRecurso.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnQuitarRecurso.Location = New System.Drawing.Point(365, 62)
+        Me.btnQuitarRecurso.Image = Global.SGC_CS.My.Resources.Resources.btn_eliminar
+        Me.btnQuitarRecurso.Location = New System.Drawing.Point(292, 51)
         Me.btnQuitarRecurso.Name = "btnQuitarRecurso"
-        Me.btnQuitarRecurso.Size = New System.Drawing.Size(75, 31)
+        Me.btnQuitarRecurso.Size = New System.Drawing.Size(89, 31)
         Me.btnQuitarRecurso.TabIndex = 12
         Me.btnQuitarRecurso.Text = "Quitar"
         Me.btnQuitarRecurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
@@ -647,13 +763,73 @@ Partial Class frmRegistroActividad
         Me.btnAgregarRecurso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnAgregarRecurso.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAgregarRecurso.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnAgregarRecurso.Location = New System.Drawing.Point(365, 25)
+        Me.btnAgregarRecurso.Image = Global.SGC_CS.My.Resources.Resources.btn_agregar
+        Me.btnAgregarRecurso.Location = New System.Drawing.Point(292, 16)
         Me.btnAgregarRecurso.Name = "btnAgregarRecurso"
-        Me.btnAgregarRecurso.Size = New System.Drawing.Size(75, 31)
+        Me.btnAgregarRecurso.Size = New System.Drawing.Size(89, 31)
         Me.btnAgregarRecurso.TabIndex = 12
         Me.btnAgregarRecurso.Text = "Agregar"
         Me.btnAgregarRecurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAgregarRecurso.UseVisualStyleBackColor = False
+        '
+        'colSeleccionar
+        '
+        Me.colSeleccionar.HeaderText = ""
+        Me.colSeleccionar.Name = "colSeleccionar"
+        Me.colSeleccionar.Width = 30
+        '
+        'colRestriccionID
+        '
+        Me.colRestriccionID.HeaderText = ""
+        Me.colRestriccionID.Name = "colRestriccionID"
+        Me.colRestriccionID.Visible = False
+        '
+        'colDescripcionRestriccion
+        '
+        Me.colDescripcionRestriccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcionRestriccion.HeaderText = "Descripción"
+        Me.colDescripcionRestriccion.Name = "colDescripcionRestriccion"
+        Me.colDescripcionRestriccion.ReadOnly = True
+        '
+        'colCondicionRestriccion
+        '
+        Me.colCondicionRestriccion.HeaderText = "Condición"
+        Me.colCondicionRestriccion.Name = "colCondicionRestriccion"
+        Me.colCondicionRestriccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'colCantidadRestriccion
+        '
+        Me.colCantidadRestriccion.HeaderText = "Cantidad"
+        Me.colCantidadRestriccion.MaxInputLength = 2
+        Me.colCantidadRestriccion.Name = "colCantidadRestriccion"
+        '
+        'colFlgCondicion
+        '
+        Me.colFlgCondicion.HeaderText = ""
+        Me.colFlgCondicion.Name = "colFlgCondicion"
+        Me.colFlgCondicion.Visible = False
+        '
+        'colDescripcionPersonal
+        '
+        Me.colDescripcionPersonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcionPersonal.HeaderText = "Descripción"
+        Me.colDescripcionPersonal.Name = "colDescripcionPersonal"
+        '
+        'colCantidadPersonal
+        '
+        Me.colCantidadPersonal.HeaderText = "Cantidad"
+        Me.colCantidadPersonal.Name = "colCantidadPersonal"
+        '
+        'colDescripcionRecurso
+        '
+        Me.colDescripcionRecurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcionRecurso.HeaderText = "Descripción"
+        Me.colDescripcionRecurso.Name = "colDescripcionRecurso"
+        '
+        'colCantidadRecurso
+        '
+        Me.colCantidadRecurso.HeaderText = "Cantidad"
+        Me.colCantidadRecurso.Name = "colCantidadRecurso"
         '
         'frmRegistroActividad
         '
@@ -681,9 +857,11 @@ Partial Class frmRegistroActividad
         Me.tpRestricciones.ResumeLayout(False)
         Me.tpTipoPersonal.ResumeLayout(False)
         Me.SgcGroupBox7.ResumeLayout(False)
+        Me.SgcGroupBox7.PerformLayout()
         CType(Me.dgvTipoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpRecursos.ResumeLayout(False)
         Me.SgcGroupBox5.ResumeLayout(False)
+        Me.SgcGroupBox5.PerformLayout()
         CType(Me.dgvRecursos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -729,11 +907,29 @@ Partial Class frmRegistroActividad
     Friend WithEvents dgvRecursos As SGC_CS.SGCDataGridView
     Friend WithEvents btnQuitarRecurso As SGC_CS.SGCButton
     Friend WithEvents btnAgregarRecurso As SGC_CS.SGCButton
-    Friend WithEvents btnQuitarRestriccion As SGC_CS.SGCButton
-    Friend WithEvents btnAgregarRestriccion As SGC_CS.SGCButton
     Friend WithEvents nudVacantes As SGC_CS.SGCNumericUpDown
     Friend WithEvents lblVacantes As SGC_CS.SGCLabel
-    Friend WithEvents btnBuscar As SGC_CS.SGCButton
+    Friend WithEvents btnBuscarActividad As SGC_CS.SGCButton
     Friend WithEvents tsbReprogramacion As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btnBuscarRecurso As SGC_CS.SGCButton
+    Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
+    Friend WithEvents txtCantidadRecurso As SGC_CS.SGCTextBox
+    Friend WithEvents txtDescripcionRecurso As SGC_CS.SGCTextBox
+    Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
+    Friend WithEvents btnBuscarPersonal As SGC_CS.SGCButton
+    Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
+    Friend WithEvents txtCantidadPersonal As SGC_CS.SGCTextBox
+    Friend WithEvents txtDescripcionPersonal As SGC_CS.SGCTextBox
+    Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
+    Friend WithEvents colSeleccionar As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents colRestriccionID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colDescripcionRestriccion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colCondicionRestriccion As System.Windows.Forms.DataGridViewComboBoxColumn
+    Friend WithEvents colCantidadRestriccion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFlgCondicion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colDescripcionPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colCantidadPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colDescripcionRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colCantidadRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

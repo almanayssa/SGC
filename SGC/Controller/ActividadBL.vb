@@ -38,20 +38,20 @@ Namespace SGC.Controller
         '            End Try
         '        End Function
 
-        '        Public Function ListarActividades(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
-        '            Try
-        '                Dim iActividad As IActividad
-        '                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+        Public Function ListarActividades(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
+            Try
+                Dim iActividad As IActividad
+                Dim oListadoActividades As List(Of ActividadBE) = Nothing
 
-        '                iActividad = New ActividadDL
-        '                oListadoActividades = iActividad.ListarActividades(id_comite, nombre)
+                iActividad = New ActividadDL
+                oListadoActividades = iActividad.ListarActividades(id_comite, nombre)
 
-        '                Return oListadoActividades
+                Return oListadoActividades
 
-        '            Catch ex As Exception
-        '                Return Nothing
-        '            End Try
-        '        End Function
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 
         '        Public Function ListarActividadesAInscribir(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
         '            Try
