@@ -1,4 +1,4 @@
-﻿Namespace SGS.Model.Entidades
+﻿Namespace SGC.Model.Entidades
     Public Class MaestroTipoPostulanteBE
 
         Private _id_tipo As String

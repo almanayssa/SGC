@@ -1,4 +1,4 @@
-﻿Namespace SGS.Model.Entidades
+﻿Namespace SGC.Model.Entidades
     Public Class MaestroCargoComiteBE
 
         Private _id_cargo As Integer

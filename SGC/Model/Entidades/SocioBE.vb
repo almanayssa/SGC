@@ -1,4 +1,4 @@
-﻿Namespace SGS.Model.Entidades
+﻿Namespace SGC.Model.Entidades
     Public Class SocioBE
 
         Private _id_socio As String

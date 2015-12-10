@@ -1,4 +1,4 @@
-﻿Namespace SGS.Model.Entidades
+﻿Namespace SGC.Model.Entidades
     Public Class PlanAnualBE
 
         Private _id_plan As Integer

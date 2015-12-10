@@ -1,4 +1,4 @@
-﻿Namespace SGS.Model.Entidades
+﻿Namespace SGC.Model.Entidades
     Public Class ComiteBE
 
         Private _id_comite As String

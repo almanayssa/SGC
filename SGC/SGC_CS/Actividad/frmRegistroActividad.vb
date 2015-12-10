@@ -7,7 +7,8 @@ Public Class frmRegistroActividad
     End Sub
 
     Private Sub CargarComites()
-        Dim comites As ArrayList
+        Dim comites As List(Of ComiteBE)
+
     End Sub
 
     Private Sub CargarTipoActividad()

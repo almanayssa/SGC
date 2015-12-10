@@ -1,5 +1,5 @@
 ﻿'Imports SGS.Controller
-'Imports SGS.Model.Entidades
+'Imports SGC.Model.Entidades
 
 Public Class frmLogin
 

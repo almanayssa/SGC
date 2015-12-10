@@ -1,6 +1,6 @@
-﻿Imports SGS.Model.Entidades
+﻿Imports SGC.Model.Entidades
 
-Namespace SGS.Model.Interfaces
+Namespace SGC.Model.Interfaces
 
     Public Interface IComite
 
