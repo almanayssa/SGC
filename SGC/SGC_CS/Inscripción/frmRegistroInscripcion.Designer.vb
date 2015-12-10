@@ -28,23 +28,12 @@ Partial Class frmRegistroInscripcion
         Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcLabel12 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcTextBox4 = New SGC_CS.SGCTextBox(Me.components)
-        Me.SgcTextBox2 = New SGC_CS.SGCTextBox(Me.components)
-        Me.SgcLabel11 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox3 = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
+        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
-        Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcNumericUpDown1 = New SGC_CS.SGCNumericUpDown(Me.components)
-        Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView2 = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox4 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcButton2 = New SGC_CS.SGCButton(Me.components)
@@ -58,13 +47,18 @@ Partial Class frmRegistroInscripcion
         Me.SgcGroupBox7 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView4 = New SGC_CS.SGCDataGridView(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
+        Me.SgcTextBox2 = New SGC_CS.SGCTextBox(Me.components)
+        Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcTextBox3 = New SGC_CS.SGCTextBox(Me.components)
+        Me.SgcTextBox4 = New SGC_CS.SGCTextBox(Me.components)
+        Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.tsMenu.SuspendLayout()
-        Me.SgcGroupBox2.SuspendLayout()
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.SgcNumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SgcGroupBox3.SuspendLayout()
         CType(Me.SgcDataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox4.SuspendLayout()
         Me.SgcGroupBox5.SuspendLayout()
@@ -72,6 +66,8 @@ Partial Class frmRegistroInscripcion
         CType(Me.SgcDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox7.SuspendLayout()
         CType(Me.SgcDataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SgcGroupBox3.SuspendLayout()
+        Me.SgcGroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'tsMenu
@@ -119,17 +115,6 @@ Partial Class frmRegistroInscripcion
         Me.ToolStripButton1.Text = "Eliminar"
         Me.ToolStripButton1.Visible = False
         '
-        'SgcGroupBox2
-        '
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDataGridView1)
-        Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox2.Location = New System.Drawing.Point(608, 100)
-        Me.SgcGroupBox2.Name = "SgcGroupBox2"
-        Me.SgcGroupBox2.Size = New System.Drawing.Size(354, 137)
-        Me.SgcGroupBox2.TabIndex = 19
-        Me.SgcGroupBox2.TabStop = False
-        Me.SgcGroupBox2.Text = "Programación"
-        '
         'SgcDataGridView1
         '
         Me.SgcDataGridView1.AllowUserToAddRows = False
@@ -141,120 +126,38 @@ Partial Class frmRegistroInscripcion
         Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SgcDataGridView1.Location = New System.Drawing.Point(18, 25)
         Me.SgcDataGridView1.Name = "SgcDataGridView1"
-        Me.SgcDataGridView1.Size = New System.Drawing.Size(320, 97)
+        Me.SgcDataGridView1.Size = New System.Drawing.Size(348, 97)
         Me.SgcDataGridView1.TabIndex = 1
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel12)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox4)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox2)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel11)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox3)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox2)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel3)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
+        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox2)
+        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
+        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox1)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 100)
         Me.SgcGroupBox1.Name = "SgcGroupBox1"
-        Me.SgcGroupBox1.Size = New System.Drawing.Size(532, 209)
+        Me.SgcGroupBox1.Size = New System.Drawing.Size(504, 209)
         Me.SgcGroupBox1.TabIndex = 18
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Actividad"
         '
-        'SgcLabel12
+        'SgcButton1
         '
-        Me.SgcLabel12.AutoSize = True
-        Me.SgcLabel12.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel12.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel12.Location = New System.Drawing.Point(19, 168)
-        Me.SgcLabel12.Name = "SgcLabel12"
-        Me.SgcLabel12.Size = New System.Drawing.Size(84, 18)
-        Me.SgcLabel12.TabIndex = 20
-        Me.SgcLabel12.Text = "Descripción:"
-        '
-        'SgcTextBox4
-        '
-        Me.SgcTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox4.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox4.Location = New System.Drawing.Point(109, 166)
-        Me.SgcTextBox4.Name = "SgcTextBox4"
-        Me.SgcTextBox4.Size = New System.Drawing.Size(384, 26)
-        Me.SgcTextBox4.TabIndex = 19
-        '
-        'SgcTextBox2
-        '
-        Me.SgcTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox2.Location = New System.Drawing.Point(109, 134)
-        Me.SgcTextBox2.Name = "SgcTextBox2"
-        Me.SgcTextBox2.Size = New System.Drawing.Size(384, 26)
-        Me.SgcTextBox2.TabIndex = 17
-        '
-        'SgcLabel11
-        '
-        Me.SgcLabel11.AutoSize = True
-        Me.SgcLabel11.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel11.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel11.Location = New System.Drawing.Point(19, 136)
-        Me.SgcLabel11.Name = "SgcLabel11"
-        Me.SgcLabel11.Size = New System.Drawing.Size(63, 18)
-        Me.SgcLabel11.TabIndex = 16
-        Me.SgcLabel11.Text = "Nombre:"
-        '
-        'SgcComboBox3
-        '
-        Me.SgcComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox3.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox3.FormattingEnabled = True
-        Me.SgcComboBox3.Location = New System.Drawing.Point(369, 101)
-        Me.SgcComboBox3.Name = "SgcComboBox3"
-        Me.SgcComboBox3.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox3.TabIndex = 7
-        '
-        'SgcLabel4
-        '
-        Me.SgcLabel4.AutoSize = True
-        Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel4.Location = New System.Drawing.Point(279, 104)
-        Me.SgcLabel4.Name = "SgcLabel4"
-        Me.SgcLabel4.Size = New System.Drawing.Size(71, 18)
-        Me.SgcLabel4.TabIndex = 6
-        Me.SgcLabel4.Text = "Categoria:"
-        '
-        'SgcComboBox2
-        '
-        Me.SgcComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox2.FormattingEnabled = True
-        Me.SgcComboBox2.Location = New System.Drawing.Point(109, 101)
-        Me.SgcComboBox2.Name = "SgcComboBox2"
-        Me.SgcComboBox2.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox2.TabIndex = 5
-        '
-        'SgcComboBox1
-        '
-        Me.SgcComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox1.FormattingEnabled = True
-        Me.SgcComboBox1.Location = New System.Drawing.Point(109, 69)
-        Me.SgcComboBox1.Name = "SgcComboBox1"
-        Me.SgcComboBox1.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox1.TabIndex = 4
+        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.SgcButton1.Location = New System.Drawing.Point(215, 33)
+        Me.SgcButton1.Name = "SgcButton1"
+        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
+        Me.SgcButton1.TabIndex = 25
+        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton1.UseVisualStyleBackColor = False
         '
         'SgcTextBox1
         '
@@ -265,28 +168,6 @@ Partial Class frmRegistroInscripcion
         Me.SgcTextBox1.Name = "SgcTextBox1"
         Me.SgcTextBox1.Size = New System.Drawing.Size(100, 26)
         Me.SgcTextBox1.TabIndex = 3
-        '
-        'SgcLabel3
-        '
-        Me.SgcLabel3.AutoSize = True
-        Me.SgcLabel3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel3.Location = New System.Drawing.Point(19, 104)
-        Me.SgcLabel3.Name = "SgcLabel3"
-        Me.SgcLabel3.Size = New System.Drawing.Size(39, 18)
-        Me.SgcLabel3.TabIndex = 2
-        Me.SgcLabel3.Text = "Tipo:"
-        '
-        'SgcLabel2
-        '
-        Me.SgcLabel2.AutoSize = True
-        Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel2.Location = New System.Drawing.Point(19, 72)
-        Me.SgcLabel2.Name = "SgcLabel2"
-        Me.SgcLabel2.Size = New System.Drawing.Size(57, 18)
-        Me.SgcLabel2.TabIndex = 1
-        Me.SgcLabel2.Text = "Comite:"
         '
         'SgcLabel1
         '
@@ -301,21 +182,10 @@ Partial Class frmRegistroInscripcion
         '
         'SgcNumericUpDown1
         '
-        Me.SgcNumericUpDown1.Location = New System.Drawing.Point(207, 25)
+        Me.SgcNumericUpDown1.Location = New System.Drawing.Point(297, 24)
         Me.SgcNumericUpDown1.Name = "SgcNumericUpDown1"
         Me.SgcNumericUpDown1.Size = New System.Drawing.Size(69, 26)
         Me.SgcNumericUpDown1.TabIndex = 11
-        '
-        'SgcGroupBox3
-        '
-        Me.SgcGroupBox3.Controls.Add(Me.SgcDataGridView2)
-        Me.SgcGroupBox3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox3.Location = New System.Drawing.Point(608, 243)
-        Me.SgcGroupBox3.Name = "SgcGroupBox3"
-        Me.SgcGroupBox3.Size = New System.Drawing.Size(354, 137)
-        Me.SgcGroupBox3.TabIndex = 21
-        Me.SgcGroupBox3.TabStop = False
-        Me.SgcGroupBox3.Text = "Restricciones"
         '
         'SgcDataGridView2
         '
@@ -328,7 +198,7 @@ Partial Class frmRegistroInscripcion
         Me.SgcDataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SgcDataGridView2.Location = New System.Drawing.Point(18, 25)
         Me.SgcDataGridView2.Name = "SgcDataGridView2"
-        Me.SgcDataGridView2.Size = New System.Drawing.Size(320, 97)
+        Me.SgcDataGridView2.Size = New System.Drawing.Size(348, 97)
         Me.SgcDataGridView2.TabIndex = 1
         '
         'SgcGroupBox4
@@ -341,7 +211,7 @@ Partial Class frmRegistroInscripcion
         Me.SgcGroupBox4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox4.Location = New System.Drawing.Point(60, 315)
         Me.SgcGroupBox4.Name = "SgcGroupBox4"
-        Me.SgcGroupBox4.Size = New System.Drawing.Size(532, 145)
+        Me.SgcGroupBox4.Size = New System.Drawing.Size(504, 135)
         Me.SgcGroupBox4.TabIndex = 22
         Me.SgcGroupBox4.TabStop = False
         Me.SgcGroupBox4.Text = "Socio"
@@ -353,11 +223,11 @@ Partial Class frmRegistroInscripcion
         Me.SgcButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SgcButton2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcButton2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton2.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
         Me.SgcButton2.Location = New System.Drawing.Point(227, 33)
         Me.SgcButton2.Name = "SgcButton2"
         Me.SgcButton2.Size = New System.Drawing.Size(43, 31)
         Me.SgcButton2.TabIndex = 21
-        Me.SgcButton2.Text = "Buscar"
         Me.SgcButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.SgcButton2.UseVisualStyleBackColor = False
         '
@@ -405,22 +275,26 @@ Partial Class frmRegistroInscripcion
         '
         'SgcGroupBox5
         '
+        Me.SgcGroupBox5.Controls.Add(Me.SgcLabel4)
+        Me.SgcGroupBox5.Controls.Add(Me.SgcTextBox4)
+        Me.SgcGroupBox5.Controls.Add(Me.SgcTextBox3)
+        Me.SgcGroupBox5.Controls.Add(Me.SgcLabel3)
         Me.SgcGroupBox5.Controls.Add(Me.SgcNumericUpDown1)
         Me.SgcGroupBox5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox5.Location = New System.Drawing.Point(608, 386)
+        Me.SgcGroupBox5.Location = New System.Drawing.Point(580, 386)
         Me.SgcGroupBox5.Name = "SgcGroupBox5"
-        Me.SgcGroupBox5.Size = New System.Drawing.Size(354, 74)
+        Me.SgcGroupBox5.Size = New System.Drawing.Size(382, 64)
         Me.SgcGroupBox5.TabIndex = 23
         Me.SgcGroupBox5.TabStop = False
-        Me.SgcGroupBox5.Text = "Pago Comite"
+        Me.SgcGroupBox5.Text = "Pago"
         '
         'SgcGroupBox6
         '
         Me.SgcGroupBox6.Controls.Add(Me.SgcDataGridView3)
         Me.SgcGroupBox6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox6.Location = New System.Drawing.Point(60, 476)
+        Me.SgcGroupBox6.Location = New System.Drawing.Point(60, 456)
         Me.SgcGroupBox6.Name = "SgcGroupBox6"
-        Me.SgcGroupBox6.Size = New System.Drawing.Size(452, 137)
+        Me.SgcGroupBox6.Size = New System.Drawing.Size(452, 157)
         Me.SgcGroupBox6.TabIndex = 24
         Me.SgcGroupBox6.TabStop = False
         Me.SgcGroupBox6.Text = "Inscritos"
@@ -436,16 +310,16 @@ Partial Class frmRegistroInscripcion
         Me.SgcDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SgcDataGridView3.Location = New System.Drawing.Point(18, 25)
         Me.SgcDataGridView3.Name = "SgcDataGridView3"
-        Me.SgcDataGridView3.Size = New System.Drawing.Size(420, 97)
+        Me.SgcDataGridView3.Size = New System.Drawing.Size(420, 126)
         Me.SgcDataGridView3.TabIndex = 1
         '
         'SgcGroupBox7
         '
         Me.SgcGroupBox7.Controls.Add(Me.SgcDataGridView4)
         Me.SgcGroupBox7.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox7.Location = New System.Drawing.Point(518, 476)
+        Me.SgcGroupBox7.Location = New System.Drawing.Point(518, 456)
         Me.SgcGroupBox7.Name = "SgcGroupBox7"
-        Me.SgcGroupBox7.Size = New System.Drawing.Size(444, 137)
+        Me.SgcGroupBox7.Size = New System.Drawing.Size(444, 157)
         Me.SgcGroupBox7.TabIndex = 25
         Me.SgcGroupBox7.TabStop = False
         Me.SgcGroupBox7.Text = "Invitados"
@@ -461,7 +335,7 @@ Partial Class frmRegistroInscripcion
         Me.SgcDataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SgcDataGridView4.Location = New System.Drawing.Point(18, 25)
         Me.SgcDataGridView4.Name = "SgcDataGridView4"
-        Me.SgcDataGridView4.Size = New System.Drawing.Size(410, 97)
+        Me.SgcDataGridView4.Size = New System.Drawing.Size(410, 126)
         Me.SgcDataGridView4.TabIndex = 1
         '
         'lblTitulo
@@ -476,20 +350,91 @@ Partial Class frmRegistroInscripcion
         Me.lblTitulo.TabIndex = 26
         Me.lblTitulo.Text = "Inscripción de Actividad"
         '
-        'SgcButton1
+        'SgcTextBox2
         '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.SgcButton1.Location = New System.Drawing.Point(215, 33)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
-        Me.SgcButton1.TabIndex = 25
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
+        Me.SgcTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SgcTextBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcTextBox2.ForeColor = System.Drawing.Color.Black
+        Me.SgcTextBox2.Location = New System.Drawing.Point(109, 70)
+        Me.SgcTextBox2.Multiline = True
+        Me.SgcTextBox2.Name = "SgcTextBox2"
+        Me.SgcTextBox2.Size = New System.Drawing.Size(316, 127)
+        Me.SgcTextBox2.TabIndex = 26
+        '
+        'SgcLabel2
+        '
+        Me.SgcLabel2.AutoSize = True
+        Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel2.Location = New System.Drawing.Point(19, 72)
+        Me.SgcLabel2.Name = "SgcLabel2"
+        Me.SgcLabel2.Size = New System.Drawing.Size(70, 18)
+        Me.SgcLabel2.TabIndex = 27
+        Me.SgcLabel2.Text = "Actividad:"
+        '
+        'SgcLabel3
+        '
+        Me.SgcLabel3.AutoSize = True
+        Me.SgcLabel3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel3.Location = New System.Drawing.Point(15, 27)
+        Me.SgcLabel3.Name = "SgcLabel3"
+        Me.SgcLabel3.Size = New System.Drawing.Size(84, 18)
+        Me.SgcLabel3.TabIndex = 17
+        Me.SgcLabel3.Text = "Documento:"
+        '
+        'SgcTextBox3
+        '
+        Me.SgcTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SgcTextBox3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcTextBox3.ForeColor = System.Drawing.Color.Black
+        Me.SgcTextBox3.Location = New System.Drawing.Point(99, 25)
+        Me.SgcTextBox3.Name = "SgcTextBox3"
+        Me.SgcTextBox3.Size = New System.Drawing.Size(44, 26)
+        Me.SgcTextBox3.TabIndex = 27
+        '
+        'SgcTextBox4
+        '
+        Me.SgcTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SgcTextBox4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcTextBox4.ForeColor = System.Drawing.Color.Black
+        Me.SgcTextBox4.Location = New System.Drawing.Point(149, 25)
+        Me.SgcTextBox4.Name = "SgcTextBox4"
+        Me.SgcTextBox4.Size = New System.Drawing.Size(88, 26)
+        Me.SgcTextBox4.TabIndex = 28
+        '
+        'SgcLabel4
+        '
+        Me.SgcLabel4.AutoSize = True
+        Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel4.Location = New System.Drawing.Point(243, 27)
+        Me.SgcLabel4.Name = "SgcLabel4"
+        Me.SgcLabel4.Size = New System.Drawing.Size(54, 18)
+        Me.SgcLabel4.TabIndex = 29
+        Me.SgcLabel4.Text = "Monto:"
+        '
+        'SgcGroupBox3
+        '
+        Me.SgcGroupBox3.Controls.Add(Me.SgcDataGridView2)
+        Me.SgcGroupBox3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcGroupBox3.Location = New System.Drawing.Point(580, 243)
+        Me.SgcGroupBox3.Name = "SgcGroupBox3"
+        Me.SgcGroupBox3.Size = New System.Drawing.Size(382, 137)
+        Me.SgcGroupBox3.TabIndex = 21
+        Me.SgcGroupBox3.TabStop = False
+        Me.SgcGroupBox3.Text = "Restricciones"
+        '
+        'SgcGroupBox2
+        '
+        Me.SgcGroupBox2.Controls.Add(Me.SgcDataGridView1)
+        Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcGroupBox2.Location = New System.Drawing.Point(580, 100)
+        Me.SgcGroupBox2.Name = "SgcGroupBox2"
+        Me.SgcGroupBox2.Size = New System.Drawing.Size(382, 137)
+        Me.SgcGroupBox2.TabIndex = 19
+        Me.SgcGroupBox2.TabStop = False
+        Me.SgcGroupBox2.Text = "Programación"
         '
         'frmRegistroInscripcion
         '
@@ -515,20 +460,21 @@ Partial Class frmRegistroInscripcion
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.tsMenu.ResumeLayout(False)
         Me.tsMenu.PerformLayout()
-        Me.SgcGroupBox2.ResumeLayout(False)
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
         CType(Me.SgcNumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.SgcGroupBox3.ResumeLayout(False)
         CType(Me.SgcDataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox4.ResumeLayout(False)
         Me.SgcGroupBox4.PerformLayout()
         Me.SgcGroupBox5.ResumeLayout(False)
+        Me.SgcGroupBox5.PerformLayout()
         Me.SgcGroupBox6.ResumeLayout(False)
         CType(Me.SgcDataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox7.ResumeLayout(False)
         CType(Me.SgcDataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SgcGroupBox3.ResumeLayout(False)
+        Me.SgcGroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -537,23 +483,11 @@ Partial Class frmRegistroInscripcion
     Friend WithEvents sbLimpiar As System.Windows.Forms.ToolStripButton
     Friend WithEvents sbGuardar As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcLabel12 As SGC_CS.SGCLabel
-    Friend WithEvents SgcTextBox4 As SGC_CS.SGCTextBox
-    Friend WithEvents SgcTextBox2 As SGC_CS.SGCTextBox
-    Friend WithEvents SgcLabel11 As SGC_CS.SGCLabel
     Friend WithEvents SgcNumericUpDown1 As SGC_CS.SGCNumericUpDown
-    Friend WithEvents SgcComboBox3 As SGC_CS.SGCComboBox
-    Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
-    Friend WithEvents SgcComboBox2 As SGC_CS.SGCComboBox
-    Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
     Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
-    Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
-    Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
-    Friend WithEvents SgcGroupBox3 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcDataGridView2 As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox4 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcTextBox5 As SGC_CS.SGCTextBox
@@ -568,5 +502,13 @@ Partial Class frmRegistroInscripcion
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
     Friend WithEvents SgcButton2 As SGC_CS.SGCButton
     Friend WithEvents SgcButton1 As SGC_CS.SGCButton
+    Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
+    Friend WithEvents SgcTextBox2 As SGC_CS.SGCTextBox
+    Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
+    Friend WithEvents SgcTextBox4 As SGC_CS.SGCTextBox
+    Friend WithEvents SgcTextBox3 As SGC_CS.SGCTextBox
+    Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
+    Friend WithEvents SgcGroupBox3 As SGC_CS.SGCGroupBox
+    Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
 
 End Class

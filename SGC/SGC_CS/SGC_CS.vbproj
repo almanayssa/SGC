@@ -172,6 +172,12 @@
     <Compile Include="Busqueda\frmBuscarRecurso.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controles\SGCListBox.Designer.vb">
+      <DependentUpon>SGCListBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\SGCListBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\SGCPanel.Designer.vb">
       <DependentUpon>SGCPanel.vb</DependentUpon>
     </Compile>
@@ -442,6 +448,9 @@
     <EmbeddedResource Include="Controles\SGCLabel.resx">
       <DependentUpon>SGCLabel.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controles\SGCListBox.resx">
+      <DependentUpon>SGCListBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCPanel.resx">
       <DependentUpon>SGCPanel.vb</DependentUpon>
     </EmbeddedResource>
@@ -459,6 +468,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ejecucion\frmRegistroAsistenciaPersonal.resx">
       <DependentUpon>frmRegistroAsistenciaPersonal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejecucion\frmRegistroEncuesta.resx">
+      <DependentUpon>frmRegistroEncuesta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejecucion\frmRegistroIncidencias.resx">
+      <DependentUpon>frmRegistroIncidencias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="General\frmLogin.resx">
       <DependentUpon>frmLogin.vb</DependentUpon>
