@@ -83,6 +83,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PlanAnualBL.vb" />
     <Compile Include="RecursoBL.vb" />
     <Compile Include="RestriccionesBL.vb" />
     <Compile Include="TipoActividadBL.vb" />

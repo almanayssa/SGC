@@ -70,6 +70,10 @@
                 _id_comite = value
             End Set
         End Property
+
+
+        Public Property comite As String
+
     End Class
 
 End Namespace
