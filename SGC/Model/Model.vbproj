@@ -82,6 +82,7 @@
     <Compile Include="Entidades\ComiteAnualBE.vb" />
     <Compile Include="Entidades\ComiteBE.vb" />
     <Compile Include="Entidades\ConceptoBE.vb" />
+    <Compile Include="Entidades\PlanAnualEstadoBE.vb" />
     <Compile Include="Entidades\DetallePresupuestoActBE.vb" />
     <Compile Include="Entidades\DetallePresupuestoAnualBE.vb" />
     <Compile Include="Entidades\DocVenBE.vb" />

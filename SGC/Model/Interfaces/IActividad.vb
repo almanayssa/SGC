@@ -9,6 +9,7 @@ Namespace SGC.Model.Interfaces
         Function ListarActividades(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
         Function CargarActividadCabecera(ByVal id_actividad As Integer) As ActividadBE
         Function ObtenerActividad(ByVal id_actividad As Integer) As ActividadBE
+        Function ListarActividadesPlan(ByVal id_comite As String, ByVal id_plan As Integer?) As List(Of ActividadBE)
 
 #End Region
 
@@ -18,7 +19,7 @@ Namespace SGC.Model.Interfaces
         Function InsertarTipoPersonalXActividad(ByRef oTipoPersonal As TipoPersonalBE) As Integer
         Function InsertarRecursoXActividad(ByRef oRecurso As RecursoBE) As Integer
         Function InsertarRestriccionXActividad(ByRef oRestriccion As RestriccionesBE) As Integer
-
+        Function InsertarActividadesPlanXML(ByRef oPlan As PlanAnualBE) As Integer
 #End Region
 
 #Region "Update"

@@ -53,6 +53,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarActividadesPlan(ByVal id_comite As String, ByVal id_plan As Integer?) As List(Of ActividadBE)
+            Try
+                Dim iActividad As IActividad
+                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+
+                iActividad = New ActividadDL
+                oListadoActividades = iActividad.ListarActividadesPlan(id_comite, id_plan)
+
+                Return oListadoActividades
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
 #Region "Insert"
@@ -92,6 +107,19 @@ Namespace SGC.Controller
 
             Catch ex As Exception
                 Return Nothing
+            End Try
+        End Function
+
+        Public Function InsertarActividadesPlanXML(ByRef oPlan As PlanAnualBE) As Boolean
+            Try
+
+                Dim iActividad As IActividad
+                iActividad = New ActividadDL
+
+                Return iActividad.InsertarActividadesPlanXML(oPlan)
+
+            Catch ex As Exception
+                Throw ex
             End Try
         End Function
 

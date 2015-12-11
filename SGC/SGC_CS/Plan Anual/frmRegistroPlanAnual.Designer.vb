@@ -20,7 +20,7 @@ Partial Class frmRegistroPlanAnual
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
@@ -39,12 +39,11 @@ Partial Class frmRegistroPlanAnual
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.txtCodigo = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.gbDetalle = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvActividades = New SGC_CS.SGCDataGridView(Me.components)
-        Me.btnModificarDetalle = New SGC_CS.SGCButton(Me.components)
         Me.btnGrabarDetalle = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
-        Me.SgcGroupBox2.SuspendLayout()
+        Me.gbDetalle.SuspendLayout()
         CType(Me.dgvActividades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -104,6 +103,7 @@ Partial Class frmRegistroPlanAnual
         'btnPresupuesto
         '
         Me.btnPresupuesto.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnPresupuesto.Enabled = False
         Me.btnPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.Silver
         Me.btnPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnPresupuesto.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -119,6 +119,7 @@ Partial Class frmRegistroPlanAnual
         'btnEditarPlan
         '
         Me.btnEditarPlan.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnEditarPlan.Enabled = False
         Me.btnEditarPlan.FlatAppearance.BorderColor = System.Drawing.Color.Silver
         Me.btnEditarPlan.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnEditarPlan.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -276,25 +277,25 @@ Partial Class frmRegistroPlanAnual
         Me.SgcLabel1.TabIndex = 0
         Me.SgcLabel1.Text = "Plan Anual:"
         '
-        'SgcGroupBox2
+        'gbDetalle
         '
-        Me.SgcGroupBox2.Controls.Add(Me.dgvActividades)
-        Me.SgcGroupBox2.Controls.Add(Me.btnModificarDetalle)
-        Me.SgcGroupBox2.Controls.Add(Me.btnGrabarDetalle)
-        Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox2.Location = New System.Drawing.Point(60, 240)
-        Me.SgcGroupBox2.Name = "SgcGroupBox2"
-        Me.SgcGroupBox2.Size = New System.Drawing.Size(900, 423)
-        Me.SgcGroupBox2.TabIndex = 14
-        Me.SgcGroupBox2.TabStop = False
-        Me.SgcGroupBox2.Text = "Actividades"
+        Me.gbDetalle.Controls.Add(Me.dgvActividades)
+        Me.gbDetalle.Controls.Add(Me.btnGrabarDetalle)
+        Me.gbDetalle.Enabled = False
+        Me.gbDetalle.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbDetalle.Location = New System.Drawing.Point(60, 240)
+        Me.gbDetalle.Name = "gbDetalle"
+        Me.gbDetalle.Size = New System.Drawing.Size(900, 423)
+        Me.gbDetalle.TabIndex = 14
+        Me.gbDetalle.TabStop = False
+        Me.gbDetalle.Text = "Actividades"
         '
         'dgvActividades
         '
         Me.dgvActividades.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvActividades.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvActividades.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvActividades.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvActividades.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvActividades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -302,21 +303,6 @@ Partial Class frmRegistroPlanAnual
         Me.dgvActividades.Name = "dgvActividades"
         Me.dgvActividades.Size = New System.Drawing.Size(875, 340)
         Me.dgvActividades.TabIndex = 16
-        '
-        'btnModificarDetalle
-        '
-        Me.btnModificarDetalle.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnModificarDetalle.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnModificarDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificarDetalle.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnModificarDetalle.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnModificarDetalle.Location = New System.Drawing.Point(144, 25)
-        Me.btnModificarDetalle.Name = "btnModificarDetalle"
-        Me.btnModificarDetalle.Size = New System.Drawing.Size(125, 31)
-        Me.btnModificarDetalle.TabIndex = 15
-        Me.btnModificarDetalle.Text = "Modificar"
-        Me.btnModificarDetalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnModificarDetalle.UseVisualStyleBackColor = False
         '
         'btnGrabarDetalle
         '
@@ -336,16 +322,16 @@ Partial Class frmRegistroPlanAnual
         'frmRegistroPlanAnual
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
-        Me.Controls.Add(Me.SgcGroupBox2)
+        Me.Controls.Add(Me.gbDetalle)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmRegistroPlanAnual"
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
-        Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
+        Me.Controls.SetChildIndex(Me.gbDetalle, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
-        Me.SgcGroupBox2.ResumeLayout(False)
+        Me.gbDetalle.ResumeLayout(False)
         CType(Me.dgvActividades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -367,9 +353,8 @@ Partial Class frmRegistroPlanAnual
     Friend WithEvents lblEstado As SGC_CS.SGCLabel
     Friend WithEvents dtpFecFin As SGC_CS.SGCDateTimePicker
     Friend WithEvents dtpFecIni As SGC_CS.SGCDateTimePicker
-    Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
+    Friend WithEvents gbDetalle As SGC_CS.SGCGroupBox
     Friend WithEvents dgvActividades As SGC_CS.SGCDataGridView
-    Friend WithEvents btnModificarDetalle As SGC_CS.SGCButton
     Friend WithEvents btnGrabarDetalle As SGC_CS.SGCButton
     Friend WithEvents btnPresupuesto As SGC_CS.SGCButton
     Friend WithEvents btnBuscar As SGC_CS.SGCButton

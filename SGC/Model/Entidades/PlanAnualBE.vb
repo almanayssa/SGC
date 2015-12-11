@@ -1,4 +1,6 @@
-﻿Namespace SGC.Model.Entidades
+﻿Imports System.Xml
+
+Namespace SGC.Model.Entidades
     Public Class PlanAnualBE
 
         Private _id_plan As Integer
@@ -71,8 +73,63 @@
             End Set
         End Property
 
+        Private _id_estado As String
+        Public Property id_estado() As String
+            Get
+                Return _id_estado
+            End Get
+            Set(ByVal value As String)
+                _id_estado = value
+            End Set
+        End Property
+
+        Private _ListadoActividades As List(Of ActividadBE)
+        Public Property ListadoActividades As List(Of ActividadBE)
+            Get
+                Return _ListadoActividades
+            End Get
+            Set(ByVal value As List(Of ActividadBE))
+                _ListadoActividades = value
+            End Set
+        End Property
+
 
         Public Property comite As String
+        Public Property estado As String
+
+
+
+        Public Function GetActividadesPlanXML() As String
+            Dim objXMLDoc As New XmlDocument
+            Dim objNode As XmlNode
+
+            'Se crea un nodo elemento XML
+            objNode = objXMLDoc.CreateElement("ITEMS")
+
+            'Se agrega el nodo al Documento XML
+            objXMLDoc.AppendChild(objNode)
+
+            'Se itera la coleccion para generar la estructura XML
+            For Each obj As ActividadBE In ListadoActividades
+                objNode = objXMLDoc.CreateElement("ITEM")
+
+                Dim Node1 As XmlNode
+                Node1 = objXMLDoc.CreateAttribute("id_actividad")
+                Node1.Value = obj.id_actividad
+
+                Dim Node2 As XmlNode
+                Node2 = objXMLDoc.CreateAttribute("id_plan")
+                Node2.Value = obj.id_plan
+
+                objNode.Attributes.Append(Node1)
+                objNode.Attributes.Append(Node2)
+
+                objXMLDoc.DocumentElement.AppendChild(objNode)
+            Next
+
+            Return objXMLDoc.InnerXml
+        End Function
+
 
     End Class
 

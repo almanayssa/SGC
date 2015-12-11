@@ -7,6 +7,7 @@ Imports System.Data.SqlClient
 Public Class PlanAnualDL
     Implements IPlanAnual
 
+#Region "Select"
 
     Public Function ListarPlanes(ByRef oPlanFiltro As PlanAnualBE) As System.Collections.Generic.List(Of Entidades.PlanAnualBE) Implements Interfaces.IPlanAnual.ListarPlanes
         Dim oListadoPlanes As New List(Of PlanAnualBE)
@@ -41,6 +42,43 @@ Public Class PlanAnualDL
         End Try
     End Function
 
+    Public Function ObtenerPlan(id_plan As String) As SGC.Model.Entidades.PlanAnualBE Implements SGC.Model.Interfaces.IPlanAnual.ObtenerPlan
+
+        Dim oPlan As New PlanAnualBE
+        Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+        Dim sqlConn As New SqlConnection(strConn)
+        Dim sqlCmd As New SqlCommand("comite.SP_OBTENER_PLAN_ANUAL", sqlConn)
+        Dim dr As SqlDataReader = Nothing
+        sqlCmd.CommandType = CommandType.StoredProcedure
+        sqlCmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = id_plan
+
+        Try
+            sqlConn.Open()
+            dr = sqlCmd.ExecuteReader()
+
+            If dr.Read() Then
+                oPlan = New PlanAnualBE
+                oPlan.id_plan = dr("id_plan")
+                oPlan.id_comite = dr("id_comite")
+                oPlan.anio = dr("anio")
+                oPlan.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
+                oPlan.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                oPlan.id_estado = dr("id_estado")
+                oPlan.estado = dr("estado")
+
+            End If
+            dr.Close()
+            Return oPlan
+        Catch ex As System.Exception
+            Throw ex
+        Finally
+            sqlConn.Close()
+        End Try
+
+    End Function
+
+
+#End Region
 
 #Region "Insert"
 
@@ -57,6 +95,7 @@ Public Class PlanAnualDL
         sqlCmd.Parameters.Add("@anio", SqlDbType.VarChar).Value = oPlan.anio
         sqlCmd.Parameters.Add("@fec_Ini", SqlDbType.DateTime).Value = oPlan.fec_ini
         sqlCmd.Parameters.Add("@fec_fin", SqlDbType.DateTime).Value = oPlan.fec_fin
+        sqlCmd.Parameters.Add("@id_Estado", SqlDbType.VarChar).Value = oPlan.id_estado
 
         Try
             sqlConn.Open()

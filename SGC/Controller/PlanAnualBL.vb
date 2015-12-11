@@ -22,6 +22,23 @@ Namespace SGC.Controller
                 Return Nothing
             End Try
         End Function
+
+
+        Public Function ObtenerPlan(ByVal id_plan As String) As PlanAnualBE
+            Try
+                Dim iPlan As IPlanAnual
+                Dim oPlanAnual As PlanAnualBE = Nothing
+
+                iPlan = New PlanAnualDL
+                oPlanAnual = iPlan.ObtenerPlan(id_plan)
+
+                Return oPlanAnual
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
 #Region "Insert"

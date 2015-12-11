@@ -120,6 +120,48 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ListarActividadesPlan(id_comite As String, id_plan As Integer?) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesPlan
+            Dim oListadoActividades As New List(Of ActividadBE)
+            Dim oActividad As ActividadBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES_PLAN", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = IIf(id_comite = "000", DBNull.Value, id_comite)
+            sqlCmd.Parameters.Add("@id_plan", SqlDbType.VarChar).Value = IIf(id_plan Is Nothing, DBNull.Value, id_plan)
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oActividad = New ActividadBE
+                    oActividad.id_actividad = dr("id_actividad")
+                    oActividad.nombre = dr("nombre")
+                    oActividad.fec_ini = dr("fec_ini")
+                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.monto_pago = dr("monto_pago")
+                    oActividad.id_estado = dr("id_estado")
+                    oActividad.id_cattipo_act = dr("id_cattipo_act")
+                    oActividad.id_comite = dr("id_comite")
+                    oActividad.id_tipo_act = dr("id_tipo_act")
+                    oActividad.flg_plan_anual = dr("flg_plan_anual")
+                    oActividad.id_plan = IIf(dr("id_plan") Is DBNull.Value, Nothing, dr("id_plan"))
+                    oActividad.vacantes = dr("vacantes")
+                    oActividad.nombrecomite = dr("nombreComite")
+                    oListadoActividades.Add(oActividad)
+                End While
+                dr.Close()
+                Return oListadoActividades
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+
 #End Region
 
 #Region "Insert"
@@ -221,6 +263,31 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oRestriccion.id_actividad
             sqlCmd.Parameters.Add("@id_signo", SqlDbType.Int).Value = IIf(oRestriccion.id_signo = Nothing, DBNull.Value, oRestriccion.id_signo)
             sqlCmd.Parameters.Add("@valor", SqlDbType.VarChar).Value = IIf(oRestriccion.valor Is Nothing, DBNull.Value, oRestriccion.valor)
+
+            Try
+                sqlConn.Open()
+                recordId = sqlCmd.ExecuteScalar()
+
+                Return recordId
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+
+        End Function
+
+        Public Function InsertarActividadesPlanXML(ByRef oPlan As PlanAnualBE) As Integer Implements Interfaces.IActividad.InsertarActividadesPlanXML
+
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("COMITE.USP_INSERTAR_ACTIVIDADES_PLAN_XML", sqlConn)
+
+            Dim recordId As String = ""
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@idPlan", SqlDbType.Int).Value = oPlan.id_plan
+            sqlCmd.Parameters.Add("@XMLActividades", SqlDbType.Xml).Value = oPlan.GetActividadesPlanXML
+
 
             Try
                 sqlConn.Open()

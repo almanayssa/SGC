@@ -9,6 +9,8 @@ Namespace SGC.Model.Interfaces
 
         Function ListarPlanes(ByRef oPlanFiltro As PlanAnualBE) As List(Of PlanAnualBE)
 
+        Function ObtenerPlan(ByVal id_plan As String) As PlanAnualBE
+
 #End Region
 
 #Region "Insert"
