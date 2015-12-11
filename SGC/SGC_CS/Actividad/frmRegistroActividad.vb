@@ -78,6 +78,7 @@ Public Class frmRegistroActividad
         txtNombre.Enabled = False
         txtDescripcion.Enabled = False
         nudPago.Enabled = False
+        nudVacantes.Enabled = False
 
         btnBuscarPersonal.Enabled = False
         btnAgregarTipoPersonal.Enabled = False
@@ -275,6 +276,7 @@ Public Class frmRegistroActividad
         txtNombre.Text = String.Empty
         txtDescripcion.Text = String.Empty
         nudPago.Value = 0.0
+        nudVacantes.Value = 0
 
         txtDescripcionPersonal.Text = String.Empty
         txtCantidadPersonal.Text = String.Empty
@@ -352,10 +354,10 @@ Public Class frmRegistroActividad
 
         Dim affectedRows As Integer = 0
         Dim oActividad As New ActividadBE
-        'oActividad.fec_ini = Today
-        'oActividad.fec_fin = Today
-        'oActividad.hora_ini = Now.TimeOfDay
-        'oActividad.hora_fin = Now.TimeOfDay
+        oActividad.fec_ini = Today
+        oActividad.fec_fin = Today
+        oActividad.hora_ini = Now.TimeOfDay
+        oActividad.hora_fin = Now.TimeOfDay
         oActividad.monto_pago = nudPago.Value
         oActividad.id_cattipo_act = cboCategoria.SelectedValue
         oActividad.id_comite = cboComite.SelectedValue
@@ -365,6 +367,7 @@ Public Class frmRegistroActividad
         'oActividad.flg_plan_anual = chkPlanAnual.Checked
         'oActividad.flg_web = chkWeb.Checked
         oActividad.tipo_inscripcion = "A"
+        oActividad.vacantes = nudVacantes.Value
         oActividad.ListaTipoPersonal = dgvTipoPersonal.DataSource
         oActividad.ListaRecursos = dgvRecursos.DataSource
 
@@ -373,13 +376,13 @@ Public Class frmRegistroActividad
         '    oActividad.ActividadRecurrente = Actividad.ActividadRecurrente
         'End If
 
-        Dim startDateTime As DateTime = Nothing
-        Dim endDateTime As DateTime = Nothing
+        'Dim startDateTime As DateTime = Nothing
+        'Dim endDateTime As DateTime = Nothing
 
-        oActividad.fec_ini = startDateTime.Date
-        oActividad.hora_ini = startDateTime.TimeOfDay
-        oActividad.fec_fin = endDateTime.Date
-        oActividad.hora_fin = endDateTime.TimeOfDay
+        'oActividad.fec_ini = startDateTime.Date
+        'oActividad.hora_ini = startDateTime.TimeOfDay
+        'oActividad.fec_fin = endDateTime.Date
+        'oActividad.hora_fin = endDateTime.TimeOfDay
 
         For Each row As DataGridViewRow In dgvRestricciones.Rows
             Dim value As Boolean = CType(dgvRestricciones.Item(colSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)

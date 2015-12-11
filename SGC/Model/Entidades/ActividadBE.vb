@@ -161,22 +161,22 @@
             End Set
         End Property
 
-        Private _id_plan As Integer
-        Public Property id_plan() As Integer
+        Private _id_plan As Integer?
+        Public Property id_plan() As Integer?
             Get
                 Return _id_plan
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_plan = value
             End Set
         End Property
 
-        Private _vacantes As Integer
-        Public Property vacantes() As Integer
+        Private _vacantes As Integer?
+        Public Property vacantes() As Integer?
             Get
                 Return _vacantes
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _vacantes = value
             End Set
         End Property

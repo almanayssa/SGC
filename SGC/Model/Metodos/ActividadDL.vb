@@ -143,9 +143,11 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = IIf(oActividad.descripcion Is Nothing, DBNull.Value, oActividad.descripcion)
             sqlCmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = IIf(oActividad.nombre Is Nothing, DBNull.Value, oActividad.nombre)
             sqlCmd.Parameters.Add("@id_actividad_recurrente", SqlDbType.Int).Value = IIf(oActividad.id_actividad_recurrente Is Nothing, DBNull.Value, oActividad.id_actividad_recurrente)
-            sqlCmd.Parameters.Add("@flg_plan_anual", SqlDbType.Bit).Value = IIf(oActividad.flg_plan_anual Is Nothing, DBNull.Value, oActividad.flg_plan_anual)
-            sqlCmd.Parameters.Add("@flg_web", SqlDbType.Bit).Value = IIf(oActividad.flg_web Is Nothing, DBNull.Value, oActividad.flg_web)
+            sqlCmd.Parameters.Add("@flg_plan_anual", SqlDbType.Bit).Value = IIf(oActividad.flg_plan_anual Is Nothing, False, oActividad.flg_plan_anual)
+            sqlCmd.Parameters.Add("@flg_web", SqlDbType.Bit).Value = IIf(oActividad.flg_web Is Nothing, False, oActividad.flg_web)
             sqlCmd.Parameters.Add("@tipo_inscripcion", SqlDbType.Char).Value = IIf(oActividad.tipo_inscripcion Is Nothing, DBNull.Value, oActividad.tipo_inscripcion)
+            sqlCmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = IIf(oActividad.id_plan Is Nothing, DBNull.Value, oActividad.id_plan)
+            sqlCmd.Parameters.Add("@vacantes", SqlDbType.Int).Value = IIf(oActividad.vacantes Is Nothing, DBNull.Value, oActividad.vacantes)
 
             Try
                 sqlConn.Open()
