@@ -23,10 +23,10 @@ Partial Class frmPlanEvaluacionPGC
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboBuscar = New SGC_CS.SGCButton(Me.components)
+        Me.cboAnio = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboComite = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
@@ -49,10 +49,10 @@ Partial Class frmPlanEvaluacionPGC
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox2)
+        Me.SgcGroupBox1.Controls.Add(Me.cboBuscar)
+        Me.SgcGroupBox1.Controls.Add(Me.cboAnio)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox1)
+        Me.SgcGroupBox1.Controls.Add(Me.cboComite)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 70)
@@ -62,32 +62,32 @@ Partial Class frmPlanEvaluacionPGC
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Filtros"
         '
-        'SgcButton1
+        'cboBuscar
         '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Location = New System.Drawing.Point(722, 27)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(120, 31)
-        Me.SgcButton1.TabIndex = 4
-        Me.SgcButton1.Text = "Buscar"
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
+        Me.cboBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.cboBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.cboBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cboBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboBuscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.cboBuscar.Location = New System.Drawing.Point(722, 27)
+        Me.cboBuscar.Name = "cboBuscar"
+        Me.cboBuscar.Size = New System.Drawing.Size(120, 31)
+        Me.cboBuscar.TabIndex = 4
+        Me.cboBuscar.Text = "Buscar"
+        Me.cboBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.cboBuscar.UseVisualStyleBackColor = False
         '
-        'SgcComboBox2
+        'cboAnio
         '
-        Me.SgcComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox2.FormattingEnabled = True
-        Me.SgcComboBox2.Location = New System.Drawing.Point(470, 31)
-        Me.SgcComboBox2.Name = "SgcComboBox2"
-        Me.SgcComboBox2.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox2.TabIndex = 3
+        Me.cboAnio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboAnio.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboAnio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboAnio.ForeColor = System.Drawing.Color.Black
+        Me.cboAnio.FormattingEnabled = True
+        Me.cboAnio.Location = New System.Drawing.Point(470, 31)
+        Me.cboAnio.Name = "cboAnio"
+        Me.cboAnio.Size = New System.Drawing.Size(121, 26)
+        Me.cboAnio.TabIndex = 3
         '
         'SgcLabel2
         '
@@ -100,17 +100,17 @@ Partial Class frmPlanEvaluacionPGC
         Me.SgcLabel2.TabIndex = 2
         Me.SgcLabel2.Text = "Año:"
         '
-        'SgcComboBox1
+        'cboComite
         '
-        Me.SgcComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox1.FormattingEnabled = True
-        Me.SgcComboBox1.Location = New System.Drawing.Point(99, 30)
-        Me.SgcComboBox1.Name = "SgcComboBox1"
-        Me.SgcComboBox1.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox1.TabIndex = 1
+        Me.cboComite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboComite.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboComite.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboComite.ForeColor = System.Drawing.Color.Black
+        Me.cboComite.FormattingEnabled = True
+        Me.cboComite.Location = New System.Drawing.Point(99, 30)
+        Me.cboComite.Name = "cboComite"
+        Me.cboComite.Size = New System.Drawing.Size(121, 26)
+        Me.cboComite.TabIndex = 1
         '
         'SgcLabel1
         '
@@ -150,7 +150,7 @@ Partial Class frmPlanEvaluacionPGC
         '
         'frmPlanEvaluacionPGC
         '
-        Me.ClientSize = New System.Drawing.Size(1016, 738)
+        Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.Controls.Add(Me.SgcGroupBox2)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Controls.Add(Me.lblTitulo)
@@ -168,10 +168,10 @@ Partial Class frmPlanEvaluacionPGC
     End Sub
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
-    Friend WithEvents SgcComboBox2 As SGC_CS.SGCComboBox
+    Friend WithEvents cboBuscar As SGC_CS.SGCButton
+    Friend WithEvents cboAnio As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
-    Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
+    Friend WithEvents cboComite As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView

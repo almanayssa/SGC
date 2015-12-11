@@ -66,9 +66,9 @@ Public Class frmBuscarActividad
     End Sub
 
     Private Sub ListarActividades()
-        Dim ListadoActividades As List(Of ActividadBE) = bc.ListarActividades(cboComite.SelectedValue, txtNombre.Text.Trim)
-        dgvListado.DataSource = Nothing
-        dgvListado.DataSource = ListadoActividades
+        'Dim ListadoActividades As List(Of ActividadBE) = bc.ListarActividades(cboComite.SelectedValue, txtNombre.Text.Trim)
+        'dgvListado.DataSource = Nothing
+        'dgvListado.DataSource = ListadoActividades
     End Sub
 
 #End Region

@@ -24,15 +24,16 @@ Partial Class frmPresupuestoPlanAnual
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuestoPlanAnual))
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.SgcLabel5 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtMontoTotal = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcButton2 = New SGC_CS.SGCButton(Me.components)
+        Me.btnAgregar = New SGC_CS.SGCButton(Me.components)
         Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
@@ -41,7 +42,6 @@ Partial Class frmPresupuestoPlanAnual
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,7 +62,7 @@ Partial Class frmPresupuestoPlanAnual
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
+        Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel5)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel3)
@@ -75,6 +75,21 @@ Partial Class frmPresupuestoPlanAnual
         Me.SgcGroupBox1.TabIndex = 14
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Plan Anual"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscar.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.btnBuscar.Location = New System.Drawing.Point(236, 34)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(45, 31)
+        Me.btnBuscar.TabIndex = 25
+        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'SgcLabel5
         '
@@ -133,9 +148,9 @@ Partial Class frmPresupuestoPlanAnual
         '
         'SgcGroupBox2
         '
-        Me.SgcGroupBox2.Controls.Add(Me.SgcTextBox1)
+        Me.SgcGroupBox2.Controls.Add(Me.txtMontoTotal)
         Me.SgcGroupBox2.Controls.Add(Me.SgcLabel6)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcButton2)
+        Me.SgcGroupBox2.Controls.Add(Me.btnAgregar)
         Me.SgcGroupBox2.Controls.Add(Me.SgcDataGridView1)
         Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox2.Location = New System.Drawing.Point(60, 281)
@@ -145,15 +160,15 @@ Partial Class frmPresupuestoPlanAnual
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Items"
         '
-        'SgcTextBox1
+        'txtMontoTotal
         '
-        Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox1.Location = New System.Drawing.Point(717, 256)
-        Me.SgcTextBox1.Name = "SgcTextBox1"
-        Me.SgcTextBox1.Size = New System.Drawing.Size(161, 26)
-        Me.SgcTextBox1.TabIndex = 19
+        Me.txtMontoTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMontoTotal.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtMontoTotal.ForeColor = System.Drawing.Color.Black
+        Me.txtMontoTotal.Location = New System.Drawing.Point(717, 256)
+        Me.txtMontoTotal.Name = "txtMontoTotal"
+        Me.txtMontoTotal.Size = New System.Drawing.Size(161, 26)
+        Me.txtMontoTotal.TabIndex = 19
         '
         'SgcLabel6
         '
@@ -166,20 +181,20 @@ Partial Class frmPresupuestoPlanAnual
         Me.SgcLabel6.TabIndex = 19
         Me.SgcLabel6.Text = "Monto Total"
         '
-        'SgcButton2
+        'btnAgregar
         '
-        Me.SgcButton2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton2.Location = New System.Drawing.Point(13, 252)
-        Me.SgcButton2.Name = "SgcButton2"
-        Me.SgcButton2.Size = New System.Drawing.Size(75, 31)
-        Me.SgcButton2.TabIndex = 10
-        Me.SgcButton2.Text = "Agregar"
-        Me.SgcButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton2.UseVisualStyleBackColor = False
+        Me.btnAgregar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnAgregar.Location = New System.Drawing.Point(13, 252)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(75, 31)
+        Me.btnAgregar.TabIndex = 10
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'SgcDataGridView1
         '
@@ -269,21 +284,6 @@ Partial Class frmPresupuestoPlanAnual
         Me.ToolStripButton3.Size = New System.Drawing.Size(105, 34)
         Me.ToolStripButton3.Text = "Impresión"
         '
-        'SgcButton1
-        '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.SgcButton1.Location = New System.Drawing.Point(236, 34)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
-        Me.SgcButton1.TabIndex = 25
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
-        '
         'frmPresupuestoPlanAnual
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -322,10 +322,10 @@ Partial Class frmPresupuestoPlanAnual
     Friend WithEvents sbEditar As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
-    Friend WithEvents SgcButton2 As SGC_CS.SGCButton
+    Friend WithEvents txtMontoTotal As SGC_CS.SGCTextBox
+    Friend WithEvents btnAgregar As SGC_CS.SGCButton
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
     Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
+    Friend WithEvents btnBuscar As SGC_CS.SGCButton
 
 End Class

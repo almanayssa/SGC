@@ -285,6 +285,10 @@ Public Class frmRegistroActividad
 
         dgvTipoPersonal.DataSource = Nothing
         dgvRecursos.DataSource = Nothing
+
+        oPersonalPendiente = Nothing
+        oRecursoPendiente = Nothing
+
         ListarRestricciones()
     End Sub
 
@@ -572,7 +576,14 @@ Public Class frmRegistroActividad
     End Sub
 
     Private Sub btnEscoger_Click(sender As System.Object, e As System.EventArgs) Handles btnEscoger.Click
-        AgregarProgramacion()
+        Dim frmBuscarEspacio As New frmBuscarEspacio
+        frmBuscarEspacio.ShowDialog()
+
+        If frmBuscarEspacio.EspacioSeleccionado IsNot Nothing Then
+            '_id_actividad = frmBuscarActividad.ActividadSeleccionada.id_actividad
+            'CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
+            'FormularioEnModoVista()
+        End If
     End Sub
 
 #End Region

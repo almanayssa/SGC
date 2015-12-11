@@ -68,6 +68,8 @@
     <Compile Include="ActividadBL.vb" />
     <Compile Include="CatTipoActividadBL.vb" />
     <Compile Include="ComiteBL.vb" />
+    <Compile Include="EspacioBL.vb" />
+    <Compile Include="LugarBL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -86,6 +88,7 @@
     <Compile Include="PlanAnualBL.vb" />
     <Compile Include="RecursoBL.vb" />
     <Compile Include="RestriccionesBL.vb" />
+    <Compile Include="SedeBL.vb" />
     <Compile Include="SignosBL.vb" />
     <Compile Include="TipoActividadBL.vb" />
     <Compile Include="TipoPersonalBL.vb" />

@@ -45,7 +45,7 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
-        Public Function ListarActividades(ByVal id_comite As String, ByVal nombre As String) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividades
+        Public Function ListarActividades(ByVal id_comite As String, ByVal fec_ini As DateTime, ByVal fec_fin As DateTime) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividades
             Dim oListadoActividades As New List(Of ActividadBE)
             Dim oActividad As ActividadBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
@@ -53,8 +53,9 @@ Namespace SGC.Model.Metodos
             Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES", sqlConn)
             Dim dr As SqlDataReader = Nothing
             sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = IIf(id_comite = "000", DBNull.Value, id_comite)
-            sqlCmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@fec_ini", SqlDbType.DateTime).Value = fec_ini
+            sqlCmd.Parameters.Add("@fec_fin", SqlDbType.DateTime).Value = fec_fin
 
             Try
                 sqlConn.Open()
@@ -64,12 +65,17 @@ Namespace SGC.Model.Metodos
                     oActividad = New ActividadBE
                     oActividad.id_actividad = dr("id_actividad")
                     oActividad.nombre = dr("nombre")
-                    oActividad.fec_ini = dr("fec_ini")
+                    oActividad.descripcion = dr("descripcion")
+                    oActividad.id_tipo_act = dr("id_tipo_act")
+                    oActividad.desc_tipo = dr("desc_tipo")
+                    oActividad.id_cattipo_act = dr("id_cattipo_act")
+                    oActividad.desc_cat = dr("desc_cat")
+                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
                     oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
-                    oActividad.hora_ini = dr.GetTimeSpan(4)
-                    oActividad.hora_fin = dr.GetTimeSpan(5)
-                    oActividad.id_comite = dr("id_comite")
-                    oActividad.nombrecomite = dr("nombreComite")
+                    oActividad.monto_pago = dr("monto_pago")
+                    oActividad.vacantes = dr("vacantes")
+                    oActividad.id_estado = dr("id_estado")
+                    oActividad.desc_estado = dr("estado")
                     oListadoActividades.Add(oActividad)
                 End While
                 dr.Close()
@@ -324,32 +330,11 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@id_tipo_act", SqlDbType.VarChar).Value = IIf(oActividad.id_tipo_act Is Nothing, DBNull.Value, oActividad.id_tipo_act)
             sqlCmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = IIf(oActividad.descripcion Is Nothing, DBNull.Value, oActividad.descripcion)
             sqlCmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = IIf(oActividad.nombre Is Nothing, DBNull.Value, oActividad.nombre)
-            sqlCmd.Parameters.Add("@flg_plan_anual", SqlDbType.Bit).Value = IIf(oActividad.flg_plan_anual Is Nothing, DBNull.Value, oActividad.flg_plan_anual)
-            sqlCmd.Parameters.Add("@flg_web", SqlDbType.Bit).Value = IIf(oActividad.flg_web Is Nothing, DBNull.Value, oActividad.flg_web)
+            sqlCmd.Parameters.Add("@flg_plan_anual", SqlDbType.Bit).Value = IIf(oActividad.flg_plan_anual Is Nothing, False, oActividad.flg_plan_anual)
+            sqlCmd.Parameters.Add("@flg_web", SqlDbType.Bit).Value = IIf(oActividad.flg_web Is Nothing, False, oActividad.flg_web)
             sqlCmd.Parameters.Add("@tipo_inscripcion", SqlDbType.Char).Value = IIf(oActividad.tipo_inscripcion Is Nothing, DBNull.Value, oActividad.tipo_inscripcion)
-
-            Try
-                sqlConn.Open()
-                affectedRows = sqlCmd.ExecuteNonQuery
-
-                Return affectedRows
-            Catch ex As System.Exception
-                Throw ex
-            Finally
-                sqlConn.Close()
-            End Try
-        End Function
-
-        Public Function ActualizarRecursosXActividad(ByRef oRecurso As Entidades.RecursoBE) As Integer Implements Interfaces.IActividad.ActualizarRecursosXActividad
-            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
-            Dim sqlConn As New SqlConnection(strConn)
-            Dim sqlCmd As New SqlCommand("comite.SP_MODIFICAR_CANTIDADREAL_RECURSO_X_ACTIVIDAD", sqlConn)
-
-            Dim affectedRows As Integer = 0
-            sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oRecurso.id_actividad
-            sqlCmd.Parameters.Add("@id_recurso", SqlDbType.Int).Value = oRecurso.id_recurso
-            sqlCmd.Parameters.Add("@cantidadreal", SqlDbType.Int).Value = oRecurso.cantidad_real
+            sqlCmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = IIf(oActividad.id_plan Is Nothing, DBNull.Value, oActividad.id_plan)
+            sqlCmd.Parameters.Add("@vacantes", SqlDbType.Int).Value = IIf(oActividad.vacantes Is Nothing, DBNull.Value, oActividad.vacantes)
 
             Try
                 sqlConn.Open()

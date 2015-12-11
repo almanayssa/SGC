@@ -221,6 +221,36 @@
             End Set
         End Property
 
+        Private _desc_tipo As String
+        Public Property desc_tipo() As String
+            Get
+                Return _desc_tipo
+            End Get
+            Set(ByVal value As String)
+                _desc_tipo = value
+            End Set
+        End Property
+
+        Private _desc_cat As String
+        Public Property desc_cat() As String
+            Get
+                Return _desc_cat
+            End Get
+            Set(ByVal value As String)
+                _desc_cat = value
+            End Set
+        End Property
+
+        Private _desc_estado As String
+        Public Property desc_estado() As String
+            Get
+                Return _desc_estado
+            End Get
+            Set(ByVal value As String)
+                _desc_estado = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 
