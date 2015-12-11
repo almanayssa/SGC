@@ -11,7 +11,7 @@ Public Class frmBuscarTipoPersonal
         InitializeComponent()
 
         dgvListado.AutoGenerateColumns = False
-        'colDescripcion.DataPropertyName = "Descripcion"
+        colDescripcion.DataPropertyName = "Descripcion"
     End Sub
 
 #End Region
@@ -33,7 +33,7 @@ Public Class frmBuscarTipoPersonal
 #Region "Metodos Personalizados"
 
     Private Sub ListarTipoPersonal()
-        Dim ListadoTipoPersonal As List(Of TipoPersonalBE) '= bc.ListarTipoPersonal(txtDescripcion.Text.Trim)
+        Dim ListadoTipoPersonal As List(Of TipoPersonalBE) = bc.ListarTipoPersonal(txtNombre.Text.Trim)
         dgvListado.DataSource = Nothing
         dgvListado.DataSource = ListadoTipoPersonal
     End Sub

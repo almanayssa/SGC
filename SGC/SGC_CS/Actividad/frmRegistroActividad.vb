@@ -12,9 +12,10 @@ Public Class frmRegistroActividad
     Private oRecursoPendiente As RecursoBE
     Private _id_actividad As Integer
 
-    Public Sub New()
 
-        ' This call is required by the designer.
+#Region "Inicializacion"
+
+    Public Sub New()
         InitializeComponent()
 
         cboComite.ValueMember = "id_comite"
@@ -23,226 +24,28 @@ Public Class frmRegistroActividad
         cboTipo.ValueMember = "id_tipo_act"
         cboTipo.DisplayMember = "desc_tipo"
 
-        cboCategoria.ValueMember = "id_tipo_act"
-        cboCategoria.DisplayMember = "desc_tipo"
+        dgvTipoPersonal.AutoGenerateColumns = False
+        dgvRecursos.AutoGenerateColumns = False
+        dgvRestricciones.AutoGenerateColumns = False
+
+        colDescripcionPersonal.DataPropertyName = "descripcion"
+        colCantidadPersonal.DataPropertyName = "cantidad"
+
+        colDescripcionRecurso.DataPropertyName = "descripcion"
+        colCantidadRecurso.DataPropertyName = "cantidad"
+
+        colDescripcionRestriccion.DataPropertyName = "descripcion"
+        colCondicionRestriccion.DataPropertyName = "signo"
+        colCantidadRestriccion.DataPropertyName = "valor"
+
+        colRestriccionID.DataPropertyName = "id_restriccion"
+        colDescripcionRestriccion.DataPropertyName = "descripcion"
+        colFlgCondicion.DataPropertyName = "flg_condicion"
     End Sub
 
-    Private Sub frmRegistroActividad_Load(sender As Object, e As System.EventArgs) Handles Me.Load
-        ListarComites()
-        ListarTipoActividad()
-    End Sub
+#End Region
 
-    Private Sub ListarComites()
-        Dim oComite As New ComiteBE
-        oComite.id_comite = "000"
-        oComite.nombre = "- Seleccione -"
-
-        Dim ListadoComites As List(Of ComiteBE) = bc.ListarComites()
-        ListadoComites.Insert(0, oComite)
-        cboComite.DataSource = Nothing
-        cboComite.DataSource = ListadoComites
-    End Sub
-
-    Private Sub ListarTipoActividad()
-        Dim ListadoTipoActividad As List(Of TipoActividadBE) = bc.ListarTipoActividad()
-        cboTipo.DataSource = Nothing
-        cboTipo.DataSource = ListadoTipoActividad
-    End Sub
-
-    Private Sub tsbGuardar_Click(sender As System.Object, e As System.EventArgs) Handles tsbGuardar.Click
-        If GuardarActividad() Then
-            LimpiarFormulario()
-            CargarActividad(_id_actividad)
-            FormularioEnModoVista()
-        End If
-    End Sub
-
-    Private Sub CargarActividad(ByVal id_actividad As Integer)
-        Dim oActividad As ActividadBE '= bc.CargarActividadCabecera(id_actividad)
-        Actividad = oActividad
-        txtCodigo.Text = oActividad.id_actividad
-        cboComite.SelectedValue = oActividad.id_comite
-        cboTipo.SelectedValue = oActividad.id_tipo_act
-        If oActividad.id_cattipo_act IsNot Nothing Then
-            cboCategoria.SelectedValue = oActividad.id_cattipo_act
-        End If
-        txtNombre.Text = oActividad.nombre
-        txtDescripcion.Text = oActividad.descripcion
-        nudPago.Value = oActividad.monto_pago
-
-        ListarTipoPersonalXActividad()
-        ListarRecursosXActividad()
-        ListarRestriccionesXActividad()
-    End Sub
-
-    Private Sub cboTipo_SelectedValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboTipo.SelectedValueChanged
-        If cboTipo.SelectedValue IsNot Nothing Then
-            If cboTipo.SelectedValue = "00" Then
-                cboCategoria.Enabled = False
-                cboCategoria.DataSource = Nothing
-            Else
-                Dim ListadoCategorias As List(Of CatTipoActividadBE) = bc.ListarCatTipoActividad(cboTipo.SelectedValue)
-
-                If ListadoCategorias.Count = 0 Then
-                    cboCategoria.Enabled = False
-                    cboCategoria.DataSource = Nothing
-                Else
-                    cboCategoria.Enabled = True
-                    Dim oCategoriaActividad As New CatTipoActividadBE
-                    oCategoriaActividad.id_cattipo_act = 0
-                    oCategoriaActividad.descripcion = "- Seleccione -"
-
-                    ListadoCategorias.Insert(0, oCategoriaActividad)
-                    cboCategoria.DataSource = Nothing
-                    cboCategoria.DataSource = ListadoCategorias
-                    cboCategoria.ValueMember = "id_cattipo_act"
-                    cboCategoria.DisplayMember = "descripcion"
-                End If
-            End If
-        End If
-    End Sub
-
-    Private Sub btnAgregarTipoPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarTipoPersonal.Click
-        AgregarTipoPersonal(oPersonalPendiente)
-        oPersonalPendiente = Nothing
-    End Sub
-
-    Private Sub btnQuitarTipoPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitarTipoPersonal.Click
-        If dgvTipoPersonal.CurrentRow IsNot Nothing Then
-            QuitarTipoPersonal(DirectCast(dgvTipoPersonal.CurrentRow.DataBoundItem, TipoPersonalBE))
-        End If
-    End Sub
-
-    Private Sub btnAgregarRecurso_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarRecurso.Click
-        AgregarRecurso(oRecursoPendiente)
-        oRecursoPendiente = Nothing
-    End Sub
-
-    Private Sub btnQuitarRecurso_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitarRecurso.Click
-        If dgvRecursos.CurrentRow IsNot Nothing Then
-            QuitarRecurso(DirectCast(dgvRecursos.CurrentRow.DataBoundItem, RecursoBE))
-        End If
-    End Sub
-
-    Private Sub btnEscoger_Click(sender As System.Object, e As System.EventArgs) Handles btnEscoger.Click
-
-    End Sub
-
-    Private Sub tsbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles tsbLimpiar.Click
-        LimpiarFormulario()
-        FormularioEnModoEdicion()
-    End Sub
-
-    Private Sub tsbEditar_Click(sender As System.Object, e As System.EventArgs) Handles tsbEditar.Click
-        FormularioEnModoEdicion()
-    End Sub
-
-    Private Sub tsbEliminar_Click(sender As System.Object, e As System.EventArgs) Handles tsbEliminar.Click
-        If txtCodigo.Text.Trim <> String.Empty Then
-            If MsgBox("Seguro que desea anular la actividad?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                Dim affectedRows As Integer = 0
-                'affectedRows = bc.BorrarActividad(CInt(txtCodigo.Text.Trim))
-
-                If affectedRows = 0 Then
-                    MessageBox.Show("Error al borrar", "Información")
-                Else
-                    MessageBox.Show("La actividad se anuló satisfactoriamente", "Información")
-                End If
-
-                LimpiarFormulario()
-                FormularioEnModoEdicion()
-            End If
-        End If
-    End Sub
-
-    Private Sub btnBuscarActividad_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarActividad.Click
-        Dim frmBuscarActividad As New frmBuscarActividad
-        frmBuscarActividad.ShowDialog()
-
-        If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then
-            _id_actividad = frmBuscarActividad.ActividadSeleccionada.id_actividad
-            CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
-            FormularioEnModoVista()
-        End If
-    End Sub
-
-    Private Sub SgcButton1_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarPersonal.Click
-        Dim frmBuscarTipoPersonal As New frmBuscarTipoPersonal
-        frmBuscarTipoPersonal.ShowDialog()
-
-        If frmBuscarTipoPersonal.TipoPersonalSeleccionado IsNot Nothing Then
-            CargarTipoPersonal(frmBuscarTipoPersonal.TipoPersonalSeleccionado)
-            oPersonalPendiente = frmBuscarTipoPersonal.TipoPersonalSeleccionado
-        End If
-    End Sub
-
-    Private Sub btnBuscarRecurso_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarRecurso.Click
-        Dim frmBuscarRecurso As New frmBuscarRecurso
-        frmBuscarRecurso.ShowDialog()
-
-        If frmBuscarRecurso.RecursoSeleccionado IsNot Nothing Then
-            CargarRecurso(frmBuscarRecurso.RecursoSeleccionado)
-            oRecursoPendiente = frmBuscarRecurso.RecursoSeleccionado
-        End If
-    End Sub
-
-    Private Sub dgvRestricciones_EditingControlShowing(sender As Object, e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgvRestricciones.EditingControlShowing
-        Dim columnIndex As Integer = dgvRestricciones.CurrentCell.ColumnIndex
-        Dim rowIndex As Integer = dgvRestricciones.CurrentCell.RowIndex
-        'Dim flgCondicion As Boolean = dgvRestricciones.Item(colFlgCondicion.Index, rowIndex).Value
-
-        If dgvRestricciones.Columns(columnIndex).Name = colCantidadRestriccion.Name Then
-            Dim txtCantidad As DataGridViewTextBoxEditingControl = DirectCast(e.Control, DataGridViewTextBoxEditingControl)
-
-            RemoveHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
-            AddHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
-
-            '    If flgCondicion = False Then
-            '        txtCantidad.ReadOnly = True
-            '    Else
-            '        txtCantidad.ReadOnly = False
-            '    End If
-
-            'ElseIf dgvRestricciones.Columns(columnIndex).Name = colCondicionRestriccion.Name Then
-            '    Dim cboCondicion As ComboBox = DirectCast(e.Control, ComboBox)
-
-            '    If flgCondicion = False Then
-            '        cboCondicion.Enabled = False
-            '    Else
-            '        cboCondicion.Enabled = True
-            '    End If
-        End If
-
-    End Sub
-
-    Private Sub txtNumeric_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-
-    Private Sub LimpiarFormulario()
-        txtCodigo.Text = String.Empty
-        cboComite.SelectedIndex = 0
-        cboTipo.SelectedIndex = 0
-        cboCategoria.SelectedIndex = -1
-        txtNombre.Text = String.Empty
-        txtDescripcion.Text = String.Empty
-        nudPago.Value = 0.0
-
-        txtDescripcionPersonal.Text = String.Empty
-        txtCantidadPersonal.Text = String.Empty
-        txtDescripcionRecurso.Text = String.Empty
-        txtCantidadRecurso.Text = String.Empty
-
-        dgvTipoPersonal.DataSource = Nothing
-        dgvRecursos.DataSource = Nothing
-        ListarRestricciones()
-    End Sub
-
-    Private Sub ListarRestricciones()
-        'Dim ListadoRestricciones As List(Of RestriccionesBE) = bc.ListarRestricciones()
-        dgvRestricciones.DataSource = Nothing
-        dgvRestricciones.DataSource = ListadoRestricciones
-    End Sub
+#Region "Metodos Personalizados"
 
     Private Sub FormularioEnModoEdicion()
         cboComite.Enabled = True
@@ -285,6 +88,56 @@ Public Class frmRegistroActividad
         btnQuitarRecurso.Enabled = False
         txtCantidadRecurso.Enabled = False
         dgvRestricciones.ReadOnly = True
+    End Sub
+
+    Private Sub ListarComites()
+        Dim oComite As New ComiteBE
+        oComite.id_comite = "000"
+        oComite.nombre = "- Seleccione -"
+
+        Dim ListadoComites As List(Of ComiteBE) = bc.ListarComites()
+        ListadoComites.Insert(0, oComite)
+        cboComite.DataSource = Nothing
+        cboComite.DataSource = ListadoComites
+    End Sub
+
+    Private Sub ListarTipoActividad()
+        Dim ListadoTipoActividad As List(Of TipoActividadBE) = bc.ListarTipoActividad()
+        cboTipo.DataSource = Nothing
+        cboTipo.DataSource = ListadoTipoActividad
+    End Sub
+
+    Private Sub ListarRestricciones()
+        Dim ListadoRestricciones As List(Of RestriccionesBE) = bc.ListarRestricciones()
+        dgvRestricciones.DataSource = Nothing
+        dgvRestricciones.DataSource = ListadoRestricciones
+    End Sub
+
+    Private Sub ListarSignos()
+        Dim ListadoSignos As List(Of SignosBE) = bc.ListarSignos()
+        Dim colCondicionRestriccion As DataGridViewComboBoxColumn
+        colCondicionRestriccion = dgvRestricciones.Columns("colCondicionRestriccion")
+        colCondicionRestriccion.DataSource = ListadoSignos
+        colCondicionRestriccion.ValueMember = "id_signo"
+        colCondicionRestriccion.DisplayMember = "signo"
+    End Sub
+
+    Private Sub CargarActividad(ByVal id_actividad As Integer)
+        Dim oActividad As ActividadBE = bc.CargarActividadCabecera(id_actividad)
+        Actividad = oActividad
+        txtCodigo.Text = oActividad.id_actividad
+        cboComite.SelectedValue = oActividad.id_comite
+        cboTipo.SelectedValue = oActividad.id_tipo_act
+        If oActividad.id_cattipo_act IsNot Nothing Then
+            cboCategoria.SelectedValue = oActividad.id_cattipo_act
+        End If
+        txtNombre.Text = oActividad.nombre
+        txtDescripcion.Text = oActividad.descripcion
+        nudPago.Value = oActividad.monto_pago
+
+        ListarTipoPersonalXActividad()
+        ListarRecursosXActividad()
+        ListarRestriccionesXActividad()
     End Sub
 
     Private Sub CargarTipoPersonal(ByRef oTipoPersonal As TipoPersonalBE)
@@ -332,20 +185,20 @@ Public Class frmRegistroActividad
     End Function
 
     Private Sub ListarTipoPersonalXActividad()
-        'ListadoTipoPersonal = bc.ListarTipoPersonalXActividad(CInt(txtCodigo.Text.Trim))
+        ListadoTipoPersonal = bc.ListarTipoPersonalXActividad(CInt(txtCodigo.Text.Trim))
         dgvTipoPersonal.DataSource = Nothing
         dgvTipoPersonal.DataSource = ListadoTipoPersonal
     End Sub
 
     Private Sub ListarRecursosXActividad()
-        'ListadoRecursos = bc.ListarRecursosXActividad(CInt(txtCodigo.Text.Trim))
+        ListadoRecursos = bc.ListarRecursosXActividad(CInt(txtCodigo.Text.Trim))
         dgvRecursos.DataSource = Nothing
         dgvRecursos.DataSource = ListadoRecursos
     End Sub
 
     Private Sub ListarRestriccionesXActividad()
         ListarRestricciones()
-        'ListadoRestricciones = bc.ListarRestriccionesXActividad(CInt(txtCodigo.Text.Trim))
+        ListadoRestricciones = bc.ListarRestriccionesXActividad(CInt(txtCodigo.Text.Trim))
 
         If ListadoRestricciones IsNot Nothing AndAlso ListadoRestricciones.Count > 0 Then
             For Each row As DataGridViewRow In dgvRestricciones.Rows
@@ -355,8 +208,8 @@ Public Class frmRegistroActividad
                 For Each oRestriccion As RestriccionesBE In ListadoRestricciones
                     If oRestriccion.id_restriccion = id Then
                         chk.Value = True
-                        'row.Cells(colCondicionRestriccion.Index).Value = oRestriccion.id_signo
-                        'row.Cells(colCantidadRestriccion.Index).Value = oRestriccion.valor
+                        row.Cells(colCondicionRestriccion.Index).Value = oRestriccion.id_signo
+                        row.Cells(colCantidadRestriccion.Index).Value = oRestriccion.valor
                         Exit For
                     End If
                 Next
@@ -414,6 +267,25 @@ Public Class frmRegistroActividad
         dgvRecursos.DataSource = ListadoRecursos
     End Sub
 
+    Private Sub LimpiarFormulario()
+        txtCodigo.Text = String.Empty
+        cboComite.SelectedIndex = 0
+        cboTipo.SelectedIndex = 0
+        cboCategoria.SelectedIndex = -1
+        txtNombre.Text = String.Empty
+        txtDescripcion.Text = String.Empty
+        nudPago.Value = 0.0
+
+        txtDescripcionPersonal.Text = String.Empty
+        txtCantidadPersonal.Text = String.Empty
+        txtDescripcionRecurso.Text = String.Empty
+        txtCantidadRecurso.Text = String.Empty
+
+        dgvTipoPersonal.DataSource = Nothing
+        dgvRecursos.DataSource = Nothing
+        ListarRestricciones()
+    End Sub
+
     Private Function ValidarCamposRequeridos() As String
         Dim msg As String = String.Empty
 
@@ -444,6 +316,30 @@ Public Class frmRegistroActividad
         Return msg
     End Function
 
+    Private Function ValidarRestricciones() As String
+        Dim msg As String = String.Empty
+
+        For Each row As DataGridViewRow In dgvRestricciones.Rows
+            Dim value As Boolean = CType(dgvRestricciones.Item(colSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)
+
+            If value Then
+                If row.Cells(colCondicionRestriccion.Index).Value = Nothing Then
+                    msg &= vbCrLf & "- Seleccione condición en todas las restricciones"
+                End If
+
+                If row.Cells(colCantidadRestriccion.Index).Value = Nothing Then
+                    msg &= vbCrLf & "- Ingrese cantidad en todas las restricciones"
+                Else
+                    If row.Cells(colCantidadRestriccion.Index).Value = 0 Then
+                        msg &= vbCrLf & "- La cantidad debe ser mayor a 0 en todos los detalles"
+                    End If
+                End If
+            End If
+        Next
+
+        Return msg
+    End Function
+
     Private Function GuardarActividad() As Boolean
         Dim flag As Boolean = True
 
@@ -469,7 +365,6 @@ Public Class frmRegistroActividad
         'oActividad.flg_plan_anual = chkPlanAnual.Checked
         'oActividad.flg_web = chkWeb.Checked
         oActividad.tipo_inscripcion = "A"
-        'oActividad.ListaActividadDetalle = dgvDetalleLugar.DataSource
         oActividad.ListaTipoPersonal = dgvTipoPersonal.DataSource
         oActividad.ListaRecursos = dgvRecursos.DataSource
 
@@ -496,26 +391,26 @@ Public Class frmRegistroActividad
                     oActividad.ListaRestricciones = New List(Of RestriccionesBE)
                 End If
 
-                'oRestriccion.id_signo = row.Cells(colCondicionRestriccion.Index).Value
-                'oRestriccion.valor = row.Cells(colCantidadRestriccion.Index).Value
+                oRestriccion.id_signo = row.Cells(colCondicionRestriccion.Index).Value
+                oRestriccion.valor = row.Cells(colCantidadRestriccion.Index).Value
                 oActividad.ListaRestricciones.Add(oRestriccion)
             End If
         Next
 
-        'If txtCodigo.Text = String.Empty Then
-        '    oActividad.id_estado = "EST001" 'Registrada
-        '    affectedRows = bc.InsertarActividad(oActividad)
-        'Else
-        '    oActividad.id_actividad = txtCodigo.Text
-        '    affectedRows = bc.ActualizarActividad(oActividad)
-        'End If
+        If txtCodigo.Text = String.Empty Then
+            oActividad.id_estado = "EST001" 'Registrada
+            affectedRows = bc.InsertarActividad(oActividad)
+        Else
+            oActividad.id_actividad = txtCodigo.Text
+            affectedRows = bc.ActualizarActividad(oActividad)
+        End If
 
         If affectedRows = 0 Then
             MessageBox.Show("Error al grabar", "Información")
             flag = False
         Else
             If txtCodigo.Text = String.Empty Then
-                'txtCodigo.Text = affectedRows
+                txtCodigo.Text = affectedRows
                 _id_actividad = affectedRows
                 MessageBox.Show("La actividad se registró satisfactoriamente", "Información")
             Else
@@ -528,28 +423,193 @@ Public Class frmRegistroActividad
 
     End Function
 
-    Private Function ValidarRestricciones() As String
-        Dim msg As String = String.Empty
+    Private Sub AgregarProgramacion()
 
-        'For Each row As DataGridViewRow In dgvRestricciones.Rows
-        '    Dim value As Boolean = CType(dgvRestricciones.Item(colSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)
+    End Sub
 
-        '    If value Then
-        '        If row.Cells(colCondicionRestriccion.Index).Value = Nothing Then
-        '            msg &= vbCrLf & "- Seleccione condición en todas las restricciones"
-        '        End If
+#End Region
 
-        '        If row.Cells(colCantidadRestriccion.Index).Value = Nothing Then
-        '            msg &= vbCrLf & "- Ingrese cantidad en todas las restricciones"
-        '        Else
-        '            If row.Cells(colCantidadRestriccion.Index).Value = 0 Then
-        '                msg &= vbCrLf & "- La cantidad debe ser mayor a 0 en todos los detalles"
-        '            End If
-        '        End If
-        '    End If
-        'Next
+#Region "Cargar"
 
-        Return msg
-    End Function
+    Private Sub frmRegistroActividad_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        ListarComites()
+        ListarTipoActividad()
+        'ListarSedes()
+        'ListarTipoLugar()
+        ListarRestricciones()
+        ListarSignos()
+    End Sub
+
+#End Region
+
+#Region "Metodos Controles"
+
+    Private Sub tsbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles tsbLimpiar.Click
+        LimpiarFormulario()
+        FormularioEnModoEdicion()
+    End Sub
+
+    Private Sub tsbGuardar_Click(sender As System.Object, e As System.EventArgs) Handles tsbGuardar.Click
+        If GuardarActividad() Then
+            LimpiarFormulario()
+            CargarActividad(_id_actividad)
+            FormularioEnModoVista()
+        End If
+    End Sub
+
+    Private Sub tsbEditar_Click(sender As System.Object, e As System.EventArgs) Handles tsbEditar.Click
+        FormularioEnModoEdicion()
+    End Sub
+
+    Private Sub tsbEliminar_Click(sender As System.Object, e As System.EventArgs) Handles tsbEliminar.Click
+        If txtCodigo.Text.Trim <> String.Empty Then
+            If MsgBox("Seguro que desea anular la actividad?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                Dim affectedRows As Integer = 0
+                affectedRows = bc.BorrarActividad(CInt(txtCodigo.Text.Trim))
+
+                If affectedRows = 0 Then
+                    MessageBox.Show("Error al borrar", "Información")
+                Else
+                    MessageBox.Show("La actividad se anuló satisfactoriamente", "Información")
+                End If
+
+                LimpiarFormulario()
+                FormularioEnModoEdicion()
+            End If
+        End If
+    End Sub
+
+
+    Private Sub btnBuscarActividad_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarActividad.Click
+        Dim frmBuscarActividad As New frmBuscarActividad
+        frmBuscarActividad.ShowDialog()
+
+        If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then
+            _id_actividad = frmBuscarActividad.ActividadSeleccionada.id_actividad
+            CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
+            FormularioEnModoVista()
+        End If
+    End Sub
+
+    Private Sub btnBuscarPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarPersonal.Click
+        Dim frmBuscarTipoPersonal As New frmBuscarTipoPersonal
+        frmBuscarTipoPersonal.ShowDialog()
+
+        If frmBuscarTipoPersonal.TipoPersonalSeleccionado IsNot Nothing Then
+            CargarTipoPersonal(frmBuscarTipoPersonal.TipoPersonalSeleccionado)
+            oPersonalPendiente = frmBuscarTipoPersonal.TipoPersonalSeleccionado
+        End If
+    End Sub
+
+    Private Sub btnAgregarTipoPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarTipoPersonal.Click
+        AgregarTipoPersonal(oPersonalPendiente)
+        oPersonalPendiente = Nothing
+    End Sub
+
+    Private Sub btnQuitarTipoPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitarTipoPersonal.Click
+        If dgvTipoPersonal.CurrentRow IsNot Nothing Then
+            QuitarTipoPersonal(DirectCast(dgvTipoPersonal.CurrentRow.DataBoundItem, TipoPersonalBE))
+        End If
+    End Sub
+
+    Private Sub txtCantidadPersonal_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCantidadPersonal.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Private Sub btnBuscarRecurso_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarRecurso.Click
+        Dim frmBuscarRecurso As New frmBuscarRecurso
+        frmBuscarRecurso.ShowDialog()
+
+        If frmBuscarRecurso.RecursoSeleccionado IsNot Nothing Then
+            CargarRecurso(frmBuscarRecurso.RecursoSeleccionado)
+            oRecursoPendiente = frmBuscarRecurso.RecursoSeleccionado
+        End If
+    End Sub
+
+    Private Sub btnAgregarRecurso_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarRecurso.Click
+        AgregarRecurso(oRecursoPendiente)
+        oRecursoPendiente = Nothing
+    End Sub
+
+    Private Sub btnQuitarRecurso_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitarRecurso.Click
+        If dgvRecursos.CurrentRow IsNot Nothing Then
+            QuitarRecurso(DirectCast(dgvRecursos.CurrentRow.DataBoundItem, RecursoBE))
+        End If
+    End Sub
+
+    Private Sub txtCantidadRecurso_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtCantidadRecurso.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Private Sub cboTipo_SelectedValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboTipo.SelectedValueChanged
+        If cboTipo.SelectedValue IsNot Nothing Then
+            If cboTipo.SelectedValue = "00" Then
+                cboCategoria.Enabled = False
+                cboCategoria.DataSource = Nothing
+            Else
+                Dim ListadoCategorias As List(Of CatTipoActividadBE) = bc.ListarCatTipoActividad(cboTipo.SelectedValue)
+
+                If ListadoCategorias.Count = 0 Then
+                    cboCategoria.Enabled = False
+                    cboCategoria.DataSource = Nothing
+                Else
+                    cboCategoria.Enabled = True
+                    Dim oCategoriaActividad As New CatTipoActividadBE
+                    oCategoriaActividad.id_cattipo_act = 0
+                    oCategoriaActividad.descripcion = "- Seleccione -"
+
+                    ListadoCategorias.Insert(0, oCategoriaActividad)
+                    cboCategoria.DataSource = Nothing
+                    cboCategoria.DataSource = ListadoCategorias
+                    cboCategoria.ValueMember = "id_cattipo_act"
+                    cboCategoria.DisplayMember = "descripcion"
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub btnEscoger_Click(sender As System.Object, e As System.EventArgs) Handles btnEscoger.Click
+        AgregarProgramacion()
+    End Sub
+
+#End Region
+
+#Region "Metodos Grilla"
+
+    Private Sub dgvRestricciones_EditingControlShowing(sender As Object, e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgvRestricciones.EditingControlShowing
+        Dim columnIndex As Integer = dgvRestricciones.CurrentCell.ColumnIndex
+        Dim rowIndex As Integer = dgvRestricciones.CurrentCell.RowIndex
+        Dim flgCondicion As Boolean = dgvRestricciones.Item(colFlgCondicion.Index, rowIndex).Value
+
+        If dgvRestricciones.Columns(columnIndex).Name = colCantidadRestriccion.Name Then
+            Dim txtCantidad As DataGridViewTextBoxEditingControl = DirectCast(e.Control, DataGridViewTextBoxEditingControl)
+
+            RemoveHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
+            AddHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
+
+            If flgCondicion = False Then
+                txtCantidad.ReadOnly = True
+            Else
+                txtCantidad.ReadOnly = False
+            End If
+
+        ElseIf dgvRestricciones.Columns(columnIndex).Name = colCondicionRestriccion.Name Then
+            Dim cboCondicion As ComboBox = DirectCast(e.Control, ComboBox)
+
+            If flgCondicion = False Then
+                cboCondicion.Enabled = False
+            Else
+                cboCondicion.Enabled = True
+            End If
+        End If
+
+    End Sub
+
+    Private Sub txtNumeric_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+#End Region
+
 End Class
 

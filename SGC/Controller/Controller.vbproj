@@ -86,6 +86,7 @@
     <Compile Include="PlanAnualBL.vb" />
     <Compile Include="RecursoBL.vb" />
     <Compile Include="RestriccionesBL.vb" />
+    <Compile Include="SignosBL.vb" />
     <Compile Include="TipoActividadBL.vb" />
     <Compile Include="TipoPersonalBL.vb" />
   </ItemGroup>

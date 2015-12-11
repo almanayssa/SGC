@@ -7,6 +7,7 @@ Namespace SGC.Model.Interfaces
 #Region "Select"
 
         Function ListarRestricciones() As List(Of RestriccionesBE)
+        Function ListarRestriccionesXActividad(ByVal id_actividad As Integer) As List(Of RestriccionesBE)
 
 #End Region
 

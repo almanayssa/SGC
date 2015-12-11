@@ -6,37 +6,37 @@ Namespace SGC.Controller
 
     Partial Public Class BusinessController
 
-        '#Region "Select"
+#Region "Select"
 
-        '        Public Function ObtenerActividad(ByVal id_actividad As Integer) As ActividadBE
-        '            Try
-        '                Dim iActividad As IActividad
-        '                Dim oActividad As ActividadBE = Nothing
+        Public Function ObtenerActividad(ByVal id_actividad As Integer) As ActividadBE
+            Try
+                Dim iActividad As IActividad
+                Dim oActividad As ActividadBE = Nothing
 
-        '                iActividad = New ActividadDL
-        '                oActividad = iActividad.ObtenerActividad(id_actividad)
+                iActividad = New ActividadDL
+                oActividad = iActividad.ObtenerActividad(id_actividad)
 
-        '                Return oActividad
+                Return oActividad
 
-        '            Catch ex As Exception
-        '                Return Nothing
-        '            End Try
-        '        End Function
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 
-        '        Public Function CargarActividadCabecera(ByVal id_actividad As Integer) As ActividadBE
-        '            Try
-        '                Dim iActividad As IActividad
-        '                Dim oActividad As ActividadBE = Nothing
+        Public Function CargarActividadCabecera(ByVal id_actividad As Integer) As ActividadBE
+            Try
+                Dim iActividad As IActividad
+                Dim oActividad As ActividadBE = Nothing
 
-        '                iActividad = New ActividadDL
-        '                oActividad = iActividad.CargarActividadCabecera(id_actividad)
+                iActividad = New ActividadDL
+                oActividad = iActividad.CargarActividadCabecera(id_actividad)
 
-        '                Return oActividad
+                Return oActividad
 
-        '            Catch ex As Exception
-        '                Return Nothing
-        '            End Try
-        '        End Function
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 
         Public Function ListarActividades(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
             Try
@@ -53,102 +53,111 @@ Namespace SGC.Controller
             End Try
         End Function
 
-        '        Public Function ListarActividadesAInscribir(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
-        '            Try
-        '                Dim iActividad As IActividad
-        '                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+#End Region
 
-        '                iActividad = New ActividadDL
-        '                oListadoActividades = iActividad.ListarActividadesAInscribir(id_comite, nombre)
+#Region "Insert"
 
-        '                Return oListadoActividades
+        Public Function InsertarActividad(ByRef oActividad As ActividadBE) As Integer
+            Try
+                Dim iActividad As IActividad
+                iActividad = New ActividadDL
 
-        '            Catch ex As Exception
-        '                Return Nothing
-        '            End Try
-        '        End Function
+                Dim id_actividad As Integer
+                id_actividad = iActividad.InsertarActividad(oActividad)
 
-        '        'RegistroPlanAnualActividad
+                If oActividad.ListaTipoPersonal IsNot Nothing Then
+                    For Each oTipoPersonal As TipoPersonalBE In oActividad.ListaTipoPersonal
+                        oTipoPersonal.id_actividad = id_actividad
+                        iActividad.InsertarTipoPersonalXActividad(oTipoPersonal)
+                    Next
+                End If
 
-        '        Public Function ListarActividadesPorComite_TipoActividad(ByVal comiteID As String, ByVal tipoActividadID As String) As List(Of ActividadBE)
-        '            Try
-        '                Dim iActividad As IActividad
-        '                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+                If oActividad.ListaRecursos IsNot Nothing Then
+                    For Each oRecurso As RecursoBE In oActividad.ListaRecursos
+                        oRecurso.id_actividad = id_actividad
+                        iActividad.InsertarRecursoXActividad(oRecurso)
+                    Next
+                End If
 
-        '                iActividad = New ActividadDL
-        '                oListadoActividades = iActividad.ListarActividadesPorComite_TipoActividad(comiteID, tipoActividadID)
+                If oActividad.ListaRestricciones IsNot Nothing Then
+                    For Each oRestriccion As RestriccionesBE In oActividad.ListaRestricciones
+                        oRestriccion.id_actividad = id_actividad
+                        iActividad.InsertarRestriccionXActividad(oRestriccion)
+                    Next
+                End If
 
+                oActividad.id_actividad = id_actividad
 
-        '                Return oListadoActividades
+                Return oActividad.id_actividad
 
-        '            Catch ex As Exception
-        '                Return Nothing
-        '            End Try
-        '        End Function
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 
-        '        Public Function ListarActividadesNoRecurrentes(ByVal diaCalendario As Date, ByVal diaInicio As Date, ByVal diaFin As Date) As List(Of ActividadBE)
-        '            Try
-        '                Dim iActividad As IActividad
-        '                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+#End Region
 
-        '                iActividad = New ActividadDL
-        '                oListadoActividades = iActividad.ListarActividadesNoRecurrentes(diaCalendario, diaInicio, diaFin)
+#Region "Update"
 
-        '                Return oListadoActividades
+        Public Function ActualizarActividad(ByRef oActividad As ActividadBE) As Integer
+            Try
+                Dim affectedRows As Integer
 
-        '            Catch ex As Exception
-        '                Return Nothing
-        '            End Try
-        '        End Function
+                Dim iActividad As IActividad
+                iActividad = New ActividadDL
 
-        '        Public Function ListarActividadesRecurrentes(ByVal diaCalendario As Date, ByVal diaInicio As Date, ByVal diaFin As Date) As List(Of ActividadBE)
-        '            Try
-        '                Dim iActividad As IActividad
-        '                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+                affectedRows += iActividad.BorrarTipoPersonalXActividad(oActividad.id_actividad)
+                affectedRows += iActividad.BorrarRecursosXActividad(oActividad.id_actividad)
+                affectedRows += iActividad.BorrarRestriccionesXActividad(oActividad.id_actividad)
 
-        '                iActividad = New ActividadDL
-        '                oListadoActividades = iActividad.ListarActividadesRecurrentes(diaCalendario, diaInicio, diaFin)
+                If oActividad.ListaTipoPersonal IsNot Nothing Then
+                    For Each oTipoPersonal As TipoPersonalBE In oActividad.ListaTipoPersonal
+                        oTipoPersonal.id_actividad = oActividad.id_actividad
+                        affectedRows += iActividad.InsertarTipoPersonalXActividad(oTipoPersonal)
+                    Next
+                End If
 
+                If oActividad.ListaRecursos IsNot Nothing Then
+                    For Each oRecurso As RecursoBE In oActividad.ListaRecursos
+                        oRecurso.id_actividad = oActividad.id_actividad
+                        affectedRows += iActividad.InsertarRecursoXActividad(oRecurso)
+                    Next
+                End If
 
-        '                Return oListadoActividades
+                If oActividad.ListaRestricciones IsNot Nothing Then
+                    For Each oRestriccion As RestriccionesBE In oActividad.ListaRestricciones
+                        oRestriccion.id_actividad = oActividad.id_actividad
+                        affectedRows += iActividad.InsertarRestriccionXActividad(oRestriccion)
+                    Next
+                End If
 
-        '            Catch ex As Exception
-        '                Return Nothing
-        '            End Try
-        '        End Function
+                Return affectedRows
 
-        '        Public Function ListarActividadesPlan(ByVal id_plananual_comite As Integer) As List(Of ActividadBE)
-        '            Try
-        '                Dim iActividad As IActividad
-        '                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 
-        '                iActividad = New ActividadDL
-        '                oListadoActividades = iActividad.ListarActividadesPlan(id_plananual_comite)
+#End Region
 
+#Region "Delete"
 
-        '                Return oListadoActividades
+        Public Function BorrarActividad(ByRef id_actividad As Integer) As Integer
+            Try
+                Dim iActividad As IActividad
+                iActividad = New ActividadDL
 
-        '            Catch ex As Exception
-        '                Return Nothing
-        '            End Try
-        '        End Function
+                Dim affectedRows As Integer
+                affectedRows = iActividad.BorrarActividad(id_actividad)
 
-        '        Public Function ListarActividadesEstado(ByVal id_comite As String, ByVal nombre As String, ByVal estado As String) As List(Of ActividadBE)
-        '            Try
-        '                Dim iActividad As IActividad
-        '                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+                Return affectedRows
 
-        '                iActividad = New ActividadDL
-        '                oListadoActividades = iActividad.ListarActividadesEstado(id_comite, nombre, estado)
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 
-        '                Return oListadoActividades
-
-        '            Catch ex As Exception
-        '                Return Nothing
-        '            End Try
-        '        End Function
-
-        '#End Region
+#End Region
 
     End Class
 

@@ -20,15 +20,11 @@ Partial Class frmRegistroActividadRecurrente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroActividadRecurrente))
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.sbEditar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcNumericUpDown2 = New SGC_CS.SGCNumericUpDown(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel12 = New SGC_CS.SGCLabel(Me.components)
@@ -82,7 +78,6 @@ Partial Class frmRegistroActividadRecurrente
         Me.chkMiercoles = New System.Windows.Forms.CheckBox()
         Me.chkMartes = New System.Windows.Forms.CheckBox()
         Me.chkLunes = New System.Windows.Forms.CheckBox()
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.tsMenu.SuspendLayout()
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.SgcNumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,11 +100,11 @@ Partial Class frmRegistroActividadRecurrente
         Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
         Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbLimpiar, Me.sbGuardar, Me.sbEditar, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3})
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbLimpiar, Me.sbGuardar})
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 49)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(361, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(185, 37)
         Me.tsMenu.TabIndex = 18
         Me.tsMenu.Text = "SgcToolStrip1"
         '
@@ -133,49 +128,6 @@ Partial Class frmRegistroActividadRecurrente
         Me.sbGuardar.Size = New System.Drawing.Size(92, 34)
         Me.sbGuardar.Text = "Guardar"
         '
-        'sbEditar
-        '
-        Me.sbEditar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbEditar.Image = Global.SGC_CS.My.Resources.Resources.menu_editar
-        Me.sbEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbEditar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbEditar.Name = "sbEditar"
-        Me.sbEditar.Size = New System.Drawing.Size(101, 34)
-        Me.sbEditar.Text = "Modificar"
-        Me.sbEditar.Visible = False
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton1.Image = Global.SGC_CS.My.Resources.Resources.menu_eliminar
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(93, 34)
-        Me.ToolStripButton1.Text = "Eliminar"
-        Me.ToolStripButton1.Visible = False
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton2.Image = Global.SGC_CS.My.Resources.Resources.menu_cancel
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(95, 34)
-        Me.ToolStripButton2.Text = "Cancelar"
-        Me.ToolStripButton2.Visible = False
-        '
-        'ToolStripButton3
-        '
-        Me.ToolStripButton3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton3.Image = CType(resources.GetObject("ToolStripButton3.Image"), System.Drawing.Image)
-        Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton3.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(174, 34)
-        Me.ToolStripButton3.Text = "Generar Presupuesto"
-        '
         'SgcGroupBox1
         '
         Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
@@ -198,10 +150,25 @@ Partial Class frmRegistroActividadRecurrente
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 89)
         Me.SgcGroupBox1.Name = "SgcGroupBox1"
-        Me.SgcGroupBox1.Size = New System.Drawing.Size(471, 209)
+        Me.SgcGroupBox1.Size = New System.Drawing.Size(471, 232)
         Me.SgcGroupBox1.TabIndex = 19
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Datos"
+        '
+        'SgcButton1
+        '
+        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.SgcButton1.Location = New System.Drawing.Point(215, 35)
+        Me.SgcButton1.Name = "SgcButton1"
+        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
+        Me.SgcButton1.TabIndex = 46
+        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton1.UseVisualStyleBackColor = False
         '
         'SgcNumericUpDown2
         '
@@ -238,8 +205,9 @@ Partial Class frmRegistroActividadRecurrente
         Me.SgcTextBox4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcTextBox4.ForeColor = System.Drawing.Color.Black
         Me.SgcTextBox4.Location = New System.Drawing.Point(109, 166)
+        Me.SgcTextBox4.Multiline = True
         Me.SgcTextBox4.Name = "SgcTextBox4"
-        Me.SgcTextBox4.Size = New System.Drawing.Size(329, 26)
+        Me.SgcTextBox4.Size = New System.Drawing.Size(329, 53)
         Me.SgcTextBox4.TabIndex = 19
         '
         'SgcTextBox2
@@ -384,7 +352,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.gbxRecurrencia.ForeColor = System.Drawing.Color.Black
         Me.gbxRecurrencia.Location = New System.Drawing.Point(537, 89)
         Me.gbxRecurrencia.Name = "gbxRecurrencia"
-        Me.gbxRecurrencia.Size = New System.Drawing.Size(467, 209)
+        Me.gbxRecurrencia.Size = New System.Drawing.Size(467, 232)
         Me.gbxRecurrencia.TabIndex = 20
         Me.gbxRecurrencia.TabStop = False
         Me.gbxRecurrencia.Text = "Recurrencia"
@@ -402,7 +370,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.pnlMensual.Controls.Add(Me.nudNumeroDia)
         Me.pnlMensual.Controls.Add(Me.rbntEl)
         Me.pnlMensual.Controls.Add(Me.rbtnDia)
-        Me.pnlMensual.Location = New System.Drawing.Point(9, 49)
+        Me.pnlMensual.Location = New System.Drawing.Point(9, 54)
         Me.pnlMensual.Name = "pnlMensual"
         Me.pnlMensual.Size = New System.Drawing.Size(433, 72)
         Me.pnlMensual.TabIndex = 38
@@ -524,7 +492,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.pnlRepeticiones.Controls.Add(Me.lblDiasSemanas)
         Me.pnlRepeticiones.Controls.Add(Me.Label20)
         Me.pnlRepeticiones.Controls.Add(Me.nudDiasSemanas)
-        Me.pnlRepeticiones.Location = New System.Drawing.Point(9, 49)
+        Me.pnlRepeticiones.Location = New System.Drawing.Point(9, 54)
         Me.pnlRepeticiones.Name = "pnlRepeticiones"
         Me.pnlRepeticiones.Size = New System.Drawing.Size(317, 33)
         Me.pnlRepeticiones.TabIndex = 54
@@ -563,7 +531,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.pnlHoras.Controls.Add(Me.dtpHoraInicio)
         Me.pnlHoras.Controls.Add(Me.Label30)
         Me.pnlHoras.Controls.Add(Me.Label33)
-        Me.pnlHoras.Location = New System.Drawing.Point(103, 81)
+        Me.pnlHoras.Location = New System.Drawing.Point(103, 86)
         Me.pnlHoras.Name = "pnlHoras"
         Me.pnlHoras.Size = New System.Drawing.Size(278, 31)
         Me.pnlHoras.TabIndex = 53
@@ -613,7 +581,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.cboTipoRecurrencia.ForeColor = System.Drawing.Color.Black
         Me.cboTipoRecurrencia.FormattingEnabled = True
         Me.cboTipoRecurrencia.Items.AddRange(New Object() {"Diaria", "Semanal", "Mensual"})
-        Me.cboTipoRecurrencia.Location = New System.Drawing.Point(111, 22)
+        Me.cboTipoRecurrencia.Location = New System.Drawing.Point(111, 27)
         Me.cboTipoRecurrencia.Name = "cboTipoRecurrencia"
         Me.cboTipoRecurrencia.Size = New System.Drawing.Size(160, 26)
         Me.cboTipoRecurrencia.TabIndex = 22
@@ -621,7 +589,7 @@ Partial Class frmRegistroActividadRecurrente
         'Label19
         '
         Me.Label19.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label19.Location = New System.Drawing.Point(13, 28)
+        Me.Label19.Location = New System.Drawing.Point(13, 33)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(89, 17)
         Me.Label19.TabIndex = 21
@@ -633,7 +601,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.pnlDuracionRecurrencia.Controls.Add(Me.dtpFechaInicio)
         Me.pnlDuracionRecurrencia.Controls.Add(Me.dtpFechaFin)
         Me.pnlDuracionRecurrencia.Controls.Add(Me.Label25)
-        Me.pnlDuracionRecurrencia.Location = New System.Drawing.Point(9, 113)
+        Me.pnlDuracionRecurrencia.Location = New System.Drawing.Point(9, 118)
         Me.pnlDuracionRecurrencia.Name = "pnlDuracionRecurrencia"
         Me.pnlDuracionRecurrencia.Size = New System.Drawing.Size(433, 56)
         Me.pnlDuracionRecurrencia.TabIndex = 43
@@ -681,7 +649,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.pnlSemanal.Controls.Add(Me.chkMiercoles)
         Me.pnlSemanal.Controls.Add(Me.chkMartes)
         Me.pnlSemanal.Controls.Add(Me.chkLunes)
-        Me.pnlSemanal.Location = New System.Drawing.Point(111, 81)
+        Me.pnlSemanal.Location = New System.Drawing.Point(111, 86)
         Me.pnlSemanal.Name = "pnlSemanal"
         Me.pnlSemanal.Size = New System.Drawing.Size(303, 68)
         Me.pnlSemanal.TabIndex = 34
@@ -757,21 +725,6 @@ Partial Class frmRegistroActividadRecurrente
         Me.chkLunes.Text = "Lunes"
         Me.chkLunes.UseVisualStyleBackColor = True
         '
-        'SgcButton1
-        '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.SgcButton1.Location = New System.Drawing.Point(215, 35)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
-        Me.SgcButton1.TabIndex = 46
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
-        '
         'frmRegistroActividadRecurrente
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -807,10 +760,6 @@ Partial Class frmRegistroActividadRecurrente
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
     Friend WithEvents sbLimpiar As System.Windows.Forms.ToolStripButton
     Friend WithEvents sbGuardar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents sbEditar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcNumericUpDown2 As SGC_CS.SGCNumericUpDown
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel

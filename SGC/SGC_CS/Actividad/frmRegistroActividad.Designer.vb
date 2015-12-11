@@ -49,6 +49,12 @@ Partial Class frmRegistroActividad
         Me.btnEscoger = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvRestricciones = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.colRestriccionID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDescripcionRestriccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCondicionRestriccion = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.colCantidadRestriccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFlgCondicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnQuitarTipoPersonal = New SGC_CS.SGCButton(Me.components)
         Me.btnAgregarTipoPersonal = New SGC_CS.SGCButton(Me.components)
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
@@ -69,6 +75,8 @@ Partial Class frmRegistroActividad
         Me.txtDescripcionPersonal = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.dgvTipoPersonal = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colDescripcionPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCantidadPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpRecursos = New System.Windows.Forms.TabPage()
         Me.SgcGroupBox5 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscarRecurso = New SGC_CS.SGCButton(Me.components)
@@ -77,18 +85,10 @@ Partial Class frmRegistroActividad
         Me.txtDescripcionRecurso = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.dgvRecursos = New SGC_CS.SGCDataGridView(Me.components)
-        Me.btnQuitarRecurso = New SGC_CS.SGCButton(Me.components)
-        Me.btnAgregarRecurso = New SGC_CS.SGCButton(Me.components)
-        Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.colRestriccionID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDescripcionRestriccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colCondicionRestriccion = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.colCantidadRestriccion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFlgCondicion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDescripcionPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colCantidadPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colDescripcionRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colCantidadRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnQuitarRecurso = New SGC_CS.SGCButton(Me.components)
+        Me.btnAgregarRecurso = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudPago, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -386,6 +386,7 @@ Partial Class frmRegistroActividad
         'dgvRestricciones
         '
         Me.dgvRestricciones.AllowUserToAddRows = False
+        Me.dgvRestricciones.AllowUserToDeleteRows = False
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
         Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
@@ -397,6 +398,42 @@ Partial Class frmRegistroActividad
         Me.dgvRestricciones.Name = "dgvRestricciones"
         Me.dgvRestricciones.Size = New System.Drawing.Size(836, 182)
         Me.dgvRestricciones.TabIndex = 3
+        '
+        'colSeleccionar
+        '
+        Me.colSeleccionar.HeaderText = ""
+        Me.colSeleccionar.Name = "colSeleccionar"
+        Me.colSeleccionar.Width = 30
+        '
+        'colRestriccionID
+        '
+        Me.colRestriccionID.HeaderText = ""
+        Me.colRestriccionID.Name = "colRestriccionID"
+        Me.colRestriccionID.Visible = False
+        '
+        'colDescripcionRestriccion
+        '
+        Me.colDescripcionRestriccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcionRestriccion.HeaderText = "Descripción"
+        Me.colDescripcionRestriccion.Name = "colDescripcionRestriccion"
+        '
+        'colCondicionRestriccion
+        '
+        Me.colCondicionRestriccion.HeaderText = "Condición"
+        Me.colCondicionRestriccion.Name = "colCondicionRestriccion"
+        Me.colCondicionRestriccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        '
+        'colCantidadRestriccion
+        '
+        Me.colCantidadRestriccion.HeaderText = "Cantidad"
+        Me.colCantidadRestriccion.MaxInputLength = 2
+        Me.colCantidadRestriccion.Name = "colCantidadRestriccion"
+        '
+        'colFlgCondicion
+        '
+        Me.colFlgCondicion.HeaderText = ""
+        Me.colFlgCondicion.Name = "colFlgCondicion"
+        Me.colFlgCondicion.Visible = False
         '
         'btnQuitarTipoPersonal
         '
@@ -628,6 +665,7 @@ Partial Class frmRegistroActividad
         'dgvTipoPersonal
         '
         Me.dgvTipoPersonal.AllowUserToAddRows = False
+        Me.dgvTipoPersonal.AllowUserToDeleteRows = False
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
         Me.dgvTipoPersonal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
@@ -637,8 +675,22 @@ Partial Class frmRegistroActividad
         Me.dgvTipoPersonal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDescripcionPersonal, Me.colCantidadPersonal})
         Me.dgvTipoPersonal.Location = New System.Drawing.Point(15, 89)
         Me.dgvTipoPersonal.Name = "dgvTipoPersonal"
+        Me.dgvTipoPersonal.ReadOnly = True
         Me.dgvTipoPersonal.Size = New System.Drawing.Size(367, 107)
         Me.dgvTipoPersonal.TabIndex = 1
+        '
+        'colDescripcionPersonal
+        '
+        Me.colDescripcionPersonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcionPersonal.HeaderText = "Descripción"
+        Me.colDescripcionPersonal.Name = "colDescripcionPersonal"
+        Me.colDescripcionPersonal.ReadOnly = True
+        '
+        'colCantidadPersonal
+        '
+        Me.colCantidadPersonal.HeaderText = "Cantidad"
+        Me.colCantidadPersonal.Name = "colCantidadPersonal"
+        Me.colCantidadPersonal.ReadOnly = True
         '
         'tpRecursos
         '
@@ -728,6 +780,7 @@ Partial Class frmRegistroActividad
         'dgvRecursos
         '
         Me.dgvRecursos.AllowUserToAddRows = False
+        Me.dgvRecursos.AllowUserToDeleteRows = False
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
         Me.dgvRecursos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
@@ -737,8 +790,22 @@ Partial Class frmRegistroActividad
         Me.dgvRecursos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDescripcionRecurso, Me.colCantidadRecurso})
         Me.dgvRecursos.Location = New System.Drawing.Point(15, 88)
         Me.dgvRecursos.Name = "dgvRecursos"
+        Me.dgvRecursos.ReadOnly = True
         Me.dgvRecursos.Size = New System.Drawing.Size(366, 119)
         Me.dgvRecursos.TabIndex = 1
+        '
+        'colDescripcionRecurso
+        '
+        Me.colDescripcionRecurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcionRecurso.HeaderText = "Descripción"
+        Me.colDescripcionRecurso.Name = "colDescripcionRecurso"
+        Me.colDescripcionRecurso.ReadOnly = True
+        '
+        'colCantidadRecurso
+        '
+        Me.colCantidadRecurso.HeaderText = "Cantidad"
+        Me.colCantidadRecurso.Name = "colCantidadRecurso"
+        Me.colCantidadRecurso.ReadOnly = True
         '
         'btnQuitarRecurso
         '
@@ -771,65 +838,6 @@ Partial Class frmRegistroActividad
         Me.btnAgregarRecurso.Text = "Agregar"
         Me.btnAgregarRecurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAgregarRecurso.UseVisualStyleBackColor = False
-        '
-        'colSeleccionar
-        '
-        Me.colSeleccionar.HeaderText = ""
-        Me.colSeleccionar.Name = "colSeleccionar"
-        Me.colSeleccionar.Width = 30
-        '
-        'colRestriccionID
-        '
-        Me.colRestriccionID.HeaderText = ""
-        Me.colRestriccionID.Name = "colRestriccionID"
-        Me.colRestriccionID.Visible = False
-        '
-        'colDescripcionRestriccion
-        '
-        Me.colDescripcionRestriccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDescripcionRestriccion.HeaderText = "Descripción"
-        Me.colDescripcionRestriccion.Name = "colDescripcionRestriccion"
-        Me.colDescripcionRestriccion.ReadOnly = True
-        '
-        'colCondicionRestriccion
-        '
-        Me.colCondicionRestriccion.HeaderText = "Condición"
-        Me.colCondicionRestriccion.Name = "colCondicionRestriccion"
-        Me.colCondicionRestriccion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        '
-        'colCantidadRestriccion
-        '
-        Me.colCantidadRestriccion.HeaderText = "Cantidad"
-        Me.colCantidadRestriccion.MaxInputLength = 2
-        Me.colCantidadRestriccion.Name = "colCantidadRestriccion"
-        '
-        'colFlgCondicion
-        '
-        Me.colFlgCondicion.HeaderText = ""
-        Me.colFlgCondicion.Name = "colFlgCondicion"
-        Me.colFlgCondicion.Visible = False
-        '
-        'colDescripcionPersonal
-        '
-        Me.colDescripcionPersonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDescripcionPersonal.HeaderText = "Descripción"
-        Me.colDescripcionPersonal.Name = "colDescripcionPersonal"
-        '
-        'colCantidadPersonal
-        '
-        Me.colCantidadPersonal.HeaderText = "Cantidad"
-        Me.colCantidadPersonal.Name = "colCantidadPersonal"
-        '
-        'colDescripcionRecurso
-        '
-        Me.colDescripcionRecurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDescripcionRecurso.HeaderText = "Descripción"
-        Me.colDescripcionRecurso.Name = "colDescripcionRecurso"
-        '
-        'colCantidadRecurso
-        '
-        Me.colCantidadRecurso.HeaderText = "Cantidad"
-        Me.colCantidadRecurso.Name = "colCantidadRecurso"
         '
         'frmRegistroActividad
         '
