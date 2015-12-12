@@ -22,21 +22,20 @@ Partial Class frmActEvaluacionCD
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2.SuspendLayout()
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SgcGroupBox2
         '
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDataGridView1)
+        Me.SgcGroupBox2.Controls.Add(Me.dgvListado)
         Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox2.Location = New System.Drawing.Point(60, 142)
         Me.SgcGroupBox2.Name = "SgcGroupBox2"
@@ -45,25 +44,23 @@ Partial Class frmActEvaluacionCD
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Listado"
         '
-        'SgcDataGridView1
+        'dgvListado
         '
-        Me.SgcDataGridView1.AllowUserToAddRows = False
+        Me.dgvListado.AllowUserToAddRows = False
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SgcDataGridView1.Location = New System.Drawing.Point(13, 26)
-        Me.SgcDataGridView1.Name = "SgcDataGridView1"
-        Me.SgcDataGridView1.Size = New System.Drawing.Size(873, 320)
-        Me.SgcDataGridView1.TabIndex = 0
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Location = New System.Drawing.Point(13, 26)
+        Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.Size = New System.Drawing.Size(873, 320)
+        Me.dgvListado.TabIndex = 0
         '
         'SgcGroupBox1
         '
         Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox2)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
         Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox1)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -89,29 +86,6 @@ Partial Class frmActEvaluacionCD
         Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.SgcButton1.UseVisualStyleBackColor = False
         '
-        'SgcComboBox2
-        '
-        Me.SgcComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox2.FormattingEnabled = True
-        Me.SgcComboBox2.Location = New System.Drawing.Point(470, 31)
-        Me.SgcComboBox2.Name = "SgcComboBox2"
-        Me.SgcComboBox2.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox2.TabIndex = 3
-        '
-        'SgcLabel2
-        '
-        Me.SgcLabel2.AutoSize = True
-        Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel2.Location = New System.Drawing.Point(393, 34)
-        Me.SgcLabel2.Name = "SgcLabel2"
-        Me.SgcLabel2.Size = New System.Drawing.Size(37, 18)
-        Me.SgcLabel2.TabIndex = 2
-        Me.SgcLabel2.Text = "Año:"
-        '
         'SgcComboBox1
         '
         Me.SgcComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -135,28 +109,42 @@ Partial Class frmActEvaluacionCD
         Me.SgcLabel1.TabIndex = 0
         Me.SgcLabel1.Text = "Comite:"
         '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(397, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(230, 23)
+        Me.lblTitulo.TabIndex = 21
+        Me.lblTitulo.Text = "Seguimiento de Actividades"
+        '
         'frmActEvaluacionCD
         '
-        Me.ClientSize = New System.Drawing.Size(1016, 738)
+        Me.ClientSize = New System.Drawing.Size(1016, 733)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.SgcGroupBox2)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Name = "frmActEvaluacionCD"
         Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
+        Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.SgcGroupBox2.ResumeLayout(False)
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
+    Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcButton1 As SGC_CS.SGCButton
-    Friend WithEvents SgcComboBox2 As SGC_CS.SGCComboBox
-    Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
+    Friend WithEvents lblTitulo As SGC_CS.SGCLabel
 
 End Class

@@ -87,6 +87,40 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ListarActividadesBusqueda(ByVal id_comite As String, ByVal nombre As String) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesBusqueda
+            Dim oListadoActividades As New List(Of ActividadBE)
+            Dim oActividad As ActividadBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES_BUSQUEDA", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oActividad = New ActividadBE
+                    oActividad.id_actividad = dr("id_actividad")
+                    oActividad.nombre = dr("nombre")
+                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
+                    oActividad.hora_ini = IIf(dr("hora_ini") Is DBNull.Value, Nothing, dr("hora_ini"))
+                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.hora_fin = IIf(dr("hora_fin") Is DBNull.Value, Nothing, dr("hora_fin"))
+                    oListadoActividades.Add(oActividad)
+                End While
+                dr.Close()
+                Return oListadoActividades
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
         Public Function CargarActividadCabecera(ByVal id_actividad As Integer) As Entidades.ActividadBE Implements Interfaces.IActividad.CargarActividadCabecera
             Dim oActividad As New ActividadBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
@@ -167,7 +201,125 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ListarActividadesPendientesPGC(ByVal id_comite As String) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesPendientesPGC
+            Dim oListadoActividades As New List(Of ActividadBE)
+            Dim oActividad As ActividadBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES_PENDIENTES_PGC", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
 
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oActividad = New ActividadBE
+                    oActividad.id_actividad = dr("id_actividad")
+                    oActividad.nombre = dr("nombre")
+                    oActividad.descripcion = dr("descripcion")
+                    oActividad.id_tipo_act = dr("id_tipo_act")
+                    oActividad.desc_tipo = dr("desc_tipo")
+                    oActividad.id_cattipo_act = dr("id_cattipo_act")
+                    oActividad.desc_cat = dr("desc_cat")
+                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
+                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.monto_pago = dr("monto_pago")
+                    oActividad.vacantes = dr("vacantes")
+                    oActividad.id_estado = dr("id_estado")
+                    oActividad.desc_estado = dr("estado")
+                    oListadoActividades.Add(oActividad)
+                End While
+                dr.Close()
+                Return oListadoActividades
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarActividadesAprobadasPGC(ByVal id_comite As String) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesAprobadasPGC
+            Dim oListadoActividades As New List(Of ActividadBE)
+            Dim oActividad As ActividadBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES_APROBADAS_PGC", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oActividad = New ActividadBE
+                    oActividad.id_actividad = dr("id_actividad")
+                    oActividad.nombre = dr("nombre")
+                    oActividad.descripcion = dr("descripcion")
+                    oActividad.id_tipo_act = dr("id_tipo_act")
+                    oActividad.desc_tipo = dr("desc_tipo")
+                    oActividad.id_cattipo_act = dr("id_cattipo_act")
+                    oActividad.desc_cat = dr("desc_cat")
+                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
+                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.monto_pago = dr("monto_pago")
+                    oActividad.vacantes = dr("vacantes")
+                    oActividad.id_estado = dr("id_estado")
+                    oActividad.desc_estado = dr("estado")
+                    oListadoActividades.Add(oActividad)
+                End While
+                dr.Close()
+                Return oListadoActividades
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarActividadesRechazadasPGC(ByVal id_comite As String) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesRechazadasPGC
+            Dim oListadoActividades As New List(Of ActividadBE)
+            Dim oActividad As ActividadBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES_RECHAZADAS_PGC", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oActividad = New ActividadBE
+                    oActividad.id_actividad = dr("id_actividad")
+                    oActividad.nombre = dr("nombre")
+                    oActividad.descripcion = dr("descripcion")
+                    oActividad.id_tipo_act = dr("id_tipo_act")
+                    oActividad.desc_tipo = dr("desc_tipo")
+                    oActividad.id_cattipo_act = dr("id_cattipo_act")
+                    oActividad.desc_cat = dr("desc_cat")
+                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
+                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.monto_pago = dr("monto_pago")
+                    oActividad.vacantes = dr("vacantes")
+                    oActividad.id_estado = dr("id_estado")
+                    oActividad.desc_estado = dr("estado")
+                    oListadoActividades.Add(oActividad)
+                End While
+                dr.Close()
+                Return oListadoActividades
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
 #End Region
 
 #Region "Insert"
@@ -331,6 +483,7 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@id_tipo_act", SqlDbType.VarChar).Value = IIf(oActividad.id_tipo_act Is Nothing, DBNull.Value, oActividad.id_tipo_act)
             sqlCmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = IIf(oActividad.descripcion Is Nothing, DBNull.Value, oActividad.descripcion)
             sqlCmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = IIf(oActividad.nombre Is Nothing, DBNull.Value, oActividad.nombre)
+            sqlCmd.Parameters.Add("@id_actividad_recurrente", SqlDbType.Int).Value = IIf(oActividad.id_actividad_recurrente Is Nothing, DBNull.Value, oActividad.id_actividad_recurrente)
             sqlCmd.Parameters.Add("@flg_plan_anual", SqlDbType.Bit).Value = IIf(oActividad.flg_plan_anual Is Nothing, False, oActividad.flg_plan_anual)
             sqlCmd.Parameters.Add("@flg_web", SqlDbType.Bit).Value = IIf(oActividad.flg_web Is Nothing, False, oActividad.flg_web)
             sqlCmd.Parameters.Add("@tipo_inscripcion", SqlDbType.Char).Value = IIf(oActividad.tipo_inscripcion Is Nothing, DBNull.Value, oActividad.tipo_inscripcion)

@@ -20,23 +20,23 @@ Partial Class frmPresupuestoActividad
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnQuitar = New SGC_CS.SGCButton(Me.components)
         Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
-        Me.SgcButton2 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.btnAgregar = New SGC_CS.SGCButton(Me.components)
+        Me.dgvPresupuesto = New SGC_CS.SGCDataGridView(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox2.SuspendLayout()
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvPresupuesto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SgcGroupBox2
         '
-        Me.SgcGroupBox2.Controls.Add(Me.SgcButton1)
+        Me.SgcGroupBox2.Controls.Add(Me.btnQuitar)
         Me.SgcGroupBox2.Controls.Add(Me.SgcTextBox1)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcButton2)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDataGridView1)
+        Me.SgcGroupBox2.Controls.Add(Me.btnAgregar)
+        Me.SgcGroupBox2.Controls.Add(Me.dgvPresupuesto)
         Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox2.Location = New System.Drawing.Point(12, 89)
         Me.SgcGroupBox2.Name = "SgcGroupBox2"
@@ -44,6 +44,21 @@ Partial Class frmPresupuestoActividad
         Me.SgcGroupBox2.TabIndex = 16
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Items"
+        '
+        'btnQuitar
+        '
+        Me.btnQuitar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnQuitar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuitar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnQuitar.Location = New System.Drawing.Point(94, 216)
+        Me.btnQuitar.Name = "btnQuitar"
+        Me.btnQuitar.Size = New System.Drawing.Size(75, 31)
+        Me.btnQuitar.TabIndex = 20
+        Me.btnQuitar.Text = "Quitar"
+        Me.btnQuitar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnQuitar.UseVisualStyleBackColor = False
         '
         'SgcTextBox1
         '
@@ -55,34 +70,34 @@ Partial Class frmPresupuestoActividad
         Me.SgcTextBox1.Size = New System.Drawing.Size(100, 26)
         Me.SgcTextBox1.TabIndex = 19
         '
-        'SgcButton2
+        'btnAgregar
         '
-        Me.SgcButton2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton2.Location = New System.Drawing.Point(13, 216)
-        Me.SgcButton2.Name = "SgcButton2"
-        Me.SgcButton2.Size = New System.Drawing.Size(75, 31)
-        Me.SgcButton2.TabIndex = 10
-        Me.SgcButton2.Text = "Agregar"
-        Me.SgcButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton2.UseVisualStyleBackColor = False
+        Me.btnAgregar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnAgregar.Location = New System.Drawing.Point(13, 216)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(75, 31)
+        Me.btnAgregar.TabIndex = 10
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregar.UseVisualStyleBackColor = False
         '
-        'SgcDataGridView1
+        'dgvPresupuesto
         '
-        Me.SgcDataGridView1.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SgcDataGridView1.Location = New System.Drawing.Point(13, 26)
-        Me.SgcDataGridView1.Name = "SgcDataGridView1"
-        Me.SgcDataGridView1.Size = New System.Drawing.Size(408, 184)
-        Me.SgcDataGridView1.TabIndex = 0
+        Me.dgvPresupuesto.AllowUserToAddRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvPresupuesto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvPresupuesto.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvPresupuesto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvPresupuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPresupuesto.Location = New System.Drawing.Point(13, 26)
+        Me.dgvPresupuesto.Name = "dgvPresupuesto"
+        Me.dgvPresupuesto.Size = New System.Drawing.Size(408, 184)
+        Me.dgvPresupuesto.TabIndex = 0
         '
         'lblTitulo
         '
@@ -96,21 +111,6 @@ Partial Class frmPresupuestoActividad
         Me.lblTitulo.TabIndex = 17
         Me.lblTitulo.Text = "Presupuesto de Actividad"
         '
-        'SgcButton1
-        '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Location = New System.Drawing.Point(94, 216)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(75, 31)
-        Me.SgcButton1.TabIndex = 20
-        Me.SgcButton1.Text = "Quitar"
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
-        '
         'frmPresupuestoActividad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -120,16 +120,16 @@ Partial Class frmPresupuestoActividad
         Me.Name = "frmPresupuestoActividad"
         Me.SgcGroupBox2.ResumeLayout(False)
         Me.SgcGroupBox2.PerformLayout()
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvPresupuesto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
-    Friend WithEvents SgcButton2 As SGC_CS.SGCButton
-    Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
+    Friend WithEvents btnAgregar As SGC_CS.SGCButton
+    Friend WithEvents dgvPresupuesto As SGC_CS.SGCDataGridView
+    Friend WithEvents btnQuitar As SGC_CS.SGCButton
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
 
 End Class

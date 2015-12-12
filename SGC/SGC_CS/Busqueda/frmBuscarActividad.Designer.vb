@@ -28,11 +28,10 @@ Partial Class frmBuscarActividad
         Me.lblComite = New SGC_CS.SGCLabel(Me.components)
         Me.cboComite = New SGC_CS.SGCComboBox(Me.components)
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
-        Me.colComite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFechaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFechaFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colHoraFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxFiltros.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,7 +55,6 @@ Partial Class frmBuscarActividad
         'txtNombre
         '
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre.Enabled = False
         Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
         Me.txtNombre.Location = New System.Drawing.Point(153, 58)
@@ -122,41 +120,43 @@ Partial Class frmBuscarActividad
         Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colComite, Me.colNombre, Me.colFechaInicio, Me.colHoraInicio, Me.colFechaFin, Me.colHoraFin})
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNombre, Me.colFecInicio, Me.colHoraInicio, Me.colFecFin, Me.colHoraFin})
         Me.dgvListado.Location = New System.Drawing.Point(12, 149)
         Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.ReadOnly = True
         Me.dgvListado.Size = New System.Drawing.Size(645, 270)
         Me.dgvListado.TabIndex = 22
         '
-        'colComite
-        '
-        Me.colComite.HeaderText = "Comité"
-        Me.colComite.Name = "colComite"
-        '
         'colNombre
         '
-        Me.colNombre.HeaderText = "Descripción"
+        Me.colNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colNombre.HeaderText = "Nombre"
         Me.colNombre.Name = "colNombre"
+        Me.colNombre.ReadOnly = True
         '
-        'colFechaInicio
+        'colFecInicio
         '
-        Me.colFechaInicio.HeaderText = "F. Inicio"
-        Me.colFechaInicio.Name = "colFechaInicio"
+        Me.colFecInicio.HeaderText = "F. Inicio"
+        Me.colFecInicio.Name = "colFecInicio"
+        Me.colFecInicio.ReadOnly = True
         '
         'colHoraInicio
         '
         Me.colHoraInicio.HeaderText = "H. Inicio"
         Me.colHoraInicio.Name = "colHoraInicio"
+        Me.colHoraInicio.ReadOnly = True
         '
-        'colFechaFin
+        'colFecFin
         '
-        Me.colFechaFin.HeaderText = "F. Fin"
-        Me.colFechaFin.Name = "colFechaFin"
+        Me.colFecFin.HeaderText = "F. Fin"
+        Me.colFecFin.Name = "colFecFin"
+        Me.colFecFin.ReadOnly = True
         '
         'colHoraFin
         '
         Me.colHoraFin.HeaderText = "H. Fin"
         Me.colHoraFin.Name = "colHoraFin"
+        Me.colHoraFin.ReadOnly = True
         '
         'frmBuscarActividad
         '
@@ -180,11 +180,10 @@ Partial Class frmBuscarActividad
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
     Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
     Friend WithEvents txtNombre As SGC_CS.SGCTextBox
-    Friend WithEvents colComite As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colFechaInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colHoraInicio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colFechaFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colHoraFin As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

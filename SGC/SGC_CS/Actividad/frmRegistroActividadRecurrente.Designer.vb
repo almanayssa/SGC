@@ -21,26 +21,23 @@ Partial Class frmRegistroActividadRecurrente
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
-        Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
-        Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcNumericUpDown2 = New SGC_CS.SGCNumericUpDown(Me.components)
+        Me.nudVacantes = New SGC_CS.SGCNumericUpDown(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel12 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcTextBox4 = New SGC_CS.SGCTextBox(Me.components)
-        Me.SgcTextBox2 = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtDescripcion = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel11 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcNumericUpDown1 = New SGC_CS.SGCNumericUpDown(Me.components)
+        Me.nudPago = New SGC_CS.SGCNumericUpDown(Me.components)
         Me.SgcLabel7 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox3 = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboCategoria = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
+        Me.cboTipo = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboComite = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.gbxRecurrencia = New System.Windows.Forms.GroupBox()
         Me.pnlMensual = New System.Windows.Forms.Panel()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -80,8 +77,8 @@ Partial Class frmRegistroActividadRecurrente
         Me.chkLunes = New System.Windows.Forms.CheckBox()
         Me.tsMenu.SuspendLayout()
         Me.SgcGroupBox1.SuspendLayout()
-        CType(Me.SgcNumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SgcNumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxRecurrencia.SuspendLayout()
         Me.pnlMensual.SuspendLayout()
         CType(Me.nudNumeroMes2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -100,7 +97,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
         Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbLimpiar, Me.sbGuardar})
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbLimpiar, Me.tsbGuardar})
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 49)
         Me.tsMenu.Name = "tsMenu"
@@ -108,45 +105,42 @@ Partial Class frmRegistroActividadRecurrente
         Me.tsMenu.TabIndex = 18
         Me.tsMenu.Text = "SgcToolStrip1"
         '
-        'sbLimpiar
+        'tsbLimpiar
         '
-        Me.sbLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbLimpiar.Image = Global.SGC_CS.My.Resources.Resources.menu_limpiar
-        Me.sbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbLimpiar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbLimpiar.Name = "sbLimpiar"
-        Me.sbLimpiar.Size = New System.Drawing.Size(88, 34)
-        Me.sbLimpiar.Text = "Limpiar"
+        Me.tsbLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbLimpiar.Image = Global.SGC_CS.My.Resources.Resources.menu_limpiar
+        Me.tsbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbLimpiar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbLimpiar.Name = "tsbLimpiar"
+        Me.tsbLimpiar.Size = New System.Drawing.Size(88, 34)
+        Me.tsbLimpiar.Text = "Limpiar"
         '
-        'sbGuardar
+        'tsbGuardar
         '
-        Me.sbGuardar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbGuardar.Image = Global.SGC_CS.My.Resources.Resources.menu_validar
-        Me.sbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbGuardar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbGuardar.Name = "sbGuardar"
-        Me.sbGuardar.Size = New System.Drawing.Size(92, 34)
-        Me.sbGuardar.Text = "Guardar"
+        Me.tsbGuardar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbGuardar.Image = Global.SGC_CS.My.Resources.Resources.menu_validar
+        Me.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbGuardar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbGuardar.Name = "tsbGuardar"
+        Me.tsbGuardar.Size = New System.Drawing.Size(92, 34)
+        Me.tsbGuardar.Text = "Guardar"
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcNumericUpDown2)
+        Me.SgcGroupBox1.Controls.Add(Me.nudVacantes)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel6)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel12)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox4)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox2)
+        Me.SgcGroupBox1.Controls.Add(Me.txtDescripcion)
+        Me.SgcGroupBox1.Controls.Add(Me.txtNombre)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel11)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcNumericUpDown1)
+        Me.SgcGroupBox1.Controls.Add(Me.nudPago)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel7)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox3)
+        Me.SgcGroupBox1.Controls.Add(Me.cboCategoria)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox2)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox1)
+        Me.SgcGroupBox1.Controls.Add(Me.cboTipo)
+        Me.SgcGroupBox1.Controls.Add(Me.cboComite)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel3)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 89)
         Me.SgcGroupBox1.Name = "SgcGroupBox1"
@@ -155,34 +149,19 @@ Partial Class frmRegistroActividadRecurrente
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Datos"
         '
-        'SgcButton1
+        'nudVacantes
         '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.SgcButton1.Location = New System.Drawing.Point(215, 35)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
-        Me.SgcButton1.TabIndex = 46
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
-        '
-        'SgcNumericUpDown2
-        '
-        Me.SgcNumericUpDown2.Location = New System.Drawing.Point(369, 93)
-        Me.SgcNumericUpDown2.Name = "SgcNumericUpDown2"
-        Me.SgcNumericUpDown2.Size = New System.Drawing.Size(69, 26)
-        Me.SgcNumericUpDown2.TabIndex = 22
+        Me.nudVacantes.Location = New System.Drawing.Point(369, 72)
+        Me.nudVacantes.Name = "nudVacantes"
+        Me.nudVacantes.Size = New System.Drawing.Size(69, 26)
+        Me.nudVacantes.TabIndex = 22
         '
         'SgcLabel6
         '
         Me.SgcLabel6.AutoSize = True
         Me.SgcLabel6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcLabel6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel6.Location = New System.Drawing.Point(279, 95)
+        Me.SgcLabel6.Location = New System.Drawing.Point(279, 74)
         Me.SgcLabel6.Name = "SgcLabel6"
         Me.SgcLabel6.Size = New System.Drawing.Size(67, 18)
         Me.SgcLabel6.TabIndex = 21
@@ -199,26 +178,26 @@ Partial Class frmRegistroActividadRecurrente
         Me.SgcLabel12.TabIndex = 20
         Me.SgcLabel12.Text = "Descripción:"
         '
-        'SgcTextBox4
+        'txtDescripcion
         '
-        Me.SgcTextBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox4.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox4.Location = New System.Drawing.Point(109, 166)
-        Me.SgcTextBox4.Multiline = True
-        Me.SgcTextBox4.Name = "SgcTextBox4"
-        Me.SgcTextBox4.Size = New System.Drawing.Size(329, 53)
-        Me.SgcTextBox4.TabIndex = 19
+        Me.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtDescripcion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDescripcion.ForeColor = System.Drawing.Color.Black
+        Me.txtDescripcion.Location = New System.Drawing.Point(109, 166)
+        Me.txtDescripcion.Multiline = True
+        Me.txtDescripcion.Name = "txtDescripcion"
+        Me.txtDescripcion.Size = New System.Drawing.Size(329, 53)
+        Me.txtDescripcion.TabIndex = 19
         '
-        'SgcTextBox2
+        'txtNombre
         '
-        Me.SgcTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox2.Location = New System.Drawing.Point(109, 134)
-        Me.SgcTextBox2.Name = "SgcTextBox2"
-        Me.SgcTextBox2.Size = New System.Drawing.Size(329, 26)
-        Me.SgcTextBox2.TabIndex = 17
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.ForeColor = System.Drawing.Color.Black
+        Me.txtNombre.Location = New System.Drawing.Point(109, 134)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(329, 26)
+        Me.txtNombre.TabIndex = 17
         '
         'SgcLabel11
         '
@@ -231,12 +210,12 @@ Partial Class frmRegistroActividadRecurrente
         Me.SgcLabel11.TabIndex = 16
         Me.SgcLabel11.Text = "Nombre:"
         '
-        'SgcNumericUpDown1
+        'nudPago
         '
-        Me.SgcNumericUpDown1.Location = New System.Drawing.Point(369, 35)
-        Me.SgcNumericUpDown1.Name = "SgcNumericUpDown1"
-        Me.SgcNumericUpDown1.Size = New System.Drawing.Size(69, 26)
-        Me.SgcNumericUpDown1.TabIndex = 11
+        Me.nudPago.Location = New System.Drawing.Point(369, 35)
+        Me.nudPago.Name = "nudPago"
+        Me.nudPago.Size = New System.Drawing.Size(69, 26)
+        Me.nudPago.TabIndex = 11
         '
         'SgcLabel7
         '
@@ -249,69 +228,59 @@ Partial Class frmRegistroActividadRecurrente
         Me.SgcLabel7.TabIndex = 8
         Me.SgcLabel7.Text = "Pago:"
         '
-        'SgcComboBox3
+        'cboCategoria
         '
-        Me.SgcComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox3.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox3.FormattingEnabled = True
-        Me.SgcComboBox3.Location = New System.Drawing.Point(369, 66)
-        Me.SgcComboBox3.Name = "SgcComboBox3"
-        Me.SgcComboBox3.Size = New System.Drawing.Size(96, 26)
-        Me.SgcComboBox3.TabIndex = 7
+        Me.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboCategoria.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboCategoria.ForeColor = System.Drawing.Color.Black
+        Me.cboCategoria.FormattingEnabled = True
+        Me.cboCategoria.Location = New System.Drawing.Point(109, 98)
+        Me.cboCategoria.Name = "cboCategoria"
+        Me.cboCategoria.Size = New System.Drawing.Size(121, 26)
+        Me.cboCategoria.TabIndex = 7
         '
         'SgcLabel4
         '
         Me.SgcLabel4.AutoSize = True
         Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel4.Location = New System.Drawing.Point(279, 69)
+        Me.SgcLabel4.Location = New System.Drawing.Point(19, 102)
         Me.SgcLabel4.Name = "SgcLabel4"
         Me.SgcLabel4.Size = New System.Drawing.Size(71, 18)
         Me.SgcLabel4.TabIndex = 6
         Me.SgcLabel4.Text = "Categoria:"
         '
-        'SgcComboBox2
+        'cboTipo
         '
-        Me.SgcComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox2.FormattingEnabled = True
-        Me.SgcComboBox2.Location = New System.Drawing.Point(109, 101)
-        Me.SgcComboBox2.Name = "SgcComboBox2"
-        Me.SgcComboBox2.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox2.TabIndex = 5
+        Me.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTipo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboTipo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboTipo.ForeColor = System.Drawing.Color.Black
+        Me.cboTipo.FormattingEnabled = True
+        Me.cboTipo.Location = New System.Drawing.Point(109, 69)
+        Me.cboTipo.Name = "cboTipo"
+        Me.cboTipo.Size = New System.Drawing.Size(121, 26)
+        Me.cboTipo.TabIndex = 5
         '
-        'SgcComboBox1
+        'cboComite
         '
-        Me.SgcComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox1.FormattingEnabled = True
-        Me.SgcComboBox1.Location = New System.Drawing.Point(109, 69)
-        Me.SgcComboBox1.Name = "SgcComboBox1"
-        Me.SgcComboBox1.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox1.TabIndex = 4
-        '
-        'SgcTextBox1
-        '
-        Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox1.Location = New System.Drawing.Point(109, 37)
-        Me.SgcTextBox1.Name = "SgcTextBox1"
-        Me.SgcTextBox1.Size = New System.Drawing.Size(100, 26)
-        Me.SgcTextBox1.TabIndex = 3
+        Me.cboComite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboComite.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboComite.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboComite.ForeColor = System.Drawing.Color.Black
+        Me.cboComite.FormattingEnabled = True
+        Me.cboComite.Location = New System.Drawing.Point(109, 37)
+        Me.cboComite.Name = "cboComite"
+        Me.cboComite.Size = New System.Drawing.Size(121, 26)
+        Me.cboComite.TabIndex = 4
         '
         'SgcLabel3
         '
         Me.SgcLabel3.AutoSize = True
         Me.SgcLabel3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel3.Location = New System.Drawing.Point(19, 104)
+        Me.SgcLabel3.Location = New System.Drawing.Point(19, 72)
         Me.SgcLabel3.Name = "SgcLabel3"
         Me.SgcLabel3.Size = New System.Drawing.Size(39, 18)
         Me.SgcLabel3.TabIndex = 2
@@ -322,22 +291,11 @@ Partial Class frmRegistroActividadRecurrente
         Me.SgcLabel2.AutoSize = True
         Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel2.Location = New System.Drawing.Point(19, 72)
+        Me.SgcLabel2.Location = New System.Drawing.Point(19, 40)
         Me.SgcLabel2.Name = "SgcLabel2"
         Me.SgcLabel2.Size = New System.Drawing.Size(57, 18)
         Me.SgcLabel2.TabIndex = 1
         Me.SgcLabel2.Text = "Comite:"
-        '
-        'SgcLabel1
-        '
-        Me.SgcLabel1.AutoSize = True
-        Me.SgcLabel1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel1.Location = New System.Drawing.Point(19, 39)
-        Me.SgcLabel1.Name = "SgcLabel1"
-        Me.SgcLabel1.Size = New System.Drawing.Size(55, 18)
-        Me.SgcLabel1.TabIndex = 0
-        Me.SgcLabel1.Text = "Codigo:"
         '
         'gbxRecurrencia
         '
@@ -581,7 +539,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.cboTipoRecurrencia.ForeColor = System.Drawing.Color.Black
         Me.cboTipoRecurrencia.FormattingEnabled = True
         Me.cboTipoRecurrencia.Items.AddRange(New Object() {"Diaria", "Semanal", "Mensual"})
-        Me.cboTipoRecurrencia.Location = New System.Drawing.Point(111, 27)
+        Me.cboTipoRecurrencia.Location = New System.Drawing.Point(111, 25)
         Me.cboTipoRecurrencia.Name = "cboTipoRecurrencia"
         Me.cboTipoRecurrencia.Size = New System.Drawing.Size(160, 26)
         Me.cboTipoRecurrencia.TabIndex = 22
@@ -589,7 +547,7 @@ Partial Class frmRegistroActividadRecurrente
         'Label19
         '
         Me.Label19.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label19.Location = New System.Drawing.Point(13, 33)
+        Me.Label19.Location = New System.Drawing.Point(13, 31)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(89, 17)
         Me.Label19.TabIndex = 21
@@ -601,9 +559,9 @@ Partial Class frmRegistroActividadRecurrente
         Me.pnlDuracionRecurrencia.Controls.Add(Me.dtpFechaInicio)
         Me.pnlDuracionRecurrencia.Controls.Add(Me.dtpFechaFin)
         Me.pnlDuracionRecurrencia.Controls.Add(Me.Label25)
-        Me.pnlDuracionRecurrencia.Location = New System.Drawing.Point(9, 118)
+        Me.pnlDuracionRecurrencia.Location = New System.Drawing.Point(9, 124)
         Me.pnlDuracionRecurrencia.Name = "pnlDuracionRecurrencia"
-        Me.pnlDuracionRecurrencia.Size = New System.Drawing.Size(433, 56)
+        Me.pnlDuracionRecurrencia.Size = New System.Drawing.Size(433, 58)
         Me.pnlDuracionRecurrencia.TabIndex = 43
         '
         'Label35
@@ -626,7 +584,7 @@ Partial Class frmRegistroActividadRecurrente
         'dtpFechaFin
         '
         Me.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFechaFin.Location = New System.Drawing.Point(97, 27)
+        Me.dtpFechaFin.Location = New System.Drawing.Point(97, 30)
         Me.dtpFechaFin.Name = "dtpFechaFin"
         Me.dtpFechaFin.Size = New System.Drawing.Size(109, 26)
         Me.dtpFechaFin.TabIndex = 42
@@ -634,7 +592,7 @@ Partial Class frmRegistroActividadRecurrente
         'Label25
         '
         Me.Label25.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Label25.Location = New System.Drawing.Point(3, 31)
+        Me.Label25.Location = New System.Drawing.Point(3, 34)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(94, 17)
         Me.Label25.TabIndex = 39
@@ -739,8 +697,8 @@ Partial Class frmRegistroActividadRecurrente
         Me.tsMenu.PerformLayout()
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
-        CType(Me.SgcNumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SgcNumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxRecurrencia.ResumeLayout(False)
         Me.pnlMensual.ResumeLayout(False)
         Me.pnlMensual.PerformLayout()
@@ -758,25 +716,22 @@ Partial Class frmRegistroActividadRecurrente
 
     End Sub
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
-    Friend WithEvents sbLimpiar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents sbGuardar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcNumericUpDown2 As SGC_CS.SGCNumericUpDown
+    Friend WithEvents nudVacantes As SGC_CS.SGCNumericUpDown
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel12 As SGC_CS.SGCLabel
-    Friend WithEvents SgcTextBox4 As SGC_CS.SGCTextBox
-    Friend WithEvents SgcTextBox2 As SGC_CS.SGCTextBox
+    Friend WithEvents txtDescripcion As SGC_CS.SGCTextBox
+    Friend WithEvents txtNombre As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel11 As SGC_CS.SGCLabel
-    Friend WithEvents SgcNumericUpDown1 As SGC_CS.SGCNumericUpDown
+    Friend WithEvents nudPago As SGC_CS.SGCNumericUpDown
     Friend WithEvents SgcLabel7 As SGC_CS.SGCLabel
-    Friend WithEvents SgcComboBox3 As SGC_CS.SGCComboBox
+    Friend WithEvents cboCategoria As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
-    Friend WithEvents SgcComboBox2 As SGC_CS.SGCComboBox
-    Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
-    Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
+    Friend WithEvents cboTipo As SGC_CS.SGCComboBox
+    Friend WithEvents cboComite As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
-    Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
     Friend WithEvents gbxRecurrencia As System.Windows.Forms.GroupBox
     Friend WithEvents pnlMensual As System.Windows.Forms.Panel
     Friend WithEvents Label24 As System.Windows.Forms.Label
@@ -814,6 +769,6 @@ Partial Class frmRegistroActividadRecurrente
     Friend WithEvents chkMiercoles As System.Windows.Forms.CheckBox
     Friend WithEvents chkMartes As System.Windows.Forms.CheckBox
     Friend WithEvents chkLunes As System.Windows.Forms.CheckBox
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
+    Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
 
 End Class

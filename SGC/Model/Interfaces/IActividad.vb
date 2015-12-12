@@ -8,8 +8,12 @@ Namespace SGC.Model.Interfaces
 
         Function ObtenerActividad(ByVal id_actividad As Integer) As ActividadBE
         Function ListarActividades(ByVal id_comite As String, ByVal fec_inicio As DateTime, ByVal fec_fin As DateTime) As List(Of ActividadBE)
+        Function ListarActividadesBusqueda(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
         Function CargarActividadCabecera(ByVal id_actividad As Integer) As ActividadBE
         Function ListarActividadesPlan(ByVal id_comite As String, ByVal id_plan As Integer?) As List(Of ActividadBE)
+        Function ListarActividadesPendientesPGC(ByVal id_comite As String) As List(Of ActividadBE)
+        Function ListarActividadesAprobadasPGC(ByVal id_comite As String) As List(Of ActividadBE)
+        Function ListarActividadesRechazadasPGC(ByVal id_comite As String) As List(Of ActividadBE)
 
 #End Region
 

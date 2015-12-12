@@ -53,6 +53,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarActividadesBusqueda(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
+            Try
+                Dim iActividad As IActividad
+                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+
+                iActividad = New ActividadDL
+                oListadoActividades = iActividad.ListarActividadesBusqueda(id_comite, nombre)
+
+                Return oListadoActividades
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
         Public Function ListarActividadesPlan(ByVal id_comite As String, ByVal id_plan As Integer?) As List(Of ActividadBE)
             Try
                 Dim iActividad As IActividad
@@ -68,6 +83,50 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarActividadesPendientesPGC(ByVal id_comite As String) As List(Of ActividadBE)
+            Try
+                Dim iActividad As IActividad
+                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+
+                iActividad = New ActividadDL
+                oListadoActividades = iActividad.ListarActividadesPendientesPGC(id_comite)
+
+                Return oListadoActividades
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarActividadesAprobadasPGC(ByVal id_comite As String) As List(Of ActividadBE)
+            Try
+                Dim iActividad As IActividad
+                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+
+                iActividad = New ActividadDL
+                oListadoActividades = iActividad.ListarActividadesAprobadasPGC(id_comite)
+
+                Return oListadoActividades
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarActividadesRechazadasPGC(ByVal id_comite As String) As List(Of ActividadBE)
+            Try
+                Dim iActividad As IActividad
+                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+
+                iActividad = New ActividadDL
+                oListadoActividades = iActividad.ListarActividadesRechazadasPGC(id_comite)
+
+                Return oListadoActividades
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 #End Region
 
 #Region "Insert"
@@ -134,6 +193,7 @@ Namespace SGC.Controller
                 Dim iActividad As IActividad
                 iActividad = New ActividadDL
 
+                affectedRows += iActividad.ActualizarActividad(oActividad)
                 affectedRows += iActividad.BorrarTipoPersonalXActividad(oActividad.id_actividad)
                 affectedRows += iActividad.BorrarRecursosXActividad(oActividad.id_actividad)
                 affectedRows += iActividad.BorrarRestriccionesXActividad(oActividad.id_actividad)

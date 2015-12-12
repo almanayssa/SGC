@@ -48,6 +48,8 @@ Public Class frmRegistroActividad
 #Region "Metodos Personalizados"
 
     Private Sub FormularioEnModoEdicion()
+        tsbCancelar.Visible = True
+
         cboComite.Enabled = True
         cboTipo.Enabled = True
         If cboCategoria.DataSource IsNot Nothing Then
@@ -269,6 +271,11 @@ Public Class frmRegistroActividad
     End Sub
 
     Private Sub LimpiarFormulario()
+        tsbEditar.Visible = False
+        tsbEliminar.Visible = False
+        tsbCancelar.Visible = False
+        tsbReprogramacion.Visible = False
+
         txtCodigo.Text = String.Empty
         cboComite.SelectedIndex = 0
         cboTipo.SelectedIndex = 0
@@ -368,17 +375,12 @@ Public Class frmRegistroActividad
         oActividad.id_tipo_act = cboTipo.SelectedValue
         oActividad.descripcion = txtDescripcion.Text.Trim
         oActividad.nombre = txtNombre.Text.Trim
-        'oActividad.flg_plan_anual = chkPlanAnual.Checked
-        'oActividad.flg_web = chkWeb.Checked
+        oActividad.flg_plan_anual = False
+        oActividad.flg_web = True
         oActividad.tipo_inscripcion = "A"
         oActividad.vacantes = nudVacantes.Value
         oActividad.ListaTipoPersonal = dgvTipoPersonal.DataSource
         oActividad.ListaRecursos = dgvRecursos.DataSource
-
-        'If Actividad IsNot Nothing Then
-        '    oActividad.id_actividad_recurrente = Actividad.id_actividad_recurrente
-        '    oActividad.ActividadRecurrente = Actividad.ActividadRecurrente
-        'End If
 
         'Dim startDateTime As DateTime = Nothing
         'Dim endDateTime As DateTime = Nothing
@@ -441,8 +443,6 @@ Public Class frmRegistroActividad
     Private Sub frmRegistroActividad_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         ListarComites()
         ListarTipoActividad()
-        'ListarSedes()
-        'ListarTipoLugar()
         ListarRestricciones()
         ListarSignos()
     End Sub
@@ -486,12 +486,27 @@ Public Class frmRegistroActividad
         End If
     End Sub
 
+    Private Sub tsbCancelar_Click(sender As System.Object, e As System.EventArgs) Handles tsbCancelar.Click
+        If MsgBox("Seguro que desea anular la actividad?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            LimpiarFormulario()
+        End If
+    End Sub
+
+    Private Sub tsbPresupuesto_Click(sender As System.Object, e As System.EventArgs) Handles tsbPresupuesto.Click
+
+    End Sub
+
+    Private Sub tsbReprogramacion_Click(sender As System.Object, e As System.EventArgs) Handles tsbReprogramacion.Click
+
+    End Sub
 
     Private Sub btnBuscarActividad_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarActividad.Click
         Dim frmBuscarActividad As New frmBuscarActividad
         frmBuscarActividad.ShowDialog()
 
         If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then
+            tsbEditar.Visible = True
+            tsbEliminar.Visible = True
             _id_actividad = frmBuscarActividad.ActividadSeleccionada.id_actividad
             CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
             FormularioEnModoVista()

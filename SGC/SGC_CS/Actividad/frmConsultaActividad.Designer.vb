@@ -20,13 +20,13 @@ Partial Class frmConsultaActividad
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dtpFecFin = New SGC_CS.SGCDateTimePicker(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
@@ -38,61 +38,6 @@ Partial Class frmConsultaActividad
         Me.tabControl = New SGC_CS.SGCTabControl(Me.components)
         Me.tpTodas = New System.Windows.Forms.TabPage()
         Me.dgvTodas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.tpRegistradas = New System.Windows.Forms.TabPage()
-        Me.tpEvaluacion = New System.Windows.Forms.TabPage()
-        Me.tpAprobadas = New System.Windows.Forms.TabPage()
-        Me.tpRechazadas = New System.Windows.Forms.TabPage()
-        Me.tbHabilitadas = New System.Windows.Forms.TabPage()
-        Me.tpFinalizadas = New System.Windows.Forms.TabPage()
-        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
-        Me.dgvRegistradas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.dgvEnEvaluacion = New SGC_CS.SGCDataGridView(Me.components)
-        Me.dgvAprobadas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.dgvRechazadas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.dgvHabilitadas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.dgvFinalizadas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.creNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cfiNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cfiTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cfiCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cfiFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cfiFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cfiPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cfiVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ctoNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ctoTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ctoCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -101,22 +46,84 @@ Partial Class frmConsultaActividad
         Me.ctoPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ctoVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ctoEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpRegistradas = New System.Windows.Forms.TabPage()
+        Me.dgvRegistradas = New SGC_CS.SGCDataGridView(Me.components)
+        Me.creNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpEvaluacion = New System.Windows.Forms.TabPage()
+        Me.dgvEnEvaluacion = New SGC_CS.SGCDataGridView(Me.components)
+        Me.ceeNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpAprobadas = New System.Windows.Forms.TabPage()
+        Me.dgvAprobadas = New SGC_CS.SGCDataGridView(Me.components)
+        Me.capNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpRechazadas = New System.Windows.Forms.TabPage()
+        Me.dgvRechazadas = New SGC_CS.SGCDataGridView(Me.components)
+        Me.crcNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpHabilitadas = New System.Windows.Forms.TabPage()
+        Me.dgvHabilitadas = New SGC_CS.SGCDataGridView(Me.components)
+        Me.chaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
+        Me.cfiVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cfiPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cfiFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cfiFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cfiCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cfiTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cfiNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpAnuladas = New System.Windows.Forms.TabPage()
+        Me.dgvAnuladas = New SGC_CS.SGCDataGridView(Me.components)
+        Me.canNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox1.SuspendLayout()
         Me.tabControl.SuspendLayout()
         Me.tpTodas.SuspendLayout()
         CType(Me.dgvTodas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpRegistradas.SuspendLayout()
-        Me.tpEvaluacion.SuspendLayout()
-        Me.tpAprobadas.SuspendLayout()
-        Me.tpRechazadas.SuspendLayout()
-        Me.tbHabilitadas.SuspendLayout()
-        Me.tpFinalizadas.SuspendLayout()
         CType(Me.dgvRegistradas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpEvaluacion.SuspendLayout()
         CType(Me.dgvEnEvaluacion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpAprobadas.SuspendLayout()
         CType(Me.dgvAprobadas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpRechazadas.SuspendLayout()
         CType(Me.dgvRechazadas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpHabilitadas.SuspendLayout()
         CType(Me.dgvHabilitadas, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvFinalizadas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpAnuladas.SuspendLayout()
+        CType(Me.dgvAnuladas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SgcGroupBox1
@@ -219,10 +226,10 @@ Partial Class frmConsultaActividad
         Me.tabControl.Controls.Add(Me.tpTodas)
         Me.tabControl.Controls.Add(Me.tpRegistradas)
         Me.tabControl.Controls.Add(Me.tpEvaluacion)
+        Me.tabControl.Controls.Add(Me.tpAnuladas)
         Me.tabControl.Controls.Add(Me.tpAprobadas)
+        Me.tabControl.Controls.Add(Me.tpHabilitadas)
         Me.tabControl.Controls.Add(Me.tpRechazadas)
-        Me.tabControl.Controls.Add(Me.tbHabilitadas)
-        Me.tabControl.Controls.Add(Me.tpFinalizadas)
         Me.tabControl.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tabControl.Location = New System.Drawing.Point(60, 195)
         Me.tabControl.Name = "tabControl"
@@ -244,9 +251,9 @@ Partial Class frmConsultaActividad
         'dgvTodas
         '
         Me.dgvTodas.AllowUserToAddRows = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvTodas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvTodas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvTodas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvTodas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvTodas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -255,385 +262,6 @@ Partial Class frmConsultaActividad
         Me.dgvTodas.Name = "dgvTodas"
         Me.dgvTodas.Size = New System.Drawing.Size(873, 343)
         Me.dgvTodas.TabIndex = 0
-        '
-        'tpRegistradas
-        '
-        Me.tpRegistradas.Controls.Add(Me.dgvRegistradas)
-        Me.tpRegistradas.Location = New System.Drawing.Point(4, 27)
-        Me.tpRegistradas.Name = "tpRegistradas"
-        Me.tpRegistradas.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpRegistradas.Size = New System.Drawing.Size(888, 364)
-        Me.tpRegistradas.TabIndex = 1
-        Me.tpRegistradas.Text = "Registradas"
-        Me.tpRegistradas.UseVisualStyleBackColor = True
-        '
-        'tpEvaluacion
-        '
-        Me.tpEvaluacion.Controls.Add(Me.dgvEnEvaluacion)
-        Me.tpEvaluacion.Location = New System.Drawing.Point(4, 27)
-        Me.tpEvaluacion.Name = "tpEvaluacion"
-        Me.tpEvaluacion.Size = New System.Drawing.Size(888, 364)
-        Me.tpEvaluacion.TabIndex = 2
-        Me.tpEvaluacion.Text = "En Evaluación"
-        Me.tpEvaluacion.UseVisualStyleBackColor = True
-        '
-        'tpAprobadas
-        '
-        Me.tpAprobadas.Controls.Add(Me.dgvAprobadas)
-        Me.tpAprobadas.Location = New System.Drawing.Point(4, 27)
-        Me.tpAprobadas.Name = "tpAprobadas"
-        Me.tpAprobadas.Size = New System.Drawing.Size(888, 364)
-        Me.tpAprobadas.TabIndex = 3
-        Me.tpAprobadas.Text = "Aprobadas"
-        Me.tpAprobadas.UseVisualStyleBackColor = True
-        '
-        'tpRechazadas
-        '
-        Me.tpRechazadas.Controls.Add(Me.dgvRechazadas)
-        Me.tpRechazadas.Location = New System.Drawing.Point(4, 27)
-        Me.tpRechazadas.Name = "tpRechazadas"
-        Me.tpRechazadas.Size = New System.Drawing.Size(888, 364)
-        Me.tpRechazadas.TabIndex = 4
-        Me.tpRechazadas.Text = "Rechazadas"
-        Me.tpRechazadas.UseVisualStyleBackColor = True
-        '
-        'tbHabilitadas
-        '
-        Me.tbHabilitadas.Controls.Add(Me.dgvHabilitadas)
-        Me.tbHabilitadas.Location = New System.Drawing.Point(4, 27)
-        Me.tbHabilitadas.Name = "tbHabilitadas"
-        Me.tbHabilitadas.Size = New System.Drawing.Size(888, 364)
-        Me.tbHabilitadas.TabIndex = 5
-        Me.tbHabilitadas.Text = "Habilitadas"
-        Me.tbHabilitadas.UseVisualStyleBackColor = True
-        '
-        'tpFinalizadas
-        '
-        Me.tpFinalizadas.Controls.Add(Me.dgvFinalizadas)
-        Me.tpFinalizadas.Location = New System.Drawing.Point(4, 27)
-        Me.tpFinalizadas.Name = "tpFinalizadas"
-        Me.tpFinalizadas.Size = New System.Drawing.Size(888, 364)
-        Me.tpFinalizadas.TabIndex = 6
-        Me.tpFinalizadas.Text = "Finalizadas"
-        Me.tpFinalizadas.UseVisualStyleBackColor = True
-        '
-        'lblTitulo
-        '
-        Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
-        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.ForeColor = System.Drawing.Color.White
-        Me.lblTitulo.Location = New System.Drawing.Point(397, 9)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(199, 23)
-        Me.lblTitulo.TabIndex = 12
-        Me.lblTitulo.Text = "Consulta de Actividades"
-        '
-        'dgvRegistradas
-        '
-        Me.dgvRegistradas.AllowUserToAddRows = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRegistradas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
-        Me.dgvRegistradas.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvRegistradas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvRegistradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRegistradas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.creNombre, Me.creTipo, Me.creCategoria, Me.creFecInicio, Me.creFecFin, Me.crePago, Me.creVacantes})
-        Me.dgvRegistradas.Location = New System.Drawing.Point(8, 11)
-        Me.dgvRegistradas.Name = "dgvRegistradas"
-        Me.dgvRegistradas.Size = New System.Drawing.Size(873, 343)
-        Me.dgvRegistradas.TabIndex = 1
-        '
-        'dgvEnEvaluacion
-        '
-        Me.dgvEnEvaluacion.AllowUserToAddRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvEnEvaluacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
-        Me.dgvEnEvaluacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvEnEvaluacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvEnEvaluacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEnEvaluacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ceeNombre, Me.ceeTipo, Me.ceeCategoria, Me.ceeFecInicio, Me.ceeFecFin, Me.ceePago, Me.ceeVacantes})
-        Me.dgvEnEvaluacion.Location = New System.Drawing.Point(8, 11)
-        Me.dgvEnEvaluacion.Name = "dgvEnEvaluacion"
-        Me.dgvEnEvaluacion.Size = New System.Drawing.Size(873, 343)
-        Me.dgvEnEvaluacion.TabIndex = 1
-        '
-        'dgvAprobadas
-        '
-        Me.dgvAprobadas.AllowUserToAddRows = False
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvAprobadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle11
-        Me.dgvAprobadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvAprobadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvAprobadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAprobadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.capNombre, Me.capTipo, Me.capCategoria, Me.capFecInicio, Me.capFecFin, Me.capPago, Me.capVacantes})
-        Me.dgvAprobadas.Location = New System.Drawing.Point(8, 11)
-        Me.dgvAprobadas.Name = "dgvAprobadas"
-        Me.dgvAprobadas.Size = New System.Drawing.Size(873, 343)
-        Me.dgvAprobadas.TabIndex = 1
-        '
-        'dgvRechazadas
-        '
-        Me.dgvRechazadas.AllowUserToAddRows = False
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRechazadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle12
-        Me.dgvRechazadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvRechazadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvRechazadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRechazadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.crcNombre, Me.crcTipo, Me.crcCategoria, Me.crcFecInicio, Me.crcFecFin, Me.crcPago, Me.crcVacantes})
-        Me.dgvRechazadas.Location = New System.Drawing.Point(8, 11)
-        Me.dgvRechazadas.Name = "dgvRechazadas"
-        Me.dgvRechazadas.Size = New System.Drawing.Size(873, 343)
-        Me.dgvRechazadas.TabIndex = 1
-        '
-        'dgvHabilitadas
-        '
-        Me.dgvHabilitadas.AllowUserToAddRows = False
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvHabilitadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
-        Me.dgvHabilitadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvHabilitadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvHabilitadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvHabilitadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.chaNombre, Me.chaTipo, Me.chaCategoria, Me.chaFecInicio, Me.chaFecFin, Me.chaPago, Me.chaVacantes})
-        Me.dgvHabilitadas.Location = New System.Drawing.Point(8, 11)
-        Me.dgvHabilitadas.Name = "dgvHabilitadas"
-        Me.dgvHabilitadas.Size = New System.Drawing.Size(873, 343)
-        Me.dgvHabilitadas.TabIndex = 1
-        '
-        'dgvFinalizadas
-        '
-        Me.dgvFinalizadas.AllowUserToAddRows = False
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvFinalizadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle14
-        Me.dgvFinalizadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvFinalizadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvFinalizadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvFinalizadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cfiNombre, Me.cfiTipo, Me.cfiCategoria, Me.cfiFecInicio, Me.cfiFecFin, Me.cfiPago, Me.cfiVacantes})
-        Me.dgvFinalizadas.Location = New System.Drawing.Point(8, 11)
-        Me.dgvFinalizadas.Name = "dgvFinalizadas"
-        Me.dgvFinalizadas.Size = New System.Drawing.Size(873, 343)
-        Me.dgvFinalizadas.TabIndex = 1
-        '
-        'creNombre
-        '
-        Me.creNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.creNombre.HeaderText = "Nombre"
-        Me.creNombre.Name = "creNombre"
-        '
-        'creTipo
-        '
-        Me.creTipo.HeaderText = "Tipo"
-        Me.creTipo.Name = "creTipo"
-        '
-        'creCategoria
-        '
-        Me.creCategoria.HeaderText = "Categoría"
-        Me.creCategoria.Name = "creCategoria"
-        '
-        'creFecInicio
-        '
-        Me.creFecInicio.HeaderText = "Fec. Inicio"
-        Me.creFecInicio.Name = "creFecInicio"
-        '
-        'creFecFin
-        '
-        Me.creFecFin.HeaderText = "Fec. Fin"
-        Me.creFecFin.Name = "creFecFin"
-        '
-        'crePago
-        '
-        Me.crePago.HeaderText = "Pago"
-        Me.crePago.Name = "crePago"
-        '
-        'creVacantes
-        '
-        Me.creVacantes.HeaderText = "Vacantes"
-        Me.creVacantes.Name = "creVacantes"
-        '
-        'ceeNombre
-        '
-        Me.ceeNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ceeNombre.HeaderText = "Nombre"
-        Me.ceeNombre.Name = "ceeNombre"
-        '
-        'ceeTipo
-        '
-        Me.ceeTipo.HeaderText = "Tipo"
-        Me.ceeTipo.Name = "ceeTipo"
-        '
-        'ceeCategoria
-        '
-        Me.ceeCategoria.HeaderText = "Categoría"
-        Me.ceeCategoria.Name = "ceeCategoria"
-        '
-        'ceeFecInicio
-        '
-        Me.ceeFecInicio.HeaderText = "Fec. Inicio"
-        Me.ceeFecInicio.Name = "ceeFecInicio"
-        '
-        'ceeFecFin
-        '
-        Me.ceeFecFin.HeaderText = "Fec. Fin"
-        Me.ceeFecFin.Name = "ceeFecFin"
-        '
-        'ceePago
-        '
-        Me.ceePago.HeaderText = "Pago"
-        Me.ceePago.Name = "ceePago"
-        '
-        'ceeVacantes
-        '
-        Me.ceeVacantes.HeaderText = "Vacantes"
-        Me.ceeVacantes.Name = "ceeVacantes"
-        '
-        'capNombre
-        '
-        Me.capNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.capNombre.HeaderText = "Nombre"
-        Me.capNombre.Name = "capNombre"
-        '
-        'capTipo
-        '
-        Me.capTipo.HeaderText = "Tipo"
-        Me.capTipo.Name = "capTipo"
-        '
-        'capCategoria
-        '
-        Me.capCategoria.HeaderText = "Categoría"
-        Me.capCategoria.Name = "capCategoria"
-        '
-        'capFecInicio
-        '
-        Me.capFecInicio.HeaderText = "Fec. Inicio"
-        Me.capFecInicio.Name = "capFecInicio"
-        '
-        'capFecFin
-        '
-        Me.capFecFin.HeaderText = "Fec. Fin"
-        Me.capFecFin.Name = "capFecFin"
-        '
-        'capPago
-        '
-        Me.capPago.HeaderText = "Pago"
-        Me.capPago.Name = "capPago"
-        '
-        'capVacantes
-        '
-        Me.capVacantes.HeaderText = "Vacantes"
-        Me.capVacantes.Name = "capVacantes"
-        '
-        'crcNombre
-        '
-        Me.crcNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.crcNombre.HeaderText = "Nombre"
-        Me.crcNombre.Name = "crcNombre"
-        '
-        'crcTipo
-        '
-        Me.crcTipo.HeaderText = "Tipo"
-        Me.crcTipo.Name = "crcTipo"
-        '
-        'crcCategoria
-        '
-        Me.crcCategoria.HeaderText = "Categoría"
-        Me.crcCategoria.Name = "crcCategoria"
-        '
-        'crcFecInicio
-        '
-        Me.crcFecInicio.HeaderText = "Fec. Inicio"
-        Me.crcFecInicio.Name = "crcFecInicio"
-        '
-        'crcFecFin
-        '
-        Me.crcFecFin.HeaderText = "Fec. Fin"
-        Me.crcFecFin.Name = "crcFecFin"
-        '
-        'crcPago
-        '
-        Me.crcPago.HeaderText = "Pago"
-        Me.crcPago.Name = "crcPago"
-        '
-        'crcVacantes
-        '
-        Me.crcVacantes.HeaderText = "Vacantes"
-        Me.crcVacantes.Name = "crcVacantes"
-        '
-        'chaNombre
-        '
-        Me.chaNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.chaNombre.HeaderText = "Nombre"
-        Me.chaNombre.Name = "chaNombre"
-        '
-        'chaTipo
-        '
-        Me.chaTipo.HeaderText = "Tipo"
-        Me.chaTipo.Name = "chaTipo"
-        '
-        'chaCategoria
-        '
-        Me.chaCategoria.HeaderText = "Categoría"
-        Me.chaCategoria.Name = "chaCategoria"
-        '
-        'chaFecInicio
-        '
-        Me.chaFecInicio.HeaderText = "Fec. Inicio"
-        Me.chaFecInicio.Name = "chaFecInicio"
-        '
-        'chaFecFin
-        '
-        Me.chaFecFin.HeaderText = "Fec. Fin"
-        Me.chaFecFin.Name = "chaFecFin"
-        '
-        'chaPago
-        '
-        Me.chaPago.HeaderText = "Pago"
-        Me.chaPago.Name = "chaPago"
-        '
-        'chaVacantes
-        '
-        Me.chaVacantes.HeaderText = "Vacantes"
-        Me.chaVacantes.Name = "chaVacantes"
-        '
-        'cfiNombre
-        '
-        Me.cfiNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.cfiNombre.HeaderText = "Nombre"
-        Me.cfiNombre.Name = "cfiNombre"
-        '
-        'cfiTipo
-        '
-        Me.cfiTipo.HeaderText = "Tipo"
-        Me.cfiTipo.Name = "cfiTipo"
-        '
-        'cfiCategoria
-        '
-        Me.cfiCategoria.HeaderText = "Categoría"
-        Me.cfiCategoria.Name = "cfiCategoria"
-        '
-        'cfiFecInicio
-        '
-        Me.cfiFecInicio.HeaderText = "Fec. Inicio"
-        Me.cfiFecInicio.Name = "cfiFecInicio"
-        '
-        'cfiFecFin
-        '
-        Me.cfiFecFin.HeaderText = "Fec. Fin"
-        Me.cfiFecFin.Name = "cfiFecFin"
-        '
-        'cfiPago
-        '
-        Me.cfiPago.HeaderText = "Pago"
-        Me.cfiPago.Name = "cfiPago"
-        '
-        'cfiVacantes
-        '
-        Me.cfiVacantes.HeaderText = "Vacantes"
-        Me.cfiVacantes.Name = "cfiVacantes"
         '
         'ctoNombre
         '
@@ -676,6 +304,421 @@ Partial Class frmConsultaActividad
         Me.ctoEstado.HeaderText = "Estado"
         Me.ctoEstado.Name = "ctoEstado"
         '
+        'tpRegistradas
+        '
+        Me.tpRegistradas.Controls.Add(Me.dgvRegistradas)
+        Me.tpRegistradas.Location = New System.Drawing.Point(4, 27)
+        Me.tpRegistradas.Name = "tpRegistradas"
+        Me.tpRegistradas.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpRegistradas.Size = New System.Drawing.Size(888, 364)
+        Me.tpRegistradas.TabIndex = 1
+        Me.tpRegistradas.Text = "Registradas"
+        Me.tpRegistradas.UseVisualStyleBackColor = True
+        '
+        'dgvRegistradas
+        '
+        Me.dgvRegistradas.AllowUserToAddRows = False
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRegistradas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvRegistradas.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvRegistradas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvRegistradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRegistradas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.creNombre, Me.creTipo, Me.creCategoria, Me.creFecInicio, Me.creFecFin, Me.crePago, Me.creVacantes})
+        Me.dgvRegistradas.Location = New System.Drawing.Point(8, 11)
+        Me.dgvRegistradas.Name = "dgvRegistradas"
+        Me.dgvRegistradas.Size = New System.Drawing.Size(873, 343)
+        Me.dgvRegistradas.TabIndex = 1
+        '
+        'creNombre
+        '
+        Me.creNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.creNombre.HeaderText = "Nombre"
+        Me.creNombre.Name = "creNombre"
+        '
+        'creTipo
+        '
+        Me.creTipo.HeaderText = "Tipo"
+        Me.creTipo.Name = "creTipo"
+        '
+        'creCategoria
+        '
+        Me.creCategoria.HeaderText = "Categoría"
+        Me.creCategoria.Name = "creCategoria"
+        '
+        'creFecInicio
+        '
+        Me.creFecInicio.HeaderText = "Fec. Inicio"
+        Me.creFecInicio.Name = "creFecInicio"
+        '
+        'creFecFin
+        '
+        Me.creFecFin.HeaderText = "Fec. Fin"
+        Me.creFecFin.Name = "creFecFin"
+        '
+        'crePago
+        '
+        Me.crePago.HeaderText = "Pago"
+        Me.crePago.Name = "crePago"
+        '
+        'creVacantes
+        '
+        Me.creVacantes.HeaderText = "Vacantes"
+        Me.creVacantes.Name = "creVacantes"
+        '
+        'tpEvaluacion
+        '
+        Me.tpEvaluacion.Controls.Add(Me.dgvEnEvaluacion)
+        Me.tpEvaluacion.Location = New System.Drawing.Point(4, 27)
+        Me.tpEvaluacion.Name = "tpEvaluacion"
+        Me.tpEvaluacion.Size = New System.Drawing.Size(888, 364)
+        Me.tpEvaluacion.TabIndex = 2
+        Me.tpEvaluacion.Text = "En Evaluación"
+        Me.tpEvaluacion.UseVisualStyleBackColor = True
+        '
+        'dgvEnEvaluacion
+        '
+        Me.dgvEnEvaluacion.AllowUserToAddRows = False
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvEnEvaluacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvEnEvaluacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvEnEvaluacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvEnEvaluacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEnEvaluacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ceeNombre, Me.ceeTipo, Me.ceeCategoria, Me.ceeFecInicio, Me.ceeFecFin, Me.ceePago, Me.ceeVacantes})
+        Me.dgvEnEvaluacion.Location = New System.Drawing.Point(8, 11)
+        Me.dgvEnEvaluacion.Name = "dgvEnEvaluacion"
+        Me.dgvEnEvaluacion.Size = New System.Drawing.Size(873, 343)
+        Me.dgvEnEvaluacion.TabIndex = 1
+        '
+        'ceeNombre
+        '
+        Me.ceeNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ceeNombre.HeaderText = "Nombre"
+        Me.ceeNombre.Name = "ceeNombre"
+        '
+        'ceeTipo
+        '
+        Me.ceeTipo.HeaderText = "Tipo"
+        Me.ceeTipo.Name = "ceeTipo"
+        '
+        'ceeCategoria
+        '
+        Me.ceeCategoria.HeaderText = "Categoría"
+        Me.ceeCategoria.Name = "ceeCategoria"
+        '
+        'ceeFecInicio
+        '
+        Me.ceeFecInicio.HeaderText = "Fec. Inicio"
+        Me.ceeFecInicio.Name = "ceeFecInicio"
+        '
+        'ceeFecFin
+        '
+        Me.ceeFecFin.HeaderText = "Fec. Fin"
+        Me.ceeFecFin.Name = "ceeFecFin"
+        '
+        'ceePago
+        '
+        Me.ceePago.HeaderText = "Pago"
+        Me.ceePago.Name = "ceePago"
+        '
+        'ceeVacantes
+        '
+        Me.ceeVacantes.HeaderText = "Vacantes"
+        Me.ceeVacantes.Name = "ceeVacantes"
+        '
+        'tpAprobadas
+        '
+        Me.tpAprobadas.Controls.Add(Me.dgvAprobadas)
+        Me.tpAprobadas.Location = New System.Drawing.Point(4, 27)
+        Me.tpAprobadas.Name = "tpAprobadas"
+        Me.tpAprobadas.Size = New System.Drawing.Size(888, 364)
+        Me.tpAprobadas.TabIndex = 3
+        Me.tpAprobadas.Text = "Aprobadas"
+        Me.tpAprobadas.UseVisualStyleBackColor = True
+        '
+        'dgvAprobadas
+        '
+        Me.dgvAprobadas.AllowUserToAddRows = False
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvAprobadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvAprobadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvAprobadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvAprobadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAprobadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.capNombre, Me.capTipo, Me.capCategoria, Me.capFecInicio, Me.capFecFin, Me.capPago, Me.capVacantes})
+        Me.dgvAprobadas.Location = New System.Drawing.Point(8, 11)
+        Me.dgvAprobadas.Name = "dgvAprobadas"
+        Me.dgvAprobadas.Size = New System.Drawing.Size(873, 343)
+        Me.dgvAprobadas.TabIndex = 1
+        '
+        'capNombre
+        '
+        Me.capNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.capNombre.HeaderText = "Nombre"
+        Me.capNombre.Name = "capNombre"
+        '
+        'capTipo
+        '
+        Me.capTipo.HeaderText = "Tipo"
+        Me.capTipo.Name = "capTipo"
+        '
+        'capCategoria
+        '
+        Me.capCategoria.HeaderText = "Categoría"
+        Me.capCategoria.Name = "capCategoria"
+        '
+        'capFecInicio
+        '
+        Me.capFecInicio.HeaderText = "Fec. Inicio"
+        Me.capFecInicio.Name = "capFecInicio"
+        '
+        'capFecFin
+        '
+        Me.capFecFin.HeaderText = "Fec. Fin"
+        Me.capFecFin.Name = "capFecFin"
+        '
+        'capPago
+        '
+        Me.capPago.HeaderText = "Pago"
+        Me.capPago.Name = "capPago"
+        '
+        'capVacantes
+        '
+        Me.capVacantes.HeaderText = "Vacantes"
+        Me.capVacantes.Name = "capVacantes"
+        '
+        'tpRechazadas
+        '
+        Me.tpRechazadas.Controls.Add(Me.dgvRechazadas)
+        Me.tpRechazadas.Location = New System.Drawing.Point(4, 27)
+        Me.tpRechazadas.Name = "tpRechazadas"
+        Me.tpRechazadas.Size = New System.Drawing.Size(888, 364)
+        Me.tpRechazadas.TabIndex = 4
+        Me.tpRechazadas.Text = "Rechazadas"
+        Me.tpRechazadas.UseVisualStyleBackColor = True
+        '
+        'dgvRechazadas
+        '
+        Me.dgvRechazadas.AllowUserToAddRows = False
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRechazadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        Me.dgvRechazadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvRechazadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvRechazadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRechazadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.crcNombre, Me.crcTipo, Me.crcCategoria, Me.crcFecInicio, Me.crcFecFin, Me.crcPago, Me.crcVacantes})
+        Me.dgvRechazadas.Location = New System.Drawing.Point(8, 11)
+        Me.dgvRechazadas.Name = "dgvRechazadas"
+        Me.dgvRechazadas.Size = New System.Drawing.Size(873, 343)
+        Me.dgvRechazadas.TabIndex = 1
+        '
+        'crcNombre
+        '
+        Me.crcNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.crcNombre.HeaderText = "Nombre"
+        Me.crcNombre.Name = "crcNombre"
+        '
+        'crcTipo
+        '
+        Me.crcTipo.HeaderText = "Tipo"
+        Me.crcTipo.Name = "crcTipo"
+        '
+        'crcCategoria
+        '
+        Me.crcCategoria.HeaderText = "Categoría"
+        Me.crcCategoria.Name = "crcCategoria"
+        '
+        'crcFecInicio
+        '
+        Me.crcFecInicio.HeaderText = "Fec. Inicio"
+        Me.crcFecInicio.Name = "crcFecInicio"
+        '
+        'crcFecFin
+        '
+        Me.crcFecFin.HeaderText = "Fec. Fin"
+        Me.crcFecFin.Name = "crcFecFin"
+        '
+        'crcPago
+        '
+        Me.crcPago.HeaderText = "Pago"
+        Me.crcPago.Name = "crcPago"
+        '
+        'crcVacantes
+        '
+        Me.crcVacantes.HeaderText = "Vacantes"
+        Me.crcVacantes.Name = "crcVacantes"
+        '
+        'tpHabilitadas
+        '
+        Me.tpHabilitadas.Controls.Add(Me.dgvHabilitadas)
+        Me.tpHabilitadas.Location = New System.Drawing.Point(4, 27)
+        Me.tpHabilitadas.Name = "tpHabilitadas"
+        Me.tpHabilitadas.Size = New System.Drawing.Size(888, 364)
+        Me.tpHabilitadas.TabIndex = 5
+        Me.tpHabilitadas.Text = "Habilitadas"
+        Me.tpHabilitadas.UseVisualStyleBackColor = True
+        '
+        'dgvHabilitadas
+        '
+        Me.dgvHabilitadas.AllowUserToAddRows = False
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvHabilitadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvHabilitadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvHabilitadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvHabilitadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvHabilitadas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.chaNombre, Me.chaTipo, Me.chaCategoria, Me.chaFecInicio, Me.chaFecFin, Me.chaPago, Me.chaVacantes})
+        Me.dgvHabilitadas.Location = New System.Drawing.Point(8, 11)
+        Me.dgvHabilitadas.Name = "dgvHabilitadas"
+        Me.dgvHabilitadas.Size = New System.Drawing.Size(873, 343)
+        Me.dgvHabilitadas.TabIndex = 1
+        '
+        'chaNombre
+        '
+        Me.chaNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.chaNombre.HeaderText = "Nombre"
+        Me.chaNombre.Name = "chaNombre"
+        '
+        'chaTipo
+        '
+        Me.chaTipo.HeaderText = "Tipo"
+        Me.chaTipo.Name = "chaTipo"
+        '
+        'chaCategoria
+        '
+        Me.chaCategoria.HeaderText = "Categoría"
+        Me.chaCategoria.Name = "chaCategoria"
+        '
+        'chaFecInicio
+        '
+        Me.chaFecInicio.HeaderText = "Fec. Inicio"
+        Me.chaFecInicio.Name = "chaFecInicio"
+        '
+        'chaFecFin
+        '
+        Me.chaFecFin.HeaderText = "Fec. Fin"
+        Me.chaFecFin.Name = "chaFecFin"
+        '
+        'chaPago
+        '
+        Me.chaPago.HeaderText = "Pago"
+        Me.chaPago.Name = "chaPago"
+        '
+        'chaVacantes
+        '
+        Me.chaVacantes.HeaderText = "Vacantes"
+        Me.chaVacantes.Name = "chaVacantes"
+        '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(397, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(199, 23)
+        Me.lblTitulo.TabIndex = 12
+        Me.lblTitulo.Text = "Consulta de Actividades"
+        '
+        'cfiVacantes
+        '
+        Me.cfiVacantes.HeaderText = "Vacantes"
+        Me.cfiVacantes.Name = "cfiVacantes"
+        '
+        'cfiPago
+        '
+        Me.cfiPago.HeaderText = "Pago"
+        Me.cfiPago.Name = "cfiPago"
+        '
+        'cfiFecFin
+        '
+        Me.cfiFecFin.HeaderText = "Fec. Fin"
+        Me.cfiFecFin.Name = "cfiFecFin"
+        '
+        'cfiFecInicio
+        '
+        Me.cfiFecInicio.HeaderText = "Fec. Inicio"
+        Me.cfiFecInicio.Name = "cfiFecInicio"
+        '
+        'cfiCategoria
+        '
+        Me.cfiCategoria.HeaderText = "Categoría"
+        Me.cfiCategoria.Name = "cfiCategoria"
+        '
+        'cfiTipo
+        '
+        Me.cfiTipo.HeaderText = "Tipo"
+        Me.cfiTipo.Name = "cfiTipo"
+        '
+        'cfiNombre
+        '
+        Me.cfiNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.cfiNombre.HeaderText = "Nombre"
+        Me.cfiNombre.Name = "cfiNombre"
+        '
+        'tpAnuladas
+        '
+        Me.tpAnuladas.Controls.Add(Me.dgvAnuladas)
+        Me.tpAnuladas.Location = New System.Drawing.Point(4, 27)
+        Me.tpAnuladas.Name = "tpAnuladas"
+        Me.tpAnuladas.Size = New System.Drawing.Size(888, 364)
+        Me.tpAnuladas.TabIndex = 6
+        Me.tpAnuladas.Text = "Anuladas"
+        Me.tpAnuladas.UseVisualStyleBackColor = True
+        '
+        'dgvAnuladas
+        '
+        Me.dgvAnuladas.AllowUserToAddRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvAnuladas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvAnuladas.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvAnuladas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvAnuladas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAnuladas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.canNombre, Me.canTipo, Me.canCategoria, Me.canFecInicio, Me.canFecFin, Me.canPago, Me.canVacantes})
+        Me.dgvAnuladas.Location = New System.Drawing.Point(8, 11)
+        Me.dgvAnuladas.Name = "dgvAnuladas"
+        Me.dgvAnuladas.Size = New System.Drawing.Size(873, 343)
+        Me.dgvAnuladas.TabIndex = 2
+        '
+        'canNombre
+        '
+        Me.canNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.canNombre.HeaderText = "Nombre"
+        Me.canNombre.Name = "canNombre"
+        '
+        'canTipo
+        '
+        Me.canTipo.HeaderText = "Tipo"
+        Me.canTipo.Name = "canTipo"
+        '
+        'canCategoria
+        '
+        Me.canCategoria.HeaderText = "Categoría"
+        Me.canCategoria.Name = "canCategoria"
+        '
+        'canFecInicio
+        '
+        Me.canFecInicio.HeaderText = "Fec. Inicio"
+        Me.canFecInicio.Name = "canFecInicio"
+        '
+        'canFecFin
+        '
+        Me.canFecFin.HeaderText = "Fec. Fin"
+        Me.canFecFin.Name = "canFecFin"
+        '
+        'canPago
+        '
+        Me.canPago.HeaderText = "Pago"
+        Me.canPago.Name = "canPago"
+        '
+        'canVacantes
+        '
+        Me.canVacantes.HeaderText = "Vacantes"
+        Me.canVacantes.Name = "canVacantes"
+        '
         'frmConsultaActividad
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -692,17 +735,17 @@ Partial Class frmConsultaActividad
         Me.tpTodas.ResumeLayout(False)
         CType(Me.dgvTodas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpRegistradas.ResumeLayout(False)
-        Me.tpEvaluacion.ResumeLayout(False)
-        Me.tpAprobadas.ResumeLayout(False)
-        Me.tpRechazadas.ResumeLayout(False)
-        Me.tbHabilitadas.ResumeLayout(False)
-        Me.tpFinalizadas.ResumeLayout(False)
         CType(Me.dgvRegistradas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpEvaluacion.ResumeLayout(False)
         CType(Me.dgvEnEvaluacion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpAprobadas.ResumeLayout(False)
         CType(Me.dgvAprobadas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpRechazadas.ResumeLayout(False)
         CType(Me.dgvRechazadas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpHabilitadas.ResumeLayout(False)
         CType(Me.dgvHabilitadas, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvFinalizadas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpAnuladas.ResumeLayout(False)
+        CType(Me.dgvAnuladas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -722,15 +765,13 @@ Partial Class frmConsultaActividad
     Friend WithEvents dtpFecFin As SGC_CS.SGCDateTimePicker
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents dtpFecInicio As SGC_CS.SGCDateTimePicker
-    Friend WithEvents tbHabilitadas As System.Windows.Forms.TabPage
-    Friend WithEvents tpFinalizadas As System.Windows.Forms.TabPage
+    Friend WithEvents tpHabilitadas As System.Windows.Forms.TabPage
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
     Friend WithEvents dgvRegistradas As SGC_CS.SGCDataGridView
     Friend WithEvents dgvEnEvaluacion As SGC_CS.SGCDataGridView
     Friend WithEvents dgvAprobadas As SGC_CS.SGCDataGridView
     Friend WithEvents dgvRechazadas As SGC_CS.SGCDataGridView
     Friend WithEvents dgvHabilitadas As SGC_CS.SGCDataGridView
-    Friend WithEvents dgvFinalizadas As SGC_CS.SGCDataGridView
     Friend WithEvents creNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents creTipo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents creCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -766,13 +807,6 @@ Partial Class frmConsultaActividad
     Friend WithEvents chaFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents chaPago As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents chaVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiTipo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiPago As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ctoNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ctoTipo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ctoCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -781,5 +815,21 @@ Partial Class frmConsultaActividad
     Friend WithEvents ctoPago As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ctoVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ctoEstado As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents tpAnuladas As System.Windows.Forms.TabPage
+    Friend WithEvents cfiVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiPago As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiTipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvAnuladas As SGC_CS.SGCDataGridView
+    Friend WithEvents canNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents canTipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents canCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents canFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents canFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents canPago As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents canVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

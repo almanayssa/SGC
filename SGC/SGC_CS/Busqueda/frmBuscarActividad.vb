@@ -12,21 +12,20 @@ Public Class frmBuscarActividad
         InitializeComponent()
 
         dgvListado.AutoGenerateColumns = False
-        colComite.DataPropertyName = "nombreComite"
         colNombre.DataPropertyName = "nombre"
-        colFechaInicio.DataPropertyName = "fec_ini"
+        colFecInicio.DataPropertyName = "fec_ini"
         colHoraInicio.DataPropertyName = "hora_ini"
-        colFechaFin.DataPropertyName = "fec_fin"
+        colFecFin.DataPropertyName = "fec_fin"
         colHoraFin.DataPropertyName = "hora_fin"
 
-        colFechaInicio.ValueType = GetType(DateTime)
-        colFechaInicio.DefaultCellStyle.Format = "MM/dd/yyyy"
+        'colFecInicio.ValueType = GetType(DateTime)
+        'colFecInicio.DefaultCellStyle.Format = "MM/dd/yyyy"
 
         'colHoraInicio.ValueType = GetType(TimeSpan)
         'colHoraInicio.DefaultCellStyle.Format = "HH:mm"
 
-        colFechaFin.ValueType = GetType(DateTime)
-        colFechaFin.DefaultCellStyle.Format = "MM/dd/yyyy"
+        'colFecFin.ValueType = GetType(DateTime)
+        'colFecFin.DefaultCellStyle.Format = "MM/dd/yyyy"
 
         'colHoraFin.ValueType = GetType(TimeSpan)
         'colHoraFin.DefaultCellStyle.Format = "HH:mm"
@@ -66,9 +65,9 @@ Public Class frmBuscarActividad
     End Sub
 
     Private Sub ListarActividades()
-        'Dim ListadoActividades As List(Of ActividadBE) = bc.ListarActividades(cboComite.SelectedValue, txtNombre.Text.Trim)
-        'dgvListado.DataSource = Nothing
-        'dgvListado.DataSource = ListadoActividades
+        Dim ListadoActividades As List(Of ActividadBE) = bc.ListarActividadesBusqueda(cboComite.SelectedValue, txtNombre.Text.Trim)
+        dgvListado.DataSource = Nothing
+        dgvListado.DataSource = ListadoActividades
     End Sub
 
 #End Region
@@ -85,7 +84,12 @@ Public Class frmBuscarActividad
 #Region "Metodos Controles"
 
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
-        ListarActividades()
+        If cboComite.SelectedValue = "000" Then
+            MessageBox.Show("Seleccione un comité", "Información")
+            Exit Sub
+        Else
+            ListarActividades()
+        End If
     End Sub
 
 #End Region
