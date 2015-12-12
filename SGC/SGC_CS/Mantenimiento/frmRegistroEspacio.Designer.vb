@@ -143,6 +143,7 @@ Partial Class frmRegistroEspacio
         Me.nudAforo.Name = "nudAforo"
         Me.nudAforo.Size = New System.Drawing.Size(99, 26)
         Me.nudAforo.TabIndex = 8
+        Me.nudAforo.Visible = False
         '
         'chkAforo
         '
@@ -155,6 +156,7 @@ Partial Class frmRegistroEspacio
         Me.chkAforo.Size = New System.Drawing.Size(15, 14)
         Me.chkAforo.TabIndex = 7
         Me.chkAforo.UseVisualStyleBackColor = True
+        Me.chkAforo.Visible = False
         '
         'SgcLabel4
         '
@@ -166,6 +168,7 @@ Partial Class frmRegistroEspacio
         Me.SgcLabel4.Size = New System.Drawing.Size(47, 18)
         Me.SgcLabel4.TabIndex = 6
         Me.SgcLabel4.Text = "Aforo:"
+        Me.SgcLabel4.Visible = False
         '
         'txtEspacio
         '

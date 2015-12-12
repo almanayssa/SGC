@@ -89,6 +89,7 @@ Partial Class frmRegistroActividad
         Me.colCantidadRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btnQuitarRecurso = New SGC_CS.SGCButton(Me.components)
         Me.btnAgregarRecurso = New SGC_CS.SGCButton(Me.components)
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudPago, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -478,7 +479,7 @@ Partial Class frmRegistroActividad
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 51)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(755, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(307, 37)
         Me.tsMenu.TabIndex = 17
         Me.tsMenu.Text = "SgcToolStrip1"
         '
@@ -841,9 +842,22 @@ Partial Class frmRegistroActividad
         Me.btnAgregarRecurso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAgregarRecurso.UseVisualStyleBackColor = False
         '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(397, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(155, 23)
+        Me.lblTitulo.TabIndex = 24
+        Me.lblTitulo.Text = "Registro Actividad"
+        '
         'frmRegistroActividad
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.tcPlanAnual)
         Me.Controls.Add(Me.tsMenu)
         Me.Controls.Add(Me.SgcGroupBox2)
@@ -853,6 +867,7 @@ Partial Class frmRegistroActividad
         Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
         Me.Controls.SetChildIndex(Me.tsMenu, 0)
         Me.Controls.SetChildIndex(Me.tcPlanAnual, 0)
+        Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).EndInit()
@@ -941,5 +956,6 @@ Partial Class frmRegistroActividad
     Friend WithEvents colCantidadPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colDescripcionRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colCantidadRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lblTitulo As SGC_CS.SGCLabel
 
 End Class

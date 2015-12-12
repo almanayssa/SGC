@@ -21,28 +21,28 @@ Partial Class frmBuscarArticulo
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboSubconcepto = New SGC_CS.SGCComboBox(Me.components)
         Me.cboConcepto = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
-        'SgcComboBox2
+        'cboSubconcepto
         '
-        Me.SgcComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox2.FormattingEnabled = True
-        Me.SgcComboBox2.Location = New System.Drawing.Point(132, 60)
-        Me.SgcComboBox2.Name = "SgcComboBox2"
-        Me.SgcComboBox2.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox2.TabIndex = 9
+        Me.cboSubconcepto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSubconcepto.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboSubconcepto.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSubconcepto.ForeColor = System.Drawing.Color.Black
+        Me.cboSubconcepto.FormattingEnabled = True
+        Me.cboSubconcepto.Location = New System.Drawing.Point(132, 60)
+        Me.cboSubconcepto.Name = "cboSubconcepto"
+        Me.cboSubconcepto.Size = New System.Drawing.Size(121, 26)
+        Me.cboSubconcepto.TabIndex = 9
         '
         'cboConcepto
         '
@@ -78,26 +78,26 @@ Partial Class frmBuscarArticulo
         Me.SgcLabel2.TabIndex = 6
         Me.SgcLabel2.Text = "Concepto:"
         '
-        'SgcDataGridView1
+        'dgvListado
         '
-        Me.SgcDataGridView1.AllowUserToAddRows = False
+        Me.dgvListado.AllowUserToAddRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SgcDataGridView1.Location = New System.Drawing.Point(12, 159)
-        Me.SgcDataGridView1.Name = "SgcDataGridView1"
-        Me.SgcDataGridView1.Size = New System.Drawing.Size(374, 168)
-        Me.SgcDataGridView1.TabIndex = 10
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Location = New System.Drawing.Point(12, 159)
+        Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.Size = New System.Drawing.Size(374, 168)
+        Me.dgvListado.TabIndex = 10
         '
         'SgcGroupBox2
         '
-        Me.SgcGroupBox2.Controls.Add(Me.SgcButton1)
+        Me.SgcGroupBox2.Controls.Add(Me.btnBuscar)
         Me.SgcGroupBox2.Controls.Add(Me.SgcLabel2)
         Me.SgcGroupBox2.Controls.Add(Me.SgcLabel3)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcComboBox2)
+        Me.SgcGroupBox2.Controls.Add(Me.cboSubconcepto)
         Me.SgcGroupBox2.Controls.Add(Me.cboConcepto)
         Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox2.Location = New System.Drawing.Point(12, 12)
@@ -107,42 +107,42 @@ Partial Class frmBuscarArticulo
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Filtros"
         '
-        'SgcButton1
+        'btnBuscar
         '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Location = New System.Drawing.Point(132, 92)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(75, 31)
-        Me.SgcButton1.TabIndex = 10
-        Me.SgcButton1.Text = "Buscar"
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscar.Location = New System.Drawing.Point(132, 92)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(75, 31)
+        Me.btnBuscar.TabIndex = 10
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'frmBuscarArticulo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
         Me.ClientSize = New System.Drawing.Size(399, 339)
         Me.Controls.Add(Me.SgcGroupBox2)
-        Me.Controls.Add(Me.SgcDataGridView1)
+        Me.Controls.Add(Me.dgvListado)
         Me.Name = "frmBuscarArticulo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Buscar Artículo"
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox2.ResumeLayout(False)
         Me.SgcGroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents SgcComboBox2 As SGC_CS.SGCComboBox
+    Friend WithEvents cboSubconcepto As SGC_CS.SGCComboBox
     Friend WithEvents cboConcepto As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
-    Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
+    Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
+    Friend WithEvents btnBuscar As SGC_CS.SGCButton
 
 End Class

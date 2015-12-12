@@ -22,16 +22,16 @@ Partial Class frmBuscarEspacio
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.gbxFiltros = New SGC_CS.SGCGroupBox(Me.components)
+        Me.lblSede = New SGC_CS.SGCLabel(Me.components)
+        Me.cboSede = New SGC_CS.SGCComboBox(Me.components)
+        Me.lblEspacio = New SGC_CS.SGCLabel(Me.components)
+        Me.cboEspacio = New SGC_CS.SGCComboBox(Me.components)
         Me.lblFecha = New SGC_CS.SGCLabel(Me.components)
         Me.dtpFecha = New SGC_CS.SGCDateTimePicker(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.lblLugar = New SGC_CS.SGCLabel(Me.components)
         Me.cboLugar = New SGC_CS.SGCComboBox(Me.components)
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
-        Me.lblEspacio = New SGC_CS.SGCLabel(Me.components)
-        Me.cboEspacio = New SGC_CS.SGCComboBox(Me.components)
-        Me.lblSede = New SGC_CS.SGCLabel(Me.components)
-        Me.cboSede = New SGC_CS.SGCComboBox(Me.components)
         Me.gbxFiltros.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -54,6 +54,52 @@ Partial Class frmBuscarEspacio
         Me.gbxFiltros.TabIndex = 19
         Me.gbxFiltros.TabStop = False
         Me.gbxFiltros.Text = "Filtros"
+        '
+        'lblSede
+        '
+        Me.lblSede.AutoSize = True
+        Me.lblSede.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSede.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblSede.Location = New System.Drawing.Point(23, 23)
+        Me.lblSede.Name = "lblSede"
+        Me.lblSede.Size = New System.Drawing.Size(43, 18)
+        Me.lblSede.TabIndex = 16
+        Me.lblSede.Text = "Sede:"
+        '
+        'cboSede
+        '
+        Me.cboSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSede.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboSede.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSede.ForeColor = System.Drawing.Color.Black
+        Me.cboSede.FormattingEnabled = True
+        Me.cboSede.Location = New System.Drawing.Point(132, 20)
+        Me.cboSede.Name = "cboSede"
+        Me.cboSede.Size = New System.Drawing.Size(121, 26)
+        Me.cboSede.TabIndex = 17
+        '
+        'lblEspacio
+        '
+        Me.lblEspacio.AutoSize = True
+        Me.lblEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEspacio.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblEspacio.Location = New System.Drawing.Point(23, 87)
+        Me.lblEspacio.Name = "lblEspacio"
+        Me.lblEspacio.Size = New System.Drawing.Size(58, 18)
+        Me.lblEspacio.TabIndex = 14
+        Me.lblEspacio.Text = "Espacio:"
+        '
+        'cboEspacio
+        '
+        Me.cboEspacio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboEspacio.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboEspacio.ForeColor = System.Drawing.Color.Black
+        Me.cboEspacio.FormattingEnabled = True
+        Me.cboEspacio.Location = New System.Drawing.Point(132, 84)
+        Me.cboEspacio.Name = "cboEspacio"
+        Me.cboEspacio.Size = New System.Drawing.Size(121, 26)
+        Me.cboEspacio.TabIndex = 15
         '
         'lblFecha
         '
@@ -126,52 +172,6 @@ Partial Class frmBuscarEspacio
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.Size = New System.Drawing.Size(502, 199)
         Me.dgvListado.TabIndex = 20
-        '
-        'lblEspacio
-        '
-        Me.lblEspacio.AutoSize = True
-        Me.lblEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEspacio.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblEspacio.Location = New System.Drawing.Point(23, 87)
-        Me.lblEspacio.Name = "lblEspacio"
-        Me.lblEspacio.Size = New System.Drawing.Size(58, 18)
-        Me.lblEspacio.TabIndex = 14
-        Me.lblEspacio.Text = "Espacio:"
-        '
-        'cboEspacio
-        '
-        Me.cboEspacio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboEspacio.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cboEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboEspacio.ForeColor = System.Drawing.Color.Black
-        Me.cboEspacio.FormattingEnabled = True
-        Me.cboEspacio.Location = New System.Drawing.Point(132, 84)
-        Me.cboEspacio.Name = "cboEspacio"
-        Me.cboEspacio.Size = New System.Drawing.Size(121, 26)
-        Me.cboEspacio.TabIndex = 15
-        '
-        'lblSede
-        '
-        Me.lblSede.AutoSize = True
-        Me.lblSede.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSede.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblSede.Location = New System.Drawing.Point(23, 23)
-        Me.lblSede.Name = "lblSede"
-        Me.lblSede.Size = New System.Drawing.Size(43, 18)
-        Me.lblSede.TabIndex = 16
-        Me.lblSede.Text = "Sede:"
-        '
-        'cboSede
-        '
-        Me.cboSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboSede.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cboSede.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboSede.ForeColor = System.Drawing.Color.Black
-        Me.cboSede.FormattingEnabled = True
-        Me.cboSede.Location = New System.Drawing.Point(132, 20)
-        Me.cboSede.Name = "cboSede"
-        Me.cboSede.Size = New System.Drawing.Size(121, 26)
-        Me.cboSede.TabIndex = 17
         '
         'frmBuscarEspacio
         '

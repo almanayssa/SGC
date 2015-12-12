@@ -23,12 +23,12 @@ Partial Class frmBuscarFamiliares
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
         Me.gbxFiltros = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcButton2 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcTextBox5 = New SGC_CS.SGCTextBox(Me.components)
+        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
+        Me.btnBuscarFamiliar = New SGC_CS.SGCButton(Me.components)
+        Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcTextBox6 = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtAccion = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel16 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxFiltros.SuspendLayout()
         Me.SuspendLayout()
@@ -49,11 +49,11 @@ Partial Class frmBuscarFamiliares
         '
         'gbxFiltros
         '
-        Me.gbxFiltros.Controls.Add(Me.SgcButton1)
-        Me.gbxFiltros.Controls.Add(Me.SgcButton2)
-        Me.gbxFiltros.Controls.Add(Me.SgcTextBox5)
+        Me.gbxFiltros.Controls.Add(Me.btnBuscar)
+        Me.gbxFiltros.Controls.Add(Me.btnBuscarFamiliar)
+        Me.gbxFiltros.Controls.Add(Me.txtNombre)
         Me.gbxFiltros.Controls.Add(Me.SgcLabel6)
-        Me.gbxFiltros.Controls.Add(Me.SgcTextBox6)
+        Me.gbxFiltros.Controls.Add(Me.txtAccion)
         Me.gbxFiltros.Controls.Add(Me.SgcLabel16)
         Me.gbxFiltros.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxFiltros.Location = New System.Drawing.Point(9, 12)
@@ -63,30 +63,45 @@ Partial Class frmBuscarFamiliares
         Me.gbxFiltros.TabStop = False
         Me.gbxFiltros.Text = "Filtros"
         '
-        'SgcButton2
+        'btnBuscar
         '
-        Me.SgcButton2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton2.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton2.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.SgcButton2.Location = New System.Drawing.Point(223, 25)
-        Me.SgcButton2.Name = "SgcButton2"
-        Me.SgcButton2.Size = New System.Drawing.Size(43, 31)
-        Me.SgcButton2.TabIndex = 26
-        Me.SgcButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton2.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscar.Location = New System.Drawing.Point(105, 93)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(85, 31)
+        Me.btnBuscar.TabIndex = 27
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'SgcTextBox5
+        'btnBuscarFamiliar
         '
-        Me.SgcTextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox5.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox5.Location = New System.Drawing.Point(105, 61)
-        Me.SgcTextBox5.Name = "SgcTextBox5"
-        Me.SgcTextBox5.Size = New System.Drawing.Size(277, 26)
-        Me.SgcTextBox5.TabIndex = 25
+        Me.btnBuscarFamiliar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscarFamiliar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscarFamiliar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarFamiliar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarFamiliar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscarFamiliar.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.btnBuscarFamiliar.Location = New System.Drawing.Point(223, 25)
+        Me.btnBuscarFamiliar.Name = "btnBuscarFamiliar"
+        Me.btnBuscarFamiliar.Size = New System.Drawing.Size(43, 31)
+        Me.btnBuscarFamiliar.TabIndex = 26
+        Me.btnBuscarFamiliar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscarFamiliar.UseVisualStyleBackColor = False
+        '
+        'txtNombre
+        '
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.ForeColor = System.Drawing.Color.Black
+        Me.txtNombre.Location = New System.Drawing.Point(105, 61)
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(277, 26)
+        Me.txtNombre.TabIndex = 25
         '
         'SgcLabel6
         '
@@ -99,15 +114,15 @@ Partial Class frmBuscarFamiliares
         Me.SgcLabel6.TabIndex = 24
         Me.SgcLabel6.Text = "Nombre:"
         '
-        'SgcTextBox6
+        'txtAccion
         '
-        Me.SgcTextBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox6.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox6.Location = New System.Drawing.Point(105, 29)
-        Me.SgcTextBox6.Name = "SgcTextBox6"
-        Me.SgcTextBox6.Size = New System.Drawing.Size(100, 26)
-        Me.SgcTextBox6.TabIndex = 23
+        Me.txtAccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAccion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtAccion.ForeColor = System.Drawing.Color.Black
+        Me.txtAccion.Location = New System.Drawing.Point(105, 29)
+        Me.txtAccion.Name = "txtAccion"
+        Me.txtAccion.Size = New System.Drawing.Size(100, 26)
+        Me.txtAccion.TabIndex = 23
         '
         'SgcLabel16
         '
@@ -119,21 +134,6 @@ Partial Class frmBuscarFamiliares
         Me.SgcLabel16.Size = New System.Drawing.Size(53, 18)
         Me.SgcLabel16.TabIndex = 22
         Me.SgcLabel16.Text = "Acción:"
-        '
-        'SgcButton1
-        '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Location = New System.Drawing.Point(139, 93)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(85, 31)
-        Me.SgcButton1.TabIndex = 27
-        Me.SgcButton1.Text = "Buscar"
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
         '
         'frmBuscarFamiliares
         '
@@ -152,11 +152,11 @@ Partial Class frmBuscarFamiliares
     End Sub
     Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
     Friend WithEvents gbxFiltros As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
-    Friend WithEvents SgcButton2 As SGC_CS.SGCButton
-    Friend WithEvents SgcTextBox5 As SGC_CS.SGCTextBox
+    Friend WithEvents btnBuscar As SGC_CS.SGCButton
+    Friend WithEvents btnBuscarFamiliar As SGC_CS.SGCButton
+    Friend WithEvents txtNombre As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
-    Friend WithEvents SgcTextBox6 As SGC_CS.SGCTextBox
+    Friend WithEvents txtAccion As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel16 As SGC_CS.SGCLabel
 
 End Class

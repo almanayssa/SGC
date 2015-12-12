@@ -20,8 +20,8 @@ Partial Class frmHabilitarActividad
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -45,6 +45,8 @@ Partial Class frmHabilitarActividad
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.nudVacantes = New SGC_CS.SGCNumericUpDown(Me.components)
+        Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
         Me.btnBuscarActividad = New SGC_CS.SGCButton(Me.components)
         Me.SgcLabel12 = New SGC_CS.SGCLabel(Me.components)
         Me.txtDescripcion = New SGC_CS.SGCTextBox(Me.components)
@@ -61,8 +63,7 @@ Partial Class frmHabilitarActividad
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
-        Me.nudVacantes = New SGC_CS.SGCNumericUpDown(Me.components)
-        Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.tcPlanAnual.SuspendLayout()
         Me.tpRestricciones.SuspendLayout()
         Me.SgcGroupBox3.SuspendLayout()
@@ -79,8 +80,8 @@ Partial Class frmHabilitarActividad
         Me.SgcGroupBox2.SuspendLayout()
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox1.SuspendLayout()
-        CType(Me.nudPago, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tcPlanAnual
@@ -120,9 +121,9 @@ Partial Class frmHabilitarActividad
         'dgvRestricciones
         '
         Me.dgvRestricciones.AllowUserToAddRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvRestricciones.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRestricciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRestricciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -190,9 +191,9 @@ Partial Class frmHabilitarActividad
         'dgvPersonal
         '
         Me.dgvPersonal.AllowUserToAddRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvPersonal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvPersonal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvPersonal.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPersonal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -347,6 +348,24 @@ Partial Class frmHabilitarActividad
         Me.SgcGroupBox1.TabIndex = 19
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Datos"
+        '
+        'nudVacantes
+        '
+        Me.nudVacantes.Location = New System.Drawing.Point(369, 69)
+        Me.nudVacantes.Name = "nudVacantes"
+        Me.nudVacantes.Size = New System.Drawing.Size(69, 26)
+        Me.nudVacantes.TabIndex = 25
+        '
+        'SgcLabel6
+        '
+        Me.SgcLabel6.AutoSize = True
+        Me.SgcLabel6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel6.Location = New System.Drawing.Point(279, 72)
+        Me.SgcLabel6.Name = "SgcLabel6"
+        Me.SgcLabel6.Size = New System.Drawing.Size(67, 18)
+        Me.SgcLabel6.TabIndex = 24
+        Me.SgcLabel6.Text = "Vacantes:"
         '
         'btnBuscarActividad
         '
@@ -525,27 +544,22 @@ Partial Class frmHabilitarActividad
         Me.SgcLabel1.TabIndex = 0
         Me.SgcLabel1.Text = "Codigo:"
         '
-        'nudVacantes
+        'lblTitulo
         '
-        Me.nudVacantes.Location = New System.Drawing.Point(369, 69)
-        Me.nudVacantes.Name = "nudVacantes"
-        Me.nudVacantes.Size = New System.Drawing.Size(69, 26)
-        Me.nudVacantes.TabIndex = 25
-        '
-        'SgcLabel6
-        '
-        Me.SgcLabel6.AutoSize = True
-        Me.SgcLabel6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel6.Location = New System.Drawing.Point(279, 72)
-        Me.SgcLabel6.Name = "SgcLabel6"
-        Me.SgcLabel6.Size = New System.Drawing.Size(67, 18)
-        Me.SgcLabel6.TabIndex = 24
-        Me.SgcLabel6.Text = "Vacantes:"
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(397, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(157, 23)
+        Me.lblTitulo.TabIndex = 23
+        Me.lblTitulo.Text = "Habilitar Actividad"
         '
         'frmHabilitarActividad
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.tcPlanAnual)
         Me.Controls.Add(Me.tsMenu)
         Me.Controls.Add(Me.SgcGroupBox2)
@@ -555,6 +569,7 @@ Partial Class frmHabilitarActividad
         Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
         Me.Controls.SetChildIndex(Me.tsMenu, 0)
         Me.Controls.SetChildIndex(Me.tcPlanAnual, 0)
+        Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.tcPlanAnual.ResumeLayout(False)
         Me.tpRestricciones.ResumeLayout(False)
         Me.SgcGroupBox3.ResumeLayout(False)
@@ -573,8 +588,8 @@ Partial Class frmHabilitarActividad
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
-        CType(Me.nudPago, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -617,5 +632,6 @@ Partial Class frmHabilitarActividad
     Friend WithEvents btnBuscarActividad As SGC_CS.SGCButton
     Friend WithEvents nudVacantes As SGC_CS.SGCNumericUpDown
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
+    Friend WithEvents lblTitulo As SGC_CS.SGCLabel
 
 End Class

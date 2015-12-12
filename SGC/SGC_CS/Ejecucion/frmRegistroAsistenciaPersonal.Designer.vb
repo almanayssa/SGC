@@ -20,29 +20,30 @@ Partial Class frmRegistroAsistenciaPersonal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroAsistenciaPersonal))
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcDataGridView3 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.dgvPersonal = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcTextBox2 = New SGC_CS.SGCTextBox(Me.components)
+        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
+        Me.txtActividad = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel11 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtCodigo = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox6.SuspendLayout()
-        CType(Me.SgcDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox2.SuspendLayout()
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SgcGroupBox6
         '
-        Me.SgcGroupBox6.Controls.Add(Me.SgcDataGridView3)
+        Me.SgcGroupBox6.Controls.Add(Me.dgvPersonal)
         Me.SgcGroupBox6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox6.Location = New System.Drawing.Point(60, 324)
         Me.SgcGroupBox6.Name = "SgcGroupBox6"
@@ -51,23 +52,23 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.SgcGroupBox6.TabStop = False
         Me.SgcGroupBox6.Text = "Personal"
         '
-        'SgcDataGridView3
+        'dgvPersonal
         '
-        Me.SgcDataGridView3.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.SgcDataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcDataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SgcDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SgcDataGridView3.Location = New System.Drawing.Point(18, 25)
-        Me.SgcDataGridView3.Name = "SgcDataGridView3"
-        Me.SgcDataGridView3.Size = New System.Drawing.Size(849, 254)
-        Me.SgcDataGridView3.TabIndex = 1
+        Me.dgvPersonal.AllowUserToAddRows = False
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvPersonal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvPersonal.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvPersonal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPersonal.Location = New System.Drawing.Point(18, 25)
+        Me.dgvPersonal.Name = "dgvPersonal"
+        Me.dgvPersonal.Size = New System.Drawing.Size(849, 254)
+        Me.dgvPersonal.TabIndex = 1
         '
         'SgcGroupBox2
         '
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDataGridView1)
+        Me.SgcGroupBox2.Controls.Add(Me.dgvProgramacion)
         Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox2.Location = New System.Drawing.Point(589, 109)
         Me.SgcGroupBox2.Name = "SgcGroupBox2"
@@ -76,26 +77,26 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Programación"
         '
-        'SgcDataGridView1
+        'dgvProgramacion
         '
-        Me.SgcDataGridView1.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SgcDataGridView1.Location = New System.Drawing.Point(18, 25)
-        Me.SgcDataGridView1.Name = "SgcDataGridView1"
-        Me.SgcDataGridView1.Size = New System.Drawing.Size(320, 178)
-        Me.SgcDataGridView1.TabIndex = 1
+        Me.dgvProgramacion.AllowUserToAddRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvProgramacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvProgramacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvProgramacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProgramacion.Location = New System.Drawing.Point(18, 25)
+        Me.dgvProgramacion.Name = "dgvProgramacion"
+        Me.dgvProgramacion.Size = New System.Drawing.Size(320, 178)
+        Me.dgvProgramacion.TabIndex = 1
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox2)
+        Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
+        Me.SgcGroupBox1.Controls.Add(Me.txtActividad)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel11)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox1)
+        Me.SgcGroupBox1.Controls.Add(Me.txtCodigo)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 109)
@@ -105,31 +106,31 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Actividad"
         '
-        'SgcButton1
+        'btnBuscar
         '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Image = CType(resources.GetObject("SgcButton1.Image"), System.Drawing.Image)
-        Me.SgcButton1.Location = New System.Drawing.Point(215, 33)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
-        Me.SgcButton1.TabIndex = 25
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscar.Image = CType(resources.GetObject("btnBuscar.Image"), System.Drawing.Image)
+        Me.btnBuscar.Location = New System.Drawing.Point(215, 33)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(45, 31)
+        Me.btnBuscar.TabIndex = 25
+        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'SgcTextBox2
+        'txtActividad
         '
-        Me.SgcTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox2.Location = New System.Drawing.Point(109, 76)
-        Me.SgcTextBox2.Multiline = True
-        Me.SgcTextBox2.Name = "SgcTextBox2"
-        Me.SgcTextBox2.Size = New System.Drawing.Size(384, 127)
-        Me.SgcTextBox2.TabIndex = 17
+        Me.txtActividad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtActividad.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtActividad.ForeColor = System.Drawing.Color.Black
+        Me.txtActividad.Location = New System.Drawing.Point(109, 76)
+        Me.txtActividad.Multiline = True
+        Me.txtActividad.Name = "txtActividad"
+        Me.txtActividad.Size = New System.Drawing.Size(384, 127)
+        Me.txtActividad.TabIndex = 17
         '
         'SgcLabel11
         '
@@ -142,15 +143,15 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.SgcLabel11.TabIndex = 16
         Me.SgcLabel11.Text = "Actividad:"
         '
-        'SgcTextBox1
+        'txtCodigo
         '
-        Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox1.Location = New System.Drawing.Point(109, 37)
-        Me.SgcTextBox1.Name = "SgcTextBox1"
-        Me.SgcTextBox1.Size = New System.Drawing.Size(100, 26)
-        Me.SgcTextBox1.TabIndex = 3
+        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.ForeColor = System.Drawing.Color.Black
+        Me.txtCodigo.Location = New System.Drawing.Point(109, 37)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(100, 26)
+        Me.txtCodigo.TabIndex = 3
         '
         'SgcLabel1
         '
@@ -163,9 +164,22 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.SgcLabel1.TabIndex = 0
         Me.SgcLabel1.Text = "Codigo:"
         '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(428, 11)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(270, 23)
+        Me.lblTitulo.TabIndex = 31
+        Me.lblTitulo.Text = "Registro de Asistencia - Personal"
+        '
         'frmRegistroAsistenciaPersonal
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.SgcGroupBox6)
         Me.Controls.Add(Me.SgcGroupBox2)
         Me.Controls.Add(Me.SgcGroupBox1)
@@ -173,24 +187,27 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox6, 0)
+        Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.SgcGroupBox6.ResumeLayout(False)
-        CType(Me.SgcDataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox2.ResumeLayout(False)
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents SgcGroupBox6 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcDataGridView3 As SGC_CS.SGCDataGridView
+    Friend WithEvents dgvPersonal As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
+    Friend WithEvents dgvProgramacion As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
-    Friend WithEvents SgcTextBox2 As SGC_CS.SGCTextBox
+    Friend WithEvents btnBuscar As SGC_CS.SGCButton
+    Friend WithEvents txtActividad As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel11 As SGC_CS.SGCLabel
-    Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
+    Friend WithEvents txtCodigo As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
+    Friend WithEvents lblTitulo As SGC_CS.SGCLabel
 
 End Class

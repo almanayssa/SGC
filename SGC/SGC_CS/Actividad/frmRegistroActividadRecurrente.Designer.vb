@@ -75,6 +75,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.chkMiercoles = New System.Windows.Forms.CheckBox()
         Me.chkMartes = New System.Windows.Forms.CheckBox()
         Me.chkLunes = New System.Windows.Forms.CheckBox()
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.tsMenu.SuspendLayout()
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -683,9 +684,22 @@ Partial Class frmRegistroActividadRecurrente
         Me.chkLunes.Text = "Lunes"
         Me.chkLunes.UseVisualStyleBackColor = True
         '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(397, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(249, 23)
+        Me.lblTitulo.TabIndex = 25
+        Me.lblTitulo.Text = "Registro Actividad Recurrente"
+        '
         'frmRegistroActividadRecurrente
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.gbxRecurrencia)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Controls.Add(Me.tsMenu)
@@ -693,6 +707,7 @@ Partial Class frmRegistroActividadRecurrente
         Me.Controls.SetChildIndex(Me.tsMenu, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
         Me.Controls.SetChildIndex(Me.gbxRecurrencia, 0)
+        Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.tsMenu.ResumeLayout(False)
         Me.tsMenu.PerformLayout()
         Me.SgcGroupBox1.ResumeLayout(False)
@@ -770,5 +785,6 @@ Partial Class frmRegistroActividadRecurrente
     Friend WithEvents chkMartes As System.Windows.Forms.CheckBox
     Friend WithEvents chkLunes As System.Windows.Forms.CheckBox
     Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents lblTitulo As SGC_CS.SGCLabel
 
 End Class

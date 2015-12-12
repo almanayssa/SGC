@@ -112,7 +112,7 @@ Partial Class frmBuscarTipoPersonal
         Me.Controls.Add(Me.gbxFiltros)
         Me.Name = "frmBuscarTipoPersonal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Buscar Personal"
+        Me.Text = "Buscar Tipo Personal"
         Me.gbxFiltros.ResumeLayout(False)
         Me.gbxFiltros.PerformLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()

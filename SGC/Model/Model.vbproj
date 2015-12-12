@@ -145,6 +145,7 @@
     <Compile Include="Interfaces\IRecurso.vb" />
     <Compile Include="Interfaces\IRestricciones.vb" />
     <Compile Include="Interfaces\ISede.vb" />
+    <Compile Include="Interfaces\ISeguimientoEvaluacionActividad.vb" />
     <Compile Include="Interfaces\ISignos.vb" />
     <Compile Include="Interfaces\ITipoActividad.vb" />
     <Compile Include="Interfaces\ITipoPersonal.vb" />
@@ -160,6 +161,7 @@
     <Compile Include="Metodos\RecursoDL.vb" />
     <Compile Include="Metodos\RestriccionesDL.vb" />
     <Compile Include="Metodos\SedeDL.vb" />
+    <Compile Include="Metodos\SeguimientoEvaluacionActividadDL.vb" />
     <Compile Include="Metodos\SignosDL.vb" />
     <Compile Include="Metodos\TipoActividadDL.vb" />
     <Compile Include="Metodos\TipoPersonalDL.vb" />

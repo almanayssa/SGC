@@ -21,7 +21,7 @@ Partial Class frmRegistroIncidencias
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroIncidencias))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcButton2 = New SGC_CS.SGCButton(Me.components)
         Me.SgcTextBox3 = New SGC_CS.SGCTextBox(Me.components)
@@ -36,6 +36,7 @@ Partial Class frmRegistroIncidencias
         Me.SgcTextBox4 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcGroupBox4 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2.SuspendLayout()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox3.SuspendLayout()
@@ -201,9 +202,9 @@ Partial Class frmRegistroIncidencias
         'SgcDataGridView1
         '
         Me.SgcDataGridView1.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -212,9 +213,22 @@ Partial Class frmRegistroIncidencias
         Me.SgcDataGridView1.Size = New System.Drawing.Size(330, 97)
         Me.SgcDataGridView1.TabIndex = 19
         '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(428, 11)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(185, 23)
+        Me.lblTitulo.TabIndex = 35
+        Me.lblTitulo.Text = "Registro de Incidencia"
+        '
         'frmRegistroIncidencias
         '
-        Me.ClientSize = New System.Drawing.Size(1016, 738)
+        Me.ClientSize = New System.Drawing.Size(1016, 733)
+        Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.SgcGroupBox4)
         Me.Controls.Add(Me.SgcGroupBox3)
         Me.Controls.Add(Me.SgcGroupBox2)
@@ -224,6 +238,7 @@ Partial Class frmRegistroIncidencias
         Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox3, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox4, 0)
+        Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.SgcGroupBox2.ResumeLayout(False)
         Me.SgcGroupBox2.PerformLayout()
         Me.SgcGroupBox1.ResumeLayout(False)
@@ -233,6 +248,7 @@ Partial Class frmRegistroIncidencias
         Me.SgcGroupBox4.ResumeLayout(False)
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
@@ -249,5 +265,6 @@ Partial Class frmRegistroIncidencias
     Friend WithEvents SgcTextBox4 As SGC_CS.SGCTextBox
     Friend WithEvents SgcGroupBox4 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
+    Friend WithEvents lblTitulo As SGC_CS.SGCLabel
 
 End Class
