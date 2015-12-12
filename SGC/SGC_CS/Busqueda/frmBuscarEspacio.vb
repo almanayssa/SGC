@@ -50,12 +50,6 @@ Public Class frmBuscarEspacio
         cboLugar.DataSource = ListadoLugar
     End Sub
 
-    'Private Sub ListarRecursos()
-    '    Dim ListadoRecursos As List(Of RecursoBE) = bc.ListarRecursos(txtNombre.Text.Trim)
-    '    dgvListado.DataSource = Nothing
-    '    dgvListado.DataSource = ListadoRecursos
-    'End Sub
-
 #End Region
 
 #Region "Cargar"
@@ -70,19 +64,8 @@ Public Class frmBuscarEspacio
 #Region "Metodos Controles"
 
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
-        'ListarRecursos()
+
     End Sub
-
-#End Region
-
-#Region "Metodos Grilla"
-
-    Private Sub dgvListado_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvListado.CellDoubleClick
-        EspacioSeleccionado = DirectCast(dgvListado.CurrentRow.DataBoundItem, EspacioBE)
-        Me.Close()
-    End Sub
-
-#End Region
 
     Private Sub cboSede_SelectedValueChanged(sender As Object, e As System.EventArgs) Handles cboSede.SelectedValueChanged, cboLugar.SelectedValueChanged
         If cboSede.SelectedValue IsNot Nothing And cboLugar.SelectedValue IsNot Nothing Then
@@ -110,4 +93,16 @@ Public Class frmBuscarEspacio
             End If
         End If
     End Sub
+
+#End Region
+
+#Region "Metodos Grilla"
+
+    Private Sub dgvListado_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvListado.CellDoubleClick
+        EspacioSeleccionado = DirectCast(dgvListado.CurrentRow.DataBoundItem, EspacioBE)
+        Me.Close()
+    End Sub
+
+#End Region
+
 End Class

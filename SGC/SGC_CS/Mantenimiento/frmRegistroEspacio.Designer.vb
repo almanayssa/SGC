@@ -22,24 +22,24 @@ Partial Class frmRegistroEspacio
         Me.components = New System.ComponentModel.Container()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
-        Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
-        Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.sbEditar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbEditar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
-        Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
+        Me.nudAforo = New SGC_CS.SGCNumericUpDown(Me.components)
         Me.chkAforo = New SGC_CS.SGCCheckBox(Me.components)
-        Me.SgcNumericUpDown1 = New SGC_CS.SGCNumericUpDown(Me.components)
+        Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
+        Me.txtEspacio = New SGC_CS.SGCTextBox(Me.components)
+        Me.cboLugar = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboSede = New SGC_CS.SGCComboBox(Me.components)
+        Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.tsMenu.SuspendLayout()
         Me.SgcGroupBox1.SuspendLayout()
-        CType(Me.SgcNumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nudAforo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -60,72 +60,72 @@ Partial Class frmRegistroEspacio
         Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
         Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbLimpiar, Me.sbGuardar, Me.sbEditar, Me.ToolStripButton1, Me.ToolStripButton2})
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbLimpiar, Me.tsbGuardar, Me.tsbEditar, Me.tsbEliminar, Me.tsbCancelar})
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 71)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(480, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(457, 37)
         Me.tsMenu.TabIndex = 16
         Me.tsMenu.Text = "SgcToolStrip1"
         '
-        'sbLimpiar
+        'tsbLimpiar
         '
-        Me.sbLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbLimpiar.Image = Global.SGC_CS.My.Resources.Resources.menu_limpiar
-        Me.sbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbLimpiar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbLimpiar.Name = "sbLimpiar"
-        Me.sbLimpiar.Size = New System.Drawing.Size(88, 34)
-        Me.sbLimpiar.Text = "Limpiar"
+        Me.tsbLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbLimpiar.Image = Global.SGC_CS.My.Resources.Resources.menu_limpiar
+        Me.tsbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbLimpiar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbLimpiar.Name = "tsbLimpiar"
+        Me.tsbLimpiar.Size = New System.Drawing.Size(88, 34)
+        Me.tsbLimpiar.Text = "Limpiar"
         '
-        'sbGuardar
+        'tsbGuardar
         '
-        Me.sbGuardar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbGuardar.Image = Global.SGC_CS.My.Resources.Resources.menu_validar
-        Me.sbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbGuardar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbGuardar.Name = "sbGuardar"
-        Me.sbGuardar.Size = New System.Drawing.Size(92, 34)
-        Me.sbGuardar.Text = "Guardar"
+        Me.tsbGuardar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbGuardar.Image = Global.SGC_CS.My.Resources.Resources.menu_validar
+        Me.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbGuardar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbGuardar.Name = "tsbGuardar"
+        Me.tsbGuardar.Size = New System.Drawing.Size(92, 34)
+        Me.tsbGuardar.Text = "Guardar"
         '
-        'sbEditar
+        'tsbEditar
         '
-        Me.sbEditar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbEditar.Image = Global.SGC_CS.My.Resources.Resources.menu_editar
-        Me.sbEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbEditar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbEditar.Name = "sbEditar"
-        Me.sbEditar.Size = New System.Drawing.Size(101, 34)
-        Me.sbEditar.Text = "Modificar"
+        Me.tsbEditar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbEditar.Image = Global.SGC_CS.My.Resources.Resources.menu_editar
+        Me.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbEditar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbEditar.Name = "tsbEditar"
+        Me.tsbEditar.Size = New System.Drawing.Size(78, 34)
+        Me.tsbEditar.Text = "Editar"
         '
-        'ToolStripButton1
+        'tsbEliminar
         '
-        Me.ToolStripButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton1.Image = Global.SGC_CS.My.Resources.Resources.menu_eliminar
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(93, 34)
-        Me.ToolStripButton1.Text = "Eliminar"
+        Me.tsbEliminar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbEliminar.Image = Global.SGC_CS.My.Resources.Resources.menu_eliminar
+        Me.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbEliminar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbEliminar.Name = "tsbEliminar"
+        Me.tsbEliminar.Size = New System.Drawing.Size(93, 34)
+        Me.tsbEliminar.Text = "Eliminar"
         '
-        'ToolStripButton2
+        'tsbCancelar
         '
-        Me.ToolStripButton2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton2.Image = Global.SGC_CS.My.Resources.Resources.menu_cancel
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(95, 34)
-        Me.ToolStripButton2.Text = "Cancelar"
+        Me.tsbCancelar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbCancelar.Image = Global.SGC_CS.My.Resources.Resources.menu_cancel
+        Me.tsbCancelar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbCancelar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbCancelar.Name = "tsbCancelar"
+        Me.tsbCancelar.Size = New System.Drawing.Size(95, 34)
+        Me.tsbCancelar.Text = "Cancelar"
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.SgcNumericUpDown1)
+        Me.SgcGroupBox1.Controls.Add(Me.nudAforo)
         Me.SgcGroupBox1.Controls.Add(Me.chkAforo)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox2)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox1)
+        Me.SgcGroupBox1.Controls.Add(Me.txtEspacio)
+        Me.SgcGroupBox1.Controls.Add(Me.cboLugar)
+        Me.SgcGroupBox1.Controls.Add(Me.cboSede)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel3)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
@@ -137,81 +137,12 @@ Partial Class frmRegistroEspacio
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Espacio"
         '
-        'SgcLabel1
+        'nudAforo
         '
-        Me.SgcLabel1.AutoSize = True
-        Me.SgcLabel1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel1.Location = New System.Drawing.Point(139, 37)
-        Me.SgcLabel1.Name = "SgcLabel1"
-        Me.SgcLabel1.Size = New System.Drawing.Size(43, 18)
-        Me.SgcLabel1.TabIndex = 0
-        Me.SgcLabel1.Text = "Sede:"
-        '
-        'SgcLabel2
-        '
-        Me.SgcLabel2.AutoSize = True
-        Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel2.Location = New System.Drawing.Point(139, 70)
-        Me.SgcLabel2.Name = "SgcLabel2"
-        Me.SgcLabel2.Size = New System.Drawing.Size(45, 18)
-        Me.SgcLabel2.TabIndex = 1
-        Me.SgcLabel2.Text = "Lugar:"
-        '
-        'SgcLabel3
-        '
-        Me.SgcLabel3.AutoSize = True
-        Me.SgcLabel3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel3.Location = New System.Drawing.Point(139, 107)
-        Me.SgcLabel3.Name = "SgcLabel3"
-        Me.SgcLabel3.Size = New System.Drawing.Size(58, 18)
-        Me.SgcLabel3.TabIndex = 2
-        Me.SgcLabel3.Text = "Espacio:"
-        '
-        'SgcComboBox1
-        '
-        Me.SgcComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox1.FormattingEnabled = True
-        Me.SgcComboBox1.Location = New System.Drawing.Point(205, 34)
-        Me.SgcComboBox1.Name = "SgcComboBox1"
-        Me.SgcComboBox1.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox1.TabIndex = 3
-        '
-        'SgcComboBox2
-        '
-        Me.SgcComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox2.FormattingEnabled = True
-        Me.SgcComboBox2.Location = New System.Drawing.Point(205, 67)
-        Me.SgcComboBox2.Name = "SgcComboBox2"
-        Me.SgcComboBox2.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox2.TabIndex = 4
-        '
-        'SgcTextBox1
-        '
-        Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox1.Location = New System.Drawing.Point(205, 105)
-        Me.SgcTextBox1.Name = "SgcTextBox1"
-        Me.SgcTextBox1.Size = New System.Drawing.Size(121, 26)
-        Me.SgcTextBox1.TabIndex = 5
-        '
-        'SgcLabel4
-        '
-        Me.SgcLabel4.AutoSize = True
-        Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel4.Location = New System.Drawing.Point(139, 149)
-        Me.SgcLabel4.Name = "SgcLabel4"
-        Me.SgcLabel4.Size = New System.Drawing.Size(47, 18)
-        Me.SgcLabel4.TabIndex = 6
-        Me.SgcLabel4.Text = "Aforo:"
+        Me.nudAforo.Location = New System.Drawing.Point(227, 147)
+        Me.nudAforo.Name = "nudAforo"
+        Me.nudAforo.Size = New System.Drawing.Size(99, 26)
+        Me.nudAforo.TabIndex = 8
         '
         'chkAforo
         '
@@ -225,16 +156,87 @@ Partial Class frmRegistroEspacio
         Me.chkAforo.TabIndex = 7
         Me.chkAforo.UseVisualStyleBackColor = True
         '
-        'SgcNumericUpDown1
+        'SgcLabel4
         '
-        Me.SgcNumericUpDown1.Location = New System.Drawing.Point(227, 147)
-        Me.SgcNumericUpDown1.Name = "SgcNumericUpDown1"
-        Me.SgcNumericUpDown1.Size = New System.Drawing.Size(99, 26)
-        Me.SgcNumericUpDown1.TabIndex = 8
+        Me.SgcLabel4.AutoSize = True
+        Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel4.Location = New System.Drawing.Point(139, 149)
+        Me.SgcLabel4.Name = "SgcLabel4"
+        Me.SgcLabel4.Size = New System.Drawing.Size(47, 18)
+        Me.SgcLabel4.TabIndex = 6
+        Me.SgcLabel4.Text = "Aforo:"
+        '
+        'txtEspacio
+        '
+        Me.txtEspacio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEspacio.ForeColor = System.Drawing.Color.Black
+        Me.txtEspacio.Location = New System.Drawing.Point(205, 105)
+        Me.txtEspacio.Name = "txtEspacio"
+        Me.txtEspacio.Size = New System.Drawing.Size(121, 26)
+        Me.txtEspacio.TabIndex = 5
+        '
+        'cboLugar
+        '
+        Me.cboLugar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboLugar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboLugar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboLugar.ForeColor = System.Drawing.Color.Black
+        Me.cboLugar.FormattingEnabled = True
+        Me.cboLugar.Location = New System.Drawing.Point(205, 67)
+        Me.cboLugar.Name = "cboLugar"
+        Me.cboLugar.Size = New System.Drawing.Size(121, 26)
+        Me.cboLugar.TabIndex = 4
+        '
+        'cboSede
+        '
+        Me.cboSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSede.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboSede.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSede.ForeColor = System.Drawing.Color.Black
+        Me.cboSede.FormattingEnabled = True
+        Me.cboSede.Location = New System.Drawing.Point(205, 34)
+        Me.cboSede.Name = "cboSede"
+        Me.cboSede.Size = New System.Drawing.Size(121, 26)
+        Me.cboSede.TabIndex = 3
+        '
+        'SgcLabel3
+        '
+        Me.SgcLabel3.AutoSize = True
+        Me.SgcLabel3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel3.Location = New System.Drawing.Point(139, 107)
+        Me.SgcLabel3.Name = "SgcLabel3"
+        Me.SgcLabel3.Size = New System.Drawing.Size(58, 18)
+        Me.SgcLabel3.TabIndex = 2
+        Me.SgcLabel3.Text = "Espacio:"
+        '
+        'SgcLabel2
+        '
+        Me.SgcLabel2.AutoSize = True
+        Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel2.Location = New System.Drawing.Point(139, 70)
+        Me.SgcLabel2.Name = "SgcLabel2"
+        Me.SgcLabel2.Size = New System.Drawing.Size(45, 18)
+        Me.SgcLabel2.TabIndex = 1
+        Me.SgcLabel2.Text = "Lugar:"
+        '
+        'SgcLabel1
+        '
+        Me.SgcLabel1.AutoSize = True
+        Me.SgcLabel1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel1.Location = New System.Drawing.Point(139, 37)
+        Me.SgcLabel1.Name = "SgcLabel1"
+        Me.SgcLabel1.Size = New System.Drawing.Size(43, 18)
+        Me.SgcLabel1.TabIndex = 0
+        Me.SgcLabel1.Text = "Sede:"
         '
         'frmRegistroEspacio
         '
-        Me.ClientSize = New System.Drawing.Size(1016, 738)
+        Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Controls.Add(Me.tsMenu)
         Me.Controls.Add(Me.lblTitulo)
@@ -246,25 +248,25 @@ Partial Class frmRegistroEspacio
         Me.tsMenu.PerformLayout()
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
-        CType(Me.SgcNumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nudAforo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
-    Friend WithEvents sbLimpiar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents sbGuardar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents sbEditar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbEditar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbEliminar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbCancelar As System.Windows.Forms.ToolStripButton
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcNumericUpDown1 As SGC_CS.SGCNumericUpDown
+    Friend WithEvents nudAforo As SGC_CS.SGCNumericUpDown
     Friend WithEvents chkAforo As SGC_CS.SGCCheckBox
     Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
-    Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
-    Friend WithEvents SgcComboBox2 As SGC_CS.SGCComboBox
-    Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
+    Friend WithEvents txtEspacio As SGC_CS.SGCTextBox
+    Friend WithEvents cboLugar As SGC_CS.SGCComboBox
+    Friend WithEvents cboSede As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel

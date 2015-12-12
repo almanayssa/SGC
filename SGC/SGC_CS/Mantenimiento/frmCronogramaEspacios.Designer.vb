@@ -23,22 +23,22 @@ Partial Class frmCronogramaEspacios
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcComboBox5 = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboEspacio = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel5 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox4 = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboSede = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox3 = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboAnio = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
-        Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
+        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
+        Me.cboMes = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
+        Me.cboLugar = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcDataGridView3 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.dgvCalendario = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
-        CType(Me.SgcDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCalendario, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitulo
@@ -55,16 +55,16 @@ Partial Class frmCronogramaEspacios
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox5)
+        Me.SgcGroupBox1.Controls.Add(Me.cboEspacio)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel5)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox4)
+        Me.SgcGroupBox1.Controls.Add(Me.cboSede)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox3)
+        Me.SgcGroupBox1.Controls.Add(Me.cboAnio)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel3)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcButton1)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox2)
+        Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
+        Me.SgcGroupBox1.Controls.Add(Me.cboMes)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcComboBox1)
+        Me.SgcGroupBox1.Controls.Add(Me.cboLugar)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 70)
@@ -74,17 +74,17 @@ Partial Class frmCronogramaEspacios
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Filtros"
         '
-        'SgcComboBox5
+        'cboEspacio
         '
-        Me.SgcComboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox5.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox5.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox5.FormattingEnabled = True
-        Me.SgcComboBox5.Location = New System.Drawing.Point(125, 93)
-        Me.SgcComboBox5.Name = "SgcComboBox5"
-        Me.SgcComboBox5.Size = New System.Drawing.Size(243, 26)
-        Me.SgcComboBox5.TabIndex = 10
+        Me.cboEspacio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboEspacio.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboEspacio.ForeColor = System.Drawing.Color.Black
+        Me.cboEspacio.FormattingEnabled = True
+        Me.cboEspacio.Location = New System.Drawing.Point(125, 93)
+        Me.cboEspacio.Name = "cboEspacio"
+        Me.cboEspacio.Size = New System.Drawing.Size(243, 26)
+        Me.cboEspacio.TabIndex = 10
         '
         'SgcLabel5
         '
@@ -97,17 +97,17 @@ Partial Class frmCronogramaEspacios
         Me.SgcLabel5.TabIndex = 9
         Me.SgcLabel5.Text = "Espacio:"
         '
-        'SgcComboBox4
+        'cboSede
         '
-        Me.SgcComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox4.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox4.FormattingEnabled = True
-        Me.SgcComboBox4.Location = New System.Drawing.Point(125, 29)
-        Me.SgcComboBox4.Name = "SgcComboBox4"
-        Me.SgcComboBox4.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox4.TabIndex = 8
+        Me.cboSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboSede.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboSede.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboSede.ForeColor = System.Drawing.Color.Black
+        Me.cboSede.FormattingEnabled = True
+        Me.cboSede.Location = New System.Drawing.Point(125, 29)
+        Me.cboSede.Name = "cboSede"
+        Me.cboSede.Size = New System.Drawing.Size(121, 26)
+        Me.cboSede.TabIndex = 8
         '
         'SgcLabel4
         '
@@ -120,17 +120,17 @@ Partial Class frmCronogramaEspacios
         Me.SgcLabel4.TabIndex = 7
         Me.SgcLabel4.Text = "Sede:"
         '
-        'SgcComboBox3
+        'cboAnio
         '
-        Me.SgcComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox3.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox3.FormattingEnabled = True
-        Me.SgcComboBox3.Location = New System.Drawing.Point(561, 61)
-        Me.SgcComboBox3.Name = "SgcComboBox3"
-        Me.SgcComboBox3.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox3.TabIndex = 6
+        Me.cboAnio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboAnio.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboAnio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboAnio.ForeColor = System.Drawing.Color.Black
+        Me.cboAnio.FormattingEnabled = True
+        Me.cboAnio.Location = New System.Drawing.Point(561, 61)
+        Me.cboAnio.Name = "cboAnio"
+        Me.cboAnio.Size = New System.Drawing.Size(121, 26)
+        Me.cboAnio.TabIndex = 6
         '
         'SgcLabel3
         '
@@ -143,32 +143,32 @@ Partial Class frmCronogramaEspacios
         Me.SgcLabel3.TabIndex = 5
         Me.SgcLabel3.Text = "Año:"
         '
-        'SgcButton1
+        'btnBuscar
         '
-        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcButton1.Location = New System.Drawing.Point(742, 29)
-        Me.SgcButton1.Name = "SgcButton1"
-        Me.SgcButton1.Size = New System.Drawing.Size(120, 31)
-        Me.SgcButton1.TabIndex = 4
-        Me.SgcButton1.Text = "Buscar"
-        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.SgcButton1.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscar.Location = New System.Drawing.Point(742, 29)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(120, 31)
+        Me.btnBuscar.TabIndex = 4
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'SgcComboBox2
+        'cboMes
         '
-        Me.SgcComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox2.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox2.FormattingEnabled = True
-        Me.SgcComboBox2.Location = New System.Drawing.Point(561, 31)
-        Me.SgcComboBox2.Name = "SgcComboBox2"
-        Me.SgcComboBox2.Size = New System.Drawing.Size(121, 26)
-        Me.SgcComboBox2.TabIndex = 3
+        Me.cboMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboMes.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboMes.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboMes.ForeColor = System.Drawing.Color.Black
+        Me.cboMes.FormattingEnabled = True
+        Me.cboMes.Location = New System.Drawing.Point(561, 31)
+        Me.cboMes.Name = "cboMes"
+        Me.cboMes.Size = New System.Drawing.Size(121, 26)
+        Me.cboMes.TabIndex = 3
         '
         'SgcLabel2
         '
@@ -181,17 +181,17 @@ Partial Class frmCronogramaEspacios
         Me.SgcLabel2.TabIndex = 2
         Me.SgcLabel2.Text = "Mes:"
         '
-        'SgcComboBox1
+        'cboLugar
         '
-        Me.SgcComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SgcComboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.SgcComboBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcComboBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcComboBox1.FormattingEnabled = True
-        Me.SgcComboBox1.Location = New System.Drawing.Point(125, 61)
-        Me.SgcComboBox1.Name = "SgcComboBox1"
-        Me.SgcComboBox1.Size = New System.Drawing.Size(243, 26)
-        Me.SgcComboBox1.TabIndex = 1
+        Me.cboLugar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboLugar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.cboLugar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboLugar.ForeColor = System.Drawing.Color.Black
+        Me.cboLugar.FormattingEnabled = True
+        Me.cboLugar.Location = New System.Drawing.Point(125, 61)
+        Me.cboLugar.Name = "cboLugar"
+        Me.cboLugar.Size = New System.Drawing.Size(243, 26)
+        Me.cboLugar.TabIndex = 1
         '
         'SgcLabel1
         '
@@ -206,7 +206,7 @@ Partial Class frmCronogramaEspacios
         '
         'SgcGroupBox2
         '
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDataGridView3)
+        Me.SgcGroupBox2.Controls.Add(Me.dgvCalendario)
         Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox2.Location = New System.Drawing.Point(60, 212)
         Me.SgcGroupBox2.Name = "SgcGroupBox2"
@@ -215,19 +215,19 @@ Partial Class frmCronogramaEspacios
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Calendario"
         '
-        'SgcDataGridView3
+        'dgvCalendario
         '
-        Me.SgcDataGridView3.AllowUserToAddRows = False
+        Me.dgvCalendario.AllowUserToAddRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.SgcDataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcDataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SgcDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SgcDataGridView3.Location = New System.Drawing.Point(13, 25)
-        Me.SgcDataGridView3.Name = "SgcDataGridView3"
-        Me.SgcDataGridView3.Size = New System.Drawing.Size(872, 283)
-        Me.SgcDataGridView3.TabIndex = 2
+        Me.dgvCalendario.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvCalendario.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvCalendario.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvCalendario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCalendario.Location = New System.Drawing.Point(13, 25)
+        Me.dgvCalendario.Name = "dgvCalendario"
+        Me.dgvCalendario.Size = New System.Drawing.Size(872, 283)
+        Me.dgvCalendario.TabIndex = 2
         '
         'frmCronogramaEspacios
         '
@@ -242,25 +242,25 @@ Partial Class frmCronogramaEspacios
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
         Me.SgcGroupBox2.ResumeLayout(False)
-        CType(Me.SgcDataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCalendario, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcComboBox3 As SGC_CS.SGCComboBox
+    Friend WithEvents cboAnio As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
-    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
-    Friend WithEvents SgcComboBox2 As SGC_CS.SGCComboBox
+    Friend WithEvents btnBuscar As SGC_CS.SGCButton
+    Friend WithEvents cboMes As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
-    Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
+    Friend WithEvents cboLugar As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcComboBox4 As SGC_CS.SGCComboBox
+    Friend WithEvents cboSede As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
-    Friend WithEvents SgcComboBox5 As SGC_CS.SGCComboBox
+    Friend WithEvents cboEspacio As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel5 As SGC_CS.SGCLabel
-    Friend WithEvents SgcDataGridView3 As SGC_CS.SGCDataGridView
+    Friend WithEvents dgvCalendario As SGC_CS.SGCDataGridView
 
 End Class
