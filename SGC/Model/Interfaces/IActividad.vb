@@ -19,7 +19,7 @@ Namespace SGC.Model.Interfaces
         Function InsertarTipoPersonalXActividad(ByRef oTipoPersonal As TipoPersonalBE) As Integer
         Function InsertarRecursoXActividad(ByRef oRecurso As RecursoBE) As Integer
         Function InsertarRestriccionXActividad(ByRef oRestriccion As RestriccionesBE) As Integer
-        Function InsertarActividadesPlanXML(ByRef oPlan As PlanAnualBE) As Integer
+        Function InsertarActividadesPlanXML(ByRef oPlan As PlanAnualBE) As Boolean
 #End Region
 
 #Region "Update"

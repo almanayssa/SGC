@@ -283,7 +283,7 @@ Namespace SGC.Model.Metodos
 
         End Function
 
-        Public Function InsertarActividadesPlanXML(ByRef oPlan As PlanAnualBE) As Integer Implements Interfaces.IActividad.InsertarActividadesPlanXML
+        Public Function InsertarActividadesPlanXML(ByRef oPlan As PlanAnualBE) As Boolean Implements Interfaces.IActividad.InsertarActividadesPlanXML
 
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
@@ -299,9 +299,10 @@ Namespace SGC.Model.Metodos
                 sqlConn.Open()
                 recordId = sqlCmd.ExecuteScalar()
 
-                Return recordId
+                Return True
             Catch ex As System.Exception
                 Throw ex
+                Return False
             Finally
                 sqlConn.Close()
             End Try

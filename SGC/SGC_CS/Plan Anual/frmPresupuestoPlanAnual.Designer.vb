@@ -24,6 +24,11 @@ Partial Class frmPresupuestoPlanAnual
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuestoPlanAnual))
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.lblFecFin = New SGC_CS.SGCLabel(Me.components)
+        Me.lblFecIni = New SGC_CS.SGCLabel(Me.components)
+        Me.lblAnio = New SGC_CS.SGCLabel(Me.components)
+        Me.lblComite = New SGC_CS.SGCLabel(Me.components)
+        Me.lblPlan = New SGC_CS.SGCLabel(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.SgcLabel5 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
@@ -42,6 +47,8 @@ Partial Class frmPresupuestoPlanAnual
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.lblEstado = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcLabel8 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,6 +69,13 @@ Partial Class frmPresupuestoPlanAnual
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.lblEstado)
+        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel8)
+        Me.SgcGroupBox1.Controls.Add(Me.lblFecFin)
+        Me.SgcGroupBox1.Controls.Add(Me.lblFecIni)
+        Me.SgcGroupBox1.Controls.Add(Me.lblAnio)
+        Me.SgcGroupBox1.Controls.Add(Me.lblComite)
+        Me.SgcGroupBox1.Controls.Add(Me.lblPlan)
         Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel5)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
@@ -75,6 +89,61 @@ Partial Class frmPresupuestoPlanAnual
         Me.SgcGroupBox1.TabIndex = 14
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Plan Anual"
+        '
+        'lblFecFin
+        '
+        Me.lblFecFin.AutoSize = True
+        Me.lblFecFin.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecFin.ForeColor = System.Drawing.Color.Black
+        Me.lblFecFin.Location = New System.Drawing.Point(528, 75)
+        Me.lblFecFin.Name = "lblFecFin"
+        Me.lblFecFin.Size = New System.Drawing.Size(13, 18)
+        Me.lblFecFin.TabIndex = 30
+        Me.lblFecFin.Text = "-"
+        '
+        'lblFecIni
+        '
+        Me.lblFecIni.AutoSize = True
+        Me.lblFecIni.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecIni.ForeColor = System.Drawing.Color.Black
+        Me.lblFecIni.Location = New System.Drawing.Point(528, 40)
+        Me.lblFecIni.Name = "lblFecIni"
+        Me.lblFecIni.Size = New System.Drawing.Size(13, 18)
+        Me.lblFecIni.TabIndex = 29
+        Me.lblFecIni.Text = "-"
+        '
+        'lblAnio
+        '
+        Me.lblAnio.AutoSize = True
+        Me.lblAnio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAnio.ForeColor = System.Drawing.Color.Black
+        Me.lblAnio.Location = New System.Drawing.Point(116, 110)
+        Me.lblAnio.Name = "lblAnio"
+        Me.lblAnio.Size = New System.Drawing.Size(13, 18)
+        Me.lblAnio.TabIndex = 28
+        Me.lblAnio.Text = "-"
+        '
+        'lblComite
+        '
+        Me.lblComite.AutoSize = True
+        Me.lblComite.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblComite.ForeColor = System.Drawing.Color.Black
+        Me.lblComite.Location = New System.Drawing.Point(116, 75)
+        Me.lblComite.Name = "lblComite"
+        Me.lblComite.Size = New System.Drawing.Size(13, 18)
+        Me.lblComite.TabIndex = 27
+        Me.lblComite.Text = "-"
+        '
+        'lblPlan
+        '
+        Me.lblPlan.AutoSize = True
+        Me.lblPlan.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPlan.ForeColor = System.Drawing.Color.Black
+        Me.lblPlan.Location = New System.Drawing.Point(116, 40)
+        Me.lblPlan.Name = "lblPlan"
+        Me.lblPlan.Size = New System.Drawing.Size(13, 18)
+        Me.lblPlan.TabIndex = 26
+        Me.lblPlan.Text = "-"
         '
         'btnBuscar
         '
@@ -284,6 +353,28 @@ Partial Class frmPresupuestoPlanAnual
         Me.ToolStripButton3.Size = New System.Drawing.Size(105, 34)
         Me.ToolStripButton3.Text = "Impresión"
         '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEstado.ForeColor = System.Drawing.Color.Black
+        Me.lblEstado.Location = New System.Drawing.Point(528, 110)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(13, 18)
+        Me.lblEstado.TabIndex = 32
+        Me.lblEstado.Text = "-"
+        '
+        'SgcLabel8
+        '
+        Me.SgcLabel8.AutoSize = True
+        Me.SgcLabel8.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel8.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel8.Location = New System.Drawing.Point(437, 110)
+        Me.SgcLabel8.Name = "SgcLabel8"
+        Me.SgcLabel8.Size = New System.Drawing.Size(53, 18)
+        Me.SgcLabel8.TabIndex = 31
+        Me.SgcLabel8.Text = "Estado:"
+        '
         'frmPresupuestoPlanAnual
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -326,6 +417,13 @@ Partial Class frmPresupuestoPlanAnual
     Friend WithEvents btnAgregar As SGC_CS.SGCButton
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
     Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
+    Friend WithEvents lblAnio As SGC_CS.SGCLabel
+    Friend WithEvents lblComite As SGC_CS.SGCLabel
+    Friend WithEvents lblPlan As SGC_CS.SGCLabel
+    Friend WithEvents lblFecFin As SGC_CS.SGCLabel
+    Friend WithEvents lblFecIni As SGC_CS.SGCLabel
+    Friend WithEvents lblEstado As SGC_CS.SGCLabel
+    Friend WithEvents SgcLabel8 As SGC_CS.SGCLabel
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
 
 End Class

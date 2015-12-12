@@ -297,20 +297,23 @@ Public Class frmRegistroPlanAnual
             newPlan.ListadoActividades = newListadoActividades
             Dim affectedRows As Integer
 
-            affectedRows = bc.InsertarActividadesPlanXML(newPlan)
-
-            If affectedRows = 0 Then
-                MessageBox.Show("Error al grabar", "Información")
-            Else
-
+            If bc.InsertarActividadesPlanXML(newPlan) Then
                 MessageBox.Show("Se registró satisfactoriamente las actividades en el plan.", "Información")
-
+            Else
+                MessageBox.Show("Error al grabar", "Información")
             End If
+
         End If
+
 
     End Sub
 
     Private Sub btnPresupuesto_Click(sender As System.Object, e As System.EventArgs) Handles btnPresupuesto.Click
+
+        frmPresupuestoPlanAnual.Close()
+        frmPresupuestoPlanAnual.MdiParent = MDI
+        frmPresupuestoPlanAnual.id_plan = _id_Plan
+        frmPresupuestoPlanAnual.Show()
 
     End Sub
 End Class

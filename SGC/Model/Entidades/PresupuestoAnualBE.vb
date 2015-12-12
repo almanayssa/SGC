@@ -41,6 +41,16 @@
             End Set
         End Property
 
+        Private _detallePresupuesto As DetallePresupuestoAnualBE
+        Public Property detallePresupuesto() As DetallePresupuestoAnualBE
+            Get
+                Return _detallePresupuesto
+            End Get
+            Set(value As DetallePresupuestoAnualBE)
+                _detallePresupuesto = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 
