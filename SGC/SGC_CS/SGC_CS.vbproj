@@ -76,6 +76,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actividad\frmConsultaActividad2.Designer.vb">
+      <DependentUpon>frmConsultaActividad2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Actividad\frmConsultaActividad2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Actividad\frmActEvaluacionCD.Designer.vb">
       <DependentUpon>frmActEvaluacionCD.vb</DependentUpon>
     </Compile>
@@ -100,10 +106,10 @@
     <Compile Include="Actividad\frmConsultaActividad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actividad\frmConsultaActividadRecurrente.Designer.vb">
-      <DependentUpon>frmConsultaActividadRecurrente.vb</DependentUpon>
+    <Compile Include="Actividad\frmConsultaActividadRecurrente_.Designer.vb">
+      <DependentUpon>frmConsultaActividadRecurrente_.vb</DependentUpon>
     </Compile>
-    <Compile Include="Actividad\frmConsultaActividadRecurrente.vb">
+    <Compile Include="Actividad\frmConsultaActividadRecurrente_.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Actividad\frmHabilitarActividad.Designer.vb">
@@ -379,6 +385,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Actividad\frmConsultaActividad2.resx">
+      <DependentUpon>frmConsultaActividad2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmActEvaluacionCD.resx">
       <DependentUpon>frmActEvaluacionCD.vb</DependentUpon>
     </EmbeddedResource>
@@ -391,8 +400,8 @@
     <EmbeddedResource Include="Actividad\frmConsultaActividad.resx">
       <DependentUpon>frmConsultaActividad.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Actividad\frmConsultaActividadRecurrente.resx">
-      <DependentUpon>frmConsultaActividadRecurrente.vb</DependentUpon>
+    <EmbeddedResource Include="Actividad\frmConsultaActividadRecurrente_.resx">
+      <DependentUpon>frmConsultaActividadRecurrente_.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmHabilitarActividad.resx">
       <DependentUpon>frmHabilitarActividad.vb</DependentUpon>

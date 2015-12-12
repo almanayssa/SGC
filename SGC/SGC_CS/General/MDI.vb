@@ -147,9 +147,9 @@ Public Class MDI
     End Sub
 
     Private Sub ConsultDeActividadesRecurrentesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultDeActividadesRecurrentesToolStripMenuItem.Click
-        frmConsultaActividadRecurrente.Close()
-        frmConsultaActividadRecurrente.MdiParent = Me
-        frmConsultaActividadRecurrente.Show()
+        frmConsultaActividadRecurrente_.Close()
+        frmConsultaActividadRecurrente_.MdiParent = Me
+        frmConsultaActividadRecurrente_.Show()
     End Sub
 
     Private Sub RegistroDeActividadRecurrenteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RegistroDeActividadRecurrenteToolStripMenuItem.Click

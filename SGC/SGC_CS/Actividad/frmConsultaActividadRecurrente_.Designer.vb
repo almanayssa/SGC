@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmConsultaActividadRecurrente
+Partial Class frmConsultaActividadRecurrente_
     Inherits SGC_CS.frmPadre
 
     'Form overrides dispose to clean up the component list.
@@ -20,8 +20,8 @@ Partial Class frmConsultaActividadRecurrente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcComboBox4 = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel13 = New SGC_CS.SGCLabel(Me.components)
@@ -49,7 +49,6 @@ Partial Class frmConsultaActividadRecurrente
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcComboBox2 = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcComboBox1 = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
@@ -60,6 +59,7 @@ Partial Class frmConsultaActividadRecurrente
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcButton6 = New SGC_CS.SGCButton(Me.components)
         Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
+        Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcGroupBox2.SuspendLayout()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcPanel2.SuspendLayout()
@@ -385,16 +385,6 @@ Partial Class frmConsultaActividadRecurrente
         Me.SgcComboBox1.Size = New System.Drawing.Size(121, 26)
         Me.SgcComboBox1.TabIndex = 4
         '
-        'SgcTextBox1
-        '
-        Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox1.Location = New System.Drawing.Point(109, 37)
-        Me.SgcTextBox1.Name = "SgcTextBox1"
-        Me.SgcTextBox1.Size = New System.Drawing.Size(100, 26)
-        Me.SgcTextBox1.TabIndex = 3
-        '
         'SgcLabel3
         '
         Me.SgcLabel3.AutoSize = True
@@ -442,9 +432,9 @@ Partial Class frmConsultaActividadRecurrente
         'SgcDataGridView3
         '
         Me.SgcDataGridView3.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.SgcDataGridView3.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -467,9 +457,9 @@ Partial Class frmConsultaActividadRecurrente
         'SgcDataGridView1
         '
         Me.SgcDataGridView1.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -518,6 +508,16 @@ Partial Class frmConsultaActividadRecurrente
         Me.SgcButton1.TabIndex = 24
         Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.SgcButton1.UseVisualStyleBackColor = False
+        '
+        'SgcTextBox1
+        '
+        Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SgcTextBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcTextBox1.ForeColor = System.Drawing.Color.Black
+        Me.SgcTextBox1.Location = New System.Drawing.Point(109, 37)
+        Me.SgcTextBox1.Name = "SgcTextBox1"
+        Me.SgcTextBox1.Size = New System.Drawing.Size(100, 26)
+        Me.SgcTextBox1.TabIndex = 3
         '
         'frmConsultaActividadRecurrente
         '
@@ -575,7 +575,6 @@ Partial Class frmConsultaActividadRecurrente
     Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
     Friend WithEvents SgcComboBox2 As SGC_CS.SGCComboBox
     Friend WithEvents SgcComboBox1 As SGC_CS.SGCComboBox
-    Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
@@ -590,5 +589,6 @@ Partial Class frmConsultaActividadRecurrente
     Friend WithEvents SgcGroupBox6 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcButton6 As SGC_CS.SGCButton
     Friend WithEvents SgcButton1 As SGC_CS.SGCButton
+    Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
 
 End Class

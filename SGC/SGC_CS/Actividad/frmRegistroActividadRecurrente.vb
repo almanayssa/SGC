@@ -22,29 +22,6 @@ Public Class frmRegistroActividadRecurrente
 
 #Region "Metodos Personalizados"
 
-    Private Sub FormularioEnModoEdicion()
-        cboComite.Enabled = True
-        cboTipo.Enabled = True
-        If cboCategoria.DataSource IsNot Nothing Then
-            cboCategoria.Enabled = True
-        Else
-            cboCategoria.Enabled = False
-        End If
-        txtNombre.Enabled = True
-        txtDescripcion.Enabled = True
-        nudPago.Enabled = True
-    End Sub
-
-    Private Sub FormularioEnModoVista()
-        cboComite.Enabled = False
-        cboTipo.Enabled = False
-        cboCategoria.Enabled = False
-        txtNombre.Enabled = False
-        txtDescripcion.Enabled = False
-        nudPago.Enabled = False
-        nudVacantes.Enabled = False
-    End Sub
-
     Private Sub ListarComites()
         Dim oComite As New ComiteBE
         oComite.id_comite = "000"
@@ -166,110 +143,118 @@ Public Class frmRegistroActividadRecurrente
             msg &= vbCrLf & "- Ingrese una descripción"
         End If
 
-        If cboTipoRecurrencia.SelectedItem = "Semanal" Then
-            Dim flg As Boolean = False
+        If cboTipoRecurrencia.SelectedIndex >= 0 Then
+            If cboTipoRecurrencia.SelectedItem = "Semanal" Then
+                Dim flg As Boolean = False
 
-            If chkLunes.Checked Then
-                flg = True
-            End If
+                If chkLunes.Checked Then
+                    flg = True
+                End If
 
-            If chkMartes.Checked Then
-                flg = True
-            End If
+                If chkMartes.Checked Then
+                    flg = True
+                End If
 
-            If chkMiercoles.Checked Then
-                flg = True
-            End If
+                If chkMiercoles.Checked Then
+                    flg = True
+                End If
 
-            If chkJueves.Checked Then
-                flg = True
-            End If
+                If chkJueves.Checked Then
+                    flg = True
+                End If
 
-            If chkViernes.Checked Then
-                flg = True
-            End If
+                If chkViernes.Checked Then
+                    flg = True
+                End If
 
-            If chkSabado.Checked Then
-                flg = True
-            End If
+                If chkSabado.Checked Then
+                    flg = True
+                End If
 
-            If chkDomingo.Checked Then
-                flg = True
-            End If
+                If chkDomingo.Checked Then
+                    flg = True
+                End If
 
-            If flg = False Then
-                msg &= vbCrLf & "- Seleccione un día al menos"
+                If flg = False Then
+                    msg &= vbCrLf & "- Seleccione un día al menos"
+                End If
             End If
+        Else
+            msg &= vbCrLf & "- Seleccione el tipo de recurrencia"
         End If
 
         Return msg
     End Function
 
-    'Private Function GuardarActividad() As Boolean
-    '    Dim flag As Boolean = True
+    Private Function GuardarActividad() As Boolean
+        Dim flag As Boolean = True
 
-    '    If ValidarCamposRequeridos() <> String.Empty Then
-    '        MessageBox.Show(ValidarCamposRequeridos, "Información")
-    '        flag = False
-    '        Return flag
-    '        Exit Function
-    '    End If
+        If ValidarCamposRequeridos() <> String.Empty Then
+            MessageBox.Show(ValidarCamposRequeridos, "Información")
+            flag = False
+            Return flag
+            Exit Function
+        End If
 
-    '    Dim affectedRows As Integer = 0
-    '    Dim oActividadRecurrente As New ActividadRecurrenteBE
-    '    oActividad.fec_ini = Today
-    '    oActividad.fec_fin = Today
-    '    oActividad.hora_ini = Now.TimeOfDay
-    '    oActividad.hora_fin = Now.TimeOfDay
-    '    oActividad.monto_pago = nudPago.Value
-    '    oActividad.id_cattipo_act = cboCategoria.SelectedValue
-    '    oActividad.id_comite = cboComite.SelectedValue
-    '    oActividad.id_tipo_act = cboTipo.SelectedValue
-    '    oActividad.descripcion = txtDescripcion.Text.Trim
-    '    oActividad.nombre = txtNombre.Text.Trim
-    '    'oActividad.flg_plan_anual = chkPlanAnual.Checked
-    '    'oActividad.flg_web = chkWeb.Checked
-    '    oActividad.tipo_inscripcion = "A"
-    '    oActividad.vacantes = nudVacantes.Value
+        Dim affectedRows As Integer = 0
+        Dim oActividadRecurrente As New ActividadRecurrenteBE
+        If cboTipoRecurrencia.SelectedItem = "Diaria" Then
+            oActividadRecurrente.tipo = "D"
+            oActividadRecurrente.num_rep = nudDiasSemanas.Value
+        ElseIf cboTipoRecurrencia.SelectedItem = "Semanal" Then
+            oActividadRecurrente.tipo = "S"
+            oActividadRecurrente.num_rep = nudDiasSemanas.Value
+            oActividadRecurrente.chk_dom = chkDomingo.Checked
+            oActividadRecurrente.chk_lun = chkLunes.Checked
+            oActividadRecurrente.chk_mar = chkMartes.Checked
+            oActividadRecurrente.chk_mie = chkMiercoles.Checked
+            oActividadRecurrente.chk_jue = chkJueves.Checked
+            oActividadRecurrente.chk_vie = chkViernes.Checked
+            oActividadRecurrente.chk_sab = chkSabado.Checked
+        Else
+            oActividadRecurrente.tipo = "M"
+            If rbtnDia.Checked Then
+                oActividadRecurrente.num_rep = nudNumeroMes.Value
+                oActividadRecurrente.dia_mes = nudNumeroDia.Value
+            Else
+                oActividadRecurrente.num_rep = nudNumeroMes2.Value
+                oActividadRecurrente.ordinal = CInt(cboOrdinal.SelectedValue)
+                oActividadRecurrente.dia_semana = CInt(cboNombreDia.SelectedValue)
+            End If
+        End If
+        oActividadRecurrente.fecha_ini = dtpFechaInicio.Value
+        oActividadRecurrente.fecha_fin = dtpFechaFin.Value
+        oActividadRecurrente.hora_ini = dtpHoraInicio.Value
+        oActividadRecurrente.hora_fin = dtpHoraFin.Value
 
-    '    'If Actividad IsNot Nothing Then
-    '    '    oActividad.id_actividad_recurrente = Actividad.id_actividad_recurrente
-    '    '    oActividad.ActividadRecurrente = Actividad.ActividadRecurrente
-    '    'End If
+        oActividadRecurrente.Actividad = New ActividadBE
+        'oActividadRecurrente.Actividad.fec_ini = dtpFechaInicio.Value
+        'oActividadRecurrente.Actividad.fec_fin = dtpFechaFin.Value
+        oActividadRecurrente.Actividad.hora_ini = dtpHoraInicio.Value.TimeOfDay
+        oActividadRecurrente.Actividad.hora_fin = dtpHoraFin.Value.TimeOfDay
+        oActividadRecurrente.Actividad.monto_pago = nudPago.Value
+        oActividadRecurrente.Actividad.id_cattipo_act = cboCategoria.SelectedValue
+        oActividadRecurrente.Actividad.id_comite = cboComite.SelectedValue
+        oActividadRecurrente.Actividad.id_tipo_act = cboTipo.SelectedValue
+        oActividadRecurrente.Actividad.descripcion = txtDescripcion.Text.Trim
+        oActividadRecurrente.Actividad.nombre = txtNombre.Text.Trim
+        oActividadRecurrente.Actividad.flg_plan_anual = False
+        oActividadRecurrente.Actividad.flg_web = True
+        oActividadRecurrente.Actividad.tipo_inscripcion = "A"
+        oActividadRecurrente.Actividad.vacantes = nudVacantes.Value
 
-    '    'Dim startDateTime As DateTime = Nothing
-    '    'Dim endDateTime As DateTime = Nothing
+        affectedRows = bc.InsertarActividadRecurrente(oActividadRecurrente)
 
-    '    'oActividad.fec_ini = startDateTime.Date
-    '    'oActividad.hora_ini = startDateTime.TimeOfDay
-    '    'oActividad.fec_fin = endDateTime.Date
-    '    'oActividad.hora_fin = endDateTime.TimeOfDay
+        If affectedRows = 0 Then
+            MessageBox.Show("Error al grabar", "Información")
+            flag = False
+        Else
+            MessageBox.Show("La actividad se registró satisfactoriamente", "Información")
+        End If
 
-    '    If txtCodigo.Text = String.Empty Then
-    '        oActividad.id_estado = "EST001" 'Registrada
-    '        affectedRows = bc.InsertarActividad(oActividad)
-    '    Else
-    '        oActividad.id_actividad = txtCodigo.Text
-    '        affectedRows = bc.ActualizarActividad(oActividad)
-    '    End If
+        Return flag
 
-    '    If affectedRows = 0 Then
-    '        MessageBox.Show("Error al grabar", "Información")
-    '        flag = False
-    '    Else
-    '        If txtCodigo.Text = String.Empty Then
-    '            txtCodigo.Text = affectedRows
-    '            _id_actividad = affectedRows
-    '            MessageBox.Show("La actividad se registró satisfactoriamente", "Información")
-    '        Else
-    '            _id_actividad = oActividad.id_actividad
-    '            MessageBox.Show("La actividad se actualizó satisfactoriamente", "Información")
-    '        End If
-    '    End If
-
-    '    Return flag
-
-    'End Function
+    End Function
 
 #End Region
 
@@ -288,14 +273,12 @@ Public Class frmRegistroActividadRecurrente
 
     Private Sub tsbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles tsbLimpiar.Click
         LimpiarFormulario()
-        FormularioEnModoEdicion()
     End Sub
 
     Private Sub tsbGuardar_Click(sender As System.Object, e As System.EventArgs) Handles tsbGuardar.Click
-        'If GuardarActividad() Then
-        '    LimpiarFormulario()
-        '    FormularioEnModoVista()
-        'End If
+        If GuardarActividad() Then
+            LimpiarFormulario()
+        End If
     End Sub
 
     Private Sub cboTipo_SelectedValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboTipo.SelectedValueChanged

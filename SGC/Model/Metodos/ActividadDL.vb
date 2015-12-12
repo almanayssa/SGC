@@ -9,7 +9,6 @@ Namespace SGC.Model.Metodos
     Public Class ActividadDL
         Implements IActividad
 
-
 #Region "Select"
 
         Public Function ObtenerActividad(ByVal id_actividad As Integer) As Entidades.ActividadBE Implements Interfaces.IActividad.ObtenerActividad
