@@ -76,10 +76,10 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actividad\frmConsultaActividad2.Designer.vb">
-      <DependentUpon>frmConsultaActividad2.vb</DependentUpon>
+    <Compile Include="Actividad\frmConsultaActividadRecurrente.Designer.vb">
+      <DependentUpon>frmConsultaActividadRecurrente.vb</DependentUpon>
     </Compile>
-    <Compile Include="Actividad\frmConsultaActividad2.vb">
+    <Compile Include="Actividad\frmConsultaActividadRecurrente.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Actividad\frmActEvaluacionCD.Designer.vb">
@@ -385,8 +385,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Actividad\frmConsultaActividad2.resx">
-      <DependentUpon>frmConsultaActividad2.vb</DependentUpon>
+    <EmbeddedResource Include="Actividad\frmConsultaActividadRecurrente.resx">
+      <DependentUpon>frmConsultaActividadRecurrente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmActEvaluacionCD.resx">
       <DependentUpon>frmActEvaluacionCD.vb</DependentUpon>
