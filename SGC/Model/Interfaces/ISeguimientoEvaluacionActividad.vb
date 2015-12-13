@@ -6,6 +6,8 @@ Namespace SGC.Model.Interfaces
 
 #Region "Insert"
 
+        Function InsertarSeguimientoEvaluacionActividad(ByRef oSeguimientoEvaluacionActividad As SeguimientoEvaluacionActividadBE) As Integer
+
 #End Region
 
     End Interface

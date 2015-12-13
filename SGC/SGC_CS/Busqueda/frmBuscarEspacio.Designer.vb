@@ -24,14 +24,11 @@ Partial Class frmBuscarEspacio
         Me.gbxFiltros = New SGC_CS.SGCGroupBox(Me.components)
         Me.lblSede = New SGC_CS.SGCLabel(Me.components)
         Me.cboSede = New SGC_CS.SGCComboBox(Me.components)
-        Me.lblEspacio = New SGC_CS.SGCLabel(Me.components)
-        Me.cboEspacio = New SGC_CS.SGCComboBox(Me.components)
-        Me.lblFecha = New SGC_CS.SGCLabel(Me.components)
-        Me.dtpFecha = New SGC_CS.SGCDateTimePicker(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.lblLugar = New SGC_CS.SGCLabel(Me.components)
         Me.cboLugar = New SGC_CS.SGCComboBox(Me.components)
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxFiltros.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -40,17 +37,13 @@ Partial Class frmBuscarEspacio
         '
         Me.gbxFiltros.Controls.Add(Me.lblSede)
         Me.gbxFiltros.Controls.Add(Me.cboSede)
-        Me.gbxFiltros.Controls.Add(Me.lblEspacio)
-        Me.gbxFiltros.Controls.Add(Me.cboEspacio)
-        Me.gbxFiltros.Controls.Add(Me.lblFecha)
-        Me.gbxFiltros.Controls.Add(Me.dtpFecha)
         Me.gbxFiltros.Controls.Add(Me.btnBuscar)
         Me.gbxFiltros.Controls.Add(Me.lblLugar)
         Me.gbxFiltros.Controls.Add(Me.cboLugar)
         Me.gbxFiltros.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.gbxFiltros.Location = New System.Drawing.Point(12, 12)
         Me.gbxFiltros.Name = "gbxFiltros"
-        Me.gbxFiltros.Size = New System.Drawing.Size(502, 191)
+        Me.gbxFiltros.Size = New System.Drawing.Size(373, 124)
         Me.gbxFiltros.TabIndex = 19
         Me.gbxFiltros.TabStop = False
         Me.gbxFiltros.Text = "Filtros"
@@ -78,49 +71,6 @@ Partial Class frmBuscarEspacio
         Me.cboSede.Size = New System.Drawing.Size(121, 26)
         Me.cboSede.TabIndex = 17
         '
-        'lblEspacio
-        '
-        Me.lblEspacio.AutoSize = True
-        Me.lblEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEspacio.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblEspacio.Location = New System.Drawing.Point(23, 87)
-        Me.lblEspacio.Name = "lblEspacio"
-        Me.lblEspacio.Size = New System.Drawing.Size(58, 18)
-        Me.lblEspacio.TabIndex = 14
-        Me.lblEspacio.Text = "Espacio:"
-        '
-        'cboEspacio
-        '
-        Me.cboEspacio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboEspacio.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cboEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboEspacio.ForeColor = System.Drawing.Color.Black
-        Me.cboEspacio.FormattingEnabled = True
-        Me.cboEspacio.Location = New System.Drawing.Point(132, 84)
-        Me.cboEspacio.Name = "cboEspacio"
-        Me.cboEspacio.Size = New System.Drawing.Size(121, 26)
-        Me.cboEspacio.TabIndex = 15
-        '
-        'lblFecha
-        '
-        Me.lblFecha.AutoSize = True
-        Me.lblFecha.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFecha.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblFecha.Location = New System.Drawing.Point(23, 122)
-        Me.lblFecha.Name = "lblFecha"
-        Me.lblFecha.Size = New System.Drawing.Size(48, 18)
-        Me.lblFecha.TabIndex = 13
-        Me.lblFecha.Text = "Fecha:"
-        '
-        'dtpFecha
-        '
-        Me.dtpFecha.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(132, 116)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(100, 26)
-        Me.dtpFecha.TabIndex = 12
-        '
         'btnBuscar
         '
         Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
@@ -128,7 +78,7 @@ Partial Class frmBuscarEspacio
         Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnBuscar.Location = New System.Drawing.Point(132, 148)
+        Me.btnBuscar.Location = New System.Drawing.Point(132, 84)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(75, 31)
         Me.btnBuscar.TabIndex = 11
@@ -168,15 +118,24 @@ Partial Class frmBuscarEspacio
         Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListado.Location = New System.Drawing.Point(12, 209)
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNombre})
+        Me.dgvListado.Location = New System.Drawing.Point(12, 142)
         Me.dgvListado.Name = "dgvListado"
-        Me.dgvListado.Size = New System.Drawing.Size(502, 199)
+        Me.dgvListado.ReadOnly = True
+        Me.dgvListado.Size = New System.Drawing.Size(373, 186)
         Me.dgvListado.TabIndex = 20
+        '
+        'colNombre
+        '
+        Me.colNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colNombre.HeaderText = "Nombre"
+        Me.colNombre.Name = "colNombre"
+        Me.colNombre.ReadOnly = True
         '
         'frmBuscarEspacio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
-        Me.ClientSize = New System.Drawing.Size(523, 420)
+        Me.ClientSize = New System.Drawing.Size(399, 339)
         Me.Controls.Add(Me.dgvListado)
         Me.Controls.Add(Me.gbxFiltros)
         Me.Name = "frmBuscarEspacio"
@@ -189,15 +148,12 @@ Partial Class frmBuscarEspacio
 
     End Sub
     Friend WithEvents gbxFiltros As SGC_CS.SGCGroupBox
-    Friend WithEvents lblFecha As SGC_CS.SGCLabel
-    Friend WithEvents dtpFecha As SGC_CS.SGCDateTimePicker
-    Friend WithEvents btnBuscar As SGC_CS.SGCButton
     Friend WithEvents lblLugar As SGC_CS.SGCLabel
     Friend WithEvents cboLugar As SGC_CS.SGCComboBox
     Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
     Friend WithEvents lblSede As SGC_CS.SGCLabel
     Friend WithEvents cboSede As SGC_CS.SGCComboBox
-    Friend WithEvents lblEspacio As SGC_CS.SGCLabel
-    Friend WithEvents cboEspacio As SGC_CS.SGCComboBox
+    Friend WithEvents btnBuscar As SGC_CS.SGCButton
+    Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

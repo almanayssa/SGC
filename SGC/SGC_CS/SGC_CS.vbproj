@@ -142,12 +142,6 @@
     <Compile Include="Busqueda\frmBuscarActividad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Busqueda\frmBuscarArticulo.Designer.vb">
-      <DependentUpon>frmBuscarArticulo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Busqueda\frmBuscarArticulo.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Busqueda\frmBuscarEspacio.Designer.vb">
       <DependentUpon>frmBuscarEspacio.vb</DependentUpon>
     </Compile>
@@ -417,9 +411,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBuscarActividad.resx">
       <DependentUpon>frmBuscarActividad.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Busqueda\frmBuscarArticulo.resx">
-      <DependentUpon>frmBuscarArticulo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBuscarEspacio.resx">
       <DependentUpon>frmBuscarEspacio.vb</DependentUpon>

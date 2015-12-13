@@ -31,12 +31,12 @@
             End Set
         End Property
 
-        Private _id_lugar As Integer
-        Public Property id_lugar() As Integer
+        Private _id_lugar As Integer?
+        Public Property id_lugar() As Integer?
             Get
                 Return _id_lugar
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_lugar = value
             End Set
         End Property

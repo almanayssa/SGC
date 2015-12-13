@@ -48,7 +48,12 @@ Public Class frmRegistroActividad
 #Region "Metodos Personalizados"
 
     Private Sub FormularioEnModoEdicion()
+        tsbLimpiar.Visible = False
+        tsbGuardar.Visible = True
+        tsbEditar.Visible = False
+        tsbEliminar.Visible = False
         tsbCancelar.Visible = True
+        tsbReprogramacion.Visible = False
 
         cboComite.Enabled = True
         cboTipo.Enabled = True
@@ -74,6 +79,13 @@ Public Class frmRegistroActividad
     End Sub
 
     Private Sub FormularioEnModoVista()
+        tsbLimpiar.Visible = True
+        tsbGuardar.Visible = False
+        tsbEditar.Visible = True
+        tsbEliminar.Visible = True
+        tsbCancelar.Visible = False
+        tsbReprogramacion.Visible = True
+
         cboComite.Enabled = False
         cboTipo.Enabled = False
         cboCategoria.Enabled = False
@@ -271,6 +283,8 @@ Public Class frmRegistroActividad
     End Sub
 
     Private Sub LimpiarFormulario()
+        tsbLimpiar.Visible = True
+        tsbGuardar.Visible = True
         tsbEditar.Visible = False
         tsbEliminar.Visible = False
         tsbCancelar.Visible = False
@@ -453,7 +467,6 @@ Public Class frmRegistroActividad
 
     Private Sub tsbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles tsbLimpiar.Click
         LimpiarFormulario()
-        FormularioEnModoEdicion()
     End Sub
 
     Private Sub tsbGuardar_Click(sender As System.Object, e As System.EventArgs) Handles tsbGuardar.Click
@@ -481,14 +494,13 @@ Public Class frmRegistroActividad
                 End If
 
                 LimpiarFormulario()
-                FormularioEnModoEdicion()
             End If
         End If
     End Sub
 
     Private Sub tsbCancelar_Click(sender As System.Object, e As System.EventArgs) Handles tsbCancelar.Click
-        If MsgBox("Seguro que desea anular la actividad?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-            LimpiarFormulario()
+        If MsgBox("Seguro que desea cancelar la operación?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            FormularioEnModoVista()
         End If
     End Sub
 

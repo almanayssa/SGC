@@ -20,9 +20,9 @@ Partial Class frmActEvaluacionPGC
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcTabControl1 = New SGC_CS.SGCTabControl(Me.components)
         Me.tpRegistradas = New System.Windows.Forms.TabPage()
@@ -116,9 +116,9 @@ Partial Class frmActEvaluacionPGC
         'dgvRegistradas
         '
         Me.dgvRegistradas.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRegistradas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRegistradas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvRegistradas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRegistradas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRegistradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -220,9 +220,9 @@ Partial Class frmActEvaluacionPGC
         'dgvAprobadas
         '
         Me.dgvAprobadas.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvAprobadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvAprobadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvAprobadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvAprobadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvAprobadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -308,9 +308,9 @@ Partial Class frmActEvaluacionPGC
         'dgvRechazadas
         '
         Me.dgvRechazadas.AllowUserToAddRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRechazadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRechazadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvRechazadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRechazadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRechazadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -439,11 +439,11 @@ Partial Class frmActEvaluacionPGC
         Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
         Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTitulo.ForeColor = System.Drawing.Color.White
-        Me.lblTitulo.Location = New System.Drawing.Point(392, 9)
+        Me.lblTitulo.Location = New System.Drawing.Point(315, 9)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(230, 23)
+        Me.lblTitulo.Size = New System.Drawing.Size(438, 23)
         Me.lblTitulo.TabIndex = 19
-        Me.lblTitulo.Text = "Seguimiento de Actividades"
+        Me.lblTitulo.Text = "Evaluación Actividad - Presidencia General de Comités"
         '
         'frmActEvaluacionPGC
         '

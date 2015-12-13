@@ -11,39 +11,6 @@ Namespace SGC.Model.Metodos
 
 #Region "Select"
 
-        Public Function ObtenerActividad(ByVal id_actividad As Integer) As Entidades.ActividadBE Implements Interfaces.IActividad.ObtenerActividad
-            Dim oActividad As New ActividadBE
-            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
-            Dim sqlConn As New SqlConnection(strConn)
-            Dim sqlCmd As New SqlCommand("comite.SP_OBTENER_ACTIVIDAD", sqlConn)
-            Dim dr As SqlDataReader = Nothing
-            sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = id_actividad
-
-            Try
-                sqlConn.Open()
-                dr = sqlCmd.ExecuteReader()
-
-                If dr.Read() Then
-                    oActividad = New ActividadBE
-                    oActividad.id_actividad = dr("id_actividad")
-                    oActividad.fec_ini = dr("fec_ini")
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
-                    oActividad.hora_ini = dr.GetTimeSpan(3)
-                    oActividad.hora_fin = dr.GetTimeSpan(4)
-                    oActividad.nombre = dr("nombre")
-                    oActividad.descripcion = dr("descripcion")
-                    oActividad.id_estado = dr("id_estado")
-                End If
-                dr.Close()
-                Return oActividad
-            Catch ex As System.Exception
-                Throw ex
-            Finally
-                sqlConn.Close()
-            End Try
-        End Function
-
         Public Function ListarActividades(ByVal id_comite As String, ByVal fec_ini As DateTime, ByVal fec_fin As DateTime) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividades
             Dim oListadoActividades As New List(Of ActividadBE)
             Dim oActividad As ActividadBE
@@ -67,8 +34,8 @@ Namespace SGC.Model.Metodos
                     oActividad.descripcion = dr("descripcion")
                     oActividad.id_tipo_act = dr("id_tipo_act")
                     oActividad.desc_tipo = dr("desc_tipo")
-                    oActividad.id_cattipo_act = dr("id_cattipo_act")
-                    oActividad.desc_cat = dr("desc_cat")
+                    oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
+                    oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
                     oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
                     oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
                     oActividad.monto_pago = dr("monto_pago")
@@ -221,8 +188,8 @@ Namespace SGC.Model.Metodos
                     oActividad.descripcion = dr("descripcion")
                     oActividad.id_tipo_act = dr("id_tipo_act")
                     oActividad.desc_tipo = dr("desc_tipo")
-                    oActividad.id_cattipo_act = dr("id_cattipo_act")
-                    oActividad.desc_cat = dr("desc_cat")
+                    oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
+                    oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
                     oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
                     oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
                     oActividad.monto_pago = dr("monto_pago")
@@ -261,8 +228,8 @@ Namespace SGC.Model.Metodos
                     oActividad.descripcion = dr("descripcion")
                     oActividad.id_tipo_act = dr("id_tipo_act")
                     oActividad.desc_tipo = dr("desc_tipo")
-                    oActividad.id_cattipo_act = dr("id_cattipo_act")
-                    oActividad.desc_cat = dr("desc_cat")
+                    oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
+                    oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
                     oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
                     oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
                     oActividad.monto_pago = dr("monto_pago")
@@ -301,8 +268,88 @@ Namespace SGC.Model.Metodos
                     oActividad.descripcion = dr("descripcion")
                     oActividad.id_tipo_act = dr("id_tipo_act")
                     oActividad.desc_tipo = dr("desc_tipo")
-                    oActividad.id_cattipo_act = dr("id_cattipo_act")
-                    oActividad.desc_cat = dr("desc_cat")
+                    oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
+                    oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
+                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
+                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.monto_pago = dr("monto_pago")
+                    oActividad.vacantes = dr("vacantes")
+                    oActividad.id_estado = dr("id_estado")
+                    oActividad.desc_estado = dr("estado")
+                    oListadoActividades.Add(oActividad)
+                End While
+                dr.Close()
+                Return oListadoActividades
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarActividadesCD(ByVal id_comite As String) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesCD
+            Dim oListadoActividades As New List(Of ActividadBE)
+            Dim oActividad As ActividadBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES_CD", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oActividad = New ActividadBE
+                    oActividad.id_actividad = dr("id_actividad")
+                    oActividad.nombre = dr("nombre")
+                    oActividad.descripcion = dr("descripcion")
+                    oActividad.id_tipo_act = dr("id_tipo_act")
+                    oActividad.desc_tipo = dr("desc_tipo")
+                    oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
+                    oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
+                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
+                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.monto_pago = dr("monto_pago")
+                    oActividad.vacantes = dr("vacantes")
+                    oActividad.id_estado = dr("id_estado")
+                    oActividad.desc_estado = dr("estado")
+                    oListadoActividades.Add(oActividad)
+                End While
+                dr.Close()
+                Return oListadoActividades
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarActividadesGG(ByVal id_comite As String) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesGG
+            Dim oListadoActividades As New List(Of ActividadBE)
+            Dim oActividad As ActividadBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES_GG", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oActividad = New ActividadBE
+                    oActividad.id_actividad = dr("id_actividad")
+                    oActividad.nombre = dr("nombre")
+                    oActividad.descripcion = dr("descripcion")
+                    oActividad.id_tipo_act = dr("id_tipo_act")
+                    oActividad.desc_tipo = dr("desc_tipo")
+                    oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
+                    oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
                     oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
                     oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
                     oActividad.monto_pago = dr("monto_pago")
@@ -488,6 +535,28 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@tipo_inscripcion", SqlDbType.Char).Value = IIf(oActividad.tipo_inscripcion Is Nothing, DBNull.Value, oActividad.tipo_inscripcion)
             sqlCmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = IIf(oActividad.id_plan Is Nothing, DBNull.Value, oActividad.id_plan)
             sqlCmd.Parameters.Add("@vacantes", SqlDbType.Int).Value = IIf(oActividad.vacantes Is Nothing, DBNull.Value, oActividad.vacantes)
+
+            Try
+                sqlConn.Open()
+                affectedRows = sqlCmd.ExecuteNonQuery
+
+                Return affectedRows
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ActualizarActividadEstado(ByRef oActividad As Entidades.ActividadBE) As Integer Implements Interfaces.IActividad.ActualizarActividadEstado
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_ACTUALIZAR_ACTIVIDAD_ESTADO", sqlConn)
+
+            Dim affectedRows As Integer = 0
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oActividad.id_actividad
+            sqlCmd.Parameters.Add("@id_estado", SqlDbType.VarChar).Value = oActividad.id_estado
 
             Try
                 sqlConn.Open()

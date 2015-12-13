@@ -24,7 +24,7 @@ Public Class frmConsultaActividad
 
         ctoNombre.DataPropertyName = "nombre"
         ctoTipo.DataPropertyName = "desc_tipo"
-        ctoCategoria.DataPropertyName = "descripcion"
+        ctoCategoria.DataPropertyName = "desc_cat"
         ctoFecInicio.DataPropertyName = "fec_ini"
         ctoFecFin.DataPropertyName = "fec_fin"
         ctoPago.DataPropertyName = "monto_pago"
@@ -33,7 +33,7 @@ Public Class frmConsultaActividad
 
         creNombre.DataPropertyName = "nombre"
         creTipo.DataPropertyName = "desc_tipo"
-        creCategoria.DataPropertyName = "descripcion"
+        creCategoria.DataPropertyName = "desc_cat"
         creFecInicio.DataPropertyName = "fec_ini"
         creFecFin.DataPropertyName = "fec_fin"
         crePago.DataPropertyName = "monto_pago"
@@ -41,7 +41,7 @@ Public Class frmConsultaActividad
 
         ceeNombre.DataPropertyName = "nombre"
         ceeTipo.DataPropertyName = "desc_tipo"
-        ceeCategoria.DataPropertyName = "descripcion"
+        ceeCategoria.DataPropertyName = "desc_cat"
         ceeFecInicio.DataPropertyName = "fec_ini"
         ceeFecFin.DataPropertyName = "fec_fin"
         ceePago.DataPropertyName = "monto_pago"
@@ -49,7 +49,7 @@ Public Class frmConsultaActividad
 
         canNombre.DataPropertyName = "nombre"
         canTipo.DataPropertyName = "desc_tipo"
-        canCategoria.DataPropertyName = "descripcion"
+        canCategoria.DataPropertyName = "desc_cat"
         canFecInicio.DataPropertyName = "fec_ini"
         canFecFin.DataPropertyName = "fec_fin"
         canPago.DataPropertyName = "monto_pago"
@@ -57,7 +57,7 @@ Public Class frmConsultaActividad
 
         capNombre.DataPropertyName = "nombre"
         capTipo.DataPropertyName = "desc_tipo"
-        capCategoria.DataPropertyName = "descripcion"
+        capCategoria.DataPropertyName = "desc_cat"
         capFecInicio.DataPropertyName = "fec_ini"
         capFecFin.DataPropertyName = "fec_fin"
         capPago.DataPropertyName = "monto_pago"
@@ -65,7 +65,7 @@ Public Class frmConsultaActividad
 
         chaNombre.DataPropertyName = "nombre"
         chaTipo.DataPropertyName = "desc_tipo"
-        chaCategoria.DataPropertyName = "descripcion"
+        chaCategoria.DataPropertyName = "desc_cat"
         chaFecInicio.DataPropertyName = "fec_ini"
         chaFecFin.DataPropertyName = "fec_fin"
         chaPago.DataPropertyName = "monto_pago"
@@ -73,7 +73,7 @@ Public Class frmConsultaActividad
 
         crcNombre.DataPropertyName = "nombre"
         crcTipo.DataPropertyName = "desc_tipo"
-        crcCategoria.DataPropertyName = "descripcion"
+        crcCategoria.DataPropertyName = "desc_cat"
         crcFecInicio.DataPropertyName = "fec_ini"
         crcFecFin.DataPropertyName = "fec_fin"
         crcPago.DataPropertyName = "monto_pago"

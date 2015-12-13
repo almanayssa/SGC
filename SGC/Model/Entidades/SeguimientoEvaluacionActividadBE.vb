@@ -11,12 +11,12 @@
             End Set
         End Property
 
-        Private _fecha As DateTime
-        Public Property fecha() As DateTime
+        Private _fecha As DateTime?
+        Public Property fecha() As DateTime?
             Get
                 Return _fecha
             End Get
-            Set(ByVal value As DateTime)
+            Set(ByVal value As DateTime?)
                 _fecha = value
             End Set
         End Property
@@ -31,12 +31,12 @@
             End Set
         End Property
 
-        Private _id_actividad As Integer
-        Public Property id_actividad() As Integer
+        Private _id_actividad As Integer?
+        Public Property id_actividad() As Integer?
             Get
                 Return _id_actividad
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_actividad = value
             End Set
         End Property
@@ -51,12 +51,12 @@
             End Set
         End Property
 
-        Private _id_area As Integer
-        Public Property id_area() As Integer
+        Private _id_area As Integer?
+        Public Property id_area() As Integer?
             Get
                 Return _id_area
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_area = value
             End Set
         End Property

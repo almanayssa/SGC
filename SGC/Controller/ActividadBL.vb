@@ -8,21 +8,6 @@ Namespace SGC.Controller
 
 #Region "Select"
 
-        Public Function ObtenerActividad(ByVal id_actividad As Integer) As ActividadBE
-            Try
-                Dim iActividad As IActividad
-                Dim oActividad As ActividadBE = Nothing
-
-                iActividad = New ActividadDL
-                oActividad = iActividad.ObtenerActividad(id_actividad)
-
-                Return oActividad
-
-            Catch ex As Exception
-                Return Nothing
-            End Try
-        End Function
-
         Public Function CargarActividadCabecera(ByVal id_actividad As Integer) As ActividadBE
             Try
                 Dim iActividad As IActividad
@@ -127,6 +112,36 @@ Namespace SGC.Controller
                 Return Nothing
             End Try
         End Function
+
+        Public Function ListarActividadesCD(ByVal id_comite As String) As List(Of ActividadBE)
+            Try
+                Dim iActividad As IActividad
+                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+
+                iActividad = New ActividadDL
+                oListadoActividades = iActividad.ListarActividadesCD(id_comite)
+
+                Return oListadoActividades
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarActividadesGG(ByVal id_comite As String) As List(Of ActividadBE)
+            Try
+                Dim iActividad As IActividad
+                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+
+                iActividad = New ActividadDL
+                oListadoActividades = iActividad.ListarActividadesGG(id_comite)
+
+                Return oListadoActividades
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 #End Region
 
 #Region "Insert"
@@ -216,6 +231,27 @@ Namespace SGC.Controller
                     For Each oRestriccion As RestriccionesBE In oActividad.ListaRestricciones
                         oRestriccion.id_actividad = oActividad.id_actividad
                         affectedRows += iActividad.InsertarRestriccionXActividad(oRestriccion)
+                    Next
+                End If
+
+                Return affectedRows
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ActualizarActividadEstado(ByRef ListadoActividad As List(Of ActividadBE), ByVal id_estado As String) As Integer
+            Try
+                Dim affectedRows As Integer
+
+                Dim iActividad As IActividad
+                iActividad = New ActividadDL
+
+                If ListadoActividad IsNot Nothing Then
+                    For Each oActividad As ActividadBE In ListadoActividad
+                        oActividad.id_estado = id_estado
+                        affectedRows += iActividad.ActualizarActividadEstado(oActividad)
                     Next
                 End If
 

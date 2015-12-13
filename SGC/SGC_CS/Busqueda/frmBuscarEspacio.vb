@@ -17,7 +17,7 @@ Public Class frmBuscarEspacio
         cboLugar.DisplayMember = "desc_lugar"
 
         dgvListado.AutoGenerateColumns = False
-        'colDescripcion.DataPropertyName = "Descripcion"
+        colNombre.DataPropertyName = "nombre"
     End Sub
 
 #End Region
@@ -45,9 +45,19 @@ Public Class frmBuscarEspacio
     End Sub
 
     Private Sub ListarLugares()
+        Dim oLugar As New LugarBE
+        oLugar.id_lugar = 0
+        oLugar.desc_lugar = "- Seleccione -"
+
         Dim ListadoLugar As List(Of LugarBE) = bc.ListarLugares()
         cboLugar.DataSource = Nothing
         cboLugar.DataSource = ListadoLugar
+    End Sub
+
+    Private Sub ListarEspacios()
+        Dim ListadoEspacios As List(Of EspacioBE) = bc.ListarEspacios(cboSede.SelectedValue, cboLugar.SelectedValue)
+        dgvListado.DataSource = Nothing
+        dgvListado.DataSource = ListadoEspacios
     End Sub
 
 #End Region
@@ -64,33 +74,11 @@ Public Class frmBuscarEspacio
 #Region "Metodos Controles"
 
     Private Sub btnBuscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar.Click
-
-    End Sub
-
-    Private Sub cboSede_SelectedValueChanged(sender As Object, e As System.EventArgs) Handles cboSede.SelectedValueChanged, cboLugar.SelectedValueChanged
-        If cboSede.SelectedValue IsNot Nothing And cboLugar.SelectedValue IsNot Nothing Then
-            If cboSede.SelectedValue = "000" Or cboLugar.SelectedValue = 0 Then
-                cboEspacio.Enabled = False
-                cboEspacio.DataSource = Nothing
-            Else
-                Dim ListadoEspacios As List(Of EspacioBE) = bc.ListarEspacios(cboSede.SelectedValue, cboLugar.SelectedValue)
-
-                If ListadoEspacios.Count = 0 Then
-                    cboEspacio.Enabled = False
-                    cboEspacio.DataSource = Nothing
-                Else
-                    cboEspacio.Enabled = True
-                    Dim oEspacio As New EspacioBE
-                    oEspacio.id_espacio = 0
-                    oEspacio.nombre = "- Seleccione -"
-
-                    ListadoEspacios.Insert(0, oEspacio)
-                    cboEspacio.DataSource = Nothing
-                    cboEspacio.DataSource = ListadoEspacios
-                    cboEspacio.ValueMember = "id_espacio"
-                    cboEspacio.DisplayMember = "nombre"
-                End If
-            End If
+        If cboSede.SelectedValue = "000" Or cboLugar.SelectedValue = 0 Then
+            MessageBox.Show("Seleccione una sede o lugar", "Información")
+            Exit Sub
+        Else
+            ListarEspacios()
         End If
     End Sub
 

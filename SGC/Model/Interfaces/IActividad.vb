@@ -6,7 +6,6 @@ Namespace SGC.Model.Interfaces
 
 #Region "Select"
 
-        Function ObtenerActividad(ByVal id_actividad As Integer) As ActividadBE
         Function ListarActividades(ByVal id_comite As String, ByVal fec_inicio As DateTime, ByVal fec_fin As DateTime) As List(Of ActividadBE)
         Function ListarActividadesBusqueda(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
         Function CargarActividadCabecera(ByVal id_actividad As Integer) As ActividadBE
@@ -14,6 +13,8 @@ Namespace SGC.Model.Interfaces
         Function ListarActividadesPendientesPGC(ByVal id_comite As String) As List(Of ActividadBE)
         Function ListarActividadesAprobadasPGC(ByVal id_comite As String) As List(Of ActividadBE)
         Function ListarActividadesRechazadasPGC(ByVal id_comite As String) As List(Of ActividadBE)
+        Function ListarActividadesCD(ByVal id_comite As String) As List(Of ActividadBE)
+        Function ListarActividadesGG(ByVal id_comite As String) As List(Of ActividadBE)
 
 #End Region
 
@@ -29,6 +30,7 @@ Namespace SGC.Model.Interfaces
 #Region "Update"
 
         Function ActualizarActividad(ByRef oActividad As ActividadBE) As Integer
+        Function ActualizarActividadEstado(ByRef oActividad As ActividadBE) As Integer
 
 #End Region
 

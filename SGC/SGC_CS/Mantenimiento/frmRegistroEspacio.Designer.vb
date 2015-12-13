@@ -28,7 +28,10 @@ Partial Class frmRegistroEspacio
         Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
         Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.lblCodigo = New SGC_CS.SGCLabel(Me.components)
+        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.nudAforo = New SGC_CS.SGCNumericUpDown(Me.components)
+        Me.txtCodigo = New SGC_CS.SGCTextBox(Me.components)
         Me.chkAforo = New SGC_CS.SGCCheckBox(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.txtEspacio = New SGC_CS.SGCTextBox(Me.components)
@@ -64,7 +67,7 @@ Partial Class frmRegistroEspacio
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 71)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(457, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(488, 37)
         Me.tsMenu.TabIndex = 16
         Me.tsMenu.Text = "SgcToolStrip1"
         '
@@ -97,6 +100,7 @@ Partial Class frmRegistroEspacio
         Me.tsbEditar.Name = "tsbEditar"
         Me.tsbEditar.Size = New System.Drawing.Size(78, 34)
         Me.tsbEditar.Text = "Editar"
+        Me.tsbEditar.Visible = False
         '
         'tsbEliminar
         '
@@ -107,6 +111,7 @@ Partial Class frmRegistroEspacio
         Me.tsbEliminar.Name = "tsbEliminar"
         Me.tsbEliminar.Size = New System.Drawing.Size(93, 34)
         Me.tsbEliminar.Text = "Eliminar"
+        Me.tsbEliminar.Visible = False
         '
         'tsbCancelar
         '
@@ -117,10 +122,14 @@ Partial Class frmRegistroEspacio
         Me.tsbCancelar.Name = "tsbCancelar"
         Me.tsbCancelar.Size = New System.Drawing.Size(95, 34)
         Me.tsbCancelar.Text = "Cancelar"
+        Me.tsbCancelar.Visible = False
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.lblCodigo)
+        Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
         Me.SgcGroupBox1.Controls.Add(Me.nudAforo)
+        Me.SgcGroupBox1.Controls.Add(Me.txtCodigo)
         Me.SgcGroupBox1.Controls.Add(Me.chkAforo)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
         Me.SgcGroupBox1.Controls.Add(Me.txtEspacio)
@@ -132,18 +141,55 @@ Partial Class frmRegistroEspacio
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 127)
         Me.SgcGroupBox1.Name = "SgcGroupBox1"
-        Me.SgcGroupBox1.Size = New System.Drawing.Size(596, 204)
+        Me.SgcGroupBox1.Size = New System.Drawing.Size(596, 223)
         Me.SgcGroupBox1.TabIndex = 17
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Espacio"
         '
+        'lblCodigo
+        '
+        Me.lblCodigo.AutoSize = True
+        Me.lblCodigo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCodigo.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblCodigo.Location = New System.Drawing.Point(140, 27)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(55, 18)
+        Me.lblCodigo.TabIndex = 27
+        Me.lblCodigo.Text = "Codigo:"
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscar.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.btnBuscar.Location = New System.Drawing.Point(312, 21)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(45, 31)
+        Me.btnBuscar.TabIndex = 26
+        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscar.UseVisualStyleBackColor = False
+        '
         'nudAforo
         '
-        Me.nudAforo.Location = New System.Drawing.Point(227, 147)
+        Me.nudAforo.Location = New System.Drawing.Point(228, 175)
         Me.nudAforo.Name = "nudAforo"
         Me.nudAforo.Size = New System.Drawing.Size(99, 26)
         Me.nudAforo.TabIndex = 8
         Me.nudAforo.Visible = False
+        '
+        'txtCodigo
+        '
+        Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigo.Enabled = False
+        Me.txtCodigo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCodigo.ForeColor = System.Drawing.Color.Black
+        Me.txtCodigo.Location = New System.Drawing.Point(206, 25)
+        Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.Size = New System.Drawing.Size(100, 26)
+        Me.txtCodigo.TabIndex = 25
         '
         'chkAforo
         '
@@ -151,7 +197,7 @@ Partial Class frmRegistroEspacio
         Me.chkAforo.BackColor = System.Drawing.Color.White
         Me.chkAforo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.chkAforo.ForeColor = System.Drawing.Color.Black
-        Me.chkAforo.Location = New System.Drawing.Point(205, 152)
+        Me.chkAforo.Location = New System.Drawing.Point(206, 180)
         Me.chkAforo.Name = "chkAforo"
         Me.chkAforo.Size = New System.Drawing.Size(15, 14)
         Me.chkAforo.TabIndex = 7
@@ -163,7 +209,7 @@ Partial Class frmRegistroEspacio
         Me.SgcLabel4.AutoSize = True
         Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel4.Location = New System.Drawing.Point(139, 149)
+        Me.SgcLabel4.Location = New System.Drawing.Point(140, 177)
         Me.SgcLabel4.Name = "SgcLabel4"
         Me.SgcLabel4.Size = New System.Drawing.Size(47, 18)
         Me.SgcLabel4.TabIndex = 6
@@ -175,7 +221,7 @@ Partial Class frmRegistroEspacio
         Me.txtEspacio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEspacio.ForeColor = System.Drawing.Color.Black
-        Me.txtEspacio.Location = New System.Drawing.Point(205, 105)
+        Me.txtEspacio.Location = New System.Drawing.Point(206, 133)
         Me.txtEspacio.Name = "txtEspacio"
         Me.txtEspacio.Size = New System.Drawing.Size(121, 26)
         Me.txtEspacio.TabIndex = 5
@@ -187,7 +233,7 @@ Partial Class frmRegistroEspacio
         Me.cboLugar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboLugar.ForeColor = System.Drawing.Color.Black
         Me.cboLugar.FormattingEnabled = True
-        Me.cboLugar.Location = New System.Drawing.Point(205, 67)
+        Me.cboLugar.Location = New System.Drawing.Point(206, 95)
         Me.cboLugar.Name = "cboLugar"
         Me.cboLugar.Size = New System.Drawing.Size(121, 26)
         Me.cboLugar.TabIndex = 4
@@ -199,7 +245,7 @@ Partial Class frmRegistroEspacio
         Me.cboSede.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboSede.ForeColor = System.Drawing.Color.Black
         Me.cboSede.FormattingEnabled = True
-        Me.cboSede.Location = New System.Drawing.Point(205, 34)
+        Me.cboSede.Location = New System.Drawing.Point(206, 62)
         Me.cboSede.Name = "cboSede"
         Me.cboSede.Size = New System.Drawing.Size(121, 26)
         Me.cboSede.TabIndex = 3
@@ -209,7 +255,7 @@ Partial Class frmRegistroEspacio
         Me.SgcLabel3.AutoSize = True
         Me.SgcLabel3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel3.Location = New System.Drawing.Point(139, 107)
+        Me.SgcLabel3.Location = New System.Drawing.Point(140, 135)
         Me.SgcLabel3.Name = "SgcLabel3"
         Me.SgcLabel3.Size = New System.Drawing.Size(58, 18)
         Me.SgcLabel3.TabIndex = 2
@@ -220,7 +266,7 @@ Partial Class frmRegistroEspacio
         Me.SgcLabel2.AutoSize = True
         Me.SgcLabel2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcLabel2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel2.Location = New System.Drawing.Point(139, 70)
+        Me.SgcLabel2.Location = New System.Drawing.Point(140, 98)
         Me.SgcLabel2.Name = "SgcLabel2"
         Me.SgcLabel2.Size = New System.Drawing.Size(45, 18)
         Me.SgcLabel2.TabIndex = 1
@@ -231,7 +277,7 @@ Partial Class frmRegistroEspacio
         Me.SgcLabel1.AutoSize = True
         Me.SgcLabel1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcLabel1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel1.Location = New System.Drawing.Point(139, 37)
+        Me.SgcLabel1.Location = New System.Drawing.Point(140, 65)
         Me.SgcLabel1.Name = "SgcLabel1"
         Me.SgcLabel1.Size = New System.Drawing.Size(43, 18)
         Me.SgcLabel1.TabIndex = 0
@@ -273,5 +319,8 @@ Partial Class frmRegistroEspacio
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
+    Friend WithEvents btnBuscar As SGC_CS.SGCButton
+    Friend WithEvents txtCodigo As SGC_CS.SGCTextBox
+    Friend WithEvents lblCodigo As SGC_CS.SGCLabel
 
 End Class

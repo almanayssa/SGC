@@ -22,30 +22,39 @@ Public Class frmActEvaluacionPGC
 
         creNombre.DataPropertyName = "nombre"
         creTipo.DataPropertyName = "desc_tipo"
-        creCategoria.DataPropertyName = "descripcion"
+        creCategoria.DataPropertyName = "desc_cat"
         creFecInicio.DataPropertyName = "fec_ini"
         creFecFin.DataPropertyName = "fec_fin"
         crePago.DataPropertyName = "monto_pago"
         creVacantes.DataPropertyName = "vacantes"
         creEstado.DataPropertyName = "desc_estado"
 
+        crePago.Visible = False
+        creVacantes.Visible = False
+
         capNombre.DataPropertyName = "nombre"
         capTipo.DataPropertyName = "desc_tipo"
-        capCategoria.DataPropertyName = "descripcion"
+        capCategoria.DataPropertyName = "desc_cat"
         capFecInicio.DataPropertyName = "fec_ini"
         capFecFin.DataPropertyName = "fec_fin"
         capPago.DataPropertyName = "monto_pago"
         capVacantes.DataPropertyName = "vacantes"
         capEstado.DataPropertyName = "desc_estado"
 
+        capPago.Visible = False
+        capVacantes.Visible = False
+
         crcNombre.DataPropertyName = "nombre"
         crcTipo.DataPropertyName = "desc_tipo"
-        crcCategoria.DataPropertyName = "descripcion"
+        crcCategoria.DataPropertyName = "desc_cat"
         crcFecInicio.DataPropertyName = "fec_ini"
         crcFecFin.DataPropertyName = "fec_fin"
         crcPago.DataPropertyName = "monto_pago"
         crcVacantes.DataPropertyName = "vacantes"
         crcEstado.DataPropertyName = "desc_estado"
+
+        crcPago.Visible = False
+        crcVacantes.Visible = False
 
     End Sub
 
@@ -111,18 +120,116 @@ Public Class frmActEvaluacionPGC
             End If
         Next
 
+        If ListadoActividades.Count = 0 Then
+            MessageBox.Show("Seleccione una actividad al menos", "Información")
+            Exit Sub
+        Else
+            If MsgBox("Seguro que desea enviar la(s) actividad(es) a Gerencia General?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                Dim affectedRows As Integer = 0
+                affectedRows = bc.InsertarSeguimientoActividades(ListadoActividades, 1, 2)
+
+                If affectedRows = 0 Then
+                    MessageBox.Show("Error al enviar", "Información")
+                    Exit Sub
+                Else
+                    MessageBox.Show("La(s) actividad(es) fue(fueron) enviada(s) satisfactoriamente", "Información")
+                    ListarActividades()
+                End If
+            End If
+        End If
     End Sub
 
     Private Sub btnEnviarCD_Click(sender As System.Object, e As System.EventArgs) Handles btnEnviarCD.Click
+        Dim ListadoActividades As New List(Of ActividadBE)
 
+        For Each row As DataGridViewRow In dgvRegistradas.Rows
+            Dim value As Boolean = CType(dgvRegistradas.Item(creSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)
+            Dim oActividad As ActividadBE = row.DataBoundItem
+
+            If value Then
+                ListadoActividades.Add(oActividad)
+            End If
+        Next
+
+        If ListadoActividades.Count = 0 Then
+            MessageBox.Show("Seleccione una actividad al menos", "Información")
+            Exit Sub
+        Else
+            If MsgBox("Seguro que desea enviar la(s) actividad(es) a Consejo Directivo?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                Dim affectedRows As Integer = 0
+                affectedRows = bc.InsertarSeguimientoActividades(ListadoActividades, 1, 1)
+
+                If affectedRows = 0 Then
+                    MessageBox.Show("Error al enviar", "Información")
+                    Exit Sub
+                Else
+                    MessageBox.Show("La(s) actividad(es) fue(fueron) enviada(s) satisfactoriamente", "Información")
+                    ListarActividades()
+                End If
+            End If
+        End If
     End Sub
 
     Private Sub btnAprobar_Click(sender As System.Object, e As System.EventArgs) Handles btnAprobar.Click
+        Dim ListadoActividades As New List(Of ActividadBE)
 
+        For Each row As DataGridViewRow In dgvAprobadas.Rows
+            Dim value As Boolean = CType(dgvAprobadas.Item(capSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)
+            Dim oActividad As ActividadBE = row.DataBoundItem
+
+            If value Then
+                ListadoActividades.Add(oActividad)
+            End If
+        Next
+
+        If ListadoActividades.Count = 0 Then
+            MessageBox.Show("Seleccione una actividad al menos", "Información")
+            Exit Sub
+        Else
+            If MsgBox("Seguro que desea aprobar la(s) actividad(es)?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                Dim affectedRows As Integer = 0
+                affectedRows = bc.ActualizarActividadEstado(ListadoActividades, "EST004")
+
+                If affectedRows = 0 Then
+                    MessageBox.Show("Error al aprobar", "Información")
+                    Exit Sub
+                Else
+                    MessageBox.Show("La(s) actividad(es) fue(fueron) aprobada(s) satisfactoriamente", "Información")
+                    ListarActividades()
+                End If
+            End If
+        End If
     End Sub
 
     Private Sub btnRechazar_Click(sender As System.Object, e As System.EventArgs) Handles btnRechazar.Click
+        Dim ListadoActividades As New List(Of ActividadBE)
 
+        For Each row As DataGridViewRow In dgvRechazadas.Rows
+            Dim value As Boolean = CType(dgvRechazadas.Item(crcSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)
+            Dim oActividad As ActividadBE = row.DataBoundItem
+
+            If value Then
+                ListadoActividades.Add(oActividad)
+            End If
+        Next
+
+        If ListadoActividades.Count = 0 Then
+            MessageBox.Show("Seleccione una actividad al rechazar", "Información")
+            Exit Sub
+        Else
+            If MsgBox("Seguro que desea rechazar la(s) actividad(es)?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                Dim affectedRows As Integer = 0
+                affectedRows = bc.ActualizarActividadEstado(ListadoActividades, "EST006")
+
+                If affectedRows = 0 Then
+                    MessageBox.Show("Error al rechazar", "Información")
+                    Exit Sub
+                Else
+                    MessageBox.Show("La(s) actividad(es) fue(fueron) rechazada(s) satisfactoriamente", "Información")
+                    ListarActividades()
+                End If
+            End If
+        End If
     End Sub
 
 #End Region
