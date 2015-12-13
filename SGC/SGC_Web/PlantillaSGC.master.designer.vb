@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class PlantillaBosque
+Partial Public Class PlantillaSGC
 
     '''<summary>
     '''Head1 control.

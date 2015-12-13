@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Bienvenida" Language="vb" AutoEventWireup="false" MasterPageFile="~/PlantillaBosque.Master" CodeBehind="inicio.aspx.vb" Inherits="inicio" %>
+﻿<%@ Page Title="Bienvenida" Language="vb" AutoEventWireup="false" MasterPageFile="~/PlantillaSGC.Master" CodeBehind="inicio.aspx.vb" Inherits="inicio" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <table class="tablitaDatosSocio">
         <tr>

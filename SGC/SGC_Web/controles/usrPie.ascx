@@ -47,7 +47,7 @@
             &nbsp;
             <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Arial" 
                 Font-Size="8.5pt" ForeColor="White" 
-                Text=":. Diseño y Desarrollo realizado por el Dpto. Sistemas ACC ELBOSQUE"></asp:Label>
+                Text=":. Diseño y Desarrollo realizado para la ACC ELBOSQUE"></asp:Label>
         </td>
     </tr>
 </table>

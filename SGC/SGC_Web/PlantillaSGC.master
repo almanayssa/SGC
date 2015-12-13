@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="PlantillaSGC.master.vb" Inherits="PlantillaBosque" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="PlantillaSGC.master.vb" Inherits="PlantillaSGC" %>
 <%@ Register Src="controles/usrEncabezado.ascx" TagName="usrEncabezado" TagPrefix="uc1" %>
 <%@ Register Src="controles/usrPie.ascx" TagName="usrPie" TagPrefix="uc2" %>
 <%@ Register Assembly="skmMenu" Namespace="skmMenu" TagPrefix="cc1" %>
