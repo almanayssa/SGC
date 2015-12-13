@@ -303,6 +303,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PlantillaSGC.master.designer.vb">
+      <DependentUpon>PlantillaSGC.master</DependentUpon>
+    </Compile>
+    <Compile Include="PlantillaSGC.master.vb">
+      <DependentUpon>PlantillaSGC.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="utilitarios\Helper.vb" />
     <Compile Include="utilitarios\Sesiones.vb" />
   </ItemGroup>
@@ -327,6 +334,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="PlantillaSGC.master" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controller\Controller.vbproj">
