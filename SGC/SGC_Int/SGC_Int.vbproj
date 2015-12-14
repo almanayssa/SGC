@@ -87,6 +87,10 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="frmReporteActividadesMayorDemanda.aspx" />
+    <Content Include="frmReporteComite.aspx" />
+    <Content Include="frmReporteGastoActividad.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -98,6 +102,34 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmReporteActividadesMayorDemanda.aspx.designer.vb">
+      <DependentUpon>frmReporteActividadesMayorDemanda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteActividadesMayorDemanda.aspx.vb">
+      <DependentUpon>frmReporteActividadesMayorDemanda.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmReporteComite.aspx.designer.vb">
+      <DependentUpon>frmReporteComite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteComite.aspx.vb">
+      <DependentUpon>frmReporteComite.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmReporteGastoActividad.aspx.designer.vb">
+      <DependentUpon>frmReporteGastoActividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteGastoActividad.aspx.vb">
+      <DependentUpon>frmReporteGastoActividad.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -116,6 +148,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="PlantillaSGCInt.Master.designer.vb">
+      <DependentUpon>PlantillaSGCInt.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PlantillaSGCInt.Master.vb">
+      <DependentUpon>PlantillaSGCInt.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +175,17 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <Content Include="PlantillaSGCInt.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Controller\Controller.vbproj">
+      <Project>{7B393E8C-AB81-40CD-B95A-C067470199B6}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.vbproj">
+      <Project>{9A398ECE-58F1-4D2F-912E-450189B644C1}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

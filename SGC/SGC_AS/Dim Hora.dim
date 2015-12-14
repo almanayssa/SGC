@@ -1,0 +1,224 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="acee6b0c-56b4-484d-b31a-072892d4d0fb" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Hora</ID>
+  <Name>Dim Hora</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-2025" scrolltop="-3559" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="7091" y="6985" backcolor="15334399" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="DimHora" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3000" height="3149" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="00080000b80b00004d0c0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimHora" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-2025</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-3559</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ARDiagramLayout</Name>
+      <Value>
+        <DiagramLayout ZoomPercent="100" ViewPortX="0" ViewPortY="0" xmlns="">
+          <Shapes NodeWidth="80">
+            <Shape Id="Id Hora" Expanded="false">
+              <Attributes>
+                <Attribute Id="Id Hora" />
+              </Attributes>
+              <Position x="20" y="20" />
+            </Shape>
+            <Shape Id="Hora" Expanded="false">
+              <Attributes>
+                <Attribute Id="Hora" />
+              </Attributes>
+              <Position x="125" y="20" />
+            </Shape>
+            <Shape Id="Minuto" Expanded="false">
+              <Attributes>
+                <Attribute Id="Minuto" />
+              </Attributes>
+              <Position x="230" y="20" />
+            </Shape>
+            <Shape Id="Segundo" Expanded="false">
+              <Attributes>
+                <Attribute Id="Segundo" />
+              </Attributes>
+              <Position x="335" y="20" />
+            </Shape>
+          </Shapes>
+        </DiagramLayout>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="e090eb6b-551e-40c8-a2d6-4fe8f21eb330">
+    <DataSourceViewID>SGC BI</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="0db6b269-144b-4cdf-83db-cfc067b5ce90">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="1f450e5e-b920-43d1-a38d-e083e56006f9">
+      <ID>Id Hora</ID>
+      <Name>Id Hora</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="d6044cd0-ed3e-4d8e-be6e-b886578faecf">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="07e1cd31-c948-4289-9c02-e6952af86c98">
+            <TableID>dbo_DimHora</TableID>
+            <ColumnID>id_hora</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="71d9ef33-bb61-4768-b553-91b5898f0ed5">
+          <AttributeID>Hora</AttributeID>
+          <Name>Hora</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e9a6ad44-b2d2-4f1f-8ba3-f8d70e7026e5">
+      <ID>Hora</ID>
+      <Name>Hora</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="adc139f3-b97d-4402-b964-60b9292aa601">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="df4955f7-e201-40d8-8bed-30c61c27da9a">
+            <TableID>dbo_DimHora</TableID>
+            <ColumnID>hora</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="e23252df-9b4c-4d8f-b4b1-26fce027895e">
+          <AttributeID>Minuto</AttributeID>
+          <Name>Minuto</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="16ce9e42-eac2-48df-b631-561f5e9287ce">
+      <ID>Minuto</ID>
+      <Name>Minuto</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="637d4730-b862-4d64-96b6-5538252d74e0">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="53650656-4424-4a2f-bfa6-abfa432568e5">
+            <TableID>dbo_DimHora</TableID>
+            <ColumnID>minuto</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="37f5c053-dddb-4513-b782-995f1fba240d">
+          <AttributeID>Segundo</AttributeID>
+          <Name>Segundo</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="e040ae9d-01bf-4da8-a628-682c2fbff5bd">
+      <ID>Segundo</ID>
+      <Name>Segundo</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="4eb668a1-a4be-4a42-b8cd-1438a4b9dce1">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="03055dad-95a7-4c6c-8f27-038388f503f9">
+            <TableID>dbo_DimHora</TableID>
+            <ColumnID>segundo</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <Hierarchies>
+    <Hierarchy dwd:design-time-name="0cab8ff6-a0c9-43b7-9fcf-645ad4aa208f">
+      <ID>Hierarchy</ID>
+      <Name>JerarquiaHora</Name>
+      <Levels>
+        <Level dwd:design-time-name="c09312cf-8e36-4b91-a2d0-77d07ee62315">
+          <ID>Hora</ID>
+          <Name>Hora</Name>
+          <SourceAttributeID>Hora</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="46baa896-5ae3-4048-9ced-29460abe4a93">
+          <ID>Minuto</ID>
+          <Name>Minuto</Name>
+          <SourceAttributeID>Minuto</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="81d16b04-b03d-433a-9d65-44f4c6ea880f">
+          <ID>Segundo</ID>
+          <Name>Segundo</Name>
+          <SourceAttributeID>Segundo</SourceAttributeID>
+        </Level>
+        <Level dwd:design-time-name="aaab4994-d833-4baa-984a-1f6dddd0f725">
+          <ID>Id Hora</ID>
+          <Name>Id Hora</Name>
+          <SourceAttributeID>Id Hora</SourceAttributeID>
+        </Level>
+      </Levels>
+    </Hierarchy>
+  </Hierarchies>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
