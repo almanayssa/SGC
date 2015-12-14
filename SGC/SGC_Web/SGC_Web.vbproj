@@ -114,6 +114,10 @@
     <Content Include="estilos\jquery.alerts.css" />
     <Content Include="estilos\style.css" />
     <Content Include="estilos\styles.css" />
+    <Content Include="frmCronogramaActividades.aspx" />
+    <Content Include="frmDetalleActividad.aspx" />
+    <Content Include="frmMensaje.aspx" />
+    <Content Include="frmRegistroInscripcion.aspx" />
     <Content Include="imagenes\banners\barra.jpg" />
     <Content Include="imagenes\banners\cuadrito.jpg" />
     <Content Include="imagenes\botones\001.bmp" />
@@ -262,6 +266,34 @@
     <Compile Include="controles\usrPie.ascx.vb">
       <DependentUpon>usrPie.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCronogramaActividades.aspx.designer.vb">
+      <DependentUpon>frmCronogramaActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCronogramaActividades.aspx.vb">
+      <DependentUpon>frmCronogramaActividades.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmDetalleActividad.aspx.designer.vb">
+      <DependentUpon>frmDetalleActividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleActividad.aspx.vb">
+      <DependentUpon>frmDetalleActividad.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMensaje.aspx.designer.vb">
+      <DependentUpon>frmMensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMensaje.aspx.vb">
+      <DependentUpon>frmMensaje.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmRegistroInscripcion.aspx.designer.vb">
+      <DependentUpon>frmRegistroInscripcion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistroInscripcion.aspx.vb">
+      <DependentUpon>frmRegistroInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.vb">
       <DependentUpon>index.aspx</DependentUpon>

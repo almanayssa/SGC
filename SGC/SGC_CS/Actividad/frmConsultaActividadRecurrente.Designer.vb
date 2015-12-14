@@ -37,17 +37,16 @@ Partial Class frmConsultaActividadRecurrente
         Me.cfiCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cfiTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cfiNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgvTodas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.ctoNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox1.SuspendLayout()
-        CType(Me.dgvTodas, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SgcGroupBox1
@@ -193,75 +192,78 @@ Partial Class frmConsultaActividadRecurrente
         Me.cfiNombre.HeaderText = "Nombre"
         Me.cfiNombre.Name = "cfiNombre"
         '
-        'dgvTodas
+        'dgvListado
         '
-        Me.dgvTodas.AllowUserToAddRows = False
+        Me.dgvListado.AllowUserToAddRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvTodas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvTodas.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvTodas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvTodas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTodas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ctoNombre, Me.ctoTipo, Me.ctoCategoria, Me.ctoFecInicio, Me.ctoFecFin, Me.ctoPago, Me.ctoVacantes, Me.ctoEstado})
-        Me.dgvTodas.Location = New System.Drawing.Point(60, 175)
-        Me.dgvTodas.Name = "dgvTodas"
-        Me.dgvTodas.Size = New System.Drawing.Size(900, 343)
-        Me.dgvTodas.TabIndex = 13
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNombre, Me.colTipo, Me.colCategoria, Me.colFecInicio, Me.colFecFin, Me.colPago, Me.colVacantes})
+        Me.dgvListado.Location = New System.Drawing.Point(60, 175)
+        Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.ReadOnly = True
+        Me.dgvListado.Size = New System.Drawing.Size(900, 343)
+        Me.dgvListado.TabIndex = 13
         '
-        'ctoNombre
+        'colNombre
         '
-        Me.ctoNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ctoNombre.HeaderText = "Nombre"
-        Me.ctoNombre.Name = "ctoNombre"
+        Me.colNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colNombre.HeaderText = "Nombre"
+        Me.colNombre.Name = "colNombre"
+        Me.colNombre.ReadOnly = True
         '
-        'ctoTipo
+        'colTipo
         '
-        Me.ctoTipo.HeaderText = "Tipo"
-        Me.ctoTipo.Name = "ctoTipo"
+        Me.colTipo.HeaderText = "Tipo"
+        Me.colTipo.Name = "colTipo"
+        Me.colTipo.ReadOnly = True
         '
-        'ctoCategoria
+        'colCategoria
         '
-        Me.ctoCategoria.HeaderText = "Categoría"
-        Me.ctoCategoria.Name = "ctoCategoria"
+        Me.colCategoria.HeaderText = "Categoría"
+        Me.colCategoria.Name = "colCategoria"
+        Me.colCategoria.ReadOnly = True
         '
-        'ctoFecInicio
+        'colFecInicio
         '
-        Me.ctoFecInicio.HeaderText = "Fec. Inicio"
-        Me.ctoFecInicio.Name = "ctoFecInicio"
+        Me.colFecInicio.HeaderText = "Fec. Inicio"
+        Me.colFecInicio.Name = "colFecInicio"
+        Me.colFecInicio.ReadOnly = True
         '
-        'ctoFecFin
+        'colFecFin
         '
-        Me.ctoFecFin.HeaderText = "Fec. Fin"
-        Me.ctoFecFin.Name = "ctoFecFin"
+        Me.colFecFin.HeaderText = "Fec. Fin"
+        Me.colFecFin.Name = "colFecFin"
+        Me.colFecFin.ReadOnly = True
         '
-        'ctoPago
+        'colPago
         '
-        Me.ctoPago.HeaderText = "Pago"
-        Me.ctoPago.Name = "ctoPago"
+        Me.colPago.HeaderText = "Pago"
+        Me.colPago.Name = "colPago"
+        Me.colPago.ReadOnly = True
         '
-        'ctoVacantes
+        'colVacantes
         '
-        Me.ctoVacantes.HeaderText = "Vacantes"
-        Me.ctoVacantes.Name = "ctoVacantes"
-        '
-        'ctoEstado
-        '
-        Me.ctoEstado.HeaderText = "Estado"
-        Me.ctoEstado.Name = "ctoEstado"
+        Me.colVacantes.HeaderText = "Vacantes"
+        Me.colVacantes.Name = "colVacantes"
+        Me.colVacantes.ReadOnly = True
         '
         'frmConsultaActividadRecurrente
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
-        Me.Controls.Add(Me.dgvTodas)
+        Me.Controls.Add(Me.dgvListado)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Name = "frmConsultaActividadRecurrente"
         Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
-        Me.Controls.SetChildIndex(Me.dgvTodas, 0)
+        Me.Controls.SetChildIndex(Me.dgvListado, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
-        CType(Me.dgvTodas, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -282,14 +284,13 @@ Partial Class frmConsultaActividadRecurrente
     Friend WithEvents cfiCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cfiTipo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cfiNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgvTodas As SGC_CS.SGCDataGridView
-    Friend WithEvents ctoNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoTipo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoPago As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoEstado As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
+    Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colTipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colPago As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

@@ -40,17 +40,11 @@ Partial Class frmRegistroActividadRecurrente
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.gbxRecurrencia = New System.Windows.Forms.GroupBox()
         Me.pnlMensual = New System.Windows.Forms.Panel()
-        Me.Label24 = New System.Windows.Forms.Label()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.cboNombreDia = New System.Windows.Forms.ComboBox()
-        Me.cboOrdinal = New System.Windows.Forms.ComboBox()
-        Me.nudNumeroMes2 = New System.Windows.Forms.NumericUpDown()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.nudNumeroMes = New System.Windows.Forms.NumericUpDown()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.nudNumeroDia = New System.Windows.Forms.NumericUpDown()
-        Me.rbntEl = New System.Windows.Forms.RadioButton()
-        Me.rbtnDia = New System.Windows.Forms.RadioButton()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.pnlRepeticiones = New System.Windows.Forms.Panel()
         Me.lblDiasSemanas = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
@@ -82,7 +76,6 @@ Partial Class frmRegistroActividadRecurrente
         CType(Me.nudPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxRecurrencia.SuspendLayout()
         Me.pnlMensual.SuspendLayout()
-        CType(Me.nudNumeroMes2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudNumeroMes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudNumeroDia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlRepeticiones.SuspendLayout()
@@ -318,72 +311,16 @@ Partial Class frmRegistroActividadRecurrente
         '
         'pnlMensual
         '
-        Me.pnlMensual.Controls.Add(Me.Label24)
-        Me.pnlMensual.Controls.Add(Me.Label23)
-        Me.pnlMensual.Controls.Add(Me.cboNombreDia)
-        Me.pnlMensual.Controls.Add(Me.cboOrdinal)
-        Me.pnlMensual.Controls.Add(Me.nudNumeroMes2)
         Me.pnlMensual.Controls.Add(Me.Label22)
         Me.pnlMensual.Controls.Add(Me.nudNumeroMes)
         Me.pnlMensual.Controls.Add(Me.Label21)
         Me.pnlMensual.Controls.Add(Me.nudNumeroDia)
-        Me.pnlMensual.Controls.Add(Me.rbntEl)
-        Me.pnlMensual.Controls.Add(Me.rbtnDia)
+        Me.pnlMensual.Controls.Add(Me.Label2)
         Me.pnlMensual.Location = New System.Drawing.Point(9, 54)
         Me.pnlMensual.Name = "pnlMensual"
-        Me.pnlMensual.Size = New System.Drawing.Size(433, 72)
+        Me.pnlMensual.Size = New System.Drawing.Size(433, 48)
         Me.pnlMensual.TabIndex = 38
         Me.pnlMensual.Visible = False
-        '
-        'Label24
-        '
-        Me.Label24.ForeColor = System.Drawing.Color.Black
-        Me.Label24.Location = New System.Drawing.Point(327, 46)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(60, 17)
-        Me.Label24.TabIndex = 45
-        Me.Label24.Text = "mes(es)"
-        '
-        'Label23
-        '
-        Me.Label23.ForeColor = System.Drawing.Color.Black
-        Me.Label23.Location = New System.Drawing.Point(226, 46)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(56, 17)
-        Me.Label23.TabIndex = 44
-        Me.Label23.Text = "de cada"
-        '
-        'cboNombreDia
-        '
-        Me.cboNombreDia.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cboNombreDia.ForeColor = System.Drawing.Color.Black
-        Me.cboNombreDia.FormattingEnabled = True
-        Me.cboNombreDia.Items.AddRange(New Object() {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"})
-        Me.cboNombreDia.Location = New System.Drawing.Point(138, 40)
-        Me.cboNombreDia.Name = "cboNombreDia"
-        Me.cboNombreDia.Size = New System.Drawing.Size(85, 26)
-        Me.cboNombreDia.TabIndex = 43
-        '
-        'cboOrdinal
-        '
-        Me.cboOrdinal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cboOrdinal.ForeColor = System.Drawing.Color.Black
-        Me.cboOrdinal.FormattingEnabled = True
-        Me.cboOrdinal.Items.AddRange(New Object() {"primer", "segundo", "tercer", "cuarto", "último"})
-        Me.cboOrdinal.Location = New System.Drawing.Point(55, 40)
-        Me.cboOrdinal.Name = "cboOrdinal"
-        Me.cboOrdinal.Size = New System.Drawing.Size(80, 26)
-        Me.cboOrdinal.TabIndex = 39
-        '
-        'nudNumeroMes2
-        '
-        Me.nudNumeroMes2.Location = New System.Drawing.Point(286, 40)
-        Me.nudNumeroMes2.Maximum = New Decimal(New Integer() {12, 0, 0, 0})
-        Me.nudNumeroMes2.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.nudNumeroMes2.Name = "nudNumeroMes2"
-        Me.nudNumeroMes2.Size = New System.Drawing.Size(40, 26)
-        Me.nudNumeroMes2.TabIndex = 42
-        Me.nudNumeroMes2.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label22
         '
@@ -423,28 +360,14 @@ Partial Class frmRegistroActividadRecurrente
         Me.nudNumeroDia.TabIndex = 39
         Me.nudNumeroDia.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'rbntEl
+        'Label2
         '
-        Me.rbntEl.AutoSize = True
-        Me.rbntEl.Location = New System.Drawing.Point(8, 44)
-        Me.rbntEl.Name = "rbntEl"
-        Me.rbntEl.Size = New System.Drawing.Size(41, 22)
-        Me.rbntEl.TabIndex = 36
-        Me.rbntEl.TabStop = True
-        Me.rbntEl.Text = "El:"
-        Me.rbntEl.UseVisualStyleBackColor = True
-        '
-        'rbtnDia
-        '
-        Me.rbtnDia.AutoSize = True
-        Me.rbtnDia.Checked = True
-        Me.rbtnDia.Location = New System.Drawing.Point(8, 12)
-        Me.rbtnDia.Name = "rbtnDia"
-        Me.rbtnDia.Size = New System.Drawing.Size(50, 22)
-        Me.rbtnDia.TabIndex = 35
-        Me.rbtnDia.TabStop = True
-        Me.rbtnDia.Text = "Día:"
-        Me.rbtnDia.UseVisualStyleBackColor = True
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(17, 14)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(56, 17)
+        Me.Label2.TabIndex = 42
+        Me.Label2.Text = "Día:"
         '
         'pnlRepeticiones
         '
@@ -716,8 +639,6 @@ Partial Class frmRegistroActividadRecurrente
         CType(Me.nudPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxRecurrencia.ResumeLayout(False)
         Me.pnlMensual.ResumeLayout(False)
-        Me.pnlMensual.PerformLayout()
-        CType(Me.nudNumeroMes2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudNumeroMes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudNumeroDia, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlRepeticiones.ResumeLayout(False)
@@ -749,17 +670,10 @@ Partial Class frmRegistroActividadRecurrente
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents gbxRecurrencia As System.Windows.Forms.GroupBox
     Friend WithEvents pnlMensual As System.Windows.Forms.Panel
-    Friend WithEvents Label24 As System.Windows.Forms.Label
-    Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents cboNombreDia As System.Windows.Forms.ComboBox
-    Friend WithEvents cboOrdinal As System.Windows.Forms.ComboBox
-    Friend WithEvents nudNumeroMes2 As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label22 As System.Windows.Forms.Label
     Friend WithEvents nudNumeroMes As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents nudNumeroDia As System.Windows.Forms.NumericUpDown
-    Friend WithEvents rbntEl As System.Windows.Forms.RadioButton
-    Friend WithEvents rbtnDia As System.Windows.Forms.RadioButton
     Friend WithEvents pnlRepeticiones As System.Windows.Forms.Panel
     Friend WithEvents lblDiasSemanas As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
@@ -786,5 +700,6 @@ Partial Class frmRegistroActividadRecurrente
     Friend WithEvents chkLunes As System.Windows.Forms.CheckBox
     Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 
 End Class

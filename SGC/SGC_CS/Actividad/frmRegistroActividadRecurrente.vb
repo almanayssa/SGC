@@ -39,54 +39,6 @@ Public Class frmRegistroActividadRecurrente
         cboTipo.DataSource = ListadoTipoActividad
     End Sub
 
-    Private Sub ListarOrdinal()
-        Dim id As Integer() = New Integer(4) {1, 2, 3, 4, 0}
-        Dim desc As String() = New String(4) {"primer", "segundo", "tercer", "cuarto", "último"}
-
-        Dim dt As New DataTable
-        dt.Columns.Add("id")
-        dt.Columns.Add("desc")
-
-        Dim dr As DataRow
-
-        For i As Integer = 0 To 4
-            dr = dt.NewRow()
-            dr("id") = id(i)
-            dr("desc") = desc(i)
-            dt.Rows.Add(dr)
-        Next
-
-        dt.AcceptChanges()
-
-        cboOrdinal.DataSource = dt
-        cboOrdinal.DisplayMember = "desc"
-        cboOrdinal.ValueMember = "id"
-    End Sub
-
-    Private Sub ListarDiasSemana()
-        Dim id As Integer() = New Integer(6) {DayOfWeek.Monday, DayOfWeek.Tuesday, DayOfWeek.Wednesday, DayOfWeek.Thursday, DayOfWeek.Friday, DayOfWeek.Saturday, DayOfWeek.Sunday}
-        Dim desc As String() = New String(6) {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"}
-
-        Dim dt As New DataTable
-        dt.Columns.Add("id")
-        dt.Columns.Add("desc")
-
-        Dim dr As DataRow
-
-        For i As Integer = 0 To 6
-            dr = dt.NewRow()
-            dr("id") = id(i)
-            dr("desc") = desc(i)
-            dt.Rows.Add(dr)
-        Next
-
-        dt.AcceptChanges()
-
-        cboNombreDia.DataSource = dt
-        cboNombreDia.DisplayMember = "desc"
-        cboNombreDia.ValueMember = "id"
-    End Sub
-
     Private Sub LimpiarFormulario()
         cboComite.SelectedIndex = 0
         cboTipo.SelectedIndex = 0
@@ -104,15 +56,10 @@ Public Class frmRegistroActividadRecurrente
         chkViernes.Checked = False
         chkSabado.Checked = False
         chkDomingo.Checked = False
-        rbtnDia.Checked = True
         dtpHoraInicio.Value = Now
         dtpHoraFin.Value = Now
         nudNumeroDia.Value = 1
         nudNumeroMes.Value = 1
-        nudNumeroMes2.Value = 1
-        cboOrdinal.SelectedIndex = 0
-        cboNombreDia.SelectedIndex = 0
-        rbtnDia.Checked = True
         dtpFechaInicio.Value = Now
         dtpFechaFin.Value = Now
 
@@ -213,35 +160,20 @@ Public Class frmRegistroActividadRecurrente
             oActividadRecurrente.chk_sab = chkSabado.Checked
         Else
             oActividadRecurrente.tipo = "M"
-            If rbtnDia.Checked Then
-                oActividadRecurrente.num_rep = nudNumeroMes.Value
-                oActividadRecurrente.dia_mes = nudNumeroDia.Value
-            Else
-                oActividadRecurrente.num_rep = nudNumeroMes2.Value
-                oActividadRecurrente.ordinal = CInt(cboOrdinal.SelectedValue)
-                oActividadRecurrente.dia_semana = CInt(cboNombreDia.SelectedValue)
-            End If
+            oActividadRecurrente.num_rep = nudNumeroMes.Value
+            oActividadRecurrente.dia_mes = nudNumeroDia.Value
         End If
         oActividadRecurrente.fecha_ini = dtpFechaInicio.Value
         oActividadRecurrente.fecha_fin = dtpFechaFin.Value
-        oActividadRecurrente.hora_ini = dtpHoraInicio.Value
-        oActividadRecurrente.hora_fin = dtpHoraFin.Value
-
-        oActividadRecurrente.Actividad = New ActividadBE
-        'oActividadRecurrente.Actividad.fec_ini = dtpFechaInicio.Value
-        'oActividadRecurrente.Actividad.fec_fin = dtpFechaFin.Value
-        oActividadRecurrente.Actividad.hora_ini = dtpHoraInicio.Value.TimeOfDay
-        oActividadRecurrente.Actividad.hora_fin = dtpHoraFin.Value.TimeOfDay
-        oActividadRecurrente.Actividad.monto_pago = nudPago.Value
-        oActividadRecurrente.Actividad.id_cattipo_act = cboCategoria.SelectedValue
-        oActividadRecurrente.Actividad.id_comite = cboComite.SelectedValue
-        oActividadRecurrente.Actividad.id_tipo_act = cboTipo.SelectedValue
-        oActividadRecurrente.Actividad.descripcion = txtDescripcion.Text.Trim
-        oActividadRecurrente.Actividad.nombre = txtNombre.Text.Trim
-        oActividadRecurrente.Actividad.flg_plan_anual = False
-        oActividadRecurrente.Actividad.flg_web = True
-        oActividadRecurrente.Actividad.tipo_inscripcion = "A"
-        oActividadRecurrente.Actividad.vacantes = nudVacantes.Value
+        oActividadRecurrente.hora_ini = dtpHoraInicio.Value.TimeOfDay
+        oActividadRecurrente.hora_fin = dtpHoraFin.Value.TimeOfDay
+        oActividadRecurrente.monto_pago = nudPago.Value
+        oActividadRecurrente.id_cattipo_act = cboCategoria.SelectedValue
+        oActividadRecurrente.id_comite = cboComite.SelectedValue
+        oActividadRecurrente.id_tipo_act = cboTipo.SelectedValue
+        oActividadRecurrente.descripcion = txtDescripcion.Text.Trim
+        oActividadRecurrente.nombre = txtNombre.Text.Trim
+        oActividadRecurrente.vacantes = nudVacantes.Value
 
         affectedRows = bc.InsertarActividadRecurrente(oActividadRecurrente)
 
@@ -263,8 +195,6 @@ Public Class frmRegistroActividadRecurrente
     Private Sub frmRegistroActividadRecurrente_Load(sender As Object, e As System.EventArgs) Handles Me.Load
         ListarComites()
         ListarTipoActividad()
-        ListarOrdinal()
-        ListarDiasSemana()
     End Sub
 
 #End Region
@@ -311,38 +241,6 @@ Public Class frmRegistroActividadRecurrente
 #End Region
 
 #Region "Recurrencia"
-
-    Private Sub rbtnDia_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtnDia.CheckedChanged
-        If rbtnDia.Checked Then
-            nudNumeroDia.Enabled = True
-            nudNumeroMes.Enabled = True
-            cboOrdinal.Enabled = False
-            cboNombreDia.Enabled = False
-            nudNumeroMes2.Enabled = False
-        Else
-            nudNumeroDia.Enabled = False
-            nudNumeroMes.Enabled = False
-            cboOrdinal.Enabled = True
-            cboNombreDia.Enabled = True
-            nudNumeroMes2.Enabled = True
-        End If
-    End Sub
-
-    Private Sub rbntEl_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbntEl.CheckedChanged
-        If rbntEl.Checked Then
-            nudNumeroDia.Enabled = False
-            nudNumeroMes.Enabled = False
-            cboOrdinal.Enabled = True
-            cboNombreDia.Enabled = True
-            nudNumeroMes2.Enabled = True
-        Else
-            nudNumeroDia.Enabled = True
-            nudNumeroMes.Enabled = True
-            cboOrdinal.Enabled = False
-            cboNombreDia.Enabled = False
-            nudNumeroMes2.Enabled = False
-        End If
-    End Sub
 
     Private Sub cboTipoRecurrencia_SelectedValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cboTipoRecurrencia.SelectedValueChanged
         If cboTipoRecurrencia.SelectedItem = "Diaria" Then

@@ -106,12 +106,6 @@
     <Compile Include="Actividad\frmConsultaActividad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actividad\frmConsultaActividadRecurrente_.Designer.vb">
-      <DependentUpon>frmConsultaActividadRecurrente_.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Actividad\frmConsultaActividadRecurrente_.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Actividad\frmHabilitarActividad.Designer.vb">
       <DependentUpon>frmHabilitarActividad.vb</DependentUpon>
     </Compile>
@@ -393,9 +387,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmConsultaActividad.resx">
       <DependentUpon>frmConsultaActividad.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Actividad\frmConsultaActividadRecurrente_.resx">
-      <DependentUpon>frmConsultaActividadRecurrente_.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmHabilitarActividad.resx">
       <DependentUpon>frmHabilitarActividad.vb</DependentUpon>

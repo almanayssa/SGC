@@ -18,14 +18,14 @@ Public Class frmBuscarActividad
         colFecFin.DataPropertyName = "fec_fin"
         colHoraFin.DataPropertyName = "hora_fin"
 
-        'colFecInicio.ValueType = GetType(DateTime)
-        'colFecInicio.DefaultCellStyle.Format = "MM/dd/yyyy"
+        colFecInicio.ValueType = GetType(DateTime)
+        colFecInicio.DefaultCellStyle.Format = "dd/MM/yyyy"
 
         'colHoraInicio.ValueType = GetType(TimeSpan)
         'colHoraInicio.DefaultCellStyle.Format = "HH:mm"
 
-        'colFecFin.ValueType = GetType(DateTime)
-        'colFecFin.DefaultCellStyle.Format = "MM/dd/yyyy"
+        colFecFin.ValueType = GetType(DateTime)
+        colFecFin.DefaultCellStyle.Format = "dd/MM/yyyy"
 
         'colHoraFin.ValueType = GetType(TimeSpan)
         'colHoraFin.DefaultCellStyle.Format = "HH:mm"

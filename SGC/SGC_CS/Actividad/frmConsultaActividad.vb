@@ -31,6 +31,12 @@ Public Class frmConsultaActividad
         ctoVacantes.DataPropertyName = "vacantes"
         ctoEstado.DataPropertyName = "desc_estado"
 
+        ctoFecInicio.ValueType = GetType(DateTime)
+        ctoFecInicio.DefaultCellStyle.Format = "dd/MM/yyyy"
+
+        ctoFecFin.ValueType = GetType(DateTime)
+        ctoFecFin.DefaultCellStyle.Format = "dd/MM/yyyy"
+
         creNombre.DataPropertyName = "nombre"
         creTipo.DataPropertyName = "desc_tipo"
         creCategoria.DataPropertyName = "desc_cat"
@@ -38,6 +44,12 @@ Public Class frmConsultaActividad
         creFecFin.DataPropertyName = "fec_fin"
         crePago.DataPropertyName = "monto_pago"
         creVacantes.DataPropertyName = "vacantes"
+
+        creFecInicio.ValueType = GetType(DateTime)
+        creFecInicio.DefaultCellStyle.Format = "dd/MM/yyyy"
+
+        creFecFin.ValueType = GetType(DateTime)
+        creFecFin.DefaultCellStyle.Format = "dd/MM/yyyy"
 
         ceeNombre.DataPropertyName = "nombre"
         ceeTipo.DataPropertyName = "desc_tipo"
@@ -47,6 +59,12 @@ Public Class frmConsultaActividad
         ceePago.DataPropertyName = "monto_pago"
         ceeVacantes.DataPropertyName = "vacantes"
 
+        ceeFecInicio.ValueType = GetType(DateTime)
+        ceeFecInicio.DefaultCellStyle.Format = "dd/MM/yyyy"
+
+        ceeFecFin.ValueType = GetType(DateTime)
+        ceeFecFin.DefaultCellStyle.Format = "dd/MM/yyyy"
+
         canNombre.DataPropertyName = "nombre"
         canTipo.DataPropertyName = "desc_tipo"
         canCategoria.DataPropertyName = "desc_cat"
@@ -54,6 +72,12 @@ Public Class frmConsultaActividad
         canFecFin.DataPropertyName = "fec_fin"
         canPago.DataPropertyName = "monto_pago"
         canVacantes.DataPropertyName = "vacantes"
+
+        canFecInicio.ValueType = GetType(DateTime)
+        canFecInicio.DefaultCellStyle.Format = "dd/MM/yyyy"
+
+        canFecFin.ValueType = GetType(DateTime)
+        canFecFin.DefaultCellStyle.Format = "dd/MM/yyyy"
 
         capNombre.DataPropertyName = "nombre"
         capTipo.DataPropertyName = "desc_tipo"
@@ -63,6 +87,12 @@ Public Class frmConsultaActividad
         capPago.DataPropertyName = "monto_pago"
         capVacantes.DataPropertyName = "vacantes"
 
+        capFecInicio.ValueType = GetType(DateTime)
+        capFecInicio.DefaultCellStyle.Format = "dd/MM/yyyy"
+
+        capFecFin.ValueType = GetType(DateTime)
+        capFecFin.DefaultCellStyle.Format = "dd/MM/yyyy"
+
         chaNombre.DataPropertyName = "nombre"
         chaTipo.DataPropertyName = "desc_tipo"
         chaCategoria.DataPropertyName = "desc_cat"
@@ -71,6 +101,12 @@ Public Class frmConsultaActividad
         chaPago.DataPropertyName = "monto_pago"
         chaVacantes.DataPropertyName = "vacantes"
 
+        chaFecInicio.ValueType = GetType(DateTime)
+        chaFecInicio.DefaultCellStyle.Format = "dd/MM/yyyy"
+
+        chaFecFin.ValueType = GetType(DateTime)
+        chaFecFin.DefaultCellStyle.Format = "dd/MM/yyyy"
+
         crcNombre.DataPropertyName = "nombre"
         crcTipo.DataPropertyName = "desc_tipo"
         crcCategoria.DataPropertyName = "desc_cat"
@@ -78,6 +114,12 @@ Public Class frmConsultaActividad
         crcFecFin.DataPropertyName = "fec_fin"
         crcPago.DataPropertyName = "monto_pago"
         crcVacantes.DataPropertyName = "vacantes"
+
+        crcFecInicio.ValueType = GetType(DateTime)
+        crcFecInicio.DefaultCellStyle.Format = "dd/MM/yyyy"
+
+        crcFecFin.ValueType = GetType(DateTime)
+        crcFecFin.DefaultCellStyle.Format = "dd/MM/yyyy"
 
     End Sub
 
