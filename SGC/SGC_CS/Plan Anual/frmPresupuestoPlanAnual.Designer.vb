@@ -20,10 +20,12 @@ Partial Class frmPresupuestoPlanAnual
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuestoPlanAnual))
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.lblEstado = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcLabel8 = New SGC_CS.SGCLabel(Me.components)
         Me.lblFecFin = New SGC_CS.SGCLabel(Me.components)
         Me.lblFecIni = New SGC_CS.SGCLabel(Me.components)
         Me.lblAnio = New SGC_CS.SGCLabel(Me.components)
@@ -39,19 +41,16 @@ Partial Class frmPresupuestoPlanAnual
         Me.txtMontoTotal = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
         Me.btnAgregar = New SGC_CS.SGCButton(Me.components)
-        Me.SgcDataGridView1 = New SGC_CS.SGCDataGridView(Me.components)
+        Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.sbEditar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.lblEstado = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcLabel8 = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -89,6 +88,28 @@ Partial Class frmPresupuestoPlanAnual
         Me.SgcGroupBox1.TabIndex = 14
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Plan Anual"
+        '
+        'lblEstado
+        '
+        Me.lblEstado.AutoSize = True
+        Me.lblEstado.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEstado.ForeColor = System.Drawing.Color.Black
+        Me.lblEstado.Location = New System.Drawing.Point(528, 110)
+        Me.lblEstado.Name = "lblEstado"
+        Me.lblEstado.Size = New System.Drawing.Size(13, 18)
+        Me.lblEstado.TabIndex = 32
+        Me.lblEstado.Text = "-"
+        '
+        'SgcLabel8
+        '
+        Me.SgcLabel8.AutoSize = True
+        Me.SgcLabel8.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel8.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel8.Location = New System.Drawing.Point(437, 110)
+        Me.SgcLabel8.Name = "SgcLabel8"
+        Me.SgcLabel8.Size = New System.Drawing.Size(53, 18)
+        Me.SgcLabel8.TabIndex = 31
+        Me.SgcLabel8.Text = "Estado:"
         '
         'lblFecFin
         '
@@ -217,10 +238,11 @@ Partial Class frmPresupuestoPlanAnual
         '
         'SgcGroupBox2
         '
+        Me.SgcGroupBox2.Controls.Add(Me.SgcButton1)
         Me.SgcGroupBox2.Controls.Add(Me.txtMontoTotal)
         Me.SgcGroupBox2.Controls.Add(Me.SgcLabel6)
         Me.SgcGroupBox2.Controls.Add(Me.btnAgregar)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcDataGridView1)
+        Me.SgcGroupBox2.Controls.Add(Me.dgvListado)
         Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox2.Location = New System.Drawing.Point(60, 281)
         Me.SgcGroupBox2.Name = "SgcGroupBox2"
@@ -265,19 +287,19 @@ Partial Class frmPresupuestoPlanAnual
         Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAgregar.UseVisualStyleBackColor = False
         '
-        'SgcDataGridView1
+        'dgvListado
         '
-        Me.SgcDataGridView1.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcDataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.SgcDataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.SgcDataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.SgcDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SgcDataGridView1.Location = New System.Drawing.Point(13, 26)
-        Me.SgcDataGridView1.Name = "SgcDataGridView1"
-        Me.SgcDataGridView1.Size = New System.Drawing.Size(865, 220)
-        Me.SgcDataGridView1.TabIndex = 0
+        Me.dgvListado.AllowUserToAddRows = False
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Location = New System.Drawing.Point(13, 26)
+        Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.Size = New System.Drawing.Size(865, 220)
+        Me.dgvListado.TabIndex = 0
         '
         'tsMenu
         '
@@ -285,11 +307,11 @@ Partial Class frmPresupuestoPlanAnual
         Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
         Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbLimpiar, Me.sbGuardar, Me.sbEditar, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripButton3})
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbLimpiar, Me.sbGuardar, Me.ToolStripButton1, Me.ToolStripButton3})
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 70)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(587, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(380, 37)
         Me.tsMenu.TabIndex = 17
         Me.tsMenu.Text = "SgcToolStrip1"
         '
@@ -300,8 +322,8 @@ Partial Class frmPresupuestoPlanAnual
         Me.sbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.sbLimpiar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
         Me.sbLimpiar.Name = "sbLimpiar"
-        Me.sbLimpiar.Size = New System.Drawing.Size(88, 34)
-        Me.sbLimpiar.Text = "Limpiar"
+        Me.sbLimpiar.Size = New System.Drawing.Size(50, 34)
+        Me.sbLimpiar.Text = "u"
         '
         'sbGuardar
         '
@@ -313,16 +335,6 @@ Partial Class frmPresupuestoPlanAnual
         Me.sbGuardar.Size = New System.Drawing.Size(92, 34)
         Me.sbGuardar.Text = "Guardar"
         '
-        'sbEditar
-        '
-        Me.sbEditar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.sbEditar.Image = Global.SGC_CS.My.Resources.Resources.menu_editar
-        Me.sbEditar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.sbEditar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.sbEditar.Name = "sbEditar"
-        Me.sbEditar.Size = New System.Drawing.Size(101, 34)
-        Me.sbEditar.Text = "Modificar"
-        '
         'ToolStripButton1
         '
         Me.ToolStripButton1.BackColor = System.Drawing.Color.WhiteSmoke
@@ -332,16 +344,6 @@ Partial Class frmPresupuestoPlanAnual
         Me.ToolStripButton1.Name = "ToolStripButton1"
         Me.ToolStripButton1.Size = New System.Drawing.Size(93, 34)
         Me.ToolStripButton1.Text = "Eliminar"
-        '
-        'ToolStripButton2
-        '
-        Me.ToolStripButton2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton2.Image = Global.SGC_CS.My.Resources.Resources.menu_cancel
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(95, 34)
-        Me.ToolStripButton2.Text = "Cancelar"
         '
         'ToolStripButton3
         '
@@ -353,27 +355,20 @@ Partial Class frmPresupuestoPlanAnual
         Me.ToolStripButton3.Size = New System.Drawing.Size(105, 34)
         Me.ToolStripButton3.Text = "Impresión"
         '
-        'lblEstado
+        'SgcButton1
         '
-        Me.lblEstado.AutoSize = True
-        Me.lblEstado.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblEstado.ForeColor = System.Drawing.Color.Black
-        Me.lblEstado.Location = New System.Drawing.Point(528, 110)
-        Me.lblEstado.Name = "lblEstado"
-        Me.lblEstado.Size = New System.Drawing.Size(13, 18)
-        Me.lblEstado.TabIndex = 32
-        Me.lblEstado.Text = "-"
-        '
-        'SgcLabel8
-        '
-        Me.SgcLabel8.AutoSize = True
-        Me.SgcLabel8.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel8.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel8.Location = New System.Drawing.Point(437, 110)
-        Me.SgcLabel8.Name = "SgcLabel8"
-        Me.SgcLabel8.Size = New System.Drawing.Size(53, 18)
-        Me.SgcLabel8.TabIndex = 31
-        Me.SgcLabel8.Text = "Estado:"
+        Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.SgcButton1.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.SgcButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcButton1.Location = New System.Drawing.Point(94, 252)
+        Me.SgcButton1.Name = "SgcButton1"
+        Me.SgcButton1.Size = New System.Drawing.Size(75, 31)
+        Me.SgcButton1.TabIndex = 20
+        Me.SgcButton1.Text = "Quitar"
+        Me.SgcButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.SgcButton1.UseVisualStyleBackColor = False
         '
         'frmPresupuestoPlanAnual
         '
@@ -391,7 +386,7 @@ Partial Class frmPresupuestoPlanAnual
         Me.SgcGroupBox1.PerformLayout()
         Me.SgcGroupBox2.ResumeLayout(False)
         Me.SgcGroupBox2.PerformLayout()
-        CType(Me.SgcDataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tsMenu.ResumeLayout(False)
         Me.tsMenu.PerformLayout()
         Me.ResumeLayout(False)
@@ -406,13 +401,11 @@ Partial Class frmPresupuestoPlanAnual
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
-    Friend WithEvents SgcDataGridView1 As SGC_CS.SGCDataGridView
+    Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
     Friend WithEvents sbLimpiar As System.Windows.Forms.ToolStripButton
     Friend WithEvents sbGuardar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents sbEditar As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton2 As System.Windows.Forms.ToolStripButton
     Friend WithEvents txtMontoTotal As SGC_CS.SGCTextBox
     Friend WithEvents btnAgregar As SGC_CS.SGCButton
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
@@ -425,5 +418,6 @@ Partial Class frmPresupuestoPlanAnual
     Friend WithEvents lblEstado As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel8 As SGC_CS.SGCLabel
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
+    Friend WithEvents SgcButton1 As SGC_CS.SGCButton
 
 End Class

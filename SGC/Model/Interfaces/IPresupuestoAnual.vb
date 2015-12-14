@@ -7,7 +7,7 @@ Namespace SGC.Model.Interfaces
 
 #Region "Select"
 
-        Function ObtenerPresupuestoAnual(ByVal id_plan As Integer?) As PresupuestoAnualBE
+        Function ObtenerPresupuestoAnual(ByVal id_plan As Integer?, ByVal id_presupuesto As Integer?) As PresupuestoAnualBE
 
 #End Region
 

@@ -21,8 +21,6 @@
             End Set
         End Property
 
-
-
         Private _idItem As Integer
         Public Property idItem() As Integer
             Get
@@ -63,6 +61,17 @@
                 _monto = value
             End Set
         End Property
+
+        Private _descripcion As String
+        Public Property descripcion() As String
+            Get
+                Return _descripcion
+            End Get
+            Set(value As String)
+                _descripcion = value
+            End Set
+        End Property
+
 
     End Class
 End Namespace

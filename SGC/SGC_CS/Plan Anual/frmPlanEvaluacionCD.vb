@@ -65,4 +65,7 @@ Public Class frmPlanEvaluacionCD
 
 #End Region
 
+    Private Sub cboBuscar_Click(sender As System.Object, e As System.EventArgs) Handles cboBuscar.Click
+
+    End Sub
 End Class

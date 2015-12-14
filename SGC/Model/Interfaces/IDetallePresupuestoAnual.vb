@@ -7,7 +7,9 @@ Namespace SGC.Model.Interfaces
 
 #Region "Select"
 
-        Function ListarDetallePresupuestoAnual(ByVal id_presupuesto As Integer?) As PresupuestoAnualBE
+        Function ListarDetallePresupuestoAnual(ByVal id_presupuesto As Integer?) As List(Of DetallePresupuestoAnualBE)
+
+        Function ObtenerRecursosPersonalAnual(ByVal id_plan As Integer?) As List(Of DetallePresupuestoAnualBE)
 
 #End Region
 

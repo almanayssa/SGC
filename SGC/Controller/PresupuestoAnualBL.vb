@@ -8,13 +8,13 @@ Namespace SGC.Controller
 
 #Region "Select"
 
-        Public Function ObtenerPresupuestoAnual(ByVal id_plan As Integer?) As PresupuestoAnualBE
+        Public Function ObtenerPresupuestoAnual(ByVal id_plan As Integer?, ByVal id_presupuesto As Integer?) As PresupuestoAnualBE
             Try
                 Dim ipresupuestoAnual As IPresupuestoAnual
                 Dim oPresupuestoAnual As PresupuestoAnualBE = Nothing
 
                 ipresupuestoAnual = New PresupuestoAnualDL
-                oPresupuestoAnual = ipresupuestoAnual.ObtenerPresupuestoAnual(id_plan)
+                oPresupuestoAnual = ipresupuestoAnual.ObtenerPresupuestoAnual(id_plan, id_presupuesto)
 
                 Return oPresupuestoAnual
 
@@ -36,7 +36,18 @@ Namespace SGC.Controller
 
                 id_Presupuesto = iPresupuesto.InsertarPresupuestoAnual(oPresupuesto)
 
+
                 oPresupuesto.id_presupuesto_anual = id_Presupuesto
+
+                Dim iDetalle As IDetallePresupuestoAnual
+                iDetalle = New DetallePresupuestoAnualDL
+
+                If oPresupuesto.ListadoDetallePresupuesto IsNot Nothing Then
+                    For Each oDetalle As DetallePresupuestoAnualBE In oPresupuesto.ListadoDetallePresupuesto
+                        oDetalle.id_presupuesto_anual = id_Presupuesto
+                        iDetalle.InsertarDetallePresupuestoAnual(oDetalle)
+                    Next
+                End If
 
                 Return oPresupuesto.id_presupuesto_anual
 

@@ -41,13 +41,13 @@
             End Set
         End Property
 
-        Private _detallePresupuesto As DetallePresupuestoAnualBE
-        Public Property detallePresupuesto() As DetallePresupuestoAnualBE
+        Private _ListadoDetallePresupuesto As List(Of DetallePresupuestoAnualBE)
+        Public Property ListadoDetallePresupuesto() As List(Of DetallePresupuestoAnualBE)
             Get
-                Return _detallePresupuesto
+                Return _ListadoDetallePresupuesto
             End Get
-            Set(value As DetallePresupuestoAnualBE)
-                _detallePresupuesto = value
+            Set(value As List(Of DetallePresupuestoAnualBE))
+                _ListadoDetallePresupuesto = value
             End Set
         End Property
 

@@ -10,7 +10,7 @@ Public Class PresupuestoAnualDL
 
 #Region "Select"
 
-    Public Function ObtenerPresupuestoAnual(ByVal id_plan As Integer?) As SGC.Model.Entidades.PresupuestoAnualBE Implements SGC.Model.Interfaces.IPresupuestoAnual.ObtenerPresupuestoAnual
+    Public Function ObtenerPresupuestoAnual(ByVal id_plan As Integer?, ByVal id_presupuesto As Integer?) As SGC.Model.Entidades.PresupuestoAnualBE Implements SGC.Model.Interfaces.IPresupuestoAnual.ObtenerPresupuestoAnual
 
         Dim oPresupuesto As New PresupuestoAnualBE
         Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
