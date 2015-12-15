@@ -258,6 +258,9 @@ Partial Class MDI
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.lblProgress = New System.Windows.Forms.ToolStripStatusLabel()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
+        Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PerfilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OpcionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -1323,7 +1326,7 @@ Partial Class MDI
         '
         'MantenimientoToolStripMenuItem
         '
-        Me.MantenimientoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeEspaciosToolStripMenuItem, Me.RegistroDeEspacioToolStripMenuItem})
+        Me.MantenimientoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeEspaciosToolStripMenuItem, Me.RegistroDeEspacioToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.PerfilesToolStripMenuItem, Me.OpcionesToolStripMenuItem})
         Me.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem"
         Me.MantenimientoToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.MantenimientoToolStripMenuItem.Text = "Mantenimiento"
@@ -1833,6 +1836,24 @@ Partial Class MDI
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
+        'UsuariosToolStripMenuItem
+        '
+        Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.UsuariosToolStripMenuItem.Text = "Usuarios"
+        '
+        'PerfilesToolStripMenuItem
+        '
+        Me.PerfilesToolStripMenuItem.Name = "PerfilesToolStripMenuItem"
+        Me.PerfilesToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.PerfilesToolStripMenuItem.Text = "Perfiles"
+        '
+        'OpcionesToolStripMenuItem
+        '
+        Me.OpcionesToolStripMenuItem.Name = "OpcionesToolStripMenuItem"
+        Me.OpcionesToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.OpcionesToolStripMenuItem.Text = "Opciones"
+        '
         'MDI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2096,5 +2117,8 @@ Partial Class MDI
     Friend WithEvents RegistrarEncuestaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultaDeEspaciosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RegistroDeEspacioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents UsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PerfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OpcionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

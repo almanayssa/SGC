@@ -81,13 +81,13 @@
             End Set
         End Property
 
-        Private _signo As String
-        Public Property signo() As String
+        Private _des_signo As String
+        Public Property des_signo() As String
             Get
-                Return _signo
+                Return _des_signo
             End Get
             Set(ByVal value As String)
-                _signo = value
+                _des_signo = value
             End Set
         End Property
 

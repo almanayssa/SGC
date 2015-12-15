@@ -250,6 +250,24 @@
     <Compile Include="Mantenimiento\frmRegistroEspacio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mantenimiento\frmRegistroOpcion.Designer.vb">
+      <DependentUpon>frmRegistroOpcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegistroOpcion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegistroPerfil.Designer.vb">
+      <DependentUpon>frmRegistroPerfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegistroPerfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegistroUsuario.Designer.vb">
+      <DependentUpon>frmRegistroUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegistroUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Plan Anual\frmConsultaPlanAnual.Designer.vb">
       <DependentUpon>frmConsultaPlanAnual.vb</DependentUpon>
     </Compile>
@@ -501,6 +519,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmRegistroEspacio.resx">
       <DependentUpon>frmRegistroEspacio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmRegistroOpcion.resx">
+      <DependentUpon>frmRegistroOpcion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmRegistroPerfil.resx">
+      <DependentUpon>frmRegistroPerfil.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmRegistroUsuario.resx">
+      <DependentUpon>frmRegistroUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

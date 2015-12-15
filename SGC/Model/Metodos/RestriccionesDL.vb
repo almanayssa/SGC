@@ -61,7 +61,7 @@ Namespace SGC.Model.Metodos
                     oRestriccion.descripcion = dr("descripcion")
                     oRestriccion.id_signo = dr("id_signo")
                     oRestriccion.valor = dr("valor")
-                    oRestriccion.signo = dr("signo")
+                    oRestriccion.des_signo = dr("des_signo")
                     oListadoRestricciones.Add(oRestriccion)
                 End While
                 dr.Close()
