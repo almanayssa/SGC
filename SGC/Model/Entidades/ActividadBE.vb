@@ -211,6 +211,16 @@
             End Set
         End Property
 
+        Private _ListaPersonal As List(Of PersonalBE)
+        Public Property ListaPersonal() As List(Of PersonalBE)
+            Get
+                Return _ListaPersonal
+            End Get
+            Set(ByVal value As List(Of PersonalBE))
+                _ListaPersonal = value
+            End Set
+        End Property
+
         Private _nombrecomite As String
         Public Property nombrecomite() As String
             Get

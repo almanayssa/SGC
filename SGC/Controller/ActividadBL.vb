@@ -38,13 +38,13 @@ Namespace SGC.Controller
             End Try
         End Function
 
-        Public Function ListarActividadesBusqueda(ByVal id_comite As String, ByVal nombre As String) As List(Of ActividadBE)
+        Public Function ListarActividadesBusqueda(ByVal id_comite As String, ByVal nombre As String, ByVal id_estado As String) As List(Of ActividadBE)
             Try
                 Dim iActividad As IActividad
                 Dim oListadoActividades As List(Of ActividadBE) = Nothing
 
                 iActividad = New ActividadDL
-                oListadoActividades = iActividad.ListarActividadesBusqueda(id_comite, nombre)
+                oListadoActividades = iActividad.ListarActividadesBusqueda(id_comite, nombre, id_estado)
 
                 Return oListadoActividades
 
@@ -252,6 +252,38 @@ Namespace SGC.Controller
                     For Each oActividad As ActividadBE In ListadoActividad
                         oActividad.id_estado = id_estado
                         affectedRows += iActividad.ActualizarActividadEstado(oActividad)
+                    Next
+                End If
+
+                Return affectedRows
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function HabilitarActividad(ByRef oActividad As ActividadBE) As Integer
+            Try
+                Dim affectedRows As Integer
+
+                Dim iActividad As IActividad
+                iActividad = New ActividadDL
+
+                oActividad.id_estado = "EST005"
+                affectedRows += iActividad.ActualizarActividadEstado(oActividad)
+                affectedRows += iActividad.BorrarRecursosXActividad(oActividad.id_actividad)
+
+                If oActividad.ListaRecursos IsNot Nothing Then
+                    For Each oRecurso As RecursoBE In oActividad.ListaRecursos
+                        oRecurso.id_actividad = oActividad.id_actividad
+                        affectedRows += iActividad.InsertarRecursoXActividad(oRecurso)
+                    Next
+                End If
+
+                If oActividad.ListaPersonal IsNot Nothing Then
+                    For Each oPersonal As PersonalBE In oActividad.ListaPersonal
+                        oPersonal.id_actividad = oActividad.id_actividad
+                        affectedRows += iActividad.InsertarPersonalXActividad(oPersonal)
                     Next
                 End If
 

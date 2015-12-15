@@ -6,6 +6,7 @@ Imports System.Text
 Imports System.Configuration
 
 Namespace SGC.Model.Metodos
+
     Public Class ActividadDL
         Implements IActividad
 
@@ -53,7 +54,7 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
-        Public Function ListarActividadesBusqueda(ByVal id_comite As String, ByVal nombre As String) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesBusqueda
+        Public Function ListarActividadesBusqueda(ByVal id_comite As String, ByVal nombre As String, ByVal id_estado As String) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesBusqueda
             Dim oListadoActividades As New List(Of ActividadBE)
             Dim oActividad As ActividadBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
@@ -63,6 +64,7 @@ Namespace SGC.Model.Metodos
             sqlCmd.CommandType = CommandType.StoredProcedure
             sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
             sqlCmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre
+            sqlCmd.Parameters.Add("@id_estado", SqlDbType.VarChar).Value = id_estado
 
             Try
                 sqlConn.Open()
@@ -116,6 +118,11 @@ Namespace SGC.Model.Metodos
                     oActividad.flg_plan_anual = dr("flg_plan_anual")
                     oActividad.flg_web = dr("flg_web")
                     oActividad.tipo_inscripcion = dr("tipo_inscripcion")
+                    oActividad.id_actividad_recurrente = IIf(dr("id_actividad_recurrente") Is DBNull.Value, Nothing, dr("id_actividad_recurrente"))
+                    oActividad.vacantes = dr("vacantes")
+                    oActividad.desc_tipo = dr("desc_tipo")
+                    oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
+                    oActividad.nombrecomite = dr("nombrecomite")
                 End If
                 dr.Close()
                 Return oActividad
@@ -442,6 +449,7 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oRecurso.id_actividad
             sqlCmd.Parameters.Add("@id_recurso", SqlDbType.Int).Value = oRecurso.id_recurso
             sqlCmd.Parameters.Add("@cantidad", SqlDbType.Int).Value = oRecurso.cantidad
+            sqlCmd.Parameters.Add("@cantidad_real", SqlDbType.Int).Value = oRecurso.cantidad_real
 
             Try
                 sqlConn.Open()
@@ -501,6 +509,29 @@ Namespace SGC.Model.Metodos
             Catch ex As System.Exception
                 Throw ex
                 Return False
+            Finally
+                sqlConn.Close()
+            End Try
+
+        End Function
+
+        Public Function InsertarPersonalXActividad(ByRef oPersonal As PersonalBE) As Integer Implements IActividad.InsertarPersonalXActividad
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_INSERTAR_PERSONAL_X_ACTIVIDAD", sqlConn)
+
+            Dim recordId As Integer = 0
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_personal", SqlDbType.Int).Value = oPersonal.id_personal
+            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oPersonal.id_actividad
+
+            Try
+                sqlConn.Open()
+                recordId = sqlCmd.ExecuteScalar()
+
+                Return recordId
+            Catch ex As System.Exception
+                Throw ex
             Finally
                 sqlConn.Close()
             End Try
@@ -641,6 +672,27 @@ Namespace SGC.Model.Metodos
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
             Dim sqlCmd As New SqlCommand("comite.SP_BORRAR_RESTRICCION_X_ACTIVIDAD", sqlConn)
+
+            Dim affectedRows As Integer = 0
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = id_actividad
+
+            Try
+                sqlConn.Open()
+                affectedRows = sqlCmd.ExecuteNonQuery
+
+                Return affectedRows
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function BorrarPersonalXActividad(ByVal id_actividad As Integer) As Integer Implements Interfaces.IActividad.BorrarPersonalXActividad
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_BORRAR_PERSONAL_X_ACTIVIDAD", sqlConn)
 
             Dim affectedRows As Integer = 0
             sqlCmd.CommandType = CommandType.StoredProcedure

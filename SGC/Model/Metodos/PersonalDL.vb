@@ -7,47 +7,47 @@ Imports System.Configuration
 
 Namespace SGC.Model.Metodos
 
-    Public Class RecursoDL
-        Implements IRecurso
+    Public Class PersonalDL
+        Implements IPersonal
 
 #Region "Select"
 
-        Public Function ListarRecursos(ByVal descripcion As String) As List(Of RecursoBE) Implements IRecurso.ListarRecursos
-            Dim oListadoRecursos As New List(Of RecursoBE)
-            Dim oRecurso As RecursoBE
+        Public Function ListarPersonal(id_tipo As Integer, nombre As String) As System.Collections.Generic.List(Of Entidades.PersonalBE) Implements Interfaces.IPersonal.ListarPersonal
+            Dim oListadoPersonal As New List(Of PersonalBE)
+            Dim oPersonal As PersonalBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
-            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_RECURSOS", sqlConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_PERSONAL", sqlConn)
             Dim dr As SqlDataReader = Nothing
             sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion
+            sqlCmd.Parameters.Add("@id_tipo_personal", SqlDbType.Int).Value = id_tipo
+            sqlCmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = nombre
 
             Try
                 sqlConn.Open()
                 dr = sqlCmd.ExecuteReader()
 
                 While dr.Read()
-                    oRecurso = New RecursoBE
-                    oRecurso.id_recurso = dr("id_recurso")
-                    oRecurso.descripcion = dr("descripcion")
-                    oListadoRecursos.Add(oRecurso)
+                    oPersonal = New PersonalBE
+                    oPersonal.id_personal = dr("id_personal")
+                    oPersonal.nombre_completo = dr("nombre_completo")
+                    oListadoPersonal.Add(oPersonal)
                 End While
                 dr.Close()
-                Return oListadoRecursos
+                Return oListadoPersonal
             Catch ex As System.Exception
                 Throw ex
             Finally
                 sqlConn.Close()
             End Try
-
         End Function
 
-        Public Function ListarRecursosXActividad(ByVal id_actividad As Integer) As System.Collections.Generic.List(Of Entidades.RecursoBE) Implements Interfaces.IRecurso.ListarRecursosXActividad
-            Dim oListadoRecursos As New List(Of RecursoBE)
-            Dim oRecurso As RecursoBE
+        Public Function ListarPersonalXActividad(ByVal id_actividad As Integer) As System.Collections.Generic.List(Of Entidades.PersonalBE) Implements Interfaces.IPersonal.ListarPersonalXActividad
+            Dim oListadoPersonal As New List(Of PersonalBE)
+            Dim oPersonal As PersonalBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
-            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_RECURSOS_X_ACTIVIDAD", sqlConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_PERSONAL_X_ACTIVIDAD", sqlConn)
             Dim dr As SqlDataReader = Nothing
             sqlCmd.CommandType = CommandType.StoredProcedure
             sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = id_actividad
@@ -57,15 +57,13 @@ Namespace SGC.Model.Metodos
                 dr = sqlCmd.ExecuteReader()
 
                 While dr.Read()
-                    oRecurso = New RecursoBE
-                    oRecurso.id_recurso = dr("id_recurso")
-                    oRecurso.descripcion = dr("descripcion")
-                    oRecurso.cantidad = dr("cantidad")
-                    oRecurso.cantidad_real = dr("cantidad_real")
-                    oListadoRecursos.Add(oRecurso)
+                    oPersonal = New PersonalBE
+                    oPersonal.id_personal = dr("id_personal")
+                    oPersonal.nombre_completo = dr("nombre_completo")
+                    oListadoPersonal.Add(oPersonal)
                 End While
                 dr.Close()
-                Return oListadoRecursos
+                Return oListadoPersonal
             Catch ex As System.Exception
                 Throw ex
             Finally

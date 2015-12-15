@@ -81,6 +81,16 @@
             End Set
         End Property
 
+        Private _signo As String
+        Public Property signo() As String
+            Get
+                Return _signo
+            End Get
+            Set(ByVal value As String)
+                _signo = value
+            End Set
+        End Property
+
     End Class
 
 End Namespace

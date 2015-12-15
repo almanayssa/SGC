@@ -24,23 +24,22 @@ Public Class frmRegistroActividad
         cboTipo.ValueMember = "id_tipo_act"
         cboTipo.DisplayMember = "desc_tipo"
 
+        dgvRestricciones.AutoGenerateColumns = False
         dgvTipoPersonal.AutoGenerateColumns = False
         dgvRecursos.AutoGenerateColumns = False
-        dgvRestricciones.AutoGenerateColumns = False
+
+        colRestriccionID.DataPropertyName = "id_restriccion"
+        colDescripcionRestriccion.DataPropertyName = "descripcion"
+        colCondicionRestriccion.DataPropertyName = "signo"
+        colCantidadRestriccion.DataPropertyName = "valor"
+        colFlgCondicion.DataPropertyName = "flg_condicion"
 
         colDescripcionPersonal.DataPropertyName = "descripcion"
         colCantidadPersonal.DataPropertyName = "cantidad"
 
         colDescripcionRecurso.DataPropertyName = "descripcion"
         colCantidadRecurso.DataPropertyName = "cantidad"
-
-        colDescripcionRestriccion.DataPropertyName = "descripcion"
-        colCondicionRestriccion.DataPropertyName = "signo"
-        colCantidadRestriccion.DataPropertyName = "valor"
-
-        colRestriccionID.DataPropertyName = "id_restriccion"
-        colDescripcionRestriccion.DataPropertyName = "descripcion"
-        colFlgCondicion.DataPropertyName = "flg_condicion"
+        
     End Sub
 
 #End Region
@@ -149,6 +148,7 @@ Public Class frmRegistroActividad
         txtNombre.Text = oActividad.nombre
         txtDescripcion.Text = oActividad.descripcion
         nudPago.Value = oActividad.monto_pago
+        nudVacantes.Value = oActividad.vacantes
 
         ListarTipoPersonalXActividad()
         ListarRecursosXActividad()
@@ -514,6 +514,7 @@ Public Class frmRegistroActividad
 
     Private Sub btnBuscarActividad_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarActividad.Click
         Dim frmBuscarActividad As New frmBuscarActividad
+        frmBuscarActividad.id_estado = "EST001"
         frmBuscarActividad.ShowDialog()
 
         If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then

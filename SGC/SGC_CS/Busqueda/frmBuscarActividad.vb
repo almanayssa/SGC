@@ -49,6 +49,16 @@ Public Class frmBuscarActividad
         End Set
     End Property
 
+    Private _id_estado As String
+    Public Property id_estado() As String
+        Get
+            Return _id_estado
+        End Get
+        Set(ByVal value As String)
+            _id_estado = value
+        End Set
+    End Property
+
 #End Region
 
 #Region "Metodos Personalizados"
@@ -65,7 +75,7 @@ Public Class frmBuscarActividad
     End Sub
 
     Private Sub ListarActividades()
-        Dim ListadoActividades As List(Of ActividadBE) = bc.ListarActividadesBusqueda(cboComite.SelectedValue, txtNombre.Text.Trim)
+        Dim ListadoActividades As List(Of ActividadBE) = bc.ListarActividadesBusqueda(cboComite.SelectedValue, txtNombre.Text.Trim, id_estado)
         dgvListado.DataSource = Nothing
         dgvListado.DataSource = ListadoActividades
     End Sub
@@ -76,7 +86,6 @@ Public Class frmBuscarActividad
 
     Private Sub frmBuscarActividad_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ListarComites()
-        ListarActividades()
     End Sub
 
 #End Region

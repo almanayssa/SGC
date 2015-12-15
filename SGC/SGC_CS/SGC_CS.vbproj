@@ -148,6 +148,12 @@
     <Compile Include="Busqueda\frmBuscarFamiliares.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busqueda\frmBuscarPersonal.Designer.vb">
+      <DependentUpon>frmBuscarPersonal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarPersonal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Busqueda\frmBuscarTipoPersonal.Designer.vb">
       <DependentUpon>frmBuscarTipoPersonal.vb</DependentUpon>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBuscarFamiliares.resx">
       <DependentUpon>frmBuscarFamiliares.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBuscarPersonal.resx">
+      <DependentUpon>frmBuscarPersonal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBuscarTipoPersonal.resx">
       <DependentUpon>frmBuscarTipoPersonal.vb</DependentUpon>

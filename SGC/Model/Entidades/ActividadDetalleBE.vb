@@ -32,12 +32,12 @@
             End Set
         End Property
 
-        Private _hora_ini As DateTime
-        Public Property hora_ini() As DateTime
+        Private _hora_ini As TimeSpan
+        Public Property hora_ini() As TimeSpan
             Get
                 Return _hora_ini
             End Get
-            Set(ByVal value As DateTime)
+            Set(ByVal value As TimeSpan)
                 _hora_ini = value
             End Set
         End Property
@@ -52,12 +52,12 @@
             End Set
         End Property
 
-        Private _hora_fin As DateTime
-        Public Property hora_fin() As DateTime
+        Private _hora_fin As TimeSpan
+        Public Property hora_fin() As TimeSpan
             Get
                 Return _hora_fin
             End Get
-            Set(ByVal value As DateTime)
+            Set(ByVal value As TimeSpan)
                 _hora_fin = value
             End Set
         End Property
@@ -89,6 +89,36 @@
             End Get
             Set(ByVal value As Integer)
                 _vacantes = value
+            End Set
+        End Property
+
+        Private _des_sede As String
+        Public Property des_sede() As String
+            Get
+                Return _des_sede
+            End Get
+            Set(ByVal value As String)
+                _des_sede = value
+            End Set
+        End Property
+
+        Private _id_lugar As Integer
+        Public Property id_lugar() As Integer
+            Get
+                Return _id_lugar
+            End Get
+            Set(ByVal value As Integer)
+                _id_lugar = value
+            End Set
+        End Property
+
+        Private _nombre_espacio As String
+        Public Property nombre_espacio() As String
+            Get
+                Return _nombre_espacio
+            End Get
+            Set(ByVal value As String)
+                _nombre_espacio = value
             End Set
         End Property
 
