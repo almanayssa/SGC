@@ -23,7 +23,6 @@ Namespace SGC.Controller
             End Try
         End Function
 
-
         Public Function ObtenerPlan(ByVal id_plan As String) As PlanAnualBE
             Try
                 Dim iPlan As IPlanAnual
@@ -33,6 +32,66 @@ Namespace SGC.Controller
                 oPlanAnual = iPlan.ObtenerPlan(id_plan)
 
                 Return oPlanAnual
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarPlanesPendientesPGC(ByVal id_comite As String, ByVal id_anio As String) As List(Of PlanAnualBE)
+            Try
+                Dim iPlan As IPlanAnual
+                Dim oListadoPlanes As List(Of PlanAnualBE) = Nothing
+
+                iPlan = New PlanAnualDL
+                oListadoPlanes = iPlan.ListarPlanesPendientesPGC(id_comite, id_anio)
+
+                Return oListadoPlanes
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarPlanesAprobadosPGC(ByVal id_comite As String, ByVal anio As String) As List(Of PlanAnualBE)
+            Try
+                Dim iPlan As IPlanAnual
+                Dim oListadoPlanes As List(Of PlanAnualBE) = Nothing
+
+                iPlan = New PlanAnualDL
+                oListadoPlanes = iPlan.ListarPlanesAprobadosPGC(id_comite, anio)
+
+                Return oListadoPlanes
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarPlanesRechazadosPGC(ByVal id_comite As String, ByVal anio As String) As List(Of PlanAnualBE)
+            Try
+                Dim iPlanAnual As IPlanAnual
+                Dim oListadoPlanes As List(Of PlanAnualBE) = Nothing
+
+                iPlanAnual = New PlanAnualDL
+                oListadoPlanes = iPlanAnual.ListarPlanesRechazadosPGC(id_comite, anio)
+
+                Return oListadoPlanes
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarPlanesCD(ByVal id_comite As String, ByVal anio As String) As List(Of PlanAnualBE)
+            Try
+                Dim iPlanAnual As IPlanAnual
+                Dim oListadoPlanes As List(Of PlanAnualBE) = Nothing
+
+                iPlanAnual = New PlanAnualDL
+                oListadoPlanes = iPlanAnual.ListarPlanesCD(id_comite, anio)
+
+                Return oListadoPlanes
 
             Catch ex As Exception
                 Return Nothing
@@ -75,6 +134,27 @@ Namespace SGC.Controller
 
                 affectedRows = iPlan.ActualizarPlanAnual(oPlan)
 
+
+                Return affectedRows
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ActualizarPlanEstado(ByRef ListadoPlan As List(Of PlanAnualBE), ByVal id_estado As String) As Integer
+            Try
+                Dim affectedRows As Integer
+
+                Dim iPlan As IPlanAnual
+                iPlan = New PlanAnualDL
+
+                If ListadoPlan IsNot Nothing Then
+                    For Each oPlan As PlanAnualBE In ListadoPlan
+                        oPlan.id_estado = id_estado
+                        affectedRows += iPlan.ActualizarPlanEstado(oPlan)
+                    Next
+                End If
 
                 Return affectedRows
 

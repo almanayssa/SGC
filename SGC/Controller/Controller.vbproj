@@ -69,6 +69,7 @@
     <Compile Include="ActividadRecurrenteBL.vb" />
     <Compile Include="CatTipoActividadBL.vb" />
     <Compile Include="ComiteBL.vb" />
+    <Compile Include="SeguimientoEvaluacionPlanBL.vb" />
     <Compile Include="DetallePresupuestoAnualBL.vb" />
     <Compile Include="PresupuestoAnualBL.vb" />
     <Compile Include="EspacioBL.vb" />

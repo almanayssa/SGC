@@ -65,4 +65,10 @@ Public Class frmConsultaPlanAnual
 
 #End Region
 
+    Private Sub btnNuevo_Click(sender As System.Object, e As System.EventArgs) Handles btnNuevo.Click
+
+        frmRegistroPlanAnual.Close()
+        frmRegistroPlanAnual.MdiParent = MDI
+        frmRegistroPlanAnual.Show()
+    End Sub
 End Class

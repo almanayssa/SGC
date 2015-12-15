@@ -134,6 +134,7 @@
     <Compile Include="Entidades\TipoRegistroInvitadoBE.vb" />
     <Compile Include="Entidades\TipoTransaccionBE.vb" />
     <Compile Include="Entidades\TransaccionBE.vb" />
+    <Compile Include="Interfaces\ISeguimientoEvaluacionPlan.vb" />
     <Compile Include="Interfaces\IActividadRecurrente.vb" />
     <Compile Include="Interfaces\IDetallePresupuestoAnual.vb" />
     <Compile Include="Interfaces\IPresupuestoAnual.vb" />
@@ -154,6 +155,7 @@
     <Compile Include="Metodos\CatTipoActividadDL.vb" />
     <Compile Include="Metodos\ComiteDL.vb" />
     <Compile Include="Interfaces\IComite.vb" />
+    <Compile Include="Metodos\SeguimientoEvaluacionPlanDL.vb" />
     <Compile Include="Metodos\DetallePresupuestoAnualDL.vb" />
     <Compile Include="Metodos\PresupuestoAnualDL.vb" />
     <Compile Include="Metodos\EspacioDL.vb" />

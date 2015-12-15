@@ -11,6 +11,14 @@ Namespace SGC.Model.Interfaces
 
         Function ObtenerPlan(ByVal id_plan As String) As PlanAnualBE
 
+        Function ListarPlanesPendientesPGC(ByVal id_comite As String, ByVal anio As String) As List(Of PlanAnualBE)
+
+        Function ListarPlanesAprobadosPGC(ByVal id_comite As String, ByVal anio As String) As List(Of PlanAnualBE)
+
+        Function ListarPlanesRechazadosPGC(ByVal id_comite As String, ByVal anio As String) As List(Of PlanAnualBE)
+
+        Function ListarPlanesCD(ByVal id_comite As String, ByVal anio As String) As List(Of PlanAnualBE)
+
 #End Region
 
 #Region "Insert"
@@ -23,6 +31,7 @@ Namespace SGC.Model.Interfaces
 
         Function ActualizarPlanAnual(ByRef oPlan As PlanAnualBE) As Integer
 
+        Function ActualizarPlanEstado(ByRef oPlan As PlanAnualBE) As Integer
 #End Region
 
     End Interface
