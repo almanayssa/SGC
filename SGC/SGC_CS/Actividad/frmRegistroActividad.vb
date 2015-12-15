@@ -311,6 +311,28 @@ Public Class frmRegistroActividad
         oRecursoPendiente = Nothing
 
         ListarRestricciones()
+
+        cboComite.Enabled = True
+        cboTipo.Enabled = True
+        If cboCategoria.DataSource IsNot Nothing Then
+            cboCategoria.Enabled = True
+        Else
+            cboCategoria.Enabled = False
+        End If
+        txtNombre.Enabled = True
+        txtDescripcion.Enabled = True
+        nudPago.Enabled = True
+
+        btnBuscarPersonal.Enabled = True
+        btnAgregarTipoPersonal.Enabled = True
+        btnQuitarTipoPersonal.Enabled = True
+        txtCantidadPersonal.Enabled = True
+        btnBuscarRecurso.Enabled = True
+        btnAgregarRecurso.Enabled = True
+        btnQuitarRecurso.Enabled = True
+        txtCantidadRecurso.Enabled = True
+
+        dgvRestricciones.ReadOnly = False
     End Sub
 
     Private Function ValidarCamposRequeridos() As String
@@ -356,10 +378,10 @@ Public Class frmRegistroActividad
 
                 If row.Cells(colCantidadRestriccion.Index).Value = Nothing Then
                     msg &= vbCrLf & "- Ingrese cantidad en todas las restricciones"
-                Else
-                    If row.Cells(colCantidadRestriccion.Index).Value = 0 Then
-                        msg &= vbCrLf & "- La cantidad debe ser mayor a 0 en todos los detalles"
-                    End If
+                    'Else
+                    '    If row.Cells(colCantidadRestriccion.Index).Value = 0 Then
+                    '        msg &= vbCrLf & "- La cantidad debe ser mayor a 0 en todos los detalles"
+                    '    End If
                 End If
             End If
         Next
