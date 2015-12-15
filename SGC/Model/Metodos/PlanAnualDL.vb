@@ -28,10 +28,14 @@ Public Class PlanAnualDL
             While dr.Read()
                 oPlan = New PlanAnualBE
                 oPlan.id_plan = dr("id_plan")
+                oPlan.descripcion = dr("descripcion")
                 oPlan.id_comite = dr("id_comite")
                 oPlan.comite = dr("comite")
-                oPlan.descripcion = dr("descripcion")
                 oPlan.anio = dr("anio")
+                oPlan.fec_ini = dr("fec_ini")
+                oPlan.fec_fin = dr("fec_fin")
+                oPlan.id_estado = dr("id_estado")
+                oPlan.estado = dr("estado")
                 oListadoPlanes.Add(oPlan)
             End While
             dr.Close()
