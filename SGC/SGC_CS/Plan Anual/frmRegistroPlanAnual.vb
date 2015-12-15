@@ -231,7 +231,6 @@ Public Class frmRegistroPlanAnual
         btnGrabarDetalle.Enabled = True
     End Sub
 
-
     Private Sub ModoEdicionPlan(ByVal op As Boolean)
         cboComite.Enabled = op
         cboAnio.Enabled = op

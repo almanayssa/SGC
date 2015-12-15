@@ -548,7 +548,7 @@ Public Class frmPlanEvaluacionPGC
         Else
             If MsgBox("Seguro que desea aprobar el(los) plan(es)?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 Dim affectedRows As Integer = 0
-                affectedRows = bc.ActualizarPlanEstado(oNewListadoPlanes, "EPA004")
+                affectedRows = bc.ActualizarPlanEstado(oNewListadoPlanes, "EPA004", "EST004")
 
                 If affectedRows = 0 Then
                     MessageBox.Show("Error al aprobar", "Información")
@@ -585,7 +585,7 @@ Public Class frmPlanEvaluacionPGC
         Else
             If MsgBox("Seguro que desea rechazar el(los) plan(es)?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 Dim affectedRows As Integer = 0
-                affectedRows = bc.ActualizarPlanEstado(oNewListadoPlanes, "EPA005")
+                affectedRows = bc.ActualizarPlanEstado(oNewListadoPlanes, "EPA005", "EST006")
 
                 If affectedRows = 0 Then
                     MessageBox.Show("Error al rechazar", "Información")

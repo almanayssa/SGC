@@ -34,6 +34,8 @@ Namespace SGC.Model.Interfaces
         Function ActualizarActividad(ByRef oActividad As ActividadBE) As Integer
         Function ActualizarActividadEstado(ByRef oActividad As ActividadBE) As Integer
 
+        Function ActualizarActividadEstadoPlan(ByVal id_plan As Integer, ByVal id_estado As String) As Integer
+
 #End Region
 
 #Region "Delete"

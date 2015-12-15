@@ -601,6 +601,28 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ActualizarActividadEstadoPlan(ByVal id_plan As Integer, ByVal id_estado As String) As Integer Implements Interfaces.IActividad.ActualizarActividadEstadoPlan
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_ACTUALIZAR_ACTIVIDAD_ESTADO_PLAN", sqlConn)
+
+            Dim affectedRows As Integer = 0
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_plan", SqlDbType.Int).Value = id_plan
+            sqlCmd.Parameters.Add("@id_estado", SqlDbType.VarChar).Value = id_estado
+
+            Try
+                sqlConn.Open()
+                affectedRows = sqlCmd.ExecuteNonQuery
+
+                Return affectedRows
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
 #End Region
 
 #Region "Delete"

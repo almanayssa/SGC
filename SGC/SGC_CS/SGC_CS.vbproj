@@ -130,6 +130,12 @@
     <Compile Include="Actividad\frmRegistroActividadRecurrente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busqueda\frmBuscarSocio.Designer.vb">
+      <DependentUpon>frmBuscarSocio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarSocio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Busqueda\frmBuscarActividad.Designer.vb">
       <DependentUpon>frmBuscarActividad.vb</DependentUpon>
     </Compile>
@@ -423,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmRegistroActividadRecurrente.resx">
       <DependentUpon>frmRegistroActividadRecurrente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBuscarSocio.resx">
+      <DependentUpon>frmBuscarSocio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBuscarActividad.resx">
       <DependentUpon>frmBuscarActividad.vb</DependentUpon>

@@ -142,18 +142,28 @@ Namespace SGC.Controller
             End Try
         End Function
 
-        Public Function ActualizarPlanEstado(ByRef ListadoPlan As List(Of PlanAnualBE), ByVal id_estado As String) As Integer
+        Public Function ActualizarPlanEstado(ByRef ListadoPlan As List(Of PlanAnualBE), ByVal id_estado As String, ByVal id_estadoAct As String) As Integer
             Try
                 Dim affectedRows As Integer
 
                 Dim iPlan As IPlanAnual
                 iPlan = New PlanAnualDL
 
+                Dim iActividad As IActividad
+                iActividad = New ActividadDL
+
+
                 If ListadoPlan IsNot Nothing Then
                     For Each oPlan As PlanAnualBE In ListadoPlan
                         oPlan.id_estado = id_estado
                         affectedRows += iPlan.ActualizarPlanEstado(oPlan)
+
+                        If id_estadoAct IsNot Nothing Then
+                            iActividad.ActualizarActividadEstadoPlan(oPlan.id_plan, id_estadoAct)
+                        End If
+
                     Next
+
                 End If
 
                 Return affectedRows
