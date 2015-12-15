@@ -34,7 +34,7 @@ Public Class frmHabilitarActividad
 
         colRestriccionID.DataPropertyName = "id_restriccion"
         colDescripcionRestriccion.DataPropertyName = "descripcion"
-        colCondicionRestriccion.DataPropertyName = "signo"
+        colCondicionRestriccion.DataPropertyName = "des_signo"
         colCantidadRestriccion.DataPropertyName = "valor"
 
         colTipoPersonalID.DataPropertyName = "id_tipo_personal"
