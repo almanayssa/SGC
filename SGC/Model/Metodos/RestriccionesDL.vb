@@ -73,6 +73,35 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ObtenerCantidadXRestriccion(ByVal id_actividad As Integer, ByVal id_restriccion As Integer, ByVal id_socio As String, ByVal id_persona As String, ByVal id_invitado As String) As String Implements Interfaces.IRestricciones.ObtenerCantidadXRestriccion
+            Dim resul As String = ""
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGS").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_SELECCIONAR_RESTRICCIONES", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.VarChar).Value = id_actividad
+            sqlCmd.Parameters.Add("@id_restriccion", SqlDbType.VarChar).Value = id_restriccion
+            If id_socio IsNot Nothing Then sqlCmd.Parameters.Add("@id_socio", SqlDbType.VarChar).Value = id_socio
+            If id_persona IsNot Nothing Then sqlCmd.Parameters.Add("@id_persona", SqlDbType.VarChar).Value = id_persona
+            If id_socio IsNot Nothing Then sqlCmd.Parameters.Add("@id_invitado", SqlDbType.VarChar).Value = id_invitado
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                If dr.Read() Then
+                    resul = dr("result")
+                End If
+                dr.Close()
+                Return resul
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
 #End Region
 
     End Class

@@ -6,6 +6,35 @@ Public Class frmRegistroInscripcion
 
     Dim bc As New BusinessController
     Private Actividad As ActividadBE
+    Private _id_socio As String
+    Private _id_inscripcion As Integer?
+    Private ListadoInscritos As List(Of PersonaBE)
+    Private ListadoPersona As List(Of PersonaBE)
+    Private ListadoInvitado As List(Of InvitadoBE)
+
+#Region "Inicializacion"
+
+    Public Sub New()
+
+        InitializeComponent()
+
+        ListadoInscritos = New List(Of PersonaBE)
+
+
+        dgvInscritos.AutoGenerateColumns = False
+        colNombres.DataPropertyName = "nombre_completo"
+        colNombre.DataPropertyName = "nom_per"
+        colApePat.DataPropertyName = "ape_pat"
+        colApeMat.DataPropertyName = "ape_mat"
+        colDNI.DataPropertyName = "dni_per"
+        'colInscripcion.DataPropertyName = "idinscripcion"
+        colNacimiento.DataPropertyName = "fec_nac_per"
+        colRelacion.DataPropertyName = "tipo_familiar"
+        colPersona.DataPropertyName = "id_persona"
+
+    End Sub
+
+#End Region
 
 #Region "Métodos Controles"
 
@@ -25,9 +54,58 @@ Public Class frmRegistroInscripcion
         frmBuscarSocio.ShowDialog()
 
         If frmBuscarSocio.SocioSeleccionado IsNot Nothing Then
-            'CargarSocio(frmBuscarSocio.SocioSeleccionado.id_socio)
+
+            CargarSocio(frmBuscarSocio.SocioSeleccionado)
 
         End If
+    End Sub
+
+    Private Sub btnAgregarPersona_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarPersona.Click
+        If txtAccion.Text.Trim <> String.Empty Then
+
+            Dim frm As New frmBuscarFamiliares
+            frm.txtAccion.Text = txtAccion.Text
+            frm.ShowDialog()
+
+            If frm.PersonaSeleccionada IsNot Nothing Then
+                AgregarInscrito(frm.PersonaSeleccionada)
+            End If
+        Else
+            MsgBox("Ingresar codigo del asociado")
+        End If
+    End Sub
+
+    Private Sub btnQuitarInscrito_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitarInscrito.Click
+        If Not dgvInscritos.CurrentRow Is Nothing Then
+            Try
+                Dim lista As List(Of PersonaBE)
+                lista = dgvInscritos.DataSource
+
+                lista.RemoveAt(dgvInscritos.CurrentRow.Index)
+
+                dgvInscritos.DataSource = Nothing
+                dgvInscritos.DataSource = lista
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MsgBox("Debe Seleccionar un Elemento para Quitarlo", MsgBoxStyle.Information)
+        End If
+    End Sub
+
+    Private Sub tsbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles tsbLimpiar.Click
+        Actividad = Nothing
+        _id_socio = ""
+        ListadoInscritos = New List(Of PersonaBE)
+        ListadoPersona = New List(Of PersonaBE)
+        ListadoInvitado = New List(Of InvitadoBE)
+
+        limpiarFormulario()
+    End Sub
+
+    Private Sub tsbGuardar_Click(sender As System.Object, e As System.EventArgs) Handles tsbGuardar.Click
+        GuardarInscripcion()
     End Sub
 
 #End Region
@@ -50,6 +128,20 @@ Public Class frmRegistroInscripcion
 
     End Sub
 
+    Private Sub CargarSocio(ByRef oSocio As SocioBE)
+        Dim resul As String = ValidarRestricciones(oSocio.id_socio)
+
+        If resul = "" Then
+            txtAccion.Text = oSocio.id_accion
+            txtNombre.Text = oSocio.nombre_completo
+            _id_socio = oSocio.id_socio
+        Else
+            MsgBox(resul)
+            Exit Sub
+        End If
+
+    End Sub
+
     Private Sub ListarRestriccionesXActividad()
 
 
@@ -61,6 +153,7 @@ Public Class frmRegistroInscripcion
 
         If ListadoRestricciones IsNot Nothing AndAlso ListadoRestricciones.Count > 0 Then
 
+            Actividad.ListaRestricciones = ListadoRestricciones
 
             Dim Col_Text As DataGridViewTextBoxColumn
             Dim Col_Chk As DataGridViewCheckBoxColumn
@@ -140,8 +233,6 @@ Public Class frmRegistroInscripcion
 
         If ListadoProgramacion IsNot Nothing AndAlso ListadoProgramacion.Count > 0 Then
 
-
-
             Dim Col_Text As DataGridViewTextBoxColumn
             Dim Col_Chk As DataGridViewCheckBoxColumn
             Dim Row As DataGridViewRow
@@ -210,6 +301,97 @@ Public Class frmRegistroInscripcion
 
         End If
     End Sub
+
+    Private Function ValidarRestricciones(ByVal id_socio As String) As String
+        Dim result As String = ""
+        Dim msj As String = ""
+        If Actividad.ListaRestricciones IsNot Nothing Then
+            For Each oRestriccion As RestriccionesBE In Actividad.ListaRestricciones
+                result = bc.ObtenerCantidadXRestriccion(Actividad.id_actividad, oRestriccion.id_restriccion, id_socio, Nothing, Nothing)
+                If result IsNot Nothing AndAlso result.Trim <> "" Then
+                    msj &= result
+                End If
+            Next
+        End If
+        Return msj.Trim
+    End Function
+
+    Private Sub AgregarInscrito(ByRef oPersona As PersonaBE)
+        If ListadoPersona Is Nothing Then
+            ListadoPersona = New List(Of PersonaBE)
+        End If
+
+        ListadoPersona.Add(oPersona)
+        dgvInscritos.DataSource = Nothing
+        dgvInscritos.DataSource = ListadoPersona
+    End Sub
+
+    Private Sub LimpiarFormulario()
+        txtCodigo.Text = ""
+        txtActividad.Text = ""
+        dgvProgramacion.DataSource = Nothing
+        dgvRestricciones.DataSource = Nothing
+        txtNumDoc.Text = ""
+        txtSerie.Text = ""
+        nudMonto.Value = 0
+        txtAccion.Text = ""
+        txtNombre.Text = ""
+        dgvInscritos.DataSource = Nothing
+        dgvInvitados.DataSource = Nothing
+    End Sub
+
+    Private Sub GuardarInscripcion()
+
+        If ValidarCamposRequeridos() <> String.Empty Then
+            MessageBox.Show(ValidarCamposRequeridos, "Información")
+            Exit Sub
+        End If
+
+        Dim oInscripcion As New InscripcionBE
+        oInscripcion.id_actividad = txtCodigo.Text.Trim
+        oInscripcion.id_socio = _id_socio
+        oInscripcion.ListaPersona = New List(Of PersonaBE)
+        oInscripcion.ListaPersona = dgvInscritos.DataSource
+        oInscripcion.serie = txtSerie.Text
+        oInscripcion.correlativo = txtNumDoc.Text
+        oInscripcion.tipo_doc = "02"
+        oInscripcion.flg_web = False
+        oInscripcion.monto = nudMonto.Value
+
+        oInscripcion.id_inscripcion = bc.InsertarInscripcion(oInscripcion)
+
+        If oInscripcion.id_inscripcion = 0 Then
+            MessageBox.Show("Error al grabar", "Información")
+        Else
+            _id_inscripcion = oInscripcion.id_inscripcion
+            MessageBox.Show("La inscripción se registró satisfactoriamente", "Información")
+
+        End If
+    End Sub
+
+    Private Function ValidarCamposRequeridos() As String
+        Dim msg As String = String.Empty
+
+        If txtCodigo.Text.Trim = String.Empty Then
+            msg &= vbCrLf & "- Ingrese una actividad"
+        End If
+
+        If Actividad.monto_pago > 0 Then
+            If nudMonto.Value = 0 Then
+                msg &= vbCrLf & "- Ingrese un monto de pago"
+            End If
+
+            If txtSerie.Text.Trim = String.Empty Then
+                msg &= vbCrLf & "- Ingrese una serie de documento"
+            End If
+
+            If txtNumDoc.Text.Trim = String.Empty Then
+                msg &= vbCrLf & "- Ingrese un correlativo de documento"
+            End If
+        End If
+
+        Return msg
+    End Function
 
 #End Region
 

@@ -20,10 +20,10 @@ Partial Class frmRegistroInscripcion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
@@ -46,11 +46,24 @@ Partial Class frmRegistroInscripcion
         Me.SgcGroupBox5 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.txtNumDoc = New SGC_CS.SGCTextBox(Me.components)
-        Me.txtTipoDoc = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtSerie = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnQuitarInscrito = New SGC_CS.SGCButton(Me.components)
+        Me.btnAgregarPersona = New SGC_CS.SGCButton(Me.components)
         Me.dgvInscritos = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colNombres = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colApePat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colApeMat = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colRelacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colInscripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colPersona = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox7 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnQuitarInvitado = New SGC_CS.SGCButton(Me.components)
+        Me.btnAgregarInvitado = New SGC_CS.SGCButton(Me.components)
         Me.dgvInvitados = New SGC_CS.SGCDataGridView(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
@@ -118,9 +131,9 @@ Partial Class frmRegistroInscripcion
         'dgvProgramacion
         '
         Me.dgvProgramacion.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvProgramacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvProgramacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvProgramacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -158,12 +171,13 @@ Partial Class frmRegistroInscripcion
         'txtActividad
         '
         Me.txtActividad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtActividad.Enabled = False
         Me.txtActividad.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtActividad.ForeColor = System.Drawing.Color.Black
         Me.txtActividad.Location = New System.Drawing.Point(109, 70)
         Me.txtActividad.Multiline = True
         Me.txtActividad.Name = "txtActividad"
-        Me.txtActividad.Size = New System.Drawing.Size(316, 127)
+        Me.txtActividad.Size = New System.Drawing.Size(374, 127)
         Me.txtActividad.TabIndex = 26
         '
         'btnBuscarActividad
@@ -184,6 +198,7 @@ Partial Class frmRegistroInscripcion
         'txtCodigo
         '
         Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigo.Enabled = False
         Me.txtCodigo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodigo.ForeColor = System.Drawing.Color.Black
         Me.txtCodigo.Location = New System.Drawing.Point(109, 37)
@@ -212,9 +227,9 @@ Partial Class frmRegistroInscripcion
         'dgvRestricciones
         '
         Me.dgvRestricciones.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvRestricciones.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRestricciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRestricciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -256,6 +271,7 @@ Partial Class frmRegistroInscripcion
         'txtNombre
         '
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombre.Enabled = False
         Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
         Me.txtNombre.Location = New System.Drawing.Point(109, 69)
@@ -277,6 +293,7 @@ Partial Class frmRegistroInscripcion
         'txtAccion
         '
         Me.txtAccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAccion.Enabled = False
         Me.txtAccion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAccion.ForeColor = System.Drawing.Color.Black
         Me.txtAccion.Location = New System.Drawing.Point(109, 37)
@@ -299,7 +316,7 @@ Partial Class frmRegistroInscripcion
         '
         Me.SgcGroupBox5.Controls.Add(Me.SgcLabel4)
         Me.SgcGroupBox5.Controls.Add(Me.txtNumDoc)
-        Me.SgcGroupBox5.Controls.Add(Me.txtTipoDoc)
+        Me.SgcGroupBox5.Controls.Add(Me.txtSerie)
         Me.SgcGroupBox5.Controls.Add(Me.SgcLabel3)
         Me.SgcGroupBox5.Controls.Add(Me.nudMonto)
         Me.SgcGroupBox5.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -331,15 +348,15 @@ Partial Class frmRegistroInscripcion
         Me.txtNumDoc.Size = New System.Drawing.Size(88, 26)
         Me.txtNumDoc.TabIndex = 28
         '
-        'txtTipoDoc
+        'txtSerie
         '
-        Me.txtTipoDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtTipoDoc.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTipoDoc.ForeColor = System.Drawing.Color.Black
-        Me.txtTipoDoc.Location = New System.Drawing.Point(99, 25)
-        Me.txtTipoDoc.Name = "txtTipoDoc"
-        Me.txtTipoDoc.Size = New System.Drawing.Size(44, 26)
-        Me.txtTipoDoc.TabIndex = 27
+        Me.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSerie.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSerie.ForeColor = System.Drawing.Color.Black
+        Me.txtSerie.Location = New System.Drawing.Point(99, 25)
+        Me.txtSerie.Name = "txtSerie"
+        Me.txtSerie.Size = New System.Drawing.Size(44, 26)
+        Me.txtSerie.TabIndex = 27
         '
         'SgcLabel3
         '
@@ -354,50 +371,179 @@ Partial Class frmRegistroInscripcion
         '
         'SgcGroupBox6
         '
+        Me.SgcGroupBox6.Controls.Add(Me.btnQuitarInscrito)
+        Me.SgcGroupBox6.Controls.Add(Me.btnAgregarPersona)
         Me.SgcGroupBox6.Controls.Add(Me.dgvInscritos)
         Me.SgcGroupBox6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox6.Location = New System.Drawing.Point(60, 456)
         Me.SgcGroupBox6.Name = "SgcGroupBox6"
-        Me.SgcGroupBox6.Size = New System.Drawing.Size(452, 157)
+        Me.SgcGroupBox6.Size = New System.Drawing.Size(452, 189)
         Me.SgcGroupBox6.TabIndex = 24
         Me.SgcGroupBox6.TabStop = False
         Me.SgcGroupBox6.Text = "Inscritos"
         '
+        'btnQuitarInscrito
+        '
+        Me.btnQuitarInscrito.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnQuitarInscrito.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnQuitarInscrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitarInscrito.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuitarInscrito.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnQuitarInscrito.Location = New System.Drawing.Point(94, 20)
+        Me.btnQuitarInscrito.Name = "btnQuitarInscrito"
+        Me.btnQuitarInscrito.Size = New System.Drawing.Size(75, 31)
+        Me.btnQuitarInscrito.TabIndex = 3
+        Me.btnQuitarInscrito.Text = "Quitar"
+        Me.btnQuitarInscrito.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnQuitarInscrito.UseVisualStyleBackColor = False
+        '
+        'btnAgregarPersona
+        '
+        Me.btnAgregarPersona.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAgregarPersona.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnAgregarPersona.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarPersona.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarPersona.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnAgregarPersona.Location = New System.Drawing.Point(13, 20)
+        Me.btnAgregarPersona.Name = "btnAgregarPersona"
+        Me.btnAgregarPersona.Size = New System.Drawing.Size(75, 31)
+        Me.btnAgregarPersona.TabIndex = 2
+        Me.btnAgregarPersona.Text = "Agregar"
+        Me.btnAgregarPersona.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregarPersona.UseVisualStyleBackColor = False
+        '
         'dgvInscritos
         '
         Me.dgvInscritos.AllowUserToAddRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvInscritos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvInscritos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvInscritos.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvInscritos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvInscritos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvInscritos.Location = New System.Drawing.Point(18, 25)
+        Me.dgvInscritos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNombres, Me.colNombre, Me.colApePat, Me.colApeMat, Me.colNacimiento, Me.colDNI, Me.colRelacion, Me.colInscripcion, Me.colPersona})
+        Me.dgvInscritos.Location = New System.Drawing.Point(13, 57)
         Me.dgvInscritos.Name = "dgvInscritos"
         Me.dgvInscritos.Size = New System.Drawing.Size(420, 126)
         Me.dgvInscritos.TabIndex = 1
         '
+        'colNombres
+        '
+        Me.colNombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colNombres.HeaderText = "Nombres"
+        Me.colNombres.Name = "colNombres"
+        Me.colNombres.ReadOnly = True
+        '
+        'colNombre
+        '
+        Me.colNombre.HeaderText = "Nombre"
+        Me.colNombre.Name = "colNombre"
+        Me.colNombre.ReadOnly = True
+        Me.colNombre.Visible = False
+        '
+        'colApePat
+        '
+        Me.colApePat.HeaderText = "Apellido Paterno"
+        Me.colApePat.Name = "colApePat"
+        Me.colApePat.ReadOnly = True
+        Me.colApePat.Visible = False
+        '
+        'colApeMat
+        '
+        Me.colApeMat.HeaderText = "Apellido Materno"
+        Me.colApeMat.Name = "colApeMat"
+        Me.colApeMat.ReadOnly = True
+        Me.colApeMat.Visible = False
+        '
+        'colNacimiento
+        '
+        Me.colNacimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colNacimiento.HeaderText = "Fecha Nacimiento"
+        Me.colNacimiento.Name = "colNacimiento"
+        Me.colNacimiento.ReadOnly = True
+        '
+        'colDNI
+        '
+        Me.colDNI.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDNI.HeaderText = "DNI"
+        Me.colDNI.Name = "colDNI"
+        Me.colDNI.ReadOnly = True
+        '
+        'colRelacion
+        '
+        Me.colRelacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colRelacion.FillWeight = 150.0!
+        Me.colRelacion.HeaderText = "Relacion"
+        Me.colRelacion.Name = "colRelacion"
+        Me.colRelacion.ReadOnly = True
+        '
+        'colInscripcion
+        '
+        Me.colInscripcion.HeaderText = "Inscripcion"
+        Me.colInscripcion.Name = "colInscripcion"
+        Me.colInscripcion.ReadOnly = True
+        Me.colInscripcion.Visible = False
+        '
+        'colPersona
+        '
+        Me.colPersona.HeaderText = "Persona"
+        Me.colPersona.Name = "colPersona"
+        Me.colPersona.ReadOnly = True
+        Me.colPersona.Visible = False
+        '
         'SgcGroupBox7
         '
+        Me.SgcGroupBox7.Controls.Add(Me.btnQuitarInvitado)
+        Me.SgcGroupBox7.Controls.Add(Me.btnAgregarInvitado)
         Me.SgcGroupBox7.Controls.Add(Me.dgvInvitados)
         Me.SgcGroupBox7.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox7.Location = New System.Drawing.Point(518, 456)
         Me.SgcGroupBox7.Name = "SgcGroupBox7"
-        Me.SgcGroupBox7.Size = New System.Drawing.Size(444, 157)
+        Me.SgcGroupBox7.Size = New System.Drawing.Size(444, 189)
         Me.SgcGroupBox7.TabIndex = 25
         Me.SgcGroupBox7.TabStop = False
         Me.SgcGroupBox7.Text = "Invitados"
         '
+        'btnQuitarInvitado
+        '
+        Me.btnQuitarInvitado.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnQuitarInvitado.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnQuitarInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitarInvitado.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuitarInvitado.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnQuitarInvitado.Location = New System.Drawing.Point(99, 20)
+        Me.btnQuitarInvitado.Name = "btnQuitarInvitado"
+        Me.btnQuitarInvitado.Size = New System.Drawing.Size(75, 31)
+        Me.btnQuitarInvitado.TabIndex = 4
+        Me.btnQuitarInvitado.Text = "Quitar"
+        Me.btnQuitarInvitado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnQuitarInvitado.UseVisualStyleBackColor = False
+        '
+        'btnAgregarInvitado
+        '
+        Me.btnAgregarInvitado.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAgregarInvitado.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnAgregarInvitado.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarInvitado.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarInvitado.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnAgregarInvitado.Location = New System.Drawing.Point(18, 20)
+        Me.btnAgregarInvitado.Name = "btnAgregarInvitado"
+        Me.btnAgregarInvitado.Size = New System.Drawing.Size(75, 31)
+        Me.btnAgregarInvitado.TabIndex = 3
+        Me.btnAgregarInvitado.Text = "Agregar"
+        Me.btnAgregarInvitado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregarInvitado.UseVisualStyleBackColor = False
+        '
         'dgvInvitados
         '
         Me.dgvInvitados.AllowUserToAddRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvInvitados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvInvitados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvInvitados.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvInvitados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvInvitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvInvitados.Location = New System.Drawing.Point(18, 25)
+        Me.dgvInvitados.Location = New System.Drawing.Point(18, 57)
         Me.dgvInvitados.Name = "dgvInvitados"
         Me.dgvInvitados.Size = New System.Drawing.Size(410, 126)
         Me.dgvInvitados.TabIndex = 1
@@ -506,9 +652,22 @@ Partial Class frmRegistroInscripcion
     Friend WithEvents txtActividad As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
     Friend WithEvents txtNumDoc As SGC_CS.SGCTextBox
-    Friend WithEvents txtTipoDoc As SGC_CS.SGCTextBox
+    Friend WithEvents txtSerie As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox3 As SGC_CS.SGCGroupBox
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
+    Friend WithEvents btnAgregarPersona As SGC_CS.SGCButton
+    Friend WithEvents btnAgregarInvitado As SGC_CS.SGCButton
+    Friend WithEvents btnQuitarInscrito As SGC_CS.SGCButton
+    Friend WithEvents btnQuitarInvitado As SGC_CS.SGCButton
+    Friend WithEvents colNombres As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colApePat As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colApeMat As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colNacimiento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colDNI As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colRelacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colInscripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colPersona As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

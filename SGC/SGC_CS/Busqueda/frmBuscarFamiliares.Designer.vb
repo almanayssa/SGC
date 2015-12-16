@@ -22,9 +22,12 @@ Partial Class frmBuscarFamiliares
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colRelacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFechaNacimiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxFiltros = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
-        Me.btnBuscarFamiliar = New SGC_CS.SGCButton(Me.components)
         Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
         Me.txtAccion = New SGC_CS.SGCTextBox(Me.components)
@@ -42,15 +45,35 @@ Partial Class frmBuscarFamiliares
         Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNombre, Me.colRelacion, Me.colFechaNacimiento, Me.colDNI})
         Me.dgvListado.Location = New System.Drawing.Point(9, 154)
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.Size = New System.Drawing.Size(404, 206)
         Me.dgvListado.TabIndex = 27
         '
+        'colNombre
+        '
+        Me.colNombre.HeaderText = "Nombre"
+        Me.colNombre.Name = "colNombre"
+        '
+        'colRelacion
+        '
+        Me.colRelacion.HeaderText = "Relación"
+        Me.colRelacion.Name = "colRelacion"
+        '
+        'colFechaNacimiento
+        '
+        Me.colFechaNacimiento.HeaderText = "Fec. Nac."
+        Me.colFechaNacimiento.Name = "colFechaNacimiento"
+        '
+        'colDNI
+        '
+        Me.colDNI.HeaderText = "DNI"
+        Me.colDNI.Name = "colDNI"
+        '
         'gbxFiltros
         '
         Me.gbxFiltros.Controls.Add(Me.btnBuscar)
-        Me.gbxFiltros.Controls.Add(Me.btnBuscarFamiliar)
         Me.gbxFiltros.Controls.Add(Me.txtNombre)
         Me.gbxFiltros.Controls.Add(Me.SgcLabel6)
         Me.gbxFiltros.Controls.Add(Me.txtAccion)
@@ -78,21 +101,6 @@ Partial Class frmBuscarFamiliares
         Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'btnBuscarFamiliar
-        '
-        Me.btnBuscarFamiliar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnBuscarFamiliar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnBuscarFamiliar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarFamiliar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarFamiliar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnBuscarFamiliar.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.btnBuscarFamiliar.Location = New System.Drawing.Point(223, 25)
-        Me.btnBuscarFamiliar.Name = "btnBuscarFamiliar"
-        Me.btnBuscarFamiliar.Size = New System.Drawing.Size(43, 31)
-        Me.btnBuscarFamiliar.TabIndex = 26
-        Me.btnBuscarFamiliar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBuscarFamiliar.UseVisualStyleBackColor = False
-        '
         'txtNombre
         '
         Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -117,6 +125,7 @@ Partial Class frmBuscarFamiliares
         'txtAccion
         '
         Me.txtAccion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtAccion.Enabled = False
         Me.txtAccion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAccion.ForeColor = System.Drawing.Color.Black
         Me.txtAccion.Location = New System.Drawing.Point(105, 29)
@@ -153,10 +162,13 @@ Partial Class frmBuscarFamiliares
     Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
     Friend WithEvents gbxFiltros As SGC_CS.SGCGroupBox
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
-    Friend WithEvents btnBuscarFamiliar As SGC_CS.SGCButton
     Friend WithEvents txtNombre As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
     Friend WithEvents txtAccion As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel16 As SGC_CS.SGCLabel
+    Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colRelacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFechaNacimiento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colDNI As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

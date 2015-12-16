@@ -38,6 +38,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ObtenerCantidadXRestriccion(ByVal id_actividad As Integer, ByVal id_restriccion As Integer, ByVal id_socio As String, ByVal id_persona As String, ByVal id_invitado As String) As String
+            Try
+                Dim iRestriccion As IRestricciones
+                Dim result As String
+
+                iRestriccion = New RestriccionesDL
+                result = iRestriccion.ObtenerCantidadXRestriccion(id_actividad, id_restriccion, id_socio, id_persona, id_invitado)
+
+                Return result
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

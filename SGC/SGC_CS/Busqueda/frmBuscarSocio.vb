@@ -62,7 +62,7 @@ Public Class frmBuscarSocio
                 Dim Cell As DataGridViewCell
 
                 Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "idSocio"
+                Col_Text.Name = "id_socio"
                 Col_Text.HeaderText = "Código"
                 Col_Text.ReadOnly = True
                 Col_Text.Visible = False
@@ -72,7 +72,7 @@ Public Class frmBuscarSocio
                 Col_Text.Name = "id_accion"
                 Col_Text.HeaderText = "Clave"
                 Col_Text.ReadOnly = True
-                Col_Text.Visible = False
+                Col_Text.Visible = True
                 Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
                 dgvListado.Columns.Add(Col_Text)
 

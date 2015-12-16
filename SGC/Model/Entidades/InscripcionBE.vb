@@ -131,6 +131,26 @@
             End Set
         End Property
 
+        Private _ListaPersona As List(Of PersonaBE)
+        Public Property ListaPersona() As List(Of PersonaBE)
+            Get
+                Return _ListaPersona
+            End Get
+            Set(ByVal value As List(Of PersonaBE))
+                _ListaPersona = value
+            End Set
+        End Property
+
+        Private _ListaInvitado As List(Of InvitadoBE)
+        Public Property ListaInvitado() As List(Of InvitadoBE)
+            Get
+                Return _ListaInvitado
+            End Get
+            Set(ByVal value As List(Of InvitadoBE))
+                _ListaInvitado = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 
