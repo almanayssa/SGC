@@ -237,20 +237,20 @@ Public Class MDI
     End Sub
 
     Private Sub UsuariosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles UsuariosToolStripMenuItem.Click
-        frmRegistroEspacio.Close()
-        frmRegistroEspacio.MdiParent = Me
-        frmRegistroEspacio.Show()
+        frmRegistroUsuario.Close()
+        frmRegistroUsuario.MdiParent = Me
+        frmRegistroUsuario.Show()
     End Sub
 
     Private Sub PerfilesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PerfilesToolStripMenuItem.Click
-        frmRegistroEspacio.Close()
-        frmRegistroEspacio.MdiParent = Me
-        frmRegistroEspacio.Show()
+        frmRegistroPerfil.Close()
+        frmRegistroPerfil.MdiParent = Me
+        frmRegistroPerfil.Show()
     End Sub
 
     Private Sub OpcionesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OpcionesToolStripMenuItem.Click
-        frmRegistroEspacio.Close()
-        frmRegistroEspacio.MdiParent = Me
-        frmRegistroEspacio.Show()
+        frmRegistroOpcion.Close()
+        frmRegistroOpcion.MdiParent = Me
+        frmRegistroOpcion.Show()
     End Sub
 End Class

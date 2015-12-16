@@ -114,10 +114,13 @@
     <Content Include="estilos\jquery.alerts.css" />
     <Content Include="estilos\style.css" />
     <Content Include="estilos\styles.css" />
+    <Content Include="frmCambiarContrasena.aspx" />
+    <Content Include="frmCambiarContrasenia.aspx" />
     <Content Include="frmCronogramaActividades.aspx" />
     <Content Include="frmDetalleActividad.aspx" />
     <Content Include="frmMensaje.aspx" />
     <Content Include="frmRegistroInscripcion.aspx" />
+    <Content Include="frmRecuperarContrasena.aspx" />
     <Content Include="imagenes\banners\barra.jpg" />
     <Content Include="imagenes\banners\cuadrito.jpg" />
     <Content Include="imagenes\botones\001.bmp" />
@@ -243,7 +246,9 @@
     <Content Include="js\JScript.js" />
     <Content Include="js\passwordStrengthMeter.js" />
     <Content Include="logoff.aspx" />
-    <Content Include="menu1.xml" />
+    <Content Include="menu1.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -266,6 +271,20 @@
     <Compile Include="controles\usrPie.ascx.vb">
       <DependentUpon>usrPie.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmCambiarContrasena.aspx.designer.vb">
+      <DependentUpon>frmCambiarContrasena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCambiarContrasena.aspx.vb">
+      <DependentUpon>frmCambiarContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmCambiarContrasenia.aspx.designer.vb">
+      <DependentUpon>frmCambiarContrasenia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmCambiarContrasenia.aspx.vb">
+      <DependentUpon>frmCambiarContrasenia.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="frmCronogramaActividades.aspx.designer.vb">
       <DependentUpon>frmCronogramaActividades.aspx</DependentUpon>
@@ -293,6 +312,13 @@
     </Compile>
     <Compile Include="frmRegistroInscripcion.aspx.vb">
       <DependentUpon>frmRegistroInscripcion.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarContrasena.aspx.designer.vb">
+      <DependentUpon>frmRecuperarContrasena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperarContrasena.aspx.vb">
+      <DependentUpon>frmRecuperarContrasena.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.vb">
@@ -342,7 +368,6 @@
       <DependentUpon>PlantillaSGC.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="utilitarios\Helper.vb" />
     <Compile Include="utilitarios\Sesiones.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -386,7 +411,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57634</DevelopmentServerPort>
+          <DevelopmentServerPort>61907</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

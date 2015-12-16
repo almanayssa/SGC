@@ -87,10 +87,10 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="frmLogin.aspx" />
     <Content Include="frmReporteActividadesMayorDemanda.aspx" />
     <Content Include="frmReporteComite.aspx" />
     <Content Include="frmReporteGastoActividad.aspx" />
-    <Content Include="Login.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -102,6 +102,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLogin.aspx.designer.vb">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.aspx.vb">
+      <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="frmReporteActividadesMayorDemanda.aspx.designer.vb">
       <DependentUpon>frmReporteActividadesMayorDemanda.aspx</DependentUpon>
     </Compile>
@@ -121,13 +128,6 @@
     </Compile>
     <Compile Include="frmReporteGastoActividad.aspx.vb">
       <DependentUpon>frmReporteGastoActividad.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="Login.aspx.designer.vb">
-      <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login.aspx.vb">
-      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -195,7 +195,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57648</DevelopmentServerPort>
+          <DevelopmentServerPort>61912</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

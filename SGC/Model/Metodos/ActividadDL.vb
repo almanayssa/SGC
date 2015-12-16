@@ -373,6 +373,53 @@ Namespace SGC.Model.Metodos
                 sqlConn.Close()
             End Try
         End Function
+
+        Public Function ListarActividadesCalendario(ByVal diaCalendario As Date, ByVal diaInicio As Date, ByVal diaFin As Date) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividadesCalendario
+            Dim oListadoActividades As New List(Of ActividadBE)
+            Dim oActividad As ActividadBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES_CALENDARIO", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@diaCalendario", SqlDbType.Date).Value = IIf(diaCalendario = Nothing, DBNull.Value, diaCalendario)
+            sqlCmd.Parameters.Add("@diaInicio", SqlDbType.Date).Value = IIf(diaInicio = Nothing, DBNull.Value, diaInicio)
+            sqlCmd.Parameters.Add("@diaFin", SqlDbType.Date).Value = IIf(diaFin = Nothing, DBNull.Value, diaFin)
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oActividad = New ActividadBE
+                    oActividad.id_actividad = dr("id_actividad")
+                    oActividad.fec_ini = dr("fec_ini")
+                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.hora_ini = dr.GetTimeSpan(3) 'dr("hora_ini")
+                    oActividad.hora_fin = dr.GetTimeSpan(4) 'dr("hora_fin")
+                    oActividad.monto_pago = dr("monto_pago")
+                    oActividad.descripcion = dr("descripcion")
+                    oActividad.nombre = dr("nombre")
+                    oActividad.id_actividad_recurrente = IIf(dr("id_actividad_recurrente") Is DBNull.Value, Nothing, dr("id_actividad_recurrente"))
+                    oActividad.flg_web = dr("flg_web")
+                    oActividad.tipo_inscripcion = dr("tipo_inscripcion")
+                    oActividad.nombrecomite = dr("nom_comite")
+                    oActividad.desc_tipo = dr("tipo_act")
+                    oActividad.desc_cat = IIf(dr("cat_act") Is DBNull.Value, Nothing, dr("cat_act"))
+
+                    oListadoActividades.Add(oActividad)
+                End While
+                dr.Close()
+                Return oListadoActividades
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
 #End Region
 
 #Region "Insert"

@@ -10,7 +10,7 @@
 	        <table border="0" cellpadding="0" cellspacing="0">
 	            <tr>
 	                <td style="width:151px;">
-                        <asp:Calendar ID="calActividades" runat="server" BorderStyle="None" CellSpacing="2" DayNameFormat="FirstLetter" Width="151px" OnVisibleMonthChanged="calendarOtherYearMonth">
+                        <asp:Calendar ID="calActividades" runat="server" BorderStyle="None" CellSpacing="2" DayNameFormat="FirstLetter" Width="151px" OnVisibleMonthChanged="CalendarioOtroAnioMes">
                             <TitleStyle CssClass="calendarDayHeader" BackColor="Transparent" />
                             <DayStyle ForeColor="#333333" CssClass="calendarGeneral" />
                             <DayHeaderStyle CssClass="calendarDayHeader" />
@@ -21,23 +21,23 @@
                         </asp:Calendar><br />
 	                </td>
 	                <td valign="top" style="padding-left:5px;">
-	                    <asp:LinkButton ID="lbtnToday" runat="server" Text="-Hoy" CssClass="lblverde"></asp:LinkButton><br />
-	                    <asp:LinkButton ID="lbtnThisWeek" runat="server" Text="-Esta Semana" CssClass="lblverde"></asp:LinkButton><br />
-	                    <asp:LinkButton ID="lbtnThisMonth" runat="server" Text="-Esta Mes" CssClass="lblverde"></asp:LinkButton>
-                        <asp:HiddenField ID="hdnStartDate" runat="server" /><asp:HiddenField ID="hdnEndDate" runat="server" />
+	                    <asp:LinkButton ID="lbtnHoy" runat="server" Text="-Hoy" CssClass="lblverde"></asp:LinkButton><br />
+	                    <asp:LinkButton ID="lbtnEstaSemana" runat="server" Text="-Esta Semana" CssClass="lblverde"></asp:LinkButton><br />
+	                    <asp:LinkButton ID="lbtnEsteMes" runat="server" Text="-Esta Mes" CssClass="lblverde"></asp:LinkButton>
+                        <asp:HiddenField ID="hdnFechaInicio" runat="server" /><asp:HiddenField ID="hdnFechaFin" runat="server" />
 	                </td>
 	            </tr>
 	        </table>
 	    </td>
 	    <td style="border-left:solid 1px #D8D8D8; padding:10px 10px 10px 10px;" valign="top" align="left">
-			<asp:UpdatePanel ID="upnlEvents" runat="server" UpdateMode="Conditional"><ContentTemplate>
-				<table border="0" cellpadding="0" cellspacing="0"><tr><td style="color:#005787; text-transform:uppercase; font-weight:bold;"><asp:Label ID="lblTitleTabCalendar" runat="server" Font-Size="Medium"></asp:Label></td></tr></table><br />
+			<asp:UpdatePanel ID="upnlActividades" runat="server" UpdateMode="Conditional"><ContentTemplate>
+				<table border="0" cellpadding="0" cellspacing="0"><tr><td style="color:#005787; text-transform:uppercase; font-weight:bold;"><asp:Label ID="lblTituloCalendario" runat="server" Font-Size="Medium"></asp:Label></td></tr></table><br />
 				<asp:Repeater ID="rptCalendarioActividades" runat="server"> <%--DataSource='<%#GetEvents()%>'>--%>
                     <ItemTemplate>
                         <table border="0" cellpadding="0" cellspacing="0">
                             <tr>                                
                                 <td class="contentEventsCalendar" align="justify" valign="top">
-                                    <asp:LinkButton ID="lbtnTitleEvent" runat="server" CommandName="DetalleActividad"
+                                    <asp:LinkButton ID="lbtnTituloActividad" runat="server" CommandName="DetalleActividad"
                                         CommandArgument='<%#Eval("id_actividad") %>' Text='<%# Eval("nombre") %>'
                                         ToolTip='<%# Eval("nombre") %>' CssClass="lblverde" Font-Size="Small"></asp:LinkButton><br />
                                     <asp:Label ID="lblEventDateHourHome" runat="server" CssClass="lblmarron" Font-Size="Smaller" Text='<%#IIf(CType(Eval("fec_ini"),DateTime).ToShortDateString() = CType(Eval("fec_fin"),DateTime).ToShortDateString(), String.Concat(CType(Eval("fec_ini"),DateTime).ToShortDateString(), " (", CType(Eval("fec_ini"),DateTime).ToShortTimeString(), " - ", CType(Eval("fec_fin"),DateTime).ToShortTimeString(), ")"), String.Concat(CType(Eval("fec_ini"),DateTime).ToShortDateString(), " ", CType(Eval("fec_ini"),DateTime).ToShortTimeString(), " - ", CType(Eval("fec_fin"),DateTime).ToShortDateString(), " ",CType(Eval("fec_fin"),DateTime).ToShortTimeString())) %>'></asp:Label><br />

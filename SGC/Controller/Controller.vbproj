@@ -68,8 +68,13 @@
     <Compile Include="ActividadBL.vb" />
     <Compile Include="ActividadDetalleBL.vb" />
     <Compile Include="ActividadRecurrenteBL.vb" />
+    <Compile Include="AsistenciaPersonalBL.vb" />
     <Compile Include="CatTipoActividadBL.vb" />
     <Compile Include="ComiteBL.vb" />
+    <Compile Include="EncuestaActividadBL.vb" />
+    <Compile Include="IncidenciaBL.vb" />
+    <Compile Include="OpcionXPerfilBL.vb" />
+    <Compile Include="PerfilUsuarioBL.vb" />
     <Compile Include="InscripcionBL.vb" />
     <Compile Include="PersonaBL.vb" />
     <Compile Include="SocioBL.vb" />
@@ -102,6 +107,7 @@
     <Compile Include="SignosBL.vb" />
     <Compile Include="TipoActividadBL.vb" />
     <Compile Include="TipoPersonalBL.vb" />
+    <Compile Include="UsuarioBL.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

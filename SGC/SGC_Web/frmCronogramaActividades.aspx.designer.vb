@@ -32,67 +32,67 @@ Partial Public Class frmCronogramaActividades
     Protected WithEvents calActividades As Global.System.Web.UI.WebControls.Calendar
 
     '''<summary>
-    '''lbtnToday control.
+    '''lbtnHoy control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnToday As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lbtnHoy As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''lbtnThisWeek control.
+    '''lbtnEstaSemana control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnThisWeek As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lbtnEstaSemana As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''lbtnThisMonth control.
+    '''lbtnEsteMes control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnThisMonth As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lbtnEsteMes As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''hdnStartDate control.
+    '''hdnFechaInicio control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hdnStartDate As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents hdnFechaInicio As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
-    '''hdnEndDate control.
+    '''hdnFechaFin control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hdnEndDate As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents hdnFechaFin As Global.System.Web.UI.WebControls.HiddenField
 
     '''<summary>
-    '''upnlEvents control.
+    '''upnlActividades control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents upnlEvents As Global.System.Web.UI.UpdatePanel
+    Protected WithEvents upnlActividades As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''lblTitleTabCalendar control.
+    '''lblTituloCalendario control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblTitleTabCalendar As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblTituloCalendario As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''rptCalendarioActividades control.

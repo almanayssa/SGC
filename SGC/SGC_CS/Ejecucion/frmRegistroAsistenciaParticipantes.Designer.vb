@@ -20,8 +20,8 @@ Partial Class frmRegistroAsistenciaParticipantes
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscarActividad = New SGC_CS.SGCButton(Me.components)
         Me.txtActividad = New SGC_CS.SGCTextBox(Me.components)
@@ -33,11 +33,15 @@ Partial Class frmRegistroAsistenciaParticipantes
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvInscritos = New SGC_CS.SGCDataGridView(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
+        Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
+        Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox6.SuspendLayout()
         CType(Me.dgvInscritos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'SgcGroupBox1
@@ -48,7 +52,7 @@ Partial Class frmRegistroAsistenciaParticipantes
         Me.SgcGroupBox1.Controls.Add(Me.txtCodigo)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 65)
+        Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 113)
         Me.SgcGroupBox1.Name = "SgcGroupBox1"
         Me.SgcGroupBox1.Size = New System.Drawing.Size(513, 209)
         Me.SgcGroupBox1.TabIndex = 19
@@ -117,7 +121,7 @@ Partial Class frmRegistroAsistenciaParticipantes
         '
         Me.SgcGroupBox2.Controls.Add(Me.dgvProgramacion)
         Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox2.Location = New System.Drawing.Point(589, 65)
+        Me.SgcGroupBox2.Location = New System.Drawing.Point(589, 113)
         Me.SgcGroupBox2.Name = "SgcGroupBox2"
         Me.SgcGroupBox2.Size = New System.Drawing.Size(354, 209)
         Me.SgcGroupBox2.TabIndex = 26
@@ -127,9 +131,9 @@ Partial Class frmRegistroAsistenciaParticipantes
         'dgvProgramacion
         '
         Me.dgvProgramacion.AllowUserToAddRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvProgramacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvProgramacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvProgramacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -142,7 +146,7 @@ Partial Class frmRegistroAsistenciaParticipantes
         '
         Me.SgcGroupBox6.Controls.Add(Me.dgvInscritos)
         Me.SgcGroupBox6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox6.Location = New System.Drawing.Point(60, 280)
+        Me.SgcGroupBox6.Location = New System.Drawing.Point(60, 328)
         Me.SgcGroupBox6.Name = "SgcGroupBox6"
         Me.SgcGroupBox6.Size = New System.Drawing.Size(883, 296)
         Me.SgcGroupBox6.TabIndex = 27
@@ -152,9 +156,9 @@ Partial Class frmRegistroAsistenciaParticipantes
         'dgvInscritos
         '
         Me.dgvInscritos.AllowUserToAddRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvInscritos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvInscritos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvInscritos.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvInscritos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvInscritos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -175,9 +179,45 @@ Partial Class frmRegistroAsistenciaParticipantes
         Me.lblTitulo.TabIndex = 28
         Me.lblTitulo.Text = "Registro de Asistencia - Participantes"
         '
+        'tsMenu
+        '
+        Me.tsMenu.BackColor = System.Drawing.Color.Silver
+        Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
+        Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbLimpiar, Me.tsbGuardar})
+        Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
+        Me.tsMenu.Location = New System.Drawing.Point(60, 65)
+        Me.tsMenu.Name = "tsMenu"
+        Me.tsMenu.Size = New System.Drawing.Size(216, 37)
+        Me.tsMenu.TabIndex = 29
+        Me.tsMenu.Text = "SgcToolStrip1"
+        '
+        'tsbLimpiar
+        '
+        Me.tsbLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbLimpiar.Image = Global.SGC_CS.My.Resources.Resources.menu_limpiar
+        Me.tsbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbLimpiar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbLimpiar.Name = "tsbLimpiar"
+        Me.tsbLimpiar.Size = New System.Drawing.Size(88, 34)
+        Me.tsbLimpiar.Text = "Limpiar"
+        '
+        'tsbGuardar
+        '
+        Me.tsbGuardar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbGuardar.Image = Global.SGC_CS.My.Resources.Resources.menu_validar
+        Me.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbGuardar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbGuardar.Name = "tsbGuardar"
+        Me.tsbGuardar.Size = New System.Drawing.Size(92, 34)
+        Me.tsbGuardar.Text = "Guardar"
+        Me.tsbGuardar.Visible = False
+        '
         'frmRegistroAsistenciaParticipantes
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
+        Me.Controls.Add(Me.tsMenu)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.SgcGroupBox6)
         Me.Controls.Add(Me.SgcGroupBox2)
@@ -187,12 +227,15 @@ Partial Class frmRegistroAsistenciaParticipantes
         Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox6, 0)
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
+        Me.Controls.SetChildIndex(Me.tsMenu, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
         Me.SgcGroupBox2.ResumeLayout(False)
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox6.ResumeLayout(False)
         CType(Me.dgvInscritos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tsMenu.ResumeLayout(False)
+        Me.tsMenu.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -208,5 +251,8 @@ Partial Class frmRegistroAsistenciaParticipantes
     Friend WithEvents SgcGroupBox6 As SGC_CS.SGCGroupBox
     Friend WithEvents dgvInscritos As SGC_CS.SGCDataGridView
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
+    Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
+    Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
 
 End Class

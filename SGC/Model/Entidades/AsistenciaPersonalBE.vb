@@ -51,6 +51,15 @@
             End Set
         End Property
 
+        Private _nombre_completo As String
+        Public Property nombre_completo() As String
+            Get
+                Return _nombre_completo
+            End Get
+            Set(ByVal value As String)
+                _nombre_completo = value
+            End Set
+        End Property
 
     End Class
 End Namespace

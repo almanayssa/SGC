@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="Login.aspx.vb" Inherits="SGC_Int.Login" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="frmLogin.aspx.vb" Inherits="SGC_Int.frmLogin" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -9,9 +9,6 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    
-        <asp:Login ID="Login1" runat="server">
-        </asp:Login>
     
     </div>
     </form>

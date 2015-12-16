@@ -142,6 +142,21 @@ Namespace SGC.Controller
                 Return Nothing
             End Try
         End Function
+
+        Public Function ListarActividadesCalendario(ByVal diaCalendario As Date, ByVal diaInicio As Date, ByVal diaFin As Date) As List(Of ActividadBE)
+            Try
+                Dim iActividad As IActividad
+                Dim oListadoActividades As List(Of ActividadBE) = Nothing
+
+                iActividad = New ActividadDL
+                oListadoActividades = iActividad.ListarActividadesCalendario(diaCalendario, diaInicio, diaFin)
+
+                Return oListadoActividades
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 #End Region
 
 #Region "Insert"

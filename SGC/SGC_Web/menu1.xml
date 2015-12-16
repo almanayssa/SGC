@@ -9,7 +9,7 @@
       </menuItem>
       <menuItem>
         <text>Cambio de Contraseña</text>
-        <url>#</url>
+        <url>frmCambiarContrasena.aspx</url>
       </menuItem>
     </subMenu>
   </menuItem>

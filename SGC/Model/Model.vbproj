@@ -82,6 +82,9 @@
     <Compile Include="Entidades\ComiteAnualBE.vb" />
     <Compile Include="Entidades\ComiteBE.vb" />
     <Compile Include="Entidades\ConceptoBE.vb" />
+    <Compile Include="Entidades\OpcionXPerfilBE.vb" />
+    <Compile Include="Entidades\PantallaBE.vb" />
+    <Compile Include="Entidades\PerfilUsuarioBE.vb" />
     <Compile Include="Entidades\PlanAnualEstadoBE.vb" />
     <Compile Include="Entidades\DetallePresupuestoActBE.vb" />
     <Compile Include="Entidades\DetallePresupuestoAnualBE.vb" />
@@ -134,6 +137,14 @@
     <Compile Include="Entidades\TipoRegistroInvitadoBE.vb" />
     <Compile Include="Entidades\TipoTransaccionBE.vb" />
     <Compile Include="Entidades\TransaccionBE.vb" />
+    <Compile Include="Entidades\UsuarioBE.vb" />
+    <Compile Include="Interfaces\IAsistenciaPersonal.vb" />
+    <Compile Include="Interfaces\IEncuestaActividad.vb" />
+    <Compile Include="Interfaces\IEncuestaDetalle.vb" />
+    <Compile Include="Interfaces\IIncidencia.vb" />
+    <Compile Include="Interfaces\IOpcionXPerfil.vb" />
+    <Compile Include="Interfaces\IPantalla.vb" />
+    <Compile Include="Interfaces\IPerfilUsuario.vb" />
     <Compile Include="Interfaces\IInscripcion.vb" />
     <Compile Include="Interfaces\IPersona.vb" />
     <Compile Include="Interfaces\ISocio.vb" />
@@ -155,12 +166,19 @@
     <Compile Include="Interfaces\ISignos.vb" />
     <Compile Include="Interfaces\ITipoActividad.vb" />
     <Compile Include="Interfaces\ITipoPersonal.vb" />
+    <Compile Include="Interfaces\IUsuario.vb" />
     <Compile Include="Metodos\ActividadDetalleDL.vb" />
     <Compile Include="Metodos\ActividadDL.vb" />
     <Compile Include="Metodos\ActividadRecurrenteDL.vb" />
+    <Compile Include="Metodos\AsistenciaPersonalDL.vb" />
     <Compile Include="Metodos\CatTipoActividadDL.vb" />
     <Compile Include="Metodos\ComiteDL.vb" />
     <Compile Include="Interfaces\IComite.vb" />
+    <Compile Include="Metodos\EncuestaActividadDL.vb" />
+    <Compile Include="Metodos\EncuestaDetalleDL.vb" />
+    <Compile Include="Metodos\IncidenciaDL.vb" />
+    <Compile Include="Metodos\OpcionXPerfilDL.vb" />
+    <Compile Include="Metodos\PerfilUsuarioDL.vb" />
     <Compile Include="Metodos\InscripcionDL.vb" />
     <Compile Include="Metodos\PersonaDL.vb" />
     <Compile Include="Metodos\SocioDL.vb" />
@@ -178,6 +196,7 @@
     <Compile Include="Metodos\SignosDL.vb" />
     <Compile Include="Metodos\TipoActividadDL.vb" />
     <Compile Include="Metodos\TipoPersonalDL.vb" />
+    <Compile Include="Metodos\UsuarioDL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

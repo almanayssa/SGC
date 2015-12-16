@@ -15,6 +15,7 @@ Namespace SGC.Model.Interfaces
         Function ListarActividadesRechazadasPGC(ByVal id_comite As String) As List(Of ActividadBE)
         Function ListarActividadesCD(ByVal id_comite As String) As List(Of ActividadBE)
         Function ListarActividadesGG(ByVal id_comite As String) As List(Of ActividadBE)
+        Function ListarActividadesCalendario(ByVal diaCalendario As Date, ByVal diaInicio As Date, ByVal diaFin As Date) As List(Of ActividadBE)
 
 #End Region
 

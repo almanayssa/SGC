@@ -21,7 +21,7 @@ Partial Class frmRegistroEncuesta
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroEncuesta))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.txtActividad = New SGC_CS.SGCTextBox(Me.components)
@@ -29,17 +29,25 @@ Partial Class frmRegistroEncuesta
         Me.txtCodigo = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.dtpFecha = New SGC_CS.SGCDateTimePicker(Me.components)
-        Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.txtDescripcion = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvPreguntas = New SGC_CS.SGCDataGridView(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
+        Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
+        Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
+        Me.colPregunta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOpcion1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOpcion2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOpcion3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnQuitarPregunta = New SGC_CS.SGCButton(Me.components)
+        Me.btnAgregarPregunta = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         Me.SgcGroupBox6.SuspendLayout()
         CType(Me.dgvPreguntas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'SgcGroupBox1
@@ -50,7 +58,7 @@ Partial Class frmRegistroEncuesta
         Me.SgcGroupBox1.Controls.Add(Me.txtCodigo)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 82)
+        Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 107)
         Me.SgcGroupBox1.Name = "SgcGroupBox1"
         Me.SgcGroupBox1.Size = New System.Drawing.Size(513, 209)
         Me.SgcGroupBox1.TabIndex = 29
@@ -117,37 +125,15 @@ Partial Class frmRegistroEncuesta
         '
         'SgcGroupBox2
         '
-        Me.SgcGroupBox2.Controls.Add(Me.dtpFecha)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcLabel3)
         Me.SgcGroupBox2.Controls.Add(Me.txtDescripcion)
         Me.SgcGroupBox2.Controls.Add(Me.SgcLabel2)
         Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox2.Location = New System.Drawing.Point(582, 82)
+        Me.SgcGroupBox2.Location = New System.Drawing.Point(582, 107)
         Me.SgcGroupBox2.Name = "SgcGroupBox2"
         Me.SgcGroupBox2.Size = New System.Drawing.Size(361, 209)
         Me.SgcGroupBox2.TabIndex = 30
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Encuesta"
-        '
-        'dtpFecha
-        '
-        Me.dtpFecha.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(106, 72)
-        Me.dtpFecha.Name = "dtpFecha"
-        Me.dtpFecha.Size = New System.Drawing.Size(100, 26)
-        Me.dtpFecha.TabIndex = 32
-        '
-        'SgcLabel3
-        '
-        Me.SgcLabel3.AutoSize = True
-        Me.SgcLabel3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel3.Location = New System.Drawing.Point(16, 76)
-        Me.SgcLabel3.Name = "SgcLabel3"
-        Me.SgcLabel3.Size = New System.Drawing.Size(48, 18)
-        Me.SgcLabel3.TabIndex = 31
-        Me.SgcLabel3.Text = "Fecha:"
         '
         'txtDescripcion
         '
@@ -172,9 +158,11 @@ Partial Class frmRegistroEncuesta
         '
         'SgcGroupBox6
         '
+        Me.SgcGroupBox6.Controls.Add(Me.btnQuitarPregunta)
+        Me.SgcGroupBox6.Controls.Add(Me.btnAgregarPregunta)
         Me.SgcGroupBox6.Controls.Add(Me.dgvPreguntas)
         Me.SgcGroupBox6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox6.Location = New System.Drawing.Point(60, 297)
+        Me.SgcGroupBox6.Location = New System.Drawing.Point(60, 322)
         Me.SgcGroupBox6.Name = "SgcGroupBox6"
         Me.SgcGroupBox6.Size = New System.Drawing.Size(883, 296)
         Me.SgcGroupBox6.TabIndex = 31
@@ -184,15 +172,16 @@ Partial Class frmRegistroEncuesta
         'dgvPreguntas
         '
         Me.dgvPreguntas.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvPreguntas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvPreguntas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvPreguntas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPreguntas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPreguntas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colPregunta, Me.colOpcion1, Me.colOpcion2, Me.colOpcion3})
         Me.dgvPreguntas.Location = New System.Drawing.Point(18, 25)
         Me.dgvPreguntas.Name = "dgvPreguntas"
-        Me.dgvPreguntas.Size = New System.Drawing.Size(849, 254)
+        Me.dgvPreguntas.Size = New System.Drawing.Size(849, 226)
         Me.dgvPreguntas.TabIndex = 1
         '
         'lblTitulo
@@ -207,9 +196,98 @@ Partial Class frmRegistroEncuesta
         Me.lblTitulo.TabIndex = 32
         Me.lblTitulo.Text = "Registro de Encuesta" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
+        'tsMenu
+        '
+        Me.tsMenu.BackColor = System.Drawing.Color.Silver
+        Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
+        Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbLimpiar, Me.tsbGuardar})
+        Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
+        Me.tsMenu.Location = New System.Drawing.Point(60, 65)
+        Me.tsMenu.Name = "tsMenu"
+        Me.tsMenu.Size = New System.Drawing.Size(91, 37)
+        Me.tsMenu.TabIndex = 33
+        Me.tsMenu.Text = "SgcToolStrip1"
+        '
+        'tsbLimpiar
+        '
+        Me.tsbLimpiar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbLimpiar.Image = Global.SGC_CS.My.Resources.Resources.menu_limpiar
+        Me.tsbLimpiar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbLimpiar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbLimpiar.Name = "tsbLimpiar"
+        Me.tsbLimpiar.Size = New System.Drawing.Size(88, 34)
+        Me.tsbLimpiar.Text = "Limpiar"
+        '
+        'tsbGuardar
+        '
+        Me.tsbGuardar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.tsbGuardar.Image = Global.SGC_CS.My.Resources.Resources.menu_validar
+        Me.tsbGuardar.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbGuardar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
+        Me.tsbGuardar.Name = "tsbGuardar"
+        Me.tsbGuardar.Size = New System.Drawing.Size(92, 34)
+        Me.tsbGuardar.Text = "Guardar"
+        Me.tsbGuardar.Visible = False
+        '
+        'colPregunta
+        '
+        Me.colPregunta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colPregunta.HeaderText = "Pregunta"
+        Me.colPregunta.Name = "colPregunta"
+        '
+        'colOpcion1
+        '
+        Me.colOpcion1.HeaderText = "Opción 1"
+        Me.colOpcion1.Name = "colOpcion1"
+        '
+        'colOpcion2
+        '
+        Me.colOpcion2.HeaderText = "Opción 2"
+        Me.colOpcion2.Name = "colOpcion2"
+        '
+        'colOpcion3
+        '
+        Me.colOpcion3.HeaderText = "Opción 3"
+        Me.colOpcion3.Name = "colOpcion3"
+        '
+        'btnQuitarPregunta
+        '
+        Me.btnQuitarPregunta.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnQuitarPregunta.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnQuitarPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitarPregunta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuitarPregunta.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnQuitarPregunta.Image = Global.SGC_CS.My.Resources.Resources.btn_eliminar
+        Me.btnQuitarPregunta.Location = New System.Drawing.Point(777, 257)
+        Me.btnQuitarPregunta.Name = "btnQuitarPregunta"
+        Me.btnQuitarPregunta.Size = New System.Drawing.Size(90, 31)
+        Me.btnQuitarPregunta.TabIndex = 14
+        Me.btnQuitarPregunta.Text = "Quitar"
+        Me.btnQuitarPregunta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnQuitarPregunta.UseVisualStyleBackColor = False
+        '
+        'btnAgregarPregunta
+        '
+        Me.btnAgregarPregunta.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAgregarPregunta.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnAgregarPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarPregunta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarPregunta.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnAgregarPregunta.Image = Global.SGC_CS.My.Resources.Resources.btn_agregar
+        Me.btnAgregarPregunta.Location = New System.Drawing.Point(681, 257)
+        Me.btnAgregarPregunta.Name = "btnAgregarPregunta"
+        Me.btnAgregarPregunta.Size = New System.Drawing.Size(90, 31)
+        Me.btnAgregarPregunta.TabIndex = 13
+        Me.btnAgregarPregunta.Text = "Agregar"
+        Me.btnAgregarPregunta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregarPregunta.UseVisualStyleBackColor = False
+        '
         'frmRegistroEncuesta
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
+        Me.Controls.Add(Me.tsMenu)
         Me.Controls.Add(Me.lblTitulo)
         Me.Controls.Add(Me.SgcGroupBox6)
         Me.Controls.Add(Me.SgcGroupBox2)
@@ -219,12 +297,15 @@ Partial Class frmRegistroEncuesta
         Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox6, 0)
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
+        Me.Controls.SetChildIndex(Me.tsMenu, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
         Me.SgcGroupBox2.ResumeLayout(False)
         Me.SgcGroupBox2.PerformLayout()
         Me.SgcGroupBox6.ResumeLayout(False)
         CType(Me.dgvPreguntas, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tsMenu.ResumeLayout(False)
+        Me.tsMenu.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -236,12 +317,19 @@ Partial Class frmRegistroEncuesta
     Friend WithEvents txtCodigo As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
-    Friend WithEvents dtpFecha As SGC_CS.SGCDateTimePicker
-    Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents txtDescripcion As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox6 As SGC_CS.SGCGroupBox
     Friend WithEvents dgvPreguntas As SGC_CS.SGCDataGridView
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
+    Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
+    Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents colPregunta As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colOpcion1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colOpcion2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colOpcion3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btnQuitarPregunta As SGC_CS.SGCButton
+    Friend WithEvents btnAgregarPregunta As SGC_CS.SGCButton
 
 End Class

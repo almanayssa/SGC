@@ -31,6 +31,16 @@
             End Set
         End Property
 
+        Private _ListadoEncuestaDetalle As List(Of EncuestaDetalleBE)
+        Public Property ListadoEncuestaDetalle() As List(Of EncuestaDetalleBE)
+            Get
+                Return _ListadoEncuestaDetalle
+            End Get
+            Set(ByVal value As List(Of EncuestaDetalleBE))
+                _ListadoEncuestaDetalle = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 
