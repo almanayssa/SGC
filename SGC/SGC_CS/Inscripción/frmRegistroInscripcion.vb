@@ -32,6 +32,12 @@ Public Class frmRegistroInscripcion
         colRelacion.DataPropertyName = "tipo_familiar"
         colPersona.DataPropertyName = "id_persona"
 
+
+        dgvInvitados.AutoGenerateColumns = False
+        colIdInv.DataPropertyName = "id_invitado"
+        colINombres.DataPropertyName = "nombre_completo"
+        colIDNI.DataPropertyName = "dni_inv"
+
     End Sub
 
 #End Region
@@ -108,6 +114,39 @@ Public Class frmRegistroInscripcion
         GuardarInscripcion()
     End Sub
 
+    Private Sub btnAgregarInvitado_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarInvitado.Click
+        If txtAccion.Text.Trim <> String.Empty Then
+
+            Dim frm As New frmBuscarInvitado
+            frm.txtAccion.Text = txtAccion.Text
+            frm.ShowDialog()
+
+            If frm.InvitadoSeleccionado IsNot Nothing Then
+                AgregarInvitado(frm.InvitadoSeleccionado)
+            End If
+        Else
+            MsgBox("Ingresar codigo del asociado")
+        End If
+    End Sub
+
+    Private Sub btnQuitarInvitado_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitarInvitado.Click
+        If Not dgvInvitados.CurrentRow Is Nothing Then
+            Try
+                Dim lista As List(Of InvitadoBE)
+                lista = dgvInvitados.DataSource
+
+                lista.RemoveAt(dgvInvitados.CurrentRow.Index)
+
+                dgvInvitados.DataSource = Nothing
+                dgvInvitados.DataSource = lista
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Else
+            MsgBox("Debe Seleccionar un Elemento para Quitarlo", MsgBoxStyle.Information)
+        End If
+    End Sub
 #End Region
 
 #Region "Métodos Personalizados"
@@ -326,6 +365,16 @@ Public Class frmRegistroInscripcion
         dgvInscritos.DataSource = ListadoPersona
     End Sub
 
+    Private Sub AgregarInvitado(ByRef oInvitado As InvitadoBE)
+        If ListadoInvitado Is Nothing Then
+            ListadoInvitado = New List(Of InvitadoBE)
+        End If
+
+        ListadoInvitado.Add(oInvitado)
+        dgvInvitados.DataSource = Nothing
+        dgvInvitados.DataSource = ListadoInvitado
+    End Sub
+
     Private Sub LimpiarFormulario()
         txtCodigo.Text = ""
         txtActividad.Text = ""
@@ -352,6 +401,7 @@ Public Class frmRegistroInscripcion
         oInscripcion.id_socio = _id_socio
         oInscripcion.ListaPersona = New List(Of PersonaBE)
         oInscripcion.ListaPersona = dgvInscritos.DataSource
+        oInscripcion.ListaInvitado = dgvInvitados.DataSource
         oInscripcion.serie = txtSerie.Text
         oInscripcion.correlativo = txtNumDoc.Text
         oInscripcion.tipo_doc = "02"

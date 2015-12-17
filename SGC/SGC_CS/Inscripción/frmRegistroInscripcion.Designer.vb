@@ -20,10 +20,10 @@ Partial Class frmRegistroInscripcion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
@@ -68,6 +68,9 @@ Partial Class frmRegistroInscripcion
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.colIdInv = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colINombres = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colIDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tsMenu.SuspendLayout()
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox1.SuspendLayout()
@@ -131,9 +134,9 @@ Partial Class frmRegistroInscripcion
         'dgvProgramacion
         '
         Me.dgvProgramacion.AllowUserToAddRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvProgramacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvProgramacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvProgramacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -227,9 +230,9 @@ Partial Class frmRegistroInscripcion
         'dgvRestricciones
         '
         Me.dgvRestricciones.AllowUserToAddRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvRestricciones.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRestricciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRestricciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -415,9 +418,9 @@ Partial Class frmRegistroInscripcion
         'dgvInscritos
         '
         Me.dgvInscritos.AllowUserToAddRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvInscritos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvInscritos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvInscritos.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvInscritos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvInscritos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -537,12 +540,13 @@ Partial Class frmRegistroInscripcion
         'dgvInvitados
         '
         Me.dgvInvitados.AllowUserToAddRows = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvInvitados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvInvitados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.dgvInvitados.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvInvitados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvInvitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvInvitados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colIdInv, Me.colINombres, Me.colIDNI})
         Me.dgvInvitados.Location = New System.Drawing.Point(18, 57)
         Me.dgvInvitados.Name = "dgvInvitados"
         Me.dgvInvitados.Size = New System.Drawing.Size(410, 126)
@@ -581,6 +585,23 @@ Partial Class frmRegistroInscripcion
         Me.SgcGroupBox2.TabIndex = 19
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Programación"
+        '
+        'colIdInv
+        '
+        Me.colIdInv.HeaderText = "idInvitado"
+        Me.colIdInv.Name = "colIdInv"
+        Me.colIdInv.Visible = False
+        '
+        'colINombres
+        '
+        Me.colINombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colINombres.HeaderText = "Nombres"
+        Me.colINombres.Name = "colINombres"
+        '
+        'colIDNI
+        '
+        Me.colIDNI.HeaderText = "DNI"
+        Me.colIDNI.Name = "colIDNI"
         '
         'frmRegistroInscripcion
         '
@@ -669,5 +690,8 @@ Partial Class frmRegistroInscripcion
     Friend WithEvents colRelacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colInscripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colPersona As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colIdInv As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colINombres As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colIDNI As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

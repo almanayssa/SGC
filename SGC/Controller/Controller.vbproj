@@ -71,6 +71,7 @@
     <Compile Include="AsistenciaPersonalBL.vb" />
     <Compile Include="CatTipoActividadBL.vb" />
     <Compile Include="ComiteBL.vb" />
+    <Compile Include="InvitadoBL.vb" />
     <Compile Include="EncuestaActividadBL.vb" />
     <Compile Include="IncidenciaBL.vb" />
     <Compile Include="OpcionXPerfilBL.vb" />
