@@ -25,6 +25,8 @@ Partial Class frmRegistroUsuario
         Me.components = New System.ComponentModel.Container()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
+        Me.txtEmail = New SGC_CS.SGCTextBox(Me.components)
         Me.txtApellido = New SGC_CS.SGCTextBox(Me.components)
         Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
@@ -35,7 +37,6 @@ Partial Class frmRegistroUsuario
         Me.txtCodigo = New SGC_CS.SGCTextBox(Me.components)
         Me.txtUsuario = New SGC_CS.SGCTextBox(Me.components)
         Me.cboPerfil = New SGC_CS.SGCComboBox(Me.components)
-        Me.cboSede = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
@@ -45,8 +46,6 @@ Partial Class frmRegistroUsuario
         Me.tsbEditar = New System.Windows.Forms.ToolStripButton()
         Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
         Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.SgcTextBox1 = New SGC_CS.SGCTextBox(Me.components)
-        Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -66,7 +65,7 @@ Partial Class frmRegistroUsuario
         'SgcGroupBox1
         '
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcTextBox1)
+        Me.SgcGroupBox1.Controls.Add(Me.txtEmail)
         Me.SgcGroupBox1.Controls.Add(Me.txtApellido)
         Me.SgcGroupBox1.Controls.Add(Me.txtNombre)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel6)
@@ -77,7 +76,6 @@ Partial Class frmRegistroUsuario
         Me.SgcGroupBox1.Controls.Add(Me.txtCodigo)
         Me.SgcGroupBox1.Controls.Add(Me.txtUsuario)
         Me.SgcGroupBox1.Controls.Add(Me.cboPerfil)
-        Me.SgcGroupBox1.Controls.Add(Me.cboSede)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel3)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
@@ -89,6 +87,27 @@ Partial Class frmRegistroUsuario
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Usuario"
         '
+        'SgcLabel4
+        '
+        Me.SgcLabel4.AutoSize = True
+        Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.SgcLabel4.Location = New System.Drawing.Point(141, 129)
+        Me.SgcLabel4.Name = "SgcLabel4"
+        Me.SgcLabel4.Size = New System.Drawing.Size(46, 18)
+        Me.SgcLabel4.TabIndex = 34
+        Me.SgcLabel4.Text = "Email:"
+        '
+        'txtEmail
+        '
+        Me.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtEmail.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtEmail.ForeColor = System.Drawing.Color.Black
+        Me.txtEmail.Location = New System.Drawing.Point(227, 127)
+        Me.txtEmail.Name = "txtEmail"
+        Me.txtEmail.Size = New System.Drawing.Size(121, 26)
+        Me.txtEmail.TabIndex = 33
+        '
         'txtApellido
         '
         Me.txtApellido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -96,7 +115,6 @@ Partial Class frmRegistroUsuario
         Me.txtApellido.ForeColor = System.Drawing.Color.Black
         Me.txtApellido.Location = New System.Drawing.Point(227, 191)
         Me.txtApellido.Name = "txtApellido"
-        Me.txtApellido.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtApellido.Size = New System.Drawing.Size(121, 26)
         Me.txtApellido.TabIndex = 32
         '
@@ -107,7 +125,6 @@ Partial Class frmRegistroUsuario
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
         Me.txtNombre.Location = New System.Drawing.Point(227, 159)
         Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtNombre.Size = New System.Drawing.Size(121, 26)
         Me.txtNombre.TabIndex = 31
         '
@@ -176,7 +193,7 @@ Partial Class frmRegistroUsuario
         Me.txtCodigo.Enabled = False
         Me.txtCodigo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodigo.ForeColor = System.Drawing.Color.Black
-        Me.txtCodigo.Location = New System.Drawing.Point(227, 31)
+        Me.txtCodigo.Location = New System.Drawing.Point(228, 31)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(100, 26)
         Me.txtCodigo.TabIndex = 25
@@ -202,18 +219,6 @@ Partial Class frmRegistroUsuario
         Me.cboPerfil.Name = "cboPerfil"
         Me.cboPerfil.Size = New System.Drawing.Size(121, 26)
         Me.cboPerfil.TabIndex = 4
-        '
-        'cboSede
-        '
-        Me.cboSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboSede.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cboSede.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboSede.ForeColor = System.Drawing.Color.Black
-        Me.cboSede.FormattingEnabled = True
-        Me.cboSede.Location = New System.Drawing.Point(226, 201)
-        Me.cboSede.Name = "cboSede"
-        Me.cboSede.Size = New System.Drawing.Size(121, 26)
-        Me.cboSede.TabIndex = 3
         '
         'SgcLabel3
         '
@@ -315,28 +320,6 @@ Partial Class frmRegistroUsuario
         Me.tsbCancelar.Text = "Cancelar"
         Me.tsbCancelar.Visible = False
         '
-        'SgcTextBox1
-        '
-        Me.SgcTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SgcTextBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcTextBox1.ForeColor = System.Drawing.Color.Black
-        Me.SgcTextBox1.Location = New System.Drawing.Point(227, 127)
-        Me.SgcTextBox1.Name = "SgcTextBox1"
-        Me.SgcTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.SgcTextBox1.Size = New System.Drawing.Size(121, 26)
-        Me.SgcTextBox1.TabIndex = 33
-        '
-        'SgcLabel4
-        '
-        Me.SgcLabel4.AutoSize = True
-        Me.SgcLabel4.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.SgcLabel4.Location = New System.Drawing.Point(141, 129)
-        Me.SgcLabel4.Name = "SgcLabel4"
-        Me.SgcLabel4.Size = New System.Drawing.Size(46, 18)
-        Me.SgcLabel4.TabIndex = 34
-        Me.SgcLabel4.Text = "Email:"
-        '
         'frmRegistroUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -363,7 +346,6 @@ Partial Class frmRegistroUsuario
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
     Friend WithEvents txtCodigo As SGC_CS.SGCTextBox
     Friend WithEvents txtUsuario As SGC_CS.SGCTextBox
-    Friend WithEvents cboSede As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
@@ -380,5 +362,5 @@ Partial Class frmRegistroUsuario
     Friend WithEvents cboPerfil As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
-    Friend WithEvents SgcTextBox1 As SGC_CS.SGCTextBox
+    Friend WithEvents txtEmail As SGC_CS.SGCTextBox
 End Class

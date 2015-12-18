@@ -6,7 +6,8 @@ Namespace SGC.Model.Interfaces
 
 #Region "Select"
 
-        Function ListarPantallas() As List(Of PantallaBE)
+        Function ListarOpciones() As List(Of PantallaBE)
+        Function ListarOpcionesXPerfil(ByVal id_perfil_usuario As Integer) As List(Of PantallaBE)
 
 #End Region
 

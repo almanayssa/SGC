@@ -7,6 +7,7 @@ Namespace SGC.Model.Interfaces
 #Region "Select"
 
         Function ListarPerfiles() As List(Of PerfilUsuarioBE)
+        Function ListarPerfilesBusqueda(ByVal nombre As String) As List(Of PerfilUsuarioBE)
         Function ObtenerPerfil(ByVal id_perfil As Integer) As PerfilUsuarioBE
 
 #End Region
@@ -14,6 +15,7 @@ Namespace SGC.Model.Interfaces
 #Region "Insert"
 
         Function InsertarPerfil(ByRef oPerfil As PerfilUsuarioBE) As Integer
+        Function InsertarOpcionXPerfil(ByRef oOpcion As PantallaBE) As Integer
 
 #End Region
 
@@ -25,6 +27,7 @@ Namespace SGC.Model.Interfaces
 
 #Region "Delete"
 
+        Function BorrarPerfil(ByVal id_Perfil_Usuario As Integer) As Integer
         Function BorrarOpcionesXPerfil(ByVal id_Perfil_Usuario As Integer) As Integer
 
 #End Region

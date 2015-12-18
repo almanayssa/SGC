@@ -522,6 +522,7 @@ Public Class frmRegistroActividad
 
     Private Sub tsbCancelar_Click(sender As System.Object, e As System.EventArgs) Handles tsbCancelar.Click
         If MsgBox("Seguro que desea cancelar la operación?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            CargarActividad(_id_actividad)
             FormularioEnModoVista()
         End If
     End Sub

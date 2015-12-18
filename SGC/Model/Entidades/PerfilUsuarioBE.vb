@@ -22,13 +22,13 @@
             End Set
         End Property
 
-        Private _ListadoOpcionesXPerfil As List(Of OpcionXPerfilBE)
-        Public Property ListadoOpcionesXPerfil() As List(Of OpcionXPerfilBE)
+        Private _ListaOpciones As List(Of PantallaBE)
+        Public Property ListaOpciones() As List(Of PantallaBE)
             Get
-                Return _ListadoOpcionesXPerfil
+                Return _ListaOpciones
             End Get
-            Set(ByVal value As List(Of OpcionXPerfilBE))
-                _ListadoOpcionesXPerfil = value
+            Set(ByVal value As List(Of PantallaBE))
+                _ListaOpciones = value
             End Set
         End Property
 

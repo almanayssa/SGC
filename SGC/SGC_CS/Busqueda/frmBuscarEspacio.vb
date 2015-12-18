@@ -64,7 +64,7 @@ Public Class frmBuscarEspacio
 
 #Region "Cargar"
 
-    Private Sub frmBuscarRecurso_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+    Private Sub frmBuscarEspacio_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ListarSedes()
         ListarLugares()
     End Sub

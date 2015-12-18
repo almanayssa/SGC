@@ -2,6 +2,16 @@
 
     Public Class UsuarioBE
 
+        Private _id_usuario As String
+        Public Property id_usuario() As String
+            Get
+                Return _id_usuario
+            End Get
+            Set(ByVal value As String)
+                _id_usuario = value
+            End Set
+        End Property
+
         Private _username As String
         Public Property username() As String
             Get

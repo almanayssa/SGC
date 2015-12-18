@@ -22,6 +22,16 @@
             End Set
         End Property
 
+        Private _id_perfil_usuario As Integer
+        Public Property id_perfil_usuario() As Integer
+            Get
+                Return _id_perfil_usuario
+            End Get
+            Set(ByVal value As Integer)
+                _id_perfil_usuario = value
+            End Set
+        End Property
+
     End Class
 
 End Namespace

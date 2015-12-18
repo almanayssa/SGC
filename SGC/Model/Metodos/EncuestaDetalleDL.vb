@@ -14,7 +14,7 @@ Namespace SGC.Model.Metodos
 
         Public Function ListarEncuestaDetalle(id_encuesta As Integer) As List(Of Entidades.EncuestaDetalleBE) Implements Interfaces.IEncuestaDetalle.ListarEncuestaDetalle
             Dim oListadoEncuestaDetalle As New List(Of EncuestaDetalleBE)
-            Dim oEncuestaDetalle As New EncuestaDetalleBE
+            Dim oEncuestaDetalle As EncuestaDetalleBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
             Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ENCUESTA_DETALLE", sqlConn)

@@ -29,18 +29,18 @@ Partial Class frmRegistroOpcion
         Me.lblCodigo = New SGC_CS.SGCLabel(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.txtCodigo = New SGC_CS.SGCTextBox(Me.components)
-        Me.txtEspacio = New SGC_CS.SGCTextBox(Me.components)
+        Me.txtPerfil = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.tsbEditar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
         Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvOpciones = New SGC_CS.SGCDataGridView(Me.components)
-        Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.colPantalla = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colPantallaID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.SgcGroupBox1.SuspendLayout()
         Me.tsMenu.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
@@ -64,7 +64,7 @@ Partial Class frmRegistroOpcion
         Me.SgcGroupBox1.Controls.Add(Me.lblCodigo)
         Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
         Me.SgcGroupBox1.Controls.Add(Me.txtCodigo)
-        Me.SgcGroupBox1.Controls.Add(Me.txtEspacio)
+        Me.SgcGroupBox1.Controls.Add(Me.txtPerfil)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel3)
         Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 127)
@@ -111,15 +111,16 @@ Partial Class frmRegistroOpcion
         Me.txtCodigo.Size = New System.Drawing.Size(100, 26)
         Me.txtCodigo.TabIndex = 25
         '
-        'txtEspacio
+        'txtPerfil
         '
-        Me.txtEspacio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtEspacio.ForeColor = System.Drawing.Color.Black
-        Me.txtEspacio.Location = New System.Drawing.Point(206, 58)
-        Me.txtEspacio.Name = "txtEspacio"
-        Me.txtEspacio.Size = New System.Drawing.Size(121, 26)
-        Me.txtEspacio.TabIndex = 5
+        Me.txtPerfil.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtPerfil.Enabled = False
+        Me.txtPerfil.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPerfil.ForeColor = System.Drawing.Color.Black
+        Me.txtPerfil.Location = New System.Drawing.Point(206, 58)
+        Me.txtPerfil.Name = "txtPerfil"
+        Me.txtPerfil.Size = New System.Drawing.Size(121, 26)
+        Me.txtPerfil.TabIndex = 5
         '
         'SgcLabel3
         '
@@ -138,7 +139,7 @@ Partial Class frmRegistroOpcion
         Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
         Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbLimpiar, Me.tsbGuardar, Me.tsbEditar, Me.tsbEliminar, Me.tsbCancelar})
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbLimpiar, Me.tsbGuardar, Me.tsbEditar, Me.tsbCancelar})
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 71)
         Me.tsMenu.Name = "tsMenu"
@@ -177,17 +178,6 @@ Partial Class frmRegistroOpcion
         Me.tsbEditar.Text = "Editar"
         Me.tsbEditar.Visible = False
         '
-        'tsbEliminar
-        '
-        Me.tsbEliminar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.tsbEliminar.Image = Global.SGC_CS.My.Resources.Resources.menu_eliminar
-        Me.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbEliminar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.tsbEliminar.Name = "tsbEliminar"
-        Me.tsbEliminar.Size = New System.Drawing.Size(93, 34)
-        Me.tsbEliminar.Text = "Eliminar"
-        Me.tsbEliminar.Visible = False
-        '
         'tsbCancelar
         '
         Me.tsbCancelar.BackColor = System.Drawing.Color.WhiteSmoke
@@ -219,17 +209,11 @@ Partial Class frmRegistroOpcion
         Me.dgvOpciones.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvOpciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvOpciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvOpciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSeleccionar, Me.colPantalla})
+        Me.dgvOpciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSeleccionar, Me.colPantallaID, Me.colPantalla})
         Me.dgvOpciones.Location = New System.Drawing.Point(13, 25)
         Me.dgvOpciones.Name = "dgvOpciones"
         Me.dgvOpciones.Size = New System.Drawing.Size(564, 290)
         Me.dgvOpciones.TabIndex = 0
-        '
-        'colSeleccionar
-        '
-        Me.colSeleccionar.HeaderText = ""
-        Me.colSeleccionar.Name = "colSeleccionar"
-        Me.colSeleccionar.Width = 30
         '
         'colPantalla
         '
@@ -238,6 +222,16 @@ Partial Class frmRegistroOpcion
         Me.colPantalla.Name = "colPantalla"
         Me.colPantalla.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.colPantalla.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'colPantallaID
+        '
+        Me.colPantallaID.Name = "colPantallaID"
+        Me.colPantallaID.Visible = False
+        '
+        'colSeleccionar
+        '
+        Me.colSeleccionar.Name = "colSeleccionar"
+        Me.colSeleccionar.Width = 30
         '
         'frmRegistroOpcion
         '
@@ -268,16 +262,16 @@ Partial Class frmRegistroOpcion
     Friend WithEvents lblCodigo As SGC_CS.SGCLabel
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
     Friend WithEvents txtCodigo As SGC_CS.SGCTextBox
-    Friend WithEvents txtEspacio As SGC_CS.SGCTextBox
+    Friend WithEvents txtPerfil As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
     Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbEditar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents tsbEliminar As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbCancelar As System.Windows.Forms.ToolStripButton
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
     Friend WithEvents dgvOpciones As SGC_CS.SGCDataGridView
     Friend WithEvents colSeleccionar As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents colPantallaID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colPantalla As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

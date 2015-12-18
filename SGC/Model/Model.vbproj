@@ -143,7 +143,6 @@
     <Compile Include="Interfaces\IEncuestaActividad.vb" />
     <Compile Include="Interfaces\IEncuestaDetalle.vb" />
     <Compile Include="Interfaces\IIncidencia.vb" />
-    <Compile Include="Interfaces\IOpcionXPerfil.vb" />
     <Compile Include="Interfaces\IPantalla.vb" />
     <Compile Include="Interfaces\IPerfilUsuario.vb" />
     <Compile Include="Interfaces\IInscripcion.vb" />
@@ -179,7 +178,7 @@
     <Compile Include="Metodos\EncuestaActividadDL.vb" />
     <Compile Include="Metodos\EncuestaDetalleDL.vb" />
     <Compile Include="Metodos\IncidenciaDL.vb" />
-    <Compile Include="Metodos\OpcionXPerfilDL.vb" />
+    <Compile Include="Metodos\PantallaDL.vb" />
     <Compile Include="Metodos\PerfilUsuarioDL.vb" />
     <Compile Include="Metodos\InscripcionDL.vb" />
     <Compile Include="Metodos\PersonaDL.vb" />

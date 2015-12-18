@@ -130,6 +130,12 @@
     <Compile Include="Actividad\frmRegistroActividadRecurrente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busqueda\frmBuscarPerfil.Designer.vb">
+      <DependentUpon>frmBuscarPerfil.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarPerfil.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Busqueda\frmBuscarInvitado.Designer.vb">
       <DependentUpon>frmBuscarInvitado.vb</DependentUpon>
     </Compile>
@@ -182,6 +188,12 @@
       <DependentUpon>frmBuscarRecurso.vb</DependentUpon>
     </Compile>
     <Compile Include="Busqueda\frmBuscarRecurso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarUsuario.Designer.vb">
+      <DependentUpon>frmBuscarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controles\SGCListBox.Designer.vb">
@@ -436,6 +448,9 @@
     <EmbeddedResource Include="Actividad\frmRegistroActividadRecurrente.resx">
       <DependentUpon>frmRegistroActividadRecurrente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBuscarPerfil.resx">
+      <DependentUpon>frmBuscarPerfil.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBuscarInvitado.resx">
       <DependentUpon>frmBuscarInvitado.vb</DependentUpon>
     </EmbeddedResource>
@@ -462,6 +477,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBuscarRecurso.resx">
       <DependentUpon>frmBuscarRecurso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBuscarUsuario.resx">
+      <DependentUpon>frmBuscarUsuario.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCButton.resx">
       <DependentUpon>SGCButton.vb</DependentUpon>

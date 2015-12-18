@@ -74,7 +74,7 @@
     <Compile Include="InvitadoBL.vb" />
     <Compile Include="EncuestaActividadBL.vb" />
     <Compile Include="IncidenciaBL.vb" />
-    <Compile Include="OpcionXPerfilBL.vb" />
+    <Compile Include="PantallaBL.vb" />
     <Compile Include="PerfilUsuarioBL.vb" />
     <Compile Include="InscripcionBL.vb" />
     <Compile Include="PersonaBL.vb" />
