@@ -91,22 +91,22 @@
             End Set
         End Property
 
-        Private _tot_doc As Decimal
-        Public Property tot_doc() As Decimal
+        Private _tot_doc As Decimal?
+        Public Property tot_doc() As Decimal?
             Get
                 Return _tot_doc
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _tot_doc = value
             End Set
         End Property
 
-        Private _pago As Decimal
-        Public Property pago() As Decimal
+        Private _pago As Decimal?
+        Public Property pago() As Decimal?
             Get
                 Return _pago
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _pago = value
             End Set
         End Property
@@ -121,22 +121,22 @@
             End Set
         End Property
 
-        Private _fec_canc As DateTime
-        Public Property fec_canc() As DateTime
+        Private _fec_canc As DateTime?
+        Public Property fec_canc() As DateTime?
             Get
                 Return _fec_canc
             End Get
-            Set(ByVal value As DateTime)
+            Set(ByVal value As DateTime?)
                 _fec_canc = value
             End Set
         End Property
 
-        Private _id_tipo_pago As Integer
-        Public Property id_tipo_pago() As Integer
+        Private _id_tipo_pago As Integer?
+        Public Property id_tipo_pago() As Integer?
             Get
                 Return _id_tipo_pago
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_tipo_pago = value
             End Set
         End Property
@@ -171,12 +171,12 @@
             End Set
         End Property
 
-        Private _pago_dolares As Decimal
-        Public Property pago_dolares() As Decimal
+        Private _pago_dolares As Decimal?
+        Public Property pago_dolares() As Decimal?
             Get
                 Return _pago_dolares
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _pago_dolares = value
             End Set
         End Property

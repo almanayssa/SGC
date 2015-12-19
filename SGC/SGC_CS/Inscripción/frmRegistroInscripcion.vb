@@ -76,6 +76,9 @@ Public Class frmRegistroInscripcion
             If frm.PersonaSeleccionada IsNot Nothing Then
                 AgregarInscrito(frm.PersonaSeleccionada)
             End If
+
+            CalcularMonto()
+
         Else
             MsgBox("Ingresar codigo del asociado")
         End If
@@ -91,6 +94,8 @@ Public Class frmRegistroInscripcion
 
                 dgvInscritos.DataSource = Nothing
                 dgvInscritos.DataSource = lista
+
+                CalcularMonto()
 
             Catch ex As Exception
                 MsgBox(ex.Message)
@@ -124,6 +129,9 @@ Public Class frmRegistroInscripcion
             If frm.InvitadoSeleccionado IsNot Nothing Then
                 AgregarInvitado(frm.InvitadoSeleccionado)
             End If
+
+            CalcularMonto()
+
         Else
             MsgBox("Ingresar codigo del asociado")
         End If
@@ -140,6 +148,8 @@ Public Class frmRegistroInscripcion
                 dgvInvitados.DataSource = Nothing
                 dgvInvitados.DataSource = lista
 
+                CalcularMonto()
+
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
@@ -150,6 +160,20 @@ Public Class frmRegistroInscripcion
 #End Region
 
 #Region "Métodos Personalizados"
+
+    Private Sub CalcularMonto()
+        Dim cantIns As Integer = 0
+
+        If ListadoPersona IsNot Nothing Then
+            cantIns += ListadoPersona.Count
+        End If
+
+        If ListadoInvitado IsNot Nothing Then
+            cantIns += ListadoInvitado.Count
+        End If
+
+        nudMonto.Value = Actividad.monto_pago * cantIns
+    End Sub
 
     Private Sub CargarActividad(ByVal id_actividad As String)
         Dim oActividad As ActividadBE = bc.CargarActividadCabecera(id_actividad)
@@ -363,6 +387,8 @@ Public Class frmRegistroInscripcion
         ListadoPersona.Add(oPersona)
         dgvInscritos.DataSource = Nothing
         dgvInscritos.DataSource = ListadoPersona
+
+
     End Sub
 
     Private Sub AgregarInvitado(ByRef oInvitado As InvitadoBE)
@@ -410,11 +436,22 @@ Public Class frmRegistroInscripcion
 
         oInscripcion.id_inscripcion = bc.InsertarInscripcion(oInscripcion)
 
+        Dim oDocVen As New DocVenBE
+
+        If Actividad.monto_pago > 0 Then
+            If nudMonto.Value = 0 OrElse txtSerie.Text.Trim = String.Empty OrElse txtNumDoc.Text.Trim = String.Empty Then
+                oDocVen = CrearDocumento(oInscripcion)
+            End If
+        End If
+
         If oInscripcion.id_inscripcion = 0 Then
             MessageBox.Show("Error al grabar", "Información")
         Else
             _id_inscripcion = oInscripcion.id_inscripcion
             MessageBox.Show("La inscripción se registró satisfactoriamente", "Información")
+            If oDocVen IsNot Nothing Then
+                MessageBox.Show("Se generó el documento " & oDocVen.id_serie & " - " & oDocVen.id_correlativo, "Información")
+            End If
 
         End If
     End Sub
@@ -426,21 +463,20 @@ Public Class frmRegistroInscripcion
             msg &= vbCrLf & "- Ingrese una actividad"
         End If
 
-        If Actividad.monto_pago > 0 Then
-            If nudMonto.Value = 0 Then
-                msg &= vbCrLf & "- Ingrese un monto de pago"
-            End If
-
-            If txtSerie.Text.Trim = String.Empty Then
-                msg &= vbCrLf & "- Ingrese una serie de documento"
-            End If
-
-            If txtNumDoc.Text.Trim = String.Empty Then
-                msg &= vbCrLf & "- Ingrese un correlativo de documento"
-            End If
-        End If
-
         Return msg
+    End Function
+
+    Private Function CrearDocumento(ByRef oInscripcion As InscripcionBE) As DocVenBE
+
+        Dim oDocVen As New DocVenBE
+        oDocVen.id_entidad = _id_socio
+        oDocVen.obs_doc = txtActividad.Text
+        oDocVen.tot_mon = nudMonto.Value
+
+        oDocVen = bc.InsertarDocVen(oDocVen)
+
+        Return oDocVen
+
     End Function
 
 #End Region

@@ -11,62 +11,62 @@
             End Set
         End Property
 
-        Private _mon_art_pro As Decimal
-        Public Property mon_art_pro() As Decimal
+        Private _mon_art_pro As Decimal?
+        Public Property mon_art_pro() As Decimal?
             Get
                 Return _mon_art_pro
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _mon_art_pro = value
             End Set
         End Property
 
-        Private _mora As Decimal
-        Public Property mora() As Decimal
+        Private _mora As Decimal?
+        Public Property mora() As Decimal?
             Get
                 Return _mora
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _mora = value
             End Set
         End Property
 
-        Private _gasto As Decimal
-        Public Property gasto() As Decimal
+        Private _gasto As Decimal?
+        Public Property gasto() As Decimal?
             Get
                 Return _gasto
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _gasto = value
             End Set
         End Property
 
-        Private _igv As Decimal
-        Public Property igv() As Decimal
+        Private _igv As Decimal?
+        Public Property igv() As Decimal?
             Get
                 Return _igv
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _igv = value
             End Set
         End Property
 
-        Private _detraccion As Decimal
-        Public Property detraccion() As Decimal
+        Private _detraccion As Decimal?
+        Public Property detraccion() As Decimal?
             Get
                 Return _detraccion
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _detraccion = value
             End Set
         End Property
 
-        Private _utilidad As Decimal
-        Public Property utilidad() As Decimal
+        Private _utilidad As Decimal?
+        Public Property utilidad() As Decimal?
             Get
                 Return _utilidad
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _utilidad = value
             End Set
         End Property
@@ -101,32 +101,32 @@
             End Set
         End Property
 
-        Private _id_articulo As Integer
-        Public Property id_articulo() As Integer
+        Private _id_articulo As Integer?
+        Public Property id_articulo() As Integer?
             Get
                 Return _id_articulo
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_articulo = value
             End Set
         End Property
 
-        Private _id_subconcepto As Integer
-        Public Property id_subconcepto() As Integer
+        Private _id_subconcepto As Integer?
+        Public Property id_subconcepto() As Integer?
             Get
                 Return _id_subconcepto
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_subconcepto = value
             End Set
         End Property
 
-        Private _id_concepto As Integer
-        Public Property id_concepto() As Integer
+        Private _id_concepto As Integer?
+        Public Property id_concepto() As Integer?
             Get
                 Return _id_concepto
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_concepto = value
             End Set
         End Property
@@ -141,22 +141,22 @@
             End Set
         End Property
 
-        Private _precio_art_pro As Decimal
-        Public Property precio_art_pro() As Decimal
+        Private _precio_art_pro As Decimal?
+        Public Property precio_art_pro() As Decimal?
             Get
                 Return _precio_art_pro
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _precio_art_pro = value
             End Set
         End Property
 
-        Private _cant_art_pro As Integer
-        Public Property cant_art_pro() As Integer
+        Private _cant_art_pro As Integer?
+        Public Property cant_art_pro() As Integer?
             Get
                 Return _cant_art_pro
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _cant_art_pro = value
             End Set
         End Property

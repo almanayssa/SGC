@@ -244,6 +244,12 @@
     <Compile Include="Ejecucion\frmRegistroIncidencias.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Inscripción\frmListadoDocumentos.Designer.vb">
+      <DependentUpon>frmListadoDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Inscripción\frmListadoDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inscripción\frmRegistroInscripcion.Designer.vb">
       <DependentUpon>frmRegistroInscripcion.vb</DependentUpon>
     </Compile>
@@ -540,6 +546,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="General\MDI.resx">
       <DependentUpon>MDI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inscripción\frmListadoDocumentos.resx">
+      <DependentUpon>frmListadoDocumentos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inscripción\frmRegistroInscripcion.resx">
       <DependentUpon>frmRegistroInscripcion.vb</DependentUpon>

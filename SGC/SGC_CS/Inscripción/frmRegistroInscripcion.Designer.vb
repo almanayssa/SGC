@@ -65,12 +65,12 @@ Partial Class frmRegistroInscripcion
         Me.btnQuitarInvitado = New SGC_CS.SGCButton(Me.components)
         Me.btnAgregarInvitado = New SGC_CS.SGCButton(Me.components)
         Me.dgvInvitados = New SGC_CS.SGCDataGridView(Me.components)
-        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.colIdInv = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colINombres = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colIDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
+        Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.tsMenu.SuspendLayout()
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox1.SuspendLayout()
@@ -222,6 +222,7 @@ Partial Class frmRegistroInscripcion
         '
         'nudMonto
         '
+        Me.nudMonto.DecimalPlaces = 2
         Me.nudMonto.Location = New System.Drawing.Point(297, 24)
         Me.nudMonto.Name = "nudMonto"
         Me.nudMonto.Size = New System.Drawing.Size(69, 26)
@@ -552,6 +553,23 @@ Partial Class frmRegistroInscripcion
         Me.dgvInvitados.Size = New System.Drawing.Size(410, 126)
         Me.dgvInvitados.TabIndex = 1
         '
+        'colIdInv
+        '
+        Me.colIdInv.HeaderText = "idInvitado"
+        Me.colIdInv.Name = "colIdInv"
+        Me.colIdInv.Visible = False
+        '
+        'colINombres
+        '
+        Me.colINombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colINombres.HeaderText = "Nombres"
+        Me.colINombres.Name = "colINombres"
+        '
+        'colIDNI
+        '
+        Me.colIDNI.HeaderText = "DNI"
+        Me.colIDNI.Name = "colIDNI"
+        '
         'lblTitulo
         '
         Me.lblTitulo.AutoSize = True
@@ -585,23 +603,6 @@ Partial Class frmRegistroInscripcion
         Me.SgcGroupBox2.TabIndex = 19
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Programación"
-        '
-        'colIdInv
-        '
-        Me.colIdInv.HeaderText = "idInvitado"
-        Me.colIdInv.Name = "colIdInv"
-        Me.colIdInv.Visible = False
-        '
-        'colINombres
-        '
-        Me.colINombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colINombres.HeaderText = "Nombres"
-        Me.colINombres.Name = "colINombres"
-        '
-        'colIDNI
-        '
-        Me.colIDNI.HeaderText = "DNI"
-        Me.colIDNI.Name = "colIDNI"
         '
         'frmRegistroInscripcion
         '

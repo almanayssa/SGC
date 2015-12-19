@@ -51,62 +51,62 @@
             End Set
         End Property
 
-        Private _fec_ven As DateTime
-        Public Property fec_ven() As DateTime
+        Private _fec_ven As DateTime?
+        Public Property fec_ven() As DateTime?
             Get
                 Return _fec_ven
             End Get
-            Set(ByVal value As DateTime)
+            Set(ByVal value As DateTime?)
                 _fec_ven = value
             End Set
         End Property
 
-        Private _mon_bru As Decimal
-        Public Property mon_bru() As Decimal
+        Private _mon_bru As Decimal?
+        Public Property mon_bru() As Decimal?
             Get
                 Return _mon_bru
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _mon_bru = value
             End Set
         End Property
 
-        Private _igv As Decimal
-        Public Property igv() As Decimal
+        Private _igv As Decimal?
+        Public Property igv() As Decimal?
             Get
                 Return _igv
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _igv = value
             End Set
         End Property
 
-        Private _tot_mon As Decimal
-        Public Property tot_mon() As Decimal
+        Private _tot_mon As Decimal?
+        Public Property tot_mon() As Decimal?
             Get
                 Return _tot_mon
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _tot_mon = value
             End Set
         End Property
 
-        Private _flg_prv As Boolean
-        Public Property flg_prv() As Boolean
+        Private _flg_prv As Boolean?
+        Public Property flg_prv() As Boolean?
             Get
                 Return _flg_prv
             End Get
-            Set(ByVal value As Boolean)
+            Set(ByVal value As Boolean?)
                 _flg_prv = value
             End Set
         End Property
 
-        Private _flg_art As Boolean
-        Public Property flg_art() As Boolean
+        Private _flg_art As Boolean?
+        Public Property flg_art() As Boolean?
             Get
                 Return _flg_art
             End Get
-            Set(ByVal value As Boolean)
+            Set(ByVal value As Boolean?)
                 _flg_art = value
             End Set
         End Property
@@ -121,12 +121,12 @@
             End Set
         End Property
 
-        Private _sal_doc As Decimal
-        Public Property sal_doc() As Decimal
+        Private _sal_doc As Decimal?
+        Public Property sal_doc() As Decimal?
             Get
                 Return _sal_doc
             End Get
-            Set(ByVal value As Decimal)
+            Set(ByVal value As Decimal?)
                 _sal_doc = value
             End Set
         End Property
