@@ -27,7 +27,6 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@tot_doc", SqlDbType.Decimal).Value = IIf(oDocumento.tot_doc Is Nothing, DBNull.Value, oDocumento.tot_doc)
             sqlCmd.Parameters.Add("@pago", SqlDbType.Decimal).Value = IIf(oDocumento.pago Is Nothing, DBNull.Value, oDocumento.pago)
             sqlCmd.Parameters.Add("@id_tipo_plan", SqlDbType.Int).Value = 1
-            sqlCmd.Parameters.Add("@fec_canc", SqlDbType.DateTime).Value = IIf(oDocumento.fec_canc Is Nothing, DBNull.Value, oDocumento.fec_canc)
             sqlCmd.Parameters.Add("@id_tipo_pago", SqlDbType.Int).Value = IIf(oDocumento.id_tipo_pago Is Nothing, DBNull.Value, oDocumento.id_tipo_pago)
             sqlCmd.Parameters.Add("@id_sede", SqlDbType.VarChar).Value = IIf(oDocumento.id_sede Is Nothing, DBNull.Value, oDocumento.id_sede)
             sqlCmd.Parameters.Add("@id_moneda", SqlDbType.VarChar).Value = "001"

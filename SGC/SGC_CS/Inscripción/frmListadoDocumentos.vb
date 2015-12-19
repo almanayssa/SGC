@@ -13,21 +13,20 @@ Public Class frmListadoDocumentos
 
         dgvListadoDoc.AutoGenerateColumns = False
 
-        colSerie.DataPropertyName = "nombre"
-        colCorrelativo.DataPropertyName = "nombre"
-        colConcepto.DataPropertyName = "nombre"
-        colObservacion.DataPropertyName = "nombre"
-        colTipo.DataPropertyName = "nombre"
-        colMoneda.DataPropertyName = "nombre"
-        colTotal.DataPropertyName = "nombre"
-        colSaldo.DataPropertyName = "nombre"
-        colFecha.DataPropertyName = "nombre"
+        colSerie.DataPropertyName = "id_serie"
+        colCorrelativo.DataPropertyName = "id_correlativo"
+        colObservacion.DataPropertyName = "obs_doc"
+        colTipo.DataPropertyName = "tipo_doc"
+        colMoneda.DataPropertyName = "abr_mon"
+        colTotal.DataPropertyName = "tot_mon"
+        colSaldo.DataPropertyName = "sal_doc"
+        colFecha.DataPropertyName = "fec_reg"
         colFecha.ValueType = GetType(DateTime)
         colFecha.DefaultCellStyle.Format = "dd/MM/yyyy"
-        colVencimiento.DataPropertyName = "nombre"
+        colVencimiento.DataPropertyName = "fec_ven"
         colVencimiento.ValueType = GetType(DateTime)
         colVencimiento.DefaultCellStyle.Format = "dd/MM/yyyy"
-        colEstado.DataPropertyName = "nombre"
+        colEstado.DataPropertyName = "est_doc"
 
 
 
@@ -35,13 +34,13 @@ Public Class frmListadoDocumentos
 
 #Region "Propiedades"
 
-    Private _Socio As SocioBE
-    Public Property Socio() As SocioBE
+    Private _id_socio As String
+    Public Property id_socio() As String
         Get
-            Return _Socio
+            Return _id_socio
         End Get
-        Set(ByVal value As SocioBE)
-            _Socio = value
+        Set(ByVal value As String)
+            _id_socio = value
         End Set
     End Property
 
@@ -60,7 +59,7 @@ Public Class frmListadoDocumentos
 #End Region
 
     Private Sub frmListadoDocumentos_Load(sender As Object, e As System.EventArgs) Handles Me.Load
-        Dim ListadoDocs As List(Of DocVenBE) = bc.ListarDocumentos(_Socio.id_socio)
+        Dim ListadoDocs As List(Of DocVenBE) = bc.ListarDocumentos(id_socio)
         dgvListadoDoc.DataSource = Nothing
         dgvListadoDoc.DataSource = ListadoDocs
     End Sub

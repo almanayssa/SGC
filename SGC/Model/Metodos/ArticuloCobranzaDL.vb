@@ -11,6 +11,60 @@ Namespace SGC.Model.Metodos
         Implements IArticuloCobranza
 
 
+#Region "Select"
+
+        Public Function ListarArticulosCobranza(id_Serie As String, id_correlativo As String, id_tipo_doc As String) As System.Collections.Generic.List(Of Entidades.ArticuloCobranzaBE) Implements Interfaces.IArticuloCobranza.ListarArticulosCobranza
+            Dim oListadoArticulosCob As New List(Of ArticuloCobranzaBE)
+            Dim oArticuloCob As ArticuloCobranzaBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ARTICULO_DOC", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_serie", SqlDbType.VarChar).Value = id_Serie
+            sqlCmd.Parameters.Add("@id_correlativo", SqlDbType.VarChar).Value = id_correlativo
+            sqlCmd.Parameters.Add("@id_tipo_doc", SqlDbType.VarChar).Value = id_tipo_doc
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oArticuloCob = New ArticuloCobranzaBE
+                    oArticuloCob.id_articulo_cobranza = dr("id_articulo_cobranza")
+                    oArticuloCob.id_serie = dr("id_serie")
+                    oArticuloCob.id_correlativo = dr("id_correlativo")
+                    oArticuloCob.mon_art_pro = dr("mon_art_pro")
+                    oArticuloCob.id_tipo_doc = dr("id_tipo_doc")
+                    oArticuloCob.id_articulo = dr("id_articulo")
+                    oArticuloCob.articulo = dr("articulo")
+                    oArticuloCob.mon_art_pro = dr("mon_art_pro")
+                    oArticuloCob.igv = dr("igv")
+                    oArticuloCob.abr_mon = dr("abr_mon")
+                    oArticuloCob.mora = dr("mora")
+                    oArticuloCob.gasto = dr("gasto")
+                    oArticuloCob.igv = dr("igv")
+                    oArticuloCob.id_subconcepto = dr("id_subconcepto")
+                    oArticuloCob.id_concepto = dr("id_concepto")
+                    oArticuloCob.precio_art_pro = dr("precio_art_pro")
+                    oArticuloCob.id_moneda = dr("id_moneda")
+                    oArticuloCob.cant_art_pro = dr("cant_art_pro")
+                    oArticuloCob.obs_art_pro = dr("obs_art_pro")
+                    oArticuloCob.concepto = dr("concepto")
+                    oArticuloCob.abr_mon = dr("abr_mon")
+
+                    oListadoArticulosCob.Add(oArticuloCob)
+                End While
+                dr.Close()
+                Return oListadoArticulosCob
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+#End Region
 
 #Region "Insert"
 
@@ -52,7 +106,6 @@ Namespace SGC.Model.Metodos
         End Function
 
 #End Region
-
 
     End Class
 End Namespace

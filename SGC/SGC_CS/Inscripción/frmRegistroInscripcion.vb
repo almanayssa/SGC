@@ -157,6 +157,7 @@ Public Class frmRegistroInscripcion
             MsgBox("Debe Seleccionar un Elemento para Quitarlo", MsgBoxStyle.Information)
         End If
     End Sub
+
 #End Region
 
 #Region "Métodos Personalizados"
@@ -470,7 +471,7 @@ Public Class frmRegistroInscripcion
 
         Dim oDocVen As New DocVenBE
         oDocVen.id_entidad = _id_socio
-        oDocVen.obs_doc = txtActividad.Text
+        oDocVen.obs_doc = "Actividad: " & Actividad.nombre & " Tipo de Actividad: " & Actividad.desc_tipo & " Comite: " & Actividad.nombrecomite
         oDocVen.tot_mon = nudMonto.Value
 
         oDocVen = bc.InsertarDocVen(oDocVen)

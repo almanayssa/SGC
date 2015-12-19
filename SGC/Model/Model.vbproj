@@ -137,6 +137,7 @@
     <Compile Include="Entidades\TipoRegistroInvitadoBE.vb" />
     <Compile Include="Entidades\TipoTransaccionBE.vb" />
     <Compile Include="Entidades\TransaccionBE.vb" />
+    <Compile Include="Interfaces\ITipoPago.vb" />
     <Compile Include="Interfaces\ICanjeAdelantos.vb" />
     <Compile Include="Interfaces\IArticuloCobranza.vb" />
     <Compile Include="Interfaces\IDocVen.vb" />
@@ -179,6 +180,7 @@
     <Compile Include="Interfaces\IComite.vb" />
     <Compile Include="Metodos\ArticuloCobranzaDL.vb" />
     <Compile Include="Metodos\CanjeAdelantosDL.vb" />
+    <Compile Include="Metodos\TipoPagoDL.vb" />
     <Compile Include="Metodos\DocVenDL.vb" />
     <Compile Include="Metodos\InvitadoDL.vb" />
     <Compile Include="Metodos\EncuestaActividadDL.vb" />

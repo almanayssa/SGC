@@ -24,7 +24,6 @@ Partial Class frmListadoDocumentos
         Me.dgvListadoDoc = New SGC_CS.SGCDataGridView(Me.components)
         Me.colSerie = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colCorrelativo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colConcepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colObservacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colMoneda = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,7 +44,7 @@ Partial Class frmListadoDocumentos
         Me.dgvListadoDoc.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListadoDoc.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListadoDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListadoDoc.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSerie, Me.colCorrelativo, Me.colConcepto, Me.colObservacion, Me.colTipo, Me.colMoneda, Me.colTotal, Me.colSaldo, Me.colFecha, Me.colVencimiento, Me.colEstado})
+        Me.dgvListadoDoc.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSerie, Me.colCorrelativo, Me.colObservacion, Me.colTipo, Me.colMoneda, Me.colTotal, Me.colSaldo, Me.colFecha, Me.colVencimiento, Me.colEstado})
         Me.dgvListadoDoc.Location = New System.Drawing.Point(12, 21)
         Me.dgvListadoDoc.Name = "dgvListadoDoc"
         Me.dgvListadoDoc.Size = New System.Drawing.Size(751, 233)
@@ -64,13 +63,6 @@ Partial Class frmListadoDocumentos
         Me.colCorrelativo.HeaderText = "Correlativo"
         Me.colCorrelativo.Name = "colCorrelativo"
         Me.colCorrelativo.Width = 102
-        '
-        'colConcepto
-        '
-        Me.colConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.colConcepto.HeaderText = "Concepto"
-        Me.colConcepto.Name = "colConcepto"
-        Me.colConcepto.Width = 92
         '
         'colObservacion
         '
@@ -141,7 +133,6 @@ Partial Class frmListadoDocumentos
     Friend WithEvents dgvListadoDoc As SGC_CS.SGCDataGridView
     Friend WithEvents colSerie As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colCorrelativo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colConcepto As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colObservacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colTipo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colMoneda As System.Windows.Forms.DataGridViewTextBoxColumn

@@ -25,11 +25,11 @@ Namespace SGC.Model.Metodos
                 sqlConn.Open()
                 dr = sqlCmd.ExecuteReader()
 
-                While dr.Read()
+                If dr.Read() Then
                     oDoc = New DocVenBE
                     oDoc.id_serie = dr("id_serie")
                     oDoc.id_correlativo = dr("id_correlativo")
-                End While
+                End If
                 dr.Close()
                 Return oDoc
             Catch ex As System.Exception
@@ -59,12 +59,15 @@ Namespace SGC.Model.Metodos
                     oDocumento.id_correlativo = dr("id_correlativo")
                     oDocumento.id_entidad = dr("id_entidad")
                     oDocumento.id_est_doc = dr("id_est_doc")
+                    oDocumento.est_doc = dr("est_doc")
                     oDocumento.fec_reg = dr("fec_reg")
                     oDocumento.fec_ven = dr("fec_ven")
                     oDocumento.mon_bru = dr("mon_bru")
                     oDocumento.igv = dr("igv")
+                    oDocumento.abr_mon = dr("abr_mon")
                     oDocumento.tot_mon = dr("tot_mon")
                     oDocumento.id_tipo_doc = dr("id_tipo_doc")
+                    oDocumento.tipo_doc = dr("tipo_doc")
                     oDocumento.sal_doc = dr("sal_doc")
                     oDocumento.obs_doc = dr("obs_doc")
                     oDocumento.mon_det = dr("mon_det")

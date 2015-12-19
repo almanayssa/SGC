@@ -191,6 +191,10 @@
             End Set
         End Property
 
+        Public Property articulo As String
+        Public Property abr_mon As String
+        Public Property concepto As String
+
     End Class
 End Namespace
 

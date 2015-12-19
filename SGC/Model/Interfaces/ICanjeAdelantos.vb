@@ -2,11 +2,11 @@
 
 Namespace SGC.Model.Interfaces
 
-    Public Interface IArticuloCobranza
+    Public Interface ICanjeAdelantos
 
 #Region "Insert"
 
-        Function InsertarArticuloCobranza(ByRef oDocumento As ArticuloCobranzaBE) As Integer
+        Function InsertarCanjeAdelantos(ByRef oDocumento As CanjeAdelantosBE) As Integer
 
 #End Region
 

@@ -2,11 +2,17 @@
 
 Namespace SGC.Model.Interfaces
 
-    Public Interface ICanjeAdelantos
+    Public Interface IArticuloCobranza
+
+#Region "Select"
+
+        Function ListarArticulosCobranza(ByVal id_Serie As String, ByVal id_correlativo As String, ByVal id_tipo_doc As String) As List(Of ArticuloCobranzaBE)
+
+#End Region
 
 #Region "Insert"
 
-        Function InsertarCanjeAdelantos(ByRef oDocumento As CanjeAdelantosBE) As Integer
+        Function InsertarArticuloCobranza(ByRef oDocumento As ArticuloCobranzaBE) As Integer
 
 #End Region
 

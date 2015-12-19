@@ -221,6 +221,10 @@
             End Set
         End Property
 
+        Public Property tipo_doc As String
+        Public Property est_doc As String
+        Public Property abr_mon As String
+
     End Class
 End Namespace
 
