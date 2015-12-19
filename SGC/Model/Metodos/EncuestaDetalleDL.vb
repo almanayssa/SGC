@@ -30,9 +30,9 @@ Namespace SGC.Model.Metodos
                     oEncuestaDetalle = New EncuestaDetalleBE
                     oEncuestaDetalle.id_detalle = dr("id_detalle")
                     oEncuestaDetalle.pregunta = dr("pregunta")
-                    oEncuestaDetalle.pregunta = dr("opcion1")
-                    oEncuestaDetalle.pregunta = dr("opcion2")
-                    oEncuestaDetalle.pregunta = dr("opcion3")
+                    oEncuestaDetalle.opcion1 = dr("opcion1")
+                    oEncuestaDetalle.opcion2 = dr("opcion2")
+                    oEncuestaDetalle.opcion3 = dr("opcion3")
                     oListadoEncuestaDetalle.Add(oEncuestaDetalle)
                 End While
                 dr.Close()
@@ -51,7 +51,7 @@ Namespace SGC.Model.Metodos
         Public Function InsertarEncuestaDetalle(ByRef oEncuestaDetalle As Entidades.EncuestaDetalleBE) As Integer Implements Interfaces.IEncuestaDetalle.InsertarEncuestaDetalle
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
-            Dim sqlCmd As New SqlCommand("comite.SP_INSERTAR_ENCUESTA", sqlConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_INSERTAR_ENCUESTA_DETALLE", sqlConn)
 
             Dim recordId As Integer = 0
             sqlCmd.CommandType = CommandType.StoredProcedure

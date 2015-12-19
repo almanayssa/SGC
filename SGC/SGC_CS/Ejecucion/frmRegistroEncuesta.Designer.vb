@@ -21,7 +21,7 @@ Partial Class frmRegistroEncuesta
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroEncuesta))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.txtActividad = New SGC_CS.SGCTextBox(Me.components)
@@ -207,9 +207,9 @@ Partial Class frmRegistroEncuesta
         '
         Me.dgvPreguntas.AllowUserToAddRows = False
         Me.dgvPreguntas.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvPreguntas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvPreguntas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvPreguntas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPreguntas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize

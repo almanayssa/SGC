@@ -131,6 +131,11 @@ Public Class frmHabilitarActividad
         dgvRecursos.DataSource = Nothing
         dgvPersonal.DataSource = Nothing
 
+        ListadoActividadDetalles = Nothing
+        ListadoPersonal = Nothing
+        ListadoRecursos = Nothing
+        ListadoRestricciones = Nothing
+        ListadoTipoPersonal = Nothing
         oPersonalPendiente = Nothing
 
     End Sub
@@ -139,6 +144,10 @@ Public Class frmHabilitarActividad
         Dim msg As String = String.Empty
 
         For Each row As DataGridViewRow In dgvRecursos.Rows
+            If msg <> String.Empty Then
+                Exit For
+            End If
+
             If row.Cells(colCantidadReal.Index).Value = Nothing Then
                 msg &= vbCrLf & "- Ingrese cantidad real en todos los recursos"
             End If

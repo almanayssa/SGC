@@ -41,32 +41,32 @@
             End Set
         End Property
 
-        Private _opcion1 As Integer
-        Public Property opcion1() As Integer
+        Private _opcion1 As Integer?
+        Public Property opcion1() As Integer?
             Get
                 Return _opcion1
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _opcion1 = value
             End Set
         End Property
 
-        Private _opcion2 As Integer
-        Public Property opcion2() As Integer
+        Private _opcion2 As Integer?
+        Public Property opcion2() As Integer?
             Get
                 Return _opcion2
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _opcion2 = value
             End Set
         End Property
 
-        Private _opcion3 As Integer
-        Public Property opcion3() As Integer
+        Private _opcion3 As Integer?
+        Public Property opcion3() As Integer?
             Get
                 Return _opcion3
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _opcion3 = value
             End Set
         End Property

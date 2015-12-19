@@ -49,7 +49,7 @@ Namespace SGC.Model.Metodos
 
             Dim recordId As Integer = 0
             sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@descripcion", SqlDbType.Int).Value = oEncuestaActividad.descripcion
+            sqlCmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = oEncuestaActividad.descripcion
             sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oEncuestaActividad.id_actividad
 
             Try

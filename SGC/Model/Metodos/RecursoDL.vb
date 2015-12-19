@@ -61,7 +61,7 @@ Namespace SGC.Model.Metodos
                     oRecurso.id_recurso = dr("id_recurso")
                     oRecurso.descripcion = dr("descripcion")
                     oRecurso.cantidad = dr("cantidad")
-                    oRecurso.cantidad_real = dr("cantidad_real")
+                    oRecurso.cantidad_real = IIf(dr("cantidad_real") Is DBNull.Value, Nothing, dr("cantidad_real"))
                     oListadoRecursos.Add(oRecurso)
                 End While
                 dr.Close()

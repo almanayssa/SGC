@@ -85,6 +85,8 @@ Public Class frmRegistroOpcion
         txtCodigo.Text = String.Empty
         txtPerfil.Text = String.Empty
 
+        ListadoOpciones = Nothing
+
         ListarOpciones()
 
         dgvOpciones.ReadOnly = True

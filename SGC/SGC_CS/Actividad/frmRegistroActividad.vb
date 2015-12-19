@@ -307,6 +307,9 @@ Public Class frmRegistroActividad
         dgvTipoPersonal.DataSource = Nothing
         dgvRecursos.DataSource = Nothing
 
+        ListadoRecursos = Nothing
+        ListadoRestricciones = Nothing
+        ListadoTipoPersonal = Nothing
         oPersonalPendiente = Nothing
         oRecursoPendiente = Nothing
 

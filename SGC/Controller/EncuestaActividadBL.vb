@@ -40,6 +40,16 @@ Namespace SGC.Controller
                 Dim id_encuesta As Integer
                 id_encuesta = iEncuestaActividad.InsertarEncuesta(oEncuestaActividad)
 
+                Dim iEncuestaDetalle As IEncuestaDetalle
+                iEncuestaDetalle = New EncuestaDetalleDL
+
+                If oEncuestaActividad.ListadoEncuestaDetalle IsNot Nothing Then
+                    For Each oEncuestaDetalle As EncuestaDetalleBE In oEncuestaActividad.ListadoEncuestaDetalle
+                        oEncuestaDetalle.id_encuesta = id_encuesta
+                        iEncuestaDetalle.InsertarEncuestaDetalle(oEncuestaDetalle)
+                    Next
+                End If
+
                 oEncuestaActividad.id_encuesta = id_encuesta
 
                 Return oEncuestaActividad.id_encuesta

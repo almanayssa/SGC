@@ -86,6 +86,10 @@ Public Class frmRegistroAsistenciaPersonal
         txtCodigo.Text = String.Empty
         txtActividad.Text = String.Empty
 
+        ListadoActividadDetalles = Nothing
+        ListadoAsistenciaPersonal = Nothing
+        ListadoPersonal = Nothing
+
         dgvProgramacion.DataSource = Nothing
         dgvPersonal.DataSource = Nothing
 

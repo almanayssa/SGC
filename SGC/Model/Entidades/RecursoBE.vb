@@ -51,12 +51,12 @@
             End Set
         End Property
 
-        Private _cantidad_real As Integer
-        Public Property cantidad_real() As Integer
+        Private _cantidad_real As Integer?
+        Public Property cantidad_real() As Integer?
             Get
                 Return _cantidad_real
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _cantidad_real = value
             End Set
         End Property
