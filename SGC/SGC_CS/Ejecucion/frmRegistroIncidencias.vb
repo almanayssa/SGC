@@ -5,17 +5,30 @@ Public Class frmRegistroIncidencias
 
     Dim bc As New BusinessController
     Private Actividad As ActividadBE
+    Private ListadoActividadDetalles As List(Of ActividadDetalleBE)
+    Private Incidencia As IncidenciaBE
+    Private _id_actividad As Integer
 
-    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
-        Dim frmBuscarActividad As New frmBuscarActividad
-        frmBuscarActividad.id_estado = "EST005"
-        frmBuscarActividad.ShowDialog()
+#Region "Inicializacion"
 
-        If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then
-            CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
+    Public Sub New()
+        InitializeComponent()
 
-        End If
+        dgvProgramacion.AutoGenerateColumns = False
+
+        colSede.DataPropertyName = "des_sede"
+        colEspacio.DataPropertyName = "nombre_espacio"
+        colFecInicio.DataPropertyName = "fecha_ini"
+        colHoraInicio.DataPropertyName = "hora_ini"
+        colFecFin.DataPropertyName = "fecha_fin"
+        colHoraFin.DataPropertyName = "hora_fin"
+        colVacantes.DataPropertyName = "vacantes"
+
     End Sub
+
+#End Region
+
+#Region "Métodos Personalizados"
 
     Private Sub CargarActividad(ByVal id_actividad As String)
         Dim oActividad As ActividadBE = bc.CargarActividadCabecera(id_actividad)
@@ -27,102 +40,111 @@ Public Class frmRegistroIncidencias
                             "Pago: " & oActividad.monto_pago & vbCrLf & _
                             "Vacantes: " & oActividad.vacantes
 
-        VerProgramacionxActividad()
-
+        ListarDetallesXActividad()
+        ObtenerIncidencia()
     End Sub
 
-    Private Sub VerProgramacionxActividad()
+    Private Sub ListarDetallesXActividad()
+        ListadoActividadDetalles = bc.ListarDetallesXActividad(CInt(txtCodigo.Text.Trim))
+        dgvProgramacion.DataSource = Nothing
+        dgvProgramacion.DataSource = ListadoActividadDetalles
+    End Sub
 
-        dgvProgramacion.Columns.Clear()
+    Private Sub ObtenerIncidencia()
+        Incidencia = bc.ObtenerIncidencia(CInt(txtCodigo.Text.Trim))
+        txtIncidencias.Text = Incidencia.incidencia
+    End Sub
+
+    Private Sub LimpiarFormulario()
+        tsbGuardar.Visible = False
+
+        txtCodigo.Text = String.Empty
+        txtActividad.Text = String.Empty
+        txtIncidencias.Text = String.Empty
+
+        ListadoActividadDetalles = Nothing
         dgvProgramacion.DataSource = Nothing
 
-        Dim ListadoProgramacion As List(Of ActividadDetalleBE) = bc.ListarDetallesXActividad(CInt(txtCodigo.Text.Trim))
-
-        If ListadoProgramacion IsNot Nothing AndAlso ListadoProgramacion.Count > 0 Then
-
-
-
-            Dim Col_Text As DataGridViewTextBoxColumn
-            Dim Col_Chk As DataGridViewCheckBoxColumn
-            Dim Row As DataGridViewRow
-            Dim Cell As DataGridViewCell
-
-            Col_Text = New DataGridViewTextBoxColumn
-            Col_Text.Name = "fecha_ini"
-            Col_Text.HeaderText = "Fecha"
-            Col_Text.ReadOnly = True
-            Col_Text.Visible = True
-            dgvProgramacion.Columns.Add(Col_Text)
-
-            Col_Text = New DataGridViewTextBoxColumn
-            Col_Text.Name = "hora_ini"
-            Col_Text.HeaderText = "Inicio"
-            Col_Text.ReadOnly = True
-            Col_Text.Visible = True
-            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            dgvProgramacion.Columns.Add(Col_Text)
-
-            Col_Text = New DataGridViewTextBoxColumn
-            Col_Text.Name = "hora_fin"
-            Col_Text.HeaderText = "Fin"
-            Col_Text.ReadOnly = True
-            Col_Text.Visible = True
-            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            dgvProgramacion.Columns.Add(Col_Text)
-
-            Col_Text = New DataGridViewTextBoxColumn
-            Col_Text.Name = "sede"
-            Col_Text.HeaderText = "Sede"
-            Col_Text.ReadOnly = True
-            Col_Text.Visible = True
-            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            dgvProgramacion.Columns.Add(Col_Text)
-
-            Col_Chk = New DataGridViewCheckBoxColumn
-            Col_Chk.Name = "espacio"
-            Col_Chk.HeaderText = "Ubicacion"
-            Col_Chk.ReadOnly = True
-            Col_Chk.Visible = True
-            Col_Chk.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            dgvProgramacion.Columns.Add(Col_Chk)
-
-            For Each a As ActividadDetalleBE In ListadoProgramacion
-                Row = New DataGridViewRow
-
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.fecha_ini
-                Row.Cells.Add(Cell)
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.hora_ini
-                Row.Cells.Add(Cell)
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.hora_fin
-                Row.Cells.Add(Cell)
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.des_sede
-                Row.Cells.Add(Cell)
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.nombre_espacio
-                Row.Cells.Add(Cell)
-
-                dgvProgramacion.Rows.Add(Row)
-            Next
-
-        End If
+        txtIncidencias.Enabled = False
     End Sub
+
+    Private Function ValidarCamposRequeridos() As String
+        Dim msg As String = String.Empty
+
+        If txtIncidencias.Text.Trim = String.Empty Then
+            msg &= vbCrLf & "- Ingrese una incidencia"
+        End If
+
+        Return msg
+    End Function
+
+    Private Function GuardarIncidencias() As Boolean
+        Dim flag As Boolean = True
+
+        If ValidarCamposRequeridos() <> String.Empty Then
+            MessageBox.Show(ValidarCamposRequeridos, "Información")
+            flag = False
+            Return flag
+            Exit Function
+        End If
+
+        Dim affectedRows As Integer = 0
+        Dim oIncidencia As New IncidenciaBE
+        oIncidencia.id_actividad = txtCodigo.Text
+        oIncidencia.incidencia = txtIncidencias.Text.Trim
+
+        affectedRows = bc.InsertarIncidencia(oIncidencia)
+
+        If affectedRows = 0 Then
+            MessageBox.Show("Error al grabar", "Información")
+            flag = False
+        Else
+            MessageBox.Show("La incidencia se registró satisfactoriamente", "Información")
+        End If
+
+        Return flag
+    End Function
+
+#End Region
+
+#Region "Cargar"
+
+    Private Sub frmRegistroAsistenciaPersonal_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        LimpiarFormulario()
+    End Sub
+
+#End Region
+
+#Region "Metodos Controles"
 
     Private Sub tsbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles tsbLimpiar.Click
         LimpiarFormulario()
     End Sub
 
-    Private Sub LimpiarFormulario()
-        txtCodigo.Text = String.Empty
-        txtActividad.Text = String.Empty
-        dgvProgramacion.DataSource = Nothing
-        txtIncidencias.Text = String.Empty
+    Private Sub tsbGuardar_Click(sender As System.Object, e As System.EventArgs) Handles tsbGuardar.Click
+        If GuardarIncidencias() Then
+            LimpiarFormulario()
+        End If
     End Sub
 
-    Private Sub ListarIncidencias()
+    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+        Dim frmBuscarActividad As New frmBuscarActividad
+        frmBuscarActividad.id_estado = "EST005"
+        frmBuscarActividad.ShowDialog()
 
+        If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then
+            _id_actividad = frmBuscarActividad.ActividadSeleccionada.id_actividad
+            CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
+            If Incidencia IsNot Nothing AndAlso Incidencia.id_incidencia > 0 Then
+                tsbGuardar.Visible = False
+                txtIncidencias.Enabled = False
+            Else
+                tsbGuardar.Visible = True
+                txtIncidencias.Enabled = True
+            End If
+        End If
     End Sub
+
+#End Region
+
 End Class

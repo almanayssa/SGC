@@ -6,7 +6,7 @@ Namespace SGC.Model.Interfaces
 
 #Region "Select"
 
-        Function ObtenerIncidencia(ByVal id_actividad_detalle As Integer) As IncidenciaBE
+        Function ObtenerIncidencia(ByVal id_actividad As Integer) As IncidenciaBE
 
 #End Region
 

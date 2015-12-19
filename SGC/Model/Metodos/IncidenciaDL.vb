@@ -19,7 +19,7 @@ Namespace SGC.Model.Metodos
             Dim sqlCmd As New SqlCommand("comite.SP_OBTENER_INCIDENCIA", sqlConn)
             Dim dr As SqlDataReader = Nothing
             sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@id_actividad_detalle", SqlDbType.Int).Value = id_actividad_detalle
+            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = id_actividad_detalle
 
             Try
                 sqlConn.Open()
@@ -49,7 +49,7 @@ Namespace SGC.Model.Metodos
 
             Dim recordId As Integer = 0
             sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@id_actividad_detalle", SqlDbType.Int).Value = oIncidencia.id_actividad_detalle
+            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oIncidencia.id_actividad
             sqlCmd.Parameters.Add("@incidencia", SqlDbType.VarChar).Value = oIncidencia.incidencia
 
             Try

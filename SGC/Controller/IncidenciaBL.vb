@@ -8,14 +8,14 @@ Namespace SGC.Controller
 
 #Region "Select"
 
-        Public Function ObtenerIncidencia(ByVal id_actividad_detalle As Integer) As IncidenciaBE
+        Public Function ObtenerIncidencia(ByVal id_actividad As Integer) As IncidenciaBE
             Try
                 Dim iIncidencia As IIncidencia
                 Dim oIncidencia As IncidenciaBE = Nothing
 
                 iIncidencia = New IncidenciaDL
 
-                oIncidencia = iIncidencia.ObtenerIncidencia(id_actividad_detalle)
+                oIncidencia = iIncidencia.ObtenerIncidencia(id_actividad)
 
                 Return oIncidencia
 
