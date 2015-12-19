@@ -31,7 +31,7 @@ Public Class DetallePresupuestoAnualDL
                 oDetalle.id_presupuesto_anual = dr("id_presupuesto_anual")
                 oDetalle.idItem = dr("id_item")
                 oDetalle.tipo_item = dr("tipo_item")
-                oDetalle.cantidad = dr("cantidad")
+                oDetalle.cantidad = dr("cant")
                 oDetalle.monto = dr("monto")
                 oListadoDetalle.Add(oDetalle)
             End While

@@ -1,12 +1,12 @@
 ﻿Namespace SGC.Model.Entidades
     Public Class DetallePresupuestoAnualBE
 
-        Private _id_detalle As Integer
-        Public Property id_detalle() As Integer
+        Private _id_detalle As Integer?
+        Public Property id_detalle() As Integer?
             Get
                 Return _id_detalle
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _id_detalle = value
             End Set
         End Property

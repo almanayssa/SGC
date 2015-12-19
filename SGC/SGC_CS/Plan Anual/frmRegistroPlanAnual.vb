@@ -263,8 +263,6 @@ Public Class frmRegistroPlanAnual
         End If
     End Sub
 
-#End Region
-
     Private Sub btnEditarPlan_Click(sender As System.Object, e As System.EventArgs) Handles btnEditarPlan.Click
         ModoEdicionPlan(True)
     End Sub
@@ -315,4 +313,7 @@ Public Class frmRegistroPlanAnual
         frmPresupuestoPlanAnual.Show()
 
     End Sub
+
+#End Region
+
 End Class

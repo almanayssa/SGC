@@ -86,6 +86,8 @@ Public Class frmPresupuestoPlanAnual
             _id_Presupuesto = presupuesto.id_presupuesto_anual
             detallePresupuesto = bc.ListarDetallePresupuestoAnual(presupuesto.id_presupuesto_anual)
 
+            CargarDetallePresupuesto(detallePresupuesto)
+
             dgvListado.Enabled = False
         End If
     End Sub
@@ -174,6 +176,98 @@ Public Class frmPresupuestoPlanAnual
                 Cell.Style.ForeColor = Color.Black
                 Row.Cells.Add(Cell)
                 
+                dgvListado.Rows.Add(Row)
+                montoTotal += a.monto
+            Next
+
+        End If
+
+        txtMontoTotal.Text = montoTotal
+
+    End Sub
+
+    Private Sub CargarDetallePresupuesto(ByRef ListaDetalle As List(Of DetallePresupuestoAnualBE))
+
+        dgvListado.Columns.Clear()
+        dgvListado.DataSource = Nothing
+
+        Dim montoTotal As Decimal = 0
+
+        If ListaDetalle IsNot Nothing Then
+
+            Dim Col_Text As DataGridViewTextBoxColumn
+            Dim Row As DataGridViewRow
+            Dim Cell As DataGridViewCell
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "idDetalle"
+            Col_Text.HeaderText = "Codigo"
+            Col_Text.ReadOnly = True
+            Col_Text.Visible = False
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "codItem"
+            Col_Text.HeaderText = "codItem"
+            Col_Text.ReadOnly = True
+            Col_Text.Visible = False
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "descripcion"
+            Col_Text.HeaderText = "Item"
+            Col_Text.ReadOnly = True
+            Col_Text.Visible = True
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "tipo_item"
+            Col_Text.HeaderText = "Tipo"
+            Col_Text.ReadOnly = True
+            Col_Text.Visible = False
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "cant"
+            Col_Text.HeaderText = "Cantidad"
+            Col_Text.ReadOnly = False
+            Col_Text.Visible = True
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "monto"
+            Col_Text.HeaderText = "Monto"
+            Col_Text.ReadOnly = False
+            Col_Text.Visible = True
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            For Each a As DetallePresupuestoAnualBE In ListaDetalle
+                Row = New DataGridViewRow
+
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.id_detalle
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.idItem
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.descripcion
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.tipo_item
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.cantidad
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.monto
+                Row.Cells.Add(Cell)
+
                 dgvListado.Rows.Add(Row)
                 montoTotal += a.monto
             Next
@@ -380,6 +474,125 @@ Public Class frmPresupuestoPlanAnual
 
         dgvListado.Enabled = True
 
+        txtMontoTotal.Text = "0.0"
+
     End Sub
 
+    Private Sub btnQuitar_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitar.Click
+
+        Dim listadoDetalle As New List(Of DetallePresupuestoAnualBE)
+        Dim detalle As DetallePresupuestoAnualBE
+
+        For Each dgvr As DataGridViewRow In dgvListado.Rows
+
+            If dgvr.Cells("codItem").Value = CStr(dgvListado.Item("codItem", dgvListado.CurrentRow.Index).Value) And
+                dgvr.Cells("tipo_item").Value = CStr(dgvListado.Item("tipo_item", dgvListado.CurrentRow.Index).Value) Then
+
+            Else
+
+                detalle = New DetallePresupuestoAnualBE
+                If dgvr.Cells("idDetalle").Value <> "" Then detalle.id_detalle = dgvr.Cells("idDetalle").Value
+                detalle.idItem = dgvr.Cells("codItem").Value
+                detalle.descripcion = dgvr.Cells("descripcion").Value
+                detalle.tipo_item = dgvr.Cells("tipo_item").Value
+                detalle.cantidad = dgvr.Cells("cant").Value
+                detalle.monto = dgvr.Cells("monto").Value
+                listadoDetalle.Add(detalle)
+
+            End If
+
+        Next
+
+
+        dgvListado.Columns.Clear()
+        dgvListado.DataSource = Nothing
+
+        Dim montoTotal As Decimal = 0
+
+        If listadoDetalle IsNot Nothing Then
+
+            Dim Col_Text As DataGridViewTextBoxColumn
+            Dim Row As DataGridViewRow
+            Dim Cell As DataGridViewCell
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "idDetalle"
+            Col_Text.HeaderText = "Codigo"
+            Col_Text.ReadOnly = True
+            Col_Text.Visible = False
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "codItem"
+            Col_Text.HeaderText = "codItem"
+            Col_Text.ReadOnly = True
+            Col_Text.Visible = False
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "descripcion"
+            Col_Text.HeaderText = "Item"
+            Col_Text.ReadOnly = True
+            Col_Text.Visible = True
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "tipo_item"
+            Col_Text.HeaderText = "Tipo"
+            Col_Text.ReadOnly = True
+            Col_Text.Visible = False
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "cant"
+            Col_Text.HeaderText = "Cantidad"
+            Col_Text.ReadOnly = False
+            Col_Text.Visible = True
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            Col_Text = New DataGridViewTextBoxColumn
+            Col_Text.Name = "monto"
+            Col_Text.HeaderText = "Monto"
+            Col_Text.ReadOnly = False
+            Col_Text.Visible = True
+            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            dgvListado.Columns.Add(Col_Text)
+
+            For Each a As DetallePresupuestoAnualBE In listadoDetalle
+                Row = New DataGridViewRow
+
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = ""
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.idItem
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.descripcion
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.tipo_item
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.cantidad
+                Cell.Style.ForeColor = Color.Black
+                Row.Cells.Add(Cell)
+                Cell = New DataGridViewTextBoxCell
+                Cell.Value = a.monto
+                Cell.Style.ForeColor = Color.Black
+                Row.Cells.Add(Cell)
+
+                dgvListado.Rows.Add(Row)
+                montoTotal += a.monto
+            Next
+
+        End If
+
+        txtMontoTotal.Text = montoTotal
+
+    End Sub
 End Class

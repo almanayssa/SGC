@@ -259,6 +259,7 @@ Public Class frmRegistroActividad
             ListadoRecursos = New List(Of RecursoBE)
         End If
         oRecurso.cantidad = txtCantidadRecurso.Text.Trim
+        oRecurso.cantidad_real = txtCantidadRecurso.Text.Trim
         ListadoRecursos.Add(oRecurso)
         txtDescripcionRecurso.Text = String.Empty
         txtCantidadRecurso.Text = String.Empty
