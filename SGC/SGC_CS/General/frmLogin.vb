@@ -1,9 +1,9 @@
-﻿'Imports SGS.Controller
-'Imports SGC.Model.Entidades
+﻿Imports SGC.Controller
+Imports SGC.Model.Entidades
 
 Public Class frmLogin
 
-    'Dim bc As New BusinessController
+    Dim bc As New BusinessController
 
 #Region "Inicializacion"
 
@@ -17,30 +17,30 @@ Public Class frmLogin
 
 #Region "Metodos Personalizados"
 
-    Private Function ValidarCamposRequeridos() As Boolean
-        Dim flag As Boolean = False
+    Private Function ValidarCamposRequeridos() As String
+        Dim msg As String = String.Empty
 
         If txtUsuario.Text.Trim = String.Empty Then
-            flag = True
+            msg &= vbCrLf & "- Ingrese su usuario"
         End If
 
         If txtContrasena.Text.Trim = String.Empty Then
-            flag = True
+            msg &= vbCrLf & "- Ingrese su contraseña"
         End If
 
-        Return flag
+        Return msg
     End Function
+
 
     Private Sub IniciarSesion()
 
-        'Prueba
-        'If ValidarCamposRequeridos() Then
-        '    MessageBox.Show("Complete datos", "Información")
+        'If ValidarCamposRequeridos() <> String.Empty Then
+        '    MessageBox.Show(ValidarCamposRequeridos, "Información")
         '    Exit Sub
         'End If
 
         'Dim oUsuarioLogueado As New UsuarioBE
-        'oUsuarioLogueado = bc.ObtenerUsuarioLogueado(tbxUsuario.Text.Trim, tbxContrasena.Text.Trim)
+        'oUsuarioLogueado = bc.ObtenerUsuario(txtUsuario.Text.Trim, txtContrasena.Text.Trim)
 
         'If oUsuarioLogueado.id_usuario = Nothing Then
         '    MessageBox.Show("Usuario o contraseña incorrectos", "Información")
