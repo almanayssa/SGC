@@ -10,6 +10,7 @@ Namespace SGC.Model.Metodos
     Public Class ComiteDL
         Implements IComite
 
+
 #Region "Select"
 
         Public Function ListarComites() As System.Collections.Generic.List(Of Entidades.ComiteBE) Implements Interfaces.IComite.ListarComites

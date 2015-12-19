@@ -82,6 +82,7 @@
     <Compile Include="Entidades\ComiteAnualBE.vb" />
     <Compile Include="Entidades\ComiteBE.vb" />
     <Compile Include="Entidades\ConceptoBE.vb" />
+    <Compile Include="Entidades\SuscripcionComiteBE.vb" />
     <Compile Include="Entidades\OpcionXPerfilBE.vb" />
     <Compile Include="Entidades\PantallaBE.vb" />
     <Compile Include="Entidades\PerfilUsuarioBE.vb" />
@@ -137,6 +138,7 @@
     <Compile Include="Entidades\TipoRegistroInvitadoBE.vb" />
     <Compile Include="Entidades\TipoTransaccionBE.vb" />
     <Compile Include="Entidades\TransaccionBE.vb" />
+    <Compile Include="Interfaces\ISuscripcionComite.vb" />
     <Compile Include="Interfaces\ITipoPago.vb" />
     <Compile Include="Interfaces\ICanjeAdelantos.vb" />
     <Compile Include="Interfaces\IArticuloCobranza.vb" />
@@ -180,6 +182,7 @@
     <Compile Include="Interfaces\IComite.vb" />
     <Compile Include="Metodos\ArticuloCobranzaDL.vb" />
     <Compile Include="Metodos\CanjeAdelantosDL.vb" />
+    <Compile Include="Metodos\SuscripcionComiteDL.vb" />
     <Compile Include="Metodos\TipoPagoDL.vb" />
     <Compile Include="Metodos\DocVenDL.vb" />
     <Compile Include="Metodos\InvitadoDL.vb" />

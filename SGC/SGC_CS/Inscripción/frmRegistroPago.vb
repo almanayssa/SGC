@@ -58,6 +58,12 @@ Public Class frmRegistroPago
         GuardarPago()
     End Sub
 
+    Private Sub tsbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles tsbLimpiar.Click
+        doc = Nothing
+        _id_socio = ""
+        Limpiar()
+    End Sub
+
 #End Region
 
 #Region "Cargar"
@@ -143,9 +149,17 @@ Public Class frmRegistroPago
         Return msg
     End Function
 
+    Private Sub Limpiar()
+        txtAccion.Text = ""
+        txtNombre.Text = ""
+        lblSerie.Text = ""
+        lblCorrelativo.Text = ""
+        lblTipoDoc.Text = ""
+        dgvArticulos.DataSource = Nothing
+        txtTotal.Text = 0.0
+        txtObservacion.Text = ""
+    End Sub
+
 #End Region
 
-    Private Sub tsbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles tsbLimpiar.Click
-        doc = Nothing
-    End Sub
 End Class
