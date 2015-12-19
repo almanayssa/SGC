@@ -32,7 +32,6 @@ Partial Class frmRegistroOpcion
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.tsbEditar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
         Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
@@ -87,11 +86,11 @@ Partial Class frmRegistroOpcion
         Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
         Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbLimpiar, Me.tsbGuardar, Me.tsbEditar, Me.tsbEliminar, Me.tsbCancelar})
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbLimpiar, Me.tsbGuardar, Me.tsbEditar, Me.tsbCancelar})
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 71)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(185, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(393, 37)
         Me.tsMenu.TabIndex = 19
         Me.tsMenu.Text = "SgcToolStrip1"
         '
@@ -125,17 +124,6 @@ Partial Class frmRegistroOpcion
         Me.tsbEditar.Size = New System.Drawing.Size(78, 34)
         Me.tsbEditar.Text = "Editar"
         Me.tsbEditar.Visible = False
-        '
-        'tsbEliminar
-        '
-        Me.tsbEliminar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.tsbEliminar.Image = Global.SGC_CS.My.Resources.Resources.menu_eliminar
-        Me.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.tsbEliminar.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.tsbEliminar.Name = "tsbEliminar"
-        Me.tsbEliminar.Size = New System.Drawing.Size(93, 34)
-        Me.tsbEliminar.Text = "Eliminar"
-        Me.tsbEliminar.Visible = False
         '
         'tsbCancelar
         '
@@ -278,7 +266,6 @@ Partial Class frmRegistroOpcion
     Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbEditar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents tsbEliminar As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbCancelar As System.Windows.Forms.ToolStripButton
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox

@@ -28,7 +28,7 @@ Namespace SGC.Model.Metodos
 
                 While dr.Read()
                     oAsistenciaPersonal = New AsistenciaPersonalBE
-                    oAsistenciaPersonal.id_actividad = dr("id_actividad")
+                    oAsistenciaPersonal.id_personal = dr("id_personal")
                     oAsistenciaPersonal.nombre_completo = dr("nombre_completo")
                     oAsistenciaPersonal.flg_asistencia = dr("flg_asistencia")
                     oListadoAsistenciaPersonal.Add(oAsistenciaPersonal)

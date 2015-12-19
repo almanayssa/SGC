@@ -90,6 +90,18 @@ Public Class frmRegistroOpcion
         dgvOpciones.ReadOnly = True
     End Sub
 
+    Private Function ValidarCamposRequeridos() As String
+        Dim msg As String = String.Empty
+
+        If txtCodigo.Text.Trim = String.Empty Then
+            msg &= vbCrLf & "- Seleccione un perfil"
+        End If
+
+        msg &= ValidarOpciones()
+
+        Return msg
+    End Function
+
     Private Function ValidarOpciones() As String
         Dim msg As String = String.Empty
         Dim count As Integer = 0
@@ -112,8 +124,8 @@ Public Class frmRegistroOpcion
     Private Function GuardarOpciones() As Boolean
         Dim flag As Boolean = True
 
-        If ValidarOpciones() <> String.Empty Then
-            MessageBox.Show(ValidarOpciones, "Información")
+        If ValidarCamposRequeridos() <> String.Empty Then
+            MessageBox.Show(ValidarCamposRequeridos, "Información")
             flag = False
             Return flag
             Exit Function

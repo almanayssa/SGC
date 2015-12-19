@@ -261,6 +261,16 @@
             End Set
         End Property
 
+        Private _ListaAsistenciaPersonal As List(Of AsistenciaPersonalBE)
+        Public Property ListaAsistenciaPersonal() As List(Of AsistenciaPersonalBE)
+            Get
+                Return _ListaAsistenciaPersonal
+            End Get
+            Set(ByVal value As List(Of AsistenciaPersonalBE))
+                _ListaAsistenciaPersonal = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 

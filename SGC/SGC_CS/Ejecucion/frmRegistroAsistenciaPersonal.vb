@@ -5,17 +5,35 @@ Public Class frmRegistroAsistenciaPersonal
 
     Dim bc As New BusinessController
     Private Actividad As ActividadBE
+    Private ListadoActividadDetalles As List(Of ActividadDetalleBE)
+    Private ListadoPersonal As List(Of PersonalBE)
+    Private ListadoAsistenciaPersonal As List(Of AsistenciaPersonalBE)
+    Private _id_actividad As Integer
 
-    Private Sub btnBuscar_Click(sender As Object, e As System.EventArgs) Handles btnBuscar.Click
-        Dim frmBuscarActividad As New frmBuscarActividad
-        frmBuscarActividad.id_estado = "EST005"
-        frmBuscarActividad.ShowDialog()
+#Region "Inicializacion"
 
-        If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then
-            CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
+    Public Sub New()
+        InitializeComponent()
 
-        End If
+        dgvProgramacion.AutoGenerateColumns = False
+        dgvPersonal.AutoGenerateColumns = False
+
+        colSede.DataPropertyName = "des_sede"
+        colEspacio.DataPropertyName = "nombre_espacio"
+        colFecInicio.DataPropertyName = "fecha_ini"
+        colHoraInicio.DataPropertyName = "hora_ini"
+        colFecFin.DataPropertyName = "fecha_fin"
+        colHoraFin.DataPropertyName = "hora_fin"
+        colVacantes.DataPropertyName = "vacantes"
+
+        colPersonalID.DataPropertyName = "id_personal"
+        colNombre.DataPropertyName = "nombre_completo"
+
     End Sub
+
+#End Region
+
+#Region "Métodos Personalizados"
 
     Private Sub CargarActividad(ByVal id_actividad As String)
         Dim oActividad As ActividadBE = bc.CargarActividadCabecera(id_actividad)
@@ -27,99 +45,130 @@ Public Class frmRegistroAsistenciaPersonal
                             "Pago: " & oActividad.monto_pago & vbCrLf & _
                             "Vacantes: " & oActividad.vacantes
 
-        VerProgramacionxActividad()
-
+        ListarDetallesXActividad()
+        ListarPersonalXActividad()
+        ListarAsistenciaPersonal()
     End Sub
 
-    Private Sub VerProgramacionxActividad()
-
-        dgvProgramacion.Columns.Clear()
+    Private Sub ListarDetallesXActividad()
+        ListadoActividadDetalles = bc.ListarDetallesXActividad(CInt(txtCodigo.Text.Trim))
         dgvProgramacion.DataSource = Nothing
+        dgvProgramacion.DataSource = ListadoActividadDetalles
+    End Sub
 
-        Dim ListadoProgramacion As List(Of ActividadDetalleBE) = bc.ListarDetallesXActividad(CInt(txtCodigo.Text.Trim))
+    Private Sub ListarPersonalXActividad()
+        ListadoPersonal = bc.ListarPersonalXActividad(CInt(txtCodigo.Text.Trim))
+        dgvPersonal.DataSource = Nothing
+        dgvPersonal.DataSource = ListadoPersonal
+    End Sub
 
-        If ListadoProgramacion IsNot Nothing AndAlso ListadoProgramacion.Count > 0 Then
+    Private Sub ListarAsistenciaPersonal()
+        ListadoAsistenciaPersonal = bc.ListarAsistenciaPersonal(CInt(txtCodigo.Text.Trim))
 
+        If ListadoAsistenciaPersonal IsNot Nothing AndAlso ListadoAsistenciaPersonal.Count > 0 Then
+            For Each row As DataGridViewRow In dgvPersonal.Rows
+                Dim chk = DirectCast(row.Cells(colSeleccionar.Index), DataGridViewCheckBoxCell)
+                Dim id As Integer = row.Cells(colPersonalID.Index).Value
 
-
-            Dim Col_Text As DataGridViewTextBoxColumn
-            Dim Col_Chk As DataGridViewCheckBoxColumn
-            Dim Row As DataGridViewRow
-            Dim Cell As DataGridViewCell
-
-            Col_Text = New DataGridViewTextBoxColumn
-            Col_Text.Name = "fecha_ini"
-            Col_Text.HeaderText = "Fecha"
-            Col_Text.ReadOnly = True
-            Col_Text.Visible = True
-            dgvProgramacion.Columns.Add(Col_Text)
-
-            Col_Text = New DataGridViewTextBoxColumn
-            Col_Text.Name = "hora_ini"
-            Col_Text.HeaderText = "Inicio"
-            Col_Text.ReadOnly = True
-            Col_Text.Visible = True
-            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            dgvProgramacion.Columns.Add(Col_Text)
-
-            Col_Text = New DataGridViewTextBoxColumn
-            Col_Text.Name = "hora_fin"
-            Col_Text.HeaderText = "Fin"
-            Col_Text.ReadOnly = True
-            Col_Text.Visible = True
-            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            dgvProgramacion.Columns.Add(Col_Text)
-
-            Col_Text = New DataGridViewTextBoxColumn
-            Col_Text.Name = "sede"
-            Col_Text.HeaderText = "Sede"
-            Col_Text.ReadOnly = True
-            Col_Text.Visible = True
-            Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            dgvProgramacion.Columns.Add(Col_Text)
-
-            Col_Chk = New DataGridViewCheckBoxColumn
-            Col_Chk.Name = "espacio"
-            Col_Chk.HeaderText = "Ubicacion"
-            Col_Chk.ReadOnly = True
-            Col_Chk.Visible = True
-            Col_Chk.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-            dgvProgramacion.Columns.Add(Col_Chk)
-
-            For Each a As ActividadDetalleBE In ListadoProgramacion
-                Row = New DataGridViewRow
-
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.fecha_ini
-                Row.Cells.Add(Cell)
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.hora_ini
-                Row.Cells.Add(Cell)
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.hora_fin
-                Row.Cells.Add(Cell)
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.des_sede
-                Row.Cells.Add(Cell)
-                Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.nombre_espacio
-                Row.Cells.Add(Cell)
-
-                dgvProgramacion.Rows.Add(Row)
+                For Each oAsistencia As AsistenciaPersonalBE In ListadoAsistenciaPersonal
+                    If oAsistencia.id_personal = id Then
+                        chk.Value = oAsistencia.flg_asistencia
+                        Exit For
+                    End If
+                Next
             Next
-
         End If
     End Sub
+
+    Private Sub LimpiarFormulario()
+        tsbGuardar.Visible = False
+
+        txtCodigo.Text = String.Empty
+        txtActividad.Text = String.Empty
+
+        dgvProgramacion.DataSource = Nothing
+        dgvPersonal.DataSource = Nothing
+
+    End Sub
+
+    Private Function GuardarAsistenciaPersonal() As Boolean
+        Dim flag As Boolean = True
+
+        Dim affectedRows As Integer = 0
+        Dim oActividad As New ActividadBE
+        oActividad.id_actividad = txtCodigo.Text
+
+        Dim oAsistenciaPersonal As AsistenciaPersonalBE
+
+        For Each row As DataGridViewRow In dgvPersonal.Rows
+            Dim value As Boolean = CType(dgvPersonal.Item(colSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)
+            Dim oPersonal As PersonalBE = row.DataBoundItem
+
+            oAsistenciaPersonal = New AsistenciaPersonalBE
+            oAsistenciaPersonal.id_personal = oPersonal.id_personal
+            oAsistenciaPersonal.fecha = Now
+            oAsistenciaPersonal.flg_asistencia = value
+
+            If oActividad.ListaAsistenciaPersonal Is Nothing Then
+                oActividad.ListaAsistenciaPersonal = New List(Of AsistenciaPersonalBE)
+            End If
+
+            oActividad.ListaAsistenciaPersonal.Add(oAsistenciaPersonal)
+        Next
+
+        affectedRows = bc.InsertarAsistenciaPersonal(oActividad)
+
+        If affectedRows = 0 Then
+            MessageBox.Show("Error al grabar", "Información")
+            flag = False
+        Else
+            _id_actividad = oActividad.id_actividad
+            MessageBox.Show("La asistencia del personal se registró satisfactoriamente", "Información")
+        End If
+
+        Return flag
+    End Function
+
+#End Region
+
+#Region "Cargar"
+
+    Private Sub frmRegistroAsistenciaPersonal_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        LimpiarFormulario()
+    End Sub
+
+#End Region
+
+#Region "Metodos Controles"
 
     Private Sub tsbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles tsbLimpiar.Click
         LimpiarFormulario()
     End Sub
 
-    Private Sub LimpiarFormulario()
-        txtCodigo.Text = String.Empty
-        txtActividad.Text = String.Empty
-        dgvProgramacion.DataSource = Nothing
-        dgvPersonal.DataSource = Nothing
+    Private Sub tsbGuardar_Click(sender As System.Object, e As System.EventArgs) Handles tsbGuardar.Click
+        If GuardarAsistenciaPersonal() Then
+            LimpiarFormulario()
+        End If
     End Sub
+
+    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+        Dim frmBuscarActividad As New frmBuscarActividad
+        frmBuscarActividad.id_estado = "EST005"
+        frmBuscarActividad.ShowDialog()
+
+        If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then
+            _id_actividad = frmBuscarActividad.ActividadSeleccionada.id_actividad
+            CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
+            If ListadoAsistenciaPersonal IsNot Nothing AndAlso ListadoAsistenciaPersonal.Count > 0 Then
+                tsbGuardar.Visible = False
+                dgvPersonal.ReadOnly = True
+            Else
+                tsbGuardar.Visible = True
+                dgvPersonal.ReadOnly = False
+            End If
+        End If
+    End Sub
+
+#End Region
 
 End Class

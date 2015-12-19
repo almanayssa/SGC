@@ -21,12 +21,14 @@ Partial Class frmRegistroAsistenciaPersonal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroAsistenciaPersonal))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvPersonal = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.colPersonalID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.txtActividad = New SGC_CS.SGCTextBox(Me.components)
@@ -37,15 +39,20 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.colPersonalID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colSede = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEspacio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colHoraFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox6.SuspendLayout()
         CType(Me.dgvPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox2.SuspendLayout()
-        CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox1.SuspendLayout()
         Me.tsMenu.SuspendLayout()
+        CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SgcGroupBox6
@@ -62,6 +69,7 @@ Partial Class frmRegistroAsistenciaPersonal
         'dgvPersonal
         '
         Me.dgvPersonal.AllowUserToAddRows = False
+        Me.dgvPersonal.AllowUserToDeleteRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
         DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
         Me.dgvPersonal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
@@ -74,6 +82,24 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.dgvPersonal.Size = New System.Drawing.Size(849, 254)
         Me.dgvPersonal.TabIndex = 1
         '
+        'colSeleccionar
+        '
+        Me.colSeleccionar.HeaderText = ""
+        Me.colSeleccionar.Name = "colSeleccionar"
+        Me.colSeleccionar.Width = 30
+        '
+        'colPersonalID
+        '
+        Me.colPersonalID.HeaderText = ""
+        Me.colPersonalID.Name = "colPersonalID"
+        Me.colPersonalID.Visible = False
+        '
+        'colNombre
+        '
+        Me.colNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colNombre.HeaderText = "Nombre"
+        Me.colNombre.Name = "colNombre"
+        '
         'SgcGroupBox2
         '
         Me.SgcGroupBox2.Controls.Add(Me.dgvProgramacion)
@@ -84,20 +110,6 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.SgcGroupBox2.TabIndex = 29
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Programación"
-        '
-        'dgvProgramacion
-        '
-        Me.dgvProgramacion.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
-        Me.dgvProgramacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvProgramacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvProgramacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProgramacion.Location = New System.Drawing.Point(18, 25)
-        Me.dgvProgramacion.Name = "dgvProgramacion"
-        Me.dgvProgramacion.Size = New System.Drawing.Size(320, 178)
-        Me.dgvProgramacion.TabIndex = 1
         '
         'SgcGroupBox1
         '
@@ -132,6 +144,7 @@ Partial Class frmRegistroAsistenciaPersonal
         'txtActividad
         '
         Me.txtActividad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtActividad.Enabled = False
         Me.txtActividad.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtActividad.ForeColor = System.Drawing.Color.Black
         Me.txtActividad.Location = New System.Drawing.Point(109, 76)
@@ -154,6 +167,7 @@ Partial Class frmRegistroAsistenciaPersonal
         'txtCodigo
         '
         Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigo.Enabled = False
         Me.txtCodigo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodigo.ForeColor = System.Drawing.Color.Black
         Me.txtCodigo.Location = New System.Drawing.Point(109, 37)
@@ -219,23 +233,63 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.tsbGuardar.Text = "Guardar"
         Me.tsbGuardar.Visible = False
         '
-        'colSeleccionar
+        'dgvProgramacion
         '
-        Me.colSeleccionar.HeaderText = ""
-        Me.colSeleccionar.Name = "colSeleccionar"
-        Me.colSeleccionar.Width = 30
+        Me.dgvProgramacion.AllowUserToAddRows = False
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgvProgramacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvProgramacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvProgramacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProgramacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSede, Me.colEspacio, Me.colFecInicio, Me.colHoraInicio, Me.colFecFin, Me.colHoraFin, Me.colVacantes})
+        Me.dgvProgramacion.Location = New System.Drawing.Point(17, 22)
+        Me.dgvProgramacion.Name = "dgvProgramacion"
+        Me.dgvProgramacion.ReadOnly = True
+        Me.dgvProgramacion.Size = New System.Drawing.Size(320, 177)
+        Me.dgvProgramacion.TabIndex = 2
         '
-        'colPersonalID
+        'colSede
         '
-        Me.colPersonalID.HeaderText = ""
-        Me.colPersonalID.Name = "colPersonalID"
-        Me.colPersonalID.Visible = False
+        Me.colSede.HeaderText = "Sede"
+        Me.colSede.Name = "colSede"
+        Me.colSede.ReadOnly = True
         '
-        'colNombre
+        'colEspacio
         '
-        Me.colNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colNombre.HeaderText = "Nombre"
-        Me.colNombre.Name = "colNombre"
+        Me.colEspacio.HeaderText = "Espacio"
+        Me.colEspacio.Name = "colEspacio"
+        Me.colEspacio.ReadOnly = True
+        '
+        'colFecInicio
+        '
+        Me.colFecInicio.HeaderText = "Fec. Inicio"
+        Me.colFecInicio.Name = "colFecInicio"
+        Me.colFecInicio.ReadOnly = True
+        '
+        'colHoraInicio
+        '
+        Me.colHoraInicio.HeaderText = "H. Inicio"
+        Me.colHoraInicio.Name = "colHoraInicio"
+        Me.colHoraInicio.ReadOnly = True
+        '
+        'colFecFin
+        '
+        Me.colFecFin.HeaderText = "Fec. Fin"
+        Me.colFecFin.Name = "colFecFin"
+        Me.colFecFin.ReadOnly = True
+        '
+        'colHoraFin
+        '
+        Me.colHoraFin.HeaderText = "H. Fin"
+        Me.colHoraFin.Name = "colHoraFin"
+        Me.colHoraFin.ReadOnly = True
+        '
+        'colVacantes
+        '
+        Me.colVacantes.HeaderText = "Vacantes"
+        Me.colVacantes.Name = "colVacantes"
+        Me.colVacantes.ReadOnly = True
         '
         'frmRegistroAsistenciaPersonal
         '
@@ -254,11 +308,11 @@ Partial Class frmRegistroAsistenciaPersonal
         Me.SgcGroupBox6.ResumeLayout(False)
         CType(Me.dgvPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox2.ResumeLayout(False)
-        CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
         Me.tsMenu.ResumeLayout(False)
         Me.tsMenu.PerformLayout()
+        CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -266,7 +320,6 @@ Partial Class frmRegistroAsistenciaPersonal
     Friend WithEvents SgcGroupBox6 As SGC_CS.SGCGroupBox
     Friend WithEvents dgvPersonal As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
-    Friend WithEvents dgvProgramacion As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
     Friend WithEvents txtActividad As SGC_CS.SGCTextBox
@@ -280,5 +333,13 @@ Partial Class frmRegistroAsistenciaPersonal
     Friend WithEvents colSeleccionar As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents colPersonalID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvProgramacion As SGC_CS.SGCDataGridView
+    Friend WithEvents colSede As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colEspacio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colHoraInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colHoraFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

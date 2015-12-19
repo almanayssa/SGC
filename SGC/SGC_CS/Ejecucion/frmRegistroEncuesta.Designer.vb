@@ -21,7 +21,7 @@ Partial Class frmRegistroEncuesta
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroEncuesta))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.txtActividad = New SGC_CS.SGCTextBox(Me.components)
@@ -32,17 +32,17 @@ Partial Class frmRegistroEncuesta
         Me.txtDescripcion = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnQuitarPregunta = New SGC_CS.SGCButton(Me.components)
+        Me.btnAgregarPregunta = New SGC_CS.SGCButton(Me.components)
         Me.dgvPreguntas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
-        Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
-        Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.colPregunta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colOpcion1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colOpcion2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colOpcion3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnQuitarPregunta = New SGC_CS.SGCButton(Me.components)
-        Me.btnAgregarPregunta = New SGC_CS.SGCButton(Me.components)
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
+        Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
+        Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         Me.SgcGroupBox6.SuspendLayout()
@@ -83,6 +83,7 @@ Partial Class frmRegistroEncuesta
         'txtActividad
         '
         Me.txtActividad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtActividad.Enabled = False
         Me.txtActividad.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtActividad.ForeColor = System.Drawing.Color.Black
         Me.txtActividad.Location = New System.Drawing.Point(109, 76)
@@ -105,6 +106,7 @@ Partial Class frmRegistroEncuesta
         'txtCodigo
         '
         Me.txtCodigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtCodigo.Enabled = False
         Me.txtCodigo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtCodigo.ForeColor = System.Drawing.Color.Black
         Me.txtCodigo.Location = New System.Drawing.Point(109, 37)
@@ -169,12 +171,45 @@ Partial Class frmRegistroEncuesta
         Me.SgcGroupBox6.TabStop = False
         Me.SgcGroupBox6.Text = "Preguntas y Respuestas"
         '
+        'btnQuitarPregunta
+        '
+        Me.btnQuitarPregunta.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnQuitarPregunta.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnQuitarPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnQuitarPregunta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnQuitarPregunta.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnQuitarPregunta.Image = Global.SGC_CS.My.Resources.Resources.btn_eliminar
+        Me.btnQuitarPregunta.Location = New System.Drawing.Point(777, 257)
+        Me.btnQuitarPregunta.Name = "btnQuitarPregunta"
+        Me.btnQuitarPregunta.Size = New System.Drawing.Size(90, 31)
+        Me.btnQuitarPregunta.TabIndex = 14
+        Me.btnQuitarPregunta.Text = "Quitar"
+        Me.btnQuitarPregunta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnQuitarPregunta.UseVisualStyleBackColor = False
+        '
+        'btnAgregarPregunta
+        '
+        Me.btnAgregarPregunta.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAgregarPregunta.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnAgregarPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregarPregunta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregarPregunta.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnAgregarPregunta.Image = Global.SGC_CS.My.Resources.Resources.btn_agregar
+        Me.btnAgregarPregunta.Location = New System.Drawing.Point(681, 257)
+        Me.btnAgregarPregunta.Name = "btnAgregarPregunta"
+        Me.btnAgregarPregunta.Size = New System.Drawing.Size(90, 31)
+        Me.btnAgregarPregunta.TabIndex = 13
+        Me.btnAgregarPregunta.Text = "Agregar"
+        Me.btnAgregarPregunta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregarPregunta.UseVisualStyleBackColor = False
+        '
         'dgvPreguntas
         '
         Me.dgvPreguntas.AllowUserToAddRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvPreguntas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvPreguntas.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvPreguntas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvPreguntas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPreguntas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -183,6 +218,27 @@ Partial Class frmRegistroEncuesta
         Me.dgvPreguntas.Name = "dgvPreguntas"
         Me.dgvPreguntas.Size = New System.Drawing.Size(849, 226)
         Me.dgvPreguntas.TabIndex = 1
+        '
+        'colPregunta
+        '
+        Me.colPregunta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colPregunta.HeaderText = "Pregunta"
+        Me.colPregunta.Name = "colPregunta"
+        '
+        'colOpcion1
+        '
+        Me.colOpcion1.HeaderText = "Opción 1"
+        Me.colOpcion1.Name = "colOpcion1"
+        '
+        'colOpcion2
+        '
+        Me.colOpcion2.HeaderText = "Opción 2"
+        Me.colOpcion2.Name = "colOpcion2"
+        '
+        'colOpcion3
+        '
+        Me.colOpcion3.HeaderText = "Opción 3"
+        Me.colOpcion3.Name = "colOpcion3"
         '
         'lblTitulo
         '
@@ -230,59 +286,6 @@ Partial Class frmRegistroEncuesta
         Me.tsbGuardar.Size = New System.Drawing.Size(92, 34)
         Me.tsbGuardar.Text = "Guardar"
         Me.tsbGuardar.Visible = False
-        '
-        'colPregunta
-        '
-        Me.colPregunta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colPregunta.HeaderText = "Pregunta"
-        Me.colPregunta.Name = "colPregunta"
-        '
-        'colOpcion1
-        '
-        Me.colOpcion1.HeaderText = "Opción 1"
-        Me.colOpcion1.Name = "colOpcion1"
-        '
-        'colOpcion2
-        '
-        Me.colOpcion2.HeaderText = "Opción 2"
-        Me.colOpcion2.Name = "colOpcion2"
-        '
-        'colOpcion3
-        '
-        Me.colOpcion3.HeaderText = "Opción 3"
-        Me.colOpcion3.Name = "colOpcion3"
-        '
-        'btnQuitarPregunta
-        '
-        Me.btnQuitarPregunta.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnQuitarPregunta.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnQuitarPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuitarPregunta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuitarPregunta.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnQuitarPregunta.Image = Global.SGC_CS.My.Resources.Resources.btn_eliminar
-        Me.btnQuitarPregunta.Location = New System.Drawing.Point(777, 257)
-        Me.btnQuitarPregunta.Name = "btnQuitarPregunta"
-        Me.btnQuitarPregunta.Size = New System.Drawing.Size(90, 31)
-        Me.btnQuitarPregunta.TabIndex = 14
-        Me.btnQuitarPregunta.Text = "Quitar"
-        Me.btnQuitarPregunta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnQuitarPregunta.UseVisualStyleBackColor = False
-        '
-        'btnAgregarPregunta
-        '
-        Me.btnAgregarPregunta.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAgregarPregunta.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnAgregarPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarPregunta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarPregunta.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnAgregarPregunta.Image = Global.SGC_CS.My.Resources.Resources.btn_agregar
-        Me.btnAgregarPregunta.Location = New System.Drawing.Point(681, 257)
-        Me.btnAgregarPregunta.Name = "btnAgregarPregunta"
-        Me.btnAgregarPregunta.Size = New System.Drawing.Size(90, 31)
-        Me.btnAgregarPregunta.TabIndex = 13
-        Me.btnAgregarPregunta.Text = "Agregar"
-        Me.btnAgregarPregunta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAgregarPregunta.UseVisualStyleBackColor = False
         '
         'frmRegistroEncuesta
         '

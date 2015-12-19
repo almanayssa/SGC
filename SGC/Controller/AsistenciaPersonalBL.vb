@@ -8,7 +8,7 @@ Namespace SGC.Controller
 
 #Region "Select"
 
-        Public Function ListarActividades(ByVal id_actividad As Integer) As List(Of AsistenciaPersonalBE)
+        Public Function ListarAsistenciaPersonal(ByVal id_actividad As Integer) As List(Of AsistenciaPersonalBE)
             Try
                 Dim iAsistenciaPersonal As IAsistenciaPersonal
                 Dim oListadoAsistenciaPersonal As List(Of AsistenciaPersonalBE) = Nothing
