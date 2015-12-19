@@ -129,7 +129,7 @@ Namespace SGC.Model.Metodos
             Dim recordId As Integer = 0
             sqlCmd.CommandType = CommandType.StoredProcedure
             sqlCmd.Parameters.Add("@id_Perfil_Usuario", SqlDbType.Int).Value = oOpcion.id_perfil_usuario
-            sqlCmd.Parameters.Add("@id_pantalla", SqlDbType.Int).Value = oOpcion.id_pantalla
+            sqlCmd.Parameters.Add("@id_pantalla", SqlDbType.VarChar).Value = oOpcion.id_pantalla
 
             Try
                 sqlConn.Open()
