@@ -274,6 +274,12 @@
     <Compile Include="Mantenimiento\frmRegistroEspacio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mantenimiento\frmRegistroOpcion.Designer.vb">
+      <DependentUpon>frmRegistroOpcion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmRegistroOpcion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Mantenimiento\frmRegistroPerfil.Designer.vb">
       <DependentUpon>frmRegistroPerfil.vb</DependentUpon>
     </Compile>
@@ -549,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmRegistroEspacio.resx">
       <DependentUpon>frmRegistroEspacio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmRegistroOpcion.resx">
+      <DependentUpon>frmRegistroOpcion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmRegistroPerfil.resx">
       <DependentUpon>frmRegistroPerfil.vb</DependentUpon>
