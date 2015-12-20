@@ -20,7 +20,7 @@ Partial Class frmPresupuestoPlanAnual
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuestoPlanAnual))
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
@@ -46,7 +46,6 @@ Partial Class frmPresupuestoPlanAnual
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
@@ -305,9 +304,9 @@ Partial Class frmPresupuestoPlanAnual
         'dgvListado
         '
         Me.dgvListado.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -322,11 +321,11 @@ Partial Class frmPresupuestoPlanAnual
         Me.tsMenu.Dock = System.Windows.Forms.DockStyle.None
         Me.tsMenu.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tsMenu.ImageScalingSize = New System.Drawing.Size(30, 30)
-        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbLimpiar, Me.sbGuardar, Me.ToolStripButton1, Me.ToolStripButton3})
+        Me.tsMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.sbLimpiar, Me.sbGuardar, Me.ToolStripButton3})
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 70)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(387, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(323, 37)
         Me.tsMenu.TabIndex = 17
         Me.tsMenu.Text = "SgcToolStrip1"
         '
@@ -349,16 +348,6 @@ Partial Class frmPresupuestoPlanAnual
         Me.sbGuardar.Name = "sbGuardar"
         Me.sbGuardar.Size = New System.Drawing.Size(92, 34)
         Me.sbGuardar.Text = "Guardar"
-        '
-        'ToolStripButton1
-        '
-        Me.ToolStripButton1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.ToolStripButton1.Image = Global.SGC_CS.My.Resources.Resources.menu_eliminar
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 2)
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(93, 34)
-        Me.ToolStripButton1.Text = "Eliminar"
         '
         'ToolStripButton3
         '
@@ -405,7 +394,6 @@ Partial Class frmPresupuestoPlanAnual
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
     Friend WithEvents sbLimpiar As System.Windows.Forms.ToolStripButton
     Friend WithEvents sbGuardar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
     Friend WithEvents txtMontoTotal As SGC_CS.SGCTextBox
     Friend WithEvents btnAgregar As SGC_CS.SGCButton
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel

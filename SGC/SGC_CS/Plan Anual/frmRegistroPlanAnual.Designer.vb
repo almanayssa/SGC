@@ -22,7 +22,7 @@ Partial Class frmRegistroPlanAnual
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.gbPlan = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.btnPresupuesto = New SGC_CS.SGCButton(Me.components)
         Me.btnEditarPlan = New SGC_CS.SGCButton(Me.components)
@@ -42,7 +42,7 @@ Partial Class frmRegistroPlanAnual
         Me.gbDetalle = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvActividades = New SGC_CS.SGCDataGridView(Me.components)
         Me.btnGrabarDetalle = New SGC_CS.SGCButton(Me.components)
-        Me.SgcGroupBox1.SuspendLayout()
+        Me.gbPlan.SuspendLayout()
         Me.gbDetalle.SuspendLayout()
         CType(Me.dgvActividades, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -59,31 +59,31 @@ Partial Class frmRegistroPlanAnual
         Me.lblTitulo.TabIndex = 12
         Me.lblTitulo.Text = "Registro de Plan Anual"
         '
-        'SgcGroupBox1
+        'gbPlan
         '
-        Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
-        Me.SgcGroupBox1.Controls.Add(Me.btnPresupuesto)
-        Me.SgcGroupBox1.Controls.Add(Me.btnEditarPlan)
-        Me.SgcGroupBox1.Controls.Add(Me.btnGrabarPlan)
-        Me.SgcGroupBox1.Controls.Add(Me.lblEstado)
-        Me.SgcGroupBox1.Controls.Add(Me.dtpFecFin)
-        Me.SgcGroupBox1.Controls.Add(Me.dtpFecIni)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel6)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel5)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
-        Me.SgcGroupBox1.Controls.Add(Me.cboAnio)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel3)
-        Me.SgcGroupBox1.Controls.Add(Me.cboComite)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
-        Me.SgcGroupBox1.Controls.Add(Me.txtCodigo)
-        Me.SgcGroupBox1.Controls.Add(Me.SgcLabel1)
-        Me.SgcGroupBox1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox1.Location = New System.Drawing.Point(60, 70)
-        Me.SgcGroupBox1.Name = "SgcGroupBox1"
-        Me.SgcGroupBox1.Size = New System.Drawing.Size(900, 153)
-        Me.SgcGroupBox1.TabIndex = 13
-        Me.SgcGroupBox1.TabStop = False
-        Me.SgcGroupBox1.Text = "Plan Anual"
+        Me.gbPlan.Controls.Add(Me.btnBuscar)
+        Me.gbPlan.Controls.Add(Me.btnPresupuesto)
+        Me.gbPlan.Controls.Add(Me.btnEditarPlan)
+        Me.gbPlan.Controls.Add(Me.btnGrabarPlan)
+        Me.gbPlan.Controls.Add(Me.lblEstado)
+        Me.gbPlan.Controls.Add(Me.dtpFecFin)
+        Me.gbPlan.Controls.Add(Me.dtpFecIni)
+        Me.gbPlan.Controls.Add(Me.SgcLabel6)
+        Me.gbPlan.Controls.Add(Me.SgcLabel5)
+        Me.gbPlan.Controls.Add(Me.SgcLabel4)
+        Me.gbPlan.Controls.Add(Me.cboAnio)
+        Me.gbPlan.Controls.Add(Me.SgcLabel3)
+        Me.gbPlan.Controls.Add(Me.cboComite)
+        Me.gbPlan.Controls.Add(Me.SgcLabel2)
+        Me.gbPlan.Controls.Add(Me.txtCodigo)
+        Me.gbPlan.Controls.Add(Me.SgcLabel1)
+        Me.gbPlan.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbPlan.Location = New System.Drawing.Point(60, 70)
+        Me.gbPlan.Name = "gbPlan"
+        Me.gbPlan.Size = New System.Drawing.Size(900, 153)
+        Me.gbPlan.TabIndex = 13
+        Me.gbPlan.TabStop = False
+        Me.gbPlan.Text = "Plan Anual"
         '
         'btnBuscar
         '
@@ -323,14 +323,14 @@ Partial Class frmRegistroPlanAnual
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.Controls.Add(Me.gbDetalle)
-        Me.Controls.Add(Me.SgcGroupBox1)
+        Me.Controls.Add(Me.gbPlan)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmRegistroPlanAnual"
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
-        Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
+        Me.Controls.SetChildIndex(Me.gbPlan, 0)
         Me.Controls.SetChildIndex(Me.gbDetalle, 0)
-        Me.SgcGroupBox1.ResumeLayout(False)
-        Me.SgcGroupBox1.PerformLayout()
+        Me.gbPlan.ResumeLayout(False)
+        Me.gbPlan.PerformLayout()
         Me.gbDetalle.ResumeLayout(False)
         CType(Me.dgvActividades, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -338,7 +338,7 @@ Partial Class frmRegistroPlanAnual
 
     End Sub
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
-    Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
+    Friend WithEvents gbPlan As SGC_CS.SGCGroupBox
     Friend WithEvents txtCodigo As SGC_CS.SGCTextBox
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel

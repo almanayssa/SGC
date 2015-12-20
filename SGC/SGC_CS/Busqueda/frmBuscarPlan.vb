@@ -86,7 +86,6 @@ Public Class frmBuscarPlan
         cboAnio.SelectedValue = Now.Year + 1
     End Sub
 
-
     Private Sub ListarPlanes()
 
         If PlanFiltro IsNot Nothing Then
@@ -167,7 +166,6 @@ Public Class frmBuscarPlan
         End If
     End Sub
 
-
 #End Region
 
 #Region "Cargar"
@@ -184,7 +182,6 @@ Public Class frmBuscarPlan
             ListarPlanes()
         
         End If
-
 
     End Sub
 

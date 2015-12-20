@@ -129,10 +129,16 @@ Public Class frmRegistroPlanAnual
 
         ListarActividades(oPlan.id_comite, oPlan.id_plan)
 
+
+        If oPlan.id_estado <> "EPA001" Then
+            gbDetalle.Enabled = False
+        Else
+            gbDetalle.Enabled = True
+        End If
+
         btnEditarPlan.Enabled = True
         btnPresupuesto.Enabled = True
         btnGrabarPlan.Enabled = False
-        gbDetalle.Enabled = True
         btnGrabarDetalle.Enabled = True
 
         modoEdicionPlan(False)
@@ -259,6 +265,7 @@ Public Class frmRegistroPlanAnual
         If frmBuscarPlan.PlanSeleccionado IsNot Nothing Then
             _id_Plan = frmBuscarPlan.PlanSeleccionado.id_plan
             CargarPlan(frmBuscarPlan.PlanSeleccionado.id_plan)
+
 
         End If
     End Sub
