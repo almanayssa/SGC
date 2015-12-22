@@ -1,7 +1,7 @@
 Imports SGC.Controller
 Imports SGC.Model.Entidades
 
-Public Class frmPresupuestoPlanAnual
+Public Class frmPresupuestoActividad
     Dim bc As New BusinessController
 
 
@@ -178,7 +178,7 @@ Public Class frmPresupuestoPlanAnual
                 Cell.Value = a.monto
                 Cell.Style.ForeColor = Color.Black
                 Row.Cells.Add(Cell)
-                
+
                 dgvListado.Rows.Add(Row)
                 montoTotal += a.monto
             Next
@@ -290,7 +290,7 @@ Public Class frmPresupuestoPlanAnual
             If dgvListado.RowCount = 0 Then
 
                 Dim Col_Text As DataGridViewTextBoxColumn
-                
+
                 Col_Text = New DataGridViewTextBoxColumn
                 Col_Text.Name = "idDetalle"
                 Col_Text.HeaderText = "Codigo"
@@ -399,7 +399,7 @@ Public Class frmPresupuestoPlanAnual
             Dim montoTotal As Decimal = 0.0
 
             For Each fila As DataGridViewRow In dgvListado.Rows
-                     montoTotal += CDec(fila.Cells("monto").Value)
+                montoTotal += CDec(fila.Cells("monto").Value)
             Next
 
 
