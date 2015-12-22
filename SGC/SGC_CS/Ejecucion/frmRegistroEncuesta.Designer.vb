@@ -21,7 +21,7 @@ Partial Class frmRegistroEncuesta
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroEncuesta))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.txtActividad = New SGC_CS.SGCTextBox(Me.components)
@@ -35,14 +35,14 @@ Partial Class frmRegistroEncuesta
         Me.btnQuitarPregunta = New SGC_CS.SGCButton(Me.components)
         Me.btnAgregarPregunta = New SGC_CS.SGCButton(Me.components)
         Me.dgvPreguntas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.colPregunta = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colOpcion1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colOpcion2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colOpcion3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
+        Me.colPregunta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOpcion1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOpcion2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colOpcion3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         Me.SgcGroupBox6.SuspendLayout()
@@ -207,9 +207,9 @@ Partial Class frmRegistroEncuesta
         '
         Me.dgvPreguntas.AllowUserToAddRows = False
         Me.dgvPreguntas.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvPreguntas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvPreguntas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvPreguntas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvPreguntas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvPreguntas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -218,27 +218,6 @@ Partial Class frmRegistroEncuesta
         Me.dgvPreguntas.Name = "dgvPreguntas"
         Me.dgvPreguntas.Size = New System.Drawing.Size(849, 226)
         Me.dgvPreguntas.TabIndex = 1
-        '
-        'colPregunta
-        '
-        Me.colPregunta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colPregunta.HeaderText = "Pregunta"
-        Me.colPregunta.Name = "colPregunta"
-        '
-        'colOpcion1
-        '
-        Me.colOpcion1.HeaderText = "Opción 1"
-        Me.colOpcion1.Name = "colOpcion1"
-        '
-        'colOpcion2
-        '
-        Me.colOpcion2.HeaderText = "Opción 2"
-        Me.colOpcion2.Name = "colOpcion2"
-        '
-        'colOpcion3
-        '
-        Me.colOpcion3.HeaderText = "Opción 3"
-        Me.colOpcion3.Name = "colOpcion3"
         '
         'lblTitulo
         '
@@ -287,6 +266,27 @@ Partial Class frmRegistroEncuesta
         Me.tsbGuardar.Text = "Guardar"
         Me.tsbGuardar.Visible = False
         '
+        'colPregunta
+        '
+        Me.colPregunta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colPregunta.HeaderText = "Detalle"
+        Me.colPregunta.Name = "colPregunta"
+        '
+        'colOpcion1
+        '
+        Me.colOpcion1.HeaderText = "Satisfecho"
+        Me.colOpcion1.Name = "colOpcion1"
+        '
+        'colOpcion2
+        '
+        Me.colOpcion2.HeaderText = "NS/NO"
+        Me.colOpcion2.Name = "colOpcion2"
+        '
+        'colOpcion3
+        '
+        Me.colOpcion3.HeaderText = "Insatisfecho"
+        Me.colOpcion3.Name = "colOpcion3"
+        '
         'frmRegistroEncuesta
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -328,11 +328,11 @@ Partial Class frmRegistroEncuesta
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
     Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
+    Friend WithEvents btnQuitarPregunta As SGC_CS.SGCButton
+    Friend WithEvents btnAgregarPregunta As SGC_CS.SGCButton
     Friend WithEvents colPregunta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colOpcion1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colOpcion2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colOpcion3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents btnQuitarPregunta As SGC_CS.SGCButton
-    Friend WithEvents btnAgregarPregunta As SGC_CS.SGCButton
 
 End Class

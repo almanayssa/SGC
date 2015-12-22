@@ -61,6 +61,56 @@
             End Set
         End Property
 
+        Private _id_actividad_detalle As Integer
+        Public Property id_actividad_detalle() As Integer
+            Get
+                Return _id_actividad_detalle
+            End Get
+            Set(ByVal value As Integer)
+                _id_actividad_detalle = value
+            End Set
+        End Property
+
+        Private _hora_inicio As String
+        Public Property hora_inicio() As String
+            Get
+                Return _hora_inicio
+            End Get
+            Set(ByVal value As String)
+                _hora_inicio = value
+            End Set
+        End Property
+
+        Private _hora_fin As String
+        Public Property hora_fin() As String
+            Get
+                Return _hora_fin
+            End Get
+            Set(ByVal value As String)
+                _hora_fin = value
+            End Set
+        End Property
+
+        Private _estado As String
+        Public Property estado() As String
+            Get
+                Return _estado
+            End Get
+            Set(ByVal value As String)
+                _estado = value
+            End Set
+        End Property
+
+        Private _nombre_comite As String
+        Public Property nombre_comite() As String
+            Get
+                Return _nombre_comite
+            End Get
+            Set(ByVal value As String)
+                _nombre_comite = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 

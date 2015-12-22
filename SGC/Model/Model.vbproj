@@ -140,6 +140,7 @@
     <Compile Include="Entidades\TransaccionBE.vb" />
     <Compile Include="Interfaces\IAsistencia.vb" />
     <Compile Include="Interfaces\IDetallePresupuestoAct.vb" />
+    <Compile Include="Interfaces\IEspacioRes.vb" />
     <Compile Include="Interfaces\IPresupuestoActividad.vb" />
     <Compile Include="Interfaces\ISuscripcionComite.vb" />
     <Compile Include="Interfaces\ITipoPago.vb" />
@@ -187,6 +188,7 @@
     <Compile Include="Interfaces\IComite.vb" />
     <Compile Include="Metodos\ArticuloCobranzaDL.vb" />
     <Compile Include="Metodos\CanjeAdelantosDL.vb" />
+    <Compile Include="Metodos\EspacioResDL.vb" />
     <Compile Include="Metodos\PresupuestoActividadDL.vb" />
     <Compile Include="Metodos\SuscripcionComiteDL.vb" />
     <Compile Include="Metodos\TipoPagoDL.vb" />

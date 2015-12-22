@@ -16,6 +16,14 @@ Public Class frmCronogramaEspacios
         cboLugar.ValueMember = "id_lugar"
         cboLugar.DisplayMember = "desc_lugar"
 
+        dgvCalendario.AutoGenerateColumns = False
+
+        colHoraInicio.DataPropertyName = "hora_inicio"
+        colHoraFin.DataPropertyName = "hora_fin"
+        colEstado.DataPropertyName = "estado"
+        colComite.DataPropertyName = "nombre_comite"
+        colObservacion.DataPropertyName = "observacion"
+
     End Sub
 
 #End Region
@@ -34,31 +42,28 @@ Public Class frmCronogramaEspacios
         cboLugar.DataSource = ListadoLugar
     End Sub
 
-    Private Sub ListarAnio()
-        Dim id As String() = New String(1) {"2015", "2016"}
-        Dim desc As String() = New String(1) {"2015", "2016"}
+    Private Function ValidarCamposRequeridos() As String
+        Dim msg As String = String.Empty
 
-        Dim dt As New DataTable
-        dt.Columns.Add("id")
-        dt.Columns.Add("desc")
+        If cboSede.SelectedValue = "000" Then
+            msg &= vbCrLf & "- Seleccione una sede"
+        End If
 
-        Dim dr As DataRow
+        If cboLugar.SelectedValue = 0 Then
+            msg &= vbCrLf & "- Seleccione un lugar"
+        End If
 
-        For i As Integer = 0 To 1
-            dr = dt.NewRow()
-            dr("id") = id(i)
-            dr("desc") = desc(i)
-            dt.Rows.Add(dr)
-        Next
+        If cboEspacio.SelectedValue = 0 Then
+            msg &= vbCrLf & "- Seleccione un espacio"
+        End If
 
-        dt.AcceptChanges()
+        Return msg
+    End Function
 
-        cboAnio.DataSource = dt
-        cboAnio.DisplayMember = "desc"
-        cboAnio.ValueMember = "id"
-
-
-        cboAnio.SelectedValue = Now.Year + 1
+    Private Sub ListarCronogramaEspacios()
+        Dim ListadoEspacioRes As List(Of EspacioResBE) = bc.ListarCronogramaEspacios(cboEspacio.SelectedValue, dtpFecha.Value)
+        dgvCalendario.DataSource = Nothing
+        dgvCalendario.DataSource = ListadoEspacioRes
     End Sub
 
 #End Region
@@ -68,7 +73,6 @@ Public Class frmCronogramaEspacios
     Private Sub frmCronogramaEspacios_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ListarSedes()
         ListarLugares()
-        ListarAnio()
     End Sub
 
 #End Region
@@ -100,6 +104,15 @@ Public Class frmCronogramaEspacios
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+        If ValidarCamposRequeridos() <> String.Empty Then
+            MessageBox.Show(ValidarCamposRequeridos, "Información")
+            Exit Sub
+        End If
+
+        ListarCronogramaEspacios()
     End Sub
 
 #End Region
