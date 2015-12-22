@@ -201,9 +201,9 @@ Public Class MDI
     End Sub
 
     Private Sub RegistrarAsistenciaDeParticipantesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RegistrarAsistenciaDeParticipantesToolStripMenuItem.Click
-        'frmRegistroAsistenciaParticipantes.Close()
-        'frmRegistroAsistenciaParticipantes.MdiParent = Me
-        'frmRegistroAsistenciaParticipantes.Show()
+        frmRegistroAsistenciaParticipantes.Close()
+        frmRegistroAsistenciaParticipantes.MdiParent = Me
+        frmRegistroAsistenciaParticipantes.Show()
     End Sub
 
     Private Sub RegistrarPersonalToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RegistrarPersonalToolStripMenuItem.Click

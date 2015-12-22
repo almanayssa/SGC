@@ -110,7 +110,7 @@ Public Class frmRegistroAsistenciaParticipantes
             Dim oPersona As PersonaBE = row.DataBoundItem
 
             oAsistencia = New AsistenciaBE
-            oAsistencia.id_persona = oPersona.id_persona
+            oAsistencia.id_detalle = oPersona.id_detalle
             oAsistencia.fecha = Now
             oAsistencia.flg_asistencia = value
 
