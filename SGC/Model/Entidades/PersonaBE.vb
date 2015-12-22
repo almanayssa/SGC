@@ -220,7 +220,7 @@
         Public Property id_accion As String
         Public Property tipo_familiar As String
         Public Property id_inscripcion As String
-            
+        Public Property id_detalle As Integer
 
     End Class
 

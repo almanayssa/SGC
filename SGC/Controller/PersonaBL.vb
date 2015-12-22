@@ -23,6 +23,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarPersonaXActividad(ByVal id_actividad As Integer) As List(Of PersonaBE)
+            Try
+                Dim iPersona As IPersona
+                Dim oListadoPersona As List(Of PersonaBE) = Nothing
+
+                iPersona = New PersonaDL
+                oListadoPersona = iPersona.ListarPersonaXActividad(id_actividad)
+
+                Return oListadoPersona
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

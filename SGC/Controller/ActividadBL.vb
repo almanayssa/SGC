@@ -330,6 +330,26 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function InsertarAsistencia(ByRef oActividad As ActividadBE) As Integer
+            Try
+                Dim affectedRows As Integer
+
+                Dim iAsistencia As IAsistencia
+                iAsistencia = New AsistenciaDL
+
+                If oActividad.ListaAsistencia IsNot Nothing Then
+                    For Each oAsistencia As AsistenciaBE In oActividad.ListaAsistencia
+                        affectedRows += iAsistencia.InsertarAsistencia(oAsistencia)
+                    Next
+                End If
+
+                Return affectedRows
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
 #Region "Delete"

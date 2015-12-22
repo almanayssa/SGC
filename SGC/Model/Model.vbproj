@@ -138,6 +138,7 @@
     <Compile Include="Entidades\TipoRegistroInvitadoBE.vb" />
     <Compile Include="Entidades\TipoTransaccionBE.vb" />
     <Compile Include="Entidades\TransaccionBE.vb" />
+    <Compile Include="Interfaces\IAsistencia.vb" />
     <Compile Include="Interfaces\ISuscripcionComite.vb" />
     <Compile Include="Interfaces\ITipoPago.vb" />
     <Compile Include="Interfaces\ICanjeAdelantos.vb" />
@@ -176,6 +177,7 @@
     <Compile Include="Metodos\ActividadDetalleDL.vb" />
     <Compile Include="Metodos\ActividadDL.vb" />
     <Compile Include="Metodos\ActividadRecurrenteDL.vb" />
+    <Compile Include="Metodos\AsistenciaDL.vb" />
     <Compile Include="Metodos\AsistenciaPersonalDL.vb" />
     <Compile Include="Metodos\CatTipoActividadDL.vb" />
     <Compile Include="Metodos\ComiteDL.vb" />

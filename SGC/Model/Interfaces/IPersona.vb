@@ -7,6 +7,7 @@ Namespace SGC.Model.Interfaces
 #Region "Select"
 
         Function ListarPersonasFamilia(ByVal clave As String, ByVal nombre As String) As List(Of PersonaBE)
+        Function ListarPersonaXActividad(ByVal id_actividad As Integer) As List(Of PersonaBE)
 
 #End Region
 

@@ -220,6 +220,12 @@
     <Compile Include="Controles\SGCToolStrip.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ejecucion\frmRegistroAsistenciaParticipantes.Designer.vb">
+      <DependentUpon>frmRegistroAsistenciaParticipantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ejecucion\frmRegistroAsistenciaParticipantes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ejecucion\frmRegistroAsistenciaPersonal.Designer.vb">
       <DependentUpon>frmRegistroAsistenciaPersonal.vb</DependentUpon>
     </Compile>
@@ -516,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCToolStrip.resx">
       <DependentUpon>SGCToolStrip.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ejecucion\frmRegistroAsistenciaParticipantes.resx">
+      <DependentUpon>frmRegistroAsistenciaParticipantes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ejecucion\frmRegistroAsistenciaPersonal.resx">
       <DependentUpon>frmRegistroAsistenciaPersonal.vb</DependentUpon>
