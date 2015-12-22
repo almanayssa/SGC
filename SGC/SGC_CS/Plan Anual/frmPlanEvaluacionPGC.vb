@@ -33,10 +33,15 @@ Public Class frmPlanEvaluacionPGC
 #Region "Metodos Personalizados"
 
     Private Sub ListarComites()
+        Dim oComite As New ComiteBE
+        oComite.id_comite = "000"
+        oComite.nombre = "- Todos -"
 
         Dim ListadoComites As List(Of ComiteBE) = bc.ListarComites()
+        ListadoComites.Insert(0, oComite)
         cboComite.DataSource = Nothing
         cboComite.DataSource = ListadoComites
+        
     End Sub
 
     Private Sub ListarAnio()
@@ -67,14 +72,25 @@ Public Class frmPlanEvaluacionPGC
     End Sub
 
     Private Sub ListarPlanes()
-        ListadoPlanPendiente = bc.ListarPlanesPendientesPGC(cboComite.SelectedValue, cboAnio.SelectedValue)
+
+        Dim id_comite As String = ""
+
+        If cboComite.SelectedIndex <> 0 Then
+            id_comite = cboComite.SelectedValue
+        End If
+
+        ListadoPlanPendiente = bc.ListarPlanesPendientesPGC(id_comite, cboAnio.SelectedValue)
         CargarPlanesPendientes(ListadoPlanPendiente)
+        tpRegistrados.Text = "Registrados (" & ListadoPlanPendiente.Count & ")"
 
-        ListadoPlanAprobado = bc.ListarPlanesAprobadosPGC(cboComite.SelectedValue, cboAnio.SelectedValue)
+
+        ListadoPlanAprobado = bc.ListarPlanesAprobadosPGC(id_comite, cboAnio.SelectedValue)
         CargarPlanesAprobados(ListadoPlanAprobado)
+        tpAprobados.Text = "Aprobados (" & ListadoPlanAprobado.Count & ")"
 
-        ListadoPlanRechazado = bc.ListarPlanesRechazadosPGC(cboComite.SelectedValue, cboAnio.SelectedValue)
+        ListadoPlanRechazado = bc.ListarPlanesRechazadosPGC(id_comite, cboAnio.SelectedValue)
         CargarPlanesRechazados(ListadoPlanRechazado)
+        tpRechazados.Text = "Rechazados (" & ListadoPlanRechazado.Count & ")"
     End Sub
 
 
@@ -476,13 +492,13 @@ Public Class frmPlanEvaluacionPGC
 
 #End Region
 
-    Private Sub cboBuscar_Click(sender As System.Object, e As System.EventArgs) Handles cboBuscar.Click
-        If cboComite.SelectedValue = "000" Then
-            MessageBox.Show("Seleccione un comité", "Información")
-            Exit Sub
-        Else
-            ListarPlanes()
-        End If
+    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+        'If cboComite.SelectedValue = "000" Then
+        '    MessageBox.Show("Seleccione un comité", "Información")
+        '    Exit Sub
+        'Else
+        ListarPlanes()
+        'End If
     End Sub
 
     Private Sub btnEnviarCD_Click(sender As System.Object, e As System.EventArgs) Handles btnEnviarCD.Click

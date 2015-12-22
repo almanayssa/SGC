@@ -31,8 +31,12 @@ Public Class frmPlanEvaluacionCD
 #Region "Metodos Personalizados"
 
     Private Sub ListarComites()
+        Dim oComite As New ComiteBE
+        oComite.id_comite = "000"
+        oComite.nombre = "- Todos -"
 
         Dim ListadoComites As List(Of ComiteBE) = bc.ListarComites()
+        ListadoComites.Insert(0, oComite)
         cboComite.DataSource = Nothing
         cboComite.DataSource = ListadoComites
     End Sub
@@ -65,7 +69,14 @@ Public Class frmPlanEvaluacionCD
     End Sub
 
     Private Sub ListarPlanes()
-        ListadoPlanes = bc.ListarPlanesCD(cboComite.SelectedValue, cboAnio.SelectedValue)
+
+        Dim id_comite As String = ""
+
+        If cboComite.SelectedIndex <> 0 Then
+            id_comite = cboComite.SelectedValue
+        End If
+
+        ListadoPlanes = bc.ListarPlanesCD(id_comite, cboAnio.SelectedValue)
 
         dgvListado.Columns.Clear()
         dgvListado.DataSource = Nothing
@@ -180,13 +191,13 @@ Public Class frmPlanEvaluacionCD
 
 #Region "Metodos Controles"
 
-    Private Sub cboBuscar_Click(sender As System.Object, e As System.EventArgs) Handles cboBuscar.Click
-        If cboComite.SelectedValue = "000" Then
-            MessageBox.Show("Seleccione un comité", "Información")
-            Exit Sub
-        Else
-            ListarPlanes()
-        End If
+    Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
+        'If cboComite.SelectedValue = "000" Then
+        '    MessageBox.Show("Seleccione un comité", "Información")
+        '    Exit Sub
+        'Else
+        ListarPlanes()
+        'End If
     End Sub
 
     Private Sub btnAprobar_Click(sender As System.Object, e As System.EventArgs) Handles btnAprobar.Click

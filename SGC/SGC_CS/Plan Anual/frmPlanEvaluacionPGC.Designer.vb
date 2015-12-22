@@ -25,7 +25,7 @@ Partial Class frmPlanEvaluacionPGC
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.cboBuscar = New SGC_CS.SGCButton(Me.components)
+        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.cboAnio = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.cboComite = New SGC_CS.SGCComboBox(Me.components)
@@ -66,7 +66,7 @@ Partial Class frmPlanEvaluacionPGC
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.cboBuscar)
+        Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
         Me.SgcGroupBox1.Controls.Add(Me.cboAnio)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel2)
         Me.SgcGroupBox1.Controls.Add(Me.cboComite)
@@ -79,20 +79,20 @@ Partial Class frmPlanEvaluacionPGC
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Filtros"
         '
-        'cboBuscar
+        'btnBuscar
         '
-        Me.cboBuscar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.cboBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.cboBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cboBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboBuscar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.cboBuscar.Location = New System.Drawing.Point(722, 27)
-        Me.cboBuscar.Name = "cboBuscar"
-        Me.cboBuscar.Size = New System.Drawing.Size(120, 31)
-        Me.cboBuscar.TabIndex = 4
-        Me.cboBuscar.Text = "Buscar"
-        Me.cboBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.cboBuscar.UseVisualStyleBackColor = False
+        Me.btnBuscar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscar.Location = New System.Drawing.Point(722, 27)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(120, 31)
+        Me.btnBuscar.TabIndex = 4
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'cboAnio
         '
@@ -126,7 +126,7 @@ Partial Class frmPlanEvaluacionPGC
         Me.cboComite.FormattingEnabled = True
         Me.cboComite.Location = New System.Drawing.Point(99, 30)
         Me.cboComite.Name = "cboComite"
-        Me.cboComite.Size = New System.Drawing.Size(121, 26)
+        Me.cboComite.Size = New System.Drawing.Size(220, 26)
         Me.cboComite.TabIndex = 1
         '
         'SgcLabel1
@@ -311,7 +311,7 @@ Partial Class frmPlanEvaluacionPGC
     End Sub
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
     Friend WithEvents SgcGroupBox1 As SGC_CS.SGCGroupBox
-    Friend WithEvents cboBuscar As SGC_CS.SGCButton
+    Friend WithEvents btnBuscar As SGC_CS.SGCButton
     Friend WithEvents cboAnio As SGC_CS.SGCComboBox
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents cboComite As SGC_CS.SGCComboBox

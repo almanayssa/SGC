@@ -51,7 +51,7 @@ Public Class frmBuscarPlan
     Private Sub ListarComites()
         Dim oComite As New ComiteBE
         oComite.id_comite = "000"
-        oComite.nombre = "- Seleccione -"
+        oComite.nombre = "- Todos -"
 
         Dim ListadoComites As List(Of ComiteBE) = bc.ListarComites()
         ListadoComites.Insert(0, oComite)
