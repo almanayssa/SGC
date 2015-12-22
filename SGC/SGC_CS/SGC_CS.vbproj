@@ -112,12 +112,6 @@
     <Compile Include="Actividad\frmHabilitarActividad.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Actividad\frmPresupuestoActividad.Designer.vb">
-      <DependentUpon>frmPresupuestoActividad.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Actividad\frmPresupuestoActividad.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Actividad\frmRegistroActividad.Designer.vb">
       <DependentUpon>frmRegistroActividad.vb</DependentUpon>
     </Compile>
@@ -444,9 +438,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmHabilitarActividad.resx">
       <DependentUpon>frmHabilitarActividad.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Actividad\frmPresupuestoActividad.resx">
-      <DependentUpon>frmPresupuestoActividad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmRegistroActividad.resx">
       <DependentUpon>frmRegistroActividad.vb</DependentUpon>
