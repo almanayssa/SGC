@@ -44,6 +44,19 @@ Public Class frmRegistroActividad
 
 #End Region
 
+#Region "Propiedades"
+
+    Private _id_act As String
+    Public Property id_act() As String
+        Get
+            Return _id_act
+        End Get
+        Set(ByVal value As String)
+            _id_act = value
+        End Set
+    End Property
+#End Region
+
 #Region "Metodos Personalizados"
 
     Private Sub FormularioEnModoEdicion()
@@ -485,6 +498,12 @@ Public Class frmRegistroActividad
         ListarTipoActividad()
         ListarRestricciones()
         ListarSignos()
+
+        If id_act IsNot Nothing Then
+            _id_actividad = id_act
+            CargarActividad(id_act)
+            FormularioEnModoVista()
+        End If
     End Sub
 
 #End Region

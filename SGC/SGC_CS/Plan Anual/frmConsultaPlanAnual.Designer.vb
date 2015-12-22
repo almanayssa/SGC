@@ -23,9 +23,9 @@ Partial Class frmConsultaPlanAnual
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.cboAnio = New SGC_CS.SGCComboBox(Me.components)
@@ -34,12 +34,6 @@ Partial Class frmConsultaPlanAnual
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.tcPlanAnual = New SGC_CS.SGCTabControl(Me.components)
         Me.tpTodos = New System.Windows.Forms.TabPage()
-        Me.tpRegistrados = New System.Windows.Forms.TabPage()
-        Me.tpEvaluacion = New System.Windows.Forms.TabPage()
-        Me.tpAprobados = New System.Windows.Forms.TabPage()
-        Me.tpRechazados = New System.Windows.Forms.TabPage()
-        Me.btnNuevo = New SGC_CS.SGCButton(Me.components)
-        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.dgvTodos = New SGC_CS.SGCDataGridView(Me.components)
         Me.ctoDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ctoComite = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -47,51 +41,57 @@ Partial Class frmConsultaPlanAnual
         Me.ctoFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ctoFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ctoEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpRegistrados = New System.Windows.Forms.TabPage()
         Me.dgvRegistrados = New SGC_CS.SGCDataGridView(Me.components)
-        Me.dgvEnEvaluacion = New SGC_CS.SGCDataGridView(Me.components)
-        Me.dgvAprobados = New SGC_CS.SGCDataGridView(Me.components)
-        Me.dgvRechazados = New SGC_CS.SGCDataGridView(Me.components)
-        Me.tpAnulados = New System.Windows.Forms.TabPage()
-        Me.dgvAnulados = New SGC_CS.SGCDataGridView(Me.components)
         Me.creDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.creComite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.creAnio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.creFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.creFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpEvaluacion = New System.Windows.Forms.TabPage()
+        Me.dgvEnEvaluacion = New SGC_CS.SGCDataGridView(Me.components)
         Me.ceeDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ceeComite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ceeAnio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ceeFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ceeFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpAnulados = New System.Windows.Forms.TabPage()
+        Me.dgvAnulados = New SGC_CS.SGCDataGridView(Me.components)
         Me.canDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.canComite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.canAnio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.canFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.canFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpAprobados = New System.Windows.Forms.TabPage()
+        Me.dgvAprobados = New SGC_CS.SGCDataGridView(Me.components)
         Me.capDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.capComite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.capAnio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.capFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.capFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.tpRechazados = New System.Windows.Forms.TabPage()
+        Me.dgvRechazados = New SGC_CS.SGCDataGridView(Me.components)
         Me.crcDescripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.crcComite = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.crcAnio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.crcFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.crcFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnNuevo = New SGC_CS.SGCButton(Me.components)
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.tcPlanAnual.SuspendLayout()
         Me.tpTodos.SuspendLayout()
-        Me.tpRegistrados.SuspendLayout()
-        Me.tpEvaluacion.SuspendLayout()
-        Me.tpAprobados.SuspendLayout()
-        Me.tpRechazados.SuspendLayout()
         CType(Me.dgvTodos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpRegistrados.SuspendLayout()
         CType(Me.dgvRegistrados, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpEvaluacion.SuspendLayout()
         CType(Me.dgvEnEvaluacion, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvAprobados, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvRechazados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpAnulados.SuspendLayout()
         CType(Me.dgvAnulados, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpAprobados.SuspendLayout()
+        CType(Me.dgvAprobados, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tpRechazados.SuspendLayout()
+        CType(Me.dgvRechazados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SgcGroupBox1
@@ -156,7 +156,7 @@ Partial Class frmConsultaPlanAnual
         Me.cboComite.FormattingEnabled = True
         Me.cboComite.Location = New System.Drawing.Point(99, 30)
         Me.cboComite.Name = "cboComite"
-        Me.cboComite.Size = New System.Drawing.Size(121, 26)
+        Me.cboComite.Size = New System.Drawing.Size(215, 26)
         Me.cboComite.TabIndex = 1
         '
         'SgcLabel1
@@ -195,74 +195,6 @@ Partial Class frmConsultaPlanAnual
         Me.tpTodos.TabIndex = 0
         Me.tpTodos.Text = "Todos"
         Me.tpTodos.UseVisualStyleBackColor = True
-        '
-        'tpRegistrados
-        '
-        Me.tpRegistrados.Controls.Add(Me.dgvRegistrados)
-        Me.tpRegistrados.Location = New System.Drawing.Point(4, 27)
-        Me.tpRegistrados.Name = "tpRegistrados"
-        Me.tpRegistrados.Padding = New System.Windows.Forms.Padding(3)
-        Me.tpRegistrados.Size = New System.Drawing.Size(888, 364)
-        Me.tpRegistrados.TabIndex = 1
-        Me.tpRegistrados.Text = "Registrados"
-        Me.tpRegistrados.UseVisualStyleBackColor = True
-        '
-        'tpEvaluacion
-        '
-        Me.tpEvaluacion.Controls.Add(Me.dgvEnEvaluacion)
-        Me.tpEvaluacion.Location = New System.Drawing.Point(4, 27)
-        Me.tpEvaluacion.Name = "tpEvaluacion"
-        Me.tpEvaluacion.Size = New System.Drawing.Size(888, 364)
-        Me.tpEvaluacion.TabIndex = 2
-        Me.tpEvaluacion.Text = "En Evaluación"
-        Me.tpEvaluacion.UseVisualStyleBackColor = True
-        '
-        'tpAprobados
-        '
-        Me.tpAprobados.Controls.Add(Me.dgvAprobados)
-        Me.tpAprobados.Location = New System.Drawing.Point(4, 27)
-        Me.tpAprobados.Name = "tpAprobados"
-        Me.tpAprobados.Size = New System.Drawing.Size(888, 364)
-        Me.tpAprobados.TabIndex = 3
-        Me.tpAprobados.Text = "Aprobados"
-        Me.tpAprobados.UseVisualStyleBackColor = True
-        '
-        'tpRechazados
-        '
-        Me.tpRechazados.Controls.Add(Me.dgvRechazados)
-        Me.tpRechazados.Location = New System.Drawing.Point(4, 27)
-        Me.tpRechazados.Name = "tpRechazados"
-        Me.tpRechazados.Size = New System.Drawing.Size(888, 364)
-        Me.tpRechazados.TabIndex = 4
-        Me.tpRechazados.Text = "Rechazados"
-        Me.tpRechazados.UseVisualStyleBackColor = True
-        '
-        'btnNuevo
-        '
-        Me.btnNuevo.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnNuevo.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnNuevo.Location = New System.Drawing.Point(60, 161)
-        Me.btnNuevo.Name = "btnNuevo"
-        Me.btnNuevo.Size = New System.Drawing.Size(176, 31)
-        Me.btnNuevo.TabIndex = 10
-        Me.btnNuevo.Text = "Registrar Plan Anual"
-        Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnNuevo.UseVisualStyleBackColor = False
-        '
-        'lblTitulo
-        '
-        Me.lblTitulo.AutoSize = True
-        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
-        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTitulo.ForeColor = System.Drawing.Color.White
-        Me.lblTitulo.Location = New System.Drawing.Point(433, 9)
-        Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(191, 23)
-        Me.lblTitulo.TabIndex = 11
-        Me.lblTitulo.Text = "Consulta de Plan Anual"
         '
         'dgvTodos
         '
@@ -317,6 +249,17 @@ Partial Class frmConsultaPlanAnual
         Me.ctoEstado.Name = "ctoEstado"
         Me.ctoEstado.ReadOnly = True
         '
+        'tpRegistrados
+        '
+        Me.tpRegistrados.Controls.Add(Me.dgvRegistrados)
+        Me.tpRegistrados.Location = New System.Drawing.Point(4, 27)
+        Me.tpRegistrados.Name = "tpRegistrados"
+        Me.tpRegistrados.Padding = New System.Windows.Forms.Padding(3)
+        Me.tpRegistrados.Size = New System.Drawing.Size(888, 364)
+        Me.tpRegistrados.TabIndex = 1
+        Me.tpRegistrados.Text = "Registrados"
+        Me.tpRegistrados.UseVisualStyleBackColor = True
+        '
         'dgvRegistrados
         '
         Me.dgvRegistrados.AllowUserToAddRows = False
@@ -332,80 +275,6 @@ Partial Class frmConsultaPlanAnual
         Me.dgvRegistrados.ReadOnly = True
         Me.dgvRegistrados.Size = New System.Drawing.Size(873, 343)
         Me.dgvRegistrados.TabIndex = 2
-        '
-        'dgvEnEvaluacion
-        '
-        Me.dgvEnEvaluacion.AllowUserToAddRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvEnEvaluacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgvEnEvaluacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvEnEvaluacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvEnEvaluacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvEnEvaluacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ceeDescripcion, Me.ceeComite, Me.ceeAnio, Me.ceeFecInicio, Me.ceeFecFin})
-        Me.dgvEnEvaluacion.Location = New System.Drawing.Point(8, 11)
-        Me.dgvEnEvaluacion.Name = "dgvEnEvaluacion"
-        Me.dgvEnEvaluacion.ReadOnly = True
-        Me.dgvEnEvaluacion.Size = New System.Drawing.Size(873, 343)
-        Me.dgvEnEvaluacion.TabIndex = 2
-        '
-        'dgvAprobados
-        '
-        Me.dgvAprobados.AllowUserToAddRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvAprobados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvAprobados.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvAprobados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvAprobados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAprobados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.capDescripcion, Me.capComite, Me.capAnio, Me.capFecInicio, Me.capFecFin})
-        Me.dgvAprobados.Location = New System.Drawing.Point(8, 11)
-        Me.dgvAprobados.Name = "dgvAprobados"
-        Me.dgvAprobados.ReadOnly = True
-        Me.dgvAprobados.Size = New System.Drawing.Size(873, 343)
-        Me.dgvAprobados.TabIndex = 2
-        '
-        'dgvRechazados
-        '
-        Me.dgvRechazados.AllowUserToAddRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRechazados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvRechazados.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvRechazados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvRechazados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvRechazados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.crcDescripcion, Me.crcComite, Me.crcAnio, Me.crcFecInicio, Me.crcFecFin})
-        Me.dgvRechazados.Location = New System.Drawing.Point(8, 11)
-        Me.dgvRechazados.Name = "dgvRechazados"
-        Me.dgvRechazados.ReadOnly = True
-        Me.dgvRechazados.Size = New System.Drawing.Size(873, 343)
-        Me.dgvRechazados.TabIndex = 2
-        '
-        'tpAnulados
-        '
-        Me.tpAnulados.Controls.Add(Me.dgvAnulados)
-        Me.tpAnulados.Location = New System.Drawing.Point(4, 27)
-        Me.tpAnulados.Name = "tpAnulados"
-        Me.tpAnulados.Size = New System.Drawing.Size(888, 364)
-        Me.tpAnulados.TabIndex = 5
-        Me.tpAnulados.Text = "Anulados"
-        Me.tpAnulados.UseVisualStyleBackColor = True
-        '
-        'dgvAnulados
-        '
-        Me.dgvAnulados.AllowUserToAddRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvAnulados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvAnulados.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvAnulados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvAnulados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAnulados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.canDescripcion, Me.canComite, Me.canAnio, Me.canFecInicio, Me.canFecFin})
-        Me.dgvAnulados.Location = New System.Drawing.Point(8, 11)
-        Me.dgvAnulados.Name = "dgvAnulados"
-        Me.dgvAnulados.ReadOnly = True
-        Me.dgvAnulados.Size = New System.Drawing.Size(873, 343)
-        Me.dgvAnulados.TabIndex = 3
         '
         'creDescripcion
         '
@@ -438,6 +307,32 @@ Partial Class frmConsultaPlanAnual
         Me.creFecFin.Name = "creFecFin"
         Me.creFecFin.ReadOnly = True
         '
+        'tpEvaluacion
+        '
+        Me.tpEvaluacion.Controls.Add(Me.dgvEnEvaluacion)
+        Me.tpEvaluacion.Location = New System.Drawing.Point(4, 27)
+        Me.tpEvaluacion.Name = "tpEvaluacion"
+        Me.tpEvaluacion.Size = New System.Drawing.Size(888, 364)
+        Me.tpEvaluacion.TabIndex = 2
+        Me.tpEvaluacion.Text = "En Evaluación"
+        Me.tpEvaluacion.UseVisualStyleBackColor = True
+        '
+        'dgvEnEvaluacion
+        '
+        Me.dgvEnEvaluacion.AllowUserToAddRows = False
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvEnEvaluacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgvEnEvaluacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvEnEvaluacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvEnEvaluacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvEnEvaluacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ceeDescripcion, Me.ceeComite, Me.ceeAnio, Me.ceeFecInicio, Me.ceeFecFin})
+        Me.dgvEnEvaluacion.Location = New System.Drawing.Point(8, 11)
+        Me.dgvEnEvaluacion.Name = "dgvEnEvaluacion"
+        Me.dgvEnEvaluacion.ReadOnly = True
+        Me.dgvEnEvaluacion.Size = New System.Drawing.Size(873, 343)
+        Me.dgvEnEvaluacion.TabIndex = 2
+        '
         'ceeDescripcion
         '
         Me.ceeDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -468,6 +363,32 @@ Partial Class frmConsultaPlanAnual
         Me.ceeFecFin.HeaderText = "Fec. Fin"
         Me.ceeFecFin.Name = "ceeFecFin"
         Me.ceeFecFin.ReadOnly = True
+        '
+        'tpAnulados
+        '
+        Me.tpAnulados.Controls.Add(Me.dgvAnulados)
+        Me.tpAnulados.Location = New System.Drawing.Point(4, 27)
+        Me.tpAnulados.Name = "tpAnulados"
+        Me.tpAnulados.Size = New System.Drawing.Size(888, 364)
+        Me.tpAnulados.TabIndex = 5
+        Me.tpAnulados.Text = "Anulados"
+        Me.tpAnulados.UseVisualStyleBackColor = True
+        '
+        'dgvAnulados
+        '
+        Me.dgvAnulados.AllowUserToAddRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvAnulados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgvAnulados.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvAnulados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvAnulados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAnulados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.canDescripcion, Me.canComite, Me.canAnio, Me.canFecInicio, Me.canFecFin})
+        Me.dgvAnulados.Location = New System.Drawing.Point(8, 11)
+        Me.dgvAnulados.Name = "dgvAnulados"
+        Me.dgvAnulados.ReadOnly = True
+        Me.dgvAnulados.Size = New System.Drawing.Size(873, 343)
+        Me.dgvAnulados.TabIndex = 3
         '
         'canDescripcion
         '
@@ -500,6 +421,32 @@ Partial Class frmConsultaPlanAnual
         Me.canFecFin.Name = "canFecFin"
         Me.canFecFin.ReadOnly = True
         '
+        'tpAprobados
+        '
+        Me.tpAprobados.Controls.Add(Me.dgvAprobados)
+        Me.tpAprobados.Location = New System.Drawing.Point(4, 27)
+        Me.tpAprobados.Name = "tpAprobados"
+        Me.tpAprobados.Size = New System.Drawing.Size(888, 364)
+        Me.tpAprobados.TabIndex = 3
+        Me.tpAprobados.Text = "Aprobados"
+        Me.tpAprobados.UseVisualStyleBackColor = True
+        '
+        'dgvAprobados
+        '
+        Me.dgvAprobados.AllowUserToAddRows = False
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvAprobados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgvAprobados.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvAprobados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvAprobados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAprobados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.capDescripcion, Me.capComite, Me.capAnio, Me.capFecInicio, Me.capFecFin})
+        Me.dgvAprobados.Location = New System.Drawing.Point(8, 11)
+        Me.dgvAprobados.Name = "dgvAprobados"
+        Me.dgvAprobados.ReadOnly = True
+        Me.dgvAprobados.Size = New System.Drawing.Size(873, 343)
+        Me.dgvAprobados.TabIndex = 2
+        '
         'capDescripcion
         '
         Me.capDescripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -530,6 +477,32 @@ Partial Class frmConsultaPlanAnual
         Me.capFecFin.HeaderText = "Fec. Fin"
         Me.capFecFin.Name = "capFecFin"
         Me.capFecFin.ReadOnly = True
+        '
+        'tpRechazados
+        '
+        Me.tpRechazados.Controls.Add(Me.dgvRechazados)
+        Me.tpRechazados.Location = New System.Drawing.Point(4, 27)
+        Me.tpRechazados.Name = "tpRechazados"
+        Me.tpRechazados.Size = New System.Drawing.Size(888, 364)
+        Me.tpRechazados.TabIndex = 4
+        Me.tpRechazados.Text = "Rechazados"
+        Me.tpRechazados.UseVisualStyleBackColor = True
+        '
+        'dgvRechazados
+        '
+        Me.dgvRechazados.AllowUserToAddRows = False
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRechazados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgvRechazados.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvRechazados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvRechazados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvRechazados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.crcDescripcion, Me.crcComite, Me.crcAnio, Me.crcFecInicio, Me.crcFecFin})
+        Me.dgvRechazados.Location = New System.Drawing.Point(8, 11)
+        Me.dgvRechazados.Name = "dgvRechazados"
+        Me.dgvRechazados.ReadOnly = True
+        Me.dgvRechazados.Size = New System.Drawing.Size(873, 343)
+        Me.dgvRechazados.TabIndex = 2
         '
         'crcDescripcion
         '
@@ -562,6 +535,33 @@ Partial Class frmConsultaPlanAnual
         Me.crcFecFin.Name = "crcFecFin"
         Me.crcFecFin.ReadOnly = True
         '
+        'btnNuevo
+        '
+        Me.btnNuevo.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnNuevo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnNuevo.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnNuevo.Location = New System.Drawing.Point(60, 161)
+        Me.btnNuevo.Name = "btnNuevo"
+        Me.btnNuevo.Size = New System.Drawing.Size(176, 31)
+        Me.btnNuevo.TabIndex = 10
+        Me.btnNuevo.Text = "Registrar Plan Anual"
+        Me.btnNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnNuevo.UseVisualStyleBackColor = False
+        '
+        'lblTitulo
+        '
+        Me.lblTitulo.AutoSize = True
+        Me.lblTitulo.BackColor = System.Drawing.Color.ForestGreen
+        Me.lblTitulo.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTitulo.ForeColor = System.Drawing.Color.White
+        Me.lblTitulo.Location = New System.Drawing.Point(433, 9)
+        Me.lblTitulo.Name = "lblTitulo"
+        Me.lblTitulo.Size = New System.Drawing.Size(191, 23)
+        Me.lblTitulo.TabIndex = 11
+        Me.lblTitulo.Text = "Consulta de Plan Anual"
+        '
         'frmConsultaPlanAnual
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -578,17 +578,17 @@ Partial Class frmConsultaPlanAnual
         Me.SgcGroupBox1.PerformLayout()
         Me.tcPlanAnual.ResumeLayout(False)
         Me.tpTodos.ResumeLayout(False)
-        Me.tpRegistrados.ResumeLayout(False)
-        Me.tpEvaluacion.ResumeLayout(False)
-        Me.tpAprobados.ResumeLayout(False)
-        Me.tpRechazados.ResumeLayout(False)
         CType(Me.dgvTodos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpRegistrados.ResumeLayout(False)
         CType(Me.dgvRegistrados, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpEvaluacion.ResumeLayout(False)
         CType(Me.dgvEnEvaluacion, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvAprobados, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvRechazados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpAnulados.ResumeLayout(False)
         CType(Me.dgvAnulados, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpAprobados.ResumeLayout(False)
+        CType(Me.dgvAprobados, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tpRechazados.ResumeLayout(False)
+        CType(Me.dgvRechazados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

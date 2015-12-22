@@ -141,20 +141,20 @@ Public Class frmRegistroPlanAnual
         btnGrabarPlan.Enabled = False
         btnGrabarDetalle.Enabled = True
 
-        modoEdicionPlan(False)
+        ModoEdicionPlan(False)
     End Sub
 
     Private Sub ListarActividades(ByVal id_comite As String, ByVal id_plan As Integer?)
         Dim oListado As List(Of ActividadBE) = bc.ListarActividadesPlan(id_comite, id_plan)
 
-            dgvActividades.Columns.Clear()
-            dgvActividades.DataSource = Nothing
-
+        dgvActividades.Columns.Clear()
+        dgvActividades.DataSource = Nothing
 
         If oListado IsNot Nothing Then
 
             Dim Col_Text As DataGridViewTextBoxColumn
             Dim Col_Chk As DataGridViewCheckBoxColumn
+            Dim Col_Btn As DataGridViewButtonColumn
             Dim Row As DataGridViewRow
             Dim Cell As DataGridViewCell
 
@@ -205,6 +205,17 @@ Public Class frmRegistroPlanAnual
             Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             dgvActividades.Columns.Add(Col_Text)
 
+            Col_Btn = New DataGridViewButtonColumn
+            Col_Btn.Name = "btn"
+            Col_Btn.HeaderText = ""
+            Col_Btn.ReadOnly = True
+            Col_Btn.Visible = True
+            Col_Btn.FlatStyle = FlatStyle.Flat
+
+            Col_Btn.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+            Col_Btn.UseColumnTextForButtonValue = True
+            dgvActividades.Columns.Add(Col_Btn)
+
             For Each a As ActividadBE In oListado
                 Row = New DataGridViewRow
 
@@ -226,12 +237,16 @@ Public Class frmRegistroPlanAnual
                 Cell = New DataGridViewTextBoxCell
                 Cell.Value = a.id_plan
                 Row.Cells.Add(Cell)
+                Cell = New DataGridViewButtonCell
+                Cell.Value = "Ver"
+                Cell.Style.ForeColor = Color.SteelBlue
+
+                Row.Cells.Add(Cell)
 
                 dgvActividades.Rows.Add(Row)
             Next
 
         End If
-
 
         gbDetalle.Enabled = True
         btnGrabarDetalle.Enabled = True
@@ -242,7 +257,6 @@ Public Class frmRegistroPlanAnual
         cboAnio.Enabled = op
         dtpFecFin.Enabled = op
         dtpFecIni.Enabled = op
-
     End Sub
 #End Region
 
@@ -316,11 +330,20 @@ Public Class frmRegistroPlanAnual
 
         frmPresupuestoPlanAnual.Close()
         frmPresupuestoPlanAnual.MdiParent = MDI
-        frmPresupuestoPlanAnual.id_plan = _id_Plan
+        frmPresupuestoPlanAnual.id_Plan = _id_Plan
         frmPresupuestoPlanAnual.Show()
 
     End Sub
 
 #End Region
+
+    Private Sub dgvActividades_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvActividades.CellClick
+        If e.ColumnIndex = dgvActividades.Columns("btn").Index Then
+            frmRegistroActividad.Close()
+            frmRegistroActividad.MdiParent = MDI
+            frmRegistroActividad.id_act = CStr(dgvActividades.Item("id_actividad", dgvActividades.CurrentRow.Index).Value)
+            frmRegistroActividad.Show()
+        End If
+    End Sub
 
 End Class

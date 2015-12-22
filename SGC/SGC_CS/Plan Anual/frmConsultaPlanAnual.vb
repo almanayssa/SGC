@@ -131,6 +131,7 @@ Public Class frmConsultaPlanAnual
 
         dgvTodos.DataSource = Nothing
         dgvTodos.DataSource = ListadoPlan
+        tpTodos.Text = "Todos (" & ListadoPlan.Count & ")"
 
         Dim ListadoActividadRegistrado As New List(Of PlanAnualBE)
         Dim ListadoActividadEnEvaluacion As New List(Of PlanAnualBE)
@@ -159,18 +160,23 @@ Public Class frmConsultaPlanAnual
 
         dgvRegistrados.DataSource = Nothing
         dgvRegistrados.DataSource = ListadoActividadRegistrado
+        tpRegistrados.Text = "Registrados (" & ListadoActividadRegistrado.Count & ")"
 
         dgvEnEvaluacion.DataSource = Nothing
         dgvEnEvaluacion.DataSource = ListadoActividadEnEvaluacion
+        tpEvaluacion.Text = "En Evaluación (" & ListadoActividadEnEvaluacion.Count & ")"
 
         dgvAnulados.DataSource = Nothing
         dgvAnulados.DataSource = ListadoActividadAnulado
+        tpAnulados.Text = "Anulados (" & ListadoActividadAnulado.Count & ")"
 
         dgvAprobados.DataSource = Nothing
         dgvAprobados.DataSource = ListadoActividadAprobado
+        tpAprobados.Text = "Aprobados (" & ListadoActividadAprobado.Count & ")"
 
         dgvRechazados.DataSource = Nothing
         dgvRechazados.DataSource = ListadoActividadRechazado
+        tpRechazados.Text = "Rechazados (" & ListadoActividadRechazado.Count & ")"
     End Sub
 
 #End Region
