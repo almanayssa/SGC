@@ -33,6 +33,7 @@ Public Class DetallePresupuestoAnualDL
                 oDetalle.tipo_item = dr("tipo_item")
                 oDetalle.cantidad = dr("cant")
                 oDetalle.monto = dr("monto")
+                oDetalle.descripcion = dr("descripcion")
                 oListadoDetalle.Add(oDetalle)
             End While
             dr.Close()

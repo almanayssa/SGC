@@ -37,7 +37,8 @@ Partial Class frmPresupuestoPlanAnual
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
-        Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.gbItems = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnPersonal = New SGC_CS.SGCButton(Me.components)
         Me.btnQuitar = New SGC_CS.SGCButton(Me.components)
         Me.txtMontoTotal = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
@@ -48,7 +49,7 @@ Partial Class frmPresupuestoPlanAnual
         Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox1.SuspendLayout()
-        Me.SgcGroupBox2.SuspendLayout()
+        Me.gbItems.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -235,20 +236,36 @@ Partial Class frmPresupuestoPlanAnual
         Me.SgcLabel1.TabIndex = 0
         Me.SgcLabel1.Text = "Plan Anual:"
         '
-        'SgcGroupBox2
+        'gbItems
         '
-        Me.SgcGroupBox2.Controls.Add(Me.btnQuitar)
-        Me.SgcGroupBox2.Controls.Add(Me.txtMontoTotal)
-        Me.SgcGroupBox2.Controls.Add(Me.SgcLabel6)
-        Me.SgcGroupBox2.Controls.Add(Me.btnAgregar)
-        Me.SgcGroupBox2.Controls.Add(Me.dgvListado)
-        Me.SgcGroupBox2.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox2.Location = New System.Drawing.Point(60, 281)
-        Me.SgcGroupBox2.Name = "SgcGroupBox2"
-        Me.SgcGroupBox2.Size = New System.Drawing.Size(900, 298)
-        Me.SgcGroupBox2.TabIndex = 15
-        Me.SgcGroupBox2.TabStop = False
-        Me.SgcGroupBox2.Text = "Items"
+        Me.gbItems.Controls.Add(Me.btnPersonal)
+        Me.gbItems.Controls.Add(Me.btnQuitar)
+        Me.gbItems.Controls.Add(Me.txtMontoTotal)
+        Me.gbItems.Controls.Add(Me.SgcLabel6)
+        Me.gbItems.Controls.Add(Me.btnAgregar)
+        Me.gbItems.Controls.Add(Me.dgvListado)
+        Me.gbItems.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbItems.Location = New System.Drawing.Point(60, 281)
+        Me.gbItems.Name = "gbItems"
+        Me.gbItems.Size = New System.Drawing.Size(900, 298)
+        Me.gbItems.TabIndex = 15
+        Me.gbItems.TabStop = False
+        Me.gbItems.Text = "Items"
+        '
+        'btnPersonal
+        '
+        Me.btnPersonal.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnPersonal.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPersonal.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPersonal.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnPersonal.Location = New System.Drawing.Point(144, 252)
+        Me.btnPersonal.Name = "btnPersonal"
+        Me.btnPersonal.Size = New System.Drawing.Size(125, 31)
+        Me.btnPersonal.TabIndex = 21
+        Me.btnPersonal.Text = "Agregar Personal"
+        Me.btnPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPersonal.UseVisualStyleBackColor = False
         '
         'btnQuitar
         '
@@ -257,7 +274,7 @@ Partial Class frmPresupuestoPlanAnual
         Me.btnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnQuitar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnQuitar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnQuitar.Location = New System.Drawing.Point(94, 252)
+        Me.btnQuitar.Location = New System.Drawing.Point(275, 252)
         Me.btnQuitar.Name = "btnQuitar"
         Me.btnQuitar.Size = New System.Drawing.Size(75, 31)
         Me.btnQuitar.TabIndex = 20
@@ -295,9 +312,9 @@ Partial Class frmPresupuestoPlanAnual
         Me.btnAgregar.ForeColor = System.Drawing.Color.SteelBlue
         Me.btnAgregar.Location = New System.Drawing.Point(13, 252)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(75, 31)
+        Me.btnAgregar.Size = New System.Drawing.Size(125, 31)
         Me.btnAgregar.TabIndex = 10
-        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.Text = "Agregar Recursos"
         Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnAgregar.UseVisualStyleBackColor = False
         '
@@ -325,7 +342,7 @@ Partial Class frmPresupuestoPlanAnual
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 70)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(323, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(91, 37)
         Me.tsMenu.TabIndex = 17
         Me.tsMenu.Text = "SgcToolStrip1"
         '
@@ -348,6 +365,7 @@ Partial Class frmPresupuestoPlanAnual
         Me.sbGuardar.Name = "sbGuardar"
         Me.sbGuardar.Size = New System.Drawing.Size(92, 34)
         Me.sbGuardar.Text = "Guardar"
+        Me.sbGuardar.Visible = False
         '
         'ToolStripButton3
         '
@@ -358,23 +376,24 @@ Partial Class frmPresupuestoPlanAnual
         Me.ToolStripButton3.Name = "ToolStripButton3"
         Me.ToolStripButton3.Size = New System.Drawing.Size(105, 34)
         Me.ToolStripButton3.Text = "Impresión"
+        Me.ToolStripButton3.Visible = False
         '
         'frmPresupuestoPlanAnual
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.Controls.Add(Me.tsMenu)
-        Me.Controls.Add(Me.SgcGroupBox2)
+        Me.Controls.Add(Me.gbItems)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "frmPresupuestoPlanAnual"
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
-        Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
+        Me.Controls.SetChildIndex(Me.gbItems, 0)
         Me.Controls.SetChildIndex(Me.tsMenu, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
-        Me.SgcGroupBox2.ResumeLayout(False)
-        Me.SgcGroupBox2.PerformLayout()
+        Me.gbItems.ResumeLayout(False)
+        Me.gbItems.PerformLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tsMenu.ResumeLayout(False)
         Me.tsMenu.PerformLayout()
@@ -389,7 +408,7 @@ Partial Class frmPresupuestoPlanAnual
     Friend WithEvents SgcLabel3 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel1 As SGC_CS.SGCLabel
-    Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
+    Friend WithEvents gbItems As SGC_CS.SGCGroupBox
     Friend WithEvents dgvListado As SGC_CS.SGCDataGridView
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
     Friend WithEvents sbLimpiar As System.Windows.Forms.ToolStripButton
@@ -407,5 +426,6 @@ Partial Class frmPresupuestoPlanAnual
     Friend WithEvents SgcLabel8 As SGC_CS.SGCLabel
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
     Friend WithEvents btnQuitar As SGC_CS.SGCButton
+    Friend WithEvents btnPersonal As SGC_CS.SGCButton
 
 End Class
