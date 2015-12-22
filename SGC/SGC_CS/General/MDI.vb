@@ -253,4 +253,10 @@ Public Class MDI
         frmRegistroOpcion.MdiParent = Me
         frmRegistroOpcion.Show()
     End Sub
+
+    Private Sub PresupuestoActividadToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PresupuestoActividadToolStripMenuItem.Click
+        frmPresupuestoActividad.Close()
+        frmPresupuestoActividad.MdiParent = Me
+        frmPresupuestoActividad.Show()
+    End Sub
 End Class

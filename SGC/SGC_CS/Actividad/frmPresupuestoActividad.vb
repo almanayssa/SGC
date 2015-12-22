@@ -1,29 +1,19 @@
 Imports SGC.Controller
 Imports SGC.Model.Entidades
 
-Public Class frmPresupuestoPlanAnual
+Public Class frmPresupuestoActividad
     Dim bc As New BusinessController
 
 
 #Region "Propiedades"
 
-    Private _id_Plan As Integer?
-    Public Property id_Plan() As Integer?
+    Private _id_actividad As Integer?
+    Public Property id_actividad() As Integer?
         Get
-            Return _id_Plan
+            Return _id_actividad
         End Get
         Set(ByVal value As Integer?)
-            _id_Plan = value
-        End Set
-    End Property
-
-    Private _id_Comite As String
-    Public Property id_Comite() As String
-        Get
-            Return _id_Comite
-        End Get
-        Set(ByVal value As String)
-            _id_Comite = value
+            _id_actividad = value
         End Set
     End Property
 
@@ -39,28 +29,29 @@ Public Class frmPresupuestoPlanAnual
 
 #End Region
 
-    Private Sub frmPresupuestoPlanAnual_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+#Region "Cargar"
 
-        If id_Plan IsNot Nothing Then
-            CargarPlan(id_Plan)
+    Private Sub frmPresupuestoActividad_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        If id_actividad IsNot Nothing Then
+            CargarActividad(id_actividad)
         End If
-
     End Sub
 
-    Private Sub CargarPlan(ByVal id_plan As String)
-        Dim oPlan As PlanAnualBE = bc.ObtenerPlan(id_plan)
+#End Region
 
-        lblPlan.Text = oPlan.id_plan
-        lblComite.Text = oPlan.id_comite
-        lblAnio.Text = oPlan.anio
-        lblFecIni.Text = oPlan.fec_ini
-        lblFecFin.Text = oPlan.fec_fin
-        lblEstado.Text = oPlan.estado
+#Region "Métodos Personalizados"
 
-        _id_Comite = oPlan.id_comite
+    Private Sub CargarActividad(ByVal id_actividad As Integer)
+        Dim oActividad As ActividadBE = bc.CargarActividadCabecera(id_actividad)
 
+        lblNombre.Text = oActividad.nombre
+        lblComite.Text = oActividad.nombrecomite
+        lblTipo.Text = oActividad.desc_tipo
+        lblFecIni.Text = oActividad.fec_ini
+        lblFecFin.Text = oActividad.fec_fin
+        lblEstado.Text = oActividad.desc_estado
 
-        ListarPresupuesto(oPlan.id_plan)
+        ListarPresupuesto(oActividad.id_actividad)
 
         'If oPlan.id_estado = "EPA001" Then
         '    ts()
@@ -68,25 +59,21 @@ Public Class frmPresupuestoPlanAnual
 
     End Sub
 
-    Private Sub ListarPresupuesto(ByVal idPlan As Integer)
+    Private Sub ListarPresupuesto(ByVal id_actividad As Integer)
 
-        Dim presupuesto As PresupuestoAnualBE = bc.ObtenerPresupuestoAnual(idPlan, Nothing)
+        Dim presupuesto As PresupuestoActividadBE = bc.ObtenerPresupuestoActividad(id_actividad)
 
-        Dim detallePresupuesto As New List(Of DetallePresupuestoAnualBE)
+        Dim detallePresupuesto As New List(Of DetallePresupuestoActBE)
 
-        If presupuesto Is Nothing OrElse presupuesto.id_plan <> idPlan Then
-
-            detallePresupuesto = bc.ObtenerRecursosPersonalAnual(idPlan)
-
+        If presupuesto Is Nothing OrElse presupuesto.id_actividad <> id_actividad Then
+            detallePresupuesto = bc.ObtenerRecursosPersonalAct(id_actividad)
             CargarDetalleRecursos(detallePresupuesto)
-
             gbItems.Enabled = True
-
             sbGuardar.Visible = True
 
         Else
-            _id_Presupuesto = presupuesto.id_presupuesto_anual
-            detallePresupuesto = bc.ListarDetallePresupuestoAnual(presupuesto.id_presupuesto_anual)
+            _id_Presupuesto = presupuesto.id_presupuesto_actividad
+            detallePresupuesto = bc.ListarDetallePresupuestoAct(presupuesto.id_presupuesto_actividad)
 
             CargarDetallePresupuesto(detallePresupuesto)
 
@@ -95,7 +82,7 @@ Public Class frmPresupuestoPlanAnual
         End If
     End Sub
 
-    Private Sub CargarDetalleRecursos(ByRef ListaDetalle As List(Of DetallePresupuestoAnualBE))
+    Private Sub CargarDetalleRecursos(ByRef ListaDetalle As List(Of DetallePresupuestoActBE))
 
         dgvListado.Columns.Clear()
         dgvListado.DataSource = Nothing
@@ -155,7 +142,7 @@ Public Class frmPresupuestoPlanAnual
             Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             dgvListado.Columns.Add(Col_Text)
 
-            For Each a As DetallePresupuestoAnualBE In ListaDetalle
+            For Each a As DetallePresupuestoActBE In ListaDetalle
                 Row = New DataGridViewRow
 
                 Cell = New DataGridViewTextBoxCell
@@ -189,7 +176,7 @@ Public Class frmPresupuestoPlanAnual
 
     End Sub
 
-    Private Sub CargarDetallePresupuesto(ByRef ListaDetalle As List(Of DetallePresupuestoAnualBE))
+    Private Sub CargarDetallePresupuesto(ByRef ListaDetalle As List(Of DetallePresupuestoActBE))
 
         dgvListado.Columns.Clear()
         dgvListado.DataSource = Nothing
@@ -249,7 +236,7 @@ Public Class frmPresupuestoPlanAnual
             Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             dgvListado.Columns.Add(Col_Text)
 
-            For Each a As DetallePresupuestoAnualBE In ListaDetalle
+            For Each a As DetallePresupuestoActBE In ListaDetalle
                 Row = New DataGridViewRow
 
                 Cell = New DataGridViewTextBoxCell
@@ -280,6 +267,66 @@ Public Class frmPresupuestoPlanAnual
         txtMontoTotal.Text = montoTotal
 
     End Sub
+
+    Private Function GuardarPresupuesto(ByVal id_actividad As Integer) As Boolean
+        Dim flag As Boolean = True
+
+        Dim affectedRows As Integer = 0
+        Dim oPresupuesto As New PresupuestoActividadBE
+        oPresupuesto.id_actividad = _id_actividad
+        oPresupuesto.monto = CDec(txtMontoTotal.Text)
+        Dim oListadoDetalle As New List(Of DetallePresupuestoActBE)
+        Dim newDetalle As DetallePresupuestoActBE
+
+        For Each documento As DataGridViewRow In dgvListado.Rows
+            newDetalle = New DetallePresupuestoActBE
+            newDetalle.idItem = documento.Cells("CodItem").Value
+            newDetalle.tipo_item = documento.Cells("tipo_item").Value
+            newDetalle.cantidad = CInt(documento.Cells("cant").Value)
+            newDetalle.monto = CDec(documento.Cells("monto").Value)
+
+            oListadoDetalle.Add(newDetalle)
+        Next
+
+        oPresupuesto.ListadoDetallePresupuesto = oListadoDetalle
+
+        affectedRows = bc.InsertarPresupuestoActividad(oPresupuesto)
+
+        If affectedRows = 0 Then
+            MessageBox.Show("Error al grabar", "Información")
+            flag = False
+        Else
+            _id_Presupuesto = affectedRows
+            MessageBox.Show("El Presupuesto se registro satisfactoriamente", "Información")
+            _id_actividad = id_actividad
+        End If
+
+
+        Return flag
+    End Function
+
+    Private Sub LimpiarPresupuesto()
+
+        lblNombre.Text = "-"
+        lblComite.Text = "-"
+        lblTipo.Text = "-"
+        lblFecIni.Text = "-"
+        lblFecFin.Text = "-"
+        lblEstado.Text = "-"
+
+        dgvListado.DataSource = Nothing
+
+        dgvListado.Enabled = True
+
+        txtMontoTotal.Text = "0.0"
+
+        sbGuardar.Visible = False
+
+    End Sub
+
+#End Region
+
+#Region "Métodos Controles"
 
     Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
         Dim frmBuscarRecurso As New frmBuscarRecurso
@@ -383,28 +430,12 @@ Public Class frmPresupuestoPlanAnual
     End Sub
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
-        Dim frmBuscarPlan As New frmBuscarPlan
-        frmBuscarPlan.ShowDialog()
+        Dim frmBuscarActividad As New frmBuscarActividad
+        frmBuscarActividad.ShowDialog()
 
-        If frmBuscarPlan.PlanSeleccionado IsNot Nothing Then
-            _id_Plan = frmBuscarPlan.PlanSeleccionado.id_plan
-            CargarPlan(frmBuscarPlan.PlanSeleccionado.id_plan)
-
-        End If
-    End Sub
-
-    Private Sub dgvListado_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvListado.CellEndEdit
-        If dgvListado.CurrentCell.ColumnIndex = dgvListado.Columns.Item("monto").Index Then
-
-            Dim montoTotal As Decimal = 0.0
-
-            For Each fila As DataGridViewRow In dgvListado.Rows
-                montoTotal += CDec(fila.Cells("monto").Value)
-            Next
-
-
-
-            txtMontoTotal.Text = montoTotal
+        If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then
+            _id_actividad = frmBuscarActividad.ActividadSeleccionada.id_actividad
+            CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
 
         End If
     End Sub
@@ -412,81 +443,18 @@ Public Class frmPresupuestoPlanAnual
     Private Sub sbGuardar_Click(sender As System.Object, e As System.EventArgs) Handles sbGuardar.Click
         'Generar presupuesto
 
-        If GuardarPresupuesto(_id_Plan) Then
+        If GuardarPresupuesto(_id_actividad) Then
             LimpiarPresupuesto()
-            CargarPlan(_id_Plan)
+            CargarActividad(_id_actividad)
         End If
 
         'Guardar detalle
     End Sub
 
-    Private Function GuardarPresupuesto(ByVal id_plan As Integer) As Boolean
-        Dim flag As Boolean = True
-
-        Dim affectedRows As Integer = 0
-        Dim oPresupuesto As New PresupuestoAnualBE
-        oPresupuesto.id_plan = _id_Plan
-        oPresupuesto.id_comite = _id_Comite
-        oPresupuesto.monto = CDec(txtMontoTotal.Text)
-        Dim oListadoDetalle As New List(Of DetallePresupuestoAnualBE)
-        Dim newDetalle As DetallePresupuestoAnualBE
-
-        For Each documento As DataGridViewRow In dgvListado.Rows
-            newDetalle = New DetallePresupuestoAnualBE
-            newDetalle.idItem = documento.Cells("CodItem").Value
-            newDetalle.tipo_item = documento.Cells("tipo_item").Value
-            newDetalle.cantidad = CInt(documento.Cells("cant").Value)
-            newDetalle.monto = CDec(documento.Cells("monto").Value)
-
-            oListadoDetalle.Add(newDetalle)
-        Next
-
-        oPresupuesto.ListadoDetallePresupuesto = oListadoDetalle
-
-        affectedRows = bc.InsertarPresupuestoAnual(oPresupuesto)
-
-        If affectedRows = 0 Then
-            MessageBox.Show("Error al grabar", "Información")
-            flag = False
-        Else
-            _id_Presupuesto = affectedRows
-            MessageBox.Show("El Presupuesto se registro satisfactoriamente", "Información")
-            _id_Plan = id_plan
-        End If
-
-
-        Return flag
-    End Function
-
-    Private Sub sbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles sbLimpiar.Click
-        _id_Plan = 0
-        LimpiarPresupuesto()
-
-    End Sub
-
-    Private Sub LimpiarPresupuesto()
-
-        lblPlan.Text = "-"
-        lblComite.Text = "-"
-        lblAnio.Text = "-"
-        lblFecIni.Text = "-"
-        lblFecFin.Text = "-"
-        lblEstado.Text = "-"
-
-        dgvListado.DataSource = Nothing
-
-        dgvListado.Enabled = True
-
-        txtMontoTotal.Text = "0.0"
-
-        sbGuardar.Visible = False
-
-    End Sub
-
     Private Sub btnQuitar_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitar.Click
 
-        Dim listadoDetalle As New List(Of DetallePresupuestoAnualBE)
-        Dim detalle As DetallePresupuestoAnualBE
+        Dim listadoDetalle As New List(Of DetallePresupuestoActBE)
+        Dim detalle As DetallePresupuestoActBE
 
         For Each dgvr As DataGridViewRow In dgvListado.Rows
 
@@ -495,7 +463,7 @@ Public Class frmPresupuestoPlanAnual
 
             Else
 
-                detalle = New DetallePresupuestoAnualBE
+                detalle = New DetallePresupuestoActBE
                 If dgvr.Cells("idDetalle").Value <> "" Then detalle.id_detalle = dgvr.Cells("idDetalle").Value
                 detalle.idItem = dgvr.Cells("codItem").Value
                 detalle.descripcion = dgvr.Cells("descripcion").Value
@@ -567,7 +535,7 @@ Public Class frmPresupuestoPlanAnual
             Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
             dgvListado.Columns.Add(Col_Text)
 
-            For Each a As DetallePresupuestoAnualBE In listadoDetalle
+            For Each a As DetallePresupuestoActBE In listadoDetalle
                 Row = New DataGridViewRow
 
                 Cell = New DataGridViewTextBoxCell
@@ -700,4 +668,30 @@ Public Class frmPresupuestoPlanAnual
 
         End If
     End Sub
+
+    Private Sub sbLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles sbLimpiar.Click
+        _id_actividad = 0
+        LimpiarPresupuesto()
+    End Sub
+
+#End Region
+
+#Region "Métodos Grilla"
+
+    Private Sub dgvListado_CellEndEdit(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvListado.CellEndEdit
+        If dgvListado.CurrentCell.ColumnIndex = dgvListado.Columns.Item("monto").Index Then
+
+            Dim montoTotal As Decimal = 0.0
+
+            For Each fila As DataGridViewRow In dgvListado.Rows
+                montoTotal += CDec(fila.Cells("monto").Value)
+            Next
+
+            txtMontoTotal.Text = montoTotal
+
+        End If
+    End Sub
+
+#End Region
+
 End Class

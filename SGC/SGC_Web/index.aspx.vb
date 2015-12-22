@@ -1,10 +1,11 @@
-﻿Public Class index
+﻿Imports SGC.Model.Entidades
+Imports SGC.Controller
+
+Public Class index
     Inherits System.Web.UI.Page
 
-    'Private objUsuarioBosque As New Bosque.BL.UsuarioBL
-    'Private objSocioBosque As New Bosque.BL.SocioBL
-    'Private EntSocio As New Bosque.BE.SocioBE
-    'Private objAuditoria As New Bosque.BL.AuditoriaBL
+    Private bc As New BusinessController
+    Private Usuario As UsuarioBE
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
@@ -17,23 +18,19 @@
         Dim strPage As String = Me.Request.ServerVariables("script_name")
         strPage = Right(strPage, Len(strPage) - InStrRev(strPage, "/"))
 
-        'If objUsuarioBosque.validarUsuario(txtUsuario.Text.Trim, txtClave.Text.Trim) Then
-        '    EntSocio = objSocioBosque.datosUsuario(txtUsuario.Text.Trim)
-        Session("ubosque") = txtUsuario.Text.Trim
-        '    Session("id_socio") = EntSocio.id_socio
-        '    Session("id_persona") = EntSocio.id_persona
+        Dim oUsuario As UsuarioBE = bc.ObtenerUsuario(txtUsuario.Text.Trim, txtClave.Text.Trim)
 
-        '    objAuditoria.registrarAuditoria(EntSocio.id_socio, "", "SELECT", "", "", "", "", "", "Ingresó a la web", _
-        '                                    Request.ServerVariables("REMOTE_ADDR"), strPage)
+        If oUsuario.id_usuario > 0 Then
+            Usuario = oUsuario
+            Session("usuario") = Usuario.username
+            Session("nombre") = Usuario.nombres
+            Session("apellido") = Usuario.ape_pat
 
-
-        Response.Redirect("inicio.aspx")
-        'Else
-        '    Label1.Visible = True
-        '    Label1.Text = "Verifique sus datos"
-        '    objAuditoria.registrarAuditoria(txtUsuario.Text, "", "SELECT", "", "", "", "", "", "Ingreso fallido a la web", _
-        '                                    Request.ServerVariables("REMOTE_ADDR"), strPage)
-        'End If
+            Response.Redirect("inicio.aspx")
+        Else
+            Label1.Visible = True
+            Label1.Text = "Verifique sus datos"
+        End If
     End Sub
 
 End Class

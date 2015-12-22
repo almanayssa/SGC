@@ -115,7 +115,6 @@
     <Content Include="estilos\style.css" />
     <Content Include="estilos\styles.css" />
     <Content Include="frmCambiarContrasena.aspx" />
-    <Content Include="frmCambiarContrasenia.aspx" />
     <Content Include="frmCronogramaActividades.aspx" />
     <Content Include="frmDetalleActividad.aspx" />
     <Content Include="frmMensaje.aspx" />
@@ -277,13 +276,6 @@
     </Compile>
     <Compile Include="frmCambiarContrasena.aspx.vb">
       <DependentUpon>frmCambiarContrasena.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="frmCambiarContrasenia.aspx.designer.vb">
-      <DependentUpon>frmCambiarContrasenia.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="frmCambiarContrasenia.aspx.vb">
-      <DependentUpon>frmCambiarContrasenia.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="frmCronogramaActividades.aspx.designer.vb">

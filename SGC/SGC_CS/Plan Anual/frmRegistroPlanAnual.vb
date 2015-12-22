@@ -330,7 +330,7 @@ Public Class frmRegistroPlanAnual
 
         frmPresupuestoActividad.Close()
         frmPresupuestoActividad.MdiParent = MDI
-        frmPresupuestoActividad.id_Plan = _id_Plan
+        frmPresupuestoActividad.id_actividad = _id_Plan
         frmPresupuestoActividad.Show()
 
     End Sub

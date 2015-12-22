@@ -550,10 +550,6 @@ Public Class frmRegistroActividad
         End If
     End Sub
 
-    Private Sub tsbPresupuesto_Click(sender As System.Object, e As System.EventArgs) Handles tsbPresupuesto.Click
-
-    End Sub
-
     Private Sub tsbReprogramacion_Click(sender As System.Object, e As System.EventArgs) Handles tsbReprogramacion.Click
 
     End Sub

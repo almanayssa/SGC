@@ -176,6 +176,7 @@ Partial Class MDI
         Me.RegistroActividadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultDeActividadesRecurrentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RegistroDeActividadRecurrenteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PresupuestoActividadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HabilitarActividadToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EvaluaciónToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EvaluacionPresidenteGeneralToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -1208,7 +1209,7 @@ Partial Class MDI
         '
         'ActividadesToolStripMenuItem
         '
-        Me.ActividadesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeActividadesToolStripMenuItem, Me.RegistroActividadToolStripMenuItem, Me.ConsultDeActividadesRecurrentesToolStripMenuItem, Me.RegistroDeActividadRecurrenteToolStripMenuItem, Me.HabilitarActividadToolStripMenuItem, Me.EvaluaciónToolStripMenuItem1})
+        Me.ActividadesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeActividadesToolStripMenuItem, Me.RegistroActividadToolStripMenuItem, Me.ConsultDeActividadesRecurrentesToolStripMenuItem, Me.RegistroDeActividadRecurrenteToolStripMenuItem, Me.PresupuestoActividadToolStripMenuItem, Me.HabilitarActividadToolStripMenuItem, Me.EvaluaciónToolStripMenuItem1})
         Me.ActividadesToolStripMenuItem.Name = "ActividadesToolStripMenuItem"
         Me.ActividadesToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.ActividadesToolStripMenuItem.Text = "Actividades"
@@ -1236,6 +1237,12 @@ Partial Class MDI
         Me.RegistroDeActividadRecurrenteToolStripMenuItem.Name = "RegistroDeActividadRecurrenteToolStripMenuItem"
         Me.RegistroDeActividadRecurrenteToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
         Me.RegistroDeActividadRecurrenteToolStripMenuItem.Text = "Registro de Actividad Recurrente"
+        '
+        'PresupuestoActividadToolStripMenuItem
+        '
+        Me.PresupuestoActividadToolStripMenuItem.Name = "PresupuestoActividadToolStripMenuItem"
+        Me.PresupuestoActividadToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.PresupuestoActividadToolStripMenuItem.Text = "Presupuesto Actividad"
         '
         'HabilitarActividadToolStripMenuItem
         '
@@ -2120,5 +2127,6 @@ Partial Class MDI
     Friend WithEvents UsuariosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PerfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OpcionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PresupuestoActividadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -31,6 +31,16 @@
             End Set
         End Property
 
+        Private _ListadoDetallePresupuesto As List(Of DetallePresupuestoActBE)
+        Public Property ListadoDetallePresupuesto() As List(Of DetallePresupuestoActBE)
+            Get
+                Return _ListadoDetallePresupuesto
+            End Get
+            Set(ByVal value As List(Of DetallePresupuestoActBE))
+                _ListadoDetallePresupuesto = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 

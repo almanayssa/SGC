@@ -71,6 +71,36 @@
             End Set
         End Property
 
+        Private _idItem As Integer
+        Public Property idItem() As Integer
+            Get
+                Return _idItem
+            End Get
+            Set(value As Integer)
+                _idItem = value
+            End Set
+        End Property
+
+        Private _tipo_item As String
+        Public Property tipo_item As String
+            Get
+                Return _tipo_item
+            End Get
+            Set(value As String)
+                _tipo_item = value
+            End Set
+        End Property
+
+        Private _descripcion As String
+        Public Property descripcion() As String
+            Get
+                Return _descripcion
+            End Get
+            Set(value As String)
+                _descripcion = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 
