@@ -14,29 +14,38 @@ Option Explicit On
 Partial Public Class frmCambiarContrasena
 
     '''<summary>
-    '''txtCorreo control.
+    '''txtContrasenaActual control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents txtCorreo As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtContrasenaActual As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''ibtnEnviar control.
+    '''txtNuevaContrasena control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ibtnEnviar As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents txtNuevaContrasena As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''RegularExpressionValidator1 control.
+    '''txtNuevaContrasena2 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RegularExpressionValidator1 As Global.System.Web.UI.WebControls.RegularExpressionValidator
+    Protected WithEvents txtNuevaContrasena2 As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''ibtnModificar control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ibtnModificar As Global.System.Web.UI.WebControls.ImageButton
 End Class

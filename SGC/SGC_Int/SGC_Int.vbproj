@@ -47,6 +47,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit">
+      <HintPath>..\SGC_Web\App_LocalResources\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -87,10 +90,10 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\SGC\sgc.css" />
     <Content Include="frmLogin.aspx" />
-    <Content Include="frmReporteActividadesMayorDemanda.aspx" />
-    <Content Include="frmReporteComite.aspx" />
-    <Content Include="frmReporteGastoActividad.aspx" />
+    <Content Include="Privado\frmReporteActividades.aspx" />
+    <Content Include="Privado\frmReporteComite.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -109,25 +112,18 @@
       <DependentUpon>frmLogin.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="frmReporteActividadesMayorDemanda.aspx.designer.vb">
-      <DependentUpon>frmReporteActividadesMayorDemanda.aspx</DependentUpon>
+    <Compile Include="Privado\frmReporteActividades.aspx.designer.vb">
+      <DependentUpon>frmReporteActividades.aspx</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteActividadesMayorDemanda.aspx.vb">
-      <DependentUpon>frmReporteActividadesMayorDemanda.aspx</DependentUpon>
+    <Compile Include="Privado\frmReporteActividades.aspx.vb">
+      <DependentUpon>frmReporteActividades.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="frmReporteComite.aspx.designer.vb">
+    <Compile Include="Privado\frmReporteComite.aspx.designer.vb">
       <DependentUpon>frmReporteComite.aspx</DependentUpon>
     </Compile>
-    <Compile Include="frmReporteComite.aspx.vb">
+    <Compile Include="Privado\frmReporteComite.aspx.vb">
       <DependentUpon>frmReporteComite.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="frmReporteGastoActividad.aspx.designer.vb">
-      <DependentUpon>frmReporteGastoActividad.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="frmReporteGastoActividad.aspx.vb">
-      <DependentUpon>frmReporteGastoActividad.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -149,10 +145,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="PlantillaSGCInt.Master.designer.vb">
+    <Compile Include="Privado\PlantillaSGCInt.Master.designer.vb">
       <DependentUpon>PlantillaSGCInt.Master</DependentUpon>
     </Compile>
-    <Compile Include="PlantillaSGCInt.Master.vb">
+    <Compile Include="Privado\PlantillaSGCInt.Master.vb">
       <DependentUpon>PlantillaSGCInt.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -175,7 +171,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Content Include="PlantillaSGCInt.Master" />
+    <Content Include="Privado\PlantillaSGCInt.Master" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Controller\Controller.vbproj">

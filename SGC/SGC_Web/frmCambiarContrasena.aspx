@@ -1,16 +1,34 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/PlantillaSGC.master" CodeBehind="frmCambiarContrasena.aspx.vb" Inherits=".frmCambiarContrasena" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<div class="DatosSocio" style="height: 370px">
-<p style="padding-top:30px">
-<span id="Label1" class="lblmarron" style="display:inline-block;height:58px;width:432px;">Si ha olvidado su contraseña, ingrese su correo electrónico y la contraseña será enviada a la dirección proporcionada siempre y cuando dicha dirección se encuentre registrada en el sistema. </span>
-</p>
-<br />
-<p>
-<span class="tab">Dirección de correo: </span>
-<asp:TextBox ID="txtCorreo" runat="server" MaxLength="120" Width="140px"></asp:TextBox>
-</p>
-<asp:ImageButton ID="ibtnEnviar" runat="server" ImageUrl="~/imagenes/botones/boton_enviar.jpg" />
-<br />
-<asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Correo incorrecto" ControlToValidate="txtCorreo" ForeColor="Red" ValidationExpression="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"></asp:RegularExpressionValidator>
-    </div>
+<table class="tablitaDatosSocio">
+        <tr>
+            <td>
+                <div class="DatosSocio" 
+                    style="height: 370px; width: 380px; text-align: justify; margin-top:10px;">
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <table border="0" cellpadding="2" cellspacing="2">
+                        <tr><td colspan="2" style="text-align:center;"><h3>Cambio de Contraseña</h3></td></tr>
+                        <tr>
+                            <td class="lblnegro">Ingrese contraseña actual</td>
+                            <td><asp:TextBox ID="txtContrasenaActual" runat="server" TextMode="Password"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td class="lblnegro">Ingrese nueva contraseña</td>
+                            <td><asp:TextBox ID="txtNuevaContrasena" runat="server" TextMode="Password"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td class="lblnegro">Confirme nueva contraseña</td>
+                            <td><asp:TextBox ID="txtNuevaContrasena2" runat="server" TextMode="Password"></asp:TextBox></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="right"><asp:ImageButton ID="ibtnModificar" runat="server" AlternateText="Modificar" ImageUrl="~/imagenes/botones/boton_modificar.gif"/></td>
+                        </tr>
+                    </table>                 
+                </div>
+            </td>
+        </tr>
+    </table>
 </asp:Content>

@@ -12,5 +12,5 @@ Option Explicit On
 
 
 
-Partial Public Class frmReporteActividadesMayorDemanda
+Partial Public Class frmMisInscripciones
 End Class

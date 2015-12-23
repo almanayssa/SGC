@@ -1,5 +1,5 @@
-﻿Public Class PlantillaSGCInt
-    Inherits System.Web.UI.MasterPage
+﻿Public Class frmMisInscripciones
+    Inherits System.Web.UI.Page
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 

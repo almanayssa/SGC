@@ -1,0 +1,52 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="PlantillaSGCInt.master.vb" Inherits="SGC_Int.PlantillaSGCInt" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>ACC El Bosque - Intranet</title>
+    <link href="~/App_Themes/SGC/sgc.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="contenedor">
+        <div class="contenedor-cabecera">
+            <div class="contenedor-logo">AEB</div>
+            <div class="seccion-usuario-logo">
+                <div class="seccion-usuario">
+                    <div>
+                        <asp:Label ID="lblUsuario" runat="server" Text=""></asp:Label>
+                    </div>
+                    <div class="seccion-opciones-usuario">
+                        <asp:LinkButton ID="lbtnCerrarSesion" runat="server" Text="Cerrar Sesión"></asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <ul id="menu-bar">
+            <li class="current"><a href="#">Reportes</a>
+            <ul>
+            <li><a href="frmReporteActividades.aspx">Actividades Mayor Demanda</a></li>
+            <li><a href="frmReporteComite.aspx">Participación Comités</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Consultas</a>
+            <ul>
+            <li><a href="#">Actualizar Información</a></li>
+            </ul>
+            </li>
+        </ul>      
+        <div class="contenedor-pagina">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>        
+        <div class="pie_pagina">
+            Copyright © ACC El Bosque 
+            <%=DateTime.Now.Year %>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

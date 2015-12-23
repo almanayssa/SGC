@@ -22,7 +22,7 @@ Public Class index
 
         If oUsuario.id_usuario > 0 Then
             Usuario = oUsuario
-            Session("usuario") = Usuario.username
+            Session("ubosque") = Usuario.username
             Session("nombre") = Usuario.nombres
             Session("apellido") = Usuario.ape_pat
 

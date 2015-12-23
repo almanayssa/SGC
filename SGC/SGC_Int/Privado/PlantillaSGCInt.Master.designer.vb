@@ -11,7 +11,16 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmLogin
+Partial Public Class PlantillaSGCInt
+
+    '''<summary>
+    '''head control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents head As Global.System.Web.UI.WebControls.ContentPlaceHolder
 
     '''<summary>
     '''form1 control.
@@ -23,38 +32,29 @@ Partial Public Class frmLogin
     Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
-    '''tbxUsuario control.
+    '''lblUsuario control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents tbxUsuario As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblUsuario As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''tbxContrasenia control.
+    '''lbtnCerrarSesion control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents tbxContrasenia As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents lbtnCerrarSesion As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
-    '''lbtnIniciarSesion control.
+    '''MainContent control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnIniciarSesion As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''lblMensajeError control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblMensajeError As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents MainContent As Global.System.Web.UI.WebControls.ContentPlaceHolder
 End Class

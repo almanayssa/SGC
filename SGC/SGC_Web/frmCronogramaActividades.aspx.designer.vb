@@ -14,15 +14,6 @@ Option Explicit On
 Partial Public Class frmCronogramaActividades
 
     '''<summary>
-    '''imgSectionTitleImage1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents imgSectionTitleImage1 As Global.System.Web.UI.WebControls.Image
-
-    '''<summary>
     '''calActividades control.
     '''</summary>
     '''<remarks>

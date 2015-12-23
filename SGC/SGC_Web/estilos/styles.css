@@ -312,7 +312,7 @@ div.menu_izquierda {
 .calendarRow { background-color:#EAEDED; width:116px; height:90px; vertical-align:top; text-align:left; border-right:solid 1px #FFFFFF; border-bottom:solid 1px #FFFFFF; padding-left:3px; padding-top:3px; }
 .lblMonthYear {	font-family:Arial; font-size:12px; color:#333333; padding-right:3px; font-weight:bold; }*/
 
-.generalTextSectionTitle { font-size:12px; padding:10px; background-color: #69A603; top:5px;}
+.generalTextSectionTitle { font-size:12px; padding:10px; background-color: #69A603; top:5px; color: #FFFFFF; font-weight:bold;}
 
 .calendarGeneral a { color:red; text-decoration:none; font-size:11px;}
 .calendarGeneral a:hover { color:red; text-decoration:underline; font-size:11px;}
