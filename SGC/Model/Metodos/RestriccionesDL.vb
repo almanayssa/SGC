@@ -75,7 +75,7 @@ Namespace SGC.Model.Metodos
 
         Public Function ObtenerCantidadXRestriccion(ByVal id_actividad As Integer, ByVal id_restriccion As Integer, ByVal id_socio As String, ByVal id_persona As String, ByVal id_invitado As String) As String Implements Interfaces.IRestricciones.ObtenerCantidadXRestriccion
             Dim resul As String = ""
-            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGS").ConnectionString
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
             Dim sqlCmd As New SqlCommand("comite.SP_SELECCIONAR_RESTRICCIONES", sqlConn)
             Dim dr As SqlDataReader = Nothing
