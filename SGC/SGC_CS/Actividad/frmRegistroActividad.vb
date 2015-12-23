@@ -5,13 +5,13 @@ Public Class frmRegistroActividad
 
     Dim bc As New BusinessController
     Private Actividad As ActividadBE
+    Private ListadoActividadDetalles As List(Of ActividadDetalleBE)
     Private ListadoTipoPersonal As List(Of TipoPersonalBE)
     Private ListadoRecursos As List(Of RecursoBE)
     Private ListadoRestricciones As List(Of RestriccionesBE)
     Private oPersonalPendiente As TipoPersonalBE
     Private oRecursoPendiente As RecursoBE
     Private _id_actividad As Integer
-
 
 #Region "Inicializacion"
 
@@ -24,9 +24,17 @@ Public Class frmRegistroActividad
         cboTipo.ValueMember = "id_tipo_act"
         cboTipo.DisplayMember = "desc_tipo"
 
+        dgvProgramacion.AutoGenerateColumns = False
         dgvRestricciones.AutoGenerateColumns = False
         dgvTipoPersonal.AutoGenerateColumns = False
         dgvRecursos.AutoGenerateColumns = False
+
+        colSede.DataPropertyName = "des_sede"
+        colEspacio.DataPropertyName = "nombre_espacio"
+        colFecInicio.DataPropertyName = "fecha_ini"
+        colHoraInicio.DataPropertyName = "hora_ini"
+        colFecFin.DataPropertyName = "fecha_fin"
+        colHoraFin.DataPropertyName = "hora_fin"
 
         colRestriccionID.DataPropertyName = "id_restriccion"
         colDescripcionRestriccion.DataPropertyName = "descripcion"
@@ -78,6 +86,7 @@ Public Class frmRegistroActividad
         txtDescripcion.Enabled = True
         nudPago.Enabled = True
 
+        btnEscoger.Enabled = True
         btnBuscarPersonal.Enabled = True
         btnAgregarTipoPersonal.Enabled = True
         btnQuitarTipoPersonal.Enabled = True
@@ -106,6 +115,35 @@ Public Class frmRegistroActividad
         nudPago.Enabled = False
         nudVacantes.Enabled = False
 
+        btnEscoger.Enabled = False
+        btnBuscarPersonal.Enabled = False
+        btnAgregarTipoPersonal.Enabled = False
+        btnQuitarTipoPersonal.Enabled = False
+        txtCantidadPersonal.Enabled = False
+        btnBuscarRecurso.Enabled = False
+        btnAgregarRecurso.Enabled = False
+        btnQuitarRecurso.Enabled = False
+        txtCantidadRecurso.Enabled = False
+        dgvRestricciones.ReadOnly = True
+    End Sub
+
+    Private Sub FormularioEnModoReprogramacion()
+        tsbLimpiar.Visible = True
+        tsbGuardar.Visible = True
+        tsbEditar.Visible = False
+        tsbEliminar.Visible = False
+        tsbCancelar.Visible = True
+        tsbReprogramacion.Visible = False
+
+        cboComite.Enabled = False
+        cboTipo.Enabled = False
+        cboCategoria.Enabled = False
+        txtNombre.Enabled = False
+        txtDescripcion.Enabled = False
+        nudPago.Enabled = False
+        nudVacantes.Enabled = False
+
+        btnEscoger.Enabled = True
         btnBuscarPersonal.Enabled = False
         btnAgregarTipoPersonal.Enabled = False
         btnQuitarTipoPersonal.Enabled = False
@@ -163,6 +201,7 @@ Public Class frmRegistroActividad
         nudPago.Value = oActividad.monto_pago
         nudVacantes.Value = oActividad.vacantes
 
+        ListarDetallesXActividad()
         ListarTipoPersonalXActividad()
         ListarRecursosXActividad()
         ListarRestriccionesXActividad()
@@ -211,6 +250,12 @@ Public Class frmRegistroActividad
 
         Return msg
     End Function
+
+    Private Sub ListarDetallesXActividad()
+        ListadoActividadDetalles = bc.ListarDetallesXActividad(CInt(txtCodigo.Text.Trim))
+        dgvProgramacion.DataSource = Nothing
+        dgvProgramacion.DataSource = ListadoActividadDetalles
+    End Sub
 
     Private Sub ListarTipoPersonalXActividad()
         ListadoTipoPersonal = bc.ListarTipoPersonalXActividad(CInt(txtCodigo.Text.Trim))
@@ -318,9 +363,11 @@ Public Class frmRegistroActividad
         txtDescripcionRecurso.Text = String.Empty
         txtCantidadRecurso.Text = String.Empty
 
+        dgvProgramacion.DataSource = Nothing
         dgvTipoPersonal.DataSource = Nothing
         dgvRecursos.DataSource = Nothing
 
+        ListadoActividadDetalles = Nothing
         ListadoRecursos = Nothing
         ListadoRestricciones = Nothing
         ListadoTipoPersonal = Nothing
@@ -340,6 +387,7 @@ Public Class frmRegistroActividad
         txtDescripcion.Enabled = True
         nudPago.Enabled = True
 
+        btnEscoger.Enabled = True
         btnBuscarPersonal.Enabled = True
         btnAgregarTipoPersonal.Enabled = True
         btnQuitarTipoPersonal.Enabled = True
@@ -432,6 +480,7 @@ Public Class frmRegistroActividad
         oActividad.flg_web = True
         oActividad.tipo_inscripcion = "A"
         oActividad.vacantes = nudVacantes.Value
+        oActividad.ListaActividadDetalle = dgvProgramacion.DataSource
         oActividad.ListaTipoPersonal = dgvTipoPersonal.DataSource
         oActividad.ListaRecursos = dgvRecursos.DataSource
 
@@ -486,7 +535,43 @@ Public Class frmRegistroActividad
     End Function
 
     Private Sub AgregarProgramacion()
+        Dim oActividadDetalle As ActividadDetalleBE
 
+        If ListadoActividadDetalles Is Nothing Then
+            ListadoActividadDetalles = New List(Of ActividadDetalleBE)
+        End If
+
+        For Each oEspacioRes As EspacioResBE In frmBuscarDisponibilidadEspacio.ListadoEspacioRes
+            oActividadDetalle = New ActividadDetalleBE
+            oActividadDetalle.fecha_ini = oEspacioRes.fec_ini
+            oActividadDetalle.fecha_fin = oEspacioRes.fec_fin
+            oActividadDetalle.hora_ini = Convert.ToDateTime(oEspacioRes.hora_inicio).TimeOfDay
+            oActividadDetalle.hora_fin = Convert.ToDateTime(oEspacioRes.hora_fin).TimeOfDay
+            oActividadDetalle.id_sede = oEspacioRes.id_sede
+            oActividadDetalle.des_sede = oEspacioRes.des_sede
+            oActividadDetalle.id_espacio = oEspacioRes.id_espacio
+            oActividadDetalle.nombre_espacio = oEspacioRes.nombre_espacio
+            ListadoActividadDetalles.Add(oActividadDetalle)
+        Next
+
+        dgvProgramacion.DataSource = Nothing
+        dgvProgramacion.DataSource = ListadoActividadDetalles
+    End Sub
+
+    Private Sub ComunicarUsuariosCancelacion()
+        Dim ListadoPersona As List(Of PersonaBE) = bc.ListarPersonaXActividad(CInt(txtCodigo.Text.Trim))
+
+        If ListadoPersona IsNot Nothing AndAlso ListadoPersona.Count > 0 Then
+
+        End If
+    End Sub
+
+    Private Sub ComunicarUsuariosReprogramacion()
+        Dim ListadoPersona As List(Of PersonaBE) = bc.ListarPersonaXActividad(CInt(txtCodigo.Text.Trim))
+
+        If ListadoPersona IsNot Nothing AndAlso ListadoPersona.Count > 0 Then
+
+        End If
     End Sub
 
 #End Region
@@ -536,6 +621,9 @@ Public Class frmRegistroActividad
                     MessageBox.Show("Error al borrar", "Información")
                 Else
                     MessageBox.Show("La actividad se anuló satisfactoriamente", "Información")
+                    If Actividad.id_estado = "EST005" Then
+
+                    End If
                 End If
 
                 LimpiarFormulario()
@@ -551,12 +639,12 @@ Public Class frmRegistroActividad
     End Sub
 
     Private Sub tsbReprogramacion_Click(sender As System.Object, e As System.EventArgs) Handles tsbReprogramacion.Click
-
+        FormularioEnModoReprogramacion()
     End Sub
 
     Private Sub btnBuscarActividad_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarActividad.Click
         Dim frmBuscarActividad As New frmBuscarActividad
-        frmBuscarActividad.id_estado = "EST001"
+        'frmBuscarActividad.id_estado = "EST001"
         frmBuscarActividad.ShowDialog()
 
         If frmBuscarActividad.ActividadSeleccionada IsNot Nothing Then
@@ -646,14 +734,12 @@ Public Class frmRegistroActividad
     End Sub
 
     Private Sub btnEscoger_Click(sender As System.Object, e As System.EventArgs) Handles btnEscoger.Click
-        'Dim frmCronogramaEspacios As New frmCronogramaEspacios
-        'frmCronogramaEspacios.ShowDialog()
+        Dim frmBuscarDisponibilidadEspacio As New frmBuscarDisponibilidadEspacio
+        frmBuscarDisponibilidadEspacio.ShowDialog()
 
-        'If frmCronogramaEspacios.ListadoEspacios IsNot Nothing Then
-        '    '_id_actividad = frmBuscarActividad.ActividadSeleccionada.id_actividad
-        '    'CargarActividad(frmBuscarActividad.ActividadSeleccionada.id_actividad)
-        '    'FormularioEnModoVista()
-        'End If
+        If frmBuscarDisponibilidadEspacio.ListadoEspacioRes IsNot Nothing Then
+            AgregarProgramacion()
+        End If
     End Sub
 
 #End Region

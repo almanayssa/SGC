@@ -132,6 +132,7 @@
         End Property
 
         Public Property nombre_completo As String
+        Public Property email As String
 
     End Class
 End Namespace

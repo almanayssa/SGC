@@ -30,7 +30,6 @@ Public Class frmHabilitarActividad
         colHoraInicio.DataPropertyName = "hora_ini"
         colFecFin.DataPropertyName = "fecha_fin"
         colHoraFin.DataPropertyName = "hora_fin"
-        colVacantes.DataPropertyName = "vacantes"
 
         colRestriccionID.DataPropertyName = "id_restriccion"
         colDescripcionRestriccion.DataPropertyName = "descripcion"

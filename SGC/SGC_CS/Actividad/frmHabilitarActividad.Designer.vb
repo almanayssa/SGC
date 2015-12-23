@@ -81,7 +81,6 @@ Partial Class frmHabilitarActividad
         Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colHoraFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tcPlanAnual.SuspendLayout()
         Me.tpRestricciones.SuspendLayout()
         Me.SgcGroupBox3.SuspendLayout()
@@ -415,7 +414,7 @@ Partial Class frmHabilitarActividad
         Me.dgvProgramacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvProgramacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvProgramacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProgramacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSede, Me.colEspacio, Me.colFecInicio, Me.colHoraInicio, Me.colFecFin, Me.colHoraFin, Me.colVacantes})
+        Me.dgvProgramacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSede, Me.colEspacio, Me.colFecInicio, Me.colHoraInicio, Me.colFecFin, Me.colHoraFin})
         Me.dgvProgramacion.Location = New System.Drawing.Point(18, 31)
         Me.dgvProgramacion.Name = "dgvProgramacion"
         Me.dgvProgramacion.ReadOnly = True
@@ -700,12 +699,6 @@ Partial Class frmHabilitarActividad
         Me.colHoraFin.Name = "colHoraFin"
         Me.colHoraFin.ReadOnly = True
         '
-        'colVacantes
-        '
-        Me.colVacantes.HeaderText = "Vacantes"
-        Me.colVacantes.Name = "colVacantes"
-        Me.colVacantes.ReadOnly = True
-        '
         'frmHabilitarActividad
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -798,6 +791,5 @@ End Sub
     Friend WithEvents colHoraInicio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colHoraFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

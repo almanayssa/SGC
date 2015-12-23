@@ -169,6 +169,14 @@ Namespace SGC.Controller
                 Dim id_actividad As Integer
                 id_actividad = iActividad.InsertarActividad(oActividad)
 
+                If oActividad.ListaActividadDetalle IsNot Nothing Then
+                    For Each oActividadDetalle As ActividadDetalleBE In oActividad.ListaActividadDetalle
+                        oActividadDetalle.id_actividad = id_actividad
+                        oActividadDetalle.vacantes = oActividad.vacantes
+                        iActividad.InsertarActividadDetalle(oActividadDetalle)
+                    Next
+                End If
+
                 If oActividad.ListaTipoPersonal IsNot Nothing Then
                     For Each oTipoPersonal As TipoPersonalBE In oActividad.ListaTipoPersonal
                         oTipoPersonal.id_actividad = id_actividad
@@ -224,9 +232,18 @@ Namespace SGC.Controller
                 iActividad = New ActividadDL
 
                 affectedRows += iActividad.ActualizarActividad(oActividad)
+                affectedRows += iActividad.BorrarActividadDetalle(oActividad.id_actividad)
                 affectedRows += iActividad.BorrarTipoPersonalXActividad(oActividad.id_actividad)
                 affectedRows += iActividad.BorrarRecursosXActividad(oActividad.id_actividad)
                 affectedRows += iActividad.BorrarRestriccionesXActividad(oActividad.id_actividad)
+
+                If oActividad.ListaActividadDetalle IsNot Nothing Then
+                    For Each oActividadDetalle As ActividadDetalleBE In oActividad.ListaActividadDetalle
+                        oActividadDetalle.id_actividad = oActividad.id_actividad
+                        oActividadDetalle.vacantes = oActividad.vacantes
+                        affectedRows += iActividad.InsertarActividadDetalle(oActividadDetalle)
+                    Next
+                End If
 
                 If oActividad.ListaTipoPersonal IsNot Nothing Then
                     For Each oTipoPersonal As TipoPersonalBE In oActividad.ListaTipoPersonal

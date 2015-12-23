@@ -24,7 +24,6 @@ Public Class frmRegistroAsistenciaParticipantes
         colHoraInicio.DataPropertyName = "hora_ini"
         colFecFin.DataPropertyName = "fecha_fin"
         colHoraFin.DataPropertyName = "hora_fin"
-        colVacantes.DataPropertyName = "vacantes"
 
         colDetalleID.DataPropertyName = "id_detalle"
         colPersonaID.DataPropertyName = "id_persona"

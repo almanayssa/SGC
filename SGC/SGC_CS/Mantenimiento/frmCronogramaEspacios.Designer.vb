@@ -226,16 +226,18 @@ Partial Class frmCronogramaEspacios
         '
         'colComite
         '
+        Me.colComite.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.colComite.HeaderText = "Comité"
         Me.colComite.Name = "colComite"
         Me.colComite.ReadOnly = True
         '
         'colObservacion
         '
-        Me.colObservacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.colObservacion.HeaderText = "Observación"
         Me.colObservacion.Name = "colObservacion"
         Me.colObservacion.ReadOnly = True
+        Me.colObservacion.Visible = False
+        Me.colObservacion.Width = 429
         '
         'frmCronogramaEspacios
         '

@@ -22,6 +22,7 @@ Namespace SGC.Model.Interfaces
 #Region "Insert"
 
         Function InsertarActividad(ByRef oActividad As ActividadBE) As Integer
+        Function InsertarActividadDetalle(ByRef oActividadDetalle As ActividadDetalleBE) As Integer
         Function InsertarTipoPersonalXActividad(ByRef oTipoPersonal As TipoPersonalBE) As Integer
         Function InsertarRecursoXActividad(ByRef oRecurso As RecursoBE) As Integer
         Function InsertarRestriccionXActividad(ByRef oRestriccion As RestriccionesBE) As Integer
@@ -42,6 +43,7 @@ Namespace SGC.Model.Interfaces
 #Region "Delete"
 
         Function BorrarActividad(ByVal id_actividad As Integer) As Integer
+        Function BorrarActividadDetalle(ByVal id_actividad As Integer) As Integer
         Function BorrarTipoPersonalXActividad(ByVal id_actividad As Integer) As Integer
         Function BorrarRecursosXActividad(ByVal id_actividad As Integer) As Integer
         Function BorrarRestriccionesXActividad(ByVal id_actividad As Integer) As Integer

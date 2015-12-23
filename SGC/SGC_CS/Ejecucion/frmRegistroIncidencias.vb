@@ -22,7 +22,6 @@ Public Class frmRegistroIncidencias
         colHoraInicio.DataPropertyName = "hora_ini"
         colFecFin.DataPropertyName = "fecha_fin"
         colHoraFin.DataPropertyName = "hora_fin"
-        colVacantes.DataPropertyName = "vacantes"
 
     End Sub
 

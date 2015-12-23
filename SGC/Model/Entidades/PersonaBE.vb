@@ -221,6 +221,7 @@
         Public Property tipo_familiar As String
         Public Property id_inscripcion As String
         Public Property id_detalle As Integer
+        Public Property email As String
 
     End Class
 

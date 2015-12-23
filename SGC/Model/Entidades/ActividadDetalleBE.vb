@@ -62,12 +62,12 @@
             End Set
         End Property
 
-        Private _id_sede As Integer
-        Public Property id_sede() As Integer
+        Private _id_sede As String
+        Public Property id_sede() As String
             Get
                 Return _id_sede
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As String)
                 _id_sede = value
             End Set
         End Property
@@ -82,12 +82,12 @@
             End Set
         End Property
 
-        Private _vacantes As Integer
-        Public Property vacantes() As Integer
+        Private _vacantes As Integer?
+        Public Property vacantes() As Integer?
             Get
                 Return _vacantes
             End Get
-            Set(ByVal value As Integer)
+            Set(ByVal value As Integer?)
                 _vacantes = value
             End Set
         End Property

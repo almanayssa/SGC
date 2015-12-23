@@ -64,6 +64,7 @@ Namespace SGC.Model.Metodos
                     oPersona.id_detalle = dr("id_detalle")
                     oPersona.id_persona = dr("id_entidad")
                     oPersona.nombre_completo = dr("nombre_completo")
+                    oPersona.email = dr("email")
                     oListadoPersona.Add(oPersona)
                 End While
                 dr.Close()

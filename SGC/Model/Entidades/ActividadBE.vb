@@ -281,6 +281,16 @@
             End Set
         End Property
 
+        Private _ListaActividadDetalle As List(Of ActividadDetalleBE)
+        Public Property ListaActividadDetalle() As List(Of ActividadDetalleBE)
+            Get
+                Return _ListaActividadDetalle
+            End Get
+            Set(ByVal value As List(Of ActividadDetalleBE))
+                _ListaActividadDetalle = value
+            End Set
+        End Property
+
     End Class
 End Namespace
 

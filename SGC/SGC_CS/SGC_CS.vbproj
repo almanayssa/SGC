@@ -130,6 +130,12 @@
     <Compile Include="Actividad\frmRegistroActividadRecurrente.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busqueda\frmBuscarDisponibilidadEspacio.Designer.vb">
+      <DependentUpon>frmBuscarDisponibilidadEspacio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmBuscarDisponibilidadEspacio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Busqueda\frmBuscarPerfil.Designer.vb">
       <DependentUpon>frmBuscarPerfil.vb</DependentUpon>
     </Compile>
@@ -453,6 +459,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Actividad\frmRegistroActividadRecurrente.resx">
       <DependentUpon>frmRegistroActividadRecurrente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBuscarDisponibilidadEspacio.resx">
+      <DependentUpon>frmBuscarDisponibilidadEspacio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBuscarPerfil.resx">
       <DependentUpon>frmBuscarPerfil.vb</DependentUpon>

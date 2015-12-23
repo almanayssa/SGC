@@ -486,6 +486,35 @@ Namespace SGC.Model.Metodos
 
         End Function
 
+        Public Function InsertarActividadDetalle(ByRef oActividadDetalle As ActividadDetalleBE) As Integer Implements IActividad.InsertarActividadDetalle
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_INSERTAR_ACTIVIDAD_DETALLE", sqlConn)
+
+            Dim recordId As Integer = 0
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oActividadDetalle.id_actividad
+            sqlCmd.Parameters.Add("@fecha_ini", SqlDbType.DateTime).Value = oActividadDetalle.fecha_ini
+            sqlCmd.Parameters.Add("@hora_ini", SqlDbType.Time).Value = oActividadDetalle.hora_ini
+            sqlCmd.Parameters.Add("@fecha_fin", SqlDbType.DateTime).Value = oActividadDetalle.fecha_fin
+            sqlCmd.Parameters.Add("@hora_fin", SqlDbType.Time).Value = oActividadDetalle.hora_fin
+            sqlCmd.Parameters.Add("@id_sede", SqlDbType.VarChar).Value = oActividadDetalle.id_sede
+            sqlCmd.Parameters.Add("@id_espacio", SqlDbType.Int).Value = oActividadDetalle.id_espacio
+            sqlCmd.Parameters.Add("@vacantes", SqlDbType.Int).Value = oActividadDetalle.vacantes
+
+            Try
+                sqlConn.Open()
+                recordId = sqlCmd.ExecuteScalar()
+
+                Return recordId
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+
+        End Function
+
         Public Function InsertarRecursoXActividad(ByRef oRecurso As RecursoBE) As Integer Implements IActividad.InsertarRecursoXActividad
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
@@ -678,6 +707,27 @@ Namespace SGC.Model.Metodos
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
             Dim sqlCmd As New SqlCommand("comite.SP_BORRAR_ACTIVIDAD", sqlConn)
+
+            Dim affectedRows As Integer = 0
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = id_actividad
+
+            Try
+                sqlConn.Open()
+                affectedRows = sqlCmd.ExecuteNonQuery
+
+                Return affectedRows
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function BorrarActividadDetalle(ByVal id_actividad As Integer) As Integer Implements Interfaces.IActividad.BorrarActividadDetalle
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_BORRAR_ACTIVIDAD_DETALLE", sqlConn)
 
             Dim affectedRows As Integer = 0
             sqlCmd.CommandType = CommandType.StoredProcedure
