@@ -22,10 +22,7 @@ Public Class frmCronogramaActividades
 
 
     Private Function ListarActividades(ByVal diaCalendario As Date, ByVal diaInicio As Date, ByVal diaFin As Date) As List(Of ActividadBE)
-        Dim oListadoActividades As New List(Of ActividadBE)
-
-        'Actividades No Recurrentes
-        oListadoActividades = bc.ListarActividadesCalendario(diaCalendario, diaInicio, diaFin)
+        Dim oListadoActividades As List(Of ActividadBE) = bc.ListarActividadesCalendario(diaCalendario, diaInicio, diaFin)
 
         If oListadoActividades.Count = 0 Then
             tblMsgNoActividades.Style(HtmlTextWriterStyle.Display) = "block"
@@ -34,18 +31,14 @@ Public Class frmCronogramaActividades
 
         Return oListadoActividades
 
-        'Sesiones.ListadoActividadesRemover()
-        'Sesiones.ListadoActividades = oListadoActividades
-
-        'rptCalendarioActividades.DataSource = oListadoActividades
-        'rptCalendarioActividades.DataBind()
-
     End Function
 
     Private Sub rptCalendarioActividades_ItemCommand(source As Object, e As System.Web.UI.WebControls.RepeaterCommandEventArgs) Handles rptCalendarioActividades.ItemCommand
         If e.CommandName = "DetalleActividad" Then
-            Dim id As Integer = CInt(e.CommandArgument)
-            Response.Redirect("~\frmDetalleActividad.aspx?" & id, True)
+            Dim oActividad As ActividadBE = bc.CargarActividadCabecera(CInt(e.CommandArgument))
+            Sesiones.ActividadSeleccionadaRemover()
+            Sesiones.ActividadSeleccionada = oActividad
+            Response.Redirect("~\frmDetalleActividad.aspx", True)
         End If
     End Sub
 

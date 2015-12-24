@@ -31,9 +31,7 @@ Public Class frmLogin
         Return msg
     End Function
 
-
     Private Sub IniciarSesion()
-
         'If ValidarCamposRequeridos() <> String.Empty Then
         '    MessageBox.Show(ValidarCamposRequeridos, "Información")
         '    Exit Sub
@@ -45,6 +43,10 @@ Public Class frmLogin
         'If oUsuarioLogueado.id_usuario = Nothing Then
         '    MessageBox.Show("Usuario o contraseña incorrectos", "Información")
         'Else
+        '    If oUsuarioLogueado.id_perfil_usuario = 6 Then
+        '        MessageBox.Show("Usuario o contraseña incorrectos", "Información")
+        '        Exit Sub
+        '    End If
         Me.Hide()
         MDI.Show()
         'End If
@@ -54,7 +56,7 @@ Public Class frmLogin
 
 #Region "Metodos Controles"
 
-    Private Sub btnEntrar_Click_1(sender As System.Object, e As System.EventArgs) Handles btnEntrar.Click
+    Private Sub btnEntrar_Click(sender As System.Object, e As System.EventArgs) Handles btnEntrar.Click
         IniciarSesion()
     End Sub
 

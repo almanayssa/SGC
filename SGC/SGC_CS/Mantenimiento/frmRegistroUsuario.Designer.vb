@@ -46,6 +46,9 @@ Partial Class frmRegistroUsuario
         Me.tsbEditar = New System.Windows.Forms.ToolStripButton()
         Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
         Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
+        Me.lblSocio = New SGC_CS.SGCLabel(Me.components)
+        Me.btnBuscarSocio = New SGC_CS.SGCButton(Me.components)
+        Me.txtSocio = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -64,6 +67,9 @@ Partial Class frmRegistroUsuario
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.lblSocio)
+        Me.SgcGroupBox1.Controls.Add(Me.btnBuscarSocio)
+        Me.SgcGroupBox1.Controls.Add(Me.txtSocio)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
         Me.SgcGroupBox1.Controls.Add(Me.txtEmail)
         Me.SgcGroupBox1.Controls.Add(Me.txtApellido)
@@ -320,6 +326,43 @@ Partial Class frmRegistroUsuario
         Me.tsbCancelar.Text = "Cancelar"
         Me.tsbCancelar.Visible = False
         '
+        'lblSocio
+        '
+        Me.lblSocio.AutoSize = True
+        Me.lblSocio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSocio.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblSocio.Location = New System.Drawing.Point(139, 257)
+        Me.lblSocio.Name = "lblSocio"
+        Me.lblSocio.Size = New System.Drawing.Size(45, 18)
+        Me.lblSocio.TabIndex = 37
+        Me.lblSocio.Text = "Socio:"
+        '
+        'btnBuscarSocio
+        '
+        Me.btnBuscarSocio.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscarSocio.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscarSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarSocio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarSocio.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscarSocio.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.btnBuscarSocio.Location = New System.Drawing.Point(332, 251)
+        Me.btnBuscarSocio.Name = "btnBuscarSocio"
+        Me.btnBuscarSocio.Size = New System.Drawing.Size(45, 31)
+        Me.btnBuscarSocio.TabIndex = 36
+        Me.btnBuscarSocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscarSocio.UseVisualStyleBackColor = False
+        '
+        'txtSocio
+        '
+        Me.txtSocio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSocio.Enabled = False
+        Me.txtSocio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSocio.ForeColor = System.Drawing.Color.Black
+        Me.txtSocio.Location = New System.Drawing.Point(227, 255)
+        Me.txtSocio.Name = "txtSocio"
+        Me.txtSocio.Size = New System.Drawing.Size(100, 26)
+        Me.txtSocio.TabIndex = 35
+        '
         'frmRegistroUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -363,4 +406,7 @@ Partial Class frmRegistroUsuario
     Friend WithEvents SgcLabel2 As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel4 As SGC_CS.SGCLabel
     Friend WithEvents txtEmail As SGC_CS.SGCTextBox
+    Friend WithEvents lblSocio As SGC_CS.SGCLabel
+    Friend WithEvents btnBuscarSocio As SGC_CS.SGCButton
+    Friend WithEvents txtSocio As SGC_CS.SGCTextBox
 End Class

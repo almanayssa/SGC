@@ -40,90 +40,110 @@ Public Class Sesiones
         HttpContext.Current.Session.Remove(sListadoActividades)
     End Sub
 
-    Private Const sTempListadoActividades As String = "sTempListadoActividades"
+    Private Const sListadoFamiliares As String = "sTempListadoActividades"
 
-    Public Shared Property TempListadoActividades() As List(Of ActividadBE)
+    Public Shared Property ListadoFamiliares() As List(Of PersonaBE)
         Get
-            Return HttpContext.Current.Session(sTempListadoActividades)
+            Return HttpContext.Current.Session(sListadoFamiliares)
         End Get
-        Set(ByVal value As List(Of ActividadBE))
-            HttpContext.Current.Session(sTempListadoActividades) = value
+        Set(ByVal value As List(Of PersonaBE))
+            HttpContext.Current.Session(sListadoFamiliares) = value
         End Set
     End Property
 
-    Public Shared Function TempListadoActividadesEsNulo() As Boolean
-        Return HttpContext.Current.Session(sTempListadoActividades) Is Nothing
+    Public Shared Function ListadoFamiliaresEsNulo() As Boolean
+        Return HttpContext.Current.Session(sListadoFamiliares) Is Nothing
     End Function
 
-    Public Shared Sub TempListadoActividadesRemover()
-        HttpContext.Current.Session.Remove(sTempListadoActividades)
+    Public Shared Sub ListadoFamiliaresRemover()
+        HttpContext.Current.Session.Remove(sListadoFamiliares)
     End Sub
 
-#Region "MessageDescription"
+    Private Const sUsuarioLogueado As String = "sUsuarioLogueado"
 
-    Public Shared Property MessageDescription() As String
+    Public Shared Property UsuarioLogueado() As UsuarioBE
         Get
-            Return HttpContext.Current.Session(sMsgDescription)
+            Return HttpContext.Current.Session(sUsuarioLogueado)
         End Get
-        Set(ByVal value As String)
-            HttpContext.Current.Session(sMsgDescription) = value
+        Set(ByVal value As UsuarioBE)
+            HttpContext.Current.Session(sUsuarioLogueado) = value
         End Set
     End Property
 
-    Public Shared Function MessageDescriptionIsNull() As Boolean
-        Return HttpContext.Current.Session(sMsgDescription) Is Nothing
+    Public Shared Function UsuarioLogueadoEsNulo() As Boolean
+        Return HttpContext.Current.Session(sUsuarioLogueado) Is Nothing
     End Function
 
-    Public Shared Sub MessageDescriptionRemove()
-        HttpContext.Current.Session.Remove(sMsgDescription)
+    Public Shared Sub UsuarioLogueadoRemover()
+        HttpContext.Current.Session.Remove(sUsuarioLogueado)
+    End Sub
+
+#Region "Msg Descripcion"
+
+    Public Shared Property MsgDescripcion() As String
+        Get
+            Return HttpContext.Current.Session(sMsgDescripcion)
+        End Get
+        Set(ByVal value As String)
+            HttpContext.Current.Session(sMsgDescripcion) = value
+        End Set
+    End Property
+
+    Public Shared Function MsgDescripcionEsNulo() As Boolean
+        Return HttpContext.Current.Session(sMsgDescripcion) Is Nothing
+    End Function
+
+    Public Shared Sub MsgDescripcionRemover()
+        HttpContext.Current.Session.Remove(sMsgDescripcion)
     End Sub
 
 #End Region
 
-#Region "MessageTitle"
+#Region "Msg Titulo"
 
-    Public Shared Property MessageTitle() As String
+    Public Shared Property MsgTitulo() As String
         Get
-            Return HttpContext.Current.Session(sMsgTitle)
+            Return HttpContext.Current.Session(sMsgTitulo)
         End Get
         Set(ByVal value As String)
-            HttpContext.Current.Session(sMsgTitle) = value
+            HttpContext.Current.Session(sMsgTitulo) = value
         End Set
     End Property
 
-    Public Shared Function MessageTitleIsNull() As Boolean
-        Return HttpContext.Current.Session(sMsgTitle) Is Nothing
+    Public Shared Function MsgTituloEsNulo() As Boolean
+        Return HttpContext.Current.Session(sMsgTitulo) Is Nothing
     End Function
 
-    Public Shared Sub MessageTitleRemove()
-        HttpContext.Current.Session.Remove(sMsgTitle)
+    Public Shared Sub MsgTituloRemover()
+        HttpContext.Current.Session.Remove(sMsgTitulo)
     End Sub
 
 #End Region
 
-#Region "MessageContinue"
+#Region "Msg Continuar"
 
     ' This session indicate the Message page
-    Private Const sMsgDescription As String = "sMsgDescription"
-    Private Const sMsgTitle As String = "sMsgTitle"
-    Private Const sMsgContinue As String = "sMsgContinue"
+    Private Const sMsgDescripcion As String = "sMsgDescripcion"
+    Private Const sMsgTitulo As String = "sMsgTitulo"
+    Private Const sMsgContinuar As String = "sMsgContinuar"
 
-    Public Shared Property MessageContinue() As String
+    Public Shared Property MsgContinuar() As String
         Get
-            Return HttpContext.Current.Session(sMsgContinue)
+            Return HttpContext.Current.Session(sMsgContinuar)
         End Get
         Set(ByVal value As String)
-            HttpContext.Current.Session(sMsgContinue) = value
+            HttpContext.Current.Session(sMsgContinuar) = value
         End Set
     End Property
 
-    Public Shared Function MessageContinueIsNull() As Boolean
-        Return HttpContext.Current.Session(sMsgContinue) Is Nothing
+    Public Shared Function MsgContinuarEsNulo() As Boolean
+        Return HttpContext.Current.Session(sMsgContinuar) Is Nothing
     End Function
 
-    Public Shared Sub MessageContinueRemove()
-        HttpContext.Current.Session.Remove(sMsgContinue)
+    Public Shared Sub MsgContinuarRemover()
+        HttpContext.Current.Session.Remove(sMsgContinuar)
     End Sub
 
 #End Region
+
 End Class

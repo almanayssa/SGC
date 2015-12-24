@@ -49,7 +49,7 @@
                                                 style="display: block;">
                                                 <tr>
                                                     <td>
-                                                        <asp:ImageButton ID="ibtnInscribirse" runat="server" ImageUrl="~/imagenes/botones/inscribir.jpg" PostBackUrl='<%#String.Concat("~/frmRegistroInscripcion.aspx?", Eval("id_actividad")) %>' />                                                
+                                                        <asp:ImageButton ID="ibtnInscribirse" runat="server" ImageUrl="~/imagenes/botones/inscribir.jpg" PostBackUrl='<%#String.Concat("~/frmRegistroInscripcion.aspx?id=", Eval("id_actividad")) %>' />                                                
                                                     </td>
                                                 </tr>
                                             </table>

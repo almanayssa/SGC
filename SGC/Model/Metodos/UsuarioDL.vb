@@ -35,6 +35,8 @@ Namespace SGC.Model.Metodos
                     oUsuario.nombres = dr("nombres")
                     oUsuario.ape_pat = dr("ape_pat")
                     oUsuario.id_perfil_usuario = dr("id_Perfil_Usuario")
+                    oUsuario.id_socio = IIf(dr("id_socio") Is DBNull.Value, Nothing, dr("id_socio"))
+                    oUsuario.id_accion = IIf(dr("id_accion") Is DBNull.Value, Nothing, dr("id_accion"))
                     oListadoUsuario.Add(oUsuario)
                 End While
                 dr.Close()
@@ -69,6 +71,8 @@ Namespace SGC.Model.Metodos
                     oUsuario.nombres = dr("nombres")
                     oUsuario.ape_pat = dr("ape_pat")
                     oUsuario.id_perfil_usuario = dr("id_Perfil_Usuario")
+                    oUsuario.id_socio = IIf(dr("id_socio") Is DBNull.Value, Nothing, dr("id_socio"))
+                    oUsuario.id_accion = IIf(dr("id_accion") Is DBNull.Value, Nothing, dr("id_accion"))
                 End If
                 dr.Close()
                 Return oUsuario
@@ -101,6 +105,8 @@ Namespace SGC.Model.Metodos
                     oUsuario.nombres = dr("nombres")
                     oUsuario.ape_pat = dr("ape_pat")
                     oUsuario.id_perfil_usuario = dr("id_Perfil_Usuario")
+                    oUsuario.id_socio = IIf(dr("id_socio") Is DBNull.Value, Nothing, dr("id_socio"))
+                    oUsuario.id_accion = IIf(dr("id_accion") Is DBNull.Value, Nothing, dr("id_accion"))
                 End If
                 dr.Close()
                 Return oUsuario
@@ -133,6 +139,8 @@ Namespace SGC.Model.Metodos
                     oUsuario.nombres = dr("nombres")
                     oUsuario.ape_pat = dr("ape_pat")
                     oUsuario.id_perfil_usuario = dr("id_Perfil_Usuario")
+                    oUsuario.id_socio = IIf(dr("id_socio") Is DBNull.Value, Nothing, dr("id_socio"))
+                    oUsuario.id_accion = IIf(dr("id_accion") Is DBNull.Value, Nothing, dr("id_accion"))
                 End If
                 dr.Close()
                 Return oUsuario
@@ -165,6 +173,8 @@ Namespace SGC.Model.Metodos
                     oUsuario.nombres = dr("nombres")
                     oUsuario.ape_pat = dr("ape_pat")
                     oUsuario.id_perfil_usuario = dr("id_Perfil_Usuario")
+                    oUsuario.id_socio = IIf(dr("id_socio") Is DBNull.Value, Nothing, dr("id_socio"))
+                    oUsuario.id_accion = IIf(dr("id_accion") Is DBNull.Value, Nothing, dr("id_accion"))
                 End If
                 dr.Close()
                 Return oUsuario
@@ -193,6 +203,7 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@ape_pat", SqlDbType.VarChar).Value = oUsuario.ape_pat
             sqlCmd.Parameters.Add("@id_Perfil_Usuario", SqlDbType.Int).Value = oUsuario.id_perfil_usuario
             sqlCmd.Parameters.Add("@id_est_usu", SqlDbType.VarChar).Value = oUsuario.id_est_usu
+            sqlCmd.Parameters.Add("@id_socio", SqlDbType.VarChar).Value = IIf(oUsuario.id_socio Is Nothing, DBNull.Value, oUsuario.id_socio)
 
             Try
                 sqlConn.Open()
@@ -224,6 +235,7 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@nombres", SqlDbType.VarChar).Value = oUsuario.nombres
             sqlCmd.Parameters.Add("@ape_pat", SqlDbType.VarChar).Value = oUsuario.ape_pat
             sqlCmd.Parameters.Add("@id_Perfil_Usuario", SqlDbType.Int).Value = oUsuario.id_perfil_usuario
+            sqlCmd.Parameters.Add("@id_socio", SqlDbType.VarChar).Value = IIf(oUsuario.id_socio Is Nothing, DBNull.Value, oUsuario.id_socio)
 
             Try
                 sqlConn.Open()

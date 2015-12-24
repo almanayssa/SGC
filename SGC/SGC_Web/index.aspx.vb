@@ -5,7 +5,6 @@ Public Class index
     Inherits System.Web.UI.Page
 
     Private bc As New BusinessController
-    Private Usuario As UsuarioBE
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
@@ -20,11 +19,12 @@ Public Class index
 
         Dim oUsuario As UsuarioBE = bc.ObtenerUsuario(txtUsuario.Text.Trim, txtClave.Text.Trim)
 
-        If oUsuario.id_usuario > 0 Then
-            Usuario = oUsuario
-            Session("ubosque") = Usuario.username
-            Session("nombre") = Usuario.nombres
-            Session("apellido") = Usuario.ape_pat
+        If oUsuario.id_usuario <> String.Empty AndAlso oUsuario.id_perfil_usuario = 6 Then
+            Sesiones.UsuarioLogueadoRemover()
+            Sesiones.UsuarioLogueado = oUsuario
+            Session("ubosque") = oUsuario.username
+            Session("nombre") = oUsuario.nombres
+            Session("apellido") = oUsuario.ape_pat
 
             Response.Redirect("inicio.aspx")
         Else

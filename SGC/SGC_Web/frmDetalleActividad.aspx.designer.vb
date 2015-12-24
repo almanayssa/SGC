@@ -14,67 +14,76 @@ Option Explicit On
 Partial Public Class frmDetalleActividad
 
     '''<summary>
-    '''hdnCompanyID control.
+    '''lblNombre control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hdnCompanyID As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents lblNombre As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblTitleEvent control.
+    '''lblComite control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblTitleEvent As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblComite As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblDateEvent control.
+    '''lblTipo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblDateEvent As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblTipo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblHourEvent control.
+    '''lblFechaInicio control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblHourEvent As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblFechaInicio As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblAddressEvent control.
+    '''lblHoraInicio control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblAddressEvent As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblHoraInicio As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblDescriptionEvent control.
+    '''lblFechaFin control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblDescriptionEvent As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblFechaFin As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''RegisterNow control.
+    '''lblHoraFin control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents RegisterNow As Global.System.Web.UI.HtmlControls.HtmlTable
+    Protected WithEvents lblHoraFin As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lblDescripcion control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblDescripcion As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''ibtnRegresar control.
@@ -86,38 +95,29 @@ Partial Public Class frmDetalleActividad
     Protected WithEvents ibtnRegresar As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''ibtnRegisterNow control.
+    '''ibtnInscribir control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents ibtnRegisterNow As Global.System.Web.UI.WebControls.ImageButton
+    Protected WithEvents ibtnInscribir As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''lblRegistrationClosed control.
+    '''tdActividadFinalizada control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblRegistrationClosed As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents tdActividadFinalizada As Global.System.Web.UI.HtmlControls.HtmlTableCell
 
     '''<summary>
-    '''tdMessageEndDateEvent control.
+    '''lblActividadFinalizada control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents tdMessageEndDateEvent As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
-    '''lblMessageEndDateEvent control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblMessageEndDateEvent As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblActividadFinalizada As Global.System.Web.UI.WebControls.Label
 End Class

@@ -23,13 +23,13 @@ Partial Public Class frmRegistroInscripcion
     Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''Panel3 control.
+    '''Panel1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Panel3 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''Label7 control.
@@ -68,87 +68,6 @@ Partial Public Class frmRegistroInscripcion
     Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''Label8 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label8 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''gvwDetalles control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents gvwDetalles As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''btnAgregar control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents btnAgregar As Global.System.Web.UI.WebControls.ImageButton
-
-    '''<summary>
-    '''Label6 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label6 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblmsjerror control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblmsjerror As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblerrorfecha control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblerrorfecha As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label1 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''hplink1 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents hplink1 As Global.System.Web.UI.WebControls.HyperLink
-
-    '''<summary>
-    '''Panel4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Panel4 As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
     '''Label2 control.
     '''</summary>
     '''<remarks>
@@ -176,13 +95,13 @@ Partial Public Class frmRegistroInscripcion
     Protected WithEvents gvwFamiliares As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
-    '''Panel1 control.
+    '''Panel3 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents Panel3 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''Label9 control.

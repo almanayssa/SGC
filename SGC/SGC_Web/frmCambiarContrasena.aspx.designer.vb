@@ -14,6 +14,33 @@ Option Explicit On
 Partial Public Class frmCambiarContrasena
 
     '''<summary>
+    '''Label10 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''upnlContrasena control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents upnlContrasena As Global.System.Web.UI.UpdatePanel
+
+    '''<summary>
+    '''Panel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
     '''txtContrasenaActual control.
     '''</summary>
     '''<remarks>
@@ -21,6 +48,15 @@ Partial Public Class frmCambiarContrasena
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents txtContrasenaActual As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''rfvContrasenaActual control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rfvContrasenaActual As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
     '''txtNuevaContrasena control.
@@ -32,6 +68,15 @@ Partial Public Class frmCambiarContrasena
     Protected WithEvents txtNuevaContrasena As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''rfvNuevaContrasena control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rfvNuevaContrasena As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
     '''txtNuevaContrasena2 control.
     '''</summary>
     '''<remarks>
@@ -41,6 +86,15 @@ Partial Public Class frmCambiarContrasena
     Protected WithEvents txtNuevaContrasena2 As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
+    '''rfvNuevaContrasena2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rfvNuevaContrasena2 As Global.System.Web.UI.WebControls.RequiredFieldValidator
+
+    '''<summary>
     '''ibtnModificar control.
     '''</summary>
     '''<remarks>
@@ -48,4 +102,40 @@ Partial Public Class frmCambiarContrasena
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ibtnModificar As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
+    '''lblMensaje control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''cvContrasenaActual control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cvContrasenaActual As Global.System.Web.UI.WebControls.CustomValidator
+
+    '''<summary>
+    '''cvNuevaContrasena control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cvNuevaContrasena As Global.System.Web.UI.WebControls.CustomValidator
+
+    '''<summary>
+    '''vsumContrasena control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents vsumContrasena As Global.System.Web.UI.WebControls.ValidationSummary
 End Class

@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmMensaje
+Partial Public Class Mensaje
 
     '''<summary>
     '''lblMessagePage control.
@@ -30,6 +30,15 @@ Partial Public Class frmMensaje
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblMessageDescription As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''Table1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Table1 As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
     '''ibtContinue control.

@@ -7,7 +7,7 @@ Partial Class inicio
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         'Validación si la sesión esta abierta para que pueda ingresar al sistema
         If Session("ubosque") = "" Then
-            Response.Redirect("index.aspx")
+            Response.Redirect("index.aspx", True)
         End If
 
         lblApellidosNombre.Text = Session("nombre") & " " & Session("apellido")

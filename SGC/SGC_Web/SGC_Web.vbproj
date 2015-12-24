@@ -117,10 +117,8 @@
     <Content Include="frmCambiarContrasena.aspx" />
     <Content Include="frmCronogramaActividades.aspx" />
     <Content Include="frmDetalleActividad.aspx" />
-    <Content Include="frmMensaje.aspx" />
     <Content Include="frmMisInscripciones.aspx" />
     <Content Include="frmRegistroInscripcion.aspx" />
-    <Content Include="frmRecuperarContrasena.aspx" />
     <Content Include="imagenes\banners\barra.jpg" />
     <Content Include="imagenes\banners\cuadrito.jpg" />
     <Content Include="imagenes\botones\001.bmp" />
@@ -246,6 +244,7 @@
     <Content Include="js\JScript.js" />
     <Content Include="js\passwordStrengthMeter.js" />
     <Content Include="logoff.aspx" />
+    <Content Include="Mensaje.aspx" />
     <Content Include="menu1.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -293,13 +292,6 @@
       <DependentUpon>frmDetalleActividad.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="frmMensaje.aspx.designer.vb">
-      <DependentUpon>frmMensaje.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="frmMensaje.aspx.vb">
-      <DependentUpon>frmMensaje.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
     <Compile Include="frmMisInscripciones.aspx.designer.vb">
       <DependentUpon>frmMisInscripciones.aspx</DependentUpon>
     </Compile>
@@ -312,13 +304,6 @@
     </Compile>
     <Compile Include="frmRegistroInscripcion.aspx.vb">
       <DependentUpon>frmRegistroInscripcion.aspx</DependentUpon>
-      <SubType>ASPXCodebehind</SubType>
-    </Compile>
-    <Compile Include="frmRecuperarContrasena.aspx.designer.vb">
-      <DependentUpon>frmRecuperarContrasena.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="frmRecuperarContrasena.aspx.vb">
-      <DependentUpon>frmRecuperarContrasena.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="index.aspx.designer.vb">
@@ -341,6 +326,13 @@
     <Compile Include="logoff.aspx.vb">
       <DependentUpon>logoff.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mensaje.aspx.designer.vb">
+      <DependentUpon>Mensaje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mensaje.aspx.vb">
+      <DependentUpon>Mensaje.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

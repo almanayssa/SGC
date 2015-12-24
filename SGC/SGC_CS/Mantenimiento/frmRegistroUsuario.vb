@@ -34,6 +34,8 @@ Public Class frmRegistroUsuario
         txtNombre.Enabled = True
         txtApellido.Enabled = True
         cboPerfil.Enabled = True
+
+        btnBuscarSocio.Enabled = True
     End Sub
 
     Private Sub FormularioEnModoVista()
@@ -49,6 +51,8 @@ Public Class frmRegistroUsuario
         txtNombre.Enabled = False
         txtApellido.Enabled = False
         cboPerfil.Enabled = False
+
+        btnBuscarSocio.Enabled = False
     End Sub
 
     Private Sub ListarPerfiles()
@@ -72,6 +76,17 @@ Public Class frmRegistroUsuario
         txtNombre.Text = oUsuario.nombres
         txtApellido.Text = oUsuario.ape_pat
         cboPerfil.SelectedValue = oUsuario.id_perfil_usuario
+        txtSocio.Text = oUsuario.id_socio
+
+        If oUsuario.id_perfil_usuario = 6 Then
+            lblSocio.Visible = True
+            txtSocio.Visible = True
+            btnBuscarSocio.Visible = True
+        Else
+            lblSocio.Visible = False
+            txtSocio.Visible = False
+            btnBuscarSocio.Visible = False
+        End If
     End Sub
 
     Private Sub LimpiarFormulario()
@@ -88,6 +103,7 @@ Public Class frmRegistroUsuario
         txtNombre.Text = String.Empty
         txtApellido.Text = String.Empty
         cboPerfil.SelectedIndex = 0
+        txtSocio.Text = String.Empty
 
         txtUsuario.Enabled = True
         txtContrasenia.Enabled = True
@@ -95,6 +111,10 @@ Public Class frmRegistroUsuario
         txtNombre.Enabled = True
         txtApellido.Enabled = True
         cboPerfil.Enabled = True
+
+        lblSocio.Visible = False
+        txtSocio.Visible = False
+        btnBuscarSocio.Visible = False
     End Sub
 
     Private Function ValidarCamposRequeridos() As String
@@ -122,6 +142,10 @@ Public Class frmRegistroUsuario
 
         If cboPerfil.SelectedValue = 0 Then
             msg &= vbCrLf & "- Seleccione un perfil"
+        Else
+            If cboPerfil.SelectedValue = 6 AndAlso txtSocio.Text.Trim = String.Empty Then
+                msg &= vbCrLf & "- Seleccione un socio"
+            End If
         End If
 
         Return msg
@@ -174,6 +198,12 @@ Public Class frmRegistroUsuario
         oUsuario.nombres = txtNombre.Text.Trim
         oUsuario.ape_pat = txtApellido.Text.Trim
         oUsuario.id_perfil_usuario = cboPerfil.SelectedValue
+
+        If cboPerfil.SelectedValue = 6 Then
+            oUsuario.id_socio = txtSocio.Text.Trim
+        Else
+            oUsuario.id_socio = Nothing
+        End If
 
         If txtCodigo.Text = String.Empty Then
             oUsuario.id_est_usu = "01" 'Activo
@@ -263,6 +293,27 @@ Public Class frmRegistroUsuario
             _id_usuario = frmBuscarUsuario.UsuarioSeleccionado.id_usuario
             CargarUsuario(frmBuscarUsuario.UsuarioSeleccionado.id_usuario)
             FormularioEnModoVista()
+        End If
+    End Sub
+
+    Private Sub btnBuscarSocio_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarSocio.Click
+        Dim frmBuscarSocio As New frmBuscarSocio
+        frmBuscarSocio.ShowDialog()
+
+        If frmBuscarSocio.SocioSeleccionado IsNot Nothing Then
+            txtSocio.Text = frmBuscarSocio.SocioSeleccionado.id_socio
+        End If
+    End Sub
+
+    Private Sub cboPerfil_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboPerfil.SelectedIndexChanged
+        If cboPerfil.SelectedValue = 6 Then
+            lblSocio.Visible = True
+            txtSocio.Visible = True
+            btnBuscarSocio.Visible = True
+        Else
+            lblSocio.Visible = False
+            txtSocio.Visible = False
+            btnBuscarSocio.Visible = False
         End If
     End Sub
 

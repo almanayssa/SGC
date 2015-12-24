@@ -82,6 +82,26 @@
             End Set
         End Property
 
+        Private _id_socio As String
+        Public Property id_socio() As String
+            Get
+                Return _id_socio
+            End Get
+            Set(ByVal value As String)
+                _id_socio = value
+            End Set
+        End Property
+
+        Private _id_accion As String
+        Public Property id_accion() As String
+            Get
+                Return _id_accion
+            End Get
+            Set(ByVal value As String)
+                _id_accion = value
+            End Set
+        End Property
+
     End Class
 
 End Namespace

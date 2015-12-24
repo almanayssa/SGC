@@ -17,7 +17,7 @@ Public Class frmBuscarUsuario
         colUsuario.DataPropertyName = "username"
         colNombre.DataPropertyName = "nombres"
         colApellido.DataPropertyName = "ape_pat"
-        colEmail.DataPropertyName = "email"
+        colSocio.DataPropertyName = "id_socio"
     End Sub
 
 #End Region

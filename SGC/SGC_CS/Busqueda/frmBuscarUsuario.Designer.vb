@@ -25,14 +25,14 @@ Partial Class frmBuscarUsuario
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
-        Me.colUsuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colApellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEmail = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxFiltros = New SGC_CS.SGCGroupBox(Me.components)
         Me.lblPerfil = New SGC_CS.SGCLabel(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.cboPerfil = New SGC_CS.SGCComboBox(Me.components)
+        Me.colUsuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colApellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSocio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxFiltros.SuspendLayout()
         Me.SuspendLayout()
@@ -46,36 +46,12 @@ Partial Class frmBuscarUsuario
         Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colUsuario, Me.colNombre, Me.colApellido, Me.colEmail})
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colUsuario, Me.colNombre, Me.colApellido, Me.colSocio})
         Me.dgvListado.Location = New System.Drawing.Point(13, 111)
         Me.dgvListado.Name = "dgvListado"
         Me.dgvListado.ReadOnly = True
         Me.dgvListado.Size = New System.Drawing.Size(445, 216)
         Me.dgvListado.TabIndex = 24
-        '
-        'colUsuario
-        '
-        Me.colUsuario.HeaderText = "Usuario"
-        Me.colUsuario.Name = "colUsuario"
-        Me.colUsuario.ReadOnly = True
-        '
-        'colNombre
-        '
-        Me.colNombre.HeaderText = "Nombre"
-        Me.colNombre.Name = "colNombre"
-        Me.colNombre.ReadOnly = True
-        '
-        'colApellido
-        '
-        Me.colApellido.HeaderText = "Apellido"
-        Me.colApellido.Name = "colApellido"
-        Me.colApellido.ReadOnly = True
-        '
-        'colEmail
-        '
-        Me.colEmail.HeaderText = "Email"
-        Me.colEmail.Name = "colEmail"
-        Me.colEmail.ReadOnly = True
         '
         'gbxFiltros
         '
@@ -128,6 +104,30 @@ Partial Class frmBuscarUsuario
         Me.cboPerfil.Size = New System.Drawing.Size(121, 26)
         Me.cboPerfil.TabIndex = 26
         '
+        'colUsuario
+        '
+        Me.colUsuario.HeaderText = "Usuario"
+        Me.colUsuario.Name = "colUsuario"
+        Me.colUsuario.ReadOnly = True
+        '
+        'colNombre
+        '
+        Me.colNombre.HeaderText = "Nombre"
+        Me.colNombre.Name = "colNombre"
+        Me.colNombre.ReadOnly = True
+        '
+        'colApellido
+        '
+        Me.colApellido.HeaderText = "Apellido"
+        Me.colApellido.Name = "colApellido"
+        Me.colApellido.ReadOnly = True
+        '
+        'colSocio
+        '
+        Me.colSocio.HeaderText = "Socio"
+        Me.colSocio.Name = "colSocio"
+        Me.colSocio.ReadOnly = True
+        '
         'frmBuscarUsuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
@@ -152,5 +152,5 @@ Partial Class frmBuscarUsuario
     Friend WithEvents colUsuario As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colApellido As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colEmail As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colSocio As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
