@@ -27,9 +27,11 @@ Public Class frmDetalleActividad
         Dim fechaHora As DateTime = Convert.ToDateTime(oActividad.fec_fin).Add(oActividad.hora_fin)
 
         If DateDiff(DateInterval.Second, fechaHora, Now) > 0 Then
-            tdActividadFinalizada.Visible = True
+            ibtnInscribir.Visible = False
+            lblActividadFinalizada.Visible = True
         Else
-            tdActividadFinalizada.Visible = False
+            ibtnInscribir.Visible = True
+            lblActividadFinalizada.Visible = False
         End If
     End Sub
 

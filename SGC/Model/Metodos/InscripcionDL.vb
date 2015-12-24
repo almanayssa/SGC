@@ -10,6 +10,42 @@ Namespace SGC.Model.Metodos
     Public Class InscripcionDL
         Implements IInscripcion
 
+#Region "Select"
+
+        Public Function ListarInscripciones(id_socio As String) As List(Of Entidades.InscripcionBE) Implements Interfaces.IInscripcion.ListarInscripciones
+            Dim oListadoInscripcion As New List(Of InscripcionBE)
+            Dim oInscripcion As InscripcionBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.LISTAR_INSCRIPCIONES", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_socio", SqlDbType.VarChar).Value = id_socio
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oInscripcion = New InscripcionBE
+                    oInscripcion.nombre_actividad = dr("nombre")
+                    oInscripcion.nombre_comite = dr("nombrecomite")
+                    oInscripcion.tipo_actividad = dr("desc_tipo")
+                    oInscripcion.fecha_registro = dr("fecha_registro")
+                    oInscripcion.monto = dr("monto")
+                    oListadoInscripcion.Add(oInscripcion)
+                End While
+                dr.Close()
+                Return oListadoInscripcion
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+#End Region
+
 #Region "Insert"
         
         Public Function InsertarInscripcion(ByRef oInscripcion As Entidades.InscripcionBE) As Integer Implements Interfaces.IInscripcion.InsertarInscripcion

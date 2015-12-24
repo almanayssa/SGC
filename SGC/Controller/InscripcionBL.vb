@@ -6,8 +6,28 @@ Namespace SGC.Controller
 
     Partial Public Class BusinessController
 
+#Region "Select"
+
+        Public Function ListarInscripciones(ByVal id_socio As String) As List(Of InscripcionBE)
+            Try
+                Dim iInscripcion As IInscripcion
+                Dim oListadoInscripcion As List(Of InscripcionBE) = Nothing
+
+                iInscripcion = New InscripcionDL
+
+                oListadoInscripcion = iInscripcion.ListarInscripciones(id_socio)
+
+                Return oListadoInscripcion
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+#End Region
+
 #Region "Insert"
-        
+
         Public Function InsertarInscripcion(ByRef oInscripcion As InscripcionBE) As Integer
             Try
                 Dim iInscripcion As IInscripcion

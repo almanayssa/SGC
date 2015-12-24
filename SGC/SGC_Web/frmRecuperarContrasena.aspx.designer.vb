@@ -11,7 +11,52 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmCronogramaActividades
+Partial Public Class frmRecuperarContrasena
+
+    '''<summary>
+    '''Head1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Head1 As Global.System.Web.UI.HtmlControls.HtmlHead
+
+    '''<summary>
+    '''form1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents form1 As Global.System.Web.UI.HtmlControls.HtmlForm
+
+    '''<summary>
+    '''ScriptManager1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ScriptManager1 As Global.System.Web.UI.ScriptManager
+
+    '''<summary>
+    '''UpdatePanel1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents UpdatePanel1 As Global.System.Web.UI.UpdatePanel
+
+    '''<summary>
+    '''usrEncabezado2 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents usrEncabezado2 As Global.controles_usrEncabezado
 
     '''<summary>
     '''Label10 control.
@@ -23,6 +68,15 @@ Partial Public Class frmCronogramaActividades
     Protected WithEvents Label10 As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
+    '''upnlCorreo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents upnlCorreo As Global.System.Web.UI.UpdatePanel
+
+    '''<summary>
     '''Panel1 control.
     '''</summary>
     '''<remarks>
@@ -32,128 +86,65 @@ Partial Public Class frmCronogramaActividades
     Protected WithEvents Panel1 As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''Label7 control.
+    '''txtCorreo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Label7 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtCorreo As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''calActividades control.
+    '''rfvCorreo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents calActividades As Global.System.Web.UI.WebControls.Calendar
+    Protected WithEvents rfvCorreo As Global.System.Web.UI.WebControls.RequiredFieldValidator
 
     '''<summary>
-    '''lbtnHoy control.
+    '''ibtnEnviar control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnHoy As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents ibtnEnviar As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''lbtnEstaSemana control.
+    '''lblMensaje control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnEstaSemana As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lbtnEsteMes control.
+    '''revCorreo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lbtnEsteMes As Global.System.Web.UI.WebControls.LinkButton
+    Protected WithEvents revCorreo As Global.System.Web.UI.WebControls.RegularExpressionValidator
 
     '''<summary>
-    '''hdnFechaInicio control.
+    '''vsumCorreo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hdnFechaInicio As Global.System.Web.UI.WebControls.HiddenField
+    Protected WithEvents vsumCorreo As Global.System.Web.UI.WebControls.ValidationSummary
 
     '''<summary>
-    '''hdnFechaFin control.
+    '''UsrPie1 control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents hdnFechaFin As Global.System.Web.UI.WebControls.HiddenField
-
-    '''<summary>
-    '''Panel2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Panel2 As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''lblTituloCalendario control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblTituloCalendario As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''Label2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents Label2 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''upnlActividades control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents upnlActividades As Global.System.Web.UI.UpdatePanel
-
-    '''<summary>
-    '''rptCalendarioActividades control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rptCalendarioActividades As Global.System.Web.UI.WebControls.Repeater
-
-    '''<summary>
-    '''tblMsgNoActividades control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents tblMsgNoActividades As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''lblNoActividades control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblNoActividades As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents UsrPie1 As Global.controles_usrPie
 End Class

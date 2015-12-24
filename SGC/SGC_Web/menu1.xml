@@ -20,6 +20,10 @@
         <text>Mis Inscripciones</text>
         <url>frmMisInscripciones.aspx</url>
       </menuItem>
+      <menuItem>
+        <text>Mis Suscripciones</text>
+        <url>frmMisSuscripciones.aspx</url>
+      </menuItem>
     </subMenu>
   </menuItem>
 </menu>

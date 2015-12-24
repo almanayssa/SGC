@@ -104,15 +104,6 @@ Partial Public Class frmDetalleActividad
     Protected WithEvents ibtnInscribir As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
-    '''tdActividadFinalizada control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents tdActividadFinalizada As Global.System.Web.UI.HtmlControls.HtmlTableCell
-
-    '''<summary>
     '''lblActividadFinalizada control.
     '''</summary>
     '''<remarks>

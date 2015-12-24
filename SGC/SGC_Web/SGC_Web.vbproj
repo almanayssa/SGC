@@ -118,6 +118,8 @@
     <Content Include="frmCronogramaActividades.aspx" />
     <Content Include="frmDetalleActividad.aspx" />
     <Content Include="frmMisInscripciones.aspx" />
+    <Content Include="frmMisSuscripciones.aspx" />
+    <Content Include="frmRecuperarContrasena.aspx" />
     <Content Include="frmRegistroInscripcion.aspx" />
     <Content Include="imagenes\banners\barra.jpg" />
     <Content Include="imagenes\banners\cuadrito.jpg" />
@@ -298,6 +300,20 @@
     <Compile Include="frmMisInscripciones.aspx.vb">
       <DependentUpon>frmMisInscripciones.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmMisSuscripciones.aspx.designer.vb">
+      <DependentUpon>frmMisSuscripciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmMisSuscripciones.aspx.vb">
+      <DependentUpon>frmMisSuscripciones.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarContrasena.aspx.designer.vb">
+      <DependentUpon>frmRecuperarContrasena.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperarContrasena.aspx.vb">
+      <DependentUpon>frmRecuperarContrasena.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="frmRegistroInscripcion.aspx.designer.vb">
       <DependentUpon>frmRegistroInscripcion.aspx</DependentUpon>

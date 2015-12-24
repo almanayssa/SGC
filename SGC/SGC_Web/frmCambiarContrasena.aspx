@@ -13,7 +13,7 @@
                         <ContentTemplate>
                             <asp:Panel ID="Panel1" runat="server" BackColor="White" ForeColor="#82AE1D" GroupingText="Cambiar Contraseña" Width="799px">
                                 <br />
-                                <table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+                                <table border="0" cellpadding="0" cellspacing="2" style="width:100%;">
                                     <tr>
                                         <td class="lblnegro">Ingrese contraseña actual:</td>
                                         <td><asp:TextBox ID="txtContrasenaActual" runat="server" TextMode="Password"></asp:TextBox></td>       

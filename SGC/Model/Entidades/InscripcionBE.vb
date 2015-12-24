@@ -151,6 +151,37 @@
             End Set
         End Property
 
+        Private _nombre_actividad As String
+        Public Property nombre_actividad() As String
+            Get
+                Return _nombre_actividad
+            End Get
+            Set(ByVal value As String)
+                _nombre_actividad = value
+            End Set
+        End Property
+
+        Private _nombre_comite As String
+        Public Property nombre_comite() As String
+            Get
+                Return _nombre_comite
+            End Get
+            Set(ByVal value As String)
+                _nombre_comite = value
+            End Set
+        End Property
+
+        Private _tipo_actividad As String
+        Public Property tipo_actividad() As String
+            Get
+                Return _tipo_actividad
+            End Get
+            Set(ByVal value As String)
+                _tipo_actividad = value
+            End Set
+        End Property
+
+
     End Class
 End Namespace
 
