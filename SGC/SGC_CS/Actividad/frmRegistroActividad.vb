@@ -90,6 +90,7 @@ Public Class frmRegistroActividad
         nudPago.Enabled = True
 
         btnEscoger.Enabled = True
+        btnLimpiar.Enabled = True
         btnBuscarPersonal.Enabled = True
         btnAgregarTipoPersonal.Enabled = True
         btnQuitarTipoPersonal.Enabled = True
@@ -119,6 +120,7 @@ Public Class frmRegistroActividad
         nudVacantes.Enabled = False
 
         btnEscoger.Enabled = False
+        btnLimpiar.Enabled = False
         btnBuscarPersonal.Enabled = False
         btnAgregarTipoPersonal.Enabled = False
         btnQuitarTipoPersonal.Enabled = False
@@ -147,6 +149,7 @@ Public Class frmRegistroActividad
         nudVacantes.Enabled = False
 
         btnEscoger.Enabled = True
+        btnLimpiar.Enabled = True
         btnBuscarPersonal.Enabled = False
         btnAgregarTipoPersonal.Enabled = False
         btnQuitarTipoPersonal.Enabled = False
@@ -393,6 +396,7 @@ Public Class frmRegistroActividad
         nudPago.Enabled = True
 
         btnEscoger.Enabled = True
+        btnLimpiar.Enabled = True
         btnBuscarPersonal.Enabled = True
         btnAgregarTipoPersonal.Enabled = True
         btnQuitarTipoPersonal.Enabled = True
