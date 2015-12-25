@@ -36,6 +36,7 @@ Namespace SGC.Model.Metodos
                     oActividadDetalle.id_sede = dr("id_sede")
                     oActividadDetalle.des_sede = dr("des_sede")
                     oActividadDetalle.id_lugar = dr("id_lugar")
+                    oActividadDetalle.id_espacio = dr("id_espacio")
                     oActividadDetalle.nombre_espacio = dr("nombre")
                     oActividadDetalle.vacantes = dr("vacantes")
                     oListadoActividadDetalles.Add(oActividadDetalle)

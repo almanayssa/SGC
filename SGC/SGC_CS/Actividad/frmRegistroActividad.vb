@@ -1,5 +1,7 @@
 ﻿Imports SGC.Model.Entidades
 Imports SGC.Controller
+Imports System.Net
+Imports System.Net.Mail
 
 Public Class frmRegistroActividad
 
@@ -12,6 +14,7 @@ Public Class frmRegistroActividad
     Private oPersonalPendiente As TipoPersonalBE
     Private oRecursoPendiente As RecursoBE
     Private _id_actividad As Integer
+    Private ListadoProgramacion As List(Of ActividadDetalleBE)
 
 #Region "Inicializacion"
 
@@ -153,6 +156,8 @@ Public Class frmRegistroActividad
         btnQuitarRecurso.Enabled = False
         txtCantidadRecurso.Enabled = False
         dgvRestricciones.ReadOnly = True
+
+        ListadoProgramacion = dgvProgramacion.DataSource
     End Sub
 
     Private Sub ListarComites()
@@ -534,14 +539,14 @@ Public Class frmRegistroActividad
 
     End Function
 
-    Private Sub AgregarProgramacion()
+    Private Sub AgregarProgramacion(ByRef oListadoEspacioRes As List(Of EspacioResBE))
         Dim oActividadDetalle As ActividadDetalleBE
 
         If ListadoActividadDetalles Is Nothing Then
             ListadoActividadDetalles = New List(Of ActividadDetalleBE)
         End If
 
-        For Each oEspacioRes As EspacioResBE In frmBuscarDisponibilidadEspacio.ListadoEspacioRes
+        For Each oEspacioRes As EspacioResBE In oListadoEspacioRes
             oActividadDetalle = New ActividadDetalleBE
             oActividadDetalle.fecha_ini = oEspacioRes.fec_ini
             oActividadDetalle.fecha_fin = oEspacioRes.fec_fin
@@ -558,19 +563,70 @@ Public Class frmRegistroActividad
         dgvProgramacion.DataSource = ListadoActividadDetalles
     End Sub
 
-    Private Sub ComunicarUsuariosCancelacion()
+    Private Sub LimpiarProgramacion()
+        If ListadoActividadDetalles IsNot Nothing Then
+            ListadoActividadDetalles = Nothing
+        End If
+
+        dgvProgramacion.DataSource = Nothing
+        dgvProgramacion.DataSource = ListadoActividadDetalles
+    End Sub
+    Private Function EnviarEmail(ByRef oPersona As PersonaBE, ByVal asunto As String, ByVal descripcion As String) As Boolean
+        Dim flag As Boolean = False
+        Dim remitente = New MailAddress("accelbosque@gmail.com", "Asociación Country Club El Bosque")
+        Dim destinatario = New MailAddress(oPersona.email, oPersona.nombre_completo)
+        Const fromPassword As String = "elbosque"
+
+        Dim smtp As New SmtpClient
+
+        With smtp
+            .Host = "smtp.gmail.com"
+            .Port = 587
+            .EnableSsl = True
+            .DeliveryMethod = SmtpDeliveryMethod.Network
+            .UseDefaultCredentials = False
+            .Credentials = New NetworkCredential(remitente.Address, fromPassword)
+        End With
+
+        Using mensaje As New MailMessage(remitente, destinatario)
+            With mensaje
+                .Subject = asunto
+                .Body = descripcion
+                .IsBodyHtml = True
+            End With
+
+            Try
+                smtp.Send(mensaje)
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
+
+        End Using
+
+    End Function
+
+    Private Sub ComunicarUsuariosCancelacion(ByRef oActividad As ActividadBE)
         Dim ListadoPersona As List(Of PersonaBE) = bc.ListarPersonaXActividad(CInt(txtCodigo.Text.Trim))
 
         If ListadoPersona IsNot Nothing AndAlso ListadoPersona.Count > 0 Then
-
+            For Each oPersona As PersonaBE In ListadoPersona
+                EnviarEmail(oPersona, "Cancelación de Actividad", "Estimado(a) socio(a)<br/><br/>La presente es para informarle la cancelación de la actividad <b>" & _
+            oActividad.nombre & "</b> a la cual se encontraba inscrito(a).<br/>Asimismo lamentamos las molestias que ésta cancelación pudiera ocasionarle.<br/><br/>" & _
+            "Para cualquier consulta adicional, comunicarse a los siguientes teléfonos: 2070670 anexo 123, directo 2070695, o enviando un correo a <a href='mailto:admision@elbosque.org.pe'>admision@elbosque.org.pe</a>.<br/><br/>Atentamente,<br/><b>ACC El Bosque</b>")
+            Next
         End If
     End Sub
 
-    Private Sub ComunicarUsuariosReprogramacion()
+    Private Sub ComunicarUsuariosReprogramacion(ByRef oActividad As ActividadBE)
         Dim ListadoPersona As List(Of PersonaBE) = bc.ListarPersonaXActividad(CInt(txtCodigo.Text.Trim))
 
         If ListadoPersona IsNot Nothing AndAlso ListadoPersona.Count > 0 Then
-
+            For Each oPersona As PersonaBE In ListadoPersona
+                EnviarEmail(oPersona, "Reprogramación de Actividad", "Estimado(a) socio(a)<br/><br/>La presente es para informarle la reprogramación de la actividad <b>" & _
+            oActividad.nombre & "</b> a la cual se encuentra inscrito(a).<br/>Asimismo lamentamos las molestias que ésta reprogramación pudiera ocasionarle.<br/><br/>" & _
+            "Para cualquier consulta adicional, comunicarse a los siguientes teléfonos: 2070670 anexo 123, directo 2070695, o enviando un correo a <a href='mailto:admision@elbosque.org.pe'>admision@elbosque.org.pe</a>.<br/><br/>Atentamente,<br/><b>ACC El Bosque</b>")
+            Next
         End If
     End Sub
 
@@ -604,6 +660,15 @@ Public Class frmRegistroActividad
             LimpiarFormulario()
             CargarActividad(_id_actividad)
             FormularioEnModoVista()
+
+            If Actividad.id_estado = "EST005" Then
+                If ListadoProgramacion IsNot Nothing AndAlso ListadoProgramacion.Count > 0 Then
+                    If Not dgvProgramacion.DataSource.Equals(ListadoProgramacion) Then
+                        ComunicarUsuariosReprogramacion(Actividad)
+                        ListadoProgramacion = Nothing
+                    End If
+                End If
+            End If
         End If
     End Sub
 
@@ -622,7 +687,7 @@ Public Class frmRegistroActividad
                 Else
                     MessageBox.Show("La actividad se anuló satisfactoriamente", "Información")
                     If Actividad.id_estado = "EST005" Then
-
+                        ComunicarUsuariosCancelacion(Actividad)
                     End If
                 End If
 
@@ -738,8 +803,12 @@ Public Class frmRegistroActividad
         frmBuscarDisponibilidadEspacio.ShowDialog()
 
         If frmBuscarDisponibilidadEspacio.ListadoEspacioRes IsNot Nothing Then
-            AgregarProgramacion()
+            AgregarProgramacion(frmBuscarDisponibilidadEspacio.ListadoEspacioRes)
         End If
+    End Sub
+
+    Private Sub btnLimpiar_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiar.Click
+        LimpiarProgramacion()
     End Sub
 
 #End Region
