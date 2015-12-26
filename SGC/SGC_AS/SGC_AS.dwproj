@@ -12,12 +12,6 @@
       <FullPath>SGC BI.ds</FullPath>
     </ProjectItem>
   </DataSources>
-  <DataSourceViews>
-    <ProjectItem>
-      <Name>SGC BI.dsv</Name>
-      <FullPath>SGC BI.dsv</FullPath>
-    </ProjectItem>
-  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
