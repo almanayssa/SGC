@@ -6,12 +6,48 @@
     <Name>SGC_AS.database</Name>
     <FullPath>SGC_AS.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>SGC BI.cube</Name>
+      <FullPath>SGC BI.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>SGC BI.partitions</Name>
+          <FullPath>SGC BI.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim Comite.dim</Name>
+      <FullPath>Dim Comite.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Fecha.dim</Name>
+      <FullPath>Dim Fecha.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Hora.dim</Name>
+      <FullPath>Dim Hora.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Tipo Actividad.dim</Name>
+      <FullPath>Dim Tipo Actividad.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>SGC BI.ds</Name>
       <FullPath>SGC BI.ds</FullPath>
     </ProjectItem>
   </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>SGC BI.dsv</Name>
+      <FullPath>SGC BI.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
