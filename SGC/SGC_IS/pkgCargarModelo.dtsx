@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="HP"
   DTS:CreationDate="12/13/2015 6:43:28 PM"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{1A4C2094-A1F1-4137-8A14-3F89E950CC81}"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{413403CE-DB51-46E1-BDB8-CD6B72393C14}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkgCargarModelo"
@@ -2112,11 +2112,11 @@ GROUP BY I.id_actividad) HP ON A.id_actividad=HP.id_actividad</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Cargar tabla FactTable"
+      DTS:refId="Package\Cargar tabla FactInscripcion"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Cargar tabla FactTable"
+      DTS:ObjectName="Cargar tabla FactInscripcion"
       DTS:DTSID="{55EFF059-3B8D-4035-B2A7-C9201E11AEF7}"
       DTS:Description="Data Flow Task"
       DTS:CreationName="SSIS.Pipeline.3">
@@ -2126,7 +2126,7 @@ GROUP BY I.id_actividad) HP ON A.id_actividad=HP.id_actividad</property>
           version="1">
           <components>
             <component
-              refId="Package\Cargar tabla FactTable\OLE DB Destination"
+              refId="Package\Cargar tabla FactInscripcion\OLE DB Destination"
               name="OLE DB Destination"
               componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
               description="OLE DB Destination"
@@ -2141,7 +2141,7 @@ GROUP BY I.id_actividad) HP ON A.id_actividad=HP.id_actividad</property>
                 <property
                   name="OpenRowset"
                   dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset.">[dbo].[FactTable]</property>
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[FactInscripcion]</property>
                 <property
                   name="OpenRowsetVariable"
                   dataType="System.String"
@@ -2183,7 +2183,7 @@ GROUP BY I.id_actividad) HP ON A.id_actividad=HP.id_actividad</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Cargar tabla FactTable\OLE DB Destination.Connections[OleDbConnection]"
+                  refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Connections[OleDbConnection]"
                   name="OleDbConnection"
                   description="The OLE DB runtime connection used to access the database."
                   connectionManagerID="{ABCFF976-B1E0-46E2-AB86-EA18174A9891}:external"
@@ -2191,58 +2191,50 @@ GROUP BY I.id_actividad) HP ON A.id_actividad=HP.id_actividad</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   name="OLE DB Destination Input"
                   hasSideEffects="true"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_comite]"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_comite]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
                       cachedName="id_comite"
                       cachedDataType="str"
                       cachedLength="6"
                       cachedCodepage="1252" />
                     <inputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_fecha]"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_fecha]"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_fecha]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_fecha]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_fecha]"
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_fecha]"
                       cachedName="id_fecha"
                       cachedDataType="i4" />
                     <inputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_hora]"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_hora]"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_hora]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_hora]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_hora]"
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_hora]"
                       cachedName="id_hora"
                       cachedDataType="i4" />
                     <inputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gasto]"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[gasto]"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gasto]"
-                      cachedName="gasto"
-                      cachedDataType="numeric"
-                      cachedPrecision="1"
-                      cachedScale="1" />
-                    <inputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_tipo_act]"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_tipo_act]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
                       cachedName="id_tipo_act"
                       cachedDataType="str"
                       cachedLength="6"
                       cachedCodepage="1252" />
                     <inputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[num_inscritos]"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_inscritos]"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_inscritos]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[num_inscritos]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_inscritos]"
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_inscritos]"
                       cachedName="num_inscritos"
                       cachedDataType="i4" />
                     <inputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[monto]"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[monto]"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[presupuesto]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[monto]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[monto]"
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[monto]"
                       cachedName="monto"
                       cachedDataType="numeric"
                       cachedPrecision="8"
@@ -2251,42 +2243,36 @@ GROUP BY I.id_actividad) HP ON A.id_actividad=HP.id_actividad</property>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
                       name="id"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
                       name="id_comite"
                       dataType="str"
                       length="6"
                       codePage="1252" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
                       name="id_tipo"
                       dataType="str"
                       length="6"
                       codePage="1252" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_fecha]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_fecha]"
                       name="id_fecha"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_hora]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_hora]"
                       name="id_hora"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_inscritos]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[total_inscritos]"
                       name="total_inscritos"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[presupuesto]"
-                      name="presupuesto"
-                      dataType="numeric"
-                      precision="8"
-                      scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gasto]"
-                      name="gasto"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[monto]"
+                      name="monto"
                       dataType="numeric"
                       precision="8"
                       scale="2" />
@@ -2295,22 +2281,22 @@ GROUP BY I.id_actividad) HP ON A.id_actividad=HP.id_actividad</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Cargar tabla FactTable\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   name="OLE DB Destination Error Output"
                   exclusionGroup="1"
-                  synchronousInputId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  synchronousInputId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -2319,7 +2305,7 @@ GROUP BY I.id_actividad) HP ON A.id_actividad=HP.id_actividad</property>
               </outputs>
             </component>
             <component
-              refId="Package\Cargar tabla FactTable\OLE DB Source"
+              refId="Package\Cargar tabla FactInscripcion\OLE DB Source"
               name="OLE DB Source"
               componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
               description="OLE DB Source"
@@ -2347,8 +2333,7 @@ GROUP BY I.id_actividad) HP ON A.id_actividad=HP.id_actividad</property>
 CONVERT(INT,CONVERT(VARCHAR(8),A.fecha_registro,112)) AS id_fecha, 
 (DATEPART(HH, A.fecha_registro) * 3600) + (DATEPART(MINUTE, A.fecha_registro) * 60) + DATEPART(SS, A.fecha_registro) AS id_hora, 
 B.num_inscritos,
-CASE WHEN D.id_presupuesto_actividad IS NULL THEN 0.00 ELSE D.monto END AS monto, 
-0.0 AS gasto
+CASE WHEN D.id_presupuesto_actividad IS NULL THEN 0.00 ELSE D.monto END AS monto
 FROM comite.TB_Inscripcion A
 LEFT JOIN (SELECT id_inscripcion, COUNT(*) as num_inscritos FROM comite.TB_Inscripcion_Detalle GROUP BY id_inscripcion) B ON B.id_inscripcion = A.id_inscripcion
 INNER JOIN comite.TB_Actividad C ON C.id_actividad = A.id_actividad
@@ -2377,7 +2362,7 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
               </properties>
               <connections>
                 <connection
-                  refId="Package\Cargar tabla FactTable\OLE DB Source.Connections[OleDbConnection]"
+                  refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Connections[OleDbConnection]"
                   name="OleDbConnection"
                   description="The OLE DB runtime connection used to access the database."
                   connectionManagerID="{6150F068-2813-4A36-814B-8641718F18D3}:external"
@@ -2385,179 +2370,155 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
               </connections>
               <outputs>
                 <output
-                  refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output]"
+                  refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
                       name="id_comite"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
                       length="6"
                       dataType="str"
                       codePage="1252"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]" />
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
                       name="id_tipo_act"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
                       length="6"
                       dataType="str"
                       codePage="1252"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]" />
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_fecha]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_fecha]"
                       name="id_fecha"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_fecha]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_fecha]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_fecha]" />
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_fecha]" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_hora]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_hora]"
                       name="id_hora"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_hora]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_hora]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_hora]" />
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_hora]" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_inscritos]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_inscritos]"
                       name="num_inscritos"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_inscritos]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[num_inscritos]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[num_inscritos]" />
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[num_inscritos]" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[monto]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[monto]"
                       name="monto"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[monto]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].Columns[monto]"
                       precision="8"
                       scale="2"
                       dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[monto]" />
-                    <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[gasto]"
-                      name="gasto"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].Columns[gasto]"
-                      precision="1"
-                      scale="1"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gasto]" />
+                      externalMetadataColumnId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[monto]" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]"
                       name="id_comite"
                       dataType="str"
                       length="6"
                       codePage="1252" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]"
                       name="id_tipo_act"
                       dataType="str"
                       length="6"
                       codePage="1252" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_fecha]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_fecha]"
                       name="id_fecha"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_hora]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_hora]"
                       name="id_hora"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[num_inscritos]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[num_inscritos]"
                       name="num_inscritos"
                       dataType="i4" />
                     <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[monto]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[monto]"
                       name="monto"
                       dataType="numeric"
                       precision="8"
                       scale="2" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gasto]"
-                      name="gasto"
-                      dataType="numeric"
-                      precision="1"
-                      scale="1" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output]"
                   name="OLE DB Source Error Output"
                   isErrorOut="true">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
                       name="id_comite"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
                       length="6"
                       dataType="str"
                       codePage="1252" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
                       name="id_tipo_act"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
                       length="6"
                       dataType="str"
                       codePage="1252" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_fecha]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_fecha]"
                       name="id_fecha"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_fecha]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_fecha]"
                       dataType="i4" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_hora]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_hora]"
                       name="id_hora"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_hora]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_hora]"
                       dataType="i4" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[num_inscritos]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[num_inscritos]"
                       name="num_inscritos"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[num_inscritos]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[num_inscritos]"
                       dataType="i4" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[monto]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[monto]"
                       name="monto"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[monto]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[monto]"
                       precision="8"
                       scale="2"
                       dataType="numeric" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gasto]"
-                      name="gasto"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gasto]"
-                      precision="1"
-                      scale="1"
-                      dataType="numeric" />
-                    <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
-                      lineageId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       specialFlags="2" />
                   </outputColumns>
@@ -2568,10 +2529,10 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
           </components>
           <paths>
             <path
-              refId="Package\Cargar tabla FactTable.Paths[OLE DB Source Output]"
+              refId="Package\Cargar tabla FactInscripcion.Paths[OLE DB Source Output]"
               name="OLE DB Source Output"
-              startId="Package\Cargar tabla FactTable\OLE DB Source.Outputs[OLE DB Source Output]"
-              endId="Package\Cargar tabla FactTable\OLE DB Destination.Inputs[OLE DB Destination Input]" />
+              startId="Package\Cargar tabla FactInscripcion\OLE DB Source.Outputs[OLE DB Source Output]"
+              endId="Package\Cargar tabla FactInscripcion\OLE DB Destination.Inputs[OLE DB Destination Input]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2591,7 +2552,7 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
         <SQLTask:SqlTaskData
           SQLTask:Connection="{ABCFF976-B1E0-46E2-AB86-EA18174A9891}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DELETE FROM FactTable&#xA;GO&#xA;DELETE FROM DimComite&#xA;GO&#xA;DELETE FROM DimTipoActividad&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM FactInscripcion&#xA;GO&#xA;DELETE FROM DimComite&#xA;GO&#xA;DELETE FROM DimTipoActividad&#xA;GO&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -2615,7 +2576,7 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:From="Package\Cargar tabla DimComite"
-      DTS:To="Package\Cargar tabla FactTable"
+      DTS:To="Package\Cargar tabla FactInscripcion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:DTSID="{3A00A52A-83D2-4D8A-AFCA-595C6F3D270E}"
@@ -2623,7 +2584,7 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:From="Package\Cargar tabla DimTipoActividad"
-      DTS:To="Package\Cargar tabla FactTable"
+      DTS:To="Package\Cargar tabla FactInscripcion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:DTSID="{1B206D95-61FF-4CF0-8D10-2A84471FF3CB}"
@@ -2678,8 +2639,12 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
           Id="Package\Cargar tabla DimTipoActividad"
           TopLeft="460,116" />
         <NodeLayout
-          Size="184,42"
-          Id="Package\Cargar tabla FactTable"
+          Size="222,42"
+          Id="Package\Cargar tabla FactActividadSum"
+          TopLeft="769,221" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Cargar tabla FactInscripcion"
           TopLeft="310,226" />
         <NodeLayout
           Size="196,42"
@@ -2747,26 +2712,26 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="149.666666666667,70"
+              EndConnector="158,70"
               Start="0,0"
-              End="149.666666666667,62.5">
+              End="158,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.6379310344828" />
+                    End="0,37.6809116809117" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.6379310344828"
-                    Point2="0,41.6379310344828"
-                    Point3="4,41.6379310344828" />
+                    Point1="0,37.6809116809117"
+                    Point2="0,41.6809116809117"
+                    Point3="4,41.6809116809117" />
                   <mssgle:LineSegment
-                    End="145.666666666667,41.6379310344828" />
+                    End="154,41.6809116809117" />
                   <mssgle:CubicBezierSegment
-                    Point1="145.666666666667,41.6379310344828"
-                    Point2="149.666666666667,41.6379310344828"
-                    Point3="149.666666666667,45.6379310344828" />
+                    Point1="154,41.6809116809117"
+                    Point2="158,41.6809116809117"
+                    Point3="158,45.6809116809117" />
                   <mssgle:LineSegment
-                    End="149.666666666667,62.5" />
+                    End="158,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2777,30 +2742,30 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="570,158">
+          TopLeft="534.666666666667,158">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-138.666666666667,68"
+              EndConnector="-86.6666666666666,68"
               Start="0,0"
-              End="-138.666666666667,60.5">
+              End="-86.6666666666666,60.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.448275862069" />
+                    End="0,29.9840300610615" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,36.448275862069"
-                    Point2="0,40.448275862069"
-                    Point3="-4,40.448275862069" />
+                    Point1="0,29.9840300610615"
+                    Point2="0,33.9840300610615"
+                    Point3="-4,33.9840300610615" />
                   <mssgle:LineSegment
-                    End="-134.666666666667,40.448275862069" />
+                    End="-82.6666666666666,33.9840300610615" />
                   <mssgle:CubicBezierSegment
-                    Point1="-134.666666666667,40.448275862069"
-                    Point2="-138.666666666667,40.448275862069"
-                    Point3="-138.666666666667,44.448275862069" />
+                    Point1="-82.6666666666666,33.9840300610615"
+                    Point2="-86.6666666666666,33.9840300610615"
+                    Point3="-86.6666666666666,37.9840300610615" />
                   <mssgle:LineSegment
-                    End="-138.666666666667,60.5" />
+                    End="-86.6666666666666,60.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2843,10 +2808,6 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="222,42"
-          Id="Package\Cargar tabla FactActividadSum"
-          TopLeft="769,221" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="605.333333333333,158">
@@ -2910,7 +2871,7 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
     design-time-name="Package\Cargar tabla DimActividad">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149,42"
           Id="Package\Cargar tabla DimActividad\OLE DB Source"
@@ -2938,7 +2899,9 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3103,69 +3066,10 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Cargar tabla FactTable">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Cargar tabla FactTable\OLE DB Source"
-          TopLeft="143,48" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Cargar tabla FactTable\OLE DB Destination"
-          TopLeft="385,48" />
-        <EdgeLayout
-          Id="Package\Cargar tabla FactTable.Paths[OLE DB Source Output]"
-          TopLeft="292,69">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="93,0"
-              Start="0,0"
-              End="85.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="85.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla FactTable\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla FactTable\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
     design-time-name="Package\Cargar tabla FactActividadSum">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="149,42"
           Id="Package\Cargar tabla FactActividadSum\OLE DB Source"
@@ -3193,20 +3097,14 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla FactActividadSum\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Cargar tabla FactActividadSum\OLE DB Destination">
     <Properties>
@@ -3217,6 +3115,73 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla FactActividadSum\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Cargar tabla FactInscripcion">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Cargar tabla FactInscripcion\OLE DB Source"
+          TopLeft="143,48" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Cargar tabla FactInscripcion\OLE DB Destination"
+          TopLeft="385,48" />
+        <EdgeLayout
+          Id="Package\Cargar tabla FactInscripcion.Paths[OLE DB Source Output]"
+          TopLeft="292,69">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="93,0"
+              Start="0,0"
+              End="85.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="85.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla FactInscripcion\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla FactInscripcion\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
