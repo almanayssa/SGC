@@ -7,12 +7,7 @@
       <FullPath>SGC.rds</FullPath>
     </ProjectItem>
   </DataSources>
-  <DataSets>
-    <ProjectItem>
-      <Name>dsActividad.rsd</Name>
-      <FullPath>dsActividad.rsd</FullPath>
-    </ProjectItem>
-  </DataSets>
+  <DataSets />
   <Reports>
     <ProjectItem>
       <Name>rptComite.rdl</Name>
