@@ -11,6 +11,7 @@ Namespace SGC.Model.Metodos
         Implements IDocVen
 
 
+
 #Region "Select"
 
         Public Function ObtenerCorrelativo() As Entidades.DocVenBE Implements Interfaces.IDocVen.ObtenerCorrelativo
@@ -127,6 +128,30 @@ Namespace SGC.Model.Metodos
         End Function
 
 #End Region
+
+        Public Function ActualizarEstadoDocVen(ByRef oPago As Entidades.CanjeAdelantosBE, id_estado As String) As Integer Implements Interfaces.IDocVen.ActualizarEstadoDocVen
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_ACTUALIZAR_DOC_ESTADO", sqlConn)
+
+            Dim affectedRows As Integer = 0
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@ID_SERIE", SqlDbType.VarChar).Value = oPago.id_serie2
+            sqlCmd.Parameters.Add("@ID_CORRELATIVO", SqlDbType.VarChar).Value = oPago.id_correlativo2
+            sqlCmd.Parameters.Add("@ID_TIPO_DOC", SqlDbType.VarChar).Value = oPago.id_tipo_doc2
+            sqlCmd.Parameters.Add("@id_estado", SqlDbType.VarChar).Value = id_estado
+
+            Try
+                sqlConn.Open()
+                affectedRows = sqlCmd.ExecuteNonQuery
+
+                Return affectedRows
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
 
     End Class
 End Namespace

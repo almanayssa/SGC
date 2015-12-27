@@ -19,6 +19,9 @@ Namespace SGC.Controller
                 Dim iCanjeAdelantos As ICanjeAdelantos
                 iCanjeAdelantos = New CanjeAdelantosDL
 
+                Dim iDocVen As IDocVen
+                iDocVen = New DocVenDL
+
                 Dim affectedRows As Integer
 
                 'oPago.id_serie = oDocVen.id_serie
@@ -39,6 +42,9 @@ Namespace SGC.Controller
                 'oPago.utilidad = 0
 
                 affectedRows = iCanjeAdelantos.InsertarCanjeAdelantos(oPago)
+
+                iDocVen.ActualizarEstadoDocVen(oPago, "ED00002")
+
 
                 Return affectedRows
 

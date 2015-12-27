@@ -16,6 +16,12 @@ Namespace SGC.Model.Interfaces
 
 #End Region
 
+#Region "Update"
+
+        Function ActualizarEstadoDocVen(ByRef oPago As CanjeAdelantosBE, ByVal id_estado As String) As Integer
+
+#End Region
+
     End Interface
 
 End Namespace
