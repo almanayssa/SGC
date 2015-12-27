@@ -15,7 +15,7 @@ Public Class frmLogin
     Protected Sub lbtnIniciarSesion_Click(sender As Object, e As EventArgs) Handles lbtnIniciarSesion.Click
         Dim oUsuario As UsuarioBE = bc.ObtenerUsuario(tbxUsuario.Text.Trim, tbxContrasenia.Text.Trim)
 
-        If oUsuario IsNot Nothing AndAlso oUsuario.id_usuario > 0 Then
+        If oUsuario IsNot Nothing AndAlso oUsuario.id_usuario <> String.Empty Then
             Session.RemoveAll()
             Session("usuario") = oUsuario
             Response.Redirect("~/Privado/frmReporteActividades.aspx", True)

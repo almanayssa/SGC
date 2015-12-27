@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmReporteActividadesMayorDemanda
+Partial Public Class frmReporteActividades
 
     '''<summary>
     '''ToolkitScriptManager1 control.
@@ -41,22 +41,22 @@ Partial Public Class frmReporteActividadesMayorDemanda
     Protected WithEvents ddlTipo As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''tbxFechaInicio control.
+    '''txtFechaInicio control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents tbxFechaInicio As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtFechaInicio As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''tbxFechaFin control.
+    '''txtFechaFin control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents tbxFechaFin As Global.System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtFechaFin As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
     '''lbtnBuscar control.
@@ -95,121 +95,13 @@ Partial Public Class frmReporteActividadesMayorDemanda
     Protected WithEvents tblPropuestaMejoraListado As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
-    '''gvwPropuestaMejoraListado control.
+    '''rvwActividad control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents gvwPropuestaMejoraListado As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''divLinea control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents divLinea As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''tblPaginacion control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents tblPaginacion As Global.System.Web.UI.HtmlControls.HtmlTable
-
-    '''<summary>
-    '''lbtnIzquierdaTodo control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbtnIzquierdaTodo As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''lbtnIzquierda control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbtnIzquierda As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''tbxPaginaActual control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents tbxPaginaActual As Global.System.Web.UI.WebControls.TextBox
-
-    '''<summary>
-    '''lblNumeroPaginas control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblNumeroPaginas As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lbtnDerecha control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbtnDerecha As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''lbtnDerechaTodo control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbtnDerechaTodo As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''lblNumeroRegistros control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblNumeroRegistros As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lbtnAgregarPropuesta control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbtnAgregarPropuesta As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''lbtnSalir control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lbtnSalir As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''lblMensajeError control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblMensajeError As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents rvwActividad As Global.Microsoft.Reporting.WebForms.ReportViewer
 
     '''<summary>
     '''CalendarExtender1 control.
