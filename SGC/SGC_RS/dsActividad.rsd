@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>SGC</DataSourceReference>
+      <DataSetParameters>
+        <DataSetParameter Name="TipoID">
+          <DefaultValue>[Dim Tipo Actividad].[Id Tipo].&amp;[00]</DefaultValue>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+          <rd:IsMultiValued>true</rd:IsMultiValued>
+        </DataSetParameter>
+        <DataSetParameter Name="FechaFrom">
+          <DefaultValue>[Dim Fecha].[Id Fecha].&amp;[20151201]</DefaultValue>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+        <DataSetParameter Name="FechaTo">
+          <DefaultValue>[Dim Fecha].[Id Fecha].&amp;[20151231]</DefaultValue>
+          <ReadOnly>false</ReadOnly>
+          <Nullable>false</Nullable>
+          <OmitFromQuery>false</OmitFromQuery>
+          <rd:DbType>Object</rd:DbType>
+        </DataSetParameter>
+      </DataSetParameters>
+      <CommandText> SELECT NON EMPTY { [Measures].[Total Inscritos] } ON COLUMNS, NON EMPTY { ([Dim Tipo Actividad].[Descripcion].[Descripcion].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FechaFrom, CONSTRAINED) : STRTOMEMBER(@FechaTo, CONSTRAINED) - {STRTOMEMBER(@FechaFrom, CONSTRAINED)} - {STRTOMEMBER(@FechaTo, CONSTRAINED)} ) ON COLUMNS FROM ( SELECT ( STRTOSET(@TipoID, CONSTRAINED) ) ON COLUMNS FROM [SGC BI])) WHERE ( IIF( STRTOSET(@TipoID, CONSTRAINED).Count = 1, STRTOSET(@TipoID, CONSTRAINED), [Dim Tipo Actividad].[Id Tipo].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</CommandText>
+      <rd:DesignerState><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items /></Select><From>SGC BI</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement> SELECT NON EMPTY { [Measures].[Total Inscritos] } ON COLUMNS, NON EMPTY { ([Dim Tipo Actividad].[Descripcion].[Descripcion].ALLMEMBERS ) } DIMENSION PROPERTIES MEMBER_CAPTION, MEMBER_UNIQUE_NAME ON ROWS FROM ( SELECT ( STRTOMEMBER(@FechaFrom, CONSTRAINED) : STRTOMEMBER(@FechaTo, CONSTRAINED) - {STRTOMEMBER(@FechaFrom, CONSTRAINED)} - {STRTOMEMBER(@FechaTo, CONSTRAINED)} ) ON COLUMNS FROM ( SELECT ( STRTOSET(@TipoID, CONSTRAINED) ) ON COLUMNS FROM [SGC BI])) WHERE ( IIF( STRTOSET(@TipoID, CONSTRAINED).Count = 1, STRTOSET(@TipoID, CONSTRAINED), [Dim Tipo Actividad].[Id Tipo].currentmember ) ) CELL PROPERTIES VALUE, BACK_COLOR, FORE_COLOR, FORMATTED_VALUE, FORMAT_STRING, FONT_NAME, FONT_SIZE, FONT_FLAGS</Statement><ParameterDefinitions><ParameterDefinition><Name>TipoID</Name><DefaultValues><DefaultValue>[Dim Tipo Actividad].[Id Tipo].&amp;[00]</DefaultValue></DefaultValues><Caption>TipoID</Caption><HierarchyUniqueName>[Dim Tipo Actividad].[Id Tipo]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Tipo Actividad].[Id Tipo].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Tipo Actividad].[Id Tipo].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Tipo Actividad].[Id Tipo].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Tipo Actividad].[Id Tipo].ALLMEMBERS ON ROWS FROM [SGC BI]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery><MultipleValues>true</MultipleValues></ParameterDefinition><ParameterDefinition><Name>FechaFrom</Name><Usage>RangeFrom</Usage><DefaultValues><DefaultValue>[Dim Fecha].[Id Fecha].&amp;[20151201]</DefaultValue></DefaultValues><Caption>FechaFrom</Caption><HierarchyUniqueName>[Dim Fecha].[Id Fecha]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Fecha].[Id Fecha].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Fecha].[Id Fecha].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Fecha].[Id Fecha].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Fecha].[Id Fecha].ALLMEMBERS ON ROWS FROM [SGC BI]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition><ParameterDefinition><Name>FechaTo</Name><Usage>RangeTo</Usage><DefaultValues><DefaultValue>[Dim Fecha].[Id Fecha].&amp;[20151231]</DefaultValue></DefaultValues><Caption>FechaTo</Caption><HierarchyUniqueName>[Dim Fecha].[Id Fecha]</HierarchyUniqueName><ParameterValuesQuery><Statement>WITH MEMBER [Measures].[ParameterCaption] AS [Dim Fecha].[Id Fecha].CURRENTMEMBER.MEMBER_CAPTION MEMBER [Measures].[ParameterValue] AS [Dim Fecha].[Id Fecha].CURRENTMEMBER.UNIQUENAME MEMBER [Measures].[ParameterLevel] AS [Dim Fecha].[Id Fecha].CURRENTMEMBER.LEVEL.ORDINAL SELECT {[Measures].[ParameterCaption], [Measures].[ParameterValue], [Measures].[ParameterLevel]} ON COLUMNS , [Dim Fecha].[Id Fecha].ALLMEMBERS ON ROWS FROM [SGC BI]</Statement><ParameterizedStatement><ReferencedParameters /></ParameterizedStatement></ParameterValuesQuery></ParameterDefinition></ParameterDefinitions></Query></QueryDefinition></rd:DesignerState>
+    </Query>
+  </DataSet>
+</SharedDataSet>
