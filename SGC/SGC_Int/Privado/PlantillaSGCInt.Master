@@ -33,11 +33,11 @@
             <li><a href="frmReporteComite.aspx">Participación Comités</a></li>
             </ul>
             </li>
-            <li><a href="#">Consultas</a>
+            <%--<li><a href="#">Consultas</a>
             <ul>
             <li><a href="#">Actualizar Información</a></li>
             </ul>
-            </li>
+            </li>--%>
         </ul>      
         <div class="contenedor-pagina">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />

@@ -23,13 +23,13 @@ Partial Public Class frmReporteActividades
     Protected WithEvents ToolkitScriptManager1 As Global.AjaxControlToolkit.ToolkitScriptManager
 
     '''<summary>
-    '''upnlPropuestaMejoraListado control.
+    '''upnlActividad control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents upnlPropuestaMejoraListado As Global.System.Web.UI.UpdatePanel
+    Protected WithEvents upnlActividad As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
     '''ddlTipo control.
@@ -86,13 +86,13 @@ Partial Public Class frmReporteActividades
     Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''tblPropuestaMejoraListado control.
+    '''tblActividad control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents tblPropuestaMejoraListado As Global.System.Web.UI.HtmlControls.HtmlTable
+    Protected WithEvents tblActividad As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
     '''rvwActividad control.

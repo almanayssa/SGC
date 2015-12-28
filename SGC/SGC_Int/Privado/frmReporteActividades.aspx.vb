@@ -9,8 +9,9 @@ Public Class frmReporteActividades
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
             ListarTipoActividad()
-            txtFechaInicio.Text = Now.ToString("dd/MM/yyyy")
+            txtFechaInicio.Text = "01/12/2015"
             txtFechaFin.Text = Now.ToString("dd/MM/yyyy")
+            CargarReporte()
         End If
     End Sub
 
@@ -32,15 +33,15 @@ Public Class frmReporteActividades
 
         Dim reportParameterCollection As Microsoft.Reporting.WebForms.ReportParameter() = New Microsoft.Reporting.WebForms.ReportParameter(2) {}
         reportParameterCollection(0) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(0).Name = "DimTipoActividadIdTipo"
+        reportParameterCollection(0).Name = "TipoID"
         reportParameterCollection(0).Values.Add(ddlTipo.SelectedValue)
 
         reportParameterCollection(1) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(1).Name = "FromDimFechaIdFecha"
+        reportParameterCollection(1).Name = "FechaFrom"
         reportParameterCollection(1).Values.Add(Convert.ToDateTime(txtFechaInicio.Text).ToString("yyyyMMdd"))
 
         reportParameterCollection(2) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(2).Name = "ToDimFechaIdFecha"
+        reportParameterCollection(2).Name = "FechaTo"
         reportParameterCollection(2).Values.Add(Convert.ToDateTime(txtFechaFin.Text).ToString("yyyyMMdd"))
 
         rvwActividad.ServerReport.SetParameters(reportParameterCollection)

@@ -2,21 +2,21 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Chart Name="Chart1">
+      <Chart Name="Chart2">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart1_CategoryGroup">
+              <Group Name="Chart2_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!nombre.Value</GroupExpression>
+                  <GroupExpression>=Fields!descripcion.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!nombre.Value</Value>
+                  <Value>=Fields!descripcion.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!nombre.Value</Label>
+              <Label>=Fields!descripcion.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
@@ -72,7 +72,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Comité</Caption>
+                  <Caption>Tipo de Actividad</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -239,7 +239,7 @@
         </ChartLegends>
         <ChartTitles>
           <ChartTitle Name="Default">
-            <Caption>Demanda por Comité</Caption>
+            <Caption>Demanda por Tipo de Actividad</Caption>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
               <FontWeight>Bold</FontWeight>
@@ -248,7 +248,7 @@
             </Style>
           </ChartTitle>
         </ChartTitles>
-        <Palette>Excel</Palette>
+        <Palette>Pastel</Palette>
         <ChartBorderSkin>
           <Style>
             <BackgroundColor>Gray</BackgroundColor>
@@ -264,7 +264,7 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>dsComite</DataSetName>
+        <DataSetName>dsActividad</DataSetName>
         <Height>3.14459in</Height>
         <Width>9.48958in</Width>
         <Style>
@@ -280,7 +280,7 @@
     <Height>3.14459in</Height>
     <Style />
   </Body>
-  <Width>9.5in</Width>
+  <Width>9.48958in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
@@ -293,16 +293,16 @@
     <DataSource Name="SGC">
       <DataSourceReference>SGC</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>344f40e6-b397-46f4-b90f-240c37e593db</rd:DataSourceID>
+      <rd:DataSourceID>abc9dad7-cbf5-445d-915a-7e915751d355</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="dsComite">
+    <DataSet Name="dsActividad">
       <Query>
         <DataSourceName>SGC</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@ComiteID">
-            <Value>=Parameters!ComiteID.Value</Value>
+          <QueryParameter Name="@TipoID">
+            <Value>=Parameters!TipoID.Value</Value>
           </QueryParameter>
           <QueryParameter Name="@FechaFrom">
             <Value>=Parameters!FechaFrom.Value</Value>
@@ -311,14 +311,14 @@
             <Value>=Parameters!FechaTo.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT        DimComite.nombre, FactInscripcion.total_inscritos
-FROM            DimComite INNER JOIN
-                         FactInscripcion ON DimComite.id_comite = FactInscripcion.id_comite
-WHERE        (@ComiteID IS NULL OR DimComite.id_comite = @ComiteID) AND (FactInscripcion.id_fecha BETWEEN @FechaFrom AND @FechaTo)</CommandText>
+        <CommandText>SELECT        DimTipoActividad.descripcion, FactInscripcion.total_inscritos
+FROM            FactInscripcion INNER JOIN
+                         DimTipoActividad ON FactInscripcion.id_tipo = DimTipoActividad.id_tipo
+WHERE        (FactInscripcion.id_tipo = @TipoID) AND (FactInscripcion.id_fecha BETWEEN @FechaFrom AND @FechaTo)</CommandText>
       </Query>
       <Fields>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
+        <Field Name="descripcion">
+          <DataField>descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="total_inscritos">
@@ -329,10 +329,10 @@ WHERE        (@ComiteID IS NULL OR DimComite.id_comite = @ComiteID) AND (FactIns
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="ComiteID">
+    <ReportParameter Name="TipoID">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
-      <Prompt>Comite ID</Prompt>
+      <Prompt>Tipo ID</Prompt>
     </ReportParameter>
     <ReportParameter Name="FechaFrom">
       <DataType>String</DataType>
@@ -344,5 +344,5 @@ WHERE        (@ComiteID IS NULL OR DimComite.id_comite = @ComiteID) AND (FactIns
     </ReportParameter>
   </ReportParameters>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>ebf783a7-b219-460a-b8d0-b1c109e8003e</rd:ReportID>
+  <rd:ReportID>5a26729c-4d1a-4859-a3cf-c4fd65dfe909</rd:ReportID>
 </Report>
