@@ -82,6 +82,7 @@
     <Compile Include="Entidades\ComiteAnualBE.vb" />
     <Compile Include="Entidades\ComiteBE.vb" />
     <Compile Include="Entidades\ConceptoBE.vb" />
+    <Compile Include="Entidades\FactActividadSumBE.vb" />
     <Compile Include="Entidades\SuscripcionComiteBE.vb" />
     <Compile Include="Entidades\OpcionXPerfilBE.vb" />
     <Compile Include="Entidades\PantallaBE.vb" />
@@ -138,6 +139,7 @@
     <Compile Include="Entidades\TipoRegistroInvitadoBE.vb" />
     <Compile Include="Entidades\TipoTransaccionBE.vb" />
     <Compile Include="Entidades\TransaccionBE.vb" />
+    <Compile Include="Interfaces\IFactActividadSum.vb" />
     <Compile Include="Interfaces\IAsistencia.vb" />
     <Compile Include="Interfaces\IDetallePresupuestoAct.vb" />
     <Compile Include="Interfaces\IEspacioRes.vb" />
@@ -183,6 +185,7 @@
     <Compile Include="Metodos\AsistenciaDL.vb" />
     <Compile Include="Metodos\AsistenciaPersonalDL.vb" />
     <Compile Include="Metodos\CatTipoActividadDL.vb" />
+    <Compile Include="Metodos\FactActividadSumDL.vb" />
     <Compile Include="Metodos\DetallePresupuestoActDL.vb" />
     <Compile Include="Metodos\ComiteDL.vb" />
     <Compile Include="Interfaces\IComite.vb" />

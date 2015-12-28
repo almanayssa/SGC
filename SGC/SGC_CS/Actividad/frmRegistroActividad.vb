@@ -854,5 +854,12 @@ Public Class frmRegistroActividad
 
 #End Region
 
+    Private Sub cboComite_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboComite.SelectedIndexChanged
+
+        Dim msj As String = bc.ObtenerMaxInscritosXTipoActividad(cboComite.SelectedValue)
+
+        SugerenciasToolTip.SetToolTip(cboTipo, msj)
+
+    End Sub
 End Class
 
