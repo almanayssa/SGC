@@ -62,7 +62,8 @@
         <table id="tblPropuestaMejoraListado" runat="server" border="0" cellpadding="0" cellspacing="0">
             <tr>
                 <td>                    
-                    <rsweb:ReportViewer ID="rvwActividad" runat="server" ProcessingMode="Remote">
+                    <rsweb:ReportViewer ID="rvwActividad" runat="server" ProcessingMode="Remote" 
+                        Width="918px">
                     </rsweb:ReportViewer>
                 </td>
             </tr>

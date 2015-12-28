@@ -26,24 +26,24 @@ Public Class frmReporteActividades
         rvwActividad.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Remote
         'rvwActividad.ServerReport.ReportServerCredentials = New ReportServerNetworkCredentials()
         rvwActividad.ServerReport.ReportServerUrl = New Uri("http://localhost/ReportServer")
-        rvwActividad.ServerReport.ReportPath = "/Reports/rptActividades"
+        rvwActividad.ServerReport.ReportPath = "/Reports/rptActividad"
         rvwActividad.ShowParameterPrompts = False
         rvwActividad.ShowPrintButton = True
 
-        Dim reportParameterCollection As Microsoft.Reporting.WebForms.ReportParameter() = New Microsoft.Reporting.WebForms.ReportParameter(2) {}
-        reportParameterCollection(0) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(0).Name = "Id Tipo"
-        reportParameterCollection(0).Values.Add(ddlTipo.SelectedValue)
+        'Dim reportParameterCollection As Microsoft.Reporting.WebForms.ReportParameter() = New Microsoft.Reporting.WebForms.ReportParameter(2) {}
+        'reportParameterCollection(0) = New Microsoft.Reporting.WebForms.ReportParameter()
+        'reportParameterCollection(0).Name = "Id Tipo"
+        'reportParameterCollection(0).Values.Add(ddlTipo.SelectedValue)
 
-        reportParameterCollection(1) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(1).Name = "From Id Fecha"
-        reportParameterCollection(1).Values.Add(Convert.ToDateTime(txtFechaInicio.Text).ToString("yyyyMMdd"))
+        'reportParameterCollection(1) = New Microsoft.Reporting.WebForms.ReportParameter()
+        'reportParameterCollection(1).Name = "From Id Fecha"
+        'reportParameterCollection(1).Values.Add(Convert.ToDateTime(txtFechaInicio.Text).ToString("yyyyMMdd"))
 
-        reportParameterCollection(2) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(2).Name = "To Id Fecha"
-        reportParameterCollection(2).Values.Add(Convert.ToDateTime(txtFechaFin.Text).ToString("yyyyMMdd"))
+        'reportParameterCollection(2) = New Microsoft.Reporting.WebForms.ReportParameter()
+        'reportParameterCollection(2).Name = "To Id Fecha"
+        'reportParameterCollection(2).Values.Add(Convert.ToDateTime(txtFechaFin.Text).ToString("yyyyMMdd"))
 
-        rvwActividad.ServerReport.SetParameters(reportParameterCollection)
+        'rvwActividad.ServerReport.SetParameters(reportParameterCollection)
         rvwActividad.ServerReport.Refresh()
     End Sub
 
