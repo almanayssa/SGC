@@ -187,6 +187,8 @@
         Public Property tipo_actividad As String
         Public Property comite As String
         Public Property satisfaccion As Decimal
+        Public Property max_sexo As String
+        Public Property mes As String
 
     End Class
 

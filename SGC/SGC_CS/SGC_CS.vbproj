@@ -637,6 +637,7 @@
     <Content Include="Resources\btn_eliminar.png" />
     <Content Include="Resources\btn_grabar.png" />
     <Content Include="Resources\diseño_login.jpg" />
+    <Content Include="Resources\get_info.png" />
     <Content Include="Resources\icono.ico" />
     <Content Include="Resources\Limpiar.png" />
     <Content Include="Resources\menu_cancel.png" />

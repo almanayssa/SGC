@@ -38,25 +38,15 @@ Namespace SGC.Controller
             End Try
         End Function
 
-        Public Function ObtenerMaxInscritosXTipoActividad(ByVal id_comite As String) As String
+        Public Function ObtenerMaxInscritosXTipoActividad(ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
             Try
                 Dim iFact As IFactActividadSum
                 Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
-                Dim msj As String = ""
 
                 iFact = New FactActividadSumDL
-                oListadoFact = iFact.ObtenerMaxInscritosXTipoActividad(id_comite)
+                oListadoFact = iFact.ObtenerMaxInscritosXTipoActividad(id_comite, id_tipo)
 
-                If oListadoFact IsNot Nothing AndAlso oListadoFact.Count > 0 Then
-                    msj = "Sugerencia de Tipo de actividad: " & vbCrLf
-                    For Each oFact As FactActividadSumBE In oListadoFact
-                        msj &= oFact.tipo_actividad & "" & vbCrLf
-                    Next
-                Else
-                    msj = "No hay sugerencias"
-                End If
-
-                Return msj
+                Return oListadoFact
 
             Catch ex As Exception
                 Return Nothing
@@ -78,13 +68,28 @@ Namespace SGC.Controller
             End Try
         End Function
 
-        Public Function ObtenerSexoParticipantesXTipoActividad(id_comite As String, id_tipo As String) As List(Of FactActividadSumBE)
+        Public Function ObtenerSexoParticipantesXTipoActividad(id_comite As String, id_tipo As String) As FactActividadSumBE
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oFact As FactActividadSumBE = Nothing
+
+                iFact = New FactActividadSumDL
+                oFact = iFact.ObtenerSexoParticipantesXTipoActividad(id_comite, id_tipo)
+
+                Return oFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ObtenerMesInscripcionXTipoActividad(id_comite As String, id_tipo As String) As List(Of FactActividadSumBE)
             Try
                 Dim iFact As IFactActividadSum
                 Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
 
                 iFact = New FactActividadSumDL
-                oListadoFact = iFact.ObtenerSexoParticipantesXTipoActividad(id_comite, id_tipo)
+                oListadoFact = iFact.ObtenerMesInscripcionXTipoActividad(id_comite, id_tipo)
 
                 Return oListadoFact
 

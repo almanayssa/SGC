@@ -26,6 +26,8 @@ Partial Class frmRegistroActividad
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.pbVacantes = New System.Windows.Forms.PictureBox()
+        Me.pbTipo = New System.Windows.Forms.PictureBox()
         Me.btnBuscarActividad = New SGC_CS.SGCButton(Me.components)
         Me.nudVacantes = New SGC_CS.SGCNumericUpDown(Me.components)
         Me.lblVacantes = New SGC_CS.SGCLabel(Me.components)
@@ -45,6 +47,7 @@ Partial Class frmRegistroActividad
         Me.lblComite = New SGC_CS.SGCLabel(Me.components)
         Me.lblCodigo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.pbFechas = New System.Windows.Forms.PictureBox()
         Me.btnLimpiar = New SGC_CS.SGCButton(Me.components)
         Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
         Me.colSede = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -98,9 +101,12 @@ Partial Class frmRegistroActividad
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SugerenciasToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
+        CType(Me.pbVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbTipo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox2.SuspendLayout()
+        CType(Me.pbFechas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox3.SuspendLayout()
         CType(Me.dgvRestricciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,6 +123,8 @@ Partial Class frmRegistroActividad
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.pbVacantes)
+        Me.SgcGroupBox1.Controls.Add(Me.pbTipo)
         Me.SgcGroupBox1.Controls.Add(Me.btnBuscarActividad)
         Me.SgcGroupBox1.Controls.Add(Me.nudVacantes)
         Me.SgcGroupBox1.Controls.Add(Me.lblVacantes)
@@ -142,6 +150,30 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox1.TabIndex = 8
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Datos"
+        '
+        'pbVacantes
+        '
+        Me.pbVacantes.ErrorImage = Nothing
+        Me.pbVacantes.Image = Global.SGC_CS.My.Resources.Resources.get_info
+        Me.pbVacantes.Location = New System.Drawing.Point(449, 104)
+        Me.pbVacantes.Name = "pbVacantes"
+        Me.pbVacantes.Size = New System.Drawing.Size(22, 22)
+        Me.pbVacantes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbVacantes.TabIndex = 26
+        Me.pbVacantes.TabStop = False
+        Me.pbVacantes.Visible = False
+        '
+        'pbTipo
+        '
+        Me.pbTipo.ErrorImage = Nothing
+        Me.pbTipo.Image = Global.SGC_CS.My.Resources.Resources.get_info
+        Me.pbTipo.Location = New System.Drawing.Point(236, 104)
+        Me.pbTipo.Name = "pbTipo"
+        Me.pbTipo.Size = New System.Drawing.Size(22, 22)
+        Me.pbTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbTipo.TabIndex = 25
+        Me.pbTipo.TabStop = False
+        Me.pbTipo.Visible = False
         '
         'btnBuscarActividad
         '
@@ -342,6 +374,7 @@ Partial Class frmRegistroActividad
         '
         'SgcGroupBox2
         '
+        Me.SgcGroupBox2.Controls.Add(Me.pbFechas)
         Me.SgcGroupBox2.Controls.Add(Me.btnLimpiar)
         Me.SgcGroupBox2.Controls.Add(Me.dgvProgramacion)
         Me.SgcGroupBox2.Controls.Add(Me.btnEscoger)
@@ -352,6 +385,18 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox2.TabIndex = 9
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Programación"
+        '
+        'pbFechas
+        '
+        Me.pbFechas.ErrorImage = Nothing
+        Me.pbFechas.Image = Global.SGC_CS.My.Resources.Resources.get_info
+        Me.pbFechas.Location = New System.Drawing.Point(187, 31)
+        Me.pbFechas.Name = "pbFechas"
+        Me.pbFechas.Size = New System.Drawing.Size(22, 22)
+        Me.pbFechas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbFechas.TabIndex = 27
+        Me.pbFechas.TabStop = False
+        Me.pbFechas.Visible = False
         '
         'btnLimpiar
         '
@@ -921,9 +966,12 @@ Partial Class frmRegistroActividad
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
+        CType(Me.pbVacantes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbTipo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox2.ResumeLayout(False)
+        CType(Me.pbFechas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox3.ResumeLayout(False)
         CType(Me.dgvRestricciones, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1015,5 +1063,8 @@ Partial Class frmRegistroActividad
     Friend WithEvents colHoraFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnLimpiar As SGC_CS.SGCButton
     Friend WithEvents SugerenciasToolTip As System.Windows.Forms.ToolTip
+    Friend WithEvents pbTipo As System.Windows.Forms.PictureBox
+    Friend WithEvents pbVacantes As System.Windows.Forms.PictureBox
+    Friend WithEvents pbFechas As System.Windows.Forms.PictureBox
 
 End Class

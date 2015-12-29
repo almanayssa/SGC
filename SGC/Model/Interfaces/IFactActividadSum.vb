@@ -10,11 +10,13 @@ Namespace SGC.Model.Interfaces
 
         Function ListarTotalesFactActividadSum() As List(Of FactActividadSumBE)
 
-        Function ObtenerMaxInscritosXTipoActividad(ByVal id_comite As String) As List(Of FactActividadSumBE)
+        Function ObtenerMaxInscritosXTipoActividad(ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
 
         Function ObtenerMaxSatisfaccionXTipoActividad(ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
 
-        Function ObtenerSexoParticipantesXTipoActividad(ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
+        Function ObtenerSexoParticipantesXTipoActividad(ByVal id_comite As String, ByVal id_tipo As String) As FactActividadSumBE
+
+        Function ObtenerMesInscripcionXTipoActividad(ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
 
 #End Region
 

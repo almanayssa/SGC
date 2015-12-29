@@ -98,7 +98,7 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
-        Public Function ObtenerMaxInscritosXTipoActividad(id_comite As String) As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ObtenerMaxInscritosXTipoActividad
+        Public Function ObtenerMaxInscritosXTipoActividad(id_comite As String, ByVal ID_TIPO As String) As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ObtenerMaxInscritosXTipoActividad
             Dim oListadoFact As New List(Of FactActividadSumBE)
             Dim oFact As FactActividadSumBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
@@ -107,6 +107,7 @@ Namespace SGC.Model.Metodos
             Dim dr As SqlDataReader = Nothing
             sqlCmd.CommandType = CommandType.StoredProcedure
             sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@ID_TIPO", SqlDbType.VarChar).Value = ID_TIPO
 
             Try
                 sqlConn.Open()
@@ -119,7 +120,8 @@ Namespace SGC.Model.Metodos
                     oFact.id_comite = dr("id_comite")
                     oFact.comite = dr("comite")
                     oFact.id_tipo = dr("id_tipo")
-                    oFact.ins_x_actividad = dr("ins_x_actividad")
+                    oFact.ins_x_actividad = Math.Round(CDec(dr("ins_x_actividad")), 0, MidpointRounding.ToEven)
+                    oFact.total_actividades = dr("total_actividades")
                     oListadoFact.Add(oFact)
                 End While
                 dr.Close()
@@ -148,13 +150,12 @@ Namespace SGC.Model.Metodos
 
                 While dr.Read()
                     oFact = New FactActividadSumBE
-                    oFact.id = dr("id")
                     oFact.id_tipo = dr("id_tipo")
                     oFact.tipo_actividad = dr("tipo_actividad")
                     oFact.id_comite = dr("id_comite")
                     oFact.comite = dr("comite")
                     oFact.id_tipo = dr("id_tipo")
-                    oFact.ins_x_actividad = dr("ins_x_actividad")
+                    oFact.satisfaccion = dr("satisfaccion")
                     oListadoFact.Add(oFact)
                 End While
                 dr.Close()
@@ -166,8 +167,8 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
-        Public Function ObtenerSexoParticipantesXTipoActividad(id_comite As String, id_tipo As String) As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ObtenerSexoParticipantesXTipoActividad
-            Dim oListadoFact As New List(Of FactActividadSumBE)
+        Public Function ObtenerSexoParticipantesXTipoActividad(id_comite As String, id_tipo As String) As Entidades.FactActividadSumBE Implements Interfaces.IFactActividadSum.ObtenerSexoParticipantesXTipoActividad
+
             Dim oFact As FactActividadSumBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
             Dim sqlConn As New SqlConnection(strConn)
@@ -181,14 +182,43 @@ Namespace SGC.Model.Metodos
                 sqlConn.Open()
                 dr = sqlCmd.ExecuteReader()
 
-                While dr.Read()
+                If dr.Read() Then
                     oFact = New FactActividadSumBE
-                    oFact.id = dr("id")
                     oFact.id_tipo = dr("id_tipo")
                     oFact.tipo_actividad = dr("tipo_actividad")
                     oFact.id_comite = dr("id_comite")
                     oFact.comite = dr("comite")
-                    oFact.id_tipo = dr("id_tipo")
+                    oFact.max_sexo = dr("MAXSEXO")
+                End If
+                dr.Close()
+                Return oFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ObtenerMesInscripcionXTipoActividad(id_comite As String, id_tipo As String) As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ObtenerMesInscripcionXTipoActividad
+            Dim oListadoFact As New List(Of FactActividadSumBE)
+            Dim oFact As FactActividadSumBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_OBTENER_MES_INSCRIPCION", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@id_tipo", SqlDbType.VarChar).Value = id_tipo
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New FactActividadSumBE
+                    oFact.mes = dr("mes")
+                    oFact.total_inscritos = dr("total_inscritos")
+                    oFact.total_participantes = dr("total_participantes")
                     oListadoFact.Add(oFact)
                 End While
                 dr.Close()
