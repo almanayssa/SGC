@@ -77,6 +77,7 @@ Partial Class frmRegistroActividad
         Me.tcPlanAnual = New SGC_CS.SGCTabControl(Me.components)
         Me.tpRestricciones = New System.Windows.Forms.TabPage()
         Me.tpTipoPersonal = New System.Windows.Forms.TabPage()
+        Me.pbTipoPersonal = New System.Windows.Forms.PictureBox()
         Me.SgcGroupBox7 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscarPersonal = New SGC_CS.SGCButton(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
@@ -84,8 +85,6 @@ Partial Class frmRegistroActividad
         Me.txtDescripcionPersonal = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.dgvTipoPersonal = New SGC_CS.SGCDataGridView(Me.components)
-        Me.colDescripcionPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colCantidadPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpRecursos = New System.Windows.Forms.TabPage()
         Me.pbRecursos = New System.Windows.Forms.PictureBox()
         Me.SgcGroupBox5 = New SGC_CS.SGCGroupBox(Me.components)
@@ -101,7 +100,9 @@ Partial Class frmRegistroActividad
         Me.btnAgregarRecurso = New SGC_CS.SGCButton(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SugerenciasToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.pbTipoPersonal = New System.Windows.Forms.PictureBox()
+        Me.colTipoPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDescripcionPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCantidadPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.pbVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbTipo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,13 +117,13 @@ Partial Class frmRegistroActividad
         Me.tcPlanAnual.SuspendLayout()
         Me.tpRestricciones.SuspendLayout()
         Me.tpTipoPersonal.SuspendLayout()
+        CType(Me.pbTipoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox7.SuspendLayout()
         CType(Me.dgvTipoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpRecursos.SuspendLayout()
         CType(Me.pbRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox5.SuspendLayout()
         CType(Me.dgvRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbTipoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SgcGroupBox1
@@ -691,6 +692,18 @@ Partial Class frmRegistroActividad
         Me.tpTipoPersonal.Text = "Tipo de Personal"
         Me.tpTipoPersonal.UseVisualStyleBackColor = True
         '
+        'pbTipoPersonal
+        '
+        Me.pbTipoPersonal.ErrorImage = Nothing
+        Me.pbTipoPersonal.Image = Global.SGC_CS.My.Resources.Resources.get_info
+        Me.pbTipoPersonal.Location = New System.Drawing.Point(413, 26)
+        Me.pbTipoPersonal.Name = "pbTipoPersonal"
+        Me.pbTipoPersonal.Size = New System.Drawing.Size(22, 22)
+        Me.pbTipoPersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbTipoPersonal.TabIndex = 27
+        Me.pbTipoPersonal.TabStop = False
+        Me.pbTipoPersonal.Visible = False
+        '
         'SgcGroupBox7
         '
         Me.SgcGroupBox7.Controls.Add(Me.btnBuscarPersonal)
@@ -776,25 +789,12 @@ Partial Class frmRegistroActividad
         Me.dgvTipoPersonal.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvTipoPersonal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvTipoPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTipoPersonal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDescripcionPersonal, Me.colCantidadPersonal})
+        Me.dgvTipoPersonal.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colTipoPersonal, Me.colDescripcionPersonal, Me.colCantidadPersonal})
         Me.dgvTipoPersonal.Location = New System.Drawing.Point(15, 89)
         Me.dgvTipoPersonal.Name = "dgvTipoPersonal"
         Me.dgvTipoPersonal.ReadOnly = True
         Me.dgvTipoPersonal.Size = New System.Drawing.Size(367, 107)
         Me.dgvTipoPersonal.TabIndex = 1
-        '
-        'colDescripcionPersonal
-        '
-        Me.colDescripcionPersonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDescripcionPersonal.HeaderText = "Descripción"
-        Me.colDescripcionPersonal.Name = "colDescripcionPersonal"
-        Me.colDescripcionPersonal.ReadOnly = True
-        '
-        'colCantidadPersonal
-        '
-        Me.colCantidadPersonal.HeaderText = "Cantidad"
-        Me.colCantidadPersonal.Name = "colCantidadPersonal"
-        Me.colCantidadPersonal.ReadOnly = True
         '
         'tpRecursos
         '
@@ -968,17 +968,25 @@ Partial Class frmRegistroActividad
         Me.lblTitulo.TabIndex = 24
         Me.lblTitulo.Text = "Registro Actividad"
         '
-        'pbTipoPersonal
+        'colTipoPersonal
         '
-        Me.pbTipoPersonal.ErrorImage = Nothing
-        Me.pbTipoPersonal.Image = Global.SGC_CS.My.Resources.Resources.get_info
-        Me.pbTipoPersonal.Location = New System.Drawing.Point(413, 26)
-        Me.pbTipoPersonal.Name = "pbTipoPersonal"
-        Me.pbTipoPersonal.Size = New System.Drawing.Size(22, 22)
-        Me.pbTipoPersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbTipoPersonal.TabIndex = 27
-        Me.pbTipoPersonal.TabStop = False
-        Me.pbTipoPersonal.Visible = False
+        Me.colTipoPersonal.HeaderText = "id"
+        Me.colTipoPersonal.Name = "colTipoPersonal"
+        Me.colTipoPersonal.ReadOnly = True
+        Me.colTipoPersonal.Visible = False
+        '
+        'colDescripcionPersonal
+        '
+        Me.colDescripcionPersonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcionPersonal.HeaderText = "Descripción"
+        Me.colDescripcionPersonal.Name = "colDescripcionPersonal"
+        Me.colDescripcionPersonal.ReadOnly = True
+        '
+        'colCantidadPersonal
+        '
+        Me.colCantidadPersonal.HeaderText = "Cantidad"
+        Me.colCantidadPersonal.Name = "colCantidadPersonal"
+        Me.colCantidadPersonal.ReadOnly = True
         '
         'frmRegistroActividad
         '
@@ -1010,6 +1018,7 @@ Partial Class frmRegistroActividad
         Me.tcPlanAnual.ResumeLayout(False)
         Me.tpRestricciones.ResumeLayout(False)
         Me.tpTipoPersonal.ResumeLayout(False)
+        CType(Me.pbTipoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox7.ResumeLayout(False)
         Me.SgcGroupBox7.PerformLayout()
         CType(Me.dgvTipoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1018,7 +1027,6 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox5.ResumeLayout(False)
         Me.SgcGroupBox5.PerformLayout()
         CType(Me.dgvRecursos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbTipoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1081,8 +1089,6 @@ Partial Class frmRegistroActividad
     Friend WithEvents colCondicionRestriccion As System.Windows.Forms.DataGridViewComboBoxColumn
     Friend WithEvents colCantidadRestriccion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colFlgCondicion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colDescripcionPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colCantidadPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colDescripcionRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colCantidadRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents lblTitulo As SGC_CS.SGCLabel
@@ -1100,5 +1106,8 @@ Partial Class frmRegistroActividad
     Friend WithEvents pbFechas As System.Windows.Forms.PictureBox
     Friend WithEvents pbRecursos As System.Windows.Forms.PictureBox
     Friend WithEvents pbTipoPersonal As System.Windows.Forms.PictureBox
+    Friend WithEvents colTipoPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colDescripcionPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colCantidadPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

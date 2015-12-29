@@ -734,13 +734,34 @@ Public Class frmRegistroActividad
         Dim frmBuscarTipoPersonal As New frmBuscarTipoPersonal
         frmBuscarTipoPersonal.ShowDialog()
 
-        If frmBuscarTipoPersonal.TipoPersonalSeleccionado IsNot Nothing Then
-            CargarTipoPersonal(frmBuscarTipoPersonal.TipoPersonalSeleccionado)
-            oPersonalPendiente = frmBuscarTipoPersonal.TipoPersonalSeleccionado
+        Dim result As Boolean = False
+
+            If frmBuscarTipoPersonal.TipoPersonalSeleccionado IsNot Nothing Then
+
+            If ListadoTipoPersonal IsNot Nothing Then
+
+                For Each oTipoPersonal As TipoPersonalBE In ListadoTipoPersonal
+                    If oTipoPersonal.id_tipo_personal = frmBuscarTipoPersonal.TipoPersonalSeleccionado.id_tipo_personal Then
+                        result = True
+                    End If
+                Next
+
+            End If
+
+            If result = False Then
+
+                CargarTipoPersonal(frmBuscarTipoPersonal.TipoPersonalSeleccionado)
+                oPersonalPendiente = frmBuscarTipoPersonal.TipoPersonalSeleccionado
+            Else
+                MsgBox("El Tipo de personal existe en la lista")
+            End If
+
         End If
+
     End Sub
 
     Private Sub btnAgregarTipoPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarTipoPersonal.Click
+
         AgregarTipoPersonal(oPersonalPendiente)
         oPersonalPendiente = Nothing
     End Sub
@@ -759,9 +780,28 @@ Public Class frmRegistroActividad
         Dim frmBuscarRecurso As New frmBuscarRecurso
         frmBuscarRecurso.ShowDialog()
 
+        Dim result As Boolean = False
+
         If frmBuscarRecurso.RecursoSeleccionado IsNot Nothing Then
-            CargarRecurso(frmBuscarRecurso.RecursoSeleccionado)
-            oRecursoPendiente = frmBuscarRecurso.RecursoSeleccionado
+
+            If ListadoRecursos IsNot Nothing Then
+
+                For Each oRecurso As RecursoBE In ListadoRecursos
+                    If oRecurso.id_recurso = frmBuscarRecurso.RecursoSeleccionado.id_recurso Then
+                        result = True
+                    End If
+                Next
+
+            End If
+
+            If result = False Then
+
+                CargarRecurso(frmBuscarRecurso.RecursoSeleccionado)
+                oRecursoPendiente = frmBuscarRecurso.RecursoSeleccionado
+
+            Else
+                MsgBox("El recurso existe en la lista")
+            End If
         End If
     End Sub
 
