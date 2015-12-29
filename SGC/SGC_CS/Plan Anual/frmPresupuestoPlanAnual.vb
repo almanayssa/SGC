@@ -121,12 +121,12 @@ Public Class frmPresupuestoPlanAnual
             Next
         End If
 
-        If msj = "" Then
-            pbPresupuesto.Visible = False
-        Else
-            pbPresupuesto.Visible = True
-            SugerenciasToolTip.SetToolTip(pbPresupuesto, msj)
-        End If
+        'If msj = "" Then
+        '    pbPresupuesto.Visible = False
+        'Else
+        '    pbPresupuesto.Visible = True
+        '    SugerenciasToolTip.SetToolTip(pbPresupuesto, msj)
+        'End If
 
     End Sub
 
