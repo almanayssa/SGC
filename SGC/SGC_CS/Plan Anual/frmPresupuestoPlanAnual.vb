@@ -110,6 +110,7 @@ Public Class frmPresupuestoPlanAnual
             msj &= vbCrLf
         End If
 
+
         ''''TIPO PERSONAL
 
         Dim oListadoTipo As List(Of TipoPersonalBE) = bc.ObtenerTipoPersonalDemanda(id_comite, id_tipo)
@@ -129,7 +130,6 @@ Public Class frmPresupuestoPlanAnual
         'End If
 
     End Sub
-
 
     Private Sub CargarDetalleRecursos(ByRef ListaDetalle As List(Of DetallePresupuestoAnualBE))
 
