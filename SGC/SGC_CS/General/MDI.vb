@@ -117,9 +117,9 @@ Public Class MDI
     End Sub
 
     Private Sub PresupuestoPlanAnualToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PresupuestoPlanAnualToolStripMenuItem.Click
-        'frmPresupuestoPlanAnual.Close()
-        'frmPresupuestoPlanAnual.MdiParent = Me
-        'frmPresupuestoPlanAnual.Show()
+        frmPresupuestoPlan.Close()
+        frmPresupuestoPlan.MdiParent = Me
+        frmPresupuestoPlan.Show()
     End Sub
 
     Private Sub EvaluacionPresidenciaGeneralToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EvaluacionPresidenciaGeneralToolStripMenuItem.Click
@@ -255,8 +255,8 @@ Public Class MDI
     End Sub
 
     Private Sub PresupuestoActividadToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PresupuestoActividadToolStripMenuItem.Click
-        frmPresupuestoActividad.Close()
-        frmPresupuestoActividad.MdiParent = Me
-        frmPresupuestoActividad.Show()
+        frmPresupuestoPlan.Close()
+        frmPresupuestoPlan.MdiParent = Me
+        frmPresupuestoPlan.Show()
     End Sub
 End Class

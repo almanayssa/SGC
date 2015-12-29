@@ -328,10 +328,10 @@ Public Class frmRegistroPlanAnual
 
     Private Sub btnPresupuesto_Click(sender As System.Object, e As System.EventArgs) Handles btnPresupuesto.Click
 
-        'frmPresupuestoPlanAnual.Close()
-        'frmPresupuestoPlanAnual.MdiParent = MDI
-        'frmPresupuestoPlanAnual.id_Plan = _id_Plan
-        'frmPresupuestoPlanAnual.Show()
+        frmPresupuestoPlan.Close()
+        frmPresupuestoPlan.MdiParent = MDI
+        frmPresupuestoPlan.id_Plan = _id_Plan
+        frmPresupuestoPlan.Show()
 
     End Sub
 

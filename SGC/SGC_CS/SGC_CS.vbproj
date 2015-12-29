@@ -322,6 +322,12 @@
     <Compile Include="Plan Anual\frmPlanEvaluacionPGC.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Plan Anual\frmPresupuestoPlan.Designer.vb">
+      <DependentUpon>frmPresupuestoPlan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Plan Anual\frmPresupuestoPlan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Plan Anual\frmRegistroPlanAnual.Designer.vb">
       <DependentUpon>frmRegistroPlanAnual.vb</DependentUpon>
     </Compile>
@@ -591,6 +597,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Plan Anual\frmPlanEvaluacionPGC.resx">
       <DependentUpon>frmPlanEvaluacionPGC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Plan Anual\frmPresupuestoPlan.resx">
+      <DependentUpon>frmPresupuestoPlan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Plan Anual\frmRegistroPlanAnual.resx">
       <DependentUpon>frmRegistroPlanAnual.vb</DependentUpon>

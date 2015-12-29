@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmPresupuestoActividad
+Partial Class frmPresupuestoPlan
     Inherits SGC_CS.frmPadre
 
     'Form overrides dispose to clean up the component list.
@@ -28,9 +28,9 @@ Partial Class frmPresupuestoActividad
         Me.SgcLabel8 = New SGC_CS.SGCLabel(Me.components)
         Me.lblFecFin = New SGC_CS.SGCLabel(Me.components)
         Me.lblFecIni = New SGC_CS.SGCLabel(Me.components)
-        Me.lblTipo = New SGC_CS.SGCLabel(Me.components)
+        Me.lblAnio = New SGC_CS.SGCLabel(Me.components)
         Me.lblComite = New SGC_CS.SGCLabel(Me.components)
-        Me.lblNombre = New SGC_CS.SGCLabel(Me.components)
+        Me.lblPlan = New SGC_CS.SGCLabel(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.SgcLabel5 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
@@ -65,9 +65,9 @@ Partial Class frmPresupuestoActividad
         Me.lblTitulo.ForeColor = System.Drawing.Color.White
         Me.lblTitulo.Location = New System.Drawing.Point(396, 11)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(212, 23)
+        Me.lblTitulo.Size = New System.Drawing.Size(222, 23)
         Me.lblTitulo.TabIndex = 12
-        Me.lblTitulo.Text = "Presupuesto de Actividad"
+        Me.lblTitulo.Text = "Presupuesto de Plan Anual"
         '
         'SgcGroupBox1
         '
@@ -75,9 +75,9 @@ Partial Class frmPresupuestoActividad
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel8)
         Me.SgcGroupBox1.Controls.Add(Me.lblFecFin)
         Me.SgcGroupBox1.Controls.Add(Me.lblFecIni)
-        Me.SgcGroupBox1.Controls.Add(Me.lblTipo)
+        Me.SgcGroupBox1.Controls.Add(Me.lblAnio)
         Me.SgcGroupBox1.Controls.Add(Me.lblComite)
-        Me.SgcGroupBox1.Controls.Add(Me.lblNombre)
+        Me.SgcGroupBox1.Controls.Add(Me.lblPlan)
         Me.SgcGroupBox1.Controls.Add(Me.btnBuscar)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel5)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel4)
@@ -90,7 +90,7 @@ Partial Class frmPresupuestoActividad
         Me.SgcGroupBox1.Size = New System.Drawing.Size(900, 153)
         Me.SgcGroupBox1.TabIndex = 14
         Me.SgcGroupBox1.TabStop = False
-        Me.SgcGroupBox1.Text = "Actividad"
+        Me.SgcGroupBox1.Text = "Plan Anual"
         '
         'lblEstado
         '
@@ -136,16 +136,16 @@ Partial Class frmPresupuestoActividad
         Me.lblFecIni.TabIndex = 29
         Me.lblFecIni.Text = "-"
         '
-        'lblTipo
+        'lblAnio
         '
-        Me.lblTipo.AutoSize = True
-        Me.lblTipo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTipo.ForeColor = System.Drawing.Color.Black
-        Me.lblTipo.Location = New System.Drawing.Point(116, 110)
-        Me.lblTipo.Name = "lblTipo"
-        Me.lblTipo.Size = New System.Drawing.Size(13, 18)
-        Me.lblTipo.TabIndex = 28
-        Me.lblTipo.Text = "-"
+        Me.lblAnio.AutoSize = True
+        Me.lblAnio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAnio.ForeColor = System.Drawing.Color.Black
+        Me.lblAnio.Location = New System.Drawing.Point(116, 110)
+        Me.lblAnio.Name = "lblAnio"
+        Me.lblAnio.Size = New System.Drawing.Size(13, 18)
+        Me.lblAnio.TabIndex = 28
+        Me.lblAnio.Text = "-"
         '
         'lblComite
         '
@@ -158,16 +158,16 @@ Partial Class frmPresupuestoActividad
         Me.lblComite.TabIndex = 27
         Me.lblComite.Text = "-"
         '
-        'lblNombre
+        'lblPlan
         '
-        Me.lblNombre.AutoSize = True
-        Me.lblNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.ForeColor = System.Drawing.Color.Black
-        Me.lblNombre.Location = New System.Drawing.Point(116, 40)
-        Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(13, 18)
-        Me.lblNombre.TabIndex = 26
-        Me.lblNombre.Text = "-"
+        Me.lblPlan.AutoSize = True
+        Me.lblPlan.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPlan.ForeColor = System.Drawing.Color.Black
+        Me.lblPlan.Location = New System.Drawing.Point(116, 40)
+        Me.lblPlan.Name = "lblPlan"
+        Me.lblPlan.Size = New System.Drawing.Size(13, 18)
+        Me.lblPlan.TabIndex = 26
+        Me.lblPlan.Text = "-"
         '
         'btnBuscar
         '
@@ -213,9 +213,9 @@ Partial Class frmPresupuestoActividad
         Me.SgcLabel3.ForeColor = System.Drawing.Color.SteelBlue
         Me.SgcLabel3.Location = New System.Drawing.Point(32, 110)
         Me.SgcLabel3.Name = "SgcLabel3"
-        Me.SgcLabel3.Size = New System.Drawing.Size(39, 18)
+        Me.SgcLabel3.Size = New System.Drawing.Size(37, 18)
         Me.SgcLabel3.TabIndex = 5
-        Me.SgcLabel3.Text = "Tipo:"
+        Me.SgcLabel3.Text = "Año:"
         '
         'SgcLabel2
         '
@@ -235,9 +235,9 @@ Partial Class frmPresupuestoActividad
         Me.SgcLabel1.ForeColor = System.Drawing.Color.SteelBlue
         Me.SgcLabel1.Location = New System.Drawing.Point(32, 40)
         Me.SgcLabel1.Name = "SgcLabel1"
-        Me.SgcLabel1.Size = New System.Drawing.Size(63, 18)
+        Me.SgcLabel1.Size = New System.Drawing.Size(39, 18)
         Me.SgcLabel1.TabIndex = 0
-        Me.SgcLabel1.Text = "Nombre:"
+        Me.SgcLabel1.Text = "Plan:"
         '
         'gbItems
         '
@@ -394,14 +394,14 @@ Partial Class frmPresupuestoActividad
         Me.ToolStripButton3.Text = "Impresión"
         Me.ToolStripButton3.Visible = False
         '
-        'frmPresupuestoActividad
+        'frmPresupuestoPlan
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
         Me.Controls.Add(Me.tsMenu)
         Me.Controls.Add(Me.gbItems)
         Me.Controls.Add(Me.SgcGroupBox1)
         Me.Controls.Add(Me.lblTitulo)
-        Me.Name = "frmPresupuestoActividad"
+        Me.Name = "frmPresupuestoPlan"
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.Controls.SetChildIndex(Me.SgcGroupBox1, 0)
         Me.Controls.SetChildIndex(Me.gbItems, 0)
@@ -434,9 +434,9 @@ Partial Class frmPresupuestoActividad
     Friend WithEvents btnAgregar As SGC_CS.SGCButton
     Friend WithEvents SgcLabel6 As SGC_CS.SGCLabel
     Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents lblTipo As SGC_CS.SGCLabel
+    Friend WithEvents lblAnio As SGC_CS.SGCLabel
     Friend WithEvents lblComite As SGC_CS.SGCLabel
-    Friend WithEvents lblNombre As SGC_CS.SGCLabel
+    Friend WithEvents lblPlan As SGC_CS.SGCLabel
     Friend WithEvents lblFecFin As SGC_CS.SGCLabel
     Friend WithEvents lblFecIni As SGC_CS.SGCLabel
     Friend WithEvents lblEstado As SGC_CS.SGCLabel
