@@ -130,7 +130,6 @@ Public Class frmPresupuestoPlan
 
     End Sub
 
-
     Private Sub CargarDetalleRecursos(ByRef ListaDetalle As List(Of DetallePresupuestoAnualBE))
 
         dgvListado.Columns.Clear()

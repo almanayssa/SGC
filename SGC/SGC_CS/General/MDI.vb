@@ -255,8 +255,8 @@ Public Class MDI
     End Sub
 
     Private Sub PresupuestoActividadToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PresupuestoActividadToolStripMenuItem.Click
-        frmPresupuestoPlan.Close()
-        frmPresupuestoPlan.MdiParent = Me
-        frmPresupuestoPlan.Show()
+        frmPresupuestoActividad.Close()
+        frmPresupuestoActividad.MdiParent = Me
+        frmPresupuestoActividad.Show()
     End Sub
 End Class
