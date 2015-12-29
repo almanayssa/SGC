@@ -53,10 +53,7 @@ Public Class frmPresupuestoActividad
 
         ListarPresupuesto(oActividad.id_actividad)
 
-        'If oPlan.id_estado = "EPA001" Then
-        '    ts()
-        'End If
-
+        Sugerencias(oActividad.id_comite, oActividad.id_tipo_act)
     End Sub
 
     Private Sub ListarPresupuesto(ByVal id_actividad As Integer)
@@ -80,6 +77,42 @@ Public Class frmPresupuestoActividad
             gbItems.Enabled = False
             sbGuardar.Visible = False
         End If
+    End Sub
+
+    Private Sub Sugerencias(ByVal id_comite As String, ByVal id_tipo As String)
+
+        ''''RECURSOS
+
+        Dim msj As String = ""
+
+        Dim oListadoRecursos As List(Of RecursoBE) = bc.ObtenerRecursosDemanda(id_comite, id_tipo)
+
+        If oListadoRecursos IsNot Nothing AndAlso oListadoRecursos.Count > 0 Then
+            msj = "Recursos con mayor demanda: " & vbCrLf
+            For Each oRecurso As RecursoBE In oListadoRecursos
+                msj &= "- " & oRecurso.descripcion & vbCrLf
+            Next
+            msj &= vbCrLf
+        End If
+
+        ''''TIPO PERSONAL
+
+        Dim oListadoTipo As List(Of TipoPersonalBE) = bc.ObtenerTipoPersonalDemanda(id_comite, id_tipo)
+
+        If oListadoTipo IsNot Nothing AndAlso oListadoTipo.Count > 0 Then
+            msj &= "Tipo de Personal con mayor demanda: " & vbCrLf
+            For Each oTipo As TipoPersonalBE In oListadoTipo
+                msj &= "- " & oTipo.descripcion & vbCrLf
+            Next
+        End If
+
+        If msj = "" Then
+            pbPresupuesto.Visible = False
+        Else
+            pbPresupuesto.Visible = True
+            SugerenciasToolTip.SetToolTip(pbPresupuesto, msj)
+        End If
+
     End Sub
 
     Private Sub CargarDetalleRecursos(ByRef ListaDetalle As List(Of DetallePresupuestoActBE))

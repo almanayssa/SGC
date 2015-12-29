@@ -38,6 +38,7 @@ Partial Class frmPresupuestoActividad
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.gbItems = New SGC_CS.SGCGroupBox(Me.components)
+        Me.pbPresupuesto = New System.Windows.Forms.PictureBox()
         Me.btnPersonal = New SGC_CS.SGCButton(Me.components)
         Me.btnQuitar = New SGC_CS.SGCButton(Me.components)
         Me.txtMontoTotal = New SGC_CS.SGCTextBox(Me.components)
@@ -48,8 +49,10 @@ Partial Class frmPresupuestoActividad
         Me.sbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
+        Me.SugerenciasToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.gbItems.SuspendLayout()
+        CType(Me.pbPresupuesto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -174,7 +177,7 @@ Partial Class frmPresupuestoActividad
         Me.btnBuscar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscar.ForeColor = System.Drawing.Color.SteelBlue
         Me.btnBuscar.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.btnBuscar.Location = New System.Drawing.Point(236, 34)
+        Me.btnBuscar.Location = New System.Drawing.Point(305, 34)
         Me.btnBuscar.Name = "btnBuscar"
         Me.btnBuscar.Size = New System.Drawing.Size(45, 31)
         Me.btnBuscar.TabIndex = 25
@@ -238,6 +241,7 @@ Partial Class frmPresupuestoActividad
         '
         'gbItems
         '
+        Me.gbItems.Controls.Add(Me.pbPresupuesto)
         Me.gbItems.Controls.Add(Me.btnPersonal)
         Me.gbItems.Controls.Add(Me.btnQuitar)
         Me.gbItems.Controls.Add(Me.txtMontoTotal)
@@ -251,6 +255,18 @@ Partial Class frmPresupuestoActividad
         Me.gbItems.TabIndex = 15
         Me.gbItems.TabStop = False
         Me.gbItems.Text = "Items"
+        '
+        'pbPresupuesto
+        '
+        Me.pbPresupuesto.ErrorImage = Nothing
+        Me.pbPresupuesto.Image = Global.SGC_CS.My.Resources.Resources.get_info
+        Me.pbPresupuesto.Location = New System.Drawing.Point(365, 256)
+        Me.pbPresupuesto.Name = "pbPresupuesto"
+        Me.pbPresupuesto.Size = New System.Drawing.Size(22, 22)
+        Me.pbPresupuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbPresupuesto.TabIndex = 28
+        Me.pbPresupuesto.TabStop = False
+        Me.pbPresupuesto.Visible = False
         '
         'btnPersonal
         '
@@ -394,6 +410,7 @@ Partial Class frmPresupuestoActividad
         Me.SgcGroupBox1.PerformLayout()
         Me.gbItems.ResumeLayout(False)
         Me.gbItems.PerformLayout()
+        CType(Me.pbPresupuesto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tsMenu.ResumeLayout(False)
         Me.tsMenu.PerformLayout()
@@ -427,5 +444,7 @@ Partial Class frmPresupuestoActividad
     Friend WithEvents btnBuscar As SGC_CS.SGCButton
     Friend WithEvents btnQuitar As SGC_CS.SGCButton
     Friend WithEvents btnPersonal As SGC_CS.SGCButton
+    Friend WithEvents SugerenciasToolTip As System.Windows.Forms.ToolTip
+    Friend WithEvents pbPresupuesto As System.Windows.Forms.PictureBox
 
 End Class
