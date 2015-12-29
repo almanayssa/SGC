@@ -820,45 +820,6 @@ Public Class frmRegistroActividad
         LimpiarProgramacion()
     End Sub
 
-#End Region
-
-#Region "Metodos Grilla"
-
-    Private Sub dgvRestricciones_EditingControlShowing(sender As Object, e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgvRestricciones.EditingControlShowing
-        Dim columnIndex As Integer = dgvRestricciones.CurrentCell.ColumnIndex
-        Dim rowIndex As Integer = dgvRestricciones.CurrentCell.RowIndex
-        Dim flgCondicion As Boolean = dgvRestricciones.Item(colFlgCondicion.Index, rowIndex).Value
-
-        If dgvRestricciones.Columns(columnIndex).Name = colCantidadRestriccion.Name Then
-            Dim txtCantidad As DataGridViewTextBoxEditingControl = DirectCast(e.Control, DataGridViewTextBoxEditingControl)
-
-            RemoveHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
-            AddHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
-
-            If flgCondicion = False Then
-                txtCantidad.ReadOnly = True
-            Else
-                txtCantidad.ReadOnly = False
-            End If
-
-        ElseIf dgvRestricciones.Columns(columnIndex).Name = colCondicionRestriccion.Name Then
-            Dim cboCondicion As ComboBox = DirectCast(e.Control, ComboBox)
-
-            If flgCondicion = False Then
-                cboCondicion.Enabled = False
-            Else
-                cboCondicion.Enabled = True
-            End If
-        End If
-
-    End Sub
-
-    Private Sub txtNumeric_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
-        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
-    End Sub
-
-#End Region
-
     Private Sub cboComite_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboComite.SelectedIndexChanged
 
         If cboComite.SelectedIndex > 0 Then
@@ -987,5 +948,45 @@ Public Class frmRegistroActividad
         End If
 
     End Sub
+
+#End Region
+
+#Region "Metodos Grilla"
+
+    Private Sub dgvRestricciones_EditingControlShowing(sender As Object, e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgvRestricciones.EditingControlShowing
+        Dim columnIndex As Integer = dgvRestricciones.CurrentCell.ColumnIndex
+        Dim rowIndex As Integer = dgvRestricciones.CurrentCell.RowIndex
+        Dim flgCondicion As Boolean = dgvRestricciones.Item(colFlgCondicion.Index, rowIndex).Value
+
+        If dgvRestricciones.Columns(columnIndex).Name = colCantidadRestriccion.Name Then
+            Dim txtCantidad As DataGridViewTextBoxEditingControl = DirectCast(e.Control, DataGridViewTextBoxEditingControl)
+
+            RemoveHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
+            AddHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
+
+            If flgCondicion = False Then
+                txtCantidad.ReadOnly = True
+            Else
+                txtCantidad.ReadOnly = False
+            End If
+
+        ElseIf dgvRestricciones.Columns(columnIndex).Name = colCondicionRestriccion.Name Then
+            Dim cboCondicion As ComboBox = DirectCast(e.Control, ComboBox)
+
+            If flgCondicion = False Then
+                cboCondicion.Enabled = False
+            Else
+                cboCondicion.Enabled = True
+            End If
+        End If
+
+    End Sub
+
+    Private Sub txtNumeric_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+#End Region
+
 End Class
 

@@ -450,7 +450,7 @@ Public Class frmRegistroInscripcion
         Else
             _id_inscripcion = oInscripcion.id_inscripcion
             MessageBox.Show("La inscripción se registró satisfactoriamente", "Información")
-            If oDocVen IsNot Nothing Then
+            If oDocVen IsNot Nothing AndAlso oDocVen.id_serie <> "" Then
                 MessageBox.Show("Se generó el documento " & oDocVen.id_serie & " - " & oDocVen.id_correlativo, "Información")
             End If
 

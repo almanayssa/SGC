@@ -337,6 +337,8 @@ Public Class frmRegistroPlanAnual
 
 #End Region
 
+#Region "Metodos Grilla"
+
     Private Sub dgvActividades_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvActividades.CellClick
         If e.ColumnIndex = dgvActividades.Columns("btn").Index Then
             frmRegistroActividad.Close()
@@ -345,5 +347,7 @@ Public Class frmRegistroPlanAnual
             frmRegistroActividad.Show()
         End If
     End Sub
+
+#End Region
 
 End Class
