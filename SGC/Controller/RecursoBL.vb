@@ -38,6 +38,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ObtenerRecursosDemanda(ByVal id_comite As String, ByVal id_tipo As String) As List(Of RecursoBE)
+            Try
+                Dim iRecurso As IRecurso
+                Dim oListadoRecursos As List(Of RecursoBE) = Nothing
+
+                iRecurso = New RecursoDL
+                oListadoRecursos = iRecurso.ObtenerRecursosDemanda(id_comite, id_tipo)
+
+                Return oListadoRecursos
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

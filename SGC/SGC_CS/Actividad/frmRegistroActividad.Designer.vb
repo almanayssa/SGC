@@ -87,6 +87,7 @@ Partial Class frmRegistroActividad
         Me.colDescripcionPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colCantidadPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpRecursos = New System.Windows.Forms.TabPage()
+        Me.pbRecursos = New System.Windows.Forms.PictureBox()
         Me.SgcGroupBox5 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscarRecurso = New SGC_CS.SGCButton(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
@@ -100,6 +101,7 @@ Partial Class frmRegistroActividad
         Me.btnAgregarRecurso = New SGC_CS.SGCButton(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SugerenciasToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.pbTipoPersonal = New System.Windows.Forms.PictureBox()
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.pbVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbTipo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,8 +119,10 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox7.SuspendLayout()
         CType(Me.dgvTipoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpRecursos.SuspendLayout()
+        CType(Me.pbRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox5.SuspendLayout()
         CType(Me.dgvRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbTipoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SgcGroupBox1
@@ -678,6 +682,7 @@ Partial Class frmRegistroActividad
         '
         'tpTipoPersonal
         '
+        Me.tpTipoPersonal.Controls.Add(Me.pbTipoPersonal)
         Me.tpTipoPersonal.Controls.Add(Me.SgcGroupBox7)
         Me.tpTipoPersonal.Location = New System.Drawing.Point(4, 27)
         Me.tpTipoPersonal.Name = "tpTipoPersonal"
@@ -793,6 +798,7 @@ Partial Class frmRegistroActividad
         '
         'tpRecursos
         '
+        Me.tpRecursos.Controls.Add(Me.pbRecursos)
         Me.tpRecursos.Controls.Add(Me.SgcGroupBox5)
         Me.tpRecursos.Location = New System.Drawing.Point(4, 27)
         Me.tpRecursos.Name = "tpRecursos"
@@ -800,6 +806,18 @@ Partial Class frmRegistroActividad
         Me.tpRecursos.TabIndex = 3
         Me.tpRecursos.Text = "Recursos"
         Me.tpRecursos.UseVisualStyleBackColor = True
+        '
+        'pbRecursos
+        '
+        Me.pbRecursos.ErrorImage = Nothing
+        Me.pbRecursos.Image = Global.SGC_CS.My.Resources.Resources.get_info
+        Me.pbRecursos.Location = New System.Drawing.Point(413, 25)
+        Me.pbRecursos.Name = "pbRecursos"
+        Me.pbRecursos.Size = New System.Drawing.Size(22, 22)
+        Me.pbRecursos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbRecursos.TabIndex = 26
+        Me.pbRecursos.TabStop = False
+        Me.pbRecursos.Visible = False
         '
         'SgcGroupBox5
         '
@@ -950,6 +968,18 @@ Partial Class frmRegistroActividad
         Me.lblTitulo.TabIndex = 24
         Me.lblTitulo.Text = "Registro Actividad"
         '
+        'pbTipoPersonal
+        '
+        Me.pbTipoPersonal.ErrorImage = Nothing
+        Me.pbTipoPersonal.Image = Global.SGC_CS.My.Resources.Resources.get_info
+        Me.pbTipoPersonal.Location = New System.Drawing.Point(413, 26)
+        Me.pbTipoPersonal.Name = "pbTipoPersonal"
+        Me.pbTipoPersonal.Size = New System.Drawing.Size(22, 22)
+        Me.pbTipoPersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbTipoPersonal.TabIndex = 27
+        Me.pbTipoPersonal.TabStop = False
+        Me.pbTipoPersonal.Visible = False
+        '
         'frmRegistroActividad
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -984,9 +1014,11 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox7.PerformLayout()
         CType(Me.dgvTipoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpRecursos.ResumeLayout(False)
+        CType(Me.pbRecursos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox5.ResumeLayout(False)
         Me.SgcGroupBox5.PerformLayout()
         CType(Me.dgvRecursos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbTipoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1066,5 +1098,7 @@ Partial Class frmRegistroActividad
     Friend WithEvents pbTipo As System.Windows.Forms.PictureBox
     Friend WithEvents pbVacantes As System.Windows.Forms.PictureBox
     Friend WithEvents pbFechas As System.Windows.Forms.PictureBox
+    Friend WithEvents pbRecursos As System.Windows.Forms.PictureBox
+    Friend WithEvents pbTipoPersonal As System.Windows.Forms.PictureBox
 
 End Class

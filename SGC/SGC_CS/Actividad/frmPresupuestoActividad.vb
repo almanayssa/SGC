@@ -336,54 +336,54 @@ Public Class frmPresupuestoActividad
 
             If dgvListado.RowCount = 0 Then
 
-                Dim Col_Text As DataGridViewTextBoxColumn
+                'Dim Col_Text As DataGridViewTextBoxColumn
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "idDetalle"
-                Col_Text.HeaderText = "Codigo"
-                Col_Text.ReadOnly = True
-                Col_Text.Visible = False
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "idDetalle"
+                'Col_Text.HeaderText = "Codigo"
+                'Col_Text.ReadOnly = True
+                'Col_Text.Visible = False
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "codItem"
-                Col_Text.HeaderText = "codItem"
-                Col_Text.ReadOnly = True
-                Col_Text.Visible = False
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "codItem"
+                'Col_Text.HeaderText = "codItem"
+                'Col_Text.ReadOnly = True
+                'Col_Text.Visible = False
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "descripcion"
-                Col_Text.HeaderText = "Item"
-                Col_Text.ReadOnly = True
-                Col_Text.Visible = True
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "descripcion"
+                'Col_Text.HeaderText = "Item"
+                'Col_Text.ReadOnly = True
+                'Col_Text.Visible = True
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "tipo_item"
-                Col_Text.HeaderText = "Tipo"
-                Col_Text.ReadOnly = True
-                Col_Text.Visible = False
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "tipo_item"
+                'Col_Text.HeaderText = "Tipo"
+                'Col_Text.ReadOnly = True
+                'Col_Text.Visible = False
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "cant"
-                Col_Text.HeaderText = "Cantidad"
-                Col_Text.ReadOnly = False
-                Col_Text.Visible = True
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "cant"
+                'Col_Text.HeaderText = "Cantidad"
+                'Col_Text.ReadOnly = False
+                'Col_Text.Visible = True
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "monto"
-                Col_Text.HeaderText = "Monto"
-                Col_Text.ReadOnly = False
-                Col_Text.Visible = True
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "monto"
+                'Col_Text.HeaderText = "Monto"
+                'Col_Text.ReadOnly = False
+                'Col_Text.Visible = True
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
             Else
                 'validacion
@@ -577,54 +577,54 @@ Public Class frmPresupuestoActividad
 
             If dgvListado.RowCount = 0 Then
 
-                Dim Col_Text As DataGridViewTextBoxColumn
+                'Dim Col_Text As DataGridViewTextBoxColumn
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "idDetalle"
-                Col_Text.HeaderText = "Codigo"
-                Col_Text.ReadOnly = True
-                Col_Text.Visible = False
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "idDetalle"
+                'Col_Text.HeaderText = "Codigo"
+                'Col_Text.ReadOnly = True
+                'Col_Text.Visible = False
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "codItem"
-                Col_Text.HeaderText = "codItem"
-                Col_Text.ReadOnly = True
-                Col_Text.Visible = False
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "codItem"
+                'Col_Text.HeaderText = "codItem"
+                'Col_Text.ReadOnly = True
+                'Col_Text.Visible = False
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "descripcion"
-                Col_Text.HeaderText = "Item"
-                Col_Text.ReadOnly = True
-                Col_Text.Visible = True
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "descripcion"
+                'Col_Text.HeaderText = "Item"
+                'Col_Text.ReadOnly = True
+                'Col_Text.Visible = True
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "tipo_item"
-                Col_Text.HeaderText = "Tipo"
-                Col_Text.ReadOnly = True
-                Col_Text.Visible = False
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "tipo_item"
+                'Col_Text.HeaderText = "Tipo"
+                'Col_Text.ReadOnly = True
+                'Col_Text.Visible = False
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "cant"
-                Col_Text.HeaderText = "Cantidad"
-                Col_Text.ReadOnly = False
-                Col_Text.Visible = True
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "cant"
+                'Col_Text.HeaderText = "Cantidad"
+                'Col_Text.ReadOnly = False
+                'Col_Text.Visible = True
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
-                Col_Text = New DataGridViewTextBoxColumn
-                Col_Text.Name = "monto"
-                Col_Text.HeaderText = "Monto"
-                Col_Text.ReadOnly = False
-                Col_Text.Visible = True
-                Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-                dgvListado.Columns.Add(Col_Text)
+                'Col_Text = New DataGridViewTextBoxColumn
+                'Col_Text.Name = "monto"
+                'Col_Text.HeaderText = "Monto"
+                'Col_Text.ReadOnly = False
+                'Col_Text.Visible = True
+                'Col_Text.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+                'dgvListado.Columns.Add(Col_Text)
 
             Else
                 'validacion

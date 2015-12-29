@@ -38,6 +38,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ObtenerTipoPersonalDemanda(ByVal id_comite As String, ByVal id_tipo As String) As List(Of TipoPersonalBE)
+            Try
+                Dim iTipo As ITipoPersonal
+                Dim oListadoTipo As List(Of TipoPersonalBE) = Nothing
+
+                iTipo = New TipoPersonalDL
+                oListadoTipo = iTipo.ObtenerTipoPersonalDemanda(id_comite, id_tipo)
+
+                Return oListadoTipo
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

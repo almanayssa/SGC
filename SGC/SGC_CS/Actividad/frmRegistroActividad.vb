@@ -653,6 +653,7 @@ Public Class frmRegistroActividad
         pbFechas.Visible = False
         pbTipo.Visible = False
         pbVacantes.Visible = False
+        pbRecursos.Visible = False
     End Sub
 
 #End Region
@@ -875,12 +876,20 @@ Public Class frmRegistroActividad
         pbTipo.Visible = True
         pbVacantes.Visible = False
         pbFechas.Visible = False
+        pbRecursos.Visible = False
         SugerenciasToolTip.SetToolTip(pbTipo, msj)
 
     End Sub
 
     Private Sub cboTipo_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboTipo.SelectedIndexChanged
 
+        pbTipo.Visible = False
+        pbVacantes.Visible = False
+        pbFechas.Visible = False
+        pbRecursos.Visible = False
+        pbTipoPersonal.Visible = False
+
+        '''''INSCRITOS
         Dim oListadoFact As List(Of FactActividadSumBE) = bc.ObtenerMaxInscritosXTipoActividad(cboComite.SelectedValue, cboTipo.SelectedValue)
 
         Dim oSexo As FactActividadSumBE = bc.ObtenerSexoParticipantesXTipoActividad(cboComite.SelectedValue, cboTipo.SelectedValue)
@@ -902,16 +911,15 @@ Public Class frmRegistroActividad
         End If
 
         If msj = "" Then
-            pbTipo.Visible = False
             pbVacantes.Visible = False
-            pbFechas.Visible = False
         Else
-            pbTipo.Visible = False
             pbVacantes.Visible = True
-            pbFechas.Visible = False
             SugerenciasToolTip.SetToolTip(pbVacantes, msj)
         End If
-        
+
+
+        ''''FECHAS
+
         Dim msj2 As String = ""
 
         Dim oListadoMes As List(Of FactActividadSumBE) = bc.ObtenerMesInscripcionXTipoActividad(cboComite.SelectedValue, cboTipo.SelectedValue)
@@ -930,6 +938,46 @@ Public Class frmRegistroActividad
             SugerenciasToolTip.SetToolTip(pbFechas, msj2)
         End If
 
+        ''''RECURSOS
+
+        Dim msj3 As String = ""
+
+        Dim oListadoRecursos As List(Of RecursoBE) = bc.ObtenerRecursosDemanda(cboComite.SelectedValue, cboTipo.SelectedValue)
+
+        If oListadoRecursos IsNot Nothing AndAlso oListadoRecursos.Count > 0 Then
+            msj3 = "Recursos con mayor demanda: " & vbCrLf
+            For Each oRecurso As RecursoBE In oListadoRecursos
+                msj3 &= "- " & oRecurso.descripcion & vbCrLf
+            Next
+        End If
+
+        If msj3 = "" Then
+            pbRecursos.Visible = False
+        Else
+            pbRecursos.Visible = True
+            SugerenciasToolTip.SetToolTip(pbRecursos, msj3)
+        End If
+
+
+        ''''TIPO PERSONAL
+
+        Dim msj4 As String = ""
+
+        Dim oListadoTipo As List(Of TipoPersonalBE) = bc.ObtenerTipoPersonalDemanda(cboComite.SelectedValue, cboTipo.SelectedValue)
+
+        If oListadoTipo IsNot Nothing AndAlso oListadoTipo.Count > 0 Then
+            msj4 = "Tipo de Personal con mayor demanda: " & vbCrLf
+            For Each oTipo As TipoPersonalBE In oListadoTipo
+                msj4 &= "- " & oTipo.descripcion & vbCrLf
+            Next
+        End If
+
+        If msj4 = "" Then
+            pbTipoPersonal.Visible = False
+        Else
+            pbTipoPersonal.Visible = True
+            SugerenciasToolTip.SetToolTip(pbTipoPersonal, msj4)
+        End If
 
     End Sub
 End Class
