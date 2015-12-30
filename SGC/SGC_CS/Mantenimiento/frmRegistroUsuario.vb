@@ -115,6 +115,7 @@ Public Class frmRegistroUsuario
         lblSocio.Visible = False
         txtSocio.Visible = False
         btnBuscarSocio.Visible = False
+        btnBuscarSocio.Enabled = True
     End Sub
 
     Private Function ValidarCamposRequeridos() As String
