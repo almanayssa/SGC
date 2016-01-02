@@ -71,6 +71,7 @@ Partial Class frmPresupuestoPlan
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.pbPresupuesto)
         Me.SgcGroupBox1.Controls.Add(Me.lblEstado)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel8)
         Me.SgcGroupBox1.Controls.Add(Me.lblFecFin)
@@ -241,7 +242,6 @@ Partial Class frmPresupuestoPlan
         '
         'gbItems
         '
-        Me.gbItems.Controls.Add(Me.pbPresupuesto)
         Me.gbItems.Controls.Add(Me.btnPersonal)
         Me.gbItems.Controls.Add(Me.btnQuitar)
         Me.gbItems.Controls.Add(Me.txtMontoTotal)
@@ -260,7 +260,7 @@ Partial Class frmPresupuestoPlan
         '
         Me.pbPresupuesto.ErrorImage = Nothing
         Me.pbPresupuesto.Image = Global.SGC_CS.My.Resources.Resources.get_info
-        Me.pbPresupuesto.Location = New System.Drawing.Point(365, 256)
+        Me.pbPresupuesto.Location = New System.Drawing.Point(328, 106)
         Me.pbPresupuesto.Name = "pbPresupuesto"
         Me.pbPresupuesto.Size = New System.Drawing.Size(22, 22)
         Me.pbPresupuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

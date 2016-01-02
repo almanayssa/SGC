@@ -18,7 +18,7 @@ Public Class frmLogin
         If oUsuario IsNot Nothing AndAlso oUsuario.id_usuario <> String.Empty Then
             Session.RemoveAll()
             Session("usuario") = oUsuario
-            Response.Redirect("~/Privado/frmReporteActividades.aspx", True)
+            Response.Redirect("~/Privado/frmReportes.aspx", True)
         Else
             lblMensajeError.Text = "Usuario y/o contraseña incorrectos"
         End If

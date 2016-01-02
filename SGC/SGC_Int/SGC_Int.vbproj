@@ -98,6 +98,7 @@
     <Content Include="frmLogin.aspx" />
     <Content Include="Privado\frmReporteActividades.aspx" />
     <Content Include="Privado\frmReporteComite.aspx" />
+    <Content Include="Privado\frmReportes.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -148,6 +149,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Privado\frmReportes.aspx.designer.vb">
+      <DependentUpon>frmReportes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmReportes.aspx.vb">
+      <DependentUpon>frmReportes.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\PlantillaSGCInt.Master.designer.vb">
       <DependentUpon>PlantillaSGCInt.Master</DependentUpon>

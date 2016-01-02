@@ -405,6 +405,7 @@ Public Class frmRegistroActividad
         btnAgregarRecurso.Enabled = True
         btnQuitarRecurso.Enabled = True
         txtCantidadRecurso.Enabled = True
+        nudVacantes.Enabled = True
 
         dgvRestricciones.ReadOnly = False
     End Sub

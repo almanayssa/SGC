@@ -12,7 +12,7 @@ Namespace SGC.Model.Metodos
 
 #Region "Select"
 
-        Public Function ListarActividades(ByVal id_comite As String, ByVal fec_ini As DateTime, ByVal fec_fin As DateTime) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividades
+        Public Function ListarActividades(ByVal id_comite As String, ByVal id_tipo_act As String, ByVal fec_ini As DateTime, ByVal fec_fin As DateTime) As System.Collections.Generic.List(Of Entidades.ActividadBE) Implements Interfaces.IActividad.ListarActividades
             Dim oListadoActividades As New List(Of ActividadBE)
             Dim oActividad As ActividadBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
@@ -21,6 +21,7 @@ Namespace SGC.Model.Metodos
             Dim dr As SqlDataReader = Nothing
             sqlCmd.CommandType = CommandType.StoredProcedure
             sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@id_tipo_act", SqlDbType.VarChar).Value = id_tipo_act
             sqlCmd.Parameters.Add("@fec_ini", SqlDbType.DateTime).Value = fec_ini
             sqlCmd.Parameters.Add("@fec_fin", SqlDbType.DateTime).Value = fec_fin
 

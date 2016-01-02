@@ -139,7 +139,7 @@ Public Class frmConsultaActividad
     End Sub
 
     Private Sub ListarActividades()
-        ListadoActividad = bc.ListarActividades(cboComite.SelectedValue, dtpFecInicio.Value, dtpFecFin.Value)
+        ListadoActividad = bc.ListarActividades(cboComite.SelectedValue, Nothing, dtpFecInicio.Value, dtpFecFin.Value)
         dgvTodas.DataSource = Nothing
         dgvTodas.DataSource = ListadoActividad
 

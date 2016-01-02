@@ -21,7 +21,7 @@ Partial Class frmPresupuestoActividad
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuestoPlan))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuestoActividad))
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.lblEstado = New SGC_CS.SGCLabel(Me.components)
@@ -71,6 +71,7 @@ Partial Class frmPresupuestoActividad
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.pbPresupuesto)
         Me.SgcGroupBox1.Controls.Add(Me.lblEstado)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel8)
         Me.SgcGroupBox1.Controls.Add(Me.lblFecFin)
@@ -241,7 +242,6 @@ Partial Class frmPresupuestoActividad
         '
         'gbItems
         '
-        Me.gbItems.Controls.Add(Me.pbPresupuesto)
         Me.gbItems.Controls.Add(Me.btnPersonal)
         Me.gbItems.Controls.Add(Me.btnQuitar)
         Me.gbItems.Controls.Add(Me.txtMontoTotal)
@@ -260,7 +260,7 @@ Partial Class frmPresupuestoActividad
         '
         Me.pbPresupuesto.ErrorImage = Nothing
         Me.pbPresupuesto.Image = Global.SGC_CS.My.Resources.Resources.get_info
-        Me.pbPresupuesto.Location = New System.Drawing.Point(365, 256)
+        Me.pbPresupuesto.Location = New System.Drawing.Point(328, 110)
         Me.pbPresupuesto.Name = "pbPresupuesto"
         Me.pbPresupuesto.Size = New System.Drawing.Size(22, 22)
         Me.pbPresupuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

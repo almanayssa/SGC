@@ -6,7 +6,7 @@ Namespace SGC.Model.Interfaces
 
 #Region "Select"
 
-        Function ListarActividades(ByVal id_comite As String, ByVal fec_inicio As DateTime, ByVal fec_fin As DateTime) As List(Of ActividadBE)
+        Function ListarActividades(ByVal id_comite As String, ByVal id_tipo_act As String, ByVal fec_inicio As DateTime, ByVal fec_fin As DateTime) As List(Of ActividadBE)
         Function ListarActividadesBusqueda(ByVal id_comite As String, ByVal nombre As String, ByVal id_estado As String) As List(Of ActividadBE)
         Function CargarActividadCabecera(ByVal id_actividad As Integer) As ActividadBE
         Function ListarActividadesPlan(ByVal id_comite As String, ByVal id_plan As Integer?) As List(Of ActividadBE)

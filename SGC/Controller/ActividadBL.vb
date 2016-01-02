@@ -23,13 +23,13 @@ Namespace SGC.Controller
             End Try
         End Function
 
-        Public Function ListarActividades(ByVal id_comite As String, ByVal fec_inicio As DateTime, ByVal fec_fin As DateTime) As List(Of ActividadBE)
+        Public Function ListarActividades(ByVal id_comite As String, ByVal id_tipo_act As String, ByVal fec_inicio As DateTime, ByVal fec_fin As DateTime) As List(Of ActividadBE)
             Try
                 Dim iActividad As IActividad
                 Dim oListadoActividades As List(Of ActividadBE) = Nothing
 
                 iActividad = New ActividadDL
-                oListadoActividades = iActividad.ListarActividades(id_comite, fec_inicio, fec_fin)
+                oListadoActividades = iActividad.ListarActividades(id_comite, id_tipo_act, fec_inicio, fec_fin)
 
                 Return oListadoActividades
 
