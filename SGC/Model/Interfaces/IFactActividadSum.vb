@@ -18,6 +18,8 @@ Namespace SGC.Model.Interfaces
 
         Function ObtenerMesInscripcionXTipoActividad(ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
 
+        Function ObtenerMesesParticipacion(ByVal fecIni As Date, ByVal fecFin As Date, ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
+
 #End Region
 
     End Interface

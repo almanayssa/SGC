@@ -236,6 +236,40 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ObtenerMesesParticipacion(ByVal fecIni As Date, ByVal fecFin As Date, id_comite As String, id_tipo As String) As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ObtenerMesesParticipacion
+            Dim oListadoFact As New List(Of FactActividadSumBE)
+            Dim oFact As FactActividadSumBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_OBTENER_MESES_PARTICIPACION", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@FECINI", SqlDbType.DateTime).Value = fecIni
+            sqlCmd.Parameters.Add("@FECFIN", SqlDbType.DateTime).Value = fecFin
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@id_tipo", SqlDbType.VarChar).Value = id_tipo
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New FactActividadSumBE
+                    oFact.mes = dr("mes")
+                    oFact.total_inscritos = dr("total_inscritos")
+                    oFact.total_participantes = dr("total_participantes")
+                    oFact.total_actividades = dr("total_actividades")
+                    oListadoFact.Add(oFact)
+                End While
+                dr.Close()
+                Return oListadoFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
 #End Region
 
     End Class

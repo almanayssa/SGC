@@ -20,11 +20,11 @@ Partial Class frmRegistroActividad
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroActividad))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnVacantes = New SGC_CS.SGCButton(Me.components)
         Me.btntipo = New SGC_CS.SGCButton(Me.components)
@@ -431,9 +431,9 @@ Partial Class frmRegistroActividad
         'dgvProgramacion
         '
         Me.dgvProgramacion.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle13.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
         Me.dgvProgramacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvProgramacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvProgramacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -510,9 +510,9 @@ Partial Class frmRegistroActividad
         '
         Me.dgvRestricciones.AllowUserToAddRows = False
         Me.dgvRestricciones.AllowUserToDeleteRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle14
         Me.dgvRestricciones.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRestricciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRestricciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -798,9 +798,9 @@ Partial Class frmRegistroActividad
         '
         Me.dgvTipoPersonal.AllowUserToAddRows = False
         Me.dgvTipoPersonal.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvTipoPersonal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvTipoPersonal.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle15
         Me.dgvTipoPersonal.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvTipoPersonal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvTipoPersonal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -938,9 +938,9 @@ Partial Class frmRegistroActividad
         '
         Me.dgvRecursos.AllowUserToAddRows = False
         Me.dgvRecursos.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRecursos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle16.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle16.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRecursos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle16
         Me.dgvRecursos.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRecursos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRecursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize

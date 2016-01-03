@@ -593,6 +593,7 @@ Public Class frmRegistroActividad
         dgvProgramacion.DataSource = Nothing
         dgvProgramacion.DataSource = ListadoActividadDetalles
     End Sub
+
     Private Function EnviarEmail(ByRef oPersona As PersonaBE, ByVal asunto As String, ByVal descripcion As String) As Boolean
         Dim flag As Boolean = False
         Dim remitente = New MailAddress("accelbosque@gmail.com", "Asociación Country Club El Bosque")
@@ -650,6 +651,274 @@ Public Class frmRegistroActividad
             "Para cualquier consulta adicional, comunicarse a los siguientes teléfonos: 2070670 anexo 123, directo 2070695, o enviando un correo a <a href='mailto:admision@elbosque.org.pe'>admision@elbosque.org.pe</a>.<br/><br/>Atentamente,<br/><b>ACC El Bosque</b>")
             Next
         End If
+    End Sub
+
+    Sub SugerenciaTipoActividad()
+
+        Dim oParam As ParametrosBE = bc.ObtenerParametro(1)
+        Dim fecIni As Date = DateAdd(DateInterval.Month, CInt(oParam.val_param) * -1, Now)
+
+        Dim oListado As List(Of FactActividadSumBE) = bc.ListarTotalesFactActividadSum(fecIni, Now, cboComite.SelectedValue, Nothing)
+        Dim maxPart As Decimal = 0.0
+        Dim resultado As String = ""
+        msjTipo = ""
+
+        If oListado IsNot Nothing AndAlso oListado.Count > 0 Then
+            msjTipo = "Demanda de tipo de Actividad (Cantidad de Participaciones):" & vbCrLf & vbCrLf
+            msjTipo &= "Comite: " & cboComite.GetItemText(cboComite.SelectedItem) & vbCrLf
+            msjTipo &= "Fechas: " & fecIni.Date & " - " & Now.Date & vbCrLf
+            msjTipo &= "Fórmula Participantes: Cantidad de participantes / Cantidad de actividades" & vbCrLf
+            msjTipo &= "Fórmula Satisfacción: (Cantidad de Satisfacción / Cantidad Total) * 100.00" & vbCrLf
+
+            For Each oFact As FactActividadSumBE In oListado
+                oFact.part_x_actividad = Math.Round(oFact.total_participantes * 1.0 / oFact.total_actividades * 1.0)
+                msjTipo &= "- " & oFact.tipo_actividad & " : " & oFact.total_participantes & " / " & oFact.total_actividades & " = " & oFact.part_x_actividad & " pers." & vbCrLf
+                If oFact.cant_satisfaccion + oFact.cant_nsno + oFact.cant_nosatisfaccion <> 0 Then
+                    oFact.satisfaccion = oFact.cant_satisfaccion * 100.0 / (oFact.cant_satisfaccion + oFact.cant_nsno + oFact.cant_nosatisfaccion) * 1.0
+                    msjTipo &= "  Satisfacción: (" & oFact.cant_satisfaccion & " / " & oFact.cant_satisfaccion + oFact.cant_nsno + oFact.cant_nosatisfaccion & ") * 100.00 = " & oFact.satisfaccion & " % " & vbCrLf
+                End If
+                If oFact.part_x_actividad > maxPart Then
+                    maxPart = oFact.part_x_actividad
+                    resultado = oFact.tipo_actividad & " - " & oFact.part_x_actividad
+                ElseIf oFact.part_x_actividad = maxPart Then
+                    resultado &= vbCrLf & oFact.tipo_actividad & " - " & oFact.part_x_actividad
+                End If
+            Next
+
+            msjTipo &= vbCrLf & "Resultados:" & vbCrLf & resultado
+
+        Else
+            msjTipo = "No hay sugerencias"
+        End If
+
+
+        Dim msj As String = ""
+
+        If resultado <> String.Empty Then
+            msj = "Sugerencia de Tipo de actividad: " & vbCrLf
+            msj &= resultado & vbCrLf
+
+        Else
+            msj = "No hay sugerencias"
+        End If
+
+
+        SugerenciasToolTip.SetToolTip(btntipo, msj)
+
+    End Sub
+
+    Sub SugerenciaVacantes()
+
+        ''''Participantes
+
+        Dim oParam As ParametrosBE = bc.ObtenerParametro(1)
+        Dim fecIni As Date = DateAdd(DateInterval.Month, CInt(oParam.val_param) * -1, Now)
+        Dim fecFin As Date = Now
+
+        Dim oListado As List(Of FactActividadSumBE) = bc.ListarTotalesFactActividadSum(fecIni, Now, cboComite.SelectedValue, cboTipo.SelectedValue)
+        Dim maxPart As Decimal = 0.0
+        Dim resultado As String = ""
+        msjVacantes = ""
+
+        If oListado IsNot Nothing AndAlso oListado.Count > 0 Then
+            msjVacantes = "Comite: " & cboComite.GetItemText(cboComite.SelectedItem) & vbCrLf
+            msjVacantes &= "Tipo Actividad: " & cboTipo.GetItemText(cboTipo.SelectedItem) & vbCrLf
+            msjVacantes &= "Fechas: " & fecIni.Date & " - " & Now.Date & vbCrLf & vbCrLf
+            msjVacantes &= "Promedio de participantes de Actividad de un tipo (Cantidad de Participaciones):" & vbCrLf
+            msjVacantes &= "Fórmula: Cantidad de participantes / Cantidad de actividades" & vbCrLf
+
+            oListado.Item(0).part_x_actividad = Math.Round(oListado.Item(0).total_participantes * 1.0 / oListado.Item(0).total_actividades * 1.0)
+            msjVacantes &= "- " & oListado.Item(0).tipo_actividad & " : " & oListado.Item(0).total_participantes & " / " & oListado.Item(0).total_actividades & " = " & oListado.Item(0).part_x_actividad & " pers." & vbCrLf & vbCrLf
+
+            If oListado.Item(0).cant_satisfaccion + oListado.Item(0).cant_nsno + oListado.Item(0).cant_nosatisfaccion <> 0 Then
+                oListado.Item(0).satisfaccion = oListado.Item(0).cant_satisfaccion * 100.0 / (oListado.Item(0).cant_satisfaccion + oListado.Item(0).cant_nsno + oListado.Item(0).cant_nosatisfaccion) * 1.0
+                msjVacantes &= "Fórmula Satisfacción: (Cantidad de Satisfacción / Cantidad Total) * 100.00" & vbCrLf
+                msjVacantes &= " - (" & oListado.Item(0).cant_satisfaccion & " / " & oListado.Item(0).cant_satisfaccion + oListado.Item(0).cant_nsno + oListado.Item(0).cant_nosatisfaccion & ") * 100.00 = " & oListado.Item(0).satisfaccion & " % " & vbCrLf
+            End If
+
+            If oListado.Item(0).part_x_actividad > maxPart Then
+                maxPart = oListado.Item(0).part_x_actividad
+                resultado = oListado.Item(0).tipo_actividad & " - " & oListado.Item(0).part_x_actividad
+            ElseIf oListado.Item(0).part_x_actividad = maxPart Then
+                resultado &= vbCrLf & oListado.Item(0).tipo_actividad & " - " & oListado.Item(0).part_x_actividad
+            End If
+
+        Else
+            msjVacantes = "No hay sugerencias"
+        End If
+
+
+        If resultado = "" Then
+            btnVacantes.Visible = False
+        Else
+            btnVacantes.Visible = True
+            SugerenciasToolTip.SetToolTip(btnVacantes, resultado)
+        End If
+
+    End Sub
+
+    Sub SugerenciaFechas()
+
+        Dim oParam As ParametrosBE = bc.ObtenerParametro(1)
+        Dim fecIni As Date = DateAdd(DateInterval.Month, CInt(oParam.val_param) * -1, Now)
+        Dim fecFin As Date = Now
+
+        ''''Fechas
+
+        Dim oListadoFec As List(Of FactActividadSumBE) = bc.ObtenerMesesParticipacion(fecIni, fecFin, cboComite.SelectedValue, cboTipo.SelectedValue)
+        Dim maxPartFec As Decimal = 0.0
+        Dim resultadoFec As String = ""
+        msjFecha = ""
+        Dim enero As Integer = 0
+        Dim febrero As Integer = 0
+        Dim marzo As Integer = 0
+        Dim abril As Integer = 0
+        Dim mayo As Integer = 0
+        Dim junio As Integer = 0
+        Dim julio As Integer = 0
+        Dim agosto As Integer = 0
+        Dim setiembre As Integer = 0
+        Dim octubre As Integer = 0
+        Dim noviembre As Integer = 0
+        Dim diciembre As Integer = 0
+
+        If oListadoFec IsNot Nothing AndAlso oListadoFec.Count > 0 Then
+            msjFecha = "Meses con mayor demanda (Cantidad de Participaciones):" & vbCrLf & vbCrLf
+            msjFecha &= "Comite: " & cboComite.GetItemText(cboComite.SelectedItem) & vbCrLf
+            msjFecha &= "Fechas: " & fecIni.Date & " - " & Now.Date & vbCrLf
+            msjFecha &= "Fórmula por mes: Cantidad de participantes / Cantidad de actividades" & vbCrLf
+
+            For Each oFact As FactActividadSumBE In oListadoFec
+                oFact.part_x_actividad = Math.Round(oFact.total_participantes * 1.0 / oFact.total_actividades * 1.0)
+                msjFecha &= "- " & oFact.mes.Substring(0, 4) & " " & MonthName(oFact.mes.Substring(4, 2)) & " : " & oFact.total_participantes & " / " & oFact.total_actividades & " = " & oFact.part_x_actividad & " pers." & vbCrLf
+
+                If CInt(oFact.mes.Substring(4, 2)) = 1 Then
+                    enero += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 2 Then
+                    febrero += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 3 Then
+                    marzo += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 4 Then
+                    abril += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 5 Then
+                    mayo += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 6 Then
+                    junio += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 7 Then
+                    julio += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 8 Then
+                    agosto += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 9 Then
+                    setiembre += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 10 Then
+                    octubre += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 11 Then
+                    noviembre += oFact.total_participantes
+                ElseIf CInt(oFact.mes.Substring(4, 2)) = 12 Then
+                    diciembre += oFact.total_participantes
+                End If
+            Next
+
+
+            If enero = maxPartFec Then
+                resultadoFec &= "Enero" & vbCrLf
+            ElseIf enero > maxPartFec Then
+                maxPartFec = enero
+                resultadoFec = "Enero" & vbCrLf
+            End If
+
+            If febrero = maxPartFec Then
+                resultadoFec &= "Febrero" & vbCrLf
+            ElseIf febrero > maxPartFec Then
+                maxPartFec = febrero
+                resultadoFec = "Febrero" & vbCrLf
+            End If
+
+            If marzo = maxPartFec Then
+                resultadoFec &= "Marzo" & vbCrLf
+            ElseIf marzo > maxPartFec Then
+                maxPartFec = marzo
+                resultadoFec = "Marzo" & vbCrLf
+            End If
+
+            If abril = maxPartFec Then
+                resultadoFec &= "Abril" & vbCrLf
+            ElseIf abril > maxPartFec Then
+                maxPartFec = abril
+                resultadoFec = "Abril" & vbCrLf
+            End If
+
+            If mayo = maxPartFec Then
+                resultadoFec &= "Mayo" & vbCrLf
+            ElseIf mayo > maxPartFec Then
+                maxPartFec = mayo
+                resultadoFec = "Mayo" & vbCrLf
+            End If
+
+            If junio = maxPartFec Then
+                resultadoFec &= "Junio" & vbCrLf
+            ElseIf junio > maxPartFec Then
+                maxPartFec = junio
+                resultadoFec = "Junio" & vbCrLf
+            End If
+
+            If julio = maxPartFec Then
+                resultadoFec &= "Julio" & vbCrLf
+            ElseIf julio > maxPartFec Then
+                maxPartFec = julio
+                resultadoFec = "Julio" & vbCrLf
+            End If
+
+            If agosto = maxPartFec Then
+                resultadoFec &= "Agosto" & vbCrLf
+            ElseIf agosto > maxPartFec Then
+                maxPartFec = agosto
+                resultadoFec = "Agosto" & vbCrLf
+            End If
+
+            If setiembre = maxPartFec Then
+                resultadoFec &= "Setiembre" & vbCrLf
+            ElseIf setiembre > maxPartFec Then
+                maxPartFec = setiembre
+                resultadoFec = "Setiembre" & vbCrLf
+            End If
+
+            If octubre = maxPartFec Then
+                resultadoFec &= "Octubre" & vbCrLf
+            ElseIf octubre > maxPartFec Then
+                maxPartFec = octubre
+                resultadoFec = "Octubre" & vbCrLf
+            End If
+
+            If noviembre = maxPartFec Then
+                resultadoFec &= "Noviembre" & vbCrLf
+            ElseIf noviembre > maxPartFec Then
+                maxPartFec = noviembre
+                resultadoFec = "Noviembre" & vbCrLf
+            End If
+
+            If diciembre = maxPartFec Then
+                resultadoFec &= "Diciembre" & vbCrLf
+            ElseIf diciembre > maxPartFec Then
+                maxPartFec = diciembre
+                resultadoFec = "Diciembre" & vbCrLf
+            End If
+
+            msjFecha &= vbCrLf & "Resultados:" & vbCrLf & resultadoFec
+
+        Else
+            msjFecha = "No hay sugerencias"
+        End If
+
+
+        If resultadoFec = "" Then
+            btnFechas.Visible = False
+        Else
+            btnFechas.Visible = True
+            SugerenciasToolTip.SetToolTip(btnFechas, resultadoFec)
+        End If
+
+
     End Sub
 
 #End Region
@@ -894,55 +1163,14 @@ Public Class frmRegistroActividad
             '    msj = "No hay sugerencias"
             'End If
 
-            Dim oParam As ParametrosBE = bc.ObtenerParametro(1)
-            Dim fecIni As Date = DateAdd(DateInterval.Month, CInt(oParam.val_param) * -1, Now)
-
-            Dim oListado As List(Of FactActividadSumBE) = bc.ListarTotalesFactActividadSum(fecIni, Now, cboComite.SelectedValue, Nothing)
-            Dim maxPart As Decimal = 0.0
-            Dim resultado As String = ""
-
-            If oListado IsNot Nothing AndAlso oListado.Count > 0 Then
-                msjTipo = "Demanda de tipo de Actividad (Cantidad de Participaciones):" & vbCrLf & vbCrLf
-                msjTipo &= "Comite: " & cboComite.GetItemText(cboComite.SelectedItem) & vbCrLf
-                msjTipo &= "Fechas: " & fecIni.Date & " - " & Now.Date & vbCrLf
-                msjTipo &= "Fórmula: Cantidad de participantes / Cantidad de actividades" & vbCrLf
-
-                For Each oFact As FactActividadSumBE In oListado
-                    oFact.part_x_actividad = Math.Round(oFact.total_participantes * 1.0 / oFact.total_actividades * 1.0)
-                    msjTipo &= "- " & oFact.tipo_actividad & " : " & oFact.total_participantes & " / " & oFact.total_actividades & " = " & oFact.part_x_actividad & " pers." & vbCrLf
-                    If oFact.part_x_actividad > maxPart Then
-                        maxPart = oFact.part_x_actividad
-                        resultado = oFact.tipo_actividad & " - " & oFact.part_x_actividad
-                    ElseIf oFact.part_x_actividad = maxPart Then
-                        resultado &= vbCrLf & oFact.tipo_actividad & " - " & oFact.part_x_actividad
-                    End If
-                Next
-
-                msjTipo &= vbCrLf & "Resultados:" & vbCrLf & resultado
-
-            Else
-                msjTipo = "No hay sugerencias"
-            End If
-
-
-            Dim msj As String = ""
-
-            If resultado <> String.Empty Then
-                msj = "Sugerencia de Tipo de actividad: " & vbCrLf
-                msj &= resultado & vbCrLf
-
-            Else
-                msj = "No hay sugerencias"
-            End If
-            
 
 
             btntipo.Visible = True
             btnVacantes.Visible = False
             btnFechas.Visible = False
             btnRecursos.Visible = False
-            SugerenciasToolTip.SetToolTip(btntipo, msj)
 
+            SugerenciaTipoActividad()
 
         End If
 
@@ -952,11 +1180,11 @@ Public Class frmRegistroActividad
 
         If cboTipo.SelectedIndex > 0 Then
 
-            '    btntipo.Visible = False
-            '    btnVacantes.Visible = False
-            '    btnFechas.Visible = False
-            '    btnRecursos.Visible = False
-            '    btnTipoPersonal.Visible = False
+            btntipo.Visible = False
+            btnVacantes.Visible = False
+            btnFechas.Visible = False
+            btnRecursos.Visible = False
+            btnTipoPersonal.Visible = False
 
             '    '''''INSCRITOS
             '    Dim oListadoFact As List(Of FactActividadSumBE) = bc.ObtenerMaxInscritosXTipoActividad(cboComite.SelectedValue, cboTipo.SelectedValue)
@@ -1048,8 +1276,31 @@ Public Class frmRegistroActividad
             '        SugerenciasToolTip.SetToolTip(btnTipoPersonal, msj4)
             '    End If
 
+            SugerenciaVacantes()
+            SugerenciaFechas()
+
         End If
 
+    End Sub
+
+    Private Sub btntipo_Click(sender As System.Object, e As System.EventArgs) Handles btntipo.Click
+        MsgBox(msjTipo, MsgBoxStyle.Information)
+    End Sub
+
+    Private Sub btnVacantes_Click(sender As System.Object, e As System.EventArgs) Handles btnVacantes.Click
+        MsgBox(msjVacantes, MsgBoxStyle.Information)
+    End Sub
+
+    Private Sub btnFechas_Click(sender As System.Object, e As System.EventArgs) Handles btnFechas.Click
+        MsgBox(msjFecha, MsgBoxStyle.Information)
+    End Sub
+
+    Private Sub btnTipoPersonal_Click(sender As System.Object, e As System.EventArgs) Handles btnTipoPersonal.Click
+        MsgBox(msjTipoPersonal, MsgBoxStyle.Information)
+    End Sub
+
+    Private Sub btnRecursos_Click(sender As System.Object, e As System.EventArgs) Handles btnRecursos.Click
+        MsgBox(msjRecursos, MsgBoxStyle.Information)
     End Sub
 
 #End Region
@@ -1091,8 +1342,5 @@ Public Class frmRegistroActividad
 
 #End Region
 
-    Private Sub btntipo_Click(sender As System.Object, e As System.EventArgs) Handles btntipo.Click
-        MsgBox(msjTipo, MsgBoxStyle.Information)
-    End Sub
 End Class
 
