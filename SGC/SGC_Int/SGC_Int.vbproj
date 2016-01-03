@@ -98,7 +98,7 @@
     <Content Include="frmLogin.aspx" />
     <Content Include="Privado\frmReporteActividades.aspx" />
     <Content Include="Privado\frmReporteComite.aspx" />
-    <Content Include="Privado\frmReportes.aspx" />
+    <Content Include="Privado\frmReporteGeneral.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -150,11 +150,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Privado\frmReportes.aspx.designer.vb">
-      <DependentUpon>frmReportes.aspx</DependentUpon>
+    <Compile Include="Privado\frmReporteGeneral.aspx.designer.vb">
+      <DependentUpon>frmReporteGeneral.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Privado\frmReportes.aspx.vb">
-      <DependentUpon>frmReportes.aspx</DependentUpon>
+    <Compile Include="Privado\frmReporteGeneral.aspx.vb">
+      <DependentUpon>frmReporteGeneral.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\PlantillaSGCInt.Master.designer.vb">

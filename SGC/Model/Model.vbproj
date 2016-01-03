@@ -139,6 +139,7 @@
     <Compile Include="Entidades\TipoRegistroInvitadoBE.vb" />
     <Compile Include="Entidades\TipoTransaccionBE.vb" />
     <Compile Include="Entidades\TransaccionBE.vb" />
+    <Compile Include="Entidades\VariableBE.vb" />
     <Compile Include="Interfaces\IFactActividadSum.vb" />
     <Compile Include="Interfaces\IAsistencia.vb" />
     <Compile Include="Interfaces\IDetallePresupuestoAct.vb" />
@@ -179,6 +180,7 @@
     <Compile Include="Interfaces\ITipoActividad.vb" />
     <Compile Include="Interfaces\ITipoPersonal.vb" />
     <Compile Include="Interfaces\IUsuario.vb" />
+    <Compile Include="Interfaces\IVariable.vb" />
     <Compile Include="Metodos\ActividadDetalleDL.vb" />
     <Compile Include="Metodos\ActividadDL.vb" />
     <Compile Include="Metodos\ActividadRecurrenteDL.vb" />
@@ -220,6 +222,7 @@
     <Compile Include="Metodos\TipoActividadDL.vb" />
     <Compile Include="Metodos\TipoPersonalDL.vb" />
     <Compile Include="Metodos\UsuarioDL.vb" />
+    <Compile Include="Metodos\VariableDL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

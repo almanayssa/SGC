@@ -120,6 +120,7 @@
     <Compile Include="TipoActividadBL.vb" />
     <Compile Include="TipoPersonalBL.vb" />
     <Compile Include="UsuarioBL.vb" />
+    <Compile Include="VariableBL.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

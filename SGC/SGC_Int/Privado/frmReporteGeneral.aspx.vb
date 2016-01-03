@@ -1,7 +1,7 @@
 ﻿Imports SGC.Model.Entidades
 Imports SGC.Controller
 
-Public Class frmReportes
+Public Class frmReporteGeneral
     Inherits System.Web.UI.Page
 
     Private bc As New BusinessController
@@ -10,6 +10,9 @@ Public Class frmReportes
         If Not Page.IsPostBack Then
             ListarComites()
             ListarTipoActividad()
+            ListarVariables()
+            txtFechaInicio.Text = "01/01/2015"
+            txtFechaFin.Text = Now.ToString("dd/MM/yyyy")
         End If
     End Sub
 
@@ -38,6 +41,8 @@ Public Class frmReportes
     Private Sub ListarActividades()
         Dim ListadoActividades As List(Of ActividadBE) = bc.ListarActividades(ddlComite.SelectedValue, ddlTipo.SelectedValue, txtFechaInicio.Text.Trim, txtFechaFin.Text.Trim)
         cblActividades.DataSource = ListadoActividades
+        cblActividades.DataValueField = "id_actividad"
+        cblActividades.DataTextField = "nombre"
         cblActividades.DataBind()
     End Sub
 
@@ -45,13 +50,27 @@ Public Class frmReportes
         ListarActividades()
     End Sub
 
-    Private Sub chkActividades_CheckedChanged(sender As Object, e As System.EventArgs) Handles chkActividades.CheckedChanged
+    Protected Sub chkActividades_CheckedChanged(sender As Object, e As System.EventArgs) Handles chkActividades.CheckedChanged
         For Each chkActividad As ListItem In cblActividades.Items
             chkActividad.Selected = chkActividades.Checked
         Next
     End Sub
 
     Private Sub ListarVariables()
+        Dim ListadoActividades As List(Of VariableBE) = bc.ListarVariables()
+        cblVariables.DataSource = ListadoActividades
+        cblVariables.DataValueField = "id_variable"
+        cblVariables.DataTextField = "nombre"
+        cblVariables.DataBind()
+    End Sub
 
+    Protected Sub ddlTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlTipo.SelectedIndexChanged
+        ListarActividades()
+    End Sub
+
+    Protected Sub chkVariables_CheckedChanged(sender As Object, e As EventArgs) Handles chkVariables.CheckedChanged
+        For Each chkVariable As ListItem In cblVariables.Items
+            chkVariable.Selected = chkVariables.Checked
+        Next
     End Sub
 End Class

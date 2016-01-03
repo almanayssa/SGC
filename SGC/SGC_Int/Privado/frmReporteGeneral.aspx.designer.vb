@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class frmReportes
+Partial Public Class frmReporteGeneral
 
     '''<summary>
     '''ToolkitScriptManager1 control.
@@ -30,6 +30,24 @@ Partial Public Class frmReportes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents upnlReporte As Global.System.Web.UI.UpdatePanel
+
+    '''<summary>
+    '''tblComite control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tblComite As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''rvwComite control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rvwComite As Global.Microsoft.Reporting.WebForms.ReportViewer
 
     '''<summary>
     '''ddlComite control.
@@ -102,6 +120,24 @@ Partial Public Class frmReportes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cblVariables As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''divMensaje control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divMensaje As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
+    '''lblMensaje control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''CalendarExtender1 control.

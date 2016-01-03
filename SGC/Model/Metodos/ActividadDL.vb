@@ -20,8 +20,8 @@ Namespace SGC.Model.Metodos
             Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_ACTIVIDADES", sqlConn)
             Dim dr As SqlDataReader = Nothing
             sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
-            sqlCmd.Parameters.Add("@id_tipo_act", SqlDbType.VarChar).Value = id_tipo_act
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = IIf(id_comite = "000", Nothing, id_comite)
+            sqlCmd.Parameters.Add("@id_tipo_act", SqlDbType.VarChar).Value = IIf(id_tipo_act = "00", Nothing, id_tipo_act)
             sqlCmd.Parameters.Add("@fec_ini", SqlDbType.DateTime).Value = fec_ini
             sqlCmd.Parameters.Add("@fec_fin", SqlDbType.DateTime).Value = fec_fin
 

@@ -29,7 +29,7 @@
         <ul id="menu-bar">
             <li class="current"><a href="#">Reportes</a>
             <ul>
-            <li><a href="frmReportes.aspx">Reporte Total</a></li>
+            <li><a href="frmReporteGeneral.aspx">Reporte General</a></li>
             <li><a href="frmReporteActividades.aspx">Actividades Mayor Demanda</a></li>
             <li><a href="frmReporteComite.aspx">Participación Comités</a></li>
             </ul>
