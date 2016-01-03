@@ -921,6 +921,92 @@ Public Class frmRegistroActividad
 
     End Sub
 
+    Sub SugerenciaRecursos()
+
+        Dim oParam As ParametrosBE = bc.ObtenerParametro(1)
+        Dim fecIni As Date = DateAdd(DateInterval.Month, CInt(oParam.val_param) * -1, Now)
+
+        Dim oListado As List(Of RecursoBE) = bc.ListarDemandaRecursos(fecIni, Now, cboComite.SelectedValue, cboTipo.SelectedValue)
+        Dim maxCant As Integer = 0
+        Dim resultado As String = ""
+        msjRecursos = ""
+
+        If oListado IsNot Nothing AndAlso oListado.Count > 0 Then
+            msjRecursos = "Demanda de Recursos" & vbCrLf & "(Cantidad de Recursos):" & vbCrLf & vbCrLf
+            msjRecursos &= "Comite: " & cboComite.GetItemText(cboComite.SelectedItem) & vbCrLf
+            msjRecursos &= "Fechas: " & fecIni.Date & " - " & Now.Date & vbCrLf & vbCrLf
+            
+            For Each oFact As RecursoBE In oListado
+
+                msjRecursos &= "- " & oFact.descripcion & " : " & oFact.cantidad & vbCrLf
+                
+                If oFact.cantidad > maxCant Then
+                    maxCant = oFact.cantidad
+                    resultado = oFact.descripcion & " - " & oFact.cantidad
+                ElseIf oFact.cantidad = maxCant Then
+                    resultado &= vbCrLf & oFact.descripcion & " - " & oFact.cantidad
+                End If
+            Next
+
+            msjRecursos &= vbCrLf & "Resultados:" & vbCrLf & resultado
+
+        Else
+            msjRecursos = "No hay sugerencias"
+        End If
+
+
+        If resultado = "" Then
+            btnRecursos.Visible = False
+        Else
+            btnRecursos.Visible = True
+            SugerenciasToolTip.SetToolTip(btnRecursos, resultado)
+        End If
+
+    End Sub
+
+    Sub SugerenciaTipoPersonal()
+
+        Dim oParam As ParametrosBE = bc.ObtenerParametro(1)
+        Dim fecIni As Date = DateAdd(DateInterval.Month, CInt(oParam.val_param) * -1, Now)
+
+        Dim oListado As List(Of TipoPersonalBE) = bc.ListarDemandaTipoPersonal(fecIni, Now, cboComite.SelectedValue, cboTipo.SelectedValue)
+        Dim maxCant As Integer = 0
+        Dim resultado As String = ""
+        msjTipoPersonal = ""
+
+        If oListado IsNot Nothing AndAlso oListado.Count > 0 Then
+            msjTipoPersonal = "Demanda de Tipo de Personal" & vbCrLf & "(Cantidad de Tipo de Personal):" & vbCrLf & vbCrLf
+            msjTipoPersonal &= "Comite: " & cboComite.GetItemText(cboComite.SelectedItem) & vbCrLf
+            msjTipoPersonal &= "Fechas: " & fecIni.Date & " - " & Now.Date & vbCrLf & vbCrLf
+
+            For Each oFact As TipoPersonalBE In oListado
+
+                msjTipoPersonal &= "- " & oFact.descripcion & " : " & oFact.cantidad & vbCrLf
+
+                If oFact.cantidad > maxCant Then
+                    maxCant = oFact.cantidad
+                    resultado = oFact.descripcion & " - " & oFact.cantidad
+                ElseIf oFact.cantidad = maxCant Then
+                    resultado &= vbCrLf & oFact.descripcion & " - " & oFact.cantidad
+                End If
+            Next
+
+            msjTipoPersonal &= vbCrLf & "Resultados:" & vbCrLf & resultado
+
+        Else
+            msjTipoPersonal = "No hay sugerencias"
+        End If
+
+
+        If resultado = "" Then
+            btnTipoPersonal.Visible = False
+        Else
+            btnTipoPersonal.Visible = True
+            SugerenciasToolTip.SetToolTip(btnTipoPersonal, resultado)
+        End If
+
+    End Sub
+
 #End Region
 
 #Region "Cargar"
@@ -1278,6 +1364,8 @@ Public Class frmRegistroActividad
 
             SugerenciaVacantes()
             SugerenciaFechas()
+            SugerenciaRecursos()
+            SugerenciaTipoPersonal()
 
         End If
 

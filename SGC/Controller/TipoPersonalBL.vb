@@ -53,6 +53,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarDemandaTipoPersonal(ByVal fecIni As Date, ByVal fecFin As Date, ByVal id_comite As String, ByVal id_tipo As String) As List(Of TipoPersonalBE)
+            Try
+                Dim iTipo As ITipoPersonal
+                Dim oListadoTipo As List(Of TipoPersonalBE) = Nothing
+
+                iTipo = New TipoPersonalDL
+                oListadoTipo = iTipo.ListarDemandaTipoPersonal(fecIni, fecFin, id_comite, id_tipo)
+
+                Return oListadoTipo
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

@@ -105,6 +105,40 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ListarDemandaRecursos(ByVal fecIni As Date, ByVal fecFin As Date, id_comite As String, id_tipo As String) As System.Collections.Generic.List(Of Entidades.RecursoBE) Implements Interfaces.IRecurso.ListarDemandaRecursos
+            Dim oListadoRecursos As New List(Of RecursoBE)
+            Dim oRecurso As RecursoBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGC").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("comite.SP_LISTAR_RECURSOS_DEMANDA", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@FEC_INI", SqlDbType.DateTime).Value = fecIni
+            sqlCmd.Parameters.Add("@FEC_FIN", SqlDbType.DateTime).Value = fecFin
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@id_tipo_act", SqlDbType.VarChar).Value = id_tipo
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oRecurso = New RecursoBE
+                    oRecurso.id_recurso = dr("id_recurso")
+                    oRecurso.descripcion = dr("descripcion")
+                    oRecurso.cantidad = dr("cant")
+                    oRecurso.costo = dr("monto")
+                    oListadoRecursos.Add(oRecurso)
+                End While
+                dr.Close()
+                Return oListadoRecursos
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
 #End Region
 
     End Class

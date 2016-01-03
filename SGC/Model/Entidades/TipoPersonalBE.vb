@@ -41,6 +41,8 @@
             End Set
         End Property
 
+        Public Property monto As Decimal
+
     End Class
 End Namespace
 
