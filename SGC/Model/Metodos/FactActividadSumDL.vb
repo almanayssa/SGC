@@ -57,7 +57,7 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
-        Public Function ListarTotalesFactActividadSum() As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarTotalesFactActividadSum
+        Public Function ListarTotalesFactActividadSum(ByVal fecIni As Date, ByVal fecFin As Date, ByVal id_comite As String, ByVal id_tipo As String) As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarTotalesFactActividadSum
             Dim oListadoFact As New List(Of FactActividadSumBE)
             Dim oFact As FactActividadSumBE
             Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
@@ -65,6 +65,10 @@ Namespace SGC.Model.Metodos
             Dim sqlCmd As New SqlCommand("USP_LISTAR_FACT_X_COMITE", sqlConn)
             Dim dr As SqlDataReader = Nothing
             sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@FECINI", SqlDbType.DateTime).Value = fecIni
+            sqlCmd.Parameters.Add("@FECFIN", SqlDbType.DateTime).Value = fecFin
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@ID_TIPO", SqlDbType.VarChar).Value = id_tipo
 
             Try
                 sqlConn.Open()
@@ -73,7 +77,9 @@ Namespace SGC.Model.Metodos
                 While dr.Read()
                     oFact = New FactActividadSumBE
                     oFact.id_comite = dr("id_comite")
+                    oFact.comite = dr("comite")
                     oFact.id_tipo = dr("id_tipo")
+                    oFact.tipo_actividad = dr("tipo")
                     oFact.total_inscritos = dr("total_inscritos")
                     oFact.total_participantes = dr("total_participantes")
                     oFact.cant_satisfaccion = dr("cant_satisfaccion")

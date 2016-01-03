@@ -26,8 +26,8 @@ Partial Class frmRegistroActividad
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.pbVacantes = New System.Windows.Forms.PictureBox()
-        Me.pbTipo = New System.Windows.Forms.PictureBox()
+        Me.btnVacantes = New SGC_CS.SGCButton(Me.components)
+        Me.btntipo = New SGC_CS.SGCButton(Me.components)
         Me.btnBuscarActividad = New SGC_CS.SGCButton(Me.components)
         Me.nudVacantes = New SGC_CS.SGCNumericUpDown(Me.components)
         Me.lblVacantes = New SGC_CS.SGCLabel(Me.components)
@@ -47,7 +47,7 @@ Partial Class frmRegistroActividad
         Me.lblComite = New SGC_CS.SGCLabel(Me.components)
         Me.lblCodigo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.pbFechas = New System.Windows.Forms.PictureBox()
+        Me.btnFechas = New SGC_CS.SGCButton(Me.components)
         Me.btnLimpiar = New SGC_CS.SGCButton(Me.components)
         Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
         Me.colSede = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -77,7 +77,7 @@ Partial Class frmRegistroActividad
         Me.tcPlanAnual = New SGC_CS.SGCTabControl(Me.components)
         Me.tpRestricciones = New System.Windows.Forms.TabPage()
         Me.tpTipoPersonal = New System.Windows.Forms.TabPage()
-        Me.pbTipoPersonal = New System.Windows.Forms.PictureBox()
+        Me.btnTipoPersonal = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox7 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscarPersonal = New SGC_CS.SGCButton(Me.components)
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
@@ -85,8 +85,11 @@ Partial Class frmRegistroActividad
         Me.txtDescripcionPersonal = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.dgvTipoPersonal = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colTipoPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDescripcionPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCantidadPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpRecursos = New System.Windows.Forms.TabPage()
-        Me.pbRecursos = New System.Windows.Forms.PictureBox()
+        Me.btnRecursos = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox5 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscarRecurso = New SGC_CS.SGCButton(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
@@ -100,16 +103,10 @@ Partial Class frmRegistroActividad
         Me.btnAgregarRecurso = New SGC_CS.SGCButton(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SugerenciasToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.colTipoPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDescripcionPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colCantidadPersonal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox1.SuspendLayout()
-        CType(Me.pbVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbTipo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nudPago, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox2.SuspendLayout()
-        CType(Me.pbFechas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox3.SuspendLayout()
         CType(Me.dgvRestricciones, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -117,19 +114,17 @@ Partial Class frmRegistroActividad
         Me.tcPlanAnual.SuspendLayout()
         Me.tpRestricciones.SuspendLayout()
         Me.tpTipoPersonal.SuspendLayout()
-        CType(Me.pbTipoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox7.SuspendLayout()
         CType(Me.dgvTipoPersonal, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tpRecursos.SuspendLayout()
-        CType(Me.pbRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SgcGroupBox5.SuspendLayout()
         CType(Me.dgvRecursos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SgcGroupBox1
         '
-        Me.SgcGroupBox1.Controls.Add(Me.pbVacantes)
-        Me.SgcGroupBox1.Controls.Add(Me.pbTipo)
+        Me.SgcGroupBox1.Controls.Add(Me.btnVacantes)
+        Me.SgcGroupBox1.Controls.Add(Me.btntipo)
         Me.SgcGroupBox1.Controls.Add(Me.btnBuscarActividad)
         Me.SgcGroupBox1.Controls.Add(Me.nudVacantes)
         Me.SgcGroupBox1.Controls.Add(Me.lblVacantes)
@@ -156,29 +151,39 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Datos"
         '
-        'pbVacantes
+        'btnVacantes
         '
-        Me.pbVacantes.ErrorImage = Nothing
-        Me.pbVacantes.Image = Global.SGC_CS.My.Resources.Resources.get_info
-        Me.pbVacantes.Location = New System.Drawing.Point(449, 104)
-        Me.pbVacantes.Name = "pbVacantes"
-        Me.pbVacantes.Size = New System.Drawing.Size(22, 22)
-        Me.pbVacantes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbVacantes.TabIndex = 26
-        Me.pbVacantes.TabStop = False
-        Me.pbVacantes.Visible = False
+        Me.btnVacantes.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnVacantes.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnVacantes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnVacantes.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVacantes.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnVacantes.Image = Global.SGC_CS.My.Resources.Resources.get_info16
+        Me.btnVacantes.Location = New System.Drawing.Point(449, 101)
+        Me.btnVacantes.Name = "btnVacantes"
+        Me.btnVacantes.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnVacantes.Size = New System.Drawing.Size(26, 26)
+        Me.btnVacantes.TabIndex = 28
+        Me.btnVacantes.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnVacantes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnVacantes.UseVisualStyleBackColor = False
         '
-        'pbTipo
+        'btntipo
         '
-        Me.pbTipo.ErrorImage = Nothing
-        Me.pbTipo.Image = Global.SGC_CS.My.Resources.Resources.get_info
-        Me.pbTipo.Location = New System.Drawing.Point(236, 104)
-        Me.pbTipo.Name = "pbTipo"
-        Me.pbTipo.Size = New System.Drawing.Size(22, 22)
-        Me.pbTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbTipo.TabIndex = 25
-        Me.pbTipo.TabStop = False
-        Me.pbTipo.Visible = False
+        Me.btntipo.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btntipo.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btntipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btntipo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btntipo.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btntipo.Image = Global.SGC_CS.My.Resources.Resources.get_info16
+        Me.btntipo.Location = New System.Drawing.Point(236, 102)
+        Me.btntipo.Name = "btntipo"
+        Me.btntipo.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btntipo.Size = New System.Drawing.Size(26, 26)
+        Me.btntipo.TabIndex = 27
+        Me.btntipo.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btntipo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btntipo.UseVisualStyleBackColor = False
         '
         'btnBuscarActividad
         '
@@ -379,7 +384,7 @@ Partial Class frmRegistroActividad
         '
         'SgcGroupBox2
         '
-        Me.SgcGroupBox2.Controls.Add(Me.pbFechas)
+        Me.SgcGroupBox2.Controls.Add(Me.btnFechas)
         Me.SgcGroupBox2.Controls.Add(Me.btnLimpiar)
         Me.SgcGroupBox2.Controls.Add(Me.dgvProgramacion)
         Me.SgcGroupBox2.Controls.Add(Me.btnEscoger)
@@ -391,17 +396,22 @@ Partial Class frmRegistroActividad
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Programación"
         '
-        'pbFechas
+        'btnFechas
         '
-        Me.pbFechas.ErrorImage = Nothing
-        Me.pbFechas.Image = Global.SGC_CS.My.Resources.Resources.get_info
-        Me.pbFechas.Location = New System.Drawing.Point(187, 31)
-        Me.pbFechas.Name = "pbFechas"
-        Me.pbFechas.Size = New System.Drawing.Size(22, 22)
-        Me.pbFechas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbFechas.TabIndex = 27
-        Me.pbFechas.TabStop = False
-        Me.pbFechas.Visible = False
+        Me.btnFechas.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnFechas.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnFechas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnFechas.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnFechas.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnFechas.Image = Global.SGC_CS.My.Resources.Resources.get_info16
+        Me.btnFechas.Location = New System.Drawing.Point(188, 27)
+        Me.btnFechas.Name = "btnFechas"
+        Me.btnFechas.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnFechas.Size = New System.Drawing.Size(26, 26)
+        Me.btnFechas.TabIndex = 29
+        Me.btnFechas.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnFechas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnFechas.UseVisualStyleBackColor = False
         '
         'btnLimpiar
         '
@@ -683,7 +693,7 @@ Partial Class frmRegistroActividad
         '
         'tpTipoPersonal
         '
-        Me.tpTipoPersonal.Controls.Add(Me.pbTipoPersonal)
+        Me.tpTipoPersonal.Controls.Add(Me.btnTipoPersonal)
         Me.tpTipoPersonal.Controls.Add(Me.SgcGroupBox7)
         Me.tpTipoPersonal.Location = New System.Drawing.Point(4, 27)
         Me.tpTipoPersonal.Name = "tpTipoPersonal"
@@ -692,17 +702,22 @@ Partial Class frmRegistroActividad
         Me.tpTipoPersonal.Text = "Tipo de Personal"
         Me.tpTipoPersonal.UseVisualStyleBackColor = True
         '
-        'pbTipoPersonal
+        'btnTipoPersonal
         '
-        Me.pbTipoPersonal.ErrorImage = Nothing
-        Me.pbTipoPersonal.Image = Global.SGC_CS.My.Resources.Resources.get_info
-        Me.pbTipoPersonal.Location = New System.Drawing.Point(413, 26)
-        Me.pbTipoPersonal.Name = "pbTipoPersonal"
-        Me.pbTipoPersonal.Size = New System.Drawing.Size(22, 22)
-        Me.pbTipoPersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbTipoPersonal.TabIndex = 27
-        Me.pbTipoPersonal.TabStop = False
-        Me.pbTipoPersonal.Visible = False
+        Me.btnTipoPersonal.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnTipoPersonal.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnTipoPersonal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnTipoPersonal.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTipoPersonal.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnTipoPersonal.Image = Global.SGC_CS.My.Resources.Resources.get_info16
+        Me.btnTipoPersonal.Location = New System.Drawing.Point(409, 18)
+        Me.btnTipoPersonal.Name = "btnTipoPersonal"
+        Me.btnTipoPersonal.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnTipoPersonal.Size = New System.Drawing.Size(26, 26)
+        Me.btnTipoPersonal.TabIndex = 29
+        Me.btnTipoPersonal.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnTipoPersonal.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnTipoPersonal.UseVisualStyleBackColor = False
         '
         'SgcGroupBox7
         '
@@ -796,9 +811,29 @@ Partial Class frmRegistroActividad
         Me.dgvTipoPersonal.Size = New System.Drawing.Size(367, 107)
         Me.dgvTipoPersonal.TabIndex = 1
         '
+        'colTipoPersonal
+        '
+        Me.colTipoPersonal.HeaderText = "id"
+        Me.colTipoPersonal.Name = "colTipoPersonal"
+        Me.colTipoPersonal.ReadOnly = True
+        Me.colTipoPersonal.Visible = False
+        '
+        'colDescripcionPersonal
+        '
+        Me.colDescripcionPersonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcionPersonal.HeaderText = "Descripción"
+        Me.colDescripcionPersonal.Name = "colDescripcionPersonal"
+        Me.colDescripcionPersonal.ReadOnly = True
+        '
+        'colCantidadPersonal
+        '
+        Me.colCantidadPersonal.HeaderText = "Cantidad"
+        Me.colCantidadPersonal.Name = "colCantidadPersonal"
+        Me.colCantidadPersonal.ReadOnly = True
+        '
         'tpRecursos
         '
-        Me.tpRecursos.Controls.Add(Me.pbRecursos)
+        Me.tpRecursos.Controls.Add(Me.btnRecursos)
         Me.tpRecursos.Controls.Add(Me.SgcGroupBox5)
         Me.tpRecursos.Location = New System.Drawing.Point(4, 27)
         Me.tpRecursos.Name = "tpRecursos"
@@ -807,17 +842,22 @@ Partial Class frmRegistroActividad
         Me.tpRecursos.Text = "Recursos"
         Me.tpRecursos.UseVisualStyleBackColor = True
         '
-        'pbRecursos
+        'btnRecursos
         '
-        Me.pbRecursos.ErrorImage = Nothing
-        Me.pbRecursos.Image = Global.SGC_CS.My.Resources.Resources.get_info
-        Me.pbRecursos.Location = New System.Drawing.Point(413, 25)
-        Me.pbRecursos.Name = "pbRecursos"
-        Me.pbRecursos.Size = New System.Drawing.Size(22, 22)
-        Me.pbRecursos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbRecursos.TabIndex = 26
-        Me.pbRecursos.TabStop = False
-        Me.pbRecursos.Visible = False
+        Me.btnRecursos.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnRecursos.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnRecursos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRecursos.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRecursos.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnRecursos.Image = Global.SGC_CS.My.Resources.Resources.get_info16
+        Me.btnRecursos.Location = New System.Drawing.Point(411, 17)
+        Me.btnRecursos.Name = "btnRecursos"
+        Me.btnRecursos.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnRecursos.Size = New System.Drawing.Size(26, 26)
+        Me.btnRecursos.TabIndex = 30
+        Me.btnRecursos.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnRecursos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRecursos.UseVisualStyleBackColor = False
         '
         'SgcGroupBox5
         '
@@ -968,26 +1008,6 @@ Partial Class frmRegistroActividad
         Me.lblTitulo.TabIndex = 24
         Me.lblTitulo.Text = "Registro Actividad"
         '
-        'colTipoPersonal
-        '
-        Me.colTipoPersonal.HeaderText = "id"
-        Me.colTipoPersonal.Name = "colTipoPersonal"
-        Me.colTipoPersonal.ReadOnly = True
-        Me.colTipoPersonal.Visible = False
-        '
-        'colDescripcionPersonal
-        '
-        Me.colDescripcionPersonal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDescripcionPersonal.HeaderText = "Descripción"
-        Me.colDescripcionPersonal.Name = "colDescripcionPersonal"
-        Me.colDescripcionPersonal.ReadOnly = True
-        '
-        'colCantidadPersonal
-        '
-        Me.colCantidadPersonal.HeaderText = "Cantidad"
-        Me.colCantidadPersonal.Name = "colCantidadPersonal"
-        Me.colCantidadPersonal.ReadOnly = True
-        '
         'frmRegistroActividad
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -1004,12 +1024,9 @@ Partial Class frmRegistroActividad
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
-        CType(Me.pbVacantes, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbTipo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudVacantes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nudPago, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox2.ResumeLayout(False)
-        CType(Me.pbFechas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox3.ResumeLayout(False)
         CType(Me.dgvRestricciones, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1018,12 +1035,10 @@ Partial Class frmRegistroActividad
         Me.tcPlanAnual.ResumeLayout(False)
         Me.tpRestricciones.ResumeLayout(False)
         Me.tpTipoPersonal.ResumeLayout(False)
-        CType(Me.pbTipoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox7.ResumeLayout(False)
         Me.SgcGroupBox7.PerformLayout()
         CType(Me.dgvTipoPersonal, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tpRecursos.ResumeLayout(False)
-        CType(Me.pbRecursos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox5.ResumeLayout(False)
         Me.SgcGroupBox5.PerformLayout()
         CType(Me.dgvRecursos, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1101,13 +1116,13 @@ Partial Class frmRegistroActividad
     Friend WithEvents colHoraFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btnLimpiar As SGC_CS.SGCButton
     Friend WithEvents SugerenciasToolTip As System.Windows.Forms.ToolTip
-    Friend WithEvents pbTipo As System.Windows.Forms.PictureBox
-    Friend WithEvents pbVacantes As System.Windows.Forms.PictureBox
-    Friend WithEvents pbFechas As System.Windows.Forms.PictureBox
-    Friend WithEvents pbRecursos As System.Windows.Forms.PictureBox
-    Friend WithEvents pbTipoPersonal As System.Windows.Forms.PictureBox
     Friend WithEvents colTipoPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colDescripcionPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colCantidadPersonal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btntipo As SGC_CS.SGCButton
+    Friend WithEvents btnVacantes As SGC_CS.SGCButton
+    Friend WithEvents btnFechas As SGC_CS.SGCButton
+    Friend WithEvents btnTipoPersonal As SGC_CS.SGCButton
+    Friend WithEvents btnRecursos As SGC_CS.SGCButton
 
 End Class

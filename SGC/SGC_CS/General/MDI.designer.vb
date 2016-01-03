@@ -262,6 +262,7 @@ Partial Class MDI
         Me.ToolStripProgressBar1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.lblProgress = New System.Windows.Forms.ToolStripStatusLabel()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
+        Me.ParametrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -1333,7 +1334,7 @@ Partial Class MDI
         '
         'MantenimientoToolStripMenuItem
         '
-        Me.MantenimientoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeEspaciosToolStripMenuItem, Me.RegistroDeEspacioToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.PerfilesToolStripMenuItem, Me.OpcionesToolStripMenuItem})
+        Me.MantenimientoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsultaDeEspaciosToolStripMenuItem, Me.RegistroDeEspacioToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.PerfilesToolStripMenuItem, Me.OpcionesToolStripMenuItem, Me.ParametrosToolStripMenuItem})
         Me.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem"
         Me.MantenimientoToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.MantenimientoToolStripMenuItem.Text = "Mantenimiento"
@@ -1861,6 +1862,12 @@ Partial Class MDI
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
+        'ParametrosToolStripMenuItem
+        '
+        Me.ParametrosToolStripMenuItem.Name = "ParametrosToolStripMenuItem"
+        Me.ParametrosToolStripMenuItem.Size = New System.Drawing.Size(200, 22)
+        Me.ParametrosToolStripMenuItem.Text = "Parametros"
+        '
         'MDI
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2128,5 +2135,6 @@ Partial Class MDI
     Friend WithEvents PerfilesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OpcionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PresupuestoActividadToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ParametrosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

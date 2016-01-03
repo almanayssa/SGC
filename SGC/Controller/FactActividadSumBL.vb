@@ -23,13 +23,13 @@ Namespace SGC.Controller
             End Try
         End Function
 
-        Public Function ListarTotalesFactActividadSum() As List(Of FactActividadSumBE)
+        Public Function ListarTotalesFactActividadSum(ByVal fecIni As Date, ByVal fecFin As Date, ByVal idComite As String, ByVal idTipo As String) As List(Of FactActividadSumBE)
             Try
                 Dim iFact As IFactActividadSum
                 Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
 
                 iFact = New FactActividadSumDL
-                oListadoFact = iFact.ListarTotalesFactActividadSum()
+                oListadoFact = iFact.ListarTotalesFactActividadSum(fecIni, fecFin, idComite, idTipo)
 
                 Return oListadoFact
 

@@ -184,6 +184,7 @@
 
         Public Property total_actividades As Integer
         Public Property ins_x_actividad As Integer
+        Public Property part_x_actividad As Integer
         Public Property tipo_actividad As String
         Public Property comite As String
         Public Property satisfaccion As Decimal

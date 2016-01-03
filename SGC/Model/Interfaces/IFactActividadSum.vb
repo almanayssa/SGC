@@ -8,7 +8,7 @@ Namespace SGC.Model.Interfaces
 
         Function ListarFactActividadSum() As List(Of FactActividadSumBE)
 
-        Function ListarTotalesFactActividadSum() As List(Of FactActividadSumBE)
+        Function ListarTotalesFactActividadSum(ByVal fecIni As Date, ByVal fecFin As Date, ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
 
         Function ObtenerMaxInscritosXTipoActividad(ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
 

@@ -202,6 +202,12 @@
     <Compile Include="Busqueda\frmBuscarUsuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Busqueda\frmInfo.Designer.vb">
+      <DependentUpon>frmInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Controles\SGCListBox.Designer.vb">
       <DependentUpon>SGCListBox.vb</DependentUpon>
     </Compile>
@@ -274,10 +280,22 @@
     <Compile Include="Inscripción\frmSuscripcionComite.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mantenimiento\frmParametros.Designer.vb">
+      <DependentUpon>frmParametros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmParametros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Mantenimiento\frmCronogramaEspacios.Designer.vb">
       <DependentUpon>frmCronogramaEspacios.vb</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\frmCronogramaEspacios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\frmParametrosSugerencia.Designer.vb">
+      <DependentUpon>frmParametrosSugerencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\frmParametrosSugerencia.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimiento\frmRegistroEspacio.Designer.vb">
@@ -496,6 +514,9 @@
     <EmbeddedResource Include="Busqueda\frmBuscarUsuario.resx">
       <DependentUpon>frmBuscarUsuario.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmInfo.resx">
+      <DependentUpon>frmInfo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controles\SGCButton.resx">
       <DependentUpon>SGCButton.vb</DependentUpon>
     </EmbeddedResource>
@@ -568,8 +589,14 @@
     <EmbeddedResource Include="Inscripción\frmSuscripcionComite.resx">
       <DependentUpon>frmSuscripcionComite.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmParametros.resx">
+      <DependentUpon>frmParametros.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmCronogramaEspacios.resx">
       <DependentUpon>frmCronogramaEspacios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\frmParametrosSugerencia.resx">
+      <DependentUpon>frmParametrosSugerencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\frmRegistroEspacio.resx">
       <DependentUpon>frmRegistroEspacio.vb</DependentUpon>
@@ -638,6 +665,7 @@
     <Content Include="Resources\btn_grabar.png" />
     <Content Include="Resources\diseño_login.jpg" />
     <Content Include="Resources\get_info.png" />
+    <Content Include="Resources\get_info16.png" />
     <Content Include="Resources\icono.ico" />
     <Content Include="Resources\Limpiar.png" />
     <Content Include="Resources\menu_cancel.png" />

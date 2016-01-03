@@ -32,6 +32,8 @@ Public Class frmListadoDocumentos
 
     End Sub
 
+#End Region
+
 #Region "Propiedades"
 
     Private _id_socio As String
@@ -53,8 +55,6 @@ Public Class frmListadoDocumentos
             _DocSeleccionado = value
         End Set
     End Property
-
-#End Region
 
 #End Region
 

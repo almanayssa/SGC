@@ -259,4 +259,10 @@ Public Class MDI
         frmPresupuestoActividad.MdiParent = Me
         frmPresupuestoActividad.Show()
     End Sub
+
+    Private Sub ParametrosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ParametrosToolStripMenuItem.Click
+        frmParametros.Close()
+        frmParametros.MdiParent = Me
+        frmParametros.Show()
+    End Sub
 End Class
