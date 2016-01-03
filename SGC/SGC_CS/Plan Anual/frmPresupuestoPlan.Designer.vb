@@ -24,6 +24,7 @@ Partial Class frmPresupuestoPlan
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuestoPlan))
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.pbPresupuesto = New System.Windows.Forms.PictureBox()
         Me.lblEstado = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel8 = New SGC_CS.SGCLabel(Me.components)
         Me.lblFecFin = New SGC_CS.SGCLabel(Me.components)
@@ -38,7 +39,6 @@ Partial Class frmPresupuestoPlan
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.gbItems = New SGC_CS.SGCGroupBox(Me.components)
-        Me.pbPresupuesto = New System.Windows.Forms.PictureBox()
         Me.btnPersonal = New SGC_CS.SGCButton(Me.components)
         Me.btnQuitar = New SGC_CS.SGCButton(Me.components)
         Me.txtMontoTotal = New SGC_CS.SGCTextBox(Me.components)
@@ -50,9 +50,10 @@ Partial Class frmPresupuestoPlan
         Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.SugerenciasToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.btnPresupuesto = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
-        Me.gbItems.SuspendLayout()
         CType(Me.pbPresupuesto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gbItems.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -71,6 +72,7 @@ Partial Class frmPresupuestoPlan
         '
         'SgcGroupBox1
         '
+        Me.SgcGroupBox1.Controls.Add(Me.btnPresupuesto)
         Me.SgcGroupBox1.Controls.Add(Me.pbPresupuesto)
         Me.SgcGroupBox1.Controls.Add(Me.lblEstado)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel8)
@@ -92,6 +94,18 @@ Partial Class frmPresupuestoPlan
         Me.SgcGroupBox1.TabIndex = 14
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Plan Anual"
+        '
+        'pbPresupuesto
+        '
+        Me.pbPresupuesto.ErrorImage = Nothing
+        Me.pbPresupuesto.Image = Global.SGC_CS.My.Resources.Resources.get_info
+        Me.pbPresupuesto.Location = New System.Drawing.Point(328, 106)
+        Me.pbPresupuesto.Name = "pbPresupuesto"
+        Me.pbPresupuesto.Size = New System.Drawing.Size(22, 22)
+        Me.pbPresupuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pbPresupuesto.TabIndex = 28
+        Me.pbPresupuesto.TabStop = False
+        Me.pbPresupuesto.Visible = False
         '
         'lblEstado
         '
@@ -256,18 +270,6 @@ Partial Class frmPresupuestoPlan
         Me.gbItems.TabStop = False
         Me.gbItems.Text = "Items"
         '
-        'pbPresupuesto
-        '
-        Me.pbPresupuesto.ErrorImage = Nothing
-        Me.pbPresupuesto.Image = Global.SGC_CS.My.Resources.Resources.get_info
-        Me.pbPresupuesto.Location = New System.Drawing.Point(328, 106)
-        Me.pbPresupuesto.Name = "pbPresupuesto"
-        Me.pbPresupuesto.Size = New System.Drawing.Size(22, 22)
-        Me.pbPresupuesto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pbPresupuesto.TabIndex = 28
-        Me.pbPresupuesto.TabStop = False
-        Me.pbPresupuesto.Visible = False
-        '
         'btnPersonal
         '
         Me.btnPersonal.BackColor = System.Drawing.Color.WhiteSmoke
@@ -394,6 +396,24 @@ Partial Class frmPresupuestoPlan
         Me.ToolStripButton3.Text = "Impresión"
         Me.ToolStripButton3.Visible = False
         '
+        'btnPresupuesto
+        '
+        Me.btnPresupuesto.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPresupuesto.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPresupuesto.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnPresupuesto.Image = Global.SGC_CS.My.Resources.Resources.get_info16
+        Me.btnPresupuesto.Location = New System.Drawing.Point(390, 105)
+        Me.btnPresupuesto.Name = "btnPresupuesto"
+        Me.btnPresupuesto.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnPresupuesto.Size = New System.Drawing.Size(26, 26)
+        Me.btnPresupuesto.TabIndex = 34
+        Me.btnPresupuesto.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnPresupuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPresupuesto.UseVisualStyleBackColor = False
+        Me.btnPresupuesto.Visible = False
+        '
         'frmPresupuestoPlan
         '
         Me.ClientSize = New System.Drawing.Size(1016, 733)
@@ -408,9 +428,9 @@ Partial Class frmPresupuestoPlan
         Me.Controls.SetChildIndex(Me.tsMenu, 0)
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
+        CType(Me.pbPresupuesto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbItems.ResumeLayout(False)
         Me.gbItems.PerformLayout()
-        CType(Me.pbPresupuesto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tsMenu.ResumeLayout(False)
         Me.tsMenu.PerformLayout()
@@ -446,5 +466,6 @@ Partial Class frmPresupuestoPlan
     Friend WithEvents btnPersonal As SGC_CS.SGCButton
     Friend WithEvents SugerenciasToolTip As System.Windows.Forms.ToolTip
     Friend WithEvents pbPresupuesto As System.Windows.Forms.PictureBox
+    Friend WithEvents btnPresupuesto As SGC_CS.SGCButton
 
 End Class

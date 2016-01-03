@@ -3,7 +3,7 @@ Imports SGC.Model.Entidades
 
 Public Class frmPresupuestoPlan
     Dim bc As New BusinessController
-
+    Dim msjInfo As String
 
 #Region "Propiedades"
 
@@ -96,37 +96,102 @@ Public Class frmPresupuestoPlan
 
     Private Sub Sugerencias(ByVal id_comite As String, ByVal id_tipo As String)
 
-        ''''RECURSOS
+        ' ''''RECURSOS
+
+        'Dim msj As String = ""
+
+        'Dim oListadoRecursos As List(Of RecursoBE) = bc.ObtenerRecursosDemanda(id_comite, id_tipo)
+
+        'If oListadoRecursos IsNot Nothing AndAlso oListadoRecursos.Count > 0 Then
+        '    msj = "Recursos con mayor demanda: " & vbCrLf
+        '    For Each oRecurso As RecursoBE In oListadoRecursos
+        '        msj &= "- " & oRecurso.descripcion & vbCrLf
+        '    Next
+        '    msj &= vbCrLf
+        'End If
+
+        ' ''''TIPO PERSONAL
+
+        'Dim oListadoTipo As List(Of TipoPersonalBE) = bc.ObtenerTipoPersonalDemanda(id_comite, id_tipo)
+
+        'If oListadoTipo IsNot Nothing AndAlso oListadoTipo.Count > 0 Then
+        '    msj &= "Tipo de Personal con mayor demanda: " & vbCrLf
+        '    For Each oTipo As TipoPersonalBE In oListadoTipo
+        '        msj &= "- " & oTipo.descripcion & vbCrLf
+        '    Next
+        'End If
+
+        'If msj = "" Then
+        '    pbPresupuesto.Visible = False
+        'Else
+        '    pbPresupuesto.Visible = True
+        '    SugerenciasToolTip.SetToolTip(pbPresupuesto, msj)
+        'End If
+
+
 
         Dim msj As String = ""
+        msjInfo = ""
+        Dim oParam As ParametrosBE = bc.ObtenerParametro(1)
+        Dim fecIni As Date = DateAdd(DateInterval.Month, CInt(oParam.val_param) * -1, Now)
 
-        Dim oListadoRecursos As List(Of RecursoBE) = bc.ObtenerRecursosDemanda(id_comite, id_tipo)
+        msjInfo = "Demanda de Recursos y Tipo de Personal" & vbCrLf & "(Cantidad de Recursos y Tipo de Personal):" & vbCrLf & vbCrLf
+        msjInfo &= "Fechas: " & fecIni.Date & " - " & Now.Date & vbCrLf & vbCrLf
 
-        If oListadoRecursos IsNot Nothing AndAlso oListadoRecursos.Count > 0 Then
-            msj = "Recursos con mayor demanda: " & vbCrLf
-            For Each oRecurso As RecursoBE In oListadoRecursos
-                msj &= "- " & oRecurso.descripcion & vbCrLf
+        Dim oListado As List(Of RecursoBE) = bc.ListarDemandaRecursos(fecIni, Now, id_comite, id_tipo)
+        Dim maxCant As Integer = 0
+        Dim resultado As String = ""
+
+        If oListado IsNot Nothing AndAlso oListado.Count > 0 Then
+            msjInfo &= "Recursos" & vbCrLf
+            For Each oFact As RecursoBE In oListado
+
+                msjInfo &= "- " & oFact.descripcion & " : " & oFact.cantidad & vbCrLf & vbCrLf
+
+                If oFact.cantidad > maxCant Then
+                    maxCant = oFact.cantidad
+                    resultado = "Recurso: " & oFact.descripcion & " - " & oFact.cantidad
+                ElseIf oFact.cantidad = maxCant Then
+                    resultado &= vbCrLf & oFact.descripcion & " - " & oFact.cantidad
+                End If
             Next
-            msj &= vbCrLf
+
+            'msjInfo &= vbCrLf & "Resultados:" & vbCrLf & resultado
+
         End If
 
-        ''''TIPO PERSONAL
+        Dim oListadoTP As List(Of TipoPersonalBE) = bc.ListarDemandaTipoPersonal(fecIni, Now, id_comite, id_tipo)
+        Dim maxCantTP As Integer = 0
+        Dim resultadoTP As String = ""
 
-        Dim oListadoTipo As List(Of TipoPersonalBE) = bc.ObtenerTipoPersonalDemanda(id_comite, id_tipo)
+        If oListadoTP IsNot Nothing AndAlso oListadoTP.Count > 0 Then
+            msjInfo &= "Tipo de Personal" & vbCrLf
+            For Each oFact As TipoPersonalBE In oListadoTP
 
-        If oListadoTipo IsNot Nothing AndAlso oListadoTipo.Count > 0 Then
-            msj &= "Tipo de Personal con mayor demanda: " & vbCrLf
-            For Each oTipo As TipoPersonalBE In oListadoTipo
-                msj &= "- " & oTipo.descripcion & vbCrLf
+                msjInfo &= "- " & oFact.descripcion & " : " & oFact.cantidad & vbCrLf
+
+                If oFact.cantidad > maxCantTP Then
+                    maxCantTP = oFact.cantidad
+                    resultadoTP = "Tipo de Personal: " & oFact.descripcion & " - " & oFact.cantidad
+                ElseIf oFact.cantidad = maxCantTP Then
+                    resultadoTP &= vbCrLf & oFact.descripcion & " - " & oFact.cantidad
+                End If
             Next
+
+            'msjInfo &= vbCrLf & "Resultados:" & vbCrLf & resultadoTP
+
         End If
 
-        If msj = "" Then
-            pbPresupuesto.Visible = False
+
+
+        If resultado = "" And resultadoTP = "" Then
+            btnPresupuesto.Visible = False
         Else
-            pbPresupuesto.Visible = True
-            SugerenciasToolTip.SetToolTip(pbPresupuesto, msj)
+            btnPresupuesto.Visible = True
+            msjInfo &= vbCrLf & "Resultados:" & vbCrLf & resultado & vbCrLf & resultadoTP
+            SugerenciasToolTip.SetToolTip(btnPresupuesto, resultado & vbCrLf & resultadoTP)
         End If
+
 
     End Sub
 
@@ -734,5 +799,9 @@ Public Class frmPresupuestoPlan
 
 
         End If
+    End Sub
+
+    Private Sub btnPresupuesto_Click(sender As System.Object, e As System.EventArgs) Handles btnPresupuesto.Click
+        MsgBox(msjInfo, MsgBoxStyle.Information)
     End Sub
 End Class
