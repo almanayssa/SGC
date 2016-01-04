@@ -119,6 +119,7 @@
                                 <Multiplier>1</Multiplier>
                                 <DataElementOutput>NoOutput</DataElementOutput>
                               </GaugeInputValue>
+                              <TransformationType>None</TransformationType>
                               <TransformationScope>Tablix3</TransformationScope>
                               <MinimumValue>
                                 <Value>NaN</Value>
@@ -197,6 +198,7 @@
                               <Left>4</Left>
                               <Height>92</Height>
                               <Width>92</Width>
+                              <ToolTip>=Sum(Fields!total_actividades.Value)</ToolTip>
                             </StateIndicator>
                           </StateIndicators>
                           <AutoLayout>true</AutoLayout>
@@ -249,6 +251,7 @@
                                 <Multiplier>1</Multiplier>
                                 <DataElementOutput>NoOutput</DataElementOutput>
                               </GaugeInputValue>
+                              <TransformationType>None</TransformationType>
                               <TransformationScope>Tablix3</TransformationScope>
                               <MinimumValue>
                                 <Value>NaN</Value>
@@ -327,6 +330,7 @@
                               <Left>4</Left>
                               <Height>92</Height>
                               <Width>92</Width>
+                              <ToolTip>=Sum(Fields!total_inscritos.Value)</ToolTip>
                             </StateIndicator>
                           </StateIndicators>
                           <AutoLayout>true</AutoLayout>
@@ -379,6 +383,7 @@
                                 <Multiplier>1</Multiplier>
                                 <DataElementOutput>NoOutput</DataElementOutput>
                               </GaugeInputValue>
+                              <TransformationType>None</TransformationType>
                               <TransformationScope>Tablix3</TransformationScope>
                               <MinimumValue>
                                 <Value>NaN</Value>
@@ -457,6 +462,7 @@
                               <Left>4</Left>
                               <Height>92</Height>
                               <Width>92</Width>
+                              <ToolTip>=Sum(Fields!total_participantes.Value)</ToolTip>
                             </StateIndicator>
                           </StateIndicators>
                           <AutoLayout>true</AutoLayout>
@@ -509,6 +515,7 @@
                                 <Multiplier>1</Multiplier>
                                 <DataElementOutput>NoOutput</DataElementOutput>
                               </GaugeInputValue>
+                              <TransformationType>None</TransformationType>
                               <TransformationScope>Tablix3</TransformationScope>
                               <MinimumValue>
                                 <Value>NaN</Value>
@@ -587,6 +594,7 @@
                               <Left>4</Left>
                               <Height>92</Height>
                               <Width>92</Width>
+                              <ToolTip>=Sum(Fields!cant_satisfaccion.Value)</ToolTip>
                             </StateIndicator>
                           </StateIndicators>
                           <AutoLayout>true</AutoLayout>

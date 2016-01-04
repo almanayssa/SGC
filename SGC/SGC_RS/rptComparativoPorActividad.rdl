@@ -199,6 +199,7 @@
                               <Left>4</Left>
                               <Height>92</Height>
                               <Width>92</Width>
+                              <ToolTip>=Sum(Fields!total_inscritos.Value)</ToolTip>
                             </StateIndicator>
                           </StateIndicators>
                           <AutoLayout>true</AutoLayout>
@@ -330,6 +331,7 @@
                               <Left>4</Left>
                               <Height>92</Height>
                               <Width>92</Width>
+                              <ToolTip>=Sum(Fields!total_participantes.Value)</ToolTip>
                             </StateIndicator>
                           </StateIndicators>
                           <AutoLayout>true</AutoLayout>
@@ -461,6 +463,7 @@
                               <Left>4</Left>
                               <Height>92</Height>
                               <Width>92</Width>
+                              <ToolTip>=Sum(Fields!cant_satisfaccion.Value)</ToolTip>
                             </StateIndicator>
                           </StateIndicators>
                           <AutoLayout>true</AutoLayout>
