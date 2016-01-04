@@ -41,6 +41,15 @@ Partial Public Class frmReporteGeneral
     Protected WithEvents tblComite As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
+    '''lblMensaje control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
     '''rvwReporteGeneral control.
     '''</summary>
     '''<remarks>
@@ -201,24 +210,6 @@ Partial Public Class frmReporteGeneral
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lbtnGenerarReporte As Global.System.Web.UI.WebControls.LinkButton
-
-    '''<summary>
-    '''divMensaje control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents divMensaje As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''lblMensaje control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''CalendarExtender1 control.

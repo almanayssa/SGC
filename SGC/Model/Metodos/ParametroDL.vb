@@ -54,7 +54,7 @@ Namespace SGC.Model.Metodos
             sqlCmd.CommandType = CommandType.StoredProcedure
             sqlCmd.Parameters.Add("@id_parametro", SqlDbType.Int).Value = oParametro.id_parametro
             sqlCmd.Parameters.Add("@nombre", SqlDbType.VarChar).Value = oParametro.nombre
-            sqlCmd.Parameters.Add("@des_param", SqlDbType.VarChar).Value = oParametro.valor
+            sqlCmd.Parameters.Add("@valor", SqlDbType.Int).Value = oParametro.valor
 
             Try
                 sqlConn.Open()

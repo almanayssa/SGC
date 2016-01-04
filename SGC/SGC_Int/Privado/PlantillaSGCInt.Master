@@ -34,7 +34,7 @@
             </li>
             <li><a href="#">Parámetros</a>
             <ul>
-            <li><a href="#">Actualizar Parámetros</a></li>
+            <li><a href="frmActualizarParametros.aspx">Actualizar Parámetros</a></li>
             </ul>
             </li>
         </ul>      

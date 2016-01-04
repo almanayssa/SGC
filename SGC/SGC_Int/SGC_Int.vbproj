@@ -96,6 +96,7 @@
   <ItemGroup>
     <Content Include="App_Themes\SGC\sgc.css" />
     <Content Include="frmLogin.aspx" />
+    <Content Include="Privado\frmActualizarParametros.aspx" />
     <Content Include="Privado\frmReporteActividades.aspx" />
     <Content Include="Privado\frmReporteComite.aspx" />
     <Content Include="Privado\frmReporteGeneral.aspx" />
@@ -115,6 +116,13 @@
     </Compile>
     <Compile Include="frmLogin.aspx.vb">
       <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privado\frmActualizarParametros.aspx.designer.vb">
+      <DependentUpon>frmActualizarParametros.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmActualizarParametros.aspx.vb">
+      <DependentUpon>frmActualizarParametros.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\frmReporteActividades.aspx.designer.vb">

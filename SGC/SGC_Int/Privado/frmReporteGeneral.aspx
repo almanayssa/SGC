@@ -16,10 +16,11 @@
         <div class="contenedor-pagina-titulo">
             REPORTE GENERAL
         </div>
-        <br />        
+        <br />
         <table id="tblComite" runat="server" border="0" cellpadding="0" cellspacing="0" width="918px">
             <tr>
                 <td valign="top" style="width:700px;">
+                    <asp:Label ID="lblMensaje" runat="server" Text="Para mostrar el reporte, elegir los filtros deseados y hacer click en Generar Reporte."></asp:Label>
                     <rsweb:ReportViewer ID="rvwReporteGeneral" runat="server" ProcessingMode="Remote" 
                         Width="700px">
                     </rsweb:ReportViewer>
@@ -54,10 +55,10 @@
                                 <td>Tipos de Actividad:</td>
                             </tr>
                             <tr>
-                                <td><asp:CheckBox ID="chkTipos" runat="server" CssClass="estilo_textbox" Text="Todos" AutoPostBack="true" /></td>    
+                                <td><asp:CheckBox ID="chkTipos" runat="server" CssClass="estilo_textbox" Text="Todos" AutoPostBack="true" Checked="true" /></td>    
                             </tr>
                             <tr>
-                                <td><asp:CheckBoxList ID="cblTipos" CssClass="estilo_textbox" runat="server"></asp:CheckBoxList></td>
+                                <td><asp:CheckBoxList ID="cblTipos" CssClass="estilo_textbox" runat="server" AutoPostBack="true"></asp:CheckBoxList></td>
                             </tr>
                         </table>
                         <br />
@@ -81,7 +82,7 @@
                                             <td><asp:CheckBox ID="chkActividades" runat="server" CssClass="estilo_textbox" Text="Todas" AutoPostBack="true" /></td>    
                                         </tr>
                                         <tr>
-                                            <td><asp:CheckBoxList ID="cblActividades" CssClass="estilo_textbox" runat="server"></asp:CheckBoxList></td>
+                                            <td><asp:CheckBoxList ID="cblActividades" CssClass="estilo_textbox" runat="server" AutoPostBack="true"></asp:CheckBoxList></td>
                                         </tr>
                                     </table>
                                 </td>
@@ -111,7 +112,7 @@
                                 <td>Variables:</td>
                             </tr>
                             <tr>
-                                <td><asp:CheckBox ID="chkVariables" runat="server" Text="Todas" AutoPostBack="true" /></td>
+                                <td><asp:CheckBox ID="chkVariables" runat="server" Text="Todas" AutoPostBack="true" Checked="true" /></td>
                             </tr>                        
                             <tr>
                                 <td><asp:CheckBoxList ID="cblVariables" runat="server"></asp:CheckBoxList></td>
@@ -140,18 +141,7 @@
                     </fieldset>
                 </td>
             </tr>
-        </table>        
-        <br />
-        <div id="divMensaje" runat="server">
-            <br />
-            <table border="0" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td>
-                        <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-                    </td>
-                </tr>
-            </table>
-        </div>
+        </table>
     </div>
     <ajaxToolkit:CalendarExtender ID="CalendarExtender1" runat="server" TargetControlID="txtFechaInicio" Format="dd/MM/yyyy">
     </ajaxToolkit:CalendarExtender>

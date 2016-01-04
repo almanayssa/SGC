@@ -13,6 +13,14 @@ Public Class frmReporteGeneral
             ListarVariables()
             txtFechaInicio.Text = "01/01/2015"
             txtFechaFin.Text = Now.ToString("dd/MM/yyyy")
+
+            For Each chkTipo As ListItem In cblTipos.Items
+                chkTipo.Selected = True
+            Next
+
+            For Each chkVariable As ListItem In cblVariables.Items
+                chkVariable.Selected = True
+            Next
         End If
     End Sub
 
@@ -106,10 +114,12 @@ Public Class frmReporteGeneral
 
     Protected Sub lbtnGenerarReporte_Click(sender As Object, e As EventArgs) Handles lbtnGenerarReporte.Click
         If ValidarCamposRequeridos().Trim <> String.Empty Then
+            lblMensaje.Visible = True
             lblMensaje.Text = ValidarCamposRequeridos()
             Exit Sub
         End If
 
+        lblMensaje.Visible = False
         GenerarReporte()
     End Sub
 
@@ -117,16 +127,16 @@ Public Class frmReporteGeneral
         Dim msg As String = String.Empty
 
         If ddlComite.SelectedValue = "000" Then
-            msg &= vbCrLf & "- Seleccione un comité"
+            msg &= "<br/>- Seleccione un comité"
         End If
 
         If rbtnActividad.Checked Then
             If ddlTipo.SelectedValue = "00" Then
-                msg &= vbCrLf & "- Seleccione un tipo"
+                msg &= "<br/>- Seleccione un tipo"
             End If
-            msg &= vbCrLf & ValidarActividades()
+            msg &= ValidarActividades()
         Else
-            msg &= vbCrLf & ValidarTipos()
+            msg &= ValidarTipos()
         End If
 
         msg &= ValidarVariables()
@@ -145,7 +155,7 @@ Public Class frmReporteGeneral
         Next
 
         If count = 0 Then
-            msg &= "- Seleccione un tipo al menos"
+            msg &= "<br/>- Seleccione un tipo al menos"
         End If
 
         Return msg
@@ -162,7 +172,7 @@ Public Class frmReporteGeneral
         Next
 
         If count = 0 Then
-            msg &= "- Seleccione una actividad al menos"
+            msg &= "<br/>- Seleccione una actividad al menos"
         End If
 
         Return msg
@@ -179,7 +189,7 @@ Public Class frmReporteGeneral
         Next
 
         If count = 0 Then
-            msg &= "- Seleccione una variable al menos"
+            msg &= "<br/>- Seleccione una variable al menos"
         End If
 
         Return msg
@@ -336,4 +346,51 @@ Public Class frmReporteGeneral
         ListarVariables()
     End Sub
 
+    Protected Sub cblTipos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cblTipos.SelectedIndexChanged
+        Dim count As Integer = 0
+
+        For Each chkTipo As ListItem In cblTipos.Items
+            If chkTipo.Selected Then
+                count += 1
+            End If
+        Next
+
+        If count = cblTipos.Items.Count Then
+            chkTipos.Checked = True
+        Else
+            chkTipos.Checked = False
+        End If
+    End Sub
+
+    Protected Sub cblActividades_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cblActividades.SelectedIndexChanged
+        Dim count As Integer = 0
+
+        For Each chkActividad As ListItem In cblActividades.Items
+            If chkActividad.Selected Then
+                count += 1
+            End If
+        Next
+
+        If count = cblActividades.Items.Count Then
+            chkActividades.Checked = True
+        Else
+            chkActividades.Checked = False
+        End If
+    End Sub
+
+    Protected Sub cblVariables_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cblVariables.SelectedIndexChanged
+        Dim count As Integer = 0
+
+        For Each chkVariable As ListItem In cblVariables.Items
+            If chkVariable.Selected Then
+                count += 1
+            End If
+        Next
+
+        If count = cblVariables.Items.Count Then
+            chkVariables.Checked = True
+        Else
+            chkVariables.Checked = False
+        End If
+    End Sub
 End Class
