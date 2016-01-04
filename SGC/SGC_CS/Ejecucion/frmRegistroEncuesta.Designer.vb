@@ -32,8 +32,6 @@ Partial Class frmRegistroEncuesta
         Me.txtDescripcion = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.btnQuitarPregunta = New SGC_CS.SGCButton(Me.components)
-        Me.btnAgregarPregunta = New SGC_CS.SGCButton(Me.components)
         Me.dgvPreguntas = New SGC_CS.SGCDataGridView(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
@@ -160,48 +158,14 @@ Partial Class frmRegistroEncuesta
         '
         'SgcGroupBox6
         '
-        Me.SgcGroupBox6.Controls.Add(Me.btnQuitarPregunta)
-        Me.SgcGroupBox6.Controls.Add(Me.btnAgregarPregunta)
         Me.SgcGroupBox6.Controls.Add(Me.dgvPreguntas)
         Me.SgcGroupBox6.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcGroupBox6.Location = New System.Drawing.Point(60, 322)
         Me.SgcGroupBox6.Name = "SgcGroupBox6"
-        Me.SgcGroupBox6.Size = New System.Drawing.Size(883, 296)
+        Me.SgcGroupBox6.Size = New System.Drawing.Size(883, 267)
         Me.SgcGroupBox6.TabIndex = 31
         Me.SgcGroupBox6.TabStop = False
         Me.SgcGroupBox6.Text = "Preguntas y Respuestas"
-        '
-        'btnQuitarPregunta
-        '
-        Me.btnQuitarPregunta.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnQuitarPregunta.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnQuitarPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnQuitarPregunta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuitarPregunta.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnQuitarPregunta.Image = Global.SGC_CS.My.Resources.Resources.btn_eliminar
-        Me.btnQuitarPregunta.Location = New System.Drawing.Point(777, 257)
-        Me.btnQuitarPregunta.Name = "btnQuitarPregunta"
-        Me.btnQuitarPregunta.Size = New System.Drawing.Size(90, 31)
-        Me.btnQuitarPregunta.TabIndex = 14
-        Me.btnQuitarPregunta.Text = "Quitar"
-        Me.btnQuitarPregunta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnQuitarPregunta.UseVisualStyleBackColor = False
-        '
-        'btnAgregarPregunta
-        '
-        Me.btnAgregarPregunta.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAgregarPregunta.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnAgregarPregunta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAgregarPregunta.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregarPregunta.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnAgregarPregunta.Image = Global.SGC_CS.My.Resources.Resources.btn_agregar
-        Me.btnAgregarPregunta.Location = New System.Drawing.Point(681, 257)
-        Me.btnAgregarPregunta.Name = "btnAgregarPregunta"
-        Me.btnAgregarPregunta.Size = New System.Drawing.Size(90, 31)
-        Me.btnAgregarPregunta.TabIndex = 13
-        Me.btnAgregarPregunta.Text = "Agregar"
-        Me.btnAgregarPregunta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAgregarPregunta.UseVisualStyleBackColor = False
         '
         'dgvPreguntas
         '
@@ -271,6 +235,7 @@ Partial Class frmRegistroEncuesta
         Me.colPregunta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.colPregunta.HeaderText = "Detalle"
         Me.colPregunta.Name = "colPregunta"
+        Me.colPregunta.ReadOnly = True
         '
         'colOpcion1
         '
@@ -328,8 +293,6 @@ Partial Class frmRegistroEncuesta
     Friend WithEvents tsMenu As SGC_CS.SGCToolStrip
     Friend WithEvents tsbLimpiar As System.Windows.Forms.ToolStripButton
     Friend WithEvents tsbGuardar As System.Windows.Forms.ToolStripButton
-    Friend WithEvents btnQuitarPregunta As SGC_CS.SGCButton
-    Friend WithEvents btnAgregarPregunta As SGC_CS.SGCButton
     Friend WithEvents colPregunta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colOpcion1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colOpcion2 As System.Windows.Forms.DataGridViewTextBoxColumn

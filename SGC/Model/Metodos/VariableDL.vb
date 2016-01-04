@@ -29,8 +29,6 @@ Namespace SGC.Model.Metodos
                     oVariable = New VariableBE
                     oVariable.id_variable = dr("id_variable")
                     oVariable.nombre = dr("nombre")
-                    oVariable.nom_sp = dr("nom_sp")
-                    oVariable.flg_anulado = dr("flg_anulado")
                     oListadoVariable.Add(oVariable)
                 End While
                 dr.Close()

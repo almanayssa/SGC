@@ -6,16 +6,45 @@
       <Name>SGC.rds</Name>
       <FullPath>SGC.rds</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>SGC_BI.rds</Name>
+      <FullPath>SGC_BI.rds</FullPath>
+    </ProjectItem>
   </DataSources>
-  <DataSets />
+  <DataSets>
+    <ProjectItem>
+      <Name>dsActividad.rsd</Name>
+      <FullPath>dsActividad.rsd</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>dsTipo.rsd</Name>
+      <FullPath>dsTipo.rsd</FullPath>
+    </ProjectItem>
+  </DataSets>
   <Reports>
+    <ProjectItem>
+      <Name>rptActividad.rdl</Name>
+      <FullPath>rptActividad.rdl</FullPath>
+    </ProjectItem>
     <ProjectItem>
       <Name>rptComite.rdl</Name>
       <FullPath>rptComite.rdl</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>rptActividad.rdl</Name>
-      <FullPath>rptActividad.rdl</FullPath>
+      <Name>rptGeneralPorActividad.rdl</Name>
+      <FullPath>rptGeneralPorActividad.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>rptGeneralPorTipo.rdl</Name>
+      <FullPath>rptGeneralPorTipo.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>rptComparativoPorActividad.rdl</Name>
+      <FullPath>rptComparativoPorActividad.rdl</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>rptComparativoPorTipo.rdl</Name>
+      <FullPath>rptComparativoPorTipo.rdl</FullPath>
     </ProjectItem>
   </Reports>
   <Configurations>

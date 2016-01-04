@@ -41,13 +41,13 @@ Partial Public Class frmReporteGeneral
     Protected WithEvents tblComite As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
-    '''rvwComite control.
+    '''rvwReporteGeneral control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents rvwComite As Global.Microsoft.Reporting.WebForms.ReportViewer
+    Protected WithEvents rvwReporteGeneral As Global.Microsoft.Reporting.WebForms.ReportViewer
 
     '''<summary>
     '''ddlComite control.
@@ -57,6 +57,60 @@ Partial Public Class frmReporteGeneral
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ddlComite As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''rbtnTipo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rbtnTipo As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''rbtnActividad control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rbtnActividad As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''tblTipos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tblTipos As Global.System.Web.UI.HtmlControls.HtmlTable
+
+    '''<summary>
+    '''chkTipos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents chkTipos As Global.System.Web.UI.WebControls.CheckBox
+
+    '''<summary>
+    '''cblTipos control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents cblTipos As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''tblActividades control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents tblActividades As Global.System.Web.UI.HtmlControls.HtmlTable
 
     '''<summary>
     '''ddlTipo control.
@@ -120,6 +174,33 @@ Partial Public Class frmReporteGeneral
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cblVariables As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''rbtnDescriptivo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rbtnDescriptivo As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''rbtnComparativo control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents rbtnComparativo As Global.System.Web.UI.WebControls.RadioButton
+
+    '''<summary>
+    '''lbtnGenerarReporte control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lbtnGenerarReporte As Global.System.Web.UI.WebControls.LinkButton
 
     '''<summary>
     '''divMensaje control.

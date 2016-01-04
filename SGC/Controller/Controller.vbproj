@@ -75,6 +75,7 @@
     <Compile Include="ComiteBL.vb" />
     <Compile Include="ArticuloCobranzaBL.vb" />
     <Compile Include="CanjeAdelantosBL.vb" />
+    <Compile Include="ParametroBL.vb" />
     <Compile Include="ParametrosBL.vb" />
     <Compile Include="FactActividadSumBL.vb" />
     <Compile Include="DetallePresupuestoActBL.vb" />

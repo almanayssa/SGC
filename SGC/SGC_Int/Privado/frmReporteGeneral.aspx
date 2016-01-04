@@ -20,7 +20,7 @@
         <table id="tblComite" runat="server" border="0" cellpadding="0" cellspacing="0" width="918px">
             <tr>
                 <td valign="top" style="width:700px;">
-                    <rsweb:ReportViewer ID="rvwComite" runat="server" ProcessingMode="Remote" 
+                    <rsweb:ReportViewer ID="rvwReporteGeneral" runat="server" ProcessingMode="Remote" 
                         Width="700px">
                     </rsweb:ReportViewer>
                 </td>
@@ -39,22 +39,52 @@
                         <br />
                         <table border="0" cellpadding="0" cellspacing="0">
                             <tr>
-                                <td>Tipo:</td>
+                                <td>Detalle de Reporte:</td>
                             </tr>
                             <tr>
-                                <td><asp:DropDownList ID="ddlTipo" runat="server" CssClass="estilo_textbox" AutoPostBack="true"></asp:DropDownList></td>       
+                                <td>
+                                    <asp:RadioButton ID="rbtnTipo" runat="server" Text="Tipo" GroupName="Detalle" Checked="true" AutoPostBack="true" /><br />
+                                    <asp:RadioButton ID="rbtnActividad" runat="server" Text="Actividad" GroupName="Detalle" AutoPostBack="true" />
+                                </td>
                             </tr>
                         </table>
                         <br />
-                        <table border="0" cellpadding="0" cellspacing="0">
+                        <table id="tblTipos" runat="server" border="0" cellpadding="0" cellspacing="0">
                             <tr>
-                                <td>Actividades:</td>
+                                <td>Tipos de Actividad:</td>
                             </tr>
                             <tr>
-                                <td><asp:CheckBox ID="chkActividades" runat="server" CssClass="estilo_textbox" Text="Todas" AutoPostBack="true" /></td>    
+                                <td><asp:CheckBox ID="chkTipos" runat="server" CssClass="estilo_textbox" Text="Todos" AutoPostBack="true" /></td>    
                             </tr>
                             <tr>
-                                <td><asp:CheckBoxList ID="cblActividades" CssClass="estilo_textbox" runat="server"></asp:CheckBoxList></td>
+                                <td><asp:CheckBoxList ID="cblTipos" CssClass="estilo_textbox" runat="server"></asp:CheckBoxList></td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table id="tblActividades" runat="server" border="0" cellpadding="0" cellspacing="0" visible="false">
+                            <tr>
+                                <td>
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td>Tipo Actividad:</td>
+                                        </tr>
+                                        <tr>
+                                            <td><asp:DropDownList ID="ddlTipo" runat="server" CssClass="estilo_textbox" AutoPostBack="true"></asp:DropDownList></td>       
+                                        </tr>
+                                    </table>
+                                    <br />
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td>Actividades:</td>
+                                        </tr>
+                                        <tr>
+                                            <td><asp:CheckBox ID="chkActividades" runat="server" CssClass="estilo_textbox" Text="Todas" AutoPostBack="true" /></td>    
+                                        </tr>
+                                        <tr>
+                                            <td><asp:CheckBoxList ID="cblActividades" CssClass="estilo_textbox" runat="server"></asp:CheckBoxList></td>
+                                        </tr>
+                                    </table>
+                                </td>
                             </tr>
                         </table>
                         <br />
@@ -86,6 +116,26 @@
                             <tr>
                                 <td><asp:CheckBoxList ID="cblVariables" runat="server"></asp:CheckBoxList></td>
                             </tr>                        
+                        </table>
+                        <br />
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>Tipo Reporte:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:RadioButton ID="rbtnDescriptivo" runat="server" Text="Descriptivo" GroupName="Tipo" Checked="true" AutoPostBack="true" /><br />
+                                    <asp:RadioButton ID="rbtnComparativo" runat="server" Text="Comparativo" GroupName="Tipo" AutoPostBack="true" />
+                                </td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:LinkButton ID="lbtnGenerarReporte" runat="server" OnClick="lbtnGenerarReporte_Click" CssClass="estilo_boton" Text="Generar Reporte"></asp:LinkButton>
+                                </td>
+                            </tr>
                         </table>
                     </fieldset>
                 </td>

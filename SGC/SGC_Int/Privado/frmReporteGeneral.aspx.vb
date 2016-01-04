@@ -31,11 +31,16 @@ Public Class frmReporteGeneral
 
     Private Sub ListarTipoActividad()
         Dim ListadoTipoActividad As List(Of TipoActividadBE) = bc.ListarTipoActividad()
-        ddlTipo.DataSource = Nothing
         ddlTipo.DataSource = ListadoTipoActividad
         ddlTipo.DataValueField = "id_tipo_act"
         ddlTipo.DataTextField = "desc_tipo"
         ddlTipo.DataBind()
+
+        ListadoTipoActividad.RemoveAt(0)
+        cblTipos.DataSource = ListadoTipoActividad
+        cblTipos.DataValueField = "id_tipo_act"
+        cblTipos.DataTextField = "desc_tipo"
+        cblTipos.DataBind()
     End Sub
 
     Private Sub ListarActividades()
@@ -47,7 +52,20 @@ Public Class frmReporteGeneral
     End Sub
 
     Protected Sub ddlComite_SelectedIndexChanged(sender As Object, e As System.EventArgs) Handles ddlComite.SelectedIndexChanged
-        ListarActividades()
+        If rbtnActividad.Checked Then
+            If ddlComite.SelectedValue = "000" Then
+                lblMensaje.Text = "Seleccione un comité"
+                Exit Sub
+            Else
+                ListarActividades()
+            End If
+        End If
+    End Sub
+
+    Protected Sub chkTipos_CheckedChanged(sender As Object, e As EventArgs) Handles chkTipos.CheckedChanged
+        For Each chkTipo As ListItem In cblTipos.Items
+            chkTipo.Selected = chkTipos.Checked
+        Next
     End Sub
 
     Protected Sub chkActividades_CheckedChanged(sender As Object, e As System.EventArgs) Handles chkActividades.CheckedChanged
@@ -57,15 +75,27 @@ Public Class frmReporteGeneral
     End Sub
 
     Private Sub ListarVariables()
-        Dim ListadoActividades As List(Of VariableBE) = bc.ListarVariables()
-        cblVariables.DataSource = ListadoActividades
+        Dim ListadoVariables As List(Of VariableBE) = bc.ListarVariables()
+        cblVariables.DataSource = ListadoVariables
+
+        If rbtnActividad.Checked Then
+            ListadoVariables.RemoveAt(3)
+        End If
+
         cblVariables.DataValueField = "id_variable"
         cblVariables.DataTextField = "nombre"
         cblVariables.DataBind()
     End Sub
 
     Protected Sub ddlTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlTipo.SelectedIndexChanged
-        ListarActividades()
+        If rbtnActividad.Checked Then
+            If ddlTipo.SelectedValue = "00" Then
+                lblMensaje.Text = "Seleccione un tipo"
+                Exit Sub
+            Else
+                ListarActividades()
+            End If
+        End If
     End Sub
 
     Protected Sub chkVariables_CheckedChanged(sender As Object, e As EventArgs) Handles chkVariables.CheckedChanged
@@ -73,4 +103,237 @@ Public Class frmReporteGeneral
             chkVariable.Selected = chkVariables.Checked
         Next
     End Sub
+
+    Protected Sub lbtnGenerarReporte_Click(sender As Object, e As EventArgs) Handles lbtnGenerarReporte.Click
+        If ValidarCamposRequeridos().Trim <> String.Empty Then
+            lblMensaje.Text = ValidarCamposRequeridos()
+            Exit Sub
+        End If
+
+        GenerarReporte()
+    End Sub
+
+    Private Function ValidarCamposRequeridos() As String
+        Dim msg As String = String.Empty
+
+        If ddlComite.SelectedValue = "000" Then
+            msg &= vbCrLf & "- Seleccione un comité"
+        End If
+
+        If rbtnActividad.Checked Then
+            If ddlTipo.SelectedValue = "00" Then
+                msg &= vbCrLf & "- Seleccione un tipo"
+            End If
+            msg &= vbCrLf & ValidarActividades()
+        Else
+            msg &= vbCrLf & ValidarTipos()
+        End If
+
+        msg &= ValidarVariables()
+
+        Return msg
+    End Function
+
+    Private Function ValidarTipos() As String
+        Dim msg As String = String.Empty
+        Dim count As Integer = 0
+
+        For Each chkTipo As ListItem In cblTipos.Items
+            If chkTipo.Selected Then
+                count += 1
+            End If
+        Next
+
+        If count = 0 Then
+            msg &= "- Seleccione un tipo al menos"
+        End If
+
+        Return msg
+    End Function
+
+    Private Function ValidarActividades() As String
+        Dim msg As String = String.Empty
+        Dim count As Integer = 0
+
+        For Each chkActividad As ListItem In cblActividades.Items
+            If chkActividad.Selected Then
+                count += 1
+            End If
+        Next
+
+        If count = 0 Then
+            msg &= "- Seleccione una actividad al menos"
+        End If
+
+        Return msg
+    End Function
+
+    Private Function ValidarVariables() As String
+        Dim msg As String = String.Empty
+        Dim count As Integer = 0
+
+        For Each chkVariable As ListItem In cblVariables.Items
+            If chkVariable.Selected Then
+                count += 1
+            End If
+        Next
+
+        If count = 0 Then
+            msg &= "- Seleccione una variable al menos"
+        End If
+
+        Return msg
+    End Function
+
+    Private Sub GenerarReporte()
+        Dim reportPath As String = String.Empty
+        Dim nomPar As String = String.Empty
+        Dim id As String = String.Empty
+        Dim cantParametros As Integer = 0
+        Dim oListadoParametros As List(Of ParametroBE) = bc.ListarParametro()
+
+        rvwReporteGeneral.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Remote
+        rvwReporteGeneral.ServerReport.ReportServerUrl = New Uri("http://localhost/ReportServer")
+
+        If rbtnTipo.Checked Then
+            If rbtnDescriptivo.Checked Then
+                cantParametros = 6
+                reportPath = "/Reports/rptGeneralPorTipo"
+            End If
+
+            If rbtnComparativo.Checked Then
+                cantParametros = 12
+                reportPath = "/Reports/rptComparativoPorTipo"
+            End If
+        End If
+
+        If rbtnActividad.Checked Then
+            If rbtnDescriptivo.Checked Then
+                cantParametros = 5
+                reportPath = "/Reports/rptGeneralPorActividad"
+            End If
+
+            If rbtnComparativo.Checked Then
+                cantParametros = 11
+                reportPath = "/Reports/rptComparativoPorActividad"
+            End If
+        End If
+
+        rvwReporteGeneral.ServerReport.ReportPath = reportPath
+        rvwReporteGeneral.ShowParameterPrompts = False
+        rvwReporteGeneral.ShowPrintButton = False
+
+        If rbtnTipo.Checked Then
+            nomPar = "id_tipo"
+
+            For Each chkTipo As ListItem In cblTipos.Items
+                If chkTipo.Selected Then
+                    id = id & "" & chkTipo.Value & ","
+                End If
+            Next
+        End If
+
+        If rbtnActividad.Checked Then
+            nomPar = "id_actividad"
+
+            For Each chkActividad As ListItem In cblActividades.Items
+                If chkActividad.Selected Then
+                    id = id & "" & chkActividad.Value & ","
+                End If
+            Next
+        End If
+
+        Dim reportParameterCollection As Microsoft.Reporting.WebForms.ReportParameter() = New Microsoft.Reporting.WebForms.ReportParameter(cantParametros) {}
+
+        reportParameterCollection(0) = New Microsoft.Reporting.WebForms.ReportParameter()
+        reportParameterCollection(0).Name = "fec_ini"
+        reportParameterCollection(0).Values.Add(Convert.ToDateTime(txtFechaInicio.Text))
+
+        reportParameterCollection(1) = New Microsoft.Reporting.WebForms.ReportParameter()
+        reportParameterCollection(1).Name = "fec_fin"
+        reportParameterCollection(1).Values.Add(Convert.ToDateTime(txtFechaFin.Text))
+
+        reportParameterCollection(2) = New Microsoft.Reporting.WebForms.ReportParameter()
+        reportParameterCollection(2).Name = nomPar
+        reportParameterCollection(2).Values.Add(id.Substring(0, id.Length - 1))
+
+        reportParameterCollection(3) = New Microsoft.Reporting.WebForms.ReportParameter()
+        reportParameterCollection(3).Name = "flg_inscritos"
+        reportParameterCollection(3).Values.Add(cblVariables.Items(0).Selected)
+
+        reportParameterCollection(4) = New Microsoft.Reporting.WebForms.ReportParameter()
+        reportParameterCollection(4).Name = "flg_participantes"
+        reportParameterCollection(4).Values.Add(cblVariables.Items(1).Selected)
+
+        reportParameterCollection(5) = New Microsoft.Reporting.WebForms.ReportParameter()
+        reportParameterCollection(5).Name = "flg_satisfaccion"
+        reportParameterCollection(5).Values.Add(cblVariables.Items(2).Selected)
+
+        If rbtnComparativo.Checked Then
+            reportParameterCollection(6) = New Microsoft.Reporting.WebForms.ReportParameter()
+            reportParameterCollection(6).Name = "min_rojo"
+            reportParameterCollection(6).Values.Add(oListadoParametros.Item(0).valor)
+
+            reportParameterCollection(7) = New Microsoft.Reporting.WebForms.ReportParameter()
+            reportParameterCollection(7).Name = "max_rojo"
+            reportParameterCollection(7).Values.Add(oListadoParametros.Item(1).valor)
+
+            reportParameterCollection(8) = New Microsoft.Reporting.WebForms.ReportParameter()
+            reportParameterCollection(8).Name = "min_amarillo"
+            reportParameterCollection(8).Values.Add(oListadoParametros.Item(2).valor)
+
+            reportParameterCollection(9) = New Microsoft.Reporting.WebForms.ReportParameter()
+            reportParameterCollection(9).Name = "max_amarillo"
+            reportParameterCollection(9).Values.Add(oListadoParametros.Item(3).valor)
+
+            reportParameterCollection(10) = New Microsoft.Reporting.WebForms.ReportParameter()
+            reportParameterCollection(10).Name = "min_verde"
+            reportParameterCollection(10).Values.Add(oListadoParametros.Item(4).valor)
+
+            reportParameterCollection(11) = New Microsoft.Reporting.WebForms.ReportParameter()
+            reportParameterCollection(11).Name = "max_verde"
+            reportParameterCollection(11).Values.Add(oListadoParametros.Item(5).valor)
+
+        End If
+
+        If rbtnTipo.Checked Then
+            If rbtnDescriptivo.Checked Then
+                reportParameterCollection(6) = New Microsoft.Reporting.WebForms.ReportParameter()
+                reportParameterCollection(6).Name = "flg_actividades"
+                reportParameterCollection(6).Values.Add(cblVariables.Items(3).Selected)
+            End If
+
+            If rbtnComparativo.Checked Then
+                reportParameterCollection(12) = New Microsoft.Reporting.WebForms.ReportParameter()
+                reportParameterCollection(12).Name = "flg_actividades"
+                reportParameterCollection(12).Values.Add(cblVariables.Items(3).Selected)
+            End If
+        End If
+
+        rvwReporteGeneral.ServerReport.SetParameters(reportParameterCollection)
+        rvwReporteGeneral.ServerReport.Refresh()
+    End Sub
+
+    Protected Sub rbtnTipo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnTipo.CheckedChanged
+        If rbtnTipo.Checked Then
+            tblTipos.Visible = True
+            tblActividades.Visible = False
+        Else
+            tblTipos.Visible = False
+            tblActividades.Visible = True
+        End If
+        ListarVariables()
+    End Sub
+
+    Protected Sub rbtnActividad_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnActividad.CheckedChanged
+        If rbtnActividad.Checked Then
+            tblTipos.Visible = False
+            tblActividades.Visible = True
+        Else
+            tblTipos.Visible = True
+            tblActividades.Visible = False
+        End If
+        ListarVariables()
+    End Sub
+
 End Class

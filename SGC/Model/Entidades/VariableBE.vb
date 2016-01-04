@@ -22,26 +22,6 @@
             End Set
         End Property
 
-        Private _nom_sp As String
-        Public Property nom_sp() As String
-            Get
-                Return _nom_sp
-            End Get
-            Set(ByVal value As String)
-                _nom_sp = value
-            End Set
-        End Property
-
-        Private _flg_anulado As Boolean
-        Public Property flg_anulado() As Boolean
-            Get
-                Return _flg_anulado
-            End Get
-            Set(ByVal value As Boolean)
-                _flg_anulado = value
-            End Set
-        End Property
-
     End Class
 
 End Namespace

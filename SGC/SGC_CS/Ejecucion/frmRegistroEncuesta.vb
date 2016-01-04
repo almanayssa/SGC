@@ -32,16 +32,12 @@ Public Class frmRegistroEncuesta
         tsbGuardar.Visible = True
         txtDescripcion.Enabled = True
         dgvPreguntas.ReadOnly = False
-        btnAgregarPregunta.Enabled = True
-        btnQuitarPregunta.Enabled = True
     End Sub
 
     Private Sub FormularioEnModoVista()
         tsbGuardar.Visible = False
         txtDescripcion.Enabled = False
         dgvPreguntas.ReadOnly = True
-        btnAgregarPregunta.Enabled = False
-        btnQuitarPregunta.Enabled = False
     End Sub
 
     Private Sub CargarActividad(ByVal id_actividad As String)
@@ -69,7 +65,7 @@ Public Class frmRegistroEncuesta
     Private Sub AgregarPregunta()
         Dim oEncuestaDetalle As New EncuestaDetalleBE
 
-        oEncuestaDetalle.pregunta = Nothing
+        oEncuestaDetalle.pregunta = "¿Se encuentra satisfecho con el desarrollo de la actividad?"
         oEncuestaDetalle.opcion1 = Nothing
         oEncuestaDetalle.opcion2 = Nothing
         oEncuestaDetalle.opcion3 = Nothing
@@ -84,21 +80,6 @@ Public Class frmRegistroEncuesta
         dgvPreguntas.DataSource = ListadoPreguntas
     End Sub
 
-    Private Sub QuitarPregunta()
-        Dim oListadoEncuestaDetalle As New List(Of EncuestaDetalleBE)
-
-        For Each row As DataGridViewRow In dgvPreguntas.Rows
-            Dim oEncuestaDetalle As EncuestaDetalleBE = row.DataBoundItem
-            If row.Selected = False Then
-                oListadoEncuestaDetalle.Add(oEncuestaDetalle)
-            End If
-        Next
-
-        ListadoPreguntas = oListadoEncuestaDetalle
-        dgvPreguntas.DataSource = Nothing
-        dgvPreguntas.DataSource = ListadoPreguntas
-    End Sub
-
     Private Sub LimpiarFormulario()
         tsbGuardar.Visible = False
 
@@ -109,10 +90,10 @@ Public Class frmRegistroEncuesta
         ListadoEncuestaDetalle = Nothing
         ListadoPreguntas = Nothing
 
-        dgvPreguntas.DataSource = Nothing
+        AgregarPregunta()
 
-        btnAgregarPregunta.Enabled = False
-        btnQuitarPregunta.Enabled = False
+        txtDescripcion.Enabled = True
+        dgvPreguntas.ReadOnly = False
 
     End Sub
 
@@ -131,29 +112,21 @@ Public Class frmRegistroEncuesta
     Private Function ValidarPreguntas() As String
         Dim msg As String = String.Empty
 
-        If dgvPreguntas.Rows.Count = 0 Then
-            msg &= vbCrLf & "- Agregue una pregunta por lo menos"
-        End If
-
         For Each row As DataGridViewRow In dgvPreguntas.Rows
             If msg <> String.Empty Then
                 Exit For
             End If
 
-            If row.Cells(colPregunta.Index).Value = Nothing Then
-                msg &= vbCrLf & "- Ingrese la descripción de todas las preguntas"
-            End If
-
             If row.Cells(colOpcion1.Index).Value = Nothing Then
-                msg &= vbCrLf & "- Ingrese una cantidad en la opción 1 de todas las preguntas"
+                msg &= vbCrLf & "- Ingrese una cantidad de personas satisfechas de todas las preguntas"
             End If
 
             If row.Cells(colOpcion2.Index).Value = Nothing Then
-                msg &= vbCrLf & "- Ingrese una cantidad en la opción 2 de todas las preguntas"
+                msg &= vbCrLf & "- Ingrese una cantidad de personas que NS/NO de todas las preguntas"
             End If
 
             If row.Cells(colOpcion3.Index).Value = Nothing Then
-                msg &= vbCrLf & "- Ingrese una cantidad en la opción 3 de todas las preguntas"
+                msg &= vbCrLf & "- Ingrese una cantidad de personas no satisfechas de todas las preguntas"
             End If
         Next
 
@@ -240,14 +213,6 @@ Public Class frmRegistroEncuesta
                 FormularioEnModoEdicion()
             End If
         End If
-    End Sub
-
-    Private Sub btnAgregarPregunta_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarPregunta.Click
-        AgregarPregunta()
-    End Sub
-
-    Private Sub btnQuitarPregunta_Click(sender As System.Object, e As System.EventArgs) Handles btnQuitarPregunta.Click
-        QuitarPregunta()
     End Sub
 
 #End Region

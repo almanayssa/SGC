@@ -29,16 +29,14 @@
         <ul id="menu-bar">
             <li class="current"><a href="#">Reportes</a>
             <ul>
-            <li><a href="frmReporteGeneral.aspx">Reporte General</a></li>
-            <li><a href="frmReporteActividades.aspx">Actividades Mayor Demanda</a></li>
-            <li><a href="frmReporteComite.aspx">Participación Comités</a></li>
+            <li><a href="frmReporteGeneral.aspx">Reporte General</a></li>            
             </ul>
             </li>
-            <%--<li><a href="#">Consultas</a>
+            <li><a href="#">Parámetros</a>
             <ul>
-            <li><a href="#">Actualizar Información</a></li>
+            <li><a href="#">Actualizar Parámetros</a></li>
             </ul>
-            </li>--%>
+            </li>
         </ul>      
         <div class="contenedor-pagina">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
