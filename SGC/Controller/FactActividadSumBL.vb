@@ -113,6 +113,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarMesesParticipacion(ByVal fecIni As Date, ByVal fecFin As Date, id_comite As String, id_tipo As String) As List(Of FactActividadSumBE)
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
+
+                iFact = New FactActividadSumDL
+                oListadoFact = iFact.ListarMesesParticipacion(fecIni, fecFin, id_comite, id_tipo)
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

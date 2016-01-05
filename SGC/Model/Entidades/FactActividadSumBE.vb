@@ -190,6 +190,8 @@
         Public Property satisfaccion As Decimal
         Public Property max_sexo As String
         Public Property mes As String
+        Public Property max_part As String
+        Public Property min_part As String
 
     End Class
 

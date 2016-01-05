@@ -664,11 +664,11 @@ Public Class frmRegistroActividad
         msjTipo = ""
 
         If oListado IsNot Nothing AndAlso oListado.Count > 0 Then
-            msjTipo = "Demanda de tipo de Actividad (Cantidad de Participaciones):" & vbCrLf & vbCrLf
+            msjTipo = "DEMANDA DE TIPO DE ACTIVIDAD (Cantidad de Participaciones promedio):" & vbCrLf & vbCrLf
             msjTipo &= "Comite: " & cboComite.GetItemText(cboComite.SelectedItem) & vbCrLf
             msjTipo &= "Fechas: " & fecIni.Date & " - " & Now.Date & vbCrLf
             msjTipo &= "Fórmula Participantes: Cantidad de participantes / Cantidad de actividades" & vbCrLf
-            msjTipo &= "Fórmula Satisfacción: (Cantidad de Satisfacción / Cantidad Total) * 100.00" & vbCrLf
+            msjTipo &= "Fórmula Satisfacción: (Cantidad de Satisfacción / Cantidad Total) * 100.00 %" & vbCrLf
 
             For Each oFact As FactActividadSumBE In oListado
                 oFact.part_x_actividad = Math.Round(oFact.total_participantes * 1.0 / oFact.total_actividades * 1.0)
@@ -679,13 +679,28 @@ Public Class frmRegistroActividad
                 End If
                 If oFact.part_x_actividad > maxPart Then
                     maxPart = oFact.part_x_actividad
-                    resultado = oFact.tipo_actividad & " - " & oFact.part_x_actividad
+                    resultado = oFact.tipo_actividad & " - " & oFact.part_x_actividad & " personas en cada actividad"
                 ElseIf oFact.part_x_actividad = maxPart Then
-                    resultado &= vbCrLf & oFact.tipo_actividad & " - " & oFact.part_x_actividad
+                    resultado &= vbCrLf & oFact.tipo_actividad & " - " & oFact.part_x_actividad & " personas en cada actividad"
                 End If
             Next
 
-            msjTipo &= vbCrLf & "Resultados:" & vbCrLf & resultado
+            msjTipo &= vbCrLf & "Sugerencia del Tipo de Actividad con mayor demanda en el promedio de participantes de cada actividad:" & vbCrLf & vbCrLf & resultado & vbCrLf & vbCrLf
+
+
+            msjTipo &= vbCrLf & "SUGERENCIA POR MES" & vbCrLf & vbCrLf
+
+
+            Dim oListadoMes As List(Of FactActividadSumBE) = bc.ListarMesesParticipacion(fecIni, Now, cboComite.SelectedValue, Nothing)
+
+
+            For Each oFact As FactActividadSumBE In oListadoMes
+                msjTipo &= "- " & MonthName(oFact.mes.Substring(4, 2)).ToUpper & " " & oFact.mes.Substring(0, 4) & vbCrLf
+                msjTipo &= "  Sugerencia: " & oFact.max_part & " pers.  "
+                If oFact.min_part <> "" Then msjTipo &= "  No se sugiere: " & oFact.min_part & " pers."
+                msjTipo &= vbCrLf
+            Next
+
 
         Else
             msjTipo = "No hay sugerencias"
@@ -695,7 +710,7 @@ Public Class frmRegistroActividad
         Dim msj As String = ""
 
         If resultado <> String.Empty Then
-            msj = "Sugerencia de Tipo de actividad: " & vbCrLf
+            msj = "Sugerencia de Tipo de actividad con mayor demanda en el promedio de participantes de cada actividad: " & vbCrLf
             msj &= resultado & vbCrLf
 
         Else

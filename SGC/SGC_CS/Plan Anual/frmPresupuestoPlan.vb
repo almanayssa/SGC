@@ -188,7 +188,7 @@ Public Class frmPresupuestoPlan
             btnPresupuesto.Visible = False
         Else
             btnPresupuesto.Visible = True
-            msjInfo &= vbCrLf & "Resultados:" & vbCrLf & resultado & vbCrLf & resultadoTP
+            msjInfo &= vbCrLf & "Sugerencia:" & vbCrLf & resultado & vbCrLf & resultadoTP
             SugerenciasToolTip.SetToolTip(btnPresupuesto, resultado & vbCrLf & resultadoTP)
         End If
 
