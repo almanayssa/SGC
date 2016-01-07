@@ -33,14 +33,14 @@ Partial Class frmRegistroEncuesta
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvPreguntas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
-        Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
-        Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
-        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.colPregunta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colOpcion1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colOpcion2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colOpcion3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
+        Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
+        Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
+        Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox1.SuspendLayout()
         Me.SgcGroupBox2.SuspendLayout()
         Me.SgcGroupBox6.SuspendLayout()
@@ -141,6 +141,7 @@ Partial Class frmRegistroEncuesta
         Me.txtDescripcion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDescripcion.ForeColor = System.Drawing.Color.Black
         Me.txtDescripcion.Location = New System.Drawing.Point(106, 37)
+        Me.txtDescripcion.MaxLength = 100
         Me.txtDescripcion.Name = "txtDescripcion"
         Me.txtDescripcion.Size = New System.Drawing.Size(238, 26)
         Me.txtDescripcion.TabIndex = 4
@@ -182,6 +183,28 @@ Partial Class frmRegistroEncuesta
         Me.dgvPreguntas.Name = "dgvPreguntas"
         Me.dgvPreguntas.Size = New System.Drawing.Size(849, 226)
         Me.dgvPreguntas.TabIndex = 1
+        '
+        'colPregunta
+        '
+        Me.colPregunta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colPregunta.HeaderText = "Detalle"
+        Me.colPregunta.Name = "colPregunta"
+        Me.colPregunta.ReadOnly = True
+        '
+        'colOpcion1
+        '
+        Me.colOpcion1.HeaderText = "Satisfecho"
+        Me.colOpcion1.Name = "colOpcion1"
+        '
+        'colOpcion2
+        '
+        Me.colOpcion2.HeaderText = "NS/NO"
+        Me.colOpcion2.Name = "colOpcion2"
+        '
+        'colOpcion3
+        '
+        Me.colOpcion3.HeaderText = "Insatisfecho"
+        Me.colOpcion3.Name = "colOpcion3"
         '
         'lblTitulo
         '
@@ -229,28 +252,6 @@ Partial Class frmRegistroEncuesta
         Me.tsbGuardar.Size = New System.Drawing.Size(92, 34)
         Me.tsbGuardar.Text = "Guardar"
         Me.tsbGuardar.Visible = False
-        '
-        'colPregunta
-        '
-        Me.colPregunta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colPregunta.HeaderText = "Detalle"
-        Me.colPregunta.Name = "colPregunta"
-        Me.colPregunta.ReadOnly = True
-        '
-        'colOpcion1
-        '
-        Me.colOpcion1.HeaderText = "Satisfecho"
-        Me.colOpcion1.Name = "colOpcion1"
-        '
-        'colOpcion2
-        '
-        Me.colOpcion2.HeaderText = "NS/NO"
-        Me.colOpcion2.Name = "colOpcion2"
-        '
-        'colOpcion3
-        '
-        Me.colOpcion3.HeaderText = "Insatisfecho"
-        Me.colOpcion3.Name = "colOpcion3"
         '
         'frmRegistroEncuesta
         '

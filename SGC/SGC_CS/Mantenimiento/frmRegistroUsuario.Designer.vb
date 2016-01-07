@@ -25,6 +25,9 @@ Partial Class frmRegistroUsuario
         Me.components = New System.ComponentModel.Container()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.lblSocio = New SGC_CS.SGCLabel(Me.components)
+        Me.btnBuscarSocio = New SGC_CS.SGCButton(Me.components)
+        Me.txtSocio = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.txtEmail = New SGC_CS.SGCTextBox(Me.components)
         Me.txtApellido = New SGC_CS.SGCTextBox(Me.components)
@@ -46,9 +49,6 @@ Partial Class frmRegistroUsuario
         Me.tsbEditar = New System.Windows.Forms.ToolStripButton()
         Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
         Me.tsbCancelar = New System.Windows.Forms.ToolStripButton()
-        Me.lblSocio = New SGC_CS.SGCLabel(Me.components)
-        Me.btnBuscarSocio = New SGC_CS.SGCButton(Me.components)
-        Me.txtSocio = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         Me.tsMenu.SuspendLayout()
         Me.SuspendLayout()
@@ -93,6 +93,44 @@ Partial Class frmRegistroUsuario
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Usuario"
         '
+        'lblSocio
+        '
+        Me.lblSocio.AutoSize = True
+        Me.lblSocio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblSocio.ForeColor = System.Drawing.Color.SteelBlue
+        Me.lblSocio.Location = New System.Drawing.Point(139, 257)
+        Me.lblSocio.Name = "lblSocio"
+        Me.lblSocio.Size = New System.Drawing.Size(45, 18)
+        Me.lblSocio.TabIndex = 37
+        Me.lblSocio.Text = "Socio:"
+        '
+        'btnBuscarSocio
+        '
+        Me.btnBuscarSocio.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnBuscarSocio.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnBuscarSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBuscarSocio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBuscarSocio.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnBuscarSocio.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
+        Me.btnBuscarSocio.Location = New System.Drawing.Point(332, 251)
+        Me.btnBuscarSocio.Name = "btnBuscarSocio"
+        Me.btnBuscarSocio.Size = New System.Drawing.Size(45, 31)
+        Me.btnBuscarSocio.TabIndex = 8
+        Me.btnBuscarSocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnBuscarSocio.UseVisualStyleBackColor = False
+        '
+        'txtSocio
+        '
+        Me.txtSocio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSocio.Enabled = False
+        Me.txtSocio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSocio.ForeColor = System.Drawing.Color.Black
+        Me.txtSocio.Location = New System.Drawing.Point(227, 255)
+        Me.txtSocio.Name = "txtSocio"
+        Me.txtSocio.ReadOnly = True
+        Me.txtSocio.Size = New System.Drawing.Size(100, 26)
+        Me.txtSocio.TabIndex = 35
+        '
         'SgcLabel4
         '
         Me.SgcLabel4.AutoSize = True
@@ -110,9 +148,10 @@ Partial Class frmRegistroUsuario
         Me.txtEmail.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEmail.ForeColor = System.Drawing.Color.Black
         Me.txtEmail.Location = New System.Drawing.Point(227, 127)
+        Me.txtEmail.MaxLength = 30
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(121, 26)
-        Me.txtEmail.TabIndex = 33
+        Me.txtEmail.TabIndex = 2
         '
         'txtApellido
         '
@@ -120,9 +159,10 @@ Partial Class frmRegistroUsuario
         Me.txtApellido.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtApellido.ForeColor = System.Drawing.Color.Black
         Me.txtApellido.Location = New System.Drawing.Point(227, 191)
+        Me.txtApellido.MaxLength = 50
         Me.txtApellido.Name = "txtApellido"
         Me.txtApellido.Size = New System.Drawing.Size(121, 26)
-        Me.txtApellido.TabIndex = 32
+        Me.txtApellido.TabIndex = 4
         '
         'txtNombre
         '
@@ -130,9 +170,10 @@ Partial Class frmRegistroUsuario
         Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
         Me.txtNombre.Location = New System.Drawing.Point(227, 159)
+        Me.txtNombre.MaxLength = 50
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(121, 26)
-        Me.txtNombre.TabIndex = 31
+        Me.txtNombre.TabIndex = 3
         '
         'SgcLabel6
         '
@@ -162,10 +203,11 @@ Partial Class frmRegistroUsuario
         Me.txtContrasenia.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContrasenia.ForeColor = System.Drawing.Color.Black
         Me.txtContrasenia.Location = New System.Drawing.Point(228, 95)
+        Me.txtContrasenia.MaxLength = 15
         Me.txtContrasenia.Name = "txtContrasenia"
         Me.txtContrasenia.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContrasenia.Size = New System.Drawing.Size(121, 26)
-        Me.txtContrasenia.TabIndex = 28
+        Me.txtContrasenia.TabIndex = 1
         '
         'lblCodigo
         '
@@ -201,6 +243,7 @@ Partial Class frmRegistroUsuario
         Me.txtCodigo.ForeColor = System.Drawing.Color.Black
         Me.txtCodigo.Location = New System.Drawing.Point(228, 31)
         Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(100, 26)
         Me.txtCodigo.TabIndex = 25
         '
@@ -210,9 +253,10 @@ Partial Class frmRegistroUsuario
         Me.txtUsuario.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.ForeColor = System.Drawing.Color.Black
         Me.txtUsuario.Location = New System.Drawing.Point(228, 63)
+        Me.txtUsuario.MaxLength = 15
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(121, 26)
-        Me.txtUsuario.TabIndex = 5
+        Me.txtUsuario.TabIndex = 0
         '
         'cboPerfil
         '
@@ -224,7 +268,7 @@ Partial Class frmRegistroUsuario
         Me.cboPerfil.Location = New System.Drawing.Point(227, 223)
         Me.cboPerfil.Name = "cboPerfil"
         Me.cboPerfil.Size = New System.Drawing.Size(121, 26)
-        Me.cboPerfil.TabIndex = 4
+        Me.cboPerfil.TabIndex = 5
         '
         'SgcLabel3
         '
@@ -325,43 +369,6 @@ Partial Class frmRegistroUsuario
         Me.tsbCancelar.Size = New System.Drawing.Size(95, 34)
         Me.tsbCancelar.Text = "Cancelar"
         Me.tsbCancelar.Visible = False
-        '
-        'lblSocio
-        '
-        Me.lblSocio.AutoSize = True
-        Me.lblSocio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSocio.ForeColor = System.Drawing.Color.SteelBlue
-        Me.lblSocio.Location = New System.Drawing.Point(139, 257)
-        Me.lblSocio.Name = "lblSocio"
-        Me.lblSocio.Size = New System.Drawing.Size(45, 18)
-        Me.lblSocio.TabIndex = 37
-        Me.lblSocio.Text = "Socio:"
-        '
-        'btnBuscarSocio
-        '
-        Me.btnBuscarSocio.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnBuscarSocio.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnBuscarSocio.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBuscarSocio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBuscarSocio.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnBuscarSocio.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.btnBuscarSocio.Location = New System.Drawing.Point(332, 251)
-        Me.btnBuscarSocio.Name = "btnBuscarSocio"
-        Me.btnBuscarSocio.Size = New System.Drawing.Size(45, 31)
-        Me.btnBuscarSocio.TabIndex = 36
-        Me.btnBuscarSocio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnBuscarSocio.UseVisualStyleBackColor = False
-        '
-        'txtSocio
-        '
-        Me.txtSocio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtSocio.Enabled = False
-        Me.txtSocio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSocio.ForeColor = System.Drawing.Color.Black
-        Me.txtSocio.Location = New System.Drawing.Point(227, 255)
-        Me.txtSocio.Name = "txtSocio"
-        Me.txtSocio.Size = New System.Drawing.Size(100, 26)
-        Me.txtSocio.TabIndex = 35
         '
         'frmRegistroUsuario
         '

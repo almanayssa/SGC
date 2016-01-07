@@ -90,7 +90,7 @@ Partial Class frmRegistroOpcion
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 71)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(393, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(185, 37)
         Me.tsMenu.TabIndex = 19
         Me.tsMenu.Text = "SgcToolStrip1"
         '
@@ -197,6 +197,7 @@ Partial Class frmRegistroOpcion
         Me.txtCodigo.ForeColor = System.Drawing.Color.Black
         Me.txtCodigo.Location = New System.Drawing.Point(206, 25)
         Me.txtCodigo.Name = "txtCodigo"
+        Me.txtCodigo.ReadOnly = True
         Me.txtCodigo.Size = New System.Drawing.Size(100, 26)
         Me.txtCodigo.TabIndex = 25
         '
@@ -208,6 +209,7 @@ Partial Class frmRegistroOpcion
         Me.txtPerfil.ForeColor = System.Drawing.Color.Black
         Me.txtPerfil.Location = New System.Drawing.Point(206, 58)
         Me.txtPerfil.Name = "txtPerfil"
+        Me.txtPerfil.ReadOnly = True
         Me.txtPerfil.Size = New System.Drawing.Size(121, 26)
         Me.txtPerfil.TabIndex = 5
         '

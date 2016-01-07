@@ -143,6 +143,13 @@ Public Class frmRegistroActividadRecurrente
             Exit Function
         End If
 
+        If dtpFechaInicio.Value.Date > dtpFechaFin.Value.Date Then
+            MessageBox.Show("La fecha de inicio no puede ser mayor que la de fin", "Información")
+            flag = False
+            Return flag
+            Exit Function
+        End If
+
         Dim affectedRows As Integer = 0
         Dim oActividadRecurrente As New ActividadRecurrenteBE
         If cboTipoRecurrencia.SelectedItem = "Diaria" Then

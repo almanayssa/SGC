@@ -452,6 +452,10 @@ Public Class frmRegistroActividad
             msg &= vbCrLf & "- Ingrese una descripción"
         End If
 
+        If dgvProgramacion.Rows.Count = 0 Then
+            msg &= vbCrLf & "- Ingrese un detalle en la programación"
+        End If
+
         msg &= ValidarRestricciones()
 
         Return msg

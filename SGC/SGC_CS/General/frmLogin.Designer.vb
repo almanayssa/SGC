@@ -51,9 +51,10 @@ Partial Class frmLogin
         Me.txtUsuario.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.ForeColor = System.Drawing.Color.Black
         Me.txtUsuario.Location = New System.Drawing.Point(229, 28)
+        Me.txtUsuario.MaxLength = 15
         Me.txtUsuario.Name = "txtUsuario"
         Me.txtUsuario.Size = New System.Drawing.Size(151, 26)
-        Me.txtUsuario.TabIndex = 153
+        Me.txtUsuario.TabIndex = 0
         '
         'txtContrasena
         '
@@ -61,10 +62,11 @@ Partial Class frmLogin
         Me.txtContrasena.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtContrasena.ForeColor = System.Drawing.Color.Black
         Me.txtContrasena.Location = New System.Drawing.Point(229, 60)
+        Me.txtContrasena.MaxLength = 15
         Me.txtContrasena.Name = "txtContrasena"
         Me.txtContrasena.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtContrasena.Size = New System.Drawing.Size(151, 26)
-        Me.txtContrasena.TabIndex = 154
+        Me.txtContrasena.TabIndex = 1
         '
         'lblUsuario
         '
@@ -98,7 +100,7 @@ Partial Class frmLogin
         Me.btnEntrar.Location = New System.Drawing.Point(229, 96)
         Me.btnEntrar.Name = "btnEntrar"
         Me.btnEntrar.Size = New System.Drawing.Size(78, 31)
-        Me.btnEntrar.TabIndex = 157
+        Me.btnEntrar.TabIndex = 2
         Me.btnEntrar.Text = "Entrar"
         Me.btnEntrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEntrar.UseVisualStyleBackColor = False

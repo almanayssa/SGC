@@ -64,6 +64,10 @@ Public Class frmConsultaActividadRecurrente
             MessageBox.Show("Seleccione un comité", "Información")
             Exit Sub
         Else
+            If dtpFecInicio.Value.Date > dtpFecFin.Value.Date Then
+                MessageBox.Show("La fecha de inicio no puede ser mayor que la de fin", "Información")
+                Exit Sub
+            End If
             ListarActividadesRecurrentes()
         End If
     End Sub

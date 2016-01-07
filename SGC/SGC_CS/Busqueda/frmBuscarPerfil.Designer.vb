@@ -27,9 +27,9 @@ Partial Class frmBuscarPerfil
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
         Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxFiltros = New SGC_CS.SGCGroupBox(Me.components)
+        Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
         Me.lblNombre = New SGC_CS.SGCLabel(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
-        Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxFiltros.SuspendLayout()
         Me.SuspendLayout()
@@ -70,6 +70,17 @@ Partial Class frmBuscarPerfil
         Me.gbxFiltros.TabStop = False
         Me.gbxFiltros.Text = "Filtros"
         '
+        'txtNombre
+        '
+        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombre.ForeColor = System.Drawing.Color.Black
+        Me.txtNombre.Location = New System.Drawing.Point(132, 20)
+        Me.txtNombre.MaxLength = 50
+        Me.txtNombre.Name = "txtNombre"
+        Me.txtNombre.Size = New System.Drawing.Size(100, 26)
+        Me.txtNombre.TabIndex = 17
+        '
         'lblNombre
         '
         Me.lblNombre.AutoSize = True
@@ -95,16 +106,6 @@ Partial Class frmBuscarPerfil
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnBuscar.UseVisualStyleBackColor = False
-        '
-        'txtNombre
-        '
-        Me.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.ForeColor = System.Drawing.Color.Black
-        Me.txtNombre.Location = New System.Drawing.Point(132, 20)
-        Me.txtNombre.Name = "txtNombre"
-        Me.txtNombre.Size = New System.Drawing.Size(100, 26)
-        Me.txtNombre.TabIndex = 17
         '
         'frmBuscarPerfil
         '

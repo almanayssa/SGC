@@ -26,6 +26,12 @@ Partial Class frmRegistroIncidencias
         Me.txtIncidencias = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcGroupBox4 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colSede = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEspacio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colHoraFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.txtCodigo = New SGC_CS.SGCTextBox(Me.components)
@@ -37,12 +43,6 @@ Partial Class frmRegistroIncidencias
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
-        Me.colSede = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEspacio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colHoraFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox3.SuspendLayout()
         Me.SgcGroupBox4.SuspendLayout()
         CType(Me.dgvProgramacion, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,6 +67,7 @@ Partial Class frmRegistroIncidencias
         Me.txtIncidencias.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIncidencias.ForeColor = System.Drawing.Color.Black
         Me.txtIncidencias.Location = New System.Drawing.Point(22, 34)
+        Me.txtIncidencias.MaxLength = 2000
         Me.txtIncidencias.Multiline = True
         Me.txtIncidencias.Name = "txtIncidencias"
         Me.txtIncidencias.Size = New System.Drawing.Size(842, 197)
@@ -98,6 +99,42 @@ Partial Class frmRegistroIncidencias
         Me.dgvProgramacion.ReadOnly = True
         Me.dgvProgramacion.Size = New System.Drawing.Size(320, 177)
         Me.dgvProgramacion.TabIndex = 2
+        '
+        'colSede
+        '
+        Me.colSede.HeaderText = "Sede"
+        Me.colSede.Name = "colSede"
+        Me.colSede.ReadOnly = True
+        '
+        'colEspacio
+        '
+        Me.colEspacio.HeaderText = "Espacio"
+        Me.colEspacio.Name = "colEspacio"
+        Me.colEspacio.ReadOnly = True
+        '
+        'colFecInicio
+        '
+        Me.colFecInicio.HeaderText = "Fec. Inicio"
+        Me.colFecInicio.Name = "colFecInicio"
+        Me.colFecInicio.ReadOnly = True
+        '
+        'colHoraInicio
+        '
+        Me.colHoraInicio.HeaderText = "H. Inicio"
+        Me.colHoraInicio.Name = "colHoraInicio"
+        Me.colHoraInicio.ReadOnly = True
+        '
+        'colFecFin
+        '
+        Me.colFecFin.HeaderText = "Fec. Fin"
+        Me.colFecFin.Name = "colFecFin"
+        Me.colFecFin.ReadOnly = True
+        '
+        'colHoraFin
+        '
+        Me.colHoraFin.HeaderText = "H. Fin"
+        Me.colHoraFin.Name = "colHoraFin"
+        Me.colHoraFin.ReadOnly = True
         '
         'lblTitulo
         '
@@ -232,42 +269,6 @@ Partial Class frmRegistroIncidencias
         Me.SgcLabel3.Size = New System.Drawing.Size(185, 23)
         Me.SgcLabel3.TabIndex = 37
         Me.SgcLabel3.Text = "Registro de Incidencia" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        '
-        'colSede
-        '
-        Me.colSede.HeaderText = "Sede"
-        Me.colSede.Name = "colSede"
-        Me.colSede.ReadOnly = True
-        '
-        'colEspacio
-        '
-        Me.colEspacio.HeaderText = "Espacio"
-        Me.colEspacio.Name = "colEspacio"
-        Me.colEspacio.ReadOnly = True
-        '
-        'colFecInicio
-        '
-        Me.colFecInicio.HeaderText = "Fec. Inicio"
-        Me.colFecInicio.Name = "colFecInicio"
-        Me.colFecInicio.ReadOnly = True
-        '
-        'colHoraInicio
-        '
-        Me.colHoraInicio.HeaderText = "H. Inicio"
-        Me.colHoraInicio.Name = "colHoraInicio"
-        Me.colHoraInicio.ReadOnly = True
-        '
-        'colFecFin
-        '
-        Me.colFecFin.HeaderText = "Fec. Fin"
-        Me.colFecFin.Name = "colFecFin"
-        Me.colFecFin.ReadOnly = True
-        '
-        'colHoraFin
-        '
-        Me.colHoraFin.HeaderText = "H. Fin"
-        Me.colHoraFin.Name = "colHoraFin"
-        Me.colHoraFin.ReadOnly = True
         '
         'frmRegistroIncidencias
         '

@@ -310,6 +310,7 @@ Partial Class frmPresupuestoActividad
         Me.txtMontoTotal.ForeColor = System.Drawing.Color.Black
         Me.txtMontoTotal.Location = New System.Drawing.Point(717, 256)
         Me.txtMontoTotal.Name = "txtMontoTotal"
+        Me.txtMontoTotal.ReadOnly = True
         Me.txtMontoTotal.Size = New System.Drawing.Size(161, 26)
         Me.txtMontoTotal.TabIndex = 19
         '

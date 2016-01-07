@@ -67,7 +67,7 @@ Partial Class frmRegistroEspacio
         Me.tsMenu.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow
         Me.tsMenu.Location = New System.Drawing.Point(60, 71)
         Me.tsMenu.Name = "tsMenu"
-        Me.tsMenu.Size = New System.Drawing.Size(488, 37)
+        Me.tsMenu.Size = New System.Drawing.Size(185, 37)
         Me.tsMenu.TabIndex = 16
         Me.tsMenu.Text = "SgcToolStrip1"
         '
@@ -222,9 +222,10 @@ Partial Class frmRegistroEspacio
         Me.txtEspacio.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtEspacio.ForeColor = System.Drawing.Color.Black
         Me.txtEspacio.Location = New System.Drawing.Point(206, 133)
+        Me.txtEspacio.MaxLength = 100
         Me.txtEspacio.Name = "txtEspacio"
         Me.txtEspacio.Size = New System.Drawing.Size(121, 26)
-        Me.txtEspacio.TabIndex = 5
+        Me.txtEspacio.TabIndex = 2
         '
         'cboLugar
         '
@@ -236,7 +237,7 @@ Partial Class frmRegistroEspacio
         Me.cboLugar.Location = New System.Drawing.Point(206, 95)
         Me.cboLugar.Name = "cboLugar"
         Me.cboLugar.Size = New System.Drawing.Size(121, 26)
-        Me.cboLugar.TabIndex = 4
+        Me.cboLugar.TabIndex = 1
         '
         'cboSede
         '
@@ -248,7 +249,7 @@ Partial Class frmRegistroEspacio
         Me.cboSede.Location = New System.Drawing.Point(206, 62)
         Me.cboSede.Name = "cboSede"
         Me.cboSede.Size = New System.Drawing.Size(121, 26)
-        Me.cboSede.TabIndex = 3
+        Me.cboSede.TabIndex = 0
         '
         'SgcLabel3
         '
