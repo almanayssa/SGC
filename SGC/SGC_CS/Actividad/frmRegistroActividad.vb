@@ -739,8 +739,19 @@ Public Class frmRegistroActividad
 
             For Each oFact As FactActividadSumBE In oListadoMes
                 msjTipo &= "- " & MonthName(oFact.mes.Substring(4, 2)).ToUpper & " " & oFact.mes.Substring(0, 4) & vbCrLf
-                msjTipo &= "  Sugerencia: " & oFact.max_part & " pers.  "
-                If oFact.min_part <> "" Then msjTipo &= "  No se sugiere: " & oFact.min_part & " pers."
+                msjTipo &= "  " & oFact.obs_max_part & " pers.  "
+                If oFact.obs_min_part <> "" Then
+                    msjTipo &= "  " & oFact.obs_min_part & " pers."
+
+                    If oFact.coeficiente >= 0.5 And oFact.coeficiente <= 1 Then
+                        msjTipo &= vbCrLf & "  Sugerencia: " & oFact.max_part & " y " & oFact.min_part & " son complementarios en el mes."
+                    ElseIf oFact.coeficiente >= -0.5 And oFact.coeficiente <= 0.5 Then
+                        msjTipo &= vbCrLf & "  Sugerencia: " & oFact.max_part & " tiene mayor participación en el mes."
+                    ElseIf oFact.coeficiente >= -1 And oFact.coeficiente <= -0.5 Then
+                        msjTipo &= vbCrLf & "  Sugerencia: " & oFact.max_part & " y " & oFact.min_part & " son incompatibles en el mes."
+                    End If
+
+                End If
                 msjTipo &= vbCrLf
             Next
 
@@ -1430,7 +1441,13 @@ Public Class frmRegistroActividad
     End Sub
 
     Private Sub btntipo_Click(sender As System.Object, e As System.EventArgs) Handles btntipo.Click
-        MsgBox(msjTipo, MsgBoxStyle.Information)
+        'MsgBox(msjTipo, MsgBoxStyle.Information)
+
+
+        Dim frm As New frmInfo
+        frm.info = msjTipo
+        frm.ShowDialog()
+
     End Sub
 
     Private Sub btnVacantes_Click(sender As System.Object, e As System.EventArgs) Handles btnVacantes.Click

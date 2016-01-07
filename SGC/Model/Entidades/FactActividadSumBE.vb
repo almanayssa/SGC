@@ -192,6 +192,9 @@
         Public Property mes As String
         Public Property max_part As String
         Public Property min_part As String
+        Public Property obs_max_part As String
+        Public Property obs_min_part As String
+        Public Property coeficiente As Decimal
 
     End Class
 
