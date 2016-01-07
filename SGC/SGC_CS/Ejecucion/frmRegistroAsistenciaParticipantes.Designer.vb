@@ -27,6 +27,10 @@ Partial Class frmRegistroAsistenciaParticipantes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRegistroAsistenciaParticipantes))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvPersona = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.colDetalleID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colPersonaID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
@@ -39,17 +43,13 @@ Partial Class frmRegistroAsistenciaParticipantes
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
+        Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
         Me.colSede = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEspacio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colHoraFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SgcGroupBox3 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.colDetalleID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colPersonaID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvPersona, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tsMenu.SuspendLayout()
         Me.SgcGroupBox1.SuspendLayout()
@@ -73,6 +73,33 @@ Partial Class frmRegistroAsistenciaParticipantes
         Me.dgvPersona.Name = "dgvPersona"
         Me.dgvPersona.Size = New System.Drawing.Size(849, 254)
         Me.dgvPersona.TabIndex = 0
+        '
+        'colSeleccionar
+        '
+        Me.colSeleccionar.HeaderText = ""
+        Me.colSeleccionar.Name = "colSeleccionar"
+        Me.colSeleccionar.Width = 30
+        '
+        'colDetalleID
+        '
+        Me.colDetalleID.HeaderText = ""
+        Me.colDetalleID.Name = "colDetalleID"
+        Me.colDetalleID.ReadOnly = True
+        Me.colDetalleID.Visible = False
+        '
+        'colPersonaID
+        '
+        Me.colPersonaID.HeaderText = ""
+        Me.colPersonaID.Name = "colPersonaID"
+        Me.colPersonaID.ReadOnly = True
+        Me.colPersonaID.Visible = False
+        '
+        'colNombre
+        '
+        Me.colNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colNombre.HeaderText = "Nombre"
+        Me.colNombre.Name = "colNombre"
+        Me.colNombre.ReadOnly = True
         '
         'lblTitulo
         '
@@ -223,6 +250,17 @@ Partial Class frmRegistroAsistenciaParticipantes
         Me.dgvProgramacion.Size = New System.Drawing.Size(320, 177)
         Me.dgvProgramacion.TabIndex = 2
         '
+        'SgcGroupBox3
+        '
+        Me.SgcGroupBox3.Controls.Add(Me.dgvPersona)
+        Me.SgcGroupBox3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SgcGroupBox3.Location = New System.Drawing.Point(60, 324)
+        Me.SgcGroupBox3.Name = "SgcGroupBox3"
+        Me.SgcGroupBox3.Size = New System.Drawing.Size(883, 296)
+        Me.SgcGroupBox3.TabIndex = 36
+        Me.SgcGroupBox3.TabStop = False
+        Me.SgcGroupBox3.Text = "Participantes"
+        '
         'colSede
         '
         Me.colSede.HeaderText = "Sede"
@@ -237,7 +275,7 @@ Partial Class frmRegistroAsistenciaParticipantes
         '
         'colFecInicio
         '
-        Me.colFecInicio.HeaderText = "Fec. Inicio"
+        Me.colFecInicio.HeaderText = "Fecha"
         Me.colFecInicio.Name = "colFecInicio"
         Me.colFecInicio.ReadOnly = True
         '
@@ -252,50 +290,13 @@ Partial Class frmRegistroAsistenciaParticipantes
         Me.colFecFin.HeaderText = "Fec. Fin"
         Me.colFecFin.Name = "colFecFin"
         Me.colFecFin.ReadOnly = True
+        Me.colFecFin.Visible = False
         '
         'colHoraFin
         '
         Me.colHoraFin.HeaderText = "H. Fin"
         Me.colHoraFin.Name = "colHoraFin"
         Me.colHoraFin.ReadOnly = True
-        '
-        'SgcGroupBox3
-        '
-        Me.SgcGroupBox3.Controls.Add(Me.dgvPersona)
-        Me.SgcGroupBox3.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SgcGroupBox3.Location = New System.Drawing.Point(60, 324)
-        Me.SgcGroupBox3.Name = "SgcGroupBox3"
-        Me.SgcGroupBox3.Size = New System.Drawing.Size(883, 296)
-        Me.SgcGroupBox3.TabIndex = 36
-        Me.SgcGroupBox3.TabStop = False
-        Me.SgcGroupBox3.Text = "Participantes"
-        '
-        'colSeleccionar
-        '
-        Me.colSeleccionar.HeaderText = ""
-        Me.colSeleccionar.Name = "colSeleccionar"
-        Me.colSeleccionar.Width = 30
-        '
-        'colDetalleID
-        '
-        Me.colDetalleID.HeaderText = ""
-        Me.colDetalleID.Name = "colDetalleID"
-        Me.colDetalleID.ReadOnly = True
-        Me.colDetalleID.Visible = False
-        '
-        'colPersonaID
-        '
-        Me.colPersonaID.HeaderText = ""
-        Me.colPersonaID.Name = "colPersonaID"
-        Me.colPersonaID.ReadOnly = True
-        Me.colPersonaID.Visible = False
-        '
-        'colNombre
-        '
-        Me.colNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colNombre.HeaderText = "Nombre"
-        Me.colNombre.Name = "colNombre"
-        Me.colNombre.ReadOnly = True
         '
         'frmRegistroAsistenciaParticipantes
         '
@@ -340,14 +341,14 @@ Partial Class frmRegistroAsistenciaParticipantes
     Friend WithEvents SgcGroupBox2 As SGC_CS.SGCGroupBox
     Friend WithEvents dgvProgramacion As SGC_CS.SGCDataGridView
     Friend WithEvents SgcGroupBox3 As SGC_CS.SGCGroupBox
+    Friend WithEvents colSeleccionar As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents colDetalleID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colPersonaID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colSede As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colEspacio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colHoraInicio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colHoraFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colSeleccionar As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents colDetalleID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colPersonaID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colNombre As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

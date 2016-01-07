@@ -92,26 +92,6 @@ Public Class frmBuscarDisponibilidadEspacio
 
 #Region "Cargar"
 
-    Private Sub frmBuscarDisponibilidadEspacio_Deactivate(sender As Object, e As System.EventArgs) Handles Me.Deactivate
-        For Each row As DataGridViewRow In dgvListado.Rows
-            Dim value As Boolean = CType(dgvListado.Item(colSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)
-            Dim oEspacioRes As EspacioResBE = row.DataBoundItem
-
-            If value Then
-                If ListadoEspacioRes Is Nothing Then
-                    ListadoEspacioRes = New List(Of EspacioResBE)
-                End If
-                oEspacioRes.fec_ini = dtpFecha.Value.ToShortDateString()
-                oEspacioRes.fec_fin = dtpFecha.Value.ToShortDateString()
-                oEspacioRes.id_sede = cboSede.SelectedValue
-                oEspacioRes.des_sede = cboSede.GetItemText(cboSede.SelectedItem)
-                oEspacioRes.id_espacio = cboEspacio.SelectedValue
-                oEspacioRes.nombre_espacio = cboEspacio.GetItemText(cboEspacio.SelectedItem)
-                ListadoEspacioRes.Add(oEspacioRes)
-            End If
-        Next
-    End Sub
-
     Private Sub frmBuscarEspacio_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         ListarSedes()
         ListarLugares()
@@ -155,6 +135,42 @@ Public Class frmBuscarDisponibilidadEspacio
         End If
 
         ListarDisponibilidadEspacio()
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
+        Dim val As String = String.Empty
+
+        For Each row As DataGridViewRow In dgvListado.Rows
+            Dim value As Boolean = CType(dgvListado.Item(colSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)
+            Dim oEspacioRes As EspacioResBE = row.DataBoundItem
+
+            If value Then
+                If val = String.Empty Then
+                    val = "1"
+                End If
+
+                If ListadoEspacioRes Is Nothing Then
+                    ListadoEspacioRes = New List(Of EspacioResBE)
+                End If
+                oEspacioRes.fec_ini = dtpFecha.Value.ToShortDateString()
+                oEspacioRes.fec_fin = dtpFecha.Value.ToShortDateString()
+                oEspacioRes.id_sede = cboSede.SelectedValue
+                oEspacioRes.des_sede = cboSede.GetItemText(cboSede.SelectedItem)
+                oEspacioRes.id_espacio = cboEspacio.SelectedValue
+                oEspacioRes.nombre_espacio = cboEspacio.GetItemText(cboEspacio.SelectedItem)
+                ListadoEspacioRes.Add(oEspacioRes)
+            Else
+                If val <> String.Empty Then
+                    val = "0"
+                    Exit For
+                End If
+            End If
+        Next
+
+        If val = "0" Then
+            MessageBox.Show("No se puede elegir horas salteadas", "Información")
+            ListadoEspacioRes = New List(Of EspacioResBE)
+        End If
     End Sub
 
 #End Region

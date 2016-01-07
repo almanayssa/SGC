@@ -47,17 +47,14 @@ Partial Class frmHabilitarActividad
         Me.tpRecursos = New System.Windows.Forms.TabPage()
         Me.SgcGroupBox6 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvRecursos = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colDescripcionRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCantidadRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCantidadReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.tsbHabilitar = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.dgvProgramacion = New SGC_CS.SGCDataGridView(Me.components)
-        Me.colSede = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colEspacio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colHoraFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.lblCategoria = New SGC_CS.SGCLabel(Me.components)
         Me.lblVacantes = New SGC_CS.SGCLabel(Me.components)
@@ -78,9 +75,12 @@ Partial Class frmHabilitarActividad
         Me.SgcLabel2 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
-        Me.colDescripcionRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colCantidadRecurso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colCantidadReal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colSede = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colEspacio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colHoraFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tcPlanAnual.SuspendLayout()
         Me.tpRestricciones.SuspendLayout()
         Me.SgcGroupBox3.SuspendLayout()
@@ -342,6 +342,25 @@ Partial Class frmHabilitarActividad
         Me.dgvRecursos.Size = New System.Drawing.Size(439, 174)
         Me.dgvRecursos.TabIndex = 2
         '
+        'colDescripcionRecurso
+        '
+        Me.colDescripcionRecurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDescripcionRecurso.HeaderText = "Descripción"
+        Me.colDescripcionRecurso.Name = "colDescripcionRecurso"
+        Me.colDescripcionRecurso.ReadOnly = True
+        '
+        'colCantidadRecurso
+        '
+        Me.colCantidadRecurso.HeaderText = "Cantidad"
+        Me.colCantidadRecurso.Name = "colCantidadRecurso"
+        Me.colCantidadRecurso.ReadOnly = True
+        '
+        'colCantidadReal
+        '
+        Me.colCantidadReal.HeaderText = "Cantidad Real"
+        Me.colCantidadReal.Name = "colCantidadReal"
+        Me.colCantidadReal.Width = 120
+        '
         'tsMenu
         '
         Me.tsMenu.BackColor = System.Drawing.Color.Silver
@@ -403,42 +422,6 @@ Partial Class frmHabilitarActividad
         Me.dgvProgramacion.ReadOnly = True
         Me.dgvProgramacion.Size = New System.Drawing.Size(320, 177)
         Me.dgvProgramacion.TabIndex = 1
-        '
-        'colSede
-        '
-        Me.colSede.HeaderText = "Sede"
-        Me.colSede.Name = "colSede"
-        Me.colSede.ReadOnly = True
-        '
-        'colEspacio
-        '
-        Me.colEspacio.HeaderText = "Espacio"
-        Me.colEspacio.Name = "colEspacio"
-        Me.colEspacio.ReadOnly = True
-        '
-        'colFecInicio
-        '
-        Me.colFecInicio.HeaderText = "Fec. Inicio"
-        Me.colFecInicio.Name = "colFecInicio"
-        Me.colFecInicio.ReadOnly = True
-        '
-        'colHoraInicio
-        '
-        Me.colHoraInicio.HeaderText = "H. Inicio"
-        Me.colHoraInicio.Name = "colHoraInicio"
-        Me.colHoraInicio.ReadOnly = True
-        '
-        'colFecFin
-        '
-        Me.colFecFin.HeaderText = "Fec. Fin"
-        Me.colFecFin.Name = "colFecFin"
-        Me.colFecFin.ReadOnly = True
-        '
-        'colHoraFin
-        '
-        Me.colHoraFin.HeaderText = "H. Fin"
-        Me.colHoraFin.Name = "colHoraFin"
-        Me.colHoraFin.ReadOnly = True
         '
         'SgcGroupBox1
         '
@@ -682,24 +665,42 @@ Partial Class frmHabilitarActividad
         Me.lblTitulo.TabIndex = 23
         Me.lblTitulo.Text = "Habilitar Actividad"
         '
-        'colDescripcionRecurso
+        'colSede
         '
-        Me.colDescripcionRecurso.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDescripcionRecurso.HeaderText = "Descripción"
-        Me.colDescripcionRecurso.Name = "colDescripcionRecurso"
-        Me.colDescripcionRecurso.ReadOnly = True
+        Me.colSede.HeaderText = "Sede"
+        Me.colSede.Name = "colSede"
+        Me.colSede.ReadOnly = True
         '
-        'colCantidadRecurso
+        'colEspacio
         '
-        Me.colCantidadRecurso.HeaderText = "Cantidad"
-        Me.colCantidadRecurso.Name = "colCantidadRecurso"
-        Me.colCantidadRecurso.ReadOnly = True
+        Me.colEspacio.HeaderText = "Espacio"
+        Me.colEspacio.Name = "colEspacio"
+        Me.colEspacio.ReadOnly = True
         '
-        'colCantidadReal
+        'colFecInicio
         '
-        Me.colCantidadReal.HeaderText = "Cantidad Real"
-        Me.colCantidadReal.Name = "colCantidadReal"
-        Me.colCantidadReal.Width = 120
+        Me.colFecInicio.HeaderText = "Fecha"
+        Me.colFecInicio.Name = "colFecInicio"
+        Me.colFecInicio.ReadOnly = True
+        '
+        'colHoraInicio
+        '
+        Me.colHoraInicio.HeaderText = "H. Inicio"
+        Me.colHoraInicio.Name = "colHoraInicio"
+        Me.colHoraInicio.ReadOnly = True
+        '
+        'colFecFin
+        '
+        Me.colFecFin.HeaderText = "Fec. Fin"
+        Me.colFecFin.Name = "colFecFin"
+        Me.colFecFin.ReadOnly = True
+        Me.colFecFin.Visible = False
+        '
+        'colHoraFin
+        '
+        Me.colHoraFin.HeaderText = "H. Fin"
+        Me.colHoraFin.Name = "colHoraFin"
+        Me.colHoraFin.ReadOnly = True
         '
         'frmHabilitarActividad
         '
@@ -784,14 +785,14 @@ End Sub
     Friend WithEvents colDescripcionRestriccion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colCondicionRestriccion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colCantidadRestriccion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colDescripcionRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colCantidadRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents colCantidadReal As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colSede As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colEspacio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colHoraInicio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colHoraFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colDescripcionRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colCantidadRecurso As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents colCantidadReal As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

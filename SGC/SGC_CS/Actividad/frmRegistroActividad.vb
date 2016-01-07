@@ -456,7 +456,33 @@ Public Class frmRegistroActividad
             msg &= vbCrLf & "- Ingrese un detalle en la programación"
         End If
 
+        msg &= ValidarProgramacion()
+
         msg &= ValidarRestricciones()
+
+        Return msg
+    End Function
+
+    Private Function ValidarProgramacion() As String
+        Dim msg As String = String.Empty
+        Dim count As Integer = 0
+        Dim tempDate As Date = Nothing
+
+        For Each row As DataGridViewRow In dgvProgramacion.Rows
+            Dim value As Date = CType(dgvProgramacion.Item(colFecInicio.Index, row.Index).EditedFormattedValue, Date)
+            If tempDate = Nothing Then
+                tempDate = value
+            Else
+                If value <> tempDate Then
+                    count += 1
+                    Exit For
+                End If
+            End If
+        Next
+
+        If count > 0 Then
+            msg &= vbCrLf & "- Sólo se permite ingresar horas de una sola fecha"
+        End If
 
         Return msg
     End Function
@@ -497,10 +523,10 @@ Public Class frmRegistroActividad
 
         Dim affectedRows As Integer = 0
         Dim oActividad As New ActividadBE
-        oActividad.fec_ini = Today
-        oActividad.fec_fin = Today
-        oActividad.hora_ini = Now.TimeOfDay
-        oActividad.hora_fin = Now.TimeOfDay
+        'oActividad.fec_ini = Today
+        'oActividad.fec_fin = Today
+        'oActividad.hora_ini = Now.TimeOfDay
+        'oActividad.hora_fin = Now.TimeOfDay
         oActividad.monto_pago = nudPago.Value
         oActividad.id_cattipo_act = cboCategoria.SelectedValue
         oActividad.id_comite = cboComite.SelectedValue
@@ -515,13 +541,26 @@ Public Class frmRegistroActividad
         oActividad.ListaTipoPersonal = dgvTipoPersonal.DataSource
         oActividad.ListaRecursos = dgvRecursos.DataSource
 
-        'Dim startDateTime As DateTime = Nothing
-        'Dim endDateTime As DateTime = Nothing
+        Dim startDateTime As DateTime = Nothing
+        Dim endDateTime As DateTime = Nothing
 
-        'oActividad.fec_ini = startDateTime.Date
-        'oActividad.hora_ini = startDateTime.TimeOfDay
-        'oActividad.fec_fin = endDateTime.Date
-        'oActividad.hora_fin = endDateTime.TimeOfDay
+        For Each oActividadDetalle As ActividadDetalleBE In oActividad.ListaActividadDetalle
+            startDateTime = Convert.ToDateTime(oActividadDetalle.fecha_ini).Add(oActividadDetalle.hora_ini)
+            endDateTime = Convert.ToDateTime(oActividadDetalle.fecha_fin).Add(oActividadDetalle.hora_fin)
+
+            If Convert.ToDateTime(oActividadDetalle.fecha_ini).Add(oActividadDetalle.hora_ini) < startDateTime Then
+                startDateTime = Convert.ToDateTime(oActividadDetalle.fecha_ini).Add(oActividadDetalle.hora_ini)
+            End If
+
+            If Convert.ToDateTime(oActividadDetalle.fecha_fin).Add(oActividadDetalle.hora_fin) > endDateTime Then
+                endDateTime = Convert.ToDateTime(oActividadDetalle.fecha_fin).Add(oActividadDetalle.hora_fin)
+            End If
+        Next
+
+        oActividad.fec_ini = startDateTime.Date
+        oActividad.hora_ini = startDateTime.TimeOfDay
+        oActividad.fec_fin = endDateTime.Date
+        oActividad.hora_fin = endDateTime.TimeOfDay
 
         For Each row As DataGridViewRow In dgvRestricciones.Rows
             Dim value As Boolean = CType(dgvRestricciones.Item(colSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)

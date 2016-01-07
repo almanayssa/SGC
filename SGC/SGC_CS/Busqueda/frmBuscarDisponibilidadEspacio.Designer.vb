@@ -23,7 +23,7 @@ Partial Class frmBuscarDisponibilidadEspacio
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
         Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.colHoraInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -38,6 +38,7 @@ Partial Class frmBuscarDisponibilidadEspacio
         Me.cboSede = New SGC_CS.SGCComboBox(Me.components)
         Me.lblLugar = New SGC_CS.SGCLabel(Me.components)
         Me.cboLugar = New SGC_CS.SGCComboBox(Me.components)
+        Me.btnAgregar = New SGC_CS.SGCButton(Me.components)
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxFiltros.SuspendLayout()
         Me.SuspendLayout()
@@ -45,16 +46,16 @@ Partial Class frmBuscarDisponibilidadEspacio
         'dgvListado
         '
         Me.dgvListado.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSeleccionar, Me.colHoraInicio, Me.colHoraFin})
         Me.dgvListado.Location = New System.Drawing.Point(12, 208)
         Me.dgvListado.Name = "dgvListado"
-        Me.dgvListado.Size = New System.Drawing.Size(297, 206)
+        Me.dgvListado.Size = New System.Drawing.Size(297, 171)
         Me.dgvListado.TabIndex = 22
         '
         'colSeleccionar
@@ -196,11 +197,27 @@ Partial Class frmBuscarDisponibilidadEspacio
         Me.cboLugar.Size = New System.Drawing.Size(121, 26)
         Me.cboLugar.TabIndex = 8
         '
+        'btnAgregar
+        '
+        Me.btnAgregar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAgregar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAgregar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnAgregar.Location = New System.Drawing.Point(234, 385)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(75, 31)
+        Me.btnAgregar.TabIndex = 23
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAgregar.UseVisualStyleBackColor = False
+        '
         'frmBuscarDisponibilidadEspacio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(323, 425)
+        Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.dgvListado)
         Me.Controls.Add(Me.gbxFiltros)
         Me.Name = "frmBuscarDisponibilidadEspacio"
@@ -226,4 +243,5 @@ Partial Class frmBuscarDisponibilidadEspacio
     Friend WithEvents colSeleccionar As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents colHoraInicio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colHoraFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btnAgregar As SGC_CS.SGCButton
 End Class
