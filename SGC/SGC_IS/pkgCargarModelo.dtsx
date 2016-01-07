@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="HP"
   DTS:CreationDate="12/13/2015 6:43:28 PM"
   DTS:PackageType="5"
-  DTS:VersionBuild="24"
-  DTS:VersionGUID="{43303F5B-B4CE-423B-9101-349410399A1A}"
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{0F0EC1A1-4C50-41D6-BB22-EF6A3E773D24}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkgCargarModelo"
@@ -707,596 +707,6 @@
               name="OLE DB Source Output"
               startId="Package\Cargar tabla DimActividad\OLE DB Source.Outputs[OLE DB Source Output]"
               endId="Package\Cargar tabla DimActividad\OLE DB Destination.Inputs[OLE DB Destination Input]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Cargar tabla DimComite"
-      DTS:ExecutableType="SSIS.Pipeline.3"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Cargar tabla DimComite"
-      DTS:DTSID="{7DA99CBB-3898-42A9-9764-EDAE045971FE}"
-      DTS:Description="Data Flow Task"
-      DTS:CreationName="SSIS.Pipeline.3">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Cargar tabla DimComite\OLE DB Destination"
-              name="OLE DB Destination"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
-              description="OLE DB Destination"
-              usesDispositions="true"
-              version="4"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
-              <properties>
-                <property
-                  name="CommandTimeout"
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
-                <property
-                  name="OpenRowset"
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset.">[dbo].[DimComite]</property>
-                <property
-                  name="OpenRowsetVariable"
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
-                <property
-                  name="SqlCommand"
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  name="DefaultCodePage"
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
-                <property
-                  name="AlwaysUseDefaultCodePage"
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
-                <property
-                  name="AccessMode"
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  typeConverter="AccessMode">3</property>
-                <property
-                  name="FastLoadKeepIdentity"
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
-                <property
-                  name="FastLoadKeepNulls"
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
-                <property
-                  name="FastLoadOptions"
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  name="FastLoadMaxInsertCommitSize"
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Cargar tabla DimComite\OLE DB Destination.Connections[OleDbConnection]"
-                  name="OleDbConnection"
-                  description="The OLE DB runtime connection used to access the database."
-                  connectionManagerID="{ABCFF976-B1E0-46E2-AB86-EA18174A9891}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.SGC_BI]" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Cargar tabla DimComite\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  name="OLE DB Destination Input"
-                  hasSideEffects="true"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_comite]"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
-                      externalMetadataColumnId="Package\Cargar tabla DimComite\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
-                      cachedName="id_comite"
-                      cachedDataType="str"
-                      cachedLength="6"
-                      cachedCodepage="1252" />
-                    <inputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[nombre]"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre]"
-                      externalMetadataColumnId="Package\Cargar tabla DimComite\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre]"
-                      cachedName="nombre"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedCodepage="1252" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
-                      name="id_comite"
-                      dataType="str"
-                      length="6"
-                      codePage="1252" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[nombre]"
-                      name="nombre"
-                      dataType="str"
-                      length="50"
-                      codePage="1252" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Cargar tabla DimComite\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  name="OLE DB Destination Error Output"
-                  exclusionGroup="1"
-                  synchronousInputId="Package\Cargar tabla DimComite\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  isErrorOut="true">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Cargar tabla DimComite\OLE DB Source"
-              name="OLE DB Source"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
-              description="OLE DB Source"
-              usesDispositions="true"
-              version="7"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
-              <properties>
-                <property
-                  name="CommandTimeout"
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
-                <property
-                  name="OpenRowset"
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset.">[comite].[TB_Maestro_Comite]</property>
-                <property
-                  name="OpenRowsetVariable"
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
-                <property
-                  name="SqlCommand"
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  name="SqlCommandVariable"
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."></property>
-                <property
-                  name="DefaultCodePage"
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
-                <property
-                  name="AlwaysUseDefaultCodePage"
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
-                <property
-                  name="AccessMode"
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  typeConverter="AccessMode">0</property>
-                <property
-                  name="ParameterMapping"
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Cargar tabla DimComite\OLE DB Source.Connections[OleDbConnection]"
-                  name="OleDbConnection"
-                  description="The OLE DB runtime connection used to access the database."
-                  connectionManagerID="{6150F068-2813-4A36-814B-8641718F18D3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.SGC]" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
-                      name="id_comite"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
-                      length="6"
-                      dataType="str"
-                      codePage="1252"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre]"
-                      name="nombre"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].Columns[nombre]"
-                      length="50"
-                      dataType="str"
-                      codePage="1252"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre]" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]"
-                      name="id_comite"
-                      dataType="str"
-                      length="6"
-                      codePage="1252" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre]"
-                      name="nombre"
-                      dataType="str"
-                      length="50"
-                      codePage="1252" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[cta_contable]"
-                      name="cta_contable"
-                      dataType="str"
-                      length="50"
-                      codePage="1252" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Error Output]"
-                  name="OLE DB Source Error Output"
-                  isErrorOut="true">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
-                      name="id_comite"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
-                      length="6"
-                      dataType="str"
-                      codePage="1252" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre]"
-                      name="nombre"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre]"
-                      length="50"
-                      dataType="str"
-                      codePage="1252" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      lineageId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Cargar tabla DimComite.Paths[OLE DB Source Output]"
-              name="OLE DB Source Output"
-              startId="Package\Cargar tabla DimComite\OLE DB Source.Outputs[OLE DB Source Output]"
-              endId="Package\Cargar tabla DimComite\OLE DB Destination.Inputs[OLE DB Destination Input]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Cargar tabla DimTipoActividad"
-      DTS:ExecutableType="SSIS.Pipeline.3"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Cargar tabla DimTipoActividad"
-      DTS:DTSID="{C916D455-FE2F-470B-BA05-C7711151A507}"
-      DTS:Description="Data Flow Task"
-      DTS:CreationName="SSIS.Pipeline.3">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination"
-              name="OLE DB Destination"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
-              description="OLE DB Destination"
-              usesDispositions="true"
-              version="4"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
-              <properties>
-                <property
-                  name="CommandTimeout"
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
-                <property
-                  name="OpenRowset"
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset.">[dbo].[DimTipoActividad]</property>
-                <property
-                  name="OpenRowsetVariable"
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
-                <property
-                  name="SqlCommand"
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  name="DefaultCodePage"
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
-                <property
-                  name="AlwaysUseDefaultCodePage"
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
-                <property
-                  name="AccessMode"
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  typeConverter="AccessMode">3</property>
-                <property
-                  name="FastLoadKeepIdentity"
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
-                <property
-                  name="FastLoadKeepNulls"
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
-                <property
-                  name="FastLoadOptions"
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  name="FastLoadMaxInsertCommitSize"
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Connections[OleDbConnection]"
-                  name="OleDbConnection"
-                  description="The OLE DB runtime connection used to access the database."
-                  connectionManagerID="{ABCFF976-B1E0-46E2-AB86-EA18174A9891}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.SGC_BI]" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  name="OLE DB Destination Input"
-                  hasSideEffects="true"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_tipo_act]"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
-                      externalMetadataColumnId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
-                      cachedName="id_tipo_act"
-                      cachedDataType="str"
-                      cachedLength="6"
-                      cachedCodepage="1252" />
-                    <inputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[desc_tipo]"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].Columns[desc_tipo]"
-                      externalMetadataColumnId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descripcion]"
-                      cachedName="desc_tipo"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedCodepage="1252" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
-                      name="id_tipo"
-                      dataType="str"
-                      length="6"
-                      codePage="1252" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[descripcion]"
-                      name="descripcion"
-                      dataType="str"
-                      length="50"
-                      codePage="1252" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  name="OLE DB Destination Error Output"
-                  exclusionGroup="1"
-                  synchronousInputId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  isErrorOut="true">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Cargar tabla DimTipoActividad\OLE DB Source"
-              name="OLE DB Source"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
-              description="OLE DB Source"
-              usesDispositions="true"
-              version="7"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
-              <properties>
-                <property
-                  name="CommandTimeout"
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
-                <property
-                  name="OpenRowset"
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset.">[comite].[TB_Maestro_TipoActividad]</property>
-                <property
-                  name="OpenRowsetVariable"
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
-                <property
-                  name="SqlCommand"
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  name="SqlCommandVariable"
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."></property>
-                <property
-                  name="DefaultCodePage"
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
-                <property
-                  name="AlwaysUseDefaultCodePage"
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
-                <property
-                  name="AccessMode"
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  typeConverter="AccessMode">0</property>
-                <property
-                  name="ParameterMapping"
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Connections[OleDbConnection]"
-                  name="OleDbConnection"
-                  description="The OLE DB runtime connection used to access the database."
-                  connectionManagerID="{6150F068-2813-4A36-814B-8641718F18D3}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[localhost.SGC]" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
-                      name="id_tipo_act"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
-                      length="6"
-                      dataType="str"
-                      codePage="1252"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].Columns[desc_tipo]"
-                      name="desc_tipo"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].Columns[desc_tipo]"
-                      length="50"
-                      dataType="str"
-                      codePage="1252"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      truncationRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[desc_tipo]" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]"
-                      name="id_tipo_act"
-                      dataType="str"
-                      length="6"
-                      codePage="1252" />
-                    <externalMetadataColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[desc_tipo]"
-                      name="desc_tipo"
-                      dataType="str"
-                      length="50"
-                      codePage="1252" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Error Output]"
-                  name="OLE DB Source Error Output"
-                  isErrorOut="true">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
-                      name="id_tipo_act"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
-                      length="6"
-                      dataType="str"
-                      codePage="1252" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[desc_tipo]"
-                      name="desc_tipo"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[desc_tipo]"
-                      length="50"
-                      dataType="str"
-                      codePage="1252" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      lineageId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\Cargar tabla DimTipoActividad.Paths[OLE DB Source Output]"
-              name="OLE DB Source Output"
-              startId="Package\Cargar tabla DimTipoActividad\OLE DB Source.Outputs[OLE DB Source Output]"
-              endId="Package\Cargar tabla DimTipoActividad\OLE DB Destination.Inputs[OLE DB Destination Input]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2502,34 +1912,10 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:From="Package\Limpiar tablas de modelo"
-      DTS:To="Package\Cargar tabla DimComite"
+      DTS:To="Package\Cargar tabla FactInscripcion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:DTSID="{675F1539-29FA-49CB-AB0D-E11D81D2DE9A}"
-      DTS:CreationName="" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
-      DTS:From="Package\Limpiar tablas de modelo"
-      DTS:To="Package\Cargar tabla DimTipoActividad"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:DTSID="{7139CD11-2E47-40A8-9D68-B98AC1193249}"
-      DTS:CreationName="" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
-      DTS:From="Package\Cargar tabla DimComite"
-      DTS:To="Package\Cargar tabla FactInscripcion"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2"
-      DTS:DTSID="{3A00A52A-83D2-4D8A-AFCA-595C6F3D270E}"
-      DTS:CreationName="" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
-      DTS:From="Package\Cargar tabla DimTipoActividad"
-      DTS:To="Package\Cargar tabla FactInscripcion"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3"
-      DTS:DTSID="{1B206D95-61FF-4CF0-8D10-2A84471FF3CB}"
+      DTS:DTSID="{E8DDE0D8-8E83-4416-B7B1-AF177F68FCDF}"
       DTS:CreationName="" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
@@ -2540,28 +1926,12 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
       DTS:DTSID="{B45035F1-85BD-4EF2-B2E8-12FEB98CD8AD}"
       DTS:CreationName="" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
-      DTS:From="Package\Cargar tabla DimTipoActividad"
-      DTS:To="Package\Cargar tabla FactActividadSum"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5"
-      DTS:DTSID="{A5F5D26B-7CE2-4930-BB6A-FD30FB575F2E}"
-      DTS:CreationName="" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:From="Package\Cargar tabla DimActividad"
       DTS:To="Package\Cargar tabla FactActividadSum"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
       DTS:DTSID="{DC8135B3-18A3-4792-BF89-2F668DB7BA01}"
-      DTS:CreationName="" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
-      DTS:From="Package\Cargar tabla DimComite"
-      DTS:To="Package\Cargar tabla FactActividadSum"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 7"
-      DTS:DTSID="{034E5882-0630-4EC7-9B81-4EAD628EE907}"
       DTS:CreationName="" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -2575,19 +1945,11 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="200,42"
           Id="Package\Cargar tabla DimActividad"
           TopLeft="816,116" />
-        <NodeLayout
-          Size="190,42"
-          Id="Package\Cargar tabla DimComite"
-          TopLeft="128,114" />
-        <NodeLayout
-          Size="220,42"
-          Id="Package\Cargar tabla DimTipoActividad"
-          TopLeft="460,116" />
         <NodeLayout
           Size="222,42"
           Id="Package\Cargar tabla FactActividadSum"
@@ -2595,135 +1957,11 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
         <NodeLayout
           Size="209,42"
           Id="Package\Cargar tabla FactInscripcion"
-          TopLeft="306,304" />
+          TopLeft="367,132" />
         <NodeLayout
           Size="196,42"
           Id="Package\Limpiar tablas de modelo"
           TopLeft="473,19" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="524,61">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-301,53"
-              Start="0,0"
-              End="-301,45.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.1409395973154" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.1409395973154"
-                    Point2="0,18.1409395973154"
-                    Point3="-4,18.1409395973154" />
-                  <mssgle:LineSegment
-                    End="-297,18.1409395973154" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-297,18.1409395973154"
-                    Point2="-301,18.1409395973154"
-                    Point3="-301,22.1409395973154" />
-                  <mssgle:LineSegment
-                    End="-301,45.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="570.5,61">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,55"
-              Start="0,0"
-              End="0,47.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="192.666666666667,156">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="184.333333333333,148"
-              Start="0,0"
-              End="184.333333333333,140.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,70.0694183864916" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,70.0694183864916"
-                    Point2="0,74.0694183864916"
-                    Point3="4,74.0694183864916" />
-                  <mssgle:LineSegment
-                    End="180.333333333333,74.0694183864916" />
-                  <mssgle:CubicBezierSegment
-                    Point1="180.333333333333,74.0694183864916"
-                    Point2="184.333333333333,74.0694183864916"
-                    Point3="184.333333333333,78.0694183864916" />
-                  <mssgle:LineSegment
-                    End="184.333333333333,140.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="534.666666666667,158">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-90.6666666666666,146"
-              Start="0,0"
-              End="-90.6666666666666,138.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,68.9657116016909" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,68.9657116016909"
-                    Point2="0,72.9657116016909"
-                    Point3="-4,72.9657116016909" />
-                  <mssgle:LineSegment
-                    End="-86.6666666666666,72.9657116016909" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-86.6666666666666,72.9657116016909"
-                    Point2="-90.6666666666666,72.9657116016909"
-                    Point3="-90.6666666666666,76.9657116016909" />
-                  <mssgle:LineSegment
-                    End="-90.6666666666666,138.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="618,61">
@@ -2750,40 +1988,6 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
                     Point3="298,22.8255033557047" />
                   <mssgle:LineSegment
                     End="298,47.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="605.333333333333,158">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="118.666666666667,105"
-              Start="0,0"
-              End="118.666666666667,97.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.4548736462094" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,38.4548736462094"
-                    Point2="0,42.4548736462094"
-                    Point3="4,42.4548736462094" />
-                  <mssgle:LineSegment
-                    End="114.666666666667,42.4548736462094" />
-                  <mssgle:CubicBezierSegment
-                    Point1="114.666666666667,42.4548736462094"
-                    Point2="118.666666666667,42.4548736462094"
-                    Point3="118.666666666667,46.4548736462094" />
-                  <mssgle:LineSegment
-                    End="118.666666666667,97.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2827,31 +2031,31 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="253.333333333333,156">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="539.666666666667,61">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="417.166666666667,107"
+              EndConnector="-68.1666666666666,71"
               Start="0,0"
-              End="417.166666666667,99.5">
+              End="-68.1666666666666,63.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56.7607294015268" />
+                    End="0,24.7449392712551" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,56.7607294015268"
-                    Point2="0,60.7607294015268"
-                    Point3="4,60.7607294015268" />
+                    Point1="0,24.7449392712551"
+                    Point2="0,28.7449392712551"
+                    Point3="-4,28.7449392712551" />
                   <mssgle:LineSegment
-                    End="413.166666666667,60.7607294015268" />
+                    End="-64.1666666666666,28.7449392712551" />
                   <mssgle:CubicBezierSegment
-                    Point1="413.166666666667,60.7607294015268"
-                    Point2="417.166666666667,60.7607294015268"
-                    Point3="417.166666666667,64.7607294015268" />
+                    Point1="-64.1666666666666,28.7449392712551"
+                    Point2="-68.1666666666666,28.7449392712551"
+                    Point3="-68.1666666666666,32.744939271255" />
                   <mssgle:LineSegment
-                    End="417.166666666667,99.5" />
+                    End="-68.1666666666666,63.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2918,138 +2122,6 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Cargar tabla DimActividad\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Cargar tabla DimComite">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Cargar tabla DimComite\OLE DB Source"
-          TopLeft="95,35" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Cargar tabla DimComite\OLE DB Destination"
-          TopLeft="340,37" />
-        <EdgeLayout
-          Id="Package\Cargar tabla DimComite.Paths[OLE DB Source Output]"
-          TopLeft="244,57">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="96,0"
-              Start="0,0"
-              End="88.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="88.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla DimComite\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla DimComite\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Cargar tabla DimTipoActividad">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Cargar tabla DimTipoActividad\OLE DB Source"
-          TopLeft="164,64" />
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Cargar tabla DimTipoActividad\OLE DB Destination"
-          TopLeft="443,63" />
-        <EdgeLayout
-          Id="Package\Cargar tabla DimTipoActividad.Paths[OLE DB Source Output]"
-          TopLeft="313,84.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="130,0"
-              Start="0,0"
-              End="122.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="122.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla DimTipoActividad\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla DimTipoActividad\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
