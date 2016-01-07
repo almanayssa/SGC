@@ -453,6 +453,7 @@ Partial Class frmRegistroPago
         Me.SgcGroupBox2.TabIndex = 29
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Documento"
+        Me.SgcGroupBox2.Visible = False
         '
         'txtSerie
         '
