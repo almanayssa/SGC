@@ -22,7 +22,6 @@ Public Class frmSemaforoPorMes
         End If
     End Sub
 
-
     Private Sub ListarComites()
         Dim oComite As New ComiteBE
         oComite.id_comite = "000"
@@ -112,23 +111,32 @@ Public Class frmSemaforoPorMes
         gvwSemaforo.DataSource = ListadoSemaforo
         gvwSemaforo.DataBind()
 
-        Dim x As String = bc.ListarSemaforoVariables(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, String.Concat(ddlAnio.SelectedValue, ddlMes.SelectedValue))
-        Dim v As String()
+        If ListadoSemaforo IsNot Nothing AndAlso ListadoSemaforo.Count > 0 Then
+            lblMensaje.Visible = False
+            divLeyenda.Visible = True
 
-        If x IsNot Nothing Then
-            v = New String(5) {}
-            v = x.Split(",")
+            Dim x As String = bc.ListarSemaforoVariables(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, String.Concat(ddlAnio.SelectedValue, ddlMes.SelectedValue))
+            Dim v As String()
 
-            lblResultado.Text = "La media aritmetica de " & texto1 & "es: " & v(0) & "<br/>"
-            lblResultado.Text &= "La media aritmetica de " & texto2 & "es: " & v(1) & "<br/>"
-            lblResultado.Text &= "La covarianza de ambos es: " & v(2) & "<br/>"
-            lblResultado.Text &= "La covarianza de " & texto1 & "es: " & v(3) & "<br/>"
-            lblResultado.Text &= "La covarianza de " & texto2 & "es: " & v(4) & "<br/>"
-            lblResultado.Text &= "El coeficiente de correlacion de ambos tipos es:" & v(5) & "<br/>"
-            lblResultado.Text &= IIf(CDec(v(5)) > 0.5, "Se recomienda que se realicen en paralelo", IIf(CDec(v(5)) < 0.5, "No se recomienda que se realicen en paralelo", "Pueden realizarse en paralelo"))
+            If x IsNot Nothing Then
+                v = New String(5) {}
+                v = x.Split(",")
 
+                lblResultado.Text = "La media aritmetica de " & texto1 & "es: " & v(0) & "<br/>"
+                lblResultado.Text &= "La media aritmetica de " & texto2 & "es: " & v(1) & "<br/>"
+                lblResultado.Text &= "La covarianza de ambos es: " & v(2) & "<br/>"
+                lblResultado.Text &= "La covarianza de " & texto1 & "es: " & v(3) & "<br/>"
+                lblResultado.Text &= "La covarianza de " & texto2 & "es: " & v(4) & "<br/>"
+                lblResultado.Text &= "El coeficiente de correlacion de ambos tipos es:" & v(5) & "<br/>"
+                lblResultado.Text &= IIf(CDec(v(5)) > 0.5, "Se recomienda que se realicen en paralelo", IIf(CDec(v(5)) < 0.5, "No se recomienda que se realicen en paralelo", "Pueden realizarse en paralelo"))
+
+            Else
+                lblResultado.Text = ""
+            End If
         Else
-            lblResultado.Text = ""
+            lblMensaje.Text = "No se encontraron resultados"
+            lblMensaje.Visible = True
+            divLeyenda.Visible = False
         End If
 
     End Sub

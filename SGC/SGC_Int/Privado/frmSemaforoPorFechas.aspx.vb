@@ -52,8 +52,6 @@ Public Class frmSemaforoPorFechas
             Exit Sub
         End If
 
-        lblMensaje.Visible = False
-        divLeyenda.Visible = True
         GenerarSemaforo()
     End Sub
 
@@ -110,6 +108,15 @@ Public Class frmSemaforoPorFechas
         Dim ListadoSemaforo As List(Of SemaforoBE) = bc.ListarSemaforoPorFechas(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, txtFechaInicio.Text.Trim, txtFechaFin.Text.Trim)
         gvwSemaforo.DataSource = ListadoSemaforo
         gvwSemaforo.DataBind()
+
+        If ListadoSemaforo IsNot Nothing AndAlso ListadoSemaforo.Count > 0 Then
+            lblMensaje.Visible = False
+            divLeyenda.Visible = True
+        Else
+            lblMensaje.Text = "No se encontraron resultados"
+            lblMensaje.Visible = True
+            divLeyenda.Visible = False
+        End If
     End Sub
 
     Private Sub gvwSemaforo_RowDataBound(sender As Object, e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvwSemaforo.RowDataBound
