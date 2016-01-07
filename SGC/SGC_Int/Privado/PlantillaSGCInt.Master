@@ -42,7 +42,7 @@
             <ul>
             <li><a href="frmReporteGeneral.aspx">Reporte General</a></li>
             <li><a href="frmReporteComite.aspx">Reporte Comité</a></li>
-            <li><a href="frmReporteActividades.aspx">Reporte Actividad</a></li>
+            <li><a href="frmReporteActividades.aspx">Reporte Tipo</a></li>
             </ul>
             </li>
             <%--<li><a href="#">Parámetros</a>

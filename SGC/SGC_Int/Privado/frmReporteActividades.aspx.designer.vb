@@ -32,15 +32,6 @@ Partial Public Class frmReporteActividades
     Protected WithEvents upnlActividad As Global.System.Web.UI.UpdatePanel
 
     '''<summary>
-    '''ddlTipo control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ddlTipo As Global.System.Web.UI.WebControls.DropDownList
-
-    '''<summary>
     '''txtFechaInicio control.
     '''</summary>
     '''<remarks>

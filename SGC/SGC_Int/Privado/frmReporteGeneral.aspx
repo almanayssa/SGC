@@ -38,7 +38,7 @@
                             </tr>
                         </table>
                         <br />
-                        <table border="0" cellpadding="0" cellspacing="0">
+                        <%--<table border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>Detalle de Reporte:</td>
                             </tr>
@@ -49,7 +49,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <br />
+                        <br />--%>
                         <table id="tblTipos" runat="server" border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>Tipos de Actividad:</td>
@@ -109,7 +109,7 @@
                         <br />
                         <table border="0" cellpadding="0" cellspacing="0">
                             <tr>
-                                <td>Variables:</td>
+                                <td>Vistas:</td>
                             </tr>
                             <tr>
                                 <td><asp:CheckBox ID="chkVariables" runat="server" Text="Seleccionar todas" AutoPostBack="true" Checked="true" /></td>

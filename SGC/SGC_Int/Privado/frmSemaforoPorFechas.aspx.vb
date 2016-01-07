@@ -48,10 +48,12 @@ Public Class frmSemaforoPorFechas
         If ValidarCamposRequeridos().Trim <> String.Empty Then
             lblMensaje.Visible = True
             lblMensaje.Text = ValidarCamposRequeridos()
+            divLeyenda.Visible = False
             Exit Sub
         End If
 
         lblMensaje.Visible = False
+        divLeyenda.Visible = True
         GenerarSemaforo()
     End Sub
 

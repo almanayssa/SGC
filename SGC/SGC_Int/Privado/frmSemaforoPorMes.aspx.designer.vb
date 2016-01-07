@@ -68,6 +68,15 @@ Partial Public Class frmSemaforoPorMes
     Protected WithEvents gvwSemaforo As Global.System.Web.UI.WebControls.GridView
 
     '''<summary>
+    '''divLeyenda control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divLeyenda As Global.System.Web.UI.HtmlControls.HtmlGenericControl
+
+    '''<summary>
     '''lblResultado control.
     '''</summary>
     '''<remarks>
@@ -102,6 +111,24 @@ Partial Public Class frmSemaforoPorMes
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents cblTipos As Global.System.Web.UI.WebControls.CheckBoxList
+
+    '''<summary>
+    '''ddlMes control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlMes As Global.System.Web.UI.WebControls.DropDownList
+
+    '''<summary>
+    '''ddlAnio control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ddlAnio As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
     '''lbtnGenerar control.

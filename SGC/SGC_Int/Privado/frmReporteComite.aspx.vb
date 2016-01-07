@@ -8,24 +8,10 @@ Public Class frmReporteComite
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-            ListarComites()
-            txtFechaInicio.Text = "01/12/2015"
+            txtFechaInicio.Text = "01/01/2015"
             txtFechaFin.Text = Now.ToString("dd/MM/yyyy")
             CargarReporte()
         End If
-    End Sub
-
-    Private Sub ListarComites()
-        Dim oComite As New ComiteBE
-        oComite.id_comite = "000"
-        oComite.nombre = "- Seleccione -"
-
-        Dim ListadoComites As List(Of ComiteBE) = bc.ListarComites()
-        ListadoComites.Insert(0, oComite)
-        ddlComite.DataSource = ListadoComites
-        ddlComite.DataValueField = "id_comite"
-        ddlComite.DataTextField = "nombre"
-        ddlComite.DataBind()
     End Sub
 
     Private Sub CargarReporte()
@@ -36,18 +22,14 @@ Public Class frmReporteComite
         rvwComite.ShowParameterPrompts = False
         rvwComite.ShowPrintButton = True
 
-        Dim reportParameterCollection As Microsoft.Reporting.WebForms.ReportParameter() = New Microsoft.Reporting.WebForms.ReportParameter(2) {}
+        Dim reportParameterCollection As Microsoft.Reporting.WebForms.ReportParameter() = New Microsoft.Reporting.WebForms.ReportParameter(1) {}
         reportParameterCollection(0) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(0).Name = "ComiteID"
-        reportParameterCollection(0).Values.Add(ddlComite.SelectedValue)
+        reportParameterCollection(0).Name = "FechaFrom"
+        reportParameterCollection(0).Values.Add(Convert.ToDateTime(txtFechaInicio.Text).ToString("yyyyMMdd"))
 
         reportParameterCollection(1) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(1).Name = "FechaFrom"
-        reportParameterCollection(1).Values.Add(Convert.ToDateTime(txtFechaInicio.Text).ToString("yyyyMMdd"))
-
-        reportParameterCollection(2) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(2).Name = "FechaTo"
-        reportParameterCollection(2).Values.Add(Convert.ToDateTime(txtFechaFin.Text).ToString("yyyyMMdd"))
+        reportParameterCollection(1).Name = "FechaTo"
+        reportParameterCollection(1).Values.Add(Convert.ToDateTime(txtFechaFin.Text).ToString("yyyyMMdd"))
 
         rvwComite.ServerReport.SetParameters(reportParameterCollection)
         rvwComite.ServerReport.Refresh()

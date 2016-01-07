@@ -72,6 +72,37 @@
             End Set
         End Property
 
+        Private _participantes As Integer
+        Public Property participantes() As Integer
+            Get
+                Return _participantes
+            End Get
+            Set(ByVal value As Integer)
+                _participantes = value
+            End Set
+        End Property
+
+        Private _correlacion1 As Decimal
+        Public Property correlacion1() As Decimal
+            Get
+                Return _correlacion1
+            End Get
+            Set(ByVal value As Decimal)
+                _correlacion1 = value
+            End Set
+        End Property
+
+        Private _correlacion2 As Decimal
+        Public Property correlacion2() As Decimal
+            Get
+                Return _correlacion2
+            End Get
+            Set(ByVal value As Decimal)
+                _correlacion2 = value
+            End Set
+        End Property
+
+
     End Class
 
 End Namespace

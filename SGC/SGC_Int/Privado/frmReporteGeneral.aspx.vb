@@ -59,16 +59,16 @@ Public Class frmReporteGeneral
         cblActividades.DataBind()
     End Sub
 
-    Protected Sub ddlComite_SelectedIndexChanged(sender As Object, e As System.EventArgs) Handles ddlComite.SelectedIndexChanged
-        If rbtnActividad.Checked Then
-            If ddlComite.SelectedValue = "000" Then
-                lblMensaje.Text = "Seleccione un comité"
-                Exit Sub
-            Else
-                ListarActividades()
-            End If
-        End If
-    End Sub
+    'Protected Sub ddlComite_SelectedIndexChanged(sender As Object, e As System.EventArgs) Handles ddlComite.SelectedIndexChanged
+    '    If rbtnActividad.Checked Then
+    '        If ddlComite.SelectedValue = "000" Then
+    '            lblMensaje.Text = "Seleccione un comité"
+    '            Exit Sub
+    '        Else
+    '            ListarActividades()
+    '        End If
+    '    End If
+    'End Sub
 
     Protected Sub chkTipos_CheckedChanged(sender As Object, e As EventArgs) Handles chkTipos.CheckedChanged
         For Each chkTipo As ListItem In cblTipos.Items
@@ -90,16 +90,16 @@ Public Class frmReporteGeneral
         cblVariables.DataBind()
     End Sub
 
-    Protected Sub ddlTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlTipo.SelectedIndexChanged
-        If rbtnActividad.Checked Then
-            If ddlTipo.SelectedValue = "00" Then
-                lblMensaje.Text = "Seleccione un tipo"
-                Exit Sub
-            Else
-                ListarActividades()
-            End If
-        End If
-    End Sub
+    'Protected Sub ddlTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ddlTipo.SelectedIndexChanged
+    '    If rbtnActividad.Checked Then
+    '        If ddlTipo.SelectedValue = "00" Then
+    '            lblMensaje.Text = "Seleccione un tipo"
+    '            Exit Sub
+    '        Else
+    '            ListarActividades()
+    '        End If
+    '    End If
+    'End Sub
 
     Protected Sub chkVariables_CheckedChanged(sender As Object, e As EventArgs) Handles chkVariables.CheckedChanged
         For Each chkVariable As ListItem In cblVariables.Items
@@ -125,14 +125,14 @@ Public Class frmReporteGeneral
             msg &= "<br/>- Seleccione un comité"
         End If
 
-        If rbtnActividad.Checked Then
-            If ddlTipo.SelectedValue = "00" Then
-                msg &= "<br/>- Seleccione un tipo"
-            End If
-            msg &= ValidarActividades()
-        Else
-            msg &= ValidarTipos()
-        End If
+        'If rbtnActividad.Checked Then
+        '    If ddlTipo.SelectedValue = "00" Then
+        '        msg &= "<br/>- Seleccione un tipo"
+        '    End If
+        '    msg &= ValidarActividades()
+        'Else
+        msg &= ValidarTipos()
+        'End If
 
         msg &= ValidarVariables()
 
@@ -200,53 +200,53 @@ Public Class frmReporteGeneral
         rvwReporteGeneral.ProcessingMode = Microsoft.Reporting.WebForms.ProcessingMode.Remote
         rvwReporteGeneral.ServerReport.ReportServerUrl = New Uri("http://localhost/ReportServer")
 
-        If rbtnTipo.Checked Then
-            'If rbtnDescriptivo.Checked Then
-            cantParametros = 5
-            reportPath = "/Reports/rptGeneralPorTipo"
-            'End If
+        'If rbtnTipo.Checked Then
+        'If rbtnDescriptivo.Checked Then
+        cantParametros = 5
+        reportPath = "/Reports/rptGeneralPorTipo"
+        'End If
 
-            'If rbtnComparativo.Checked Then
-            '    cantParametros = 11
-            '    reportPath = "/Reports/rptComparativoPorTipo"
-            'End If
-        End If
+        'If rbtnComparativo.Checked Then
+        '    cantParametros = 11
+        '    reportPath = "/Reports/rptComparativoPorTipo"
+        'End If
+        'End If
 
-        If rbtnActividad.Checked Then
-            'If rbtnDescriptivo.Checked Then
-            cantParametros = 5
-            reportPath = "/Reports/rptGeneralPorActividad"
-            'End If
+        'If rbtnActividad.Checked Then
+        'If rbtnDescriptivo.Checked Then
+        'cantParametros = 5
+        'reportPath = "/Reports/rptGeneralPorActividad"
+        'End If
 
-            'If rbtnComparativo.Checked Then
-            '    cantParametros = 11
-            '    reportPath = "/Reports/rptComparativoPorActividad"
-            'End If
-        End If
+        'If rbtnComparativo.Checked Then
+        '    cantParametros = 11
+        '    reportPath = "/Reports/rptComparativoPorActividad"
+        'End If
+        'End If
 
         rvwReporteGeneral.ServerReport.ReportPath = reportPath
         rvwReporteGeneral.ShowParameterPrompts = False
         rvwReporteGeneral.ShowPrintButton = False
 
-        If rbtnTipo.Checked Then
-            nomPar = "id_tipo"
+        'If rbtnTipo.Checked Then
+        nomPar = "id_tipo"
 
-            For Each chkTipo As ListItem In cblTipos.Items
-                If chkTipo.Selected Then
-                    id = id & "" & chkTipo.Value & ","
-                End If
-            Next
-        End If
+        For Each chkTipo As ListItem In cblTipos.Items
+            If chkTipo.Selected Then
+                id = id & "" & chkTipo.Value & ","
+            End If
+        Next
+        'End If
 
-        If rbtnActividad.Checked Then
-            nomPar = "id_actividad"
+        'If rbtnActividad.Checked Then
+        '    nomPar = "id_actividad"
 
-            For Each chkActividad As ListItem In cblActividades.Items
-                If chkActividad.Selected Then
-                    id = id & "" & chkActividad.Value & ","
-                End If
-            Next
-        End If
+        '    For Each chkActividad As ListItem In cblActividades.Items
+        '        If chkActividad.Selected Then
+        '            id = id & "" & chkActividad.Value & ","
+        '        End If
+        '    Next
+        'End If
 
         Dim reportParameterCollection As Microsoft.Reporting.WebForms.ReportParameter() = New Microsoft.Reporting.WebForms.ReportParameter(cantParametros) {}
 
@@ -305,27 +305,27 @@ Public Class frmReporteGeneral
         rvwReporteGeneral.ServerReport.Refresh()
     End Sub
 
-    Protected Sub rbtnTipo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnTipo.CheckedChanged
-        If rbtnTipo.Checked Then
-            tblTipos.Visible = True
-            tblActividades.Visible = False
-        Else
-            tblTipos.Visible = False
-            tblActividades.Visible = True
-        End If
-        ListarVariables()
-    End Sub
+    'Protected Sub rbtnTipo_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnTipo.CheckedChanged
+    '    If rbtnTipo.Checked Then
+    '        tblTipos.Visible = True
+    '        tblActividades.Visible = False
+    '    Else
+    '        tblTipos.Visible = False
+    '        tblActividades.Visible = True
+    '    End If
+    '    ListarVariables()
+    'End Sub
 
-    Protected Sub rbtnActividad_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnActividad.CheckedChanged
-        If rbtnActividad.Checked Then
-            tblTipos.Visible = False
-            tblActividades.Visible = True
-        Else
-            tblTipos.Visible = True
-            tblActividades.Visible = False
-        End If
-        ListarVariables()
-    End Sub
+    'Protected Sub rbtnActividad_CheckedChanged(sender As Object, e As EventArgs) Handles rbtnActividad.CheckedChanged
+    '    If rbtnActividad.Checked Then
+    '        tblTipos.Visible = False
+    '        tblActividades.Visible = True
+    '    Else
+    '        tblTipos.Visible = True
+    '        tblActividades.Visible = False
+    '    End If
+    '    ListarVariables()
+    'End Sub
 
     Protected Sub cblTipos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cblTipos.SelectedIndexChanged
         Dim count As Integer = 0

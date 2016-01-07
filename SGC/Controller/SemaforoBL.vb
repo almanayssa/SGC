@@ -53,6 +53,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarComparativoTipo(ByVal id_comite As String, ByVal id_tipo As String, ByVal fec_ini As DateTime, ByVal fec_fin As DateTime) As List(Of SemaforoBE)
+            Try
+                Dim iSemaforo As ISemaforo
+                Dim oListadoSemaforo As List(Of SemaforoBE) = Nothing
+
+                iSemaforo = New SemaforoDL
+                oListadoSemaforo = iSemaforo.ListarComparativoTipo(id_comite, id_tipo, fec_ini, fec_fin)
+
+                Return oListadoSemaforo
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

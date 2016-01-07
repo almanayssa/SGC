@@ -18,9 +18,8 @@
             <tr>
                 <td valign="top" style="width:700px;">
                     <asp:Label ID="lblMensaje" runat="server" Text="Para mostrar el semáforo, elegir los filtros deseados y hacer click en Generar."></asp:Label>
-                    <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label>
                     <asp:GridView ID="gvwSemaforo" runat="server" AutoGenerateColumns="false" AllowPaging="false"
-                        CssClass="tabla-grilla" Width="800px" BorderWidth="0px" BorderColor="White">
+                        CssClass="tabla-grilla" Width="700px" BorderWidth="0px" BorderColor="White">
                         <HeaderStyle CssClass="tabla-grilla-cabecera" />
                         <RowStyle CssClass="tabla-grilla-filas" />
                         <Columns>                            
@@ -39,23 +38,23 @@
                                     <asp:Label ID="lblParticipantes2" runat="server" Text='<%#Eval("participantes2") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Coeficiente de correlación">
+                            <asp:TemplateField HeaderText="Correlación">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblCorrelacion" runat="server" Text='<%#Eval("correlacion") %>'></asp:Label>
-                                    <asp:Image ID="imgSemaforo" runat="server" ImageUrl='<%#IIf(Eval("correlacion")>0.5,"~/App_Themes/img/semaforo_verde.jpg",IIf(Eval("correlacion")<-0.5,"~/App_Themes/img/semaforo_verde.jpg","~/App_Themes/img/semaforo_amarillo.jpg")) %>' />
+                                    <%--<asp:Label ID="lblCorrelacion" runat="server" Text='<%#Eval("correlacion") %>'></asp:Label>--%>
+                                    <asp:Image ID="imgSemaforo" runat="server" ToolTip='<%#Eval("correlacion") %>' ImageUrl='<%#IIf(Eval("correlacion")>0.5,"~/App_Themes/img/semaforo_verde.jpg",IIf(Eval("correlacion")<-0.5,"~/App_Themes/img/semaforo_rojo.jpg","~/App_Themes/img/semaforo_amarillo.jpg")) %>' />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
-                    <div id="divLeyenda">
+                    <div id="divLeyenda" runat="server" visible="false">
                         <fieldset>
                             <legend>Leyenda</legend>
                             <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/img/semaforo_rojo.jpg" />
-                            <asp:Label ID="Label1" runat="server" Text="Se recomienda la creación de una de las dos actividades en este mes. Ya que ambas compiten entre sí."></asp:Label><br />
+                            <asp:Label ID="Label1" runat="server" Text="Correlación Fuerte e Inversa"></asp:Label><br />
                             <asp:Image ID="Image2" runat="server" ImageUrl="~/App_Themes/img/semaforo_amarillo.jpg" />
-                            <asp:Label ID="Label2" runat="server" Text="Se recomienda la creación de ambas actividades o de cualquiera de las dos en este mes."></asp:Label><br />
+                            <asp:Label ID="Label2" runat="server" Text="Correlación Débil"></asp:Label><br />
                             <asp:Image ID="Image3" runat="server" ImageUrl="~/App_Themes/img/semaforo_verde.jpg" />
-                            <asp:Label ID="Label3" runat="server" Text="Se recomienda la creación de ambas actividades en el mes indicado"></asp:Label><br />                            
+                            <asp:Label ID="Label3" runat="server" Text="Correlación Fuerte y Directa"></asp:Label><br />                            
                         </fieldset>                        
                     </div>
                 </td>

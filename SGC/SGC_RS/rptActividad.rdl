@@ -23,7 +23,7 @@
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>total inscritos</Label>
+              <Label>total participantes</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
@@ -33,11 +33,12 @@
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!total_inscritos.Value)</Y>
+                    <Y>=Sum(Fields!total_participantes.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
+                  <ToolTip>=Sum(Fields!total_participantes.Value)</ToolTip>
                   <Style />
                   <ChartMarker>
                     <Style />
@@ -295,20 +296,17 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SGC">
-      <DataSourceReference>SGC</DataSourceReference>
+    <DataSource Name="SGC_BI">
+      <DataSourceReference>SGC_BI</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>abc9dad7-cbf5-445d-915a-7e915751d355</rd:DataSourceID>
+      <rd:DataSourceID>f2cab2fc-6440-4f27-a53a-dfdfef755433</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="dsActividad">
       <Query>
-        <DataSourceName>SGC</DataSourceName>
+        <DataSourceName>SGC_BI</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@TipoID">
-            <Value>=Parameters!TipoID.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@FechaFrom">
             <Value>=Parameters!FechaFrom.Value</Value>
           </QueryParameter>
@@ -316,29 +314,25 @@
             <Value>=Parameters!FechaTo.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT        DimTipoActividad.descripcion, FactInscripcion.total_inscritos
-FROM            FactInscripcion INNER JOIN
-                         DimTipoActividad ON FactInscripcion.id_tipo = DimTipoActividad.id_tipo
-WHERE        (FactInscripcion.id_tipo = @TipoID) AND (FactInscripcion.id_fecha BETWEEN @FechaFrom AND @FechaTo)</CommandText>
+        <CommandText>SELECT        DimTipoActividad.descripcion, SUM(FactActividadSum.total_participantes) AS total_participantes
+FROM            FactActividadSum INNER JOIN
+                         DimTipoActividad ON FactActividadSum.id_tipo = DimTipoActividad.id_tipo
+WHERE       (FactActividadSum.id_fecha_ini BETWEEN @FechaFrom AND @FechaTo)
+GROUP BY DimTipoActividad.descripcion</CommandText>
       </Query>
       <Fields>
         <Field Name="descripcion">
           <DataField>descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="total_inscritos">
-          <DataField>total_inscritos</DataField>
+        <Field Name="total_participantes">
+          <DataField>total_participantes</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="TipoID">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>Tipo ID</Prompt>
-    </ReportParameter>
     <ReportParameter Name="FechaFrom">
       <DataType>String</DataType>
       <Prompt>Fecha From</Prompt>

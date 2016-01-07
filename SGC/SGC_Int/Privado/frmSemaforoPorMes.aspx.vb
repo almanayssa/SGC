@@ -12,6 +12,8 @@ Public Class frmSemaforoPorMes
         If Not Page.IsPostBack Then
             ListarComites()
             ListarTipoActividad()
+            ListarMes()
+            ListarAnio()
 
             'For Each chkTipo As ListItem In cblTipos.Items
             '    chkTipo.Selected = True
@@ -47,10 +49,12 @@ Public Class frmSemaforoPorMes
         If ValidarCamposRequeridos().Trim <> String.Empty Then
             lblMensaje.Visible = True
             lblMensaje.Text = ValidarCamposRequeridos()
+            divLeyenda.Visible = False
             Exit Sub
         End If
 
         lblMensaje.Visible = False
+        divLeyenda.Visible = True
         GenerarSemaforo()
     End Sub
 
@@ -104,21 +108,28 @@ Public Class frmSemaforoPorMes
             End If
         Next
 
-        Dim ListadoSemaforo As List(Of SemaforoBE) = bc.ListarSemaforoPorMes(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, "201501")
+        Dim ListadoSemaforo As List(Of SemaforoBE) = bc.ListarSemaforoPorMes(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, String.Concat(ddlAnio.SelectedValue, ddlMes.SelectedValue))
         gvwSemaforo.DataSource = ListadoSemaforo
         gvwSemaforo.DataBind()
 
-        Dim x As String = bc.ListarSemaforoVariables(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, "201501")
-        Dim v As String() = New String(5) {}
-        v = x.Split(",")
+        Dim x As String = bc.ListarSemaforoVariables(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, String.Concat(ddlAnio.SelectedValue, ddlMes.SelectedValue))
+        Dim v As String()
 
-        lblResultado.Text = "La media aritmetica de " & texto1 & "es:" & v(0) & "<br/>"
-        lblResultado.Text &= "La media aritmetica de " & texto2 & "es:" & v(1) & "<br/>"
-        lblResultado.Text &= "La covarianza de ambos es:" & v(2) & "<br/>"
-        lblResultado.Text &= "La covarianza de " & texto1 & "es:" & v(3) & "<br/>"
-        lblResultado.Text &= "La covarianza de " & texto2 & "es:" & v(4) & "<br/>"
-        lblResultado.Text &= "El coeficiente de correlacion de ambos es:" & v(4) & "<br/>"
-        lblResultado.Text &= IIf(CDec(v(4)) > 0.5, "Recomendado", IIf(CDec(v(4)) < 0.5, "No recomendado", "Indiferente"))
+        If x IsNot Nothing Then
+            v = New String(5) {}
+            v = x.Split(",")
+
+            lblResultado.Text = "La media aritmetica de " & texto1 & "es: " & v(0) & "<br/>"
+            lblResultado.Text &= "La media aritmetica de " & texto2 & "es: " & v(1) & "<br/>"
+            lblResultado.Text &= "La covarianza de ambos es: " & v(2) & "<br/>"
+            lblResultado.Text &= "La covarianza de " & texto1 & "es: " & v(3) & "<br/>"
+            lblResultado.Text &= "La covarianza de " & texto2 & "es: " & v(4) & "<br/>"
+            lblResultado.Text &= "El coeficiente de correlacion de ambos tipos es:" & v(5) & "<br/>"
+            lblResultado.Text &= IIf(CDec(v(5)) > 0.5, "Se recomienda que se realicen en paralelo", IIf(CDec(v(5)) < 0.5, "No se recomienda que se realicen en paralelo", "Pueden realizarse en paralelo"))
+
+        Else
+            lblResultado.Text = ""
+        End If
 
     End Sub
 
@@ -127,5 +138,59 @@ Public Class frmSemaforoPorMes
             e.Row.Cells(1).Text = texto1
             e.Row.Cells(2).Text = texto2
         End If
+    End Sub
+
+    Private Sub ListarAnio()
+        Dim id As String() = New String(1) {"2015", "2016"}
+        Dim desc As String() = New String(1) {"2015", "2016"}
+
+        Dim dt As New DataTable
+        dt.Columns.Add("id")
+        dt.Columns.Add("desc")
+
+        Dim dr As DataRow
+
+        For i As Integer = 0 To 1
+            dr = dt.NewRow()
+            dr("id") = id(i)
+            dr("desc") = desc(i)
+            dt.Rows.Add(dr)
+        Next
+
+        dt.AcceptChanges()
+
+        ddlAnio.DataSource = dt
+        ddlAnio.DataTextField = "desc"
+        ddlAnio.DataValueField = "id"
+        ddlAnio.DataBind()
+
+        ddlAnio.SelectedIndex = 0
+    End Sub
+
+    Private Sub ListarMes()
+        Dim id As String() = New String(11) {"01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"}
+        Dim desc As String() = New String(11) {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Setiembre", "Octubre", "Noviembre", "Diciembre"}
+
+        Dim dt As New DataTable
+        dt.Columns.Add("id")
+        dt.Columns.Add("desc")
+
+        Dim dr As DataRow
+
+        For i As Integer = 0 To 11
+            dr = dt.NewRow()
+            dr("id") = id(i)
+            dr("desc") = desc(i)
+            dt.Rows.Add(dr)
+        Next
+
+        dt.AcceptChanges()
+
+        ddlMes.DataSource = dt
+        ddlMes.DataTextField = "desc"
+        ddlMes.DataValueField = "id"
+        ddlMes.DataBind()
+
+        ddlMes.SelectedIndex = 0
     End Sub
 End Class

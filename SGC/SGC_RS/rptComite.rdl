@@ -23,7 +23,7 @@
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>total inscritos</Label>
+              <Label>total participantes</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
@@ -33,12 +33,12 @@
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!total_inscritos.Value)</Y>
+                    <Y>=Sum(Fields!total_participantes.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
-                  <ToolTip>=Sum(Fields!total_inscritos.Value)</ToolTip>
+                  <ToolTip>=Sum(Fields!total_participantes.Value)</ToolTip>
                   <Style />
                   <ChartMarker>
                     <Style />
@@ -297,20 +297,17 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SGC">
-      <DataSourceReference>SGC</DataSourceReference>
+    <DataSource Name="SGC_BI">
+      <DataSourceReference>SGC_BI</DataSourceReference>
       <rd:SecurityType>None</rd:SecurityType>
-      <rd:DataSourceID>344f40e6-b397-46f4-b90f-240c37e593db</rd:DataSourceID>
+      <rd:DataSourceID>fc51d16e-b7bd-47f0-9593-6a1750e10376</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="dsComite">
       <Query>
-        <DataSourceName>SGC</DataSourceName>
+        <DataSourceName>SGC_BI</DataSourceName>
         <QueryParameters>
-          <QueryParameter Name="@ComiteID">
-            <Value>=Parameters!ComiteID.Value</Value>
-          </QueryParameter>
           <QueryParameter Name="@FechaFrom">
             <Value>=Parameters!FechaFrom.Value</Value>
           </QueryParameter>
@@ -318,29 +315,25 @@
             <Value>=Parameters!FechaTo.Value</Value>
           </QueryParameter>
         </QueryParameters>
-        <CommandText>SELECT        DimComite.nombre, FactInscripcion.total_inscritos
+        <CommandText>SELECT        DimComite.nombre, SUM(FactActividadSum.total_participantes) as total_participantes
 FROM            DimComite INNER JOIN
-                         FactInscripcion ON DimComite.id_comite = FactInscripcion.id_comite
-WHERE        (@ComiteID IS NULL OR DimComite.id_comite = @ComiteID) AND (FactInscripcion.id_fecha BETWEEN @FechaFrom AND @FechaTo)</CommandText>
+                        FactActividadSum ON DimComite.id_comite = FactActividadSum.id_comite
+WHERE  (FactActividadSum.id_fecha_ini BETWEEN @FechaFrom AND @FechaTo)
+GROUP BY DimComite.nombre</CommandText>
       </Query>
       <Fields>
         <Field Name="nombre">
           <DataField>nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="total_inscritos">
-          <DataField>total_inscritos</DataField>
+        <Field Name="total_participantes">
+          <DataField>total_participantes</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="ComiteID">
-      <DataType>String</DataType>
-      <Nullable>true</Nullable>
-      <Prompt>Comite ID</Prompt>
-    </ReportParameter>
     <ReportParameter Name="FechaFrom">
       <DataType>String</DataType>
       <Prompt>Fecha From</Prompt>

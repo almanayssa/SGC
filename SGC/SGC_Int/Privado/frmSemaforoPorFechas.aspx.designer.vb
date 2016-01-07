@@ -50,15 +50,6 @@ Partial Public Class frmSemaforoPorFechas
     Protected WithEvents lblMensaje As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblTitulo control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblTitulo As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''gvwSemaforo control.
     '''</summary>
     '''<remarks>
@@ -66,6 +57,15 @@ Partial Public Class frmSemaforoPorFechas
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents gvwSemaforo As Global.System.Web.UI.WebControls.GridView
+
+    '''<summary>
+    '''divLeyenda control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents divLeyenda As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
     '''Image1 control.

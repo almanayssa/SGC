@@ -25,6 +25,7 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@tipo_2", SqlDbType.VarChar).Value = id_tipo_2
             sqlCmd.Parameters.Add("@fec_ini", SqlDbType.DateTime).Value = fec_ini
             sqlCmd.Parameters.Add("@fec_fin", SqlDbType.DateTime).Value = fec_fin
+
             Try
                 sqlConn.Open()
                 dr = sqlCmd.ExecuteReader()
@@ -100,6 +101,42 @@ Namespace SGC.Model.Metodos
                 End If
                 dr.Close()
                 Return variables
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarComparativoTipo(ByVal id_comite As String, id_tipo As String, ByVal fec_ini As DateTime, ByVal fec_fin As DateTime) As System.Collections.Generic.List(Of Entidades.SemaforoBE) Implements Interfaces.ISemaforo.ListarComparativoTipo
+            Dim oListadoSemaforo As New List(Of SemaforoBE)
+            Dim oSemaforo As SemaforoBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_COMPARATIVO_TIPO", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@id_tipo", SqlDbType.VarChar).Value = id_tipo
+            sqlCmd.Parameters.Add("@fec_ini", SqlDbType.DateTime).Value = fec_ini
+            sqlCmd.Parameters.Add("@fec_fin", SqlDbType.DateTime).Value = fec_fin
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oSemaforo = New SemaforoBE
+                    oSemaforo.anio_mes = dr("anio_mes_des")
+                    oSemaforo.participantes = dr("participantes")
+                    oSemaforo.participantes1 = dr("participantes_1")
+                    oSemaforo.participantes2 = dr("participantes_2")
+                    oSemaforo.correlacion1 = dr("correlacion_1")
+                    oSemaforo.correlacion2 = dr("correlacion_2")
+                    oListadoSemaforo.Add(oSemaforo)
+                End While
+                dr.Close()
+                Return oListadoSemaforo
             Catch ex As System.Exception
                 Throw ex
             Finally

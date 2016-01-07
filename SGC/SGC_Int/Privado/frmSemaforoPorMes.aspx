@@ -20,7 +20,7 @@
                     <asp:Label ID="lblMensaje" runat="server" Text="Para mostrar el semáforo, elegir los filtros deseados y hacer click en Generar."></asp:Label>
                     <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label>
                     <asp:GridView ID="gvwSemaforo" runat="server" AutoGenerateColumns="false" AllowPaging="false"
-                        CssClass="tabla-grilla" Width="800px" BorderWidth="0px" BorderColor="White">
+                        CssClass="tabla-grilla" Width="700px" BorderWidth="0px" BorderColor="White">
                         <HeaderStyle CssClass="tabla-grilla-cabecera" />
                         <RowStyle CssClass="tabla-grilla-filas" />
                         <Columns>                            
@@ -41,9 +41,9 @@
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
-                    <div id="divLeyenda">
+                    <div id="divLeyenda" runat="server" visible="false">
                         <fieldset>
-                            <legend>Resultado</legend>
+                            <legend>Análisis</legend>
                             <asp:Label ID="lblResultado" runat="server"></asp:Label>
                         </fieldset>                        
                     </div>
@@ -67,6 +67,18 @@
                             </tr>
                             <tr>
                                 <td><asp:CheckBoxList ID="cblTipos" CssClass="estilo_textbox" runat="server" AutoPostBack="true"></asp:CheckBoxList></td>
+                            </tr>
+                        </table>
+                        <br />
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td>Mes y Año:</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <asp:DropDownList ID="ddlMes" runat="server"></asp:DropDownList>
+                                    <asp:DropDownList ID="ddlAnio" runat="server"></asp:DropDownList>                                    
+                                </td>
                             </tr>
                         </table>
                         <br />

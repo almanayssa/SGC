@@ -68,24 +68,6 @@ Partial Public Class frmReporteGeneral
     Protected WithEvents ddlComite As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''rbtnTipo control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rbtnTipo As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
-    '''rbtnActividad control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents rbtnActividad As Global.System.Web.UI.WebControls.RadioButton
-
-    '''<summary>
     '''tblTipos control.
     '''</summary>
     '''<remarks>

@@ -17,18 +17,11 @@
     <ContentTemplate>
     <div class="contenedor-pagina">
         <div class="contenedor-pagina-titulo">
-            REPORTE DE ACTIVIDADES CON MAYOR DEMANDA
+            REPORTE DE DEMANDA POR TIPOS DE ACTIVIDAD
         </div>
         <br />
         <table border="0" cellpadding="0" cellspacing="0">
             <tr>
-                <td class="textbox-espaciado">
-                    Tipo:
-                </td>
-                <td class="textbox-espaciado">
-                    <asp:DropDownList ID="ddlTipo" runat="server" CssClass="estilo_textbox">
-                    </asp:DropDownList>
-                </td>
                 <td class="textbox-espaciado">
                     Fecha:
                 </td>

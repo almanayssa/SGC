@@ -17,10 +17,6 @@
       <FullPath>dsActividad.rsd</FullPath>
     </ProjectItem>
     <ProjectItem>
-      <Name>dsActXTipo.rsd</Name>
-      <FullPath>dsActXTipo.rsd</FullPath>
-    </ProjectItem>
-    <ProjectItem>
       <Name>dsTipo.rsd</Name>
       <FullPath>dsTipo.rsd</FullPath>
     </ProjectItem>

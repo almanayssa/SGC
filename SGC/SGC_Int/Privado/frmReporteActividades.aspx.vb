@@ -8,19 +8,10 @@ Public Class frmReporteActividades
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
-            ListarTipoActividad()
-            txtFechaInicio.Text = "01/12/2015"
+            txtFechaInicio.Text = "01/01/2015"
             txtFechaFin.Text = Now.ToString("dd/MM/yyyy")
             CargarReporte()
         End If
-    End Sub
-
-    Private Sub ListarTipoActividad()
-        Dim ListadoTipoActividad As List(Of TipoActividadBE) = bc.ListarTipoActividad()
-        ddlTipo.DataSource = ListadoTipoActividad
-        ddlTipo.DataValueField = "id_tipo_act"
-        ddlTipo.DataTextField = "desc_tipo"
-        ddlTipo.DataBind()
     End Sub
 
     Private Sub CargarReporte()
@@ -31,18 +22,14 @@ Public Class frmReporteActividades
         rvwActividad.ShowParameterPrompts = False
         rvwActividad.ShowPrintButton = True
 
-        Dim reportParameterCollection As Microsoft.Reporting.WebForms.ReportParameter() = New Microsoft.Reporting.WebForms.ReportParameter(2) {}
+        Dim reportParameterCollection As Microsoft.Reporting.WebForms.ReportParameter() = New Microsoft.Reporting.WebForms.ReportParameter(1) {}
         reportParameterCollection(0) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(0).Name = "TipoID"
-        reportParameterCollection(0).Values.Add(ddlTipo.SelectedValue)
+        reportParameterCollection(0).Name = "FechaFrom"
+        reportParameterCollection(0).Values.Add(Convert.ToDateTime(txtFechaInicio.Text).ToString("yyyyMMdd"))
 
         reportParameterCollection(1) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(1).Name = "FechaFrom"
-        reportParameterCollection(1).Values.Add(Convert.ToDateTime(txtFechaInicio.Text).ToString("yyyyMMdd"))
-
-        reportParameterCollection(2) = New Microsoft.Reporting.WebForms.ReportParameter()
-        reportParameterCollection(2).Name = "FechaTo"
-        reportParameterCollection(2).Values.Add(Convert.ToDateTime(txtFechaFin.Text).ToString("yyyyMMdd"))
+        reportParameterCollection(1).Name = "FechaTo"
+        reportParameterCollection(1).Values.Add(Convert.ToDateTime(txtFechaFin.Text).ToString("yyyyMMdd"))
 
         rvwActividad.ServerReport.SetParameters(reportParameterCollection)
         rvwActividad.ServerReport.Refresh()

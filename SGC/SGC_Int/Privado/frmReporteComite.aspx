@@ -13,22 +13,15 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <ajaxToolkit:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
     </ajaxToolkit:ToolkitScriptManager>
-    <asp:UpdatePanel ID="upnlComite" runat="server">
+    <asp:UpdatePanel ID="upnlComite" runat="server" UpdateMode="Conditional">
     <ContentTemplate>
     <div class="contenedor-pagina">
         <div class="contenedor-pagina-titulo">
-            REPORTE DE COMITÉS CON MAYOR DEMANDA
+            REPORTE DE DEMANDA POR COMITÉS
         </div>
         <br />
         <table border="0" cellpadding="0" cellspacing="0">
             <tr>
-                <td class="textbox-espaciado">
-                    Comité:
-                </td>
-                <td class="textbox-espaciado">
-                    <asp:DropDownList ID="ddlComite" runat="server" CssClass="estilo_textbox">
-                    </asp:DropDownList>
-                </td>
                 <td class="textbox-espaciado">
                     Fecha:
                 </td>
