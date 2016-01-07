@@ -45,6 +45,8 @@
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
+              <Type>Shape</Type>
+              <Subtype>ExplodedPie</Subtype>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -214,6 +216,9 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
+            <ChartThreeDProperties>
+              <Enabled>true</Enabled>
+            </ChartThreeDProperties>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
@@ -266,7 +271,7 @@
         </ChartNoDataMessage>
         <DataSetName>dsActividad</DataSetName>
         <Height>3.14459in</Height>
-        <Width>9.48958in</Width>
+        <Width>7.28125in</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -280,7 +285,7 @@
     <Height>3.14459in</Height>
     <Style />
   </Body>
-  <Width>9.48958in</Width>
+  <Width>7.28125in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

@@ -85,6 +85,7 @@
     <Compile Include="Entidades\ParametroBE.vb" />
     <Compile Include="Entidades\ParametrosBE.vb" />
     <Compile Include="Entidades\FactActividadSumBE.vb" />
+    <Compile Include="Entidades\SemaforoBE.vb" />
     <Compile Include="Entidades\SuscripcionComiteBE.vb" />
     <Compile Include="Entidades\OpcionXPerfilBE.vb" />
     <Compile Include="Entidades\PantallaBE.vb" />
@@ -149,6 +150,7 @@
     <Compile Include="Interfaces\IParametro.vb" />
     <Compile Include="Interfaces\IParametros.vb" />
     <Compile Include="Interfaces\IPresupuestoActividad.vb" />
+    <Compile Include="Interfaces\ISemaforo.vb" />
     <Compile Include="Interfaces\ISuscripcionComite.vb" />
     <Compile Include="Interfaces\ITipoPago.vb" />
     <Compile Include="Interfaces\ICanjeAdelantos.vb" />
@@ -201,6 +203,7 @@
     <Compile Include="Metodos\CanjeAdelantosDL.vb" />
     <Compile Include="Metodos\EspacioResDL.vb" />
     <Compile Include="Metodos\PresupuestoActividadDL.vb" />
+    <Compile Include="Metodos\SemaforoDL.vb" />
     <Compile Include="Metodos\SuscripcionComiteDL.vb" />
     <Compile Include="Metodos\TipoPagoDL.vb" />
     <Compile Include="Metodos\DocVenDL.vb" />

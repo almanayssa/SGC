@@ -27,16 +27,29 @@
         </div>
         <br />
         <ul id="menu-bar">
-            <li class="current"><a href="#">Reportes</a>
+            <li class="current"><a href="#">Semáforo</a>
             <ul>
-            <li><a href="frmReporteGeneral.aspx">Reporte General</a></li>            
+            <li><a href="frmSemaforoPorFechas.aspx">Por Fechas</a></li>
+            <li><a href="frmSemaforoPorMes.aspx">Por Mes</a></li>
             </ul>
             </li>
-            <li><a href="#">Parámetros</a>
+            <li><a href="#">Comparativo</a>
+            <ul>
+            <li><a href="frmComparativoTipo.aspx">Tipo</a></li>
+            </ul>
+            </li>
+            <li><a href="#">Reportes</a>
+            <ul>
+            <li><a href="frmReporteGeneral.aspx">Reporte General</a></li>
+            <li><a href="frmReporteComite.aspx">Reporte Comité</a></li>
+            <li><a href="frmReporteActividades.aspx">Reporte Actividad</a></li>
+            </ul>
+            </li>
+            <%--<li><a href="#">Parámetros</a>
             <ul>
             <li><a href="frmActualizarParametros.aspx">Actualizar Parámetros</a></li>
             </ul>
-            </li>
+            </li>--%>
         </ul>      
         <div class="contenedor-pagina">
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />

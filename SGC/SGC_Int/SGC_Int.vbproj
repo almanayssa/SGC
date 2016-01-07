@@ -94,12 +94,18 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\img\semaforo_amarillo.jpg" />
+    <Content Include="App_Themes\img\semaforo_rojo.jpg" />
+    <Content Include="App_Themes\img\semaforo_verde.jpg" />
     <Content Include="App_Themes\SGC\sgc.css" />
     <Content Include="frmLogin.aspx" />
     <Content Include="Privado\frmActualizarParametros.aspx" />
+    <Content Include="Privado\frmComparativoTipo.aspx" />
     <Content Include="Privado\frmReporteActividades.aspx" />
     <Content Include="Privado\frmReporteComite.aspx" />
     <Content Include="Privado\frmReporteGeneral.aspx" />
+    <Content Include="Privado\frmSemaforoPorFechas.aspx" />
+    <Content Include="Privado\frmSemaforoPorMes.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -123,6 +129,13 @@
     </Compile>
     <Compile Include="Privado\frmActualizarParametros.aspx.vb">
       <DependentUpon>frmActualizarParametros.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privado\frmComparativoTipo.aspx.designer.vb">
+      <DependentUpon>frmComparativoTipo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmComparativoTipo.aspx.vb">
+      <DependentUpon>frmComparativoTipo.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\frmReporteActividades.aspx.designer.vb">
@@ -163,6 +176,20 @@
     </Compile>
     <Compile Include="Privado\frmReporteGeneral.aspx.vb">
       <DependentUpon>frmReporteGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privado\frmSemaforoPorFechas.aspx.designer.vb">
+      <DependentUpon>frmSemaforoPorFechas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmSemaforoPorFechas.aspx.vb">
+      <DependentUpon>frmSemaforoPorFechas.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privado\frmSemaforoPorMes.aspx.designer.vb">
+      <DependentUpon>frmSemaforoPorMes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmSemaforoPorMes.aspx.vb">
+      <DependentUpon>frmSemaforoPorMes.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\PlantillaSGCInt.Master.designer.vb">
@@ -211,7 +238,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57551</DevelopmentServerPort>
+          <DevelopmentServerPort>58218</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

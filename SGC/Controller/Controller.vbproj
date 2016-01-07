@@ -81,6 +81,7 @@
     <Compile Include="DetallePresupuestoActBL.vb" />
     <Compile Include="EspacioResBL.vb" />
     <Compile Include="PresupuestoActividadBL.vb" />
+    <Compile Include="SemaforoBL.vb" />
     <Compile Include="SuscripcionComiteBL.vb" />
     <Compile Include="TipoPagoBL.vb" />
     <Compile Include="DocVenBL.vb" />

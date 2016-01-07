@@ -38,6 +38,7 @@
                   <ChartDataLabel>
                     <Style />
                   </ChartDataLabel>
+                  <ToolTip>=Sum(Fields!total_inscritos.Value)</ToolTip>
                   <Style />
                   <ChartMarker>
                     <Style />
@@ -45,6 +46,8 @@
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
+              <Type>Shape</Type>
+              <Subtype>ExplodedPie</Subtype>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -214,6 +217,9 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
+            <ChartThreeDProperties>
+              <Enabled>true</Enabled>
+            </ChartThreeDProperties>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
@@ -246,6 +252,7 @@
               <TextAlign>General</TextAlign>
               <VerticalAlign>Top</VerticalAlign>
             </Style>
+            <DockOutsideChartArea>true</DockOutsideChartArea>
           </ChartTitle>
         </ChartTitles>
         <Palette>Excel</Palette>
@@ -266,7 +273,7 @@
         </ChartNoDataMessage>
         <DataSetName>dsComite</DataSetName>
         <Height>3.14459in</Height>
-        <Width>9.48958in</Width>
+        <Width>7.32291in</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -280,7 +287,7 @@
     <Height>3.14459in</Height>
     <Style />
   </Body>
-  <Width>9.5in</Width>
+  <Width>7.32291in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

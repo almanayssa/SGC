@@ -85,11 +85,6 @@ Public Class frmReporteGeneral
     Private Sub ListarVariables()
         Dim ListadoVariables As List(Of VariableBE) = bc.ListarVariables()
         cblVariables.DataSource = ListadoVariables
-
-        If rbtnActividad.Checked Then
-            ListadoVariables.RemoveAt(3)
-        End If
-
         cblVariables.DataValueField = "id_variable"
         cblVariables.DataTextField = "nombre"
         cblVariables.DataBind()
@@ -206,27 +201,27 @@ Public Class frmReporteGeneral
         rvwReporteGeneral.ServerReport.ReportServerUrl = New Uri("http://localhost/ReportServer")
 
         If rbtnTipo.Checked Then
-            If rbtnDescriptivo.Checked Then
-                cantParametros = 6
-                reportPath = "/Reports/rptGeneralPorTipo"
-            End If
+            'If rbtnDescriptivo.Checked Then
+            cantParametros = 5
+            reportPath = "/Reports/rptGeneralPorTipo"
+            'End If
 
-            If rbtnComparativo.Checked Then
-                cantParametros = 12
-                reportPath = "/Reports/rptComparativoPorTipo"
-            End If
+            'If rbtnComparativo.Checked Then
+            '    cantParametros = 11
+            '    reportPath = "/Reports/rptComparativoPorTipo"
+            'End If
         End If
 
         If rbtnActividad.Checked Then
-            If rbtnDescriptivo.Checked Then
-                cantParametros = 5
-                reportPath = "/Reports/rptGeneralPorActividad"
-            End If
+            'If rbtnDescriptivo.Checked Then
+            cantParametros = 5
+            reportPath = "/Reports/rptGeneralPorActividad"
+            'End If
 
-            If rbtnComparativo.Checked Then
-                cantParametros = 11
-                reportPath = "/Reports/rptComparativoPorActividad"
-            End If
+            'If rbtnComparativo.Checked Then
+            '    cantParametros = 11
+            '    reportPath = "/Reports/rptComparativoPorActividad"
+            'End If
         End If
 
         rvwReporteGeneral.ServerReport.ReportPath = reportPath
@@ -279,46 +274,32 @@ Public Class frmReporteGeneral
         reportParameterCollection(5).Name = "flg_satisfaccion"
         reportParameterCollection(5).Values.Add(cblVariables.Items(2).Selected)
 
-        If rbtnComparativo.Checked Then
-            reportParameterCollection(6) = New Microsoft.Reporting.WebForms.ReportParameter()
-            reportParameterCollection(6).Name = "min_rojo"
-            reportParameterCollection(6).Values.Add(oListadoParametros.Item(0).valor)
+        'If rbtnComparativo.Checked Then
+        '    reportParameterCollection(6) = New Microsoft.Reporting.WebForms.ReportParameter()
+        '    reportParameterCollection(6).Name = "min_rojo"
+        '    reportParameterCollection(6).Values.Add(oListadoParametros.Item(0).valor)
 
-            reportParameterCollection(7) = New Microsoft.Reporting.WebForms.ReportParameter()
-            reportParameterCollection(7).Name = "max_rojo"
-            reportParameterCollection(7).Values.Add(oListadoParametros.Item(1).valor)
+        '    reportParameterCollection(7) = New Microsoft.Reporting.WebForms.ReportParameter()
+        '    reportParameterCollection(7).Name = "max_rojo"
+        '    reportParameterCollection(7).Values.Add(oListadoParametros.Item(1).valor)
 
-            reportParameterCollection(8) = New Microsoft.Reporting.WebForms.ReportParameter()
-            reportParameterCollection(8).Name = "min_amarillo"
-            reportParameterCollection(8).Values.Add(oListadoParametros.Item(2).valor)
+        '    reportParameterCollection(8) = New Microsoft.Reporting.WebForms.ReportParameter()
+        '    reportParameterCollection(8).Name = "min_amarillo"
+        '    reportParameterCollection(8).Values.Add(oListadoParametros.Item(2).valor)
 
-            reportParameterCollection(9) = New Microsoft.Reporting.WebForms.ReportParameter()
-            reportParameterCollection(9).Name = "max_amarillo"
-            reportParameterCollection(9).Values.Add(oListadoParametros.Item(3).valor)
+        '    reportParameterCollection(9) = New Microsoft.Reporting.WebForms.ReportParameter()
+        '    reportParameterCollection(9).Name = "max_amarillo"
+        '    reportParameterCollection(9).Values.Add(oListadoParametros.Item(3).valor)
 
-            reportParameterCollection(10) = New Microsoft.Reporting.WebForms.ReportParameter()
-            reportParameterCollection(10).Name = "min_verde"
-            reportParameterCollection(10).Values.Add(oListadoParametros.Item(4).valor)
+        '    reportParameterCollection(10) = New Microsoft.Reporting.WebForms.ReportParameter()
+        '    reportParameterCollection(10).Name = "min_verde"
+        '    reportParameterCollection(10).Values.Add(oListadoParametros.Item(4).valor)
 
-            reportParameterCollection(11) = New Microsoft.Reporting.WebForms.ReportParameter()
-            reportParameterCollection(11).Name = "max_verde"
-            reportParameterCollection(11).Values.Add(oListadoParametros.Item(5).valor)
+        '    reportParameterCollection(11) = New Microsoft.Reporting.WebForms.ReportParameter()
+        '    reportParameterCollection(11).Name = "max_verde"
+        '    reportParameterCollection(11).Values.Add(oListadoParametros.Item(5).valor)
 
-        End If
-
-        If rbtnTipo.Checked Then
-            If rbtnDescriptivo.Checked Then
-                reportParameterCollection(6) = New Microsoft.Reporting.WebForms.ReportParameter()
-                reportParameterCollection(6).Name = "flg_actividades"
-                reportParameterCollection(6).Values.Add(cblVariables.Items(3).Selected)
-            End If
-
-            If rbtnComparativo.Checked Then
-                reportParameterCollection(12) = New Microsoft.Reporting.WebForms.ReportParameter()
-                reportParameterCollection(12).Name = "flg_actividades"
-                reportParameterCollection(12).Values.Add(cblVariables.Items(3).Selected)
-            End If
-        End If
+        'End If
 
         rvwReporteGeneral.ServerReport.SetParameters(reportParameterCollection)
         rvwReporteGeneral.ServerReport.Refresh()

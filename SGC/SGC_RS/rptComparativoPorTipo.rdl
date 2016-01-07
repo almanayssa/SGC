@@ -101,146 +101,11 @@
                 <TablixColumn>
                   <Width>1.02083in</Width>
                 </TablixColumn>
-                <TablixColumn>
-                  <Width>1.02083in</Width>
-                </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
                   <Height>0.25in</Height>
                   <TablixCells>
-                    <TablixCell>
-                      <CellContents>
-                        <GaugePanel Name="GaugePanel2">
-                          <StateIndicators>
-                            <StateIndicator Name="Indicator1">
-                              <GaugeInputValue>
-                                <Value>=Sum(Fields!total_actividades.Value)</Value>
-                                <Multiplier>1</Multiplier>
-                                <DataElementOutput>NoOutput</DataElementOutput>
-                              </GaugeInputValue>
-                              <TransformationType>None</TransformationType>
-                              <TransformationScope>Tablix3</TransformationScope>
-                              <MinimumValue>
-                                <Value>NaN</Value>
-                                <Multiplier>1</Multiplier>
-                              </MinimumValue>
-                              <MaximumValue>
-                                <Value>NaN</Value>
-                                <Multiplier>1</Multiplier>
-                              </MaximumValue>
-                              <IndicatorStyle>None</IndicatorStyle>
-                              <IndicatorImage>
-                                <Source>External</Source>
-                                <Value />
-                              </IndicatorImage>
-                              <ScaleFactor>1</ScaleFactor>
-                              <IndicatorStates>
-                                <IndicatorState Name="Red">
-                                  <StartValue>
-                                    <Value>=Parameters!min_rojo.Value</Value>
-                                    <Multiplier>1</Multiplier>
-                                  </StartValue>
-                                  <EndValue>
-                                    <Value>=Parameters!max_rojo.Value</Value>
-                                    <Multiplier>1</Multiplier>
-                                  </EndValue>
-                                  <Color>Red</Color>
-                                  <ScaleFactor>1</ScaleFactor>
-                                  <IndicatorStyle>TrafficLightUnrimmed</IndicatorStyle>
-                                  <IndicatorImage>
-                                    <Source>External</Source>
-                                    <Value />
-                                  </IndicatorImage>
-                                </IndicatorState>
-                                <IndicatorState Name="Yellow">
-                                  <StartValue>
-                                    <Value>=Parameters!min_amarillo.Value</Value>
-                                    <Multiplier>1</Multiplier>
-                                  </StartValue>
-                                  <EndValue>
-                                    <Value>=Parameters!max_amarillo.Value</Value>
-                                    <Multiplier>1</Multiplier>
-                                  </EndValue>
-                                  <Color>Yellow</Color>
-                                  <ScaleFactor>1</ScaleFactor>
-                                  <IndicatorStyle>TrafficLightUnrimmed</IndicatorStyle>
-                                  <IndicatorImage>
-                                    <Source>External</Source>
-                                    <Value />
-                                  </IndicatorImage>
-                                </IndicatorState>
-                                <IndicatorState Name="Green">
-                                  <StartValue>
-                                    <Value>=Parameters!min_verde.Value</Value>
-                                    <Multiplier>1</Multiplier>
-                                  </StartValue>
-                                  <EndValue>
-                                    <Value>=Parameters!max_verde.Value</Value>
-                                    <Multiplier>1</Multiplier>
-                                  </EndValue>
-                                  <Color>Green</Color>
-                                  <ScaleFactor>1</ScaleFactor>
-                                  <IndicatorStyle>TrafficLightUnrimmed</IndicatorStyle>
-                                  <IndicatorImage>
-                                    <Source>External</Source>
-                                    <Value />
-                                  </IndicatorImage>
-                                </IndicatorState>
-                              </IndicatorStates>
-                              <Angle>0</Angle>
-                              <StateDataElementName />
-                              <rd:IconsSet>ThreeUnrimmedTrafficLights</rd:IconsSet>
-                              <Style>
-                                <ShadowOffset>2pt</ShadowOffset>
-                              </Style>
-                              <Top>4</Top>
-                              <Left>4</Left>
-                              <Height>92</Height>
-                              <Width>92</Width>
-                              <ToolTip>=Sum(Fields!total_actividades.Value)</ToolTip>
-                            </StateIndicator>
-                          </StateIndicators>
-                          <AutoLayout>true</AutoLayout>
-                          <BackFrame>
-                            <Style>
-                              <Border>
-                                <Style>None</Style>
-                              </Border>
-                              <BackgroundColor>Gainsboro</BackgroundColor>
-                              <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
-                              <BackgroundGradientEndColor>Gray</BackgroundGradientEndColor>
-                              <BackgroundHatchType>None</BackgroundHatchType>
-                              <ShadowOffset>0pt</ShadowOffset>
-                            </Style>
-                            <FrameBackground>
-                              <Style>
-                                <BackgroundColor>Silver</BackgroundColor>
-                                <BackgroundGradientType>DiagonalLeft</BackgroundGradientType>
-                                <BackgroundGradientEndColor>Gray</BackgroundGradientEndColor>
-                                <BackgroundHatchType>None</BackgroundHatchType>
-                              </Style>
-                            </FrameBackground>
-                            <FrameImage>
-                              <Source>External</Source>
-                              <Value />
-                            </FrameImage>
-                          </BackFrame>
-                          <TopImage>
-                            <Source>External</Source>
-                            <Value />
-                          </TopImage>
-                          <DataSetName>dsTipo</DataSetName>
-                          <Style>
-                            <Border>
-                              <Color>LightGrey</Color>
-                              <Style>Solid</Style>
-                            </Border>
-                            <BackgroundColor>White</BackgroundColor>
-                          </Style>
-                        </GaugePanel>
-                      </CellContents>
-                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <GaugePanel Name="GaugePanel3">
@@ -644,51 +509,6 @@
             <TablixColumnHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="ColumnGroup">
-                    <GroupExpressions>
-                      <GroupExpression />
-                    </GroupExpressions>
-                  </Group>
-                  <TablixHeader>
-                    <Size>0.25in</Size>
-                    <CellContents>
-                      <Textbox Name="Textbox14">
-                        <CanGrow>true</CanGrow>
-                        <KeepTogether>true</KeepTogether>
-                        <Paragraphs>
-                          <Paragraph>
-                            <TextRuns>
-                              <TextRun>
-                                <Value>Actividades</Value>
-                                <Style>
-                                  <FontWeight>Bold</FontWeight>
-                                </Style>
-                              </TextRun>
-                            </TextRuns>
-                            <Style>
-                              <TextAlign>Center</TextAlign>
-                            </Style>
-                          </Paragraph>
-                        </Paragraphs>
-                        <rd:DefaultName>Textbox14</rd:DefaultName>
-                        <Style>
-                          <Border>
-                            <Color>LightGrey</Color>
-                            <Style>Solid</Style>
-                          </Border>
-                          <PaddingLeft>2pt</PaddingLeft>
-                          <PaddingRight>2pt</PaddingRight>
-                          <PaddingTop>2pt</PaddingTop>
-                          <PaddingBottom>2pt</PaddingBottom>
-                        </Style>
-                      </Textbox>
-                    </CellContents>
-                  </TablixHeader>
-                  <Visibility>
-                    <Hidden>=Not(Parameters!flg_actividades.Value)</Hidden>
-                  </Visibility>
-                </TablixMember>
-                <TablixMember>
                   <TablixHeader>
                     <Size>0.25in</Size>
                     <CellContents>
@@ -861,7 +681,7 @@
             <Top>0.17583in</Top>
             <Left>0.14458in</Left>
             <Height>0.5in</Height>
-            <Width>6.11458in</Width>
+            <Width>5.09374in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -895,17 +715,9 @@
       <DataType>String</DataType>
       <Prompt>id tipo</Prompt>
     </ReportParameter>
-    <ReportParameter Name="flg_actividades">
-      <DataType>Boolean</DataType>
-      <Prompt>flg actividades</Prompt>
-    </ReportParameter>
     <ReportParameter Name="flg_inscritos">
       <DataType>Boolean</DataType>
       <Prompt>flg inscritos</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="flg_participantes">
-      <DataType>Boolean</DataType>
-      <Prompt>flg participantes</Prompt>
     </ReportParameter>
     <ReportParameter Name="flg_satisfaccion">
       <DataType>Boolean</DataType>
@@ -934,6 +746,10 @@
     <ReportParameter Name="max_verde">
       <DataType>Integer</DataType>
       <Prompt>max verde</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="flg_participantes">
+      <DataType>Boolean</DataType>
+      <Prompt>flg participantes</Prompt>
     </ReportParameter>
   </ReportParameters>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>

@@ -14,7 +14,7 @@
     <ContentTemplate>
     <div class="contenedor-pagina">
         <div class="contenedor-pagina-titulo">
-            REPORTE GENERAL
+            ACTIVIDADES
         </div>
         <br />
         <table id="tblComite" runat="server" border="0" cellpadding="0" cellspacing="0" width="918px">
@@ -55,7 +55,7 @@
                                 <td>Tipos de Actividad:</td>
                             </tr>
                             <tr>
-                                <td><asp:CheckBox ID="chkTipos" runat="server" CssClass="estilo_textbox" Text="Todos" AutoPostBack="true" Checked="true" /></td>    
+                                <td><asp:CheckBox ID="chkTipos" runat="server" CssClass="estilo_textbox" Text="Seleccionar todos" AutoPostBack="true" Checked="true" /></td>    
                             </tr>
                             <tr>
                                 <td><asp:CheckBoxList ID="cblTipos" CssClass="estilo_textbox" runat="server" AutoPostBack="true"></asp:CheckBoxList></td>
@@ -79,7 +79,7 @@
                                             <td>Actividades:</td>
                                         </tr>
                                         <tr>
-                                            <td><asp:CheckBox ID="chkActividades" runat="server" CssClass="estilo_textbox" Text="Todas" AutoPostBack="true" /></td>    
+                                            <td><asp:CheckBox ID="chkActividades" runat="server" CssClass="estilo_textbox" Text="Seleccionar todas" AutoPostBack="true" /></td>    
                                         </tr>
                                         <tr>
                                             <td><asp:CheckBoxList ID="cblActividades" CssClass="estilo_textbox" runat="server" AutoPostBack="true"></asp:CheckBoxList></td>
@@ -112,14 +112,14 @@
                                 <td>Variables:</td>
                             </tr>
                             <tr>
-                                <td><asp:CheckBox ID="chkVariables" runat="server" Text="Todas" AutoPostBack="true" Checked="true" /></td>
+                                <td><asp:CheckBox ID="chkVariables" runat="server" Text="Seleccionar todas" AutoPostBack="true" Checked="true" /></td>
                             </tr>                        
                             <tr>
                                 <td><asp:CheckBoxList ID="cblVariables" runat="server"></asp:CheckBoxList></td>
                             </tr>                        
                         </table>
                         <br />
-                        <table border="0" cellpadding="0" cellspacing="0">
+                        <%--<table border="0" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td>Tipo Reporte:</td>
                             </tr>
@@ -130,7 +130,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <br />
+                        <br />--%>
                         <table>
                             <tr>
                                 <td>

@@ -70,9 +70,6 @@
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>total actividades</Label>
-                </ChartMember>
-                <ChartMember>
                   <Label>total inscritos</Label>
                 </ChartMember>
                 <ChartMember>
@@ -85,41 +82,6 @@
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="total_actividades">
-                  <Hidden>=Not(Parameters!flg_actividades.Value)</Hidden>
-                  <ChartDataPoints>
-                    <ChartDataPoint>
-                      <ChartDataPointValues>
-                        <Y>=Sum(Fields!total_actividades.Value)</Y>
-                      </ChartDataPointValues>
-                      <ChartDataLabel>
-                        <Style />
-                      </ChartDataLabel>
-                      <ToolTip>=Sum(Fields!total_actividades.Value)</ToolTip>
-                      <Style />
-                      <ChartMarker>
-                        <Style />
-                      </ChartMarker>
-                      <DataElementOutput>Output</DataElementOutput>
-                    </ChartDataPoint>
-                  </ChartDataPoints>
-                  <Style />
-                  <ChartEmptyPoints>
-                    <Style />
-                    <ChartMarker>
-                      <Style />
-                    </ChartMarker>
-                    <ChartDataLabel>
-                      <Style />
-                    </ChartDataLabel>
-                  </ChartEmptyPoints>
-                  <ValueAxisName>Primary</ValueAxisName>
-                  <CategoryAxisName>Primary</CategoryAxisName>
-                  <ChartSmartLabel>
-                    <CalloutLineColor>Black</CalloutLineColor>
-                    <MinMovingDistance>0pt</MinMovingDistance>
-                  </ChartSmartLabel>
-                </ChartSeries>
                 <ChartSeries Name="total_inscritos">
                   <Hidden>=Not(Parameters!flg_inscritos.Value)</Hidden>
                   <ChartDataPoints>
@@ -465,10 +427,6 @@
     <ReportParameter Name="id_tipo">
       <DataType>String</DataType>
       <Prompt>id tipo</Prompt>
-    </ReportParameter>
-    <ReportParameter Name="flg_actividades">
-      <DataType>Boolean</DataType>
-      <Prompt>flg actividades</Prompt>
     </ReportParameter>
     <ReportParameter Name="flg_inscritos">
       <DataType>Boolean</DataType>
