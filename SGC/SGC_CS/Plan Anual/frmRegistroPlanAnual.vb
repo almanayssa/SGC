@@ -38,8 +38,8 @@ Public Class frmRegistroPlanAnual
     End Sub
 
     Private Sub ListarAnio()
-        Dim id As String() = New String(1) {"2015", "2016"}
-        Dim desc As String() = New String(1) {"2015", "2016"}
+        Dim id As String() = New String(1) {CStr(Now.Year - 1), CStr(Now.Year)}
+        Dim desc As String() = New String(1) {CStr(Now.Year - 1), CStr(Now.Year)}
 
         Dim dt As New DataTable
         dt.Columns.Add("id")
@@ -61,7 +61,7 @@ Public Class frmRegistroPlanAnual
         cboAnio.ValueMember = "id"
 
 
-        cboAnio.SelectedValue = Now.Year + 1
+        cboAnio.SelectedValue = Now.Year
     End Sub
 
     Private Function GuardarPlan() As Boolean

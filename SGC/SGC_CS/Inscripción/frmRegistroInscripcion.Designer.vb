@@ -20,10 +20,10 @@ Partial Class frmRegistroInscripcion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tsMenu = New SGC_CS.SGCToolStrip(Me.components)
         Me.tsbLimpiar = New System.Windows.Forms.ToolStripButton()
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
@@ -134,9 +134,9 @@ Partial Class frmRegistroInscripcion
         'dgvProgramacion
         '
         Me.dgvProgramacion.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvProgramacion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.dgvProgramacion.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvProgramacion.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvProgramacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -223,6 +223,7 @@ Partial Class frmRegistroInscripcion
         'nudMonto
         '
         Me.nudMonto.DecimalPlaces = 2
+        Me.nudMonto.Enabled = False
         Me.nudMonto.Location = New System.Drawing.Point(297, 24)
         Me.nudMonto.Name = "nudMonto"
         Me.nudMonto.Size = New System.Drawing.Size(69, 26)
@@ -231,9 +232,9 @@ Partial Class frmRegistroInscripcion
         'dgvRestricciones
         '
         Me.dgvRestricciones.AllowUserToAddRows = False
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRestricciones.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvRestricciones.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRestricciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRestricciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -345,9 +346,11 @@ Partial Class frmRegistroInscripcion
         'txtNumDoc
         '
         Me.txtNumDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtNumDoc.Enabled = False
         Me.txtNumDoc.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNumDoc.ForeColor = System.Drawing.Color.Black
         Me.txtNumDoc.Location = New System.Drawing.Point(149, 25)
+        Me.txtNumDoc.MaxLength = 7
         Me.txtNumDoc.Name = "txtNumDoc"
         Me.txtNumDoc.Size = New System.Drawing.Size(88, 26)
         Me.txtNumDoc.TabIndex = 28
@@ -355,9 +358,11 @@ Partial Class frmRegistroInscripcion
         'txtSerie
         '
         Me.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSerie.Enabled = False
         Me.txtSerie.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSerie.ForeColor = System.Drawing.Color.Black
         Me.txtSerie.Location = New System.Drawing.Point(99, 25)
+        Me.txtSerie.MaxLength = 3
         Me.txtSerie.Name = "txtSerie"
         Me.txtSerie.Size = New System.Drawing.Size(44, 26)
         Me.txtSerie.TabIndex = 27
@@ -419,15 +424,16 @@ Partial Class frmRegistroInscripcion
         'dgvInscritos
         '
         Me.dgvInscritos.AllowUserToAddRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvInscritos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvInscritos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.dgvInscritos.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvInscritos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvInscritos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvInscritos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNombres, Me.colNombre, Me.colApePat, Me.colApeMat, Me.colNacimiento, Me.colDNI, Me.colRelacion, Me.colInscripcion, Me.colPersona})
         Me.dgvInscritos.Location = New System.Drawing.Point(13, 57)
         Me.dgvInscritos.Name = "dgvInscritos"
+        Me.dgvInscritos.ReadOnly = True
         Me.dgvInscritos.Size = New System.Drawing.Size(420, 126)
         Me.dgvInscritos.TabIndex = 1
         '
@@ -541,15 +547,16 @@ Partial Class frmRegistroInscripcion
         'dgvInvitados
         '
         Me.dgvInvitados.AllowUserToAddRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvInvitados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvInvitados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle8
         Me.dgvInvitados.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvInvitados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvInvitados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvInvitados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colIdInv, Me.colINombres, Me.colIDNI})
         Me.dgvInvitados.Location = New System.Drawing.Point(18, 57)
         Me.dgvInvitados.Name = "dgvInvitados"
+        Me.dgvInvitados.ReadOnly = True
         Me.dgvInvitados.Size = New System.Drawing.Size(410, 126)
         Me.dgvInvitados.TabIndex = 1
         '
@@ -557,6 +564,7 @@ Partial Class frmRegistroInscripcion
         '
         Me.colIdInv.HeaderText = "idInvitado"
         Me.colIdInv.Name = "colIdInv"
+        Me.colIdInv.ReadOnly = True
         Me.colIdInv.Visible = False
         '
         'colINombres
@@ -564,11 +572,13 @@ Partial Class frmRegistroInscripcion
         Me.colINombres.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.colINombres.HeaderText = "Nombres"
         Me.colINombres.Name = "colINombres"
+        Me.colINombres.ReadOnly = True
         '
         'colIDNI
         '
         Me.colIDNI.HeaderText = "DNI"
         Me.colIDNI.Name = "colIDNI"
+        Me.colIDNI.ReadOnly = True
         '
         'lblTitulo
         '

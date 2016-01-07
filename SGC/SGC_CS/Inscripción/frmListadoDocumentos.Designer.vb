@@ -47,6 +47,7 @@ Partial Class frmListadoDocumentos
         Me.dgvListadoDoc.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSerie, Me.colCorrelativo, Me.colObservacion, Me.colTipo, Me.colMoneda, Me.colTotal, Me.colSaldo, Me.colFecha, Me.colVencimiento, Me.colEstado})
         Me.dgvListadoDoc.Location = New System.Drawing.Point(12, 21)
         Me.dgvListadoDoc.Name = "dgvListadoDoc"
+        Me.dgvListadoDoc.ReadOnly = True
         Me.dgvListadoDoc.Size = New System.Drawing.Size(751, 233)
         Me.dgvListadoDoc.TabIndex = 0
         '
@@ -55,6 +56,7 @@ Partial Class frmListadoDocumentos
         Me.colSerie.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colSerie.HeaderText = "Serie"
         Me.colSerie.Name = "colSerie"
+        Me.colSerie.ReadOnly = True
         Me.colSerie.Width = 65
         '
         'colCorrelativo
@@ -62,6 +64,7 @@ Partial Class frmListadoDocumentos
         Me.colCorrelativo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colCorrelativo.HeaderText = "Correlativo"
         Me.colCorrelativo.Name = "colCorrelativo"
+        Me.colCorrelativo.ReadOnly = True
         Me.colCorrelativo.Width = 102
         '
         'colObservacion
@@ -69,6 +72,7 @@ Partial Class frmListadoDocumentos
         Me.colObservacion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colObservacion.HeaderText = "Observacion"
         Me.colObservacion.Name = "colObservacion"
+        Me.colObservacion.ReadOnly = True
         Me.colObservacion.Width = 110
         '
         'colTipo
@@ -76,6 +80,7 @@ Partial Class frmListadoDocumentos
         Me.colTipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colTipo.HeaderText = "Tipo"
         Me.colTipo.Name = "colTipo"
+        Me.colTipo.ReadOnly = True
         Me.colTipo.Width = 60
         '
         'colMoneda
@@ -83,6 +88,7 @@ Partial Class frmListadoDocumentos
         Me.colMoneda.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colMoneda.HeaderText = "Moneda"
         Me.colMoneda.Name = "colMoneda"
+        Me.colMoneda.ReadOnly = True
         Me.colMoneda.Width = 85
         '
         'colTotal
@@ -90,6 +96,7 @@ Partial Class frmListadoDocumentos
         Me.colTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colTotal.HeaderText = "Total"
         Me.colTotal.Name = "colTotal"
+        Me.colTotal.ReadOnly = True
         Me.colTotal.Width = 63
         '
         'colSaldo
@@ -97,6 +104,7 @@ Partial Class frmListadoDocumentos
         Me.colSaldo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colSaldo.HeaderText = "Saldo"
         Me.colSaldo.Name = "colSaldo"
+        Me.colSaldo.ReadOnly = True
         Me.colSaldo.Width = 67
         '
         'colFecha
@@ -104,6 +112,7 @@ Partial Class frmListadoDocumentos
         Me.colFecha.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colFecha.HeaderText = "Fecha"
         Me.colFecha.Name = "colFecha"
+        Me.colFecha.ReadOnly = True
         Me.colFecha.Width = 69
         '
         'colVencimiento
@@ -111,6 +120,7 @@ Partial Class frmListadoDocumentos
         Me.colVencimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colVencimiento.HeaderText = "Vencimiento"
         Me.colVencimiento.Name = "colVencimiento"
+        Me.colVencimiento.ReadOnly = True
         Me.colVencimiento.Width = 112
         '
         'colEstado
@@ -118,6 +128,7 @@ Partial Class frmListadoDocumentos
         Me.colEstado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.colEstado.HeaderText = "Estado"
         Me.colEstado.Name = "colEstado"
+        Me.colEstado.ReadOnly = True
         Me.colEstado.Width = 74
         '
         'frmListadoDocumentos

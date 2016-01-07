@@ -24,6 +24,7 @@ Partial Class frmPresupuestoPlan
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmPresupuestoPlan))
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnPresupuesto = New SGC_CS.SGCButton(Me.components)
         Me.pbPresupuesto = New System.Windows.Forms.PictureBox()
         Me.lblEstado = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel8 = New SGC_CS.SGCLabel(Me.components)
@@ -50,7 +51,6 @@ Partial Class frmPresupuestoPlan
         Me.sbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.SugerenciasToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.btnPresupuesto = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1.SuspendLayout()
         CType(Me.pbPresupuesto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbItems.SuspendLayout()
@@ -94,6 +94,24 @@ Partial Class frmPresupuestoPlan
         Me.SgcGroupBox1.TabIndex = 14
         Me.SgcGroupBox1.TabStop = False
         Me.SgcGroupBox1.Text = "Plan Anual"
+        '
+        'btnPresupuesto
+        '
+        Me.btnPresupuesto.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPresupuesto.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnPresupuesto.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnPresupuesto.Image = Global.SGC_CS.My.Resources.Resources.get_info16
+        Me.btnPresupuesto.Location = New System.Drawing.Point(390, 105)
+        Me.btnPresupuesto.Name = "btnPresupuesto"
+        Me.btnPresupuesto.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.btnPresupuesto.Size = New System.Drawing.Size(26, 26)
+        Me.btnPresupuesto.TabIndex = 34
+        Me.btnPresupuesto.TextAlign = System.Drawing.ContentAlignment.TopLeft
+        Me.btnPresupuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnPresupuesto.UseVisualStyleBackColor = False
+        Me.btnPresupuesto.Visible = False
         '
         'pbPresupuesto
         '
@@ -303,6 +321,7 @@ Partial Class frmPresupuestoPlan
         'txtMontoTotal
         '
         Me.txtMontoTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtMontoTotal.Enabled = False
         Me.txtMontoTotal.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtMontoTotal.ForeColor = System.Drawing.Color.Black
         Me.txtMontoTotal.Location = New System.Drawing.Point(717, 256)
@@ -395,24 +414,6 @@ Partial Class frmPresupuestoPlan
         Me.ToolStripButton3.Size = New System.Drawing.Size(105, 34)
         Me.ToolStripButton3.Text = "Impresión"
         Me.ToolStripButton3.Visible = False
-        '
-        'btnPresupuesto
-        '
-        Me.btnPresupuesto.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnPresupuesto.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPresupuesto.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnPresupuesto.Image = Global.SGC_CS.My.Resources.Resources.get_info16
-        Me.btnPresupuesto.Location = New System.Drawing.Point(390, 105)
-        Me.btnPresupuesto.Name = "btnPresupuesto"
-        Me.btnPresupuesto.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.btnPresupuesto.Size = New System.Drawing.Size(26, 26)
-        Me.btnPresupuesto.TabIndex = 34
-        Me.btnPresupuesto.TextAlign = System.Drawing.ContentAlignment.TopLeft
-        Me.btnPresupuesto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnPresupuesto.UseVisualStyleBackColor = False
-        Me.btnPresupuesto.Visible = False
         '
         'frmPresupuestoPlan
         '

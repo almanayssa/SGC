@@ -804,4 +804,46 @@ Public Class frmPresupuestoPlan
     Private Sub btnPresupuesto_Click(sender As System.Object, e As System.EventArgs) Handles btnPresupuesto.Click
         MsgBox(msjInfo, MsgBoxStyle.Information)
     End Sub
+
+
+    Private Sub txtNumeric_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Private Sub txtDecimal_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
+        
+        If (Char.IsNumber(e.KeyChar)) Or _
+               (e.KeyChar = ChrW(Keys.Back)) Or _
+               (e.KeyChar = ".") And _
+               (CType(sender, TextBox).Text.Contains(".") = False) Then
+
+
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+
+    Private Sub dgvListado_EditingControlShowing(sender As Object, e As System.Windows.Forms.DataGridViewEditingControlShowingEventArgs) Handles dgvListado.EditingControlShowing
+        Dim columnIndex As Integer = dgvListado.CurrentCell.ColumnIndex
+        Dim rowIndex As Integer = dgvListado.CurrentCell.RowIndex
+
+        If dgvListado.Columns(columnIndex).Name = "cant" Then
+            Dim txtCantidad As DataGridViewTextBoxEditingControl = DirectCast(e.Control, DataGridViewTextBoxEditingControl)
+
+            RemoveHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
+            AddHandler txtCantidad.KeyPress, AddressOf txtNumeric_KeyPress
+        End If
+
+        If dgvListado.Columns(columnIndex).Name = "monto" Then
+            Dim txtCantidad As DataGridViewTextBoxEditingControl = DirectCast(e.Control, DataGridViewTextBoxEditingControl)
+
+            RemoveHandler txtCantidad.KeyPress, AddressOf txtDecimal_KeyPress
+            AddHandler txtCantidad.KeyPress, AddressOf txtDecimal_KeyPress
+        End If
+
+    End Sub
+
+
 End Class

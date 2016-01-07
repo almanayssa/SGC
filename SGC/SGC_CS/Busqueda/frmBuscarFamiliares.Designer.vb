@@ -20,7 +20,7 @@ Partial Class frmBuscarFamiliares
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
         Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colRelacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -39,15 +39,16 @@ Partial Class frmBuscarFamiliares
         'dgvListado
         '
         Me.dgvListado.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNombre, Me.colRelacion, Me.colFechaNacimiento, Me.colDNI})
         Me.dgvListado.Location = New System.Drawing.Point(9, 154)
         Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.ReadOnly = True
         Me.dgvListado.Size = New System.Drawing.Size(404, 206)
         Me.dgvListado.TabIndex = 27
         '
@@ -55,21 +56,25 @@ Partial Class frmBuscarFamiliares
         '
         Me.colNombre.HeaderText = "Nombre"
         Me.colNombre.Name = "colNombre"
+        Me.colNombre.ReadOnly = True
         '
         'colRelacion
         '
         Me.colRelacion.HeaderText = "Relación"
         Me.colRelacion.Name = "colRelacion"
+        Me.colRelacion.ReadOnly = True
         '
         'colFechaNacimiento
         '
         Me.colFechaNacimiento.HeaderText = "Fec. Nac."
         Me.colFechaNacimiento.Name = "colFechaNacimiento"
+        Me.colFechaNacimiento.ReadOnly = True
         '
         'colDNI
         '
         Me.colDNI.HeaderText = "DNI"
         Me.colDNI.Name = "colDNI"
+        Me.colDNI.ReadOnly = True
         '
         'gbxFiltros
         '
@@ -107,6 +112,7 @@ Partial Class frmBuscarFamiliares
         Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
         Me.txtNombre.Location = New System.Drawing.Point(105, 61)
+        Me.txtNombre.MaxLength = 50
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(277, 26)
         Me.txtNombre.TabIndex = 25
@@ -129,6 +135,7 @@ Partial Class frmBuscarFamiliares
         Me.txtAccion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAccion.ForeColor = System.Drawing.Color.Black
         Me.txtAccion.Location = New System.Drawing.Point(105, 29)
+        Me.txtAccion.MaxLength = 5
         Me.txtAccion.Name = "txtAccion"
         Me.txtAccion.Size = New System.Drawing.Size(100, 26)
         Me.txtAccion.TabIndex = 23

@@ -22,14 +22,14 @@ Partial Class frmBuscarInvitado
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gbxFiltros = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.txtNombre = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel6 = New SGC_CS.SGCLabel(Me.components)
         Me.txtAccion = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel16 = New SGC_CS.SGCLabel(Me.components)
-        Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colDNI = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxFiltros.SuspendLayout()
         Me.SuspendLayout()
@@ -46,8 +46,21 @@ Partial Class frmBuscarInvitado
         Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colNombre, Me.colDNI})
         Me.dgvListado.Location = New System.Drawing.Point(9, 154)
         Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.ReadOnly = True
         Me.dgvListado.Size = New System.Drawing.Size(404, 206)
         Me.dgvListado.TabIndex = 27
+        '
+        'colNombre
+        '
+        Me.colNombre.HeaderText = "Nombre"
+        Me.colNombre.Name = "colNombre"
+        Me.colNombre.ReadOnly = True
+        '
+        'colDNI
+        '
+        Me.colDNI.HeaderText = "DNI"
+        Me.colDNI.Name = "colDNI"
+        Me.colDNI.ReadOnly = True
         '
         'gbxFiltros
         '
@@ -85,6 +98,7 @@ Partial Class frmBuscarInvitado
         Me.txtNombre.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNombre.ForeColor = System.Drawing.Color.Black
         Me.txtNombre.Location = New System.Drawing.Point(105, 61)
+        Me.txtNombre.MaxLength = 50
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(277, 26)
         Me.txtNombre.TabIndex = 25
@@ -107,6 +121,7 @@ Partial Class frmBuscarInvitado
         Me.txtAccion.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtAccion.ForeColor = System.Drawing.Color.Black
         Me.txtAccion.Location = New System.Drawing.Point(105, 29)
+        Me.txtAccion.MaxLength = 5
         Me.txtAccion.Name = "txtAccion"
         Me.txtAccion.Size = New System.Drawing.Size(100, 26)
         Me.txtAccion.TabIndex = 23
@@ -121,16 +136,6 @@ Partial Class frmBuscarInvitado
         Me.SgcLabel16.Size = New System.Drawing.Size(53, 18)
         Me.SgcLabel16.TabIndex = 22
         Me.SgcLabel16.Text = "Acción:"
-        '
-        'colNombre
-        '
-        Me.colNombre.HeaderText = "Nombre"
-        Me.colNombre.Name = "colNombre"
-        '
-        'colDNI
-        '
-        Me.colDNI.HeaderText = "DNI"
-        Me.colDNI.Name = "colDNI"
         '
         'frmBuscarInvitado
         '

@@ -119,6 +119,7 @@ Partial Class frmBuscarPlan
         Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListado.Location = New System.Drawing.Point(12, 157)
         Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.ReadOnly = True
         Me.dgvListado.Size = New System.Drawing.Size(374, 191)
         Me.dgvListado.TabIndex = 11
         '
