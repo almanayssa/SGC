@@ -65,6 +65,14 @@ Public Class frmRegistroPlanAnual
     End Sub
 
     Private Function GuardarPlan() As Boolean
+
+
+        If ValidarCamposRequeridos() <> String.Empty Then
+            MessageBox.Show(ValidarCamposRequeridos, "Información")
+            Exit Function
+        End If
+
+
         Dim flag As Boolean = True
 
         Dim affectedRows As Integer = 0
@@ -258,17 +266,30 @@ Public Class frmRegistroPlanAnual
         dtpFecFin.Enabled = op
         dtpFecIni.Enabled = op
     End Sub
+
+    Private Function ValidarCamposRequeridos() As String
+        Dim msg As String = String.Empty
+
+        If dtpFecIni.Value > dtpFecFin.Value Then
+            msg &= vbCrLf & "- Registrar rango de fechas válidas"
+        End If
+
+        Return msg
+    End Function
+
+
 #End Region
 
 #Region "Metodos Controles"
 
     Private Sub btnGrabarPlan_Click(sender As System.Object, e As System.EventArgs) Handles btnGrabarPlan.Click
-
-        If GuardarPlan() Then
-            LimpiarFormulario()
-            CargarPlan(_id_Plan)
-
+        If MsgBox("Desea registrar el Plan Anual?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            If GuardarPlan() Then
+                LimpiarFormulario()
+                CargarPlan(_id_Plan)
+            End If
         End If
+
 
     End Sub
 
@@ -289,6 +310,11 @@ Public Class frmRegistroPlanAnual
     End Sub
 
     Private Sub btnGrabarDetalle_Click(sender As System.Object, e As System.EventArgs) Handles btnGrabarDetalle.Click
+
+        If MsgBox("Desea registrar las actividades del Plan Anual?", MsgBoxStyle.YesNo) = MsgBoxResult.No Then
+            Exit Sub
+        End If
+
         Dim newListadoActividades As New List(Of ActividadBE)
         Dim oNewActividad As New ActividadBE
 

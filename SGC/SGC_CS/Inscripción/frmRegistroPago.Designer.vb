@@ -42,6 +42,11 @@ Partial Class frmRegistroPago
         Me.SgcLabel4 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel8 = New SGC_CS.SGCLabel(Me.components)
         Me.dgvArticulos = New SGC_CS.SGCDataGridView(Me.components)
+        Me.colDesArt = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colConcepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colCant = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colAbr = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.colTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcLabel3 = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel7 = New SGC_CS.SGCLabel(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
@@ -50,14 +55,10 @@ Partial Class frmRegistroPago
         Me.tsbGuardar = New System.Windows.Forms.ToolStripButton()
         Me.tsbEliminar = New System.Windows.Forms.ToolStripButton()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.txtSerie = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcButton1 = New SGC_CS.SGCButton(Me.components)
         Me.txtcorrelativo = New SGC_CS.SGCTextBox(Me.components)
         Me.SgcLabel5 = New SGC_CS.SGCLabel(Me.components)
-        Me.colDesArt = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colConcepto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colCant = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colAbr = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.colTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox4.SuspendLayout()
         Me.SgcGroupBox6.SuspendLayout()
         CType(Me.dgvArticulos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,6 +126,7 @@ Partial Class frmRegistroPago
         Me.txtAccion.ForeColor = System.Drawing.Color.Black
         Me.txtAccion.Location = New System.Drawing.Point(109, 37)
         Me.txtAccion.Name = "txtAccion"
+        Me.txtAccion.ReadOnly = True
         Me.txtAccion.Size = New System.Drawing.Size(100, 26)
         Me.txtAccion.TabIndex = 3
         '
@@ -322,8 +324,43 @@ Partial Class frmRegistroPago
         Me.dgvArticulos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDesArt, Me.colConcepto, Me.colCant, Me.colAbr, Me.colTotal})
         Me.dgvArticulos.Location = New System.Drawing.Point(13, 93)
         Me.dgvArticulos.Name = "dgvArticulos"
+        Me.dgvArticulos.ReadOnly = True
         Me.dgvArticulos.Size = New System.Drawing.Size(869, 176)
         Me.dgvArticulos.TabIndex = 1
+        '
+        'colDesArt
+        '
+        Me.colDesArt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colDesArt.HeaderText = "Articulo"
+        Me.colDesArt.Name = "colDesArt"
+        Me.colDesArt.ReadOnly = True
+        '
+        'colConcepto
+        '
+        Me.colConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.colConcepto.HeaderText = "Concepto"
+        Me.colConcepto.Name = "colConcepto"
+        Me.colConcepto.ReadOnly = True
+        '
+        'colCant
+        '
+        Me.colCant.HeaderText = "Cantidad"
+        Me.colCant.Name = "colCant"
+        Me.colCant.ReadOnly = True
+        '
+        'colAbr
+        '
+        Me.colAbr.HeaderText = "M"
+        Me.colAbr.Name = "colAbr"
+        Me.colAbr.ReadOnly = True
+        Me.colAbr.Width = 50
+        '
+        'colTotal
+        '
+        Me.colTotal.HeaderText = "Monto"
+        Me.colTotal.Name = "colTotal"
+        Me.colTotal.ReadOnly = True
+        Me.colTotal.Width = 150
         '
         'SgcLabel3
         '
@@ -405,6 +442,7 @@ Partial Class frmRegistroPago
         '
         'SgcGroupBox2
         '
+        Me.SgcGroupBox2.Controls.Add(Me.txtSerie)
         Me.SgcGroupBox2.Controls.Add(Me.SgcButton1)
         Me.SgcGroupBox2.Controls.Add(Me.txtcorrelativo)
         Me.SgcGroupBox2.Controls.Add(Me.SgcLabel5)
@@ -416,6 +454,17 @@ Partial Class frmRegistroPago
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Documento"
         '
+        'txtSerie
+        '
+        Me.txtSerie.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txtSerie.Enabled = False
+        Me.txtSerie.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSerie.ForeColor = System.Drawing.Color.Black
+        Me.txtSerie.Location = New System.Drawing.Point(87, 20)
+        Me.txtSerie.Name = "txtSerie"
+        Me.txtSerie.Size = New System.Drawing.Size(61, 26)
+        Me.txtSerie.TabIndex = 32
+        '
         'SgcButton1
         '
         Me.SgcButton1.BackColor = System.Drawing.Color.WhiteSmoke
@@ -424,7 +473,7 @@ Partial Class frmRegistroPago
         Me.SgcButton1.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SgcButton1.ForeColor = System.Drawing.Color.SteelBlue
         Me.SgcButton1.Image = Global.SGC_CS.My.Resources.Resources.btn_buscar
-        Me.SgcButton1.Location = New System.Drawing.Point(218, 16)
+        Me.SgcButton1.Location = New System.Drawing.Point(276, 16)
         Me.SgcButton1.Name = "SgcButton1"
         Me.SgcButton1.Size = New System.Drawing.Size(45, 31)
         Me.SgcButton1.TabIndex = 30
@@ -437,7 +486,7 @@ Partial Class frmRegistroPago
         Me.txtcorrelativo.Enabled = False
         Me.txtcorrelativo.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcorrelativo.ForeColor = System.Drawing.Color.Black
-        Me.txtcorrelativo.Location = New System.Drawing.Point(85, 20)
+        Me.txtcorrelativo.Location = New System.Drawing.Point(154, 20)
         Me.txtcorrelativo.Name = "txtcorrelativo"
         Me.txtcorrelativo.Size = New System.Drawing.Size(116, 26)
         Me.txtcorrelativo.TabIndex = 31
@@ -452,40 +501,6 @@ Partial Class frmRegistroPago
         Me.SgcLabel5.Size = New System.Drawing.Size(63, 18)
         Me.SgcLabel5.TabIndex = 0
         Me.SgcLabel5.Text = "Número:"
-        '
-        'colDesArt
-        '
-        Me.colDesArt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colDesArt.HeaderText = "Articulo"
-        Me.colDesArt.Name = "colDesArt"
-        Me.colDesArt.ReadOnly = True
-        '
-        'colConcepto
-        '
-        Me.colConcepto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.colConcepto.HeaderText = "Concepto"
-        Me.colConcepto.Name = "colConcepto"
-        Me.colConcepto.ReadOnly = True
-        '
-        'colCant
-        '
-        Me.colCant.HeaderText = "Cantidad"
-        Me.colCant.Name = "colCant"
-        Me.colCant.ReadOnly = True
-        '
-        'colAbr
-        '
-        Me.colAbr.HeaderText = "M"
-        Me.colAbr.Name = "colAbr"
-        Me.colAbr.ReadOnly = True
-        Me.colAbr.Width = 50
-        '
-        'colTotal
-        '
-        Me.colTotal.HeaderText = "Monto"
-        Me.colTotal.Name = "colTotal"
-        Me.colTotal.ReadOnly = True
-        Me.colTotal.Width = 150
         '
         'frmRegistroPago
         '
@@ -551,5 +566,6 @@ Partial Class frmRegistroPago
     Friend WithEvents colCant As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colAbr As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents colTotal As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txtSerie As SGC_CS.SGCTextBox
 
 End Class
