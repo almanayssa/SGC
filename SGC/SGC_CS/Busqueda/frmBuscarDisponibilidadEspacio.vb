@@ -169,7 +169,6 @@ Public Class frmBuscarDisponibilidadEspacio
 
         If val = "0" Then
             MessageBox.Show("No se puede elegir horas salteadas", "Información")
-            ListadoEspacioRes = New List(Of EspacioResBE)
         End If
     End Sub
 
