@@ -388,8 +388,8 @@ Namespace SGC.Model.Metodos
                     oActividad = New ActividadBE
                     oActividad.id_actividad = dr("id_actividad")
                     oActividad.fecha = dr("fecha")
-                    oActividad.hora_ini = dr.GetTimeSpan(3) 'dr("hora_ini")
-                    oActividad.hora_fin = dr.GetTimeSpan(4) 'dr("hora_fin")
+                    oActividad.hora_ini = dr("hora_ini") 'dr.GetTimeSpan(3) 
+                    oActividad.hora_fin = dr("hora_fin") 'dr.GetTimeSpan(5)
                     oActividad.monto_pago = dr("monto_pago")
                     oActividad.descripcion = dr("descripcion")
                     oActividad.nombre = dr("nombre")
@@ -399,6 +399,8 @@ Namespace SGC.Model.Metodos
                     oActividad.nombrecomite = dr("nom_comite")
                     oActividad.desc_tipo = dr("tipo_act")
                     oActividad.desc_cat = IIf(dr("cat_act") Is DBNull.Value, Nothing, dr("cat_act"))
+                    'oActividad.fecha_ini = ""
+                    'oActividad.fecha_fin = ""
 
                     oListadoActividades.Add(oActividad)
                 End While
