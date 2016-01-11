@@ -30,11 +30,11 @@
                     <asp:Label ID="lblHoraInicio" runat="server" CssClass="lblnegro"></asp:Label>
                     <br />                        
                     <br />
-                    <span class="lblnegro">Fecha Fin:</span>
+                    <%--<span class="lblnegro">Fecha Fin:</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="lblFechaFin" runat="server" CssClass="lblnegro"></asp:Label>
                     <br />                        
-                    <br />
+                    <br />--%>
                     <span class="lblnegro">Hora Fin:</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="lblHoraFin" runat="server" CssClass="lblnegro"></asp:Label>

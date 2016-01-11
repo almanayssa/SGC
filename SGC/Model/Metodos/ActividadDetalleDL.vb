@@ -29,9 +29,9 @@ Namespace SGC.Model.Metodos
                 While dr.Read()
                     oActividadDetalle = New ActividadDetalleBE
                     oActividadDetalle.id_actividad_detalle = dr("id_actividad_detalle")
-                    oActividadDetalle.fecha_ini = dr("fecha_ini")
+                    oActividadDetalle.fecha = dr("fecha")
                     oActividadDetalle.hora_ini = dr("hora_ini")
-                    oActividadDetalle.fecha_fin = dr("fecha_fin")
+                    'oActividadDetalle.fecha_fin = dr("fecha_fin")
                     oActividadDetalle.hora_fin = dr("hora_fin")
                     oActividadDetalle.id_sede = dr("id_sede")
                     oActividadDetalle.des_sede = dr("des_sede")

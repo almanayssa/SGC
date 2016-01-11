@@ -18,9 +18,9 @@ Public Class frmRegistroIncidencias
 
         colSede.DataPropertyName = "des_sede"
         colEspacio.DataPropertyName = "nombre_espacio"
-        colFecInicio.DataPropertyName = "fecha_ini"
+        colFecInicio.DataPropertyName = "fecha"
         colHoraInicio.DataPropertyName = "hora_ini"
-        colFecFin.DataPropertyName = "fecha_fin"
+        'colFecFin.DataPropertyName = "fecha_fin"
         colHoraFin.DataPropertyName = "hora_fin"
 
     End Sub

@@ -18,13 +18,13 @@ Public Class frmDetalleActividad
         lblNombre.Text = oActividad.nombre
         lblComite.Text = oActividad.nombrecomite
         lblTipo.Text = oActividad.desc_tipo
-        lblFechaInicio.Text = oActividad.fec_ini
+        lblFechaInicio.Text = oActividad.fecha
         lblHoraInicio.Text = oActividad.hora_ini.ToString()
-        lblFechaFin.Text = oActividad.fec_fin
+        'lblFechaFin.Text = oActividad.fec_fin
         lblHoraFin.Text = oActividad.hora_fin.ToString()
         lblDescripcion.Text = oActividad.descripcion
 
-        Dim fechaHora As DateTime = Convert.ToDateTime(oActividad.fec_fin).Add(oActividad.hora_fin)
+        Dim fechaHora As DateTime = Convert.ToDateTime(oActividad.fecha).Add(oActividad.hora_fin)
 
         If DateDiff(DateInterval.Second, fechaHora, Now) > 0 Then
             ibtnInscribir.Visible = False

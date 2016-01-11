@@ -137,7 +137,7 @@ Partial Class frmBuscarActividad
         '
         'colFecInicio
         '
-        Me.colFecInicio.HeaderText = "F. Inicio"
+        Me.colFecInicio.HeaderText = "Fecha"
         Me.colFecInicio.Name = "colFecInicio"
         Me.colFecInicio.ReadOnly = True
         '
@@ -152,6 +152,7 @@ Partial Class frmBuscarActividad
         Me.colFecFin.HeaderText = "F. Fin"
         Me.colFecFin.Name = "colFecFin"
         Me.colFecFin.ReadOnly = True
+        Me.colFecFin.Visible = False
         '
         'colHoraFin
         '

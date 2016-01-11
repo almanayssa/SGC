@@ -38,8 +38,7 @@ Namespace SGC.Model.Metodos
                     oActividad.desc_tipo = dr("desc_tipo")
                     oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
                     oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
-                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.fecha = IIf(dr("fecha") Is DBNull.Value, Nothing, dr("fecha"))
                     oActividad.monto_pago = dr("monto_pago")
                     oActividad.vacantes = dr("vacantes")
                     oActividad.id_estado = dr("id_estado")
@@ -75,9 +74,8 @@ Namespace SGC.Model.Metodos
                     oActividad = New ActividadBE
                     oActividad.id_actividad = dr("id_actividad")
                     oActividad.nombre = dr("nombre")
-                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
+                    oActividad.fecha = IIf(dr("fecha") Is DBNull.Value, Nothing, dr("fecha"))
                     oActividad.hora_ini = IIf(dr("hora_ini") Is DBNull.Value, Nothing, dr("hora_ini"))
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
                     oActividad.hora_fin = IIf(dr("hora_fin") Is DBNull.Value, Nothing, dr("hora_fin"))
                     oListadoActividades.Add(oActividad)
                 End While
@@ -105,10 +103,9 @@ Namespace SGC.Model.Metodos
 
                 If dr.Read() Then
                     oActividad.id_actividad = dr("id_actividad")
-                    oActividad.fec_ini = dr("fec_ini")
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.fecha = dr("fecha")
                     oActividad.hora_ini = dr.GetTimeSpan(3) 'dr("hora_ini")
-                    oActividad.hora_fin = dr.GetTimeSpan(4) 'dr("hora_fin")
+                    oActividad.hora_fin = dr("hora_fin") 'dr.GetTimeSpan(4)
                     oActividad.monto_pago = dr("monto_pago")
                     oActividad.id_estado = dr("id_estado")
                     oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
@@ -153,8 +150,7 @@ Namespace SGC.Model.Metodos
                     oActividad = New ActividadBE
                     oActividad.id_actividad = dr("id_actividad")
                     oActividad.nombre = dr("nombre")
-                    oActividad.fec_ini = dr("fec_ini")
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.fecha = dr("fecha")
                     oActividad.monto_pago = dr("monto_pago")
                     oActividad.id_estado = dr("id_estado")
                     oActividad.id_cattipo_act = dr("id_cattipo_act")
@@ -198,8 +194,7 @@ Namespace SGC.Model.Metodos
                     oActividad.desc_tipo = dr("desc_tipo")
                     oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
                     oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
-                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.fecha = IIf(dr("fecha") Is DBNull.Value, Nothing, dr("fecha"))
                     oActividad.monto_pago = dr("monto_pago")
                     oActividad.vacantes = dr("vacantes")
                     oActividad.id_estado = dr("id_estado")
@@ -238,8 +233,7 @@ Namespace SGC.Model.Metodos
                     oActividad.desc_tipo = dr("desc_tipo")
                     oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
                     oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
-                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.fecha = IIf(dr("fecha") Is DBNull.Value, Nothing, dr("fecha"))
                     oActividad.monto_pago = dr("monto_pago")
                     oActividad.vacantes = dr("vacantes")
                     oActividad.id_estado = dr("id_estado")
@@ -278,8 +272,7 @@ Namespace SGC.Model.Metodos
                     oActividad.desc_tipo = dr("desc_tipo")
                     oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
                     oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
-                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.fecha = IIf(dr("fecha") Is DBNull.Value, Nothing, dr("fecha"))
                     oActividad.monto_pago = dr("monto_pago")
                     oActividad.vacantes = dr("vacantes")
                     oActividad.id_estado = dr("id_estado")
@@ -318,8 +311,7 @@ Namespace SGC.Model.Metodos
                     oActividad.desc_tipo = dr("desc_tipo")
                     oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
                     oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
-                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.fecha = IIf(dr("fecha") Is DBNull.Value, Nothing, dr("fecha"))
                     oActividad.monto_pago = dr("monto_pago")
                     oActividad.vacantes = dr("vacantes")
                     oActividad.id_estado = dr("id_estado")
@@ -358,8 +350,7 @@ Namespace SGC.Model.Metodos
                     oActividad.desc_tipo = dr("desc_tipo")
                     oActividad.id_cattipo_act = IIf(dr("id_cattipo_act") Is DBNull.Value, Nothing, dr("id_cattipo_act"))
                     oActividad.desc_cat = IIf(dr("desc_cat") Is DBNull.Value, Nothing, dr("desc_cat"))
-                    oActividad.fec_ini = IIf(dr("fec_ini") Is DBNull.Value, Nothing, dr("fec_ini"))
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.fecha = IIf(dr("fecha") Is DBNull.Value, Nothing, dr("fecha"))
                     oActividad.monto_pago = dr("monto_pago")
                     oActividad.vacantes = dr("vacantes")
                     oActividad.id_estado = dr("id_estado")
@@ -396,8 +387,7 @@ Namespace SGC.Model.Metodos
                 While dr.Read()
                     oActividad = New ActividadBE
                     oActividad.id_actividad = dr("id_actividad")
-                    oActividad.fec_ini = dr("fec_ini")
-                    oActividad.fec_fin = IIf(dr("fec_fin") Is DBNull.Value, Nothing, dr("fec_fin"))
+                    oActividad.fecha = dr("fecha")
                     oActividad.hora_ini = dr.GetTimeSpan(3) 'dr("hora_ini")
                     oActividad.hora_fin = dr.GetTimeSpan(4) 'dr("hora_fin")
                     oActividad.monto_pago = dr("monto_pago")
@@ -432,8 +422,7 @@ Namespace SGC.Model.Metodos
 
             Dim recordId As Integer = 0
             sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@fec_ini", SqlDbType.DateTime).Value = IIf(oActividad.fec_ini Is Nothing, DBNull.Value, oActividad.fec_ini)
-            sqlCmd.Parameters.Add("@fec_fin", SqlDbType.DateTime).Value = IIf(oActividad.fec_fin Is Nothing, DBNull.Value, oActividad.fec_fin)
+            sqlCmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = IIf(oActividad.fecha Is Nothing, DBNull.Value, oActividad.fecha)
             sqlCmd.Parameters.Add("@hora_ini", SqlDbType.Time).Value = IIf(oActividad.hora_ini Is Nothing, DBNull.Value, oActividad.hora_ini)
             sqlCmd.Parameters.Add("@hora_fin", SqlDbType.Time).Value = IIf(oActividad.hora_fin Is Nothing, DBNull.Value, oActividad.hora_fin)
             sqlCmd.Parameters.Add("@monto_pago", SqlDbType.Decimal).Value = IIf(oActividad.monto_pago Is Nothing, DBNull.Value, oActividad.monto_pago)
@@ -495,9 +484,9 @@ Namespace SGC.Model.Metodos
             Dim recordId As Integer = 0
             sqlCmd.CommandType = CommandType.StoredProcedure
             sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oActividadDetalle.id_actividad
-            sqlCmd.Parameters.Add("@fecha_ini", SqlDbType.DateTime).Value = oActividadDetalle.fecha_ini
+            sqlCmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = oActividadDetalle.fecha
             sqlCmd.Parameters.Add("@hora_ini", SqlDbType.Time).Value = oActividadDetalle.hora_ini
-            sqlCmd.Parameters.Add("@fecha_fin", SqlDbType.DateTime).Value = oActividadDetalle.fecha_fin
+            'sqlCmd.Parameters.Add("@fecha_fin", SqlDbType.DateTime).Value = oActividadDetalle.fecha_fin
             sqlCmd.Parameters.Add("@hora_fin", SqlDbType.Time).Value = oActividadDetalle.hora_fin
             sqlCmd.Parameters.Add("@id_sede", SqlDbType.VarChar).Value = oActividadDetalle.id_sede
             sqlCmd.Parameters.Add("@id_espacio", SqlDbType.Int).Value = oActividadDetalle.id_espacio
@@ -627,8 +616,7 @@ Namespace SGC.Model.Metodos
             Dim affectedRows As Integer = 0
             sqlCmd.CommandType = CommandType.StoredProcedure
             sqlCmd.Parameters.Add("@id_actividad", SqlDbType.Int).Value = oActividad.id_actividad
-            sqlCmd.Parameters.Add("@fec_ini", SqlDbType.DateTime).Value = IIf(oActividad.fec_ini Is Nothing, DBNull.Value, oActividad.fec_ini)
-            sqlCmd.Parameters.Add("@fec_fin", SqlDbType.DateTime).Value = IIf(oActividad.fec_fin Is Nothing, DBNull.Value, oActividad.fec_fin)
+            sqlCmd.Parameters.Add("@fecha", SqlDbType.DateTime).Value = IIf(oActividad.fecha Is Nothing, DBNull.Value, oActividad.fecha)
             sqlCmd.Parameters.Add("@hora_ini", SqlDbType.Time).Value = IIf(oActividad.hora_ini Is Nothing, DBNull.Value, oActividad.hora_ini)
             sqlCmd.Parameters.Add("@hora_fin", SqlDbType.Time).Value = IIf(oActividad.hora_fin Is Nothing, DBNull.Value, oActividad.hora_fin)
             sqlCmd.Parameters.Add("@monto_pago", SqlDbType.Decimal).Value = IIf(oActividad.monto_pago Is Nothing, DBNull.Value, oActividad.monto_pago)

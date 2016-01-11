@@ -71,8 +71,7 @@ Namespace SGC.Controller
             While DateDiff(DateInterval.Day, tempFecha, Convert.ToDateTime(oActividadRecurrente.fecha_fin)) >= 0
                 oActividad = New ActividadBE
 
-                oActividad.fec_ini = tempFecha
-                oActividad.fec_fin = tempFecha
+                oActividad.fecha = tempFecha
                 oActividad.hora_ini = oActividadRecurrente.hora_ini
                 oActividad.hora_fin = oActividadRecurrente.hora_fin
                 oActividad.monto_pago = oActividadRecurrente.monto_pago
@@ -124,44 +123,37 @@ Namespace SGC.Controller
                 Select Case tempFecha.DayOfWeek
                     Case DayOfWeek.Sunday
                         If oActividadRecurrente.chk_dom = True Then
-                            oActividad.fec_ini = tempFecha
-                            oActividad.fec_fin = tempFecha
+                            oActividad.fecha = tempFecha
                             oActividadRecurrente.ListadoActividades.Add(oActividad)
                         End If
                     Case DayOfWeek.Monday
                         If oActividadRecurrente.chk_lun = True Then
-                            oActividad.fec_ini = tempFecha
-                            oActividad.fec_fin = tempFecha
+                            oActividad.fecha = tempFecha
                             oActividadRecurrente.ListadoActividades.Add(oActividad)
                         End If
                     Case DayOfWeek.Tuesday
                         If oActividadRecurrente.chk_mar = True Then
-                            oActividad.fec_ini = tempFecha
-                            oActividad.fec_fin = tempFecha
+                            oActividad.fecha = tempFecha
                             oActividadRecurrente.ListadoActividades.Add(oActividad)
                         End If
                     Case DayOfWeek.Wednesday
                         If oActividadRecurrente.chk_mie = True Then
-                            oActividad.fec_ini = tempFecha
-                            oActividad.fec_fin = tempFecha
+                            oActividad.fecha = tempFecha
                             oActividadRecurrente.ListadoActividades.Add(oActividad)
                         End If
                     Case DayOfWeek.Thursday
                         If oActividadRecurrente.chk_jue = True Then
-                            oActividad.fec_ini = tempFecha
-                            oActividad.fec_fin = tempFecha
+                            oActividad.fecha = tempFecha
                             oActividadRecurrente.ListadoActividades.Add(oActividad)
                         End If
                     Case DayOfWeek.Friday
                         If oActividadRecurrente.chk_vie = True Then
-                            oActividad.fec_ini = tempFecha
-                            oActividad.fec_fin = tempFecha
+                            oActividad.fecha = tempFecha
                             oActividadRecurrente.ListadoActividades.Add(oActividad)
                         End If
                     Case DayOfWeek.Saturday
                         If oActividadRecurrente.chk_sab = True Then
-                            oActividad.fec_ini = tempFecha
-                            oActividad.fec_fin = tempFecha
+                            oActividad.fecha = tempFecha
                             oActividadRecurrente.ListadoActividades.Add(oActividad)
                         End If
                 End Select
@@ -208,8 +200,7 @@ Namespace SGC.Controller
                 oActividad.vacantes = oActividadRecurrente.vacantes
 
                 If DateDiff(DateInterval.Day, fec_ini, tempFecha) >= 0 Then
-                    oActividad.fec_ini = tempFecha
-                    oActividad.fec_fin = tempFecha
+                    oActividad.fecha = tempFecha
                     oActividadRecurrente.ListadoActividades.Add(oActividad)
                 End If
 

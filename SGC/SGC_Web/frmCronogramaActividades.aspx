@@ -61,12 +61,14 @@
 				                    <asp:Repeater ID="rptCalendarioActividades" runat="server"> <%--DataSource='<%#GetEvents()%>'>--%>
                                         <ItemTemplate>
                                             <table border="0" cellpadding="0" cellspacing="0">
-                                                <tr>                                
+                                                <tr>            
+                                                <%--IIf(CType(Eval("fec_ini"),DateTime).ToShortDateString() = CType(Eval("fec_fin"),DateTime).ToShortDateString(), String.Concat(CType(Eval("fec_ini"),DateTime).ToShortDateString(), " (", CType(Eval("fec_ini"),DateTime).ToShortTimeString(), " - ", CType(Eval("fec_fin"),DateTime).ToShortTimeString(), ")"), String.Concat(CType(Eval("fec_ini"),DateTime).ToShortDateString(), " ", CType(Eval("fec_ini"),DateTime).ToShortTimeString(), " - ", CType(Eval("fec_fin"),DateTime).ToShortDateString(), " ",CType(Eval("fec_fin"),DateTime).ToShortTimeString()))--%>                    
                                                     <td class="contentEventsCalendar" align="justify" valign="top">
                                                         <asp:LinkButton ID="lbtnTituloActividad" runat="server" CommandName="DetalleActividad"
                                                             CommandArgument='<%#Eval("id_actividad") %>' Text='<%# Eval("nombre") %>'
                                                             ToolTip='<%# Eval("nombre") %>' CssClass="lblverde" Font-Size="Small"></asp:LinkButton><br />
-                                                        <asp:Label ID="lblEventDateHourHome" runat="server" CssClass="lblmarron" Font-Size="Smaller" Text='<%#IIf(CType(Eval("fec_ini"),DateTime).ToShortDateString() = CType(Eval("fec_fin"),DateTime).ToShortDateString(), String.Concat(CType(Eval("fec_ini"),DateTime).ToShortDateString(), " (", CType(Eval("fec_ini"),DateTime).ToShortTimeString(), " - ", CType(Eval("fec_fin"),DateTime).ToShortTimeString(), ")"), String.Concat(CType(Eval("fec_ini"),DateTime).ToShortDateString(), " ", CType(Eval("fec_ini"),DateTime).ToShortTimeString(), " - ", CType(Eval("fec_fin"),DateTime).ToShortDateString(), " ",CType(Eval("fec_fin"),DateTime).ToShortTimeString())) %>'></asp:Label><br />
+                                                            
+                                                        <asp:Label ID="lblEventDateHourHome" runat="server" CssClass="lblmarron" Font-Size="Smaller" Text='<%# String.Concat(CType(Eval("fecha"),DateTime).ToShortDateString(), " (", CType(Eval("fecha"),DateTime).ToShortTimeString(), " - ", CType(Eval("fecha"),DateTime).ToShortTimeString(), ")") %>'></asp:Label><br />
                                                         <asp:Label ID="lblDefinitionEvent" runat="server" CssClass="lblmarron" Font-Size="Smaller" Text='<%# Eval("descripcion") %>'></asp:Label>
                                                     </td>
                                                     <td class="contentEventsLinks">

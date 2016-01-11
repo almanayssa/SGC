@@ -11,23 +11,13 @@
             End Set
         End Property
 
-        Private _fec_ini As DateTime?
-        Public Property fec_ini() As DateTime?
+        Private _fecha As DateTime?
+        Public Property fecha() As DateTime?
             Get
-                Return _fec_ini
+                Return _fecha
             End Get
             Set(ByVal value As DateTime?)
-                _fec_ini = value
-            End Set
-        End Property
-
-        Private _fec_fin As DateTime?
-        Public Property fec_fin() As DateTime?
-            Get
-                Return _fec_fin
-            End Get
-            Set(ByVal value As DateTime?)
-                _fec_fin = value
+                _fecha = value
             End Set
         End Property
 

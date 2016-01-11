@@ -38,68 +38,18 @@ Partial Class frmConsultaActividad
         Me.tabControl = New SGC_CS.SGCTabControl(Me.components)
         Me.tpTodas = New System.Windows.Forms.TabPage()
         Me.dgvTodas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.ctoNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ctoEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpRegistradas = New System.Windows.Forms.TabPage()
         Me.dgvRegistradas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.creNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.creVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpEvaluacion = New System.Windows.Forms.TabPage()
         Me.dgvEnEvaluacion = New SGC_CS.SGCDataGridView(Me.components)
-        Me.ceeNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ceeVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpAnuladas = New System.Windows.Forms.TabPage()
         Me.dgvAnuladas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.canNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.canTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.canCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.canFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.canFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.canPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.canVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpAprobadas = New System.Windows.Forms.TabPage()
         Me.dgvAprobadas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.capNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.capVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpHabilitadas = New System.Windows.Forms.TabPage()
         Me.dgvHabilitadas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.chaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.chaVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.tpRechazadas = New System.Windows.Forms.TabPage()
         Me.dgvRechazadas = New SGC_CS.SGCDataGridView(Me.components)
-        Me.crcNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.crcVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.cfiVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cfiPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -108,6 +58,56 @@ Partial Class frmConsultaActividad
         Me.cfiCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cfiTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cfiNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ctoNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ctoTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ctoCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ctoFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ctoFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ctoPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ctoVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ctoEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.creVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ceeVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.canVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.capVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.chaVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcCategoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcFecInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcFecFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.crcVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox1.SuspendLayout()
         Me.tabControl.SuspendLayout()
         Me.tpTodas.SuspendLayout()
@@ -264,55 +264,6 @@ Partial Class frmConsultaActividad
         Me.dgvTodas.Size = New System.Drawing.Size(873, 343)
         Me.dgvTodas.TabIndex = 0
         '
-        'ctoNombre
-        '
-        Me.ctoNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ctoNombre.HeaderText = "Nombre"
-        Me.ctoNombre.Name = "ctoNombre"
-        Me.ctoNombre.ReadOnly = True
-        '
-        'ctoTipo
-        '
-        Me.ctoTipo.HeaderText = "Tipo"
-        Me.ctoTipo.Name = "ctoTipo"
-        Me.ctoTipo.ReadOnly = True
-        '
-        'ctoCategoria
-        '
-        Me.ctoCategoria.HeaderText = "Categoría"
-        Me.ctoCategoria.Name = "ctoCategoria"
-        Me.ctoCategoria.ReadOnly = True
-        '
-        'ctoFecInicio
-        '
-        Me.ctoFecInicio.HeaderText = "Fec. Inicio"
-        Me.ctoFecInicio.Name = "ctoFecInicio"
-        Me.ctoFecInicio.ReadOnly = True
-        '
-        'ctoFecFin
-        '
-        Me.ctoFecFin.HeaderText = "Fec. Fin"
-        Me.ctoFecFin.Name = "ctoFecFin"
-        Me.ctoFecFin.ReadOnly = True
-        '
-        'ctoPago
-        '
-        Me.ctoPago.HeaderText = "Pago"
-        Me.ctoPago.Name = "ctoPago"
-        Me.ctoPago.ReadOnly = True
-        '
-        'ctoVacantes
-        '
-        Me.ctoVacantes.HeaderText = "Vacantes"
-        Me.ctoVacantes.Name = "ctoVacantes"
-        Me.ctoVacantes.ReadOnly = True
-        '
-        'ctoEstado
-        '
-        Me.ctoEstado.HeaderText = "Estado"
-        Me.ctoEstado.Name = "ctoEstado"
-        Me.ctoEstado.ReadOnly = True
-        '
         'tpRegistradas
         '
         Me.tpRegistradas.Controls.Add(Me.dgvRegistradas)
@@ -340,49 +291,6 @@ Partial Class frmConsultaActividad
         Me.dgvRegistradas.Size = New System.Drawing.Size(873, 343)
         Me.dgvRegistradas.TabIndex = 1
         '
-        'creNombre
-        '
-        Me.creNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.creNombre.HeaderText = "Nombre"
-        Me.creNombre.Name = "creNombre"
-        Me.creNombre.ReadOnly = True
-        '
-        'creTipo
-        '
-        Me.creTipo.HeaderText = "Tipo"
-        Me.creTipo.Name = "creTipo"
-        Me.creTipo.ReadOnly = True
-        '
-        'creCategoria
-        '
-        Me.creCategoria.HeaderText = "Categoría"
-        Me.creCategoria.Name = "creCategoria"
-        Me.creCategoria.ReadOnly = True
-        '
-        'creFecInicio
-        '
-        Me.creFecInicio.HeaderText = "Fec. Inicio"
-        Me.creFecInicio.Name = "creFecInicio"
-        Me.creFecInicio.ReadOnly = True
-        '
-        'creFecFin
-        '
-        Me.creFecFin.HeaderText = "Fec. Fin"
-        Me.creFecFin.Name = "creFecFin"
-        Me.creFecFin.ReadOnly = True
-        '
-        'crePago
-        '
-        Me.crePago.HeaderText = "Pago"
-        Me.crePago.Name = "crePago"
-        Me.crePago.ReadOnly = True
-        '
-        'creVacantes
-        '
-        Me.creVacantes.HeaderText = "Vacantes"
-        Me.creVacantes.Name = "creVacantes"
-        Me.creVacantes.ReadOnly = True
-        '
         'tpEvaluacion
         '
         Me.tpEvaluacion.Controls.Add(Me.dgvEnEvaluacion)
@@ -408,49 +316,6 @@ Partial Class frmConsultaActividad
         Me.dgvEnEvaluacion.ReadOnly = True
         Me.dgvEnEvaluacion.Size = New System.Drawing.Size(873, 343)
         Me.dgvEnEvaluacion.TabIndex = 1
-        '
-        'ceeNombre
-        '
-        Me.ceeNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ceeNombre.HeaderText = "Nombre"
-        Me.ceeNombre.Name = "ceeNombre"
-        Me.ceeNombre.ReadOnly = True
-        '
-        'ceeTipo
-        '
-        Me.ceeTipo.HeaderText = "Tipo"
-        Me.ceeTipo.Name = "ceeTipo"
-        Me.ceeTipo.ReadOnly = True
-        '
-        'ceeCategoria
-        '
-        Me.ceeCategoria.HeaderText = "Categoría"
-        Me.ceeCategoria.Name = "ceeCategoria"
-        Me.ceeCategoria.ReadOnly = True
-        '
-        'ceeFecInicio
-        '
-        Me.ceeFecInicio.HeaderText = "Fec. Inicio"
-        Me.ceeFecInicio.Name = "ceeFecInicio"
-        Me.ceeFecInicio.ReadOnly = True
-        '
-        'ceeFecFin
-        '
-        Me.ceeFecFin.HeaderText = "Fec. Fin"
-        Me.ceeFecFin.Name = "ceeFecFin"
-        Me.ceeFecFin.ReadOnly = True
-        '
-        'ceePago
-        '
-        Me.ceePago.HeaderText = "Pago"
-        Me.ceePago.Name = "ceePago"
-        Me.ceePago.ReadOnly = True
-        '
-        'ceeVacantes
-        '
-        Me.ceeVacantes.HeaderText = "Vacantes"
-        Me.ceeVacantes.Name = "ceeVacantes"
-        Me.ceeVacantes.ReadOnly = True
         '
         'tpAnuladas
         '
@@ -478,49 +343,6 @@ Partial Class frmConsultaActividad
         Me.dgvAnuladas.Size = New System.Drawing.Size(873, 343)
         Me.dgvAnuladas.TabIndex = 2
         '
-        'canNombre
-        '
-        Me.canNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.canNombre.HeaderText = "Nombre"
-        Me.canNombre.Name = "canNombre"
-        Me.canNombre.ReadOnly = True
-        '
-        'canTipo
-        '
-        Me.canTipo.HeaderText = "Tipo"
-        Me.canTipo.Name = "canTipo"
-        Me.canTipo.ReadOnly = True
-        '
-        'canCategoria
-        '
-        Me.canCategoria.HeaderText = "Categoría"
-        Me.canCategoria.Name = "canCategoria"
-        Me.canCategoria.ReadOnly = True
-        '
-        'canFecInicio
-        '
-        Me.canFecInicio.HeaderText = "Fec. Inicio"
-        Me.canFecInicio.Name = "canFecInicio"
-        Me.canFecInicio.ReadOnly = True
-        '
-        'canFecFin
-        '
-        Me.canFecFin.HeaderText = "Fec. Fin"
-        Me.canFecFin.Name = "canFecFin"
-        Me.canFecFin.ReadOnly = True
-        '
-        'canPago
-        '
-        Me.canPago.HeaderText = "Pago"
-        Me.canPago.Name = "canPago"
-        Me.canPago.ReadOnly = True
-        '
-        'canVacantes
-        '
-        Me.canVacantes.HeaderText = "Vacantes"
-        Me.canVacantes.Name = "canVacantes"
-        Me.canVacantes.ReadOnly = True
-        '
         'tpAprobadas
         '
         Me.tpAprobadas.Controls.Add(Me.dgvAprobadas)
@@ -546,49 +368,6 @@ Partial Class frmConsultaActividad
         Me.dgvAprobadas.ReadOnly = True
         Me.dgvAprobadas.Size = New System.Drawing.Size(873, 343)
         Me.dgvAprobadas.TabIndex = 1
-        '
-        'capNombre
-        '
-        Me.capNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.capNombre.HeaderText = "Nombre"
-        Me.capNombre.Name = "capNombre"
-        Me.capNombre.ReadOnly = True
-        '
-        'capTipo
-        '
-        Me.capTipo.HeaderText = "Tipo"
-        Me.capTipo.Name = "capTipo"
-        Me.capTipo.ReadOnly = True
-        '
-        'capCategoria
-        '
-        Me.capCategoria.HeaderText = "Categoría"
-        Me.capCategoria.Name = "capCategoria"
-        Me.capCategoria.ReadOnly = True
-        '
-        'capFecInicio
-        '
-        Me.capFecInicio.HeaderText = "Fec. Inicio"
-        Me.capFecInicio.Name = "capFecInicio"
-        Me.capFecInicio.ReadOnly = True
-        '
-        'capFecFin
-        '
-        Me.capFecFin.HeaderText = "Fec. Fin"
-        Me.capFecFin.Name = "capFecFin"
-        Me.capFecFin.ReadOnly = True
-        '
-        'capPago
-        '
-        Me.capPago.HeaderText = "Pago"
-        Me.capPago.Name = "capPago"
-        Me.capPago.ReadOnly = True
-        '
-        'capVacantes
-        '
-        Me.capVacantes.HeaderText = "Vacantes"
-        Me.capVacantes.Name = "capVacantes"
-        Me.capVacantes.ReadOnly = True
         '
         'tpHabilitadas
         '
@@ -616,49 +395,6 @@ Partial Class frmConsultaActividad
         Me.dgvHabilitadas.Size = New System.Drawing.Size(873, 343)
         Me.dgvHabilitadas.TabIndex = 1
         '
-        'chaNombre
-        '
-        Me.chaNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.chaNombre.HeaderText = "Nombre"
-        Me.chaNombre.Name = "chaNombre"
-        Me.chaNombre.ReadOnly = True
-        '
-        'chaTipo
-        '
-        Me.chaTipo.HeaderText = "Tipo"
-        Me.chaTipo.Name = "chaTipo"
-        Me.chaTipo.ReadOnly = True
-        '
-        'chaCategoria
-        '
-        Me.chaCategoria.HeaderText = "Categoría"
-        Me.chaCategoria.Name = "chaCategoria"
-        Me.chaCategoria.ReadOnly = True
-        '
-        'chaFecInicio
-        '
-        Me.chaFecInicio.HeaderText = "Fec. Inicio"
-        Me.chaFecInicio.Name = "chaFecInicio"
-        Me.chaFecInicio.ReadOnly = True
-        '
-        'chaFecFin
-        '
-        Me.chaFecFin.HeaderText = "Fec. Fin"
-        Me.chaFecFin.Name = "chaFecFin"
-        Me.chaFecFin.ReadOnly = True
-        '
-        'chaPago
-        '
-        Me.chaPago.HeaderText = "Pago"
-        Me.chaPago.Name = "chaPago"
-        Me.chaPago.ReadOnly = True
-        '
-        'chaVacantes
-        '
-        Me.chaVacantes.HeaderText = "Vacantes"
-        Me.chaVacantes.Name = "chaVacantes"
-        Me.chaVacantes.ReadOnly = True
-        '
         'tpRechazadas
         '
         Me.tpRechazadas.Controls.Add(Me.dgvRechazadas)
@@ -684,49 +420,6 @@ Partial Class frmConsultaActividad
         Me.dgvRechazadas.ReadOnly = True
         Me.dgvRechazadas.Size = New System.Drawing.Size(873, 343)
         Me.dgvRechazadas.TabIndex = 1
-        '
-        'crcNombre
-        '
-        Me.crcNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.crcNombre.HeaderText = "Nombre"
-        Me.crcNombre.Name = "crcNombre"
-        Me.crcNombre.ReadOnly = True
-        '
-        'crcTipo
-        '
-        Me.crcTipo.HeaderText = "Tipo"
-        Me.crcTipo.Name = "crcTipo"
-        Me.crcTipo.ReadOnly = True
-        '
-        'crcCategoria
-        '
-        Me.crcCategoria.HeaderText = "Categoría"
-        Me.crcCategoria.Name = "crcCategoria"
-        Me.crcCategoria.ReadOnly = True
-        '
-        'crcFecInicio
-        '
-        Me.crcFecInicio.HeaderText = "Fec. Inicio"
-        Me.crcFecInicio.Name = "crcFecInicio"
-        Me.crcFecInicio.ReadOnly = True
-        '
-        'crcFecFin
-        '
-        Me.crcFecFin.HeaderText = "Fec. Fin"
-        Me.crcFecFin.Name = "crcFecFin"
-        Me.crcFecFin.ReadOnly = True
-        '
-        'crcPago
-        '
-        Me.crcPago.HeaderText = "Pago"
-        Me.crcPago.Name = "crcPago"
-        Me.crcPago.ReadOnly = True
-        '
-        'crcVacantes
-        '
-        Me.crcVacantes.HeaderText = "Vacantes"
-        Me.crcVacantes.Name = "crcVacantes"
-        Me.crcVacantes.ReadOnly = True
         '
         'lblTitulo
         '
@@ -775,6 +468,320 @@ Partial Class frmConsultaActividad
         Me.cfiNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.cfiNombre.HeaderText = "Nombre"
         Me.cfiNombre.Name = "cfiNombre"
+        '
+        'ctoNombre
+        '
+        Me.ctoNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ctoNombre.HeaderText = "Nombre"
+        Me.ctoNombre.Name = "ctoNombre"
+        Me.ctoNombre.ReadOnly = True
+        '
+        'ctoTipo
+        '
+        Me.ctoTipo.HeaderText = "Tipo"
+        Me.ctoTipo.Name = "ctoTipo"
+        Me.ctoTipo.ReadOnly = True
+        '
+        'ctoCategoria
+        '
+        Me.ctoCategoria.HeaderText = "Categoría"
+        Me.ctoCategoria.Name = "ctoCategoria"
+        Me.ctoCategoria.ReadOnly = True
+        '
+        'ctoFecInicio
+        '
+        Me.ctoFecInicio.HeaderText = "Fecha"
+        Me.ctoFecInicio.Name = "ctoFecInicio"
+        Me.ctoFecInicio.ReadOnly = True
+        '
+        'ctoFecFin
+        '
+        Me.ctoFecFin.HeaderText = "Fec. Fin"
+        Me.ctoFecFin.Name = "ctoFecFin"
+        Me.ctoFecFin.ReadOnly = True
+        Me.ctoFecFin.Visible = False
+        '
+        'ctoPago
+        '
+        Me.ctoPago.HeaderText = "Pago"
+        Me.ctoPago.Name = "ctoPago"
+        Me.ctoPago.ReadOnly = True
+        '
+        'ctoVacantes
+        '
+        Me.ctoVacantes.HeaderText = "Vacantes"
+        Me.ctoVacantes.Name = "ctoVacantes"
+        Me.ctoVacantes.ReadOnly = True
+        '
+        'ctoEstado
+        '
+        Me.ctoEstado.HeaderText = "Estado"
+        Me.ctoEstado.Name = "ctoEstado"
+        Me.ctoEstado.ReadOnly = True
+        '
+        'creNombre
+        '
+        Me.creNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.creNombre.HeaderText = "Nombre"
+        Me.creNombre.Name = "creNombre"
+        Me.creNombre.ReadOnly = True
+        '
+        'creTipo
+        '
+        Me.creTipo.HeaderText = "Tipo"
+        Me.creTipo.Name = "creTipo"
+        Me.creTipo.ReadOnly = True
+        '
+        'creCategoria
+        '
+        Me.creCategoria.HeaderText = "Categoría"
+        Me.creCategoria.Name = "creCategoria"
+        Me.creCategoria.ReadOnly = True
+        '
+        'creFecInicio
+        '
+        Me.creFecInicio.HeaderText = "Fecha"
+        Me.creFecInicio.Name = "creFecInicio"
+        Me.creFecInicio.ReadOnly = True
+        '
+        'creFecFin
+        '
+        Me.creFecFin.HeaderText = "Fec. Fin"
+        Me.creFecFin.Name = "creFecFin"
+        Me.creFecFin.ReadOnly = True
+        Me.creFecFin.Visible = False
+        '
+        'crePago
+        '
+        Me.crePago.HeaderText = "Pago"
+        Me.crePago.Name = "crePago"
+        Me.crePago.ReadOnly = True
+        '
+        'creVacantes
+        '
+        Me.creVacantes.HeaderText = "Vacantes"
+        Me.creVacantes.Name = "creVacantes"
+        Me.creVacantes.ReadOnly = True
+        '
+        'ceeNombre
+        '
+        Me.ceeNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ceeNombre.HeaderText = "Nombre"
+        Me.ceeNombre.Name = "ceeNombre"
+        Me.ceeNombre.ReadOnly = True
+        '
+        'ceeTipo
+        '
+        Me.ceeTipo.HeaderText = "Tipo"
+        Me.ceeTipo.Name = "ceeTipo"
+        Me.ceeTipo.ReadOnly = True
+        '
+        'ceeCategoria
+        '
+        Me.ceeCategoria.HeaderText = "Categoría"
+        Me.ceeCategoria.Name = "ceeCategoria"
+        Me.ceeCategoria.ReadOnly = True
+        '
+        'ceeFecInicio
+        '
+        Me.ceeFecInicio.HeaderText = "Fecha"
+        Me.ceeFecInicio.Name = "ceeFecInicio"
+        Me.ceeFecInicio.ReadOnly = True
+        '
+        'ceeFecFin
+        '
+        Me.ceeFecFin.HeaderText = "Fec. Fin"
+        Me.ceeFecFin.Name = "ceeFecFin"
+        Me.ceeFecFin.ReadOnly = True
+        Me.ceeFecFin.Visible = False
+        '
+        'ceePago
+        '
+        Me.ceePago.HeaderText = "Pago"
+        Me.ceePago.Name = "ceePago"
+        Me.ceePago.ReadOnly = True
+        '
+        'ceeVacantes
+        '
+        Me.ceeVacantes.HeaderText = "Vacantes"
+        Me.ceeVacantes.Name = "ceeVacantes"
+        Me.ceeVacantes.ReadOnly = True
+        '
+        'canNombre
+        '
+        Me.canNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.canNombre.HeaderText = "Nombre"
+        Me.canNombre.Name = "canNombre"
+        Me.canNombre.ReadOnly = True
+        '
+        'canTipo
+        '
+        Me.canTipo.HeaderText = "Tipo"
+        Me.canTipo.Name = "canTipo"
+        Me.canTipo.ReadOnly = True
+        '
+        'canCategoria
+        '
+        Me.canCategoria.HeaderText = "Categoría"
+        Me.canCategoria.Name = "canCategoria"
+        Me.canCategoria.ReadOnly = True
+        '
+        'canFecInicio
+        '
+        Me.canFecInicio.HeaderText = "Fecha"
+        Me.canFecInicio.Name = "canFecInicio"
+        Me.canFecInicio.ReadOnly = True
+        '
+        'canFecFin
+        '
+        Me.canFecFin.HeaderText = "Fec. Fin"
+        Me.canFecFin.Name = "canFecFin"
+        Me.canFecFin.ReadOnly = True
+        Me.canFecFin.Visible = False
+        '
+        'canPago
+        '
+        Me.canPago.HeaderText = "Pago"
+        Me.canPago.Name = "canPago"
+        Me.canPago.ReadOnly = True
+        '
+        'canVacantes
+        '
+        Me.canVacantes.HeaderText = "Vacantes"
+        Me.canVacantes.Name = "canVacantes"
+        Me.canVacantes.ReadOnly = True
+        '
+        'capNombre
+        '
+        Me.capNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.capNombre.HeaderText = "Nombre"
+        Me.capNombre.Name = "capNombre"
+        Me.capNombre.ReadOnly = True
+        '
+        'capTipo
+        '
+        Me.capTipo.HeaderText = "Tipo"
+        Me.capTipo.Name = "capTipo"
+        Me.capTipo.ReadOnly = True
+        '
+        'capCategoria
+        '
+        Me.capCategoria.HeaderText = "Categoría"
+        Me.capCategoria.Name = "capCategoria"
+        Me.capCategoria.ReadOnly = True
+        '
+        'capFecInicio
+        '
+        Me.capFecInicio.HeaderText = "Fecha"
+        Me.capFecInicio.Name = "capFecInicio"
+        Me.capFecInicio.ReadOnly = True
+        '
+        'capFecFin
+        '
+        Me.capFecFin.HeaderText = "Fec. Fin"
+        Me.capFecFin.Name = "capFecFin"
+        Me.capFecFin.ReadOnly = True
+        Me.capFecFin.Visible = False
+        '
+        'capPago
+        '
+        Me.capPago.HeaderText = "Pago"
+        Me.capPago.Name = "capPago"
+        Me.capPago.ReadOnly = True
+        '
+        'capVacantes
+        '
+        Me.capVacantes.HeaderText = "Vacantes"
+        Me.capVacantes.Name = "capVacantes"
+        Me.capVacantes.ReadOnly = True
+        '
+        'chaNombre
+        '
+        Me.chaNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.chaNombre.HeaderText = "Nombre"
+        Me.chaNombre.Name = "chaNombre"
+        Me.chaNombre.ReadOnly = True
+        '
+        'chaTipo
+        '
+        Me.chaTipo.HeaderText = "Tipo"
+        Me.chaTipo.Name = "chaTipo"
+        Me.chaTipo.ReadOnly = True
+        '
+        'chaCategoria
+        '
+        Me.chaCategoria.HeaderText = "Categoría"
+        Me.chaCategoria.Name = "chaCategoria"
+        Me.chaCategoria.ReadOnly = True
+        '
+        'chaFecInicio
+        '
+        Me.chaFecInicio.HeaderText = "Fecha"
+        Me.chaFecInicio.Name = "chaFecInicio"
+        Me.chaFecInicio.ReadOnly = True
+        '
+        'chaFecFin
+        '
+        Me.chaFecFin.HeaderText = "Fec. Fin"
+        Me.chaFecFin.Name = "chaFecFin"
+        Me.chaFecFin.ReadOnly = True
+        Me.chaFecFin.Visible = False
+        '
+        'chaPago
+        '
+        Me.chaPago.HeaderText = "Pago"
+        Me.chaPago.Name = "chaPago"
+        Me.chaPago.ReadOnly = True
+        '
+        'chaVacantes
+        '
+        Me.chaVacantes.HeaderText = "Vacantes"
+        Me.chaVacantes.Name = "chaVacantes"
+        Me.chaVacantes.ReadOnly = True
+        '
+        'crcNombre
+        '
+        Me.crcNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.crcNombre.HeaderText = "Nombre"
+        Me.crcNombre.Name = "crcNombre"
+        Me.crcNombre.ReadOnly = True
+        '
+        'crcTipo
+        '
+        Me.crcTipo.HeaderText = "Tipo"
+        Me.crcTipo.Name = "crcTipo"
+        Me.crcTipo.ReadOnly = True
+        '
+        'crcCategoria
+        '
+        Me.crcCategoria.HeaderText = "Categoría"
+        Me.crcCategoria.Name = "crcCategoria"
+        Me.crcCategoria.ReadOnly = True
+        '
+        'crcFecInicio
+        '
+        Me.crcFecInicio.HeaderText = "Fecha"
+        Me.crcFecInicio.Name = "crcFecInicio"
+        Me.crcFecInicio.ReadOnly = True
+        '
+        'crcFecFin
+        '
+        Me.crcFecFin.HeaderText = "Fec. Fin"
+        Me.crcFecFin.Name = "crcFecFin"
+        Me.crcFecFin.ReadOnly = True
+        Me.crcFecFin.Visible = False
+        '
+        'crcPago
+        '
+        Me.crcPago.HeaderText = "Pago"
+        Me.crcPago.Name = "crcPago"
+        Me.crcPago.ReadOnly = True
+        '
+        'crcVacantes
+        '
+        Me.crcVacantes.HeaderText = "Vacantes"
+        Me.crcVacantes.Name = "crcVacantes"
+        Me.crcVacantes.ReadOnly = True
         '
         'frmConsultaActividad
         '
@@ -829,6 +836,23 @@ Partial Class frmConsultaActividad
     Friend WithEvents dgvAprobadas As SGC_CS.SGCDataGridView
     Friend WithEvents dgvRechazadas As SGC_CS.SGCDataGridView
     Friend WithEvents dgvHabilitadas As SGC_CS.SGCDataGridView
+    Friend WithEvents tpAnuladas As System.Windows.Forms.TabPage
+    Friend WithEvents cfiVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiPago As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiTipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cfiNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents dgvAnuladas As SGC_CS.SGCDataGridView
+    Friend WithEvents ctoNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ctoTipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ctoCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ctoFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ctoFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ctoPago As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ctoVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ctoEstado As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents creNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents creTipo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents creCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -843,44 +867,6 @@ Partial Class frmConsultaActividad
     Friend WithEvents ceeFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ceePago As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ceeVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents capNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents capTipo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents capCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents capFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents capFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents capPago As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents capVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents crcNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents crcTipo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents crcCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents crcFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents crcFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents crcPago As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents crcVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chaNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chaTipo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chaCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chaFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chaFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chaPago As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents chaVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoTipo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoPago As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ctoEstado As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents tpAnuladas As System.Windows.Forms.TabPage
-    Friend WithEvents cfiVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiPago As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiTipo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cfiNombre As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgvAnuladas As SGC_CS.SGCDataGridView
     Friend WithEvents canNombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents canTipo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents canCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -888,5 +874,26 @@ Partial Class frmConsultaActividad
     Friend WithEvents canFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents canPago As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents canVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents capNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents capTipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents capCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents capFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents capFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents capPago As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents capVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chaNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chaTipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chaCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chaFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chaFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chaPago As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents chaVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents crcNombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents crcTipo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents crcCategoria As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents crcFecInicio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents crcFecFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents crcPago As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents crcVacantes As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

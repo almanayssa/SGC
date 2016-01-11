@@ -22,13 +22,13 @@
             End Set
         End Property
 
-        Private _fecha_ini As DateTime
-        Public Property fecha_ini() As DateTime
+        Private _fecha As DateTime
+        Public Property fecha() As DateTime
             Get
-                Return _fecha_ini
+                Return _fecha
             End Get
             Set(ByVal value As DateTime)
-                _fecha_ini = value
+                _fecha = value
             End Set
         End Property
 
@@ -39,16 +39,6 @@
             End Get
             Set(ByVal value As TimeSpan)
                 _hora_ini = value
-            End Set
-        End Property
-
-        Private _fecha_fin As DateTime
-        Public Property fecha_fin() As DateTime
-            Get
-                Return _fecha_fin
-            End Get
-            Set(ByVal value As DateTime)
-                _fecha_fin = value
             End Set
         End Property
 

@@ -28,7 +28,7 @@ Partial Class frmPresupuestoActividad
         Me.lblEstado = New SGC_CS.SGCLabel(Me.components)
         Me.SgcLabel8 = New SGC_CS.SGCLabel(Me.components)
         Me.lblFecFin = New SGC_CS.SGCLabel(Me.components)
-        Me.lblFecIni = New SGC_CS.SGCLabel(Me.components)
+        Me.lblFecha = New SGC_CS.SGCLabel(Me.components)
         Me.lblTipo = New SGC_CS.SGCLabel(Me.components)
         Me.lblComite = New SGC_CS.SGCLabel(Me.components)
         Me.lblNombre = New SGC_CS.SGCLabel(Me.components)
@@ -74,7 +74,7 @@ Partial Class frmPresupuestoActividad
         Me.SgcGroupBox1.Controls.Add(Me.lblEstado)
         Me.SgcGroupBox1.Controls.Add(Me.SgcLabel8)
         Me.SgcGroupBox1.Controls.Add(Me.lblFecFin)
-        Me.SgcGroupBox1.Controls.Add(Me.lblFecIni)
+        Me.SgcGroupBox1.Controls.Add(Me.lblFecha)
         Me.SgcGroupBox1.Controls.Add(Me.lblTipo)
         Me.SgcGroupBox1.Controls.Add(Me.lblComite)
         Me.SgcGroupBox1.Controls.Add(Me.lblNombre)
@@ -142,17 +142,18 @@ Partial Class frmPresupuestoActividad
         Me.lblFecFin.Size = New System.Drawing.Size(13, 18)
         Me.lblFecFin.TabIndex = 30
         Me.lblFecFin.Text = "-"
+        Me.lblFecFin.Visible = False
         '
-        'lblFecIni
+        'lblFecha
         '
-        Me.lblFecIni.AutoSize = True
-        Me.lblFecIni.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFecIni.ForeColor = System.Drawing.Color.Black
-        Me.lblFecIni.Location = New System.Drawing.Point(528, 40)
-        Me.lblFecIni.Name = "lblFecIni"
-        Me.lblFecIni.Size = New System.Drawing.Size(13, 18)
-        Me.lblFecIni.TabIndex = 29
-        Me.lblFecIni.Text = "-"
+        Me.lblFecha.AutoSize = True
+        Me.lblFecha.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFecha.ForeColor = System.Drawing.Color.Black
+        Me.lblFecha.Location = New System.Drawing.Point(528, 40)
+        Me.lblFecha.Name = "lblFecha"
+        Me.lblFecha.Size = New System.Drawing.Size(13, 18)
+        Me.lblFecha.TabIndex = 29
+        Me.lblFecha.Text = "-"
         '
         'lblTipo
         '
@@ -212,6 +213,7 @@ Partial Class frmPresupuestoActividad
         Me.SgcLabel5.Size = New System.Drawing.Size(70, 18)
         Me.SgcLabel5.TabIndex = 8
         Me.SgcLabel5.Text = "Fecha Fin:"
+        Me.SgcLabel5.Visible = False
         '
         'SgcLabel4
         '
@@ -220,9 +222,9 @@ Partial Class frmPresupuestoActividad
         Me.SgcLabel4.ForeColor = System.Drawing.Color.SteelBlue
         Me.SgcLabel4.Location = New System.Drawing.Point(437, 40)
         Me.SgcLabel4.Name = "SgcLabel4"
-        Me.SgcLabel4.Size = New System.Drawing.Size(85, 18)
+        Me.SgcLabel4.Size = New System.Drawing.Size(48, 18)
         Me.SgcLabel4.TabIndex = 7
-        Me.SgcLabel4.Text = "Fecha Inicio:"
+        Me.SgcLabel4.Text = "Fecha:"
         '
         'SgcLabel3
         '
@@ -443,7 +445,7 @@ Partial Class frmPresupuestoActividad
     Friend WithEvents lblComite As SGC_CS.SGCLabel
     Friend WithEvents lblNombre As SGC_CS.SGCLabel
     Friend WithEvents lblFecFin As SGC_CS.SGCLabel
-    Friend WithEvents lblFecIni As SGC_CS.SGCLabel
+    Friend WithEvents lblFecha As SGC_CS.SGCLabel
     Friend WithEvents lblEstado As SGC_CS.SGCLabel
     Friend WithEvents SgcLabel8 As SGC_CS.SGCLabel
     Friend WithEvents btnBuscar As SGC_CS.SGCButton

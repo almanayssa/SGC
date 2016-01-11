@@ -59,15 +59,6 @@ Partial Public Class frmDetalleActividad
     Protected WithEvents lblHoraInicio As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblFechaFin control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblFechaFin As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
     '''lblHoraFin control.
     '''</summary>
     '''<remarks>

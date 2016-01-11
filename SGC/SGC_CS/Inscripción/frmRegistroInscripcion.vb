@@ -303,7 +303,7 @@ Public Class frmRegistroInscripcion
             Dim Cell As DataGridViewCell
 
             Col_Text = New DataGridViewTextBoxColumn
-            Col_Text.Name = "fecha_ini"
+            Col_Text.Name = "fecha"
             Col_Text.HeaderText = "Fecha"
             Col_Text.ReadOnly = True
             Col_Text.Visible = True
@@ -345,7 +345,7 @@ Public Class frmRegistroInscripcion
                 Row = New DataGridViewRow
 
                 Cell = New DataGridViewTextBoxCell
-                Cell.Value = a.fecha_ini
+                Cell.Value = a.fecha
                 Row.Cells.Add(Cell)
                 Cell = New DataGridViewTextBoxCell
                 Cell.Value = a.hora_ini

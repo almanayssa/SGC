@@ -13,9 +13,9 @@ Public Class frmBuscarActividad
 
         dgvListado.AutoGenerateColumns = False
         colNombre.DataPropertyName = "nombre"
-        colFecInicio.DataPropertyName = "fec_ini"
+        colFecInicio.DataPropertyName = "fecha"
         colHoraInicio.DataPropertyName = "hora_ini"
-        colFecFin.DataPropertyName = "fec_fin"
+        'colFecFin.DataPropertyName = "fec_fin"
         colHoraFin.DataPropertyName = "hora_fin"
 
         colFecInicio.ValueType = GetType(DateTime)

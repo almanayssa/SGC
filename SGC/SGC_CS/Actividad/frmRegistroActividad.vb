@@ -39,9 +39,9 @@ Public Class frmRegistroActividad
 
         colSede.DataPropertyName = "des_sede"
         colEspacio.DataPropertyName = "nombre_espacio"
-        colFecInicio.DataPropertyName = "fecha_ini"
+        colFecInicio.DataPropertyName = "fecha"
         colHoraInicio.DataPropertyName = "hora_ini"
-        colFecFin.DataPropertyName = "fecha_fin"
+        'colFecFin.DataPropertyName = "fecha_fin"
         colHoraFin.DataPropertyName = "hora_fin"
 
         colRestriccionID.DataPropertyName = "id_restriccion"
@@ -545,21 +545,21 @@ Public Class frmRegistroActividad
         Dim endDateTime As DateTime = Nothing
 
         For Each oActividadDetalle As ActividadDetalleBE In oActividad.ListaActividadDetalle
-            startDateTime = Convert.ToDateTime(oActividadDetalle.fecha_ini).Add(oActividadDetalle.hora_ini)
-            endDateTime = Convert.ToDateTime(oActividadDetalle.fecha_fin).Add(oActividadDetalle.hora_fin)
+            startDateTime = Convert.ToDateTime(oActividadDetalle.fecha).Add(oActividadDetalle.hora_ini)
+            endDateTime = Convert.ToDateTime(oActividadDetalle.fecha).Add(oActividadDetalle.hora_fin)
 
-            If Convert.ToDateTime(oActividadDetalle.fecha_ini).Add(oActividadDetalle.hora_ini) < startDateTime Then
-                startDateTime = Convert.ToDateTime(oActividadDetalle.fecha_ini).Add(oActividadDetalle.hora_ini)
+            If Convert.ToDateTime(oActividadDetalle.fecha).Add(oActividadDetalle.hora_ini) < startDateTime Then
+                startDateTime = Convert.ToDateTime(oActividadDetalle.fecha).Add(oActividadDetalle.hora_ini)
             End If
 
-            If Convert.ToDateTime(oActividadDetalle.fecha_fin).Add(oActividadDetalle.hora_fin) > endDateTime Then
-                endDateTime = Convert.ToDateTime(oActividadDetalle.fecha_fin).Add(oActividadDetalle.hora_fin)
+            If Convert.ToDateTime(oActividadDetalle.fecha).Add(oActividadDetalle.hora_fin) > endDateTime Then
+                endDateTime = Convert.ToDateTime(oActividadDetalle.fecha).Add(oActividadDetalle.hora_fin)
             End If
         Next
 
-        oActividad.fec_ini = startDateTime.Date
+        oActividad.fecha = startDateTime.Date
         oActividad.hora_ini = startDateTime.TimeOfDay
-        oActividad.fec_fin = endDateTime.Date
+        'oActividad.fec_fin = endDateTime.Date
         oActividad.hora_fin = endDateTime.TimeOfDay
 
         For Each row As DataGridViewRow In dgvRestricciones.Rows
@@ -613,8 +613,8 @@ Public Class frmRegistroActividad
 
         For Each oEspacioRes As EspacioResBE In oListadoEspacioRes
             oActividadDetalle = New ActividadDetalleBE
-            oActividadDetalle.fecha_ini = oEspacioRes.fec_ini
-            oActividadDetalle.fecha_fin = oEspacioRes.fec_fin
+            oActividadDetalle.fecha = oEspacioRes.fec_ini
+            'oActividadDetalle.fecha_fin = oEspacioRes.fec_fin
             oActividadDetalle.hora_ini = Convert.ToDateTime(oEspacioRes.hora_inicio).TimeOfDay
             oActividadDetalle.hora_fin = Convert.ToDateTime(oEspacioRes.hora_fin).TimeOfDay
             oActividadDetalle.id_sede = oEspacioRes.id_sede

@@ -22,14 +22,14 @@ Partial Class frmActEvaluacionGG
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
+        Me.btnRechazar = New SGC_CS.SGCButton(Me.components)
+        Me.btnAprobar = New SGC_CS.SGCButton(Me.components)
         Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
         Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
         Me.cboComite = New SGC_CS.SGCComboBox(Me.components)
         Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
         Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
-        Me.btnAprobar = New SGC_CS.SGCButton(Me.components)
-        Me.btnRechazar = New SGC_CS.SGCButton(Me.components)
-        Me.dgvListado = New SGC_CS.SGCDataGridView(Me.components)
         Me.colSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.colNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,8 +40,8 @@ Partial Class frmActEvaluacionGG
         Me.colVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SgcGroupBox2.SuspendLayout()
-        Me.SgcGroupBox1.SuspendLayout()
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SgcGroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'SgcGroupBox2
@@ -56,6 +56,51 @@ Partial Class frmActEvaluacionGG
         Me.SgcGroupBox2.TabIndex = 18
         Me.SgcGroupBox2.TabStop = False
         Me.SgcGroupBox2.Text = "Listado"
+        '
+        'dgvListado
+        '
+        Me.dgvListado.AllowUserToAddRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
+        Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSeleccionar, Me.colNombre, Me.colTipo, Me.colCategoria, Me.colFecInicio, Me.colFecFin, Me.colPago, Me.colVacantes, Me.colEstado})
+        Me.dgvListado.Location = New System.Drawing.Point(13, 25)
+        Me.dgvListado.Name = "dgvListado"
+        Me.dgvListado.Size = New System.Drawing.Size(874, 298)
+        Me.dgvListado.TabIndex = 8
+        '
+        'btnRechazar
+        '
+        Me.btnRechazar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnRechazar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnRechazar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnRechazar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnRechazar.Location = New System.Drawing.Point(766, 329)
+        Me.btnRechazar.Name = "btnRechazar"
+        Me.btnRechazar.Size = New System.Drawing.Size(120, 31)
+        Me.btnRechazar.TabIndex = 6
+        Me.btnRechazar.Text = "Rechazar"
+        Me.btnRechazar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRechazar.UseVisualStyleBackColor = False
+        '
+        'btnAprobar
+        '
+        Me.btnAprobar.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.btnAprobar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
+        Me.btnAprobar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAprobar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAprobar.ForeColor = System.Drawing.Color.SteelBlue
+        Me.btnAprobar.Location = New System.Drawing.Point(640, 329)
+        Me.btnAprobar.Name = "btnAprobar"
+        Me.btnAprobar.Size = New System.Drawing.Size(120, 31)
+        Me.btnAprobar.TabIndex = 5
+        Me.btnAprobar.Text = "Aprobar"
+        Me.btnAprobar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnAprobar.UseVisualStyleBackColor = False
         '
         'SgcGroupBox1
         '
@@ -120,51 +165,6 @@ Partial Class frmActEvaluacionGG
         Me.lblTitulo.TabIndex = 20
         Me.lblTitulo.Text = "Evaluación Actividad - Gerencia General"
         '
-        'btnAprobar
-        '
-        Me.btnAprobar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnAprobar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnAprobar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAprobar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAprobar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnAprobar.Location = New System.Drawing.Point(640, 329)
-        Me.btnAprobar.Name = "btnAprobar"
-        Me.btnAprobar.Size = New System.Drawing.Size(120, 31)
-        Me.btnAprobar.TabIndex = 5
-        Me.btnAprobar.Text = "Aprobar"
-        Me.btnAprobar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnAprobar.UseVisualStyleBackColor = False
-        '
-        'btnRechazar
-        '
-        Me.btnRechazar.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.btnRechazar.FlatAppearance.BorderColor = System.Drawing.Color.Silver
-        Me.btnRechazar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRechazar.Font = New System.Drawing.Font("Calibri", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRechazar.ForeColor = System.Drawing.Color.SteelBlue
-        Me.btnRechazar.Location = New System.Drawing.Point(766, 329)
-        Me.btnRechazar.Name = "btnRechazar"
-        Me.btnRechazar.Size = New System.Drawing.Size(120, 31)
-        Me.btnRechazar.TabIndex = 6
-        Me.btnRechazar.Text = "Rechazar"
-        Me.btnRechazar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btnRechazar.UseVisualStyleBackColor = False
-        '
-        'dgvListado
-        '
-        Me.dgvListado.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvListado.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.dgvListado.BackgroundColor = System.Drawing.Color.WhiteSmoke
-        Me.dgvListado.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.dgvListado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListado.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colSeleccionar, Me.colNombre, Me.colTipo, Me.colCategoria, Me.colFecInicio, Me.colFecFin, Me.colPago, Me.colVacantes, Me.colEstado})
-        Me.dgvListado.Location = New System.Drawing.Point(13, 25)
-        Me.dgvListado.Name = "dgvListado"
-        Me.dgvListado.Size = New System.Drawing.Size(874, 298)
-        Me.dgvListado.TabIndex = 8
-        '
         'colSeleccionar
         '
         Me.colSeleccionar.HeaderText = ""
@@ -189,13 +189,14 @@ Partial Class frmActEvaluacionGG
         '
         'colFecInicio
         '
-        Me.colFecInicio.HeaderText = "Fec. Inicio"
+        Me.colFecInicio.HeaderText = "Fecha"
         Me.colFecInicio.Name = "colFecInicio"
         '
         'colFecFin
         '
         Me.colFecFin.HeaderText = "Fec. Fin"
         Me.colFecFin.Name = "colFecFin"
+        Me.colFecFin.Visible = False
         '
         'colPago
         '
@@ -223,9 +224,9 @@ Partial Class frmActEvaluacionGG
         Me.Controls.SetChildIndex(Me.SgcGroupBox2, 0)
         Me.Controls.SetChildIndex(Me.lblTitulo, 0)
         Me.SgcGroupBox2.ResumeLayout(False)
+        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.SgcGroupBox1.ResumeLayout(False)
         Me.SgcGroupBox1.PerformLayout()
-        CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

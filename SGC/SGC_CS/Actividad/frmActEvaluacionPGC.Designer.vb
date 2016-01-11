@@ -20,13 +20,26 @@ Partial Class frmActEvaluacionPGC
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.SgcGroupBox2 = New SGC_CS.SGCGroupBox(Me.components)
         Me.SgcTabControl1 = New SGC_CS.SGCTabControl(Me.components)
         Me.tpRegistradas = New System.Windows.Forms.TabPage()
         Me.dgvRegistradas = New SGC_CS.SGCDataGridView(Me.components)
+        Me.btnEnviarCD = New SGC_CS.SGCButton(Me.components)
+        Me.btnEnviarGG = New SGC_CS.SGCButton(Me.components)
+        Me.tpAprobadas = New System.Windows.Forms.TabPage()
+        Me.dgvAprobadas = New SGC_CS.SGCDataGridView(Me.components)
+        Me.btnAprobar = New SGC_CS.SGCButton(Me.components)
+        Me.tpRechazadas = New System.Windows.Forms.TabPage()
+        Me.dgvRechazadas = New SGC_CS.SGCDataGridView(Me.components)
+        Me.btnRechazar = New SGC_CS.SGCButton(Me.components)
+        Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
+        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
+        Me.cboComite = New SGC_CS.SGCComboBox(Me.components)
+        Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
+        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.creSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.creNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.creTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,10 +49,6 @@ Partial Class frmActEvaluacionPGC
         Me.crePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.creVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.creEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnEnviarCD = New SGC_CS.SGCButton(Me.components)
-        Me.btnEnviarGG = New SGC_CS.SGCButton(Me.components)
-        Me.tpAprobadas = New System.Windows.Forms.TabPage()
-        Me.dgvAprobadas = New SGC_CS.SGCDataGridView(Me.components)
         Me.capSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.capNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.capTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,9 +58,6 @@ Partial Class frmActEvaluacionPGC
         Me.capPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.capVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.capEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnAprobar = New SGC_CS.SGCButton(Me.components)
-        Me.tpRechazadas = New System.Windows.Forms.TabPage()
-        Me.dgvRechazadas = New SGC_CS.SGCDataGridView(Me.components)
         Me.crcSeleccionar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.crcNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.crcTipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,12 +67,6 @@ Partial Class frmActEvaluacionPGC
         Me.crcPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.crcVacantes = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.crcEstado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnRechazar = New SGC_CS.SGCButton(Me.components)
-        Me.SgcGroupBox1 = New SGC_CS.SGCGroupBox(Me.components)
-        Me.btnBuscar = New SGC_CS.SGCButton(Me.components)
-        Me.cboComite = New SGC_CS.SGCComboBox(Me.components)
-        Me.SgcLabel1 = New SGC_CS.SGCLabel(Me.components)
-        Me.lblTitulo = New SGC_CS.SGCLabel(Me.components)
         Me.SgcGroupBox2.SuspendLayout()
         Me.SgcTabControl1.SuspendLayout()
         Me.tpRegistradas.SuspendLayout()
@@ -116,9 +116,9 @@ Partial Class frmActEvaluacionPGC
         'dgvRegistradas
         '
         Me.dgvRegistradas.AllowUserToAddRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRegistradas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRegistradas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvRegistradas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRegistradas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRegistradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -127,53 +127,6 @@ Partial Class frmActEvaluacionPGC
         Me.dgvRegistradas.Name = "dgvRegistradas"
         Me.dgvRegistradas.Size = New System.Drawing.Size(873, 296)
         Me.dgvRegistradas.TabIndex = 7
-        '
-        'creSeleccionar
-        '
-        Me.creSeleccionar.HeaderText = ""
-        Me.creSeleccionar.Name = "creSeleccionar"
-        Me.creSeleccionar.Width = 30
-        '
-        'creNombre
-        '
-        Me.creNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.creNombre.HeaderText = "Nombre"
-        Me.creNombre.Name = "creNombre"
-        '
-        'creTipo
-        '
-        Me.creTipo.HeaderText = "Tipo"
-        Me.creTipo.Name = "creTipo"
-        '
-        'creCategoria
-        '
-        Me.creCategoria.HeaderText = "Categoría"
-        Me.creCategoria.Name = "creCategoria"
-        '
-        'creFecInicio
-        '
-        Me.creFecInicio.HeaderText = "Fec. Inicio"
-        Me.creFecInicio.Name = "creFecInicio"
-        '
-        'creFecFin
-        '
-        Me.creFecFin.HeaderText = "Fec. Fin"
-        Me.creFecFin.Name = "creFecFin"
-        '
-        'crePago
-        '
-        Me.crePago.HeaderText = "Pago"
-        Me.crePago.Name = "crePago"
-        '
-        'creVacantes
-        '
-        Me.creVacantes.HeaderText = "Vacantes"
-        Me.creVacantes.Name = "creVacantes"
-        '
-        'creEstado
-        '
-        Me.creEstado.HeaderText = "Estado"
-        Me.creEstado.Name = "creEstado"
         '
         'btnEnviarCD
         '
@@ -220,9 +173,9 @@ Partial Class frmActEvaluacionPGC
         'dgvAprobadas
         '
         Me.dgvAprobadas.AllowUserToAddRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvAprobadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvAprobadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.dgvAprobadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvAprobadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvAprobadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -231,53 +184,6 @@ Partial Class frmActEvaluacionPGC
         Me.dgvAprobadas.Name = "dgvAprobadas"
         Me.dgvAprobadas.Size = New System.Drawing.Size(873, 299)
         Me.dgvAprobadas.TabIndex = 8
-        '
-        'capSeleccionar
-        '
-        Me.capSeleccionar.HeaderText = ""
-        Me.capSeleccionar.Name = "capSeleccionar"
-        Me.capSeleccionar.Width = 30
-        '
-        'capNombre
-        '
-        Me.capNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.capNombre.HeaderText = "Nombre"
-        Me.capNombre.Name = "capNombre"
-        '
-        'capTipo
-        '
-        Me.capTipo.HeaderText = "Tipo"
-        Me.capTipo.Name = "capTipo"
-        '
-        'capCategoria
-        '
-        Me.capCategoria.HeaderText = "Categoría"
-        Me.capCategoria.Name = "capCategoria"
-        '
-        'capFecInicio
-        '
-        Me.capFecInicio.HeaderText = "Fec. Inicio"
-        Me.capFecInicio.Name = "capFecInicio"
-        '
-        'capFecFin
-        '
-        Me.capFecFin.HeaderText = "Fec. Fin"
-        Me.capFecFin.Name = "capFecFin"
-        '
-        'capPago
-        '
-        Me.capPago.HeaderText = "Pago"
-        Me.capPago.Name = "capPago"
-        '
-        'capVacantes
-        '
-        Me.capVacantes.HeaderText = "Vacantes"
-        Me.capVacantes.Name = "capVacantes"
-        '
-        'capEstado
-        '
-        Me.capEstado.HeaderText = "Estado"
-        Me.capEstado.Name = "capEstado"
         '
         'btnAprobar
         '
@@ -308,9 +214,9 @@ Partial Class frmActEvaluacionPGC
         'dgvRechazadas
         '
         Me.dgvRechazadas.AllowUserToAddRows = False
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue
-        Me.dgvRechazadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue
+        Me.dgvRechazadas.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvRechazadas.BackgroundColor = System.Drawing.Color.WhiteSmoke
         Me.dgvRechazadas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvRechazadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -319,53 +225,6 @@ Partial Class frmActEvaluacionPGC
         Me.dgvRechazadas.Name = "dgvRechazadas"
         Me.dgvRechazadas.Size = New System.Drawing.Size(873, 296)
         Me.dgvRechazadas.TabIndex = 8
-        '
-        'crcSeleccionar
-        '
-        Me.crcSeleccionar.HeaderText = ""
-        Me.crcSeleccionar.Name = "crcSeleccionar"
-        Me.crcSeleccionar.Width = 30
-        '
-        'crcNombre
-        '
-        Me.crcNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.crcNombre.HeaderText = "Nombre"
-        Me.crcNombre.Name = "crcNombre"
-        '
-        'crcTipo
-        '
-        Me.crcTipo.HeaderText = "Tipo"
-        Me.crcTipo.Name = "crcTipo"
-        '
-        'crcCategoria
-        '
-        Me.crcCategoria.HeaderText = "Categoría"
-        Me.crcCategoria.Name = "crcCategoria"
-        '
-        'crcFecInicio
-        '
-        Me.crcFecInicio.HeaderText = "Fec. Inicio"
-        Me.crcFecInicio.Name = "crcFecInicio"
-        '
-        'crcFecFin
-        '
-        Me.crcFecFin.HeaderText = "Fec. Fin"
-        Me.crcFecFin.Name = "crcFecFin"
-        '
-        'crcPago
-        '
-        Me.crcPago.HeaderText = "Pago"
-        Me.crcPago.Name = "crcPago"
-        '
-        'crcVacantes
-        '
-        Me.crcVacantes.HeaderText = "Vacantes"
-        Me.crcVacantes.Name = "crcVacantes"
-        '
-        'crcEstado
-        '
-        Me.crcEstado.HeaderText = "Estado"
-        Me.crcEstado.Name = "crcEstado"
         '
         'btnRechazar
         '
@@ -444,6 +303,150 @@ Partial Class frmActEvaluacionPGC
         Me.lblTitulo.Size = New System.Drawing.Size(438, 23)
         Me.lblTitulo.TabIndex = 19
         Me.lblTitulo.Text = "Evaluación Actividad - Presidencia General de Comités"
+        '
+        'creSeleccionar
+        '
+        Me.creSeleccionar.HeaderText = ""
+        Me.creSeleccionar.Name = "creSeleccionar"
+        Me.creSeleccionar.Width = 30
+        '
+        'creNombre
+        '
+        Me.creNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.creNombre.HeaderText = "Nombre"
+        Me.creNombre.Name = "creNombre"
+        '
+        'creTipo
+        '
+        Me.creTipo.HeaderText = "Tipo"
+        Me.creTipo.Name = "creTipo"
+        '
+        'creCategoria
+        '
+        Me.creCategoria.HeaderText = "Categoría"
+        Me.creCategoria.Name = "creCategoria"
+        '
+        'creFecInicio
+        '
+        Me.creFecInicio.HeaderText = "Fecha"
+        Me.creFecInicio.Name = "creFecInicio"
+        '
+        'creFecFin
+        '
+        Me.creFecFin.HeaderText = "Fec. Fin"
+        Me.creFecFin.Name = "creFecFin"
+        Me.creFecFin.Visible = False
+        '
+        'crePago
+        '
+        Me.crePago.HeaderText = "Pago"
+        Me.crePago.Name = "crePago"
+        '
+        'creVacantes
+        '
+        Me.creVacantes.HeaderText = "Vacantes"
+        Me.creVacantes.Name = "creVacantes"
+        '
+        'creEstado
+        '
+        Me.creEstado.HeaderText = "Estado"
+        Me.creEstado.Name = "creEstado"
+        '
+        'capSeleccionar
+        '
+        Me.capSeleccionar.HeaderText = ""
+        Me.capSeleccionar.Name = "capSeleccionar"
+        Me.capSeleccionar.Width = 30
+        '
+        'capNombre
+        '
+        Me.capNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.capNombre.HeaderText = "Nombre"
+        Me.capNombre.Name = "capNombre"
+        '
+        'capTipo
+        '
+        Me.capTipo.HeaderText = "Tipo"
+        Me.capTipo.Name = "capTipo"
+        '
+        'capCategoria
+        '
+        Me.capCategoria.HeaderText = "Categoría"
+        Me.capCategoria.Name = "capCategoria"
+        '
+        'capFecInicio
+        '
+        Me.capFecInicio.HeaderText = "Fecha"
+        Me.capFecInicio.Name = "capFecInicio"
+        '
+        'capFecFin
+        '
+        Me.capFecFin.HeaderText = "Fec. Fin"
+        Me.capFecFin.Name = "capFecFin"
+        Me.capFecFin.Visible = False
+        '
+        'capPago
+        '
+        Me.capPago.HeaderText = "Pago"
+        Me.capPago.Name = "capPago"
+        '
+        'capVacantes
+        '
+        Me.capVacantes.HeaderText = "Vacantes"
+        Me.capVacantes.Name = "capVacantes"
+        '
+        'capEstado
+        '
+        Me.capEstado.HeaderText = "Estado"
+        Me.capEstado.Name = "capEstado"
+        '
+        'crcSeleccionar
+        '
+        Me.crcSeleccionar.HeaderText = ""
+        Me.crcSeleccionar.Name = "crcSeleccionar"
+        Me.crcSeleccionar.Width = 30
+        '
+        'crcNombre
+        '
+        Me.crcNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.crcNombre.HeaderText = "Nombre"
+        Me.crcNombre.Name = "crcNombre"
+        '
+        'crcTipo
+        '
+        Me.crcTipo.HeaderText = "Tipo"
+        Me.crcTipo.Name = "crcTipo"
+        '
+        'crcCategoria
+        '
+        Me.crcCategoria.HeaderText = "Categoría"
+        Me.crcCategoria.Name = "crcCategoria"
+        '
+        'crcFecInicio
+        '
+        Me.crcFecInicio.HeaderText = "Fecha"
+        Me.crcFecInicio.Name = "crcFecInicio"
+        '
+        'crcFecFin
+        '
+        Me.crcFecFin.HeaderText = "Fec. Fin"
+        Me.crcFecFin.Name = "crcFecFin"
+        Me.crcFecFin.Visible = False
+        '
+        'crcPago
+        '
+        Me.crcPago.HeaderText = "Pago"
+        Me.crcPago.Name = "crcPago"
+        '
+        'crcVacantes
+        '
+        Me.crcVacantes.HeaderText = "Vacantes"
+        Me.crcVacantes.Name = "crcVacantes"
+        '
+        'crcEstado
+        '
+        Me.crcEstado.HeaderText = "Estado"
+        Me.crcEstado.Name = "crcEstado"
         '
         'frmActEvaluacionPGC
         '

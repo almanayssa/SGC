@@ -47,8 +47,7 @@ Public Class frmPresupuestoActividad
         lblNombre.Text = oActividad.nombre
         lblComite.Text = oActividad.nombrecomite
         lblTipo.Text = oActividad.desc_tipo
-        lblFecIni.Text = oActividad.fec_ini
-        lblFecFin.Text = oActividad.fec_fin
+        lblFecha.Text = oActividad.fecha
         lblEstado.Text = oActividad.desc_estado
 
         ListarPresupuesto(oActividad.id_actividad)
@@ -410,7 +409,7 @@ Public Class frmPresupuestoActividad
         lblNombre.Text = "-"
         lblComite.Text = "-"
         lblTipo.Text = "-"
-        lblFecIni.Text = "-"
+        lblFecha.Text = "-"
         lblFecFin.Text = "-"
         lblEstado.Text = "-"
 
