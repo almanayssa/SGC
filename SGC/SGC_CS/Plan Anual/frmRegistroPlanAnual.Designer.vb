@@ -131,6 +131,7 @@ Partial Class frmRegistroPlanAnual
         Me.btnEditarPlan.Text = "Editar"
         Me.btnEditarPlan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btnEditarPlan.UseVisualStyleBackColor = False
+        Me.btnEditarPlan.Visible = False
         '
         'btnGrabarPlan
         '
