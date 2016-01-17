@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="HP"
   DTS:CreationDate="12/13/2015 9:18:02 PM"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{81E68BB1-8F38-4A23-96AF-478810E0EAFD}"
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{CA9585D5-FAA8-46D2-887F-FB7D9DAD1CFB}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkgCargarDimensiones"
@@ -32,7 +32,7 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{ABCFF976-B1E0-46E2-AB86-EA18174A9891}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="EXEC USP_CARGAR_DIM_FECHA '2015-01-01 00:00:00.000','2017-12-31 00:00:00.000'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="EXEC USP_CARGAR_DIM_FECHA '2012-01-01 00:00:00.000','2016-12-31 00:00:00.000'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -716,7 +716,7 @@
                       refId="Package\Cargar tabla DimPersona\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_completo]"
                       name="nombre_completo"
                       dataType="str"
-                      length="152"
+                      length="101"
                       codePage="1252" />
                     <externalMetadataColumn
                       refId="Package\Cargar tabla DimPersona\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[desc_tipo]"
@@ -761,7 +761,7 @@
                       refId="Package\Cargar tabla DimPersona\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_completo]"
                       name="nombre_completo"
                       lineageId="Package\Cargar tabla DimPersona\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_completo]"
-                      length="152"
+                      length="101"
                       dataType="str"
                       codePage="1252" />
                     <outputColumn
@@ -1071,7 +1071,7 @@
                       refId="Package\Cargar tabla DimPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[nombre_completo]"
                       name="nombre_completo"
                       dataType="str"
-                      length="152"
+                      length="101"
                       codePage="1252" />
                     <externalMetadataColumn
                       refId="Package\Cargar tabla DimPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[tipo]"
@@ -1095,7 +1095,7 @@
                       refId="Package\Cargar tabla DimPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_completo]"
                       name="nombre_completo"
                       lineageId="Package\Cargar tabla DimPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[nombre_completo]"
-                      length="152"
+                      length="101"
                       dataType="str"
                       codePage="1252" />
                     <outputColumn
@@ -1440,7 +1440,7 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{ABCFF976-B1E0-46E2-AB86-EA18174A9891}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="DELETE FROM DimComite&#xA;GO&#xA;DELETE FROM DimTipoActividad&#xA;GO&#xA;DELETE FROM DimFecha&#xA;GO&#xA;DELETE FROM DimHora&#xA;GO&#xA;DBCC CHECKIDENT ('DimHora', RESEED, 0)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM DimComite&#xA;GO&#xA;DELETE FROM DimTipoActividad&#xA;GO&#xA;DELETE FROM DimPersona&#xA;GO&#xA;DELETE FROM DimPersonal&#xA;GO&#xA;DELETE FROM DimFecha&#xA;GO&#xA;DELETE FROM DimHora&#xA;GO&#xA;DBCC CHECKIDENT ('DimHora', RESEED, 0)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1477,6 +1477,22 @@
       DTS:ObjectName="Constraint 3"
       DTS:DTSID="{D8602BF1-00F0-4A56-BCD0-5A582F659A7D}"
       DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:From="Package\Limpiar dimensiones"
+      DTS:To="Package\Cargar tabla DimPersona"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:DTSID="{E33B02F5-3463-4336-9BF3-666311331366}"
+      DTS:CreationName="" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:From="Package\Limpiar dimensiones"
+      DTS:To="Package\Cargar tabla DimPersonal"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:DTSID="{4D12E134-C2C2-413D-AF85-85D0224ADA24}"
+      DTS:CreationName="" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1493,49 +1509,57 @@
         <NodeLayout
           Size="159,42"
           Id="Package\Cargar DimFecha"
-          TopLeft="344,293" />
+          TopLeft="625,344" />
         <NodeLayout
           Size="154,42"
           Id="Package\Cargar DimHora"
-          TopLeft="546,293" />
+          TopLeft="686,232" />
         <NodeLayout
           Size="190,42"
           Id="Package\Cargar tabla DimComite"
-          TopLeft="129,217" />
+          TopLeft="244,349" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Cargar tabla DimPersona"
+          TopLeft="114,120" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Cargar tabla DimPersonal"
+          TopLeft="158,234" />
         <NodeLayout
           Size="220,42"
           Id="Package\Cargar tabla DimTipoActividad"
-          TopLeft="772,216" />
+          TopLeft="759,122" />
         <NodeLayout
           Size="174,42"
           Id="Package\Limpiar dimensiones"
-          TopLeft="432,28" />
+          TopLeft="426,28" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="519,70">
+          TopLeft="524.857142857143,70">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-95.5,223"
+              EndConnector="179.642857142857,274"
               Start="0,0"
-              End="-95.5,215.5">
+              End="179.642857142857,266.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,107.5" />
+                    End="0,222.981497797357" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,107.5"
-                    Point2="0,111.5"
-                    Point3="-4,111.5" />
+                    Point1="0,222.981497797357"
+                    Point2="0,226.981497797357"
+                    Point3="4,226.981497797357" />
                   <mssgle:LineSegment
-                    End="-91.5,111.5" />
+                    End="175.642857142857,226.981497797357" />
                   <mssgle:CubicBezierSegment
-                    Point1="-91.5,111.5"
-                    Point2="-95.5,111.5"
-                    Point3="-95.5,115.5" />
+                    Point1="175.642857142857,226.981497797357"
+                    Point2="179.642857142857,226.981497797357"
+                    Point3="179.642857142857,230.981497797357" />
                   <mssgle:LineSegment
-                    End="-95.5,215.5" />
+                    End="179.642857142857,266.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1546,30 +1570,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="560.5,70">
+          TopLeft="548.571428571429,70">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="62.5,223"
+              EndConnector="214.428571428571,162"
               Start="0,0"
-              End="62.5,215.5">
+              End="214.428571428571,154.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,72.577358490566" />
+                    End="0,99.1857585139319" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,72.577358490566"
-                    Point2="0,76.577358490566"
-                    Point3="4,76.577358490566" />
+                    Point1="0,99.1857585139319"
+                    Point2="0,103.185758513932"
+                    Point3="4,103.185758513932" />
                   <mssgle:LineSegment
-                    End="58.5,76.577358490566" />
+                    End="210.428571428571,103.185758513932" />
                   <mssgle:CubicBezierSegment
-                    Point1="58.5,76.577358490566"
-                    Point2="62.5,76.577358490566"
-                    Point3="62.5,80.577358490566" />
+                    Point1="210.428571428571,103.185758513932"
+                    Point2="214.428571428571,103.185758513932"
+                    Point3="214.428571428571,107.185758513932" />
                   <mssgle:LineSegment
-                    End="62.5,215.5" />
+                    End="214.428571428571,154.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1580,30 +1604,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="477.5,70">
+          TopLeft="501.142857142857,70">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-253.5,147"
+              EndConnector="-162.142857142857,279"
               Start="0,0"
-              End="-253.5,139.5">
+              End="-162.142857142857,271.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.4792452830189" />
+                    End="0,224.298678414097" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,46.4792452830189"
-                    Point2="0,50.4792452830189"
-                    Point3="-4,50.4792452830189" />
+                    Point1="0,224.298678414097"
+                    Point2="0,228.298678414097"
+                    Point3="-4,228.298678414097" />
                   <mssgle:LineSegment
-                    End="-249.5,50.4792452830189" />
+                    End="-158.142857142857,228.298678414097" />
                   <mssgle:CubicBezierSegment
-                    Point1="-249.5,50.4792452830189"
-                    Point2="-253.5,50.4792452830189"
-                    Point3="-253.5,54.4792452830189" />
+                    Point1="-158.142857142857,228.298678414097"
+                    Point2="-162.142857142857,228.298678414097"
+                    Point3="-162.142857142857,232.298678414097" />
                   <mssgle:LineSegment
-                    End="-253.5,139.5" />
+                    End="-162.142857142857,271.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1614,30 +1638,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="568.8,70">
+          TopLeft="572.285714285714,70">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="313.2,146"
+              EndConnector="296.714285714286,52"
               Start="0,0"
-              End="313.2,138.5">
+              End="296.714285714286,44.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.7294685990339" />
+                    End="0,8.56288916562891" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,39.7294685990339"
-                    Point2="0,43.7294685990339"
-                    Point3="4,43.7294685990339" />
+                    Point1="0,8.56288916562891"
+                    Point2="0,12.5628891656289"
+                    Point3="4,12.5628891656289" />
                   <mssgle:LineSegment
-                    End="309.2,43.7294685990339" />
+                    End="292.714285714286,12.5628891656289" />
                   <mssgle:CubicBezierSegment
-                    Point1="309.2,43.7294685990339"
-                    Point2="313.2,43.7294685990339"
-                    Point3="313.2,47.7294685990339" />
+                    Point1="292.714285714286,12.5628891656289"
+                    Point2="296.714285714286,12.5628891656289"
+                    Point3="296.714285714286,16.5628891656289" />
                   <mssgle:LineSegment
-                    End="313.2,138.5" />
+                    End="296.714285714286,44.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1646,14 +1670,74 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="195,42"
-          Id="Package\Cargar tabla DimPersona"
-          TopLeft="28,34" />
-        <NodeLayout
-          Size="197,42"
-          Id="Package\Cargar tabla DimPersonal"
-          TopLeft="15,91" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="453.714285714286,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-242.214285714286,50"
+              Start="0,0"
+              End="-242.214285714286,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,8.07970112079701" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,8.07970112079701"
+                    Point2="0,12.079701120797"
+                    Point3="-4,12.079701120797" />
+                  <mssgle:LineSegment
+                    End="-238.214285714286,12.079701120797" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-238.214285714286,12.079701120797"
+                    Point2="-242.214285714286,12.079701120797"
+                    Point3="-242.214285714286,16.079701120797" />
+                  <mssgle:LineSegment
+                    End="-242.214285714286,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="477.428571428571,70">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-220.928571428571,164"
+              Start="0,0"
+              End="-220.928571428571,156.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,100.928792569659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,100.928792569659"
+                    Point2="0,104.928792569659"
+                    Point3="-4,104.928792569659" />
+                  <mssgle:LineSegment
+                    End="-216.928571428571,104.928792569659" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-216.928571428571,104.928792569659"
+                    Point2="-220.928571428571,104.928792569659"
+                    Point3="-220.928571428571,108.928792569659" />
+                  <mssgle:LineSegment
+                    End="-220.928571428571,156.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1722,6 +1806,124 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Cargar tabla DimPersona">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Cargar tabla DimPersona\OLE DB Source"
+          TopLeft="230,78" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Cargar tabla DimPersona\OLE DB Destination"
+          TopLeft="538,80" />
+        <EdgeLayout
+          Id="Package\Cargar tabla DimPersona.Paths[OLE DB Source Output]"
+          TopLeft="379,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159,0"
+              Start="0,0"
+              End="151.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="151.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla DimPersona\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla DimPersona\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Cargar tabla DimPersonal">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Cargar tabla DimPersonal\OLE DB Source"
+          TopLeft="230,78" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Cargar tabla DimPersonal\OLE DB Destination"
+          TopLeft="538,80" />
+        <EdgeLayout
+          Id="Package\Cargar tabla DimPersonal.Paths[OLE DB Source Output]"
+          TopLeft="379,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159,0"
+              Start="0,0"
+              End="151.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="151.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla DimPersonal\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla DimPersonal\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Cargar tabla DimTipoActividad">
     <LayoutInfo>
       <GraphLayout
@@ -1784,124 +1986,6 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Cargar tabla DimPersona">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Cargar tabla DimPersona\OLE DB Destination"
-          TopLeft="538,80" />
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Cargar tabla DimPersona\OLE DB Source"
-          TopLeft="230,78" />
-        <EdgeLayout
-          Id="Package\Cargar tabla DimPersona.Paths[OLE DB Source Output]"
-          TopLeft="379,100">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="159,0"
-              Start="0,0"
-              End="151.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="151.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla DimPersona\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla DimPersona\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Cargar tabla DimPersonal">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="170,42"
-          Id="Package\Cargar tabla DimPersonal\OLE DB Destination"
-          TopLeft="538,80" />
-        <NodeLayout
-          Size="149,42"
-          Id="Package\Cargar tabla DimPersonal\OLE DB Source"
-          TopLeft="230,78" />
-        <EdgeLayout
-          Id="Package\Cargar tabla DimPersonal.Paths[OLE DB Source Output]"
-          TopLeft="379,100">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="159,0"
-              Start="0,0"
-              End="151.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="151.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla DimPersonal\OLE DB Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Cargar tabla DimPersonal\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
