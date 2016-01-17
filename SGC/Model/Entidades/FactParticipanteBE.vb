@@ -72,6 +72,56 @@
             End Set
         End Property
 
+        Private _anio_mes As String
+        Public Property anio_mes() As String
+            Get
+                Return _anio_mes
+            End Get
+            Set(ByVal value As String)
+                _anio_mes = value
+            End Set
+        End Property
+
+        Private _total_participantes As Integer
+        Public Property total_participantes() As Integer
+            Get
+                Return _total_participantes
+            End Get
+            Set(ByVal value As Integer)
+                _total_participantes = value
+            End Set
+        End Property
+
+        Private _participantes_constantes As Integer
+        Public Property participantes_constantes() As Integer
+            Get
+                Return _participantes_constantes
+            End Get
+            Set(ByVal value As Integer)
+                _participantes_constantes = value
+            End Set
+        End Property
+
+        Private _participantes_nuevos As Integer
+        Public Property participantes_nuevos() As Integer
+            Get
+                Return _participantes_nuevos
+            End Get
+            Set(ByVal value As Integer)
+                _participantes_nuevos = value
+            End Set
+        End Property
+
+        Private _participantes_retirados As Integer
+        Public Property participantes_retirados() As Integer
+            Get
+                Return _participantes_retirados
+            End Get
+            Set(ByVal value As Integer)
+                _participantes_retirados = value
+            End Set
+        End Property
+
     End Class
 
 End Namespace

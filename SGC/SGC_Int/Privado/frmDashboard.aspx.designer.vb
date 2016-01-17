@@ -77,15 +77,6 @@ Partial Public Class frmDashboard
     Protected WithEvents ltrParticipantes As Global.System.Web.UI.WebControls.Literal
 
     '''<summary>
-    '''ltrTasaCrecimiento control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents ltrTasaCrecimiento As Global.System.Web.UI.WebControls.Literal
-
-    '''<summary>
     '''ltrUltimoAnio control.
     '''</summary>
     '''<remarks>
@@ -93,4 +84,13 @@ Partial Public Class frmDashboard
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents ltrUltimoAnio As Global.System.Web.UI.WebControls.Literal
+
+    '''<summary>
+    '''ltrTasaCrecimiento control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents ltrTasaCrecimiento As Global.System.Web.UI.WebControls.Literal
 End Class

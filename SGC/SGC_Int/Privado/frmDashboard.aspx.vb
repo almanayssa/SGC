@@ -25,6 +25,7 @@ Partial Class frmDashboard
             CargarComiteSatisfaccionTotal()
             CargarPersonalMasSolicitado()
             CargarPersonasMasParticipativas()
+            CargarParticipantesAnioAnterior()
             CargarTasaCrecimientoAnual()
         End If
     End Sub
@@ -88,14 +89,14 @@ Partial Class frmDashboard
         satisfaccion.SetChartParameter(Chart.ChartParameter.chartWidth, "300")
         satisfaccion.SetChartParameter(Chart.ChartParameter.chartHeight, "150")
 
-        str.Append("<chart caption='Satisfacción General' lowerlimit='0' upperlimit='100' numberSuffix='%' lowerLimitDisplay='Insatisfecho' upperLimitDisplay='Satisfecho' palette='1' tickvaluedistance='10' showValue='0' gaugeinnerradius='0' bgcolor='FFFFFF' pivotfillcolor='333333' pivotradius='8' pivotfillmix='333333,333333' pivotfilltype='radial' pivotfillratio='0,100' showtickvalues='1' showborder='0' theme='fint'>")
+        str.Append("<chart caption='Satisfacción General' lowerlimit='0' upperlimit='100' numberSuffix='%' lowerLimitDisplay='Insatisfecho' upperLimitDisplay='Satisfecho' palette='1' tickvaluedistance='10' showValue='1' gaugeinnerradius='0' bgcolor='FFFFFF' pivotfillcolor='333333' pivotradius='8' pivotfillmix='333333,333333' pivotfilltype='radial' pivotfillratio='0,100' showtickvalues='1' showborder='0' theme='fint'>")
         str.Append("<colorrange>")
         str.Append("<color minvalue='0' maxvalue='33' code='e44a00' />")
         str.Append("<color minvalue='33' maxvalue='66' code='f8bd19' />")
         str.Append("<color minvalue='66' maxvalue='100' code='6baa01' />")
         str.Append("</colorrange>")
         str.Append("<dials>")
-        str.Append("<dial value='").Append(nivel_satisfaccion).Append("' rearextension='15' radius='40' bgcolor='333333' bordercolor='333333' basewidth='8' />")
+        str.Append("<dial value='").Append(nivel_satisfaccion).Append("' rearextension='15' radius='60' bgcolor='333333' bordercolor='333333' basewidth='8' />")
         str.Append("</dials>")
         str.Append("</chart>")
         satisfaccion.SetData(str.ToString, Chart.DataFormat.xml)
@@ -221,12 +222,63 @@ Partial Class frmDashboard
         ltrPersonal.Text = personal.Render()
     End Sub
 
+    Private Sub CargarParticipantesAnioAnterior()
+        Dim participantes As New Chart()
+        participantes.SetChartParameter(Chart.ChartParameter.chartId, "myChart8")
+        participantes.SetChartParameter(Chart.ChartParameter.chartType, "stackedcolumn2d")
+        participantes.SetChartParameter(Chart.ChartParameter.chartWidth, "940")
+        participantes.SetChartParameter(Chart.ChartParameter.chartHeight, "232")
+
+        Dim oListadoParticipantes As List(Of FactParticipanteBE)
+        Dim str As New StringBuilder
+
+        oListadoParticipantes = bc.ListarParticipantesPorMes()
+
+        str.Append("<chart palette='2' caption='Rotación de Participantes Mes a Mes' subCaption='Para el año inmediato anterior (2015)' showlabels='1' showvalues='1' showsum='0' decimals='0' useroundedges='1' legendborderalpha='0' showborder='0' theme='fint'>")
+        str.Append("<categories>")
+
+        For Each oParticipante As FactParticipanteBE In oListadoParticipantes
+            str.Append("<category label='").Append(oParticipante.anio_mes).Append("' />")
+        Next
+
+        str.Append("</categories>")
+
+        str.Append("<dataset seriesname='Participantes Nuevos' color='9DCD3F'>")
+
+        For Each oParticipante As FactParticipanteBE In oListadoParticipantes
+            str.Append("<set value='").Append(oParticipante.participantes_nuevos).Append("' />")
+        Next
+
+        str.Append("</dataset>")
+
+        str.Append("<dataset seriesname='Participantes Constantes' color='FECE2F'>")
+
+        For Each oParticipante As FactParticipanteBE In oListadoParticipantes
+            str.Append("<set value='").Append(oParticipante.participantes_constantes).Append("' />")
+        Next
+
+        str.Append("</dataset>")
+
+        str.Append("<dataset seriesname='Participantes Retirados' color='FD9927'>")
+
+        For Each oParticipante As FactParticipanteBE In oListadoParticipantes
+            str.Append("<set value='").Append(oParticipante.participantes_retirados * -1).Append("' />")
+        Next
+
+        str.Append("</dataset>")
+
+        str.Append("</chart>")
+
+        participantes.SetData(str.ToString, Chart.DataFormat.xml)
+        ltrUltimoAnio.Text = participantes.Render()
+    End Sub
+
     Private Sub CargarTasaCrecimientoAnual()
-        Dim personal As New Chart()
-        personal.SetChartParameter(Chart.ChartParameter.chartId, "myChart8")
-        personal.SetChartParameter(Chart.ChartParameter.chartType, "mscombidy2d")
-        personal.SetChartParameter(Chart.ChartParameter.chartWidth, "940")
-        personal.SetChartParameter(Chart.ChartParameter.chartHeight, "232")
+        Dim tasa As New Chart()
+        tasa.SetChartParameter(Chart.ChartParameter.chartId, "myChart9")
+        tasa.SetChartParameter(Chart.ChartParameter.chartType, "mscombidy2d")
+        tasa.SetChartParameter(Chart.ChartParameter.chartWidth, "940")
+        tasa.SetChartParameter(Chart.ChartParameter.chartHeight, "232")
 
         Dim oListadoActividad As List(Of FactActividadSumBE)
         Dim str As New StringBuilder
@@ -270,8 +322,8 @@ Partial Class frmDashboard
         str.Append("</dataset>")
         str.Append("</chart>")
 
-        personal.SetData(str.ToString, Chart.DataFormat.xml)
-        ltrTasaCrecimiento.Text = personal.Render()
+        tasa.SetData(str.ToString, Chart.DataFormat.xml)
+        ltrTasaCrecimiento.Text = tasa.Render()
 
     End Sub
 End Class

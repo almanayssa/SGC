@@ -7,6 +7,7 @@ Namespace SGC.Model.Interfaces
 #Region "Select"
 
         Function ListarPersonasMasParticipativas() As List(Of FactParticipanteBE)
+        Function ListarParticipantesPorMes() As List(Of FactParticipanteBE)
 
 #End Region
 

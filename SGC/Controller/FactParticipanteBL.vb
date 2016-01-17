@@ -23,6 +23,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarParticipantesPorMes() As List(Of FactParticipanteBE)
+            Try
+                Dim iFact As IFactParticipante
+                Dim oListadoFact As List(Of FactParticipanteBE) = Nothing
+
+                iFact = New FactParticipanteDL
+                oListadoFact = iFact.ListarParticipantesPorMes()
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

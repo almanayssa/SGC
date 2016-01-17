@@ -125,15 +125,6 @@
             </td>
         </tr>
         </table>
-        <br />        
-        <table border="0" cellpadding="0" cellspacing="0" style="width:940px; height:232px; border: 1px solid #DADADA;">
-            <tr>
-                <td class="dashboardTableTitle">TASA DE CRECIMIENTO</td>
-            </tr>
-            <tr>
-                <td><asp:Literal ID="ltrTasaCrecimiento" runat="server"></asp:Literal></td>
-            </tr>
-        </table>
         <br />
         <table border="0" cellpadding="0" cellspacing="0" style="width:940px; height:232px; border: 1px solid #DADADA;">
             <tr>
@@ -143,6 +134,15 @@
                 <td><asp:Literal ID="ltrUltimoAnio" runat="server"></asp:Literal></td>
             </tr>
         </table>
+        <br />     
+        <table border="0" cellpadding="0" cellspacing="0" style="width:940px; height:232px; border: 1px solid #DADADA;">
+            <tr>
+                <td class="dashboardTableTitle">TASA DE CRECIMIENTO ANUAL</td>
+            </tr>
+            <tr>
+                <td><asp:Literal ID="ltrTasaCrecimiento" runat="server"></asp:Literal></td>
+            </tr>
+        </table>        
         <br />
     </div>
 </asp:Content>
