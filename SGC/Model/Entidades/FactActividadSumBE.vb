@@ -195,6 +195,9 @@
         Public Property obs_max_part As String
         Public Property obs_min_part As String
         Public Property coeficiente As Decimal
+        Public Property nombre_comite As String
+        Public Property nombre_tipo As String
+        Public Property anio As String
 
     End Class
 

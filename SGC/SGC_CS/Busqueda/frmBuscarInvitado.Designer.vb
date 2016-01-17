@@ -145,7 +145,7 @@ Partial Class frmBuscarInvitado
         Me.Controls.Add(Me.dgvListado)
         Me.Name = "frmBuscarInvitado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Buscar Familiares"
+        Me.Text = "Buscar Invitados"
         CType(Me.dgvListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxFiltros.ResumeLayout(False)
         Me.gbxFiltros.PerformLayout()

@@ -10,7 +10,8 @@
     <ProjectGuid>{2D000875-0423-44B0-92A0-EE69A02530D1}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>SGC_Int</RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <AssemblyName>SGC_Int</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MyType>Custom</MyType>
@@ -97,10 +98,25 @@
     <Content Include="App_Themes\img\semaforo_amarillo.jpg" />
     <Content Include="App_Themes\img\semaforo_rojo.jpg" />
     <Content Include="App_Themes\img\semaforo_verde.jpg" />
+    <Content Include="App_Themes\SGC\dashboard.css" />
     <Content Include="App_Themes\SGC\sgc.css" />
     <Content Include="frmLogin.aspx" />
+    <Content Include="fusioncharts\fusioncharts.charts.js" />
+    <Content Include="fusioncharts\fusioncharts.gantt.js" />
+    <Content Include="fusioncharts\fusioncharts.js" />
+    <Content Include="fusioncharts\fusioncharts.maps.js" />
+    <Content Include="fusioncharts\fusioncharts.powercharts.js" />
+    <Content Include="fusioncharts\fusioncharts.widgets.js" />
+    <Content Include="fusioncharts\maps\fusioncharts.usa.js" />
+    <Content Include="fusioncharts\maps\fusioncharts.world.js" />
+    <Content Include="fusioncharts\maps\readme.txt" />
+    <Content Include="fusioncharts\themes\fusioncharts.theme.carbon.js" />
+    <Content Include="fusioncharts\themes\fusioncharts.theme.fint.js" />
+    <Content Include="fusioncharts\themes\fusioncharts.theme.ocean.js" />
+    <Content Include="fusioncharts\themes\fusioncharts.theme.zune.js" />
     <Content Include="Privado\frmActualizarParametros.aspx" />
     <Content Include="Privado\frmComparativoTipo.aspx" />
+    <Content Include="Privado\frmDashboard.aspx" />
     <Content Include="Privado\frmReporteActividades.aspx" />
     <Content Include="Privado\frmReporteComite.aspx" />
     <Content Include="Privado\frmReporteGeneral.aspx" />
@@ -117,6 +133,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\FusionCharts.vb" />
     <Compile Include="frmLogin.aspx.designer.vb">
       <DependentUpon>frmLogin.aspx</DependentUpon>
     </Compile>
@@ -136,6 +153,13 @@
     </Compile>
     <Compile Include="Privado\frmComparativoTipo.aspx.vb">
       <DependentUpon>frmComparativoTipo.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privado\frmDashboard.aspx.designer.vb">
+      <DependentUpon>frmDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmDashboard.aspx.vb">
+      <DependentUpon>frmDashboard.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\frmReporteActividades.aspx.designer.vb">

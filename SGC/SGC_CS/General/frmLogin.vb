@@ -32,24 +32,24 @@ Public Class frmLogin
     End Function
 
     Private Sub IniciarSesion()
-        'If ValidarCamposRequeridos() <> String.Empty Then
-        '    MessageBox.Show(ValidarCamposRequeridos, "Información")
-        '    Exit Sub
-        'End If
+        If ValidarCamposRequeridos() <> String.Empty Then
+            MessageBox.Show(ValidarCamposRequeridos, "Información")
+            Exit Sub
+        End If
 
-        'Dim oUsuarioLogueado As New UsuarioBE
-        'oUsuarioLogueado = bc.ObtenerUsuario(txtUsuario.Text.Trim, txtContrasena.Text.Trim)
+        Dim oUsuarioLogueado As New UsuarioBE
+        oUsuarioLogueado = bc.ObtenerUsuario(txtUsuario.Text.Trim, txtContrasena.Text.Trim)
 
-        'If oUsuarioLogueado.id_usuario = Nothing Then
-        '    MessageBox.Show("Usuario o contraseña incorrectos", "Información")
-        'Else
-        '    If oUsuarioLogueado.id_perfil_usuario = 6 Then
-        '        MessageBox.Show("Usuario o contraseña incorrectos", "Información")
-        '        Exit Sub
-        '    End If
-        Me.Hide()
-        MDI.Show()
-        'End If
+        If oUsuarioLogueado.id_usuario = Nothing Then
+            MessageBox.Show("Usuario o contraseña incorrectos", "Información")
+        Else
+            If oUsuarioLogueado.id_perfil_usuario = 6 Then
+                MessageBox.Show("Usuario o contraseña incorrectos", "Información")
+                Exit Sub
+            End If
+            Me.Hide()
+            MDI.Show()
+        End If
     End Sub
 
 #End Region

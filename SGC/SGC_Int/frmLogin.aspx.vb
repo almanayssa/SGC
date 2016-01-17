@@ -13,14 +13,14 @@ Public Class frmLogin
     End Sub
 
     Protected Sub lbtnIniciarSesion_Click(sender As Object, e As EventArgs) Handles lbtnIniciarSesion.Click
-        'Dim oUsuario As UsuarioBE = bc.ObtenerUsuario(tbxUsuario.Text.Trim, tbxContrasenia.Text.Trim)
+        Dim oUsuario As UsuarioBE = bc.ObtenerUsuario(tbxUsuario.Text.Trim, tbxContrasenia.Text.Trim)
 
-        'If oUsuario IsNot Nothing AndAlso oUsuario.id_usuario <> String.Empty Then
-        '    Session.RemoveAll()
-        '    Session("usuario") = oUsuario
-        Response.Redirect("~/Privado/frmSemaforoPorFechas.aspx", True)
-        'Else
-        '    lblMensajeError.Text = "Usuario y/o contraseña incorrectos"
-        'End If
+        If oUsuario IsNot Nothing AndAlso oUsuario.id_usuario <> String.Empty Then
+            Session.RemoveAll()
+            Session("usuario") = oUsuario
+            Response.Redirect("~/Privado/frmDashboard.aspx", True)
+        Else
+            lblMensajeError.Text = "Usuario y/o contraseña incorrectos"
+        End If
     End Sub
 End Class

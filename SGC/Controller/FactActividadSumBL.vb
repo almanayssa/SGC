@@ -128,6 +128,125 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarComitesParticipacion() As List(Of FactActividadSumBE)
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
+
+                iFact = New FactActividadSumDL
+                oListadoFact = iFact.ListarComitesParticipacion()
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarComitesSatisfaccion() As List(Of FactActividadSumBE)
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
+
+                iFact = New FactActividadSumDL
+                oListadoFact = iFact.ListarComitesSatisfaccion()
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ObtenerSatisfaccionTotal() As Decimal
+            Try
+                Dim iFact As IFactActividadSum
+                Dim satisfaccion As Decimal = 0.0
+
+                iFact = New FactActividadSumDL
+                satisfaccion = iFact.ObtenerSatisfaccionTotal()
+
+                Return satisfaccion
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarComitesActividades() As List(Of FactActividadSumBE)
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
+
+                iFact = New FactActividadSumDL
+                oListadoFact = iFact.ListarComitesActividades()
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarTiposParticipacion() As List(Of FactActividadSumBE)
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
+
+                iFact = New FactActividadSumDL
+                oListadoFact = iFact.ListarTiposParticipacion()
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarTiposActividades() As List(Of FactActividadSumBE)
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
+
+                iFact = New FactActividadSumDL
+                oListadoFact = iFact.ListarTiposActividades()
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ObtenerTotalActividades() As Integer
+            Try
+                Dim iFact As IFactActividadSum
+                Dim total As Integer = 0
+
+                iFact = New FactActividadSumDL
+                total = iFact.ObtenerTotalActividades()
+
+                Return total
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+        Public Function ListarParticipantesPorAnio() As List(Of FactActividadSumBE)
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
+
+                iFact = New FactActividadSumDL
+                oListadoFact = iFact.ListarParticipantesPorAnio()
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
 #End Region
 
     End Class

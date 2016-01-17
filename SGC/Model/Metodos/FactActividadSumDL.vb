@@ -320,6 +320,222 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ListarComitesParticipacion() As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarComitesParticipacion
+            Dim oListadoFact As New List(Of FactActividadSumBE)
+            Dim oFact As FactActividadSumBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_LISTAR_COMITES_PARTICIPACION", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New FactActividadSumBE
+                    oFact.nombre_comite = dr("nombre")
+                    oFact.total_participantes = dr("total_participantes")
+                    oListadoFact.Add(oFact)
+                End While
+                dr.Close()
+                Return oListadoFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarComitesSatisfaccion() As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarComitesSatisfaccion
+            Dim oListadoFact As New List(Of FactActividadSumBE)
+            Dim oFact As FactActividadSumBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_LISTAR_COMITES_SATISFACCION", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New FactActividadSumBE
+                    oFact.nombre_comite = dr("nombre")
+                    oFact.cant_satisfaccion = dr("cant_satisfaccion")
+                    oListadoFact.Add(oFact)
+                End While
+                dr.Close()
+                Return oListadoFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ObtenerSatisfaccionTotal() As Decimal Implements Interfaces.IFactActividadSum.ObtenerSatisfaccionTotal
+            Dim satisfaccion As Decimal
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_OBTENER_SATISFACCION_TOTAL", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                If dr.Read() Then
+                    satisfaccion = dr("cant_satisfaccion")
+                End If
+                dr.Close()
+                Return satisfaccion
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarTiposParticipacion() As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarTiposParticipacion
+            Dim oListadoFact As New List(Of FactActividadSumBE)
+            Dim oFact As FactActividadSumBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_LISTAR_TIPOS_PARTICIPACION", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New FactActividadSumBE
+                    oFact.nombre_tipo = dr("descripcion")
+                    oFact.total_participantes = dr("total_participantes")
+                    oListadoFact.Add(oFact)
+                End While
+                dr.Close()
+                Return oListadoFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarComitesActividades() As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarComitesActividades
+            Dim oListadoFact As New List(Of FactActividadSumBE)
+            Dim oFact As FactActividadSumBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_LISTAR_COMITES_ACTIVIDADES", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New FactActividadSumBE
+                    oFact.nombre_comite = dr("nombre")
+                    oFact.total_actividades = dr("total_actividades")
+                    oListadoFact.Add(oFact)
+                End While
+                dr.Close()
+                Return oListadoFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarTiposActividades() As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarTiposActividades
+            Dim oListadoFact As New List(Of FactActividadSumBE)
+            Dim oFact As FactActividadSumBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_LISTAR_TIPOS_ACTIVIDADES", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New FactActividadSumBE
+                    oFact.nombre_tipo = dr("descripcion")
+                    oFact.total_actividades = dr("total_actividades")
+                    oListadoFact.Add(oFact)
+                End While
+                dr.Close()
+                Return oListadoFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ObtenerTotalActividades() As Integer Implements Interfaces.IFactActividadSum.ObtenerTotalActividades
+            Dim total As Integer
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_OBTENER_TOTAL_ACTIVIDADES", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                If dr.Read() Then
+                    total = dr("total_actividades")
+                End If
+                dr.Close()
+                Return total
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
+        Public Function ListarParticipantesPorAnio() As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarParticipantesPorAnio
+            Dim oListadoFact As New List(Of FactActividadSumBE)
+            Dim oFact As FactActividadSumBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_LISTAR_PARTICIPANTES_POR_ANIO", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New FactActividadSumBE
+                    oFact.anio = dr("anio")
+                    oFact.total_participantes = dr("total_participantes")
+                    oListadoFact.Add(oFact)
+                End While
+                dr.Close()
+                Return oListadoFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
 #End Region
 
     End Class

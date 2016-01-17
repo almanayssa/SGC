@@ -6,8 +6,8 @@
   DTS:CreatorComputerName="HP"
   DTS:CreationDate="12/13/2015 6:43:28 PM"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{0F0EC1A1-4C50-41D6-BB22-EF6A3E773D24}"
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{DF19E1A8-2D7A-41EA-A8F7-C67E41FF75F5}"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="1033"
   DTS:ObjectName="pkgCargarModelo"
@@ -1890,6 +1890,720 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Cargar tabla FactParticipante"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cargar tabla FactParticipante"
+      DTS:DTSID="{e4ed0962-c7b5-4862-89b1-d4bc063859ae}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cargar tabla FactParticipante\OLE DB Destination"
+              name="OLE DB Destination"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              description="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[FactParticipante]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">3</property>
+                <property
+                  name="FastLoadKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadOptions"
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  name="FastLoadMaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="{ABCFF976-B1E0-46E2-AB86-EA18174A9891}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.SGC_BI]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Input"
+                  hasSideEffects="true"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_actividad]"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_actividad]"
+                      externalMetadataColumnId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_actividad]"
+                      cachedName="id_actividad"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_comite]"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
+                      externalMetadataColumnId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
+                      cachedName="id_comite"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_tipo_act]"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
+                      externalMetadataColumnId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
+                      cachedName="id_tipo_act"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_entidad]"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_entidad]"
+                      externalMetadataColumnId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_persona]"
+                      cachedName="id_entidad"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedCodepage="1252" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
+                      name="id_tipo"
+                      dataType="str"
+                      length="6"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
+                      name="id_comite"
+                      dataType="str"
+                      length="6"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_actividad]"
+                      name="id_actividad"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      name="id"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_persona]"
+                      name="id_persona"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar tabla FactParticipante\OLE DB Source"
+              name="OLE DB Source"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."></property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC SP_FACT_PARTICIPANTE</property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">2</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar tabla FactParticipante\OLE DB Source.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="{6150F068-2813-4A36-814B-8641718F18D3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.SGC]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_actividad]"
+                      name="id_actividad"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_actividad]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_actividad]" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
+                      name="id_comite"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
+                      length="6"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
+                      name="id_tipo_act"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
+                      length="6"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_entidad]"
+                      name="id_entidad"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_entidad]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_entidad]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_actividad]"
+                      name="id_actividad"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]"
+                      name="id_comite"
+                      dataType="str"
+                      length="6"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]"
+                      name="id_tipo_act"
+                      dataType="str"
+                      length="6"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_entidad]"
+                      name="id_entidad"
+                      dataType="str"
+                      length="10"
+                      codePage="1252" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_actividad]"
+                      name="id_actividad"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_actividad]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_entidad]"
+                      name="id_entidad"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_entidad]"
+                      length="10"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
+                      name="id_comite"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
+                      length="6"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
+                      name="id_tipo_act"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
+                      length="6"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cargar tabla FactParticipante.Paths[OLE DB Source Output]"
+              name="OLE DB Source Output"
+              startId="Package\Cargar tabla FactParticipante\OLE DB Source.Outputs[OLE DB Source Output]"
+              endId="Package\Cargar tabla FactParticipante\OLE DB Destination.Inputs[OLE DB Destination Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Cargar tabla FactPersonal"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cargar tabla FactPersonal"
+      DTS:DTSID="{a3178ab4-c364-43dd-aa15-d98a65f68c88}"
+      DTS:Description="Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cargar tabla FactPersonal\OLE DB Destination"
+              name="OLE DB Destination"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              description="OLE DB Destination"
+              usesDispositions="true"
+              version="4"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset.">[dbo].[FactPersonal]</property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">3</property>
+                <property
+                  name="FastLoadKeepIdentity"
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadKeepNulls"
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on.">false</property>
+                <property
+                  name="FastLoadOptions"
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on.">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  name="FastLoadMaxInsertCommitSize"
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on.">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="{ABCFF976-B1E0-46E2-AB86-EA18174A9891}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.SGC_BI]" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Destination Input"
+                  hasSideEffects="true"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_actividad]"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_actividad]"
+                      externalMetadataColumnId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_actividad]"
+                      cachedName="id_actividad"
+                      cachedDataType="i4" />
+                    <inputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_comite]"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
+                      externalMetadataColumnId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
+                      cachedName="id_comite"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_tipo_act]"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
+                      externalMetadataColumnId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
+                      cachedName="id_tipo_act"
+                      cachedDataType="str"
+                      cachedLength="6"
+                      cachedCodepage="1252" />
+                    <inputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_personal]"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_personal]"
+                      externalMetadataColumnId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_personal]"
+                      cachedName="id_personal"
+                      cachedDataType="i4" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_tipo]"
+                      name="id_tipo"
+                      dataType="str"
+                      length="6"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_comite]"
+                      name="id_comite"
+                      dataType="str"
+                      length="6"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_actividad]"
+                      name="id_actividad"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                      name="id"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_personal]"
+                      name="id_personal"
+                      dataType="i4" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  name="OLE DB Destination Error Output"
+                  exclusionGroup="1"
+                  synchronousInputId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar tabla FactPersonal\OLE DB Source"
+              name="OLE DB Source"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              description="OLE DB Source"
+              usesDispositions="true"
+              version="7"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7">
+              <properties>
+                <property
+                  name="CommandTimeout"
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out.">0</property>
+                <property
+                  name="OpenRowset"
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."></property>
+                <property
+                  name="OpenRowsetVariable"
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."></property>
+                <property
+                  name="SqlCommand"
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXEC SP_FACT_PERSONAL</property>
+                <property
+                  name="SqlCommandVariable"
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."></property>
+                <property
+                  name="DefaultCodePage"
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source.">1252</property>
+                <property
+                  name="AlwaysUseDefaultCodePage"
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data.">false</property>
+                <property
+                  name="AccessMode"
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  typeConverter="AccessMode">2</property>
+                <property
+                  name="ParameterMapping"
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar tabla FactPersonal\OLE DB Source.Connections[OleDbConnection]"
+                  name="OleDbConnection"
+                  description="The OLE DB runtime connection used to access the database."
+                  connectionManagerID="{6150F068-2813-4A36-814B-8641718F18D3}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.SGC]" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_actividad]"
+                      name="id_actividad"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_actividad]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_actividad]" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
+                      name="id_comite"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_comite]"
+                      length="6"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
+                      name="id_tipo_act"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_tipo_act]"
+                      length="6"
+                      dataType="str"
+                      codePage="1252"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_personal]"
+                      name="id_personal"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_personal]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      truncationRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_personal]" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_actividad]"
+                      name="id_actividad"
+                      dataType="i4" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_comite]"
+                      name="id_comite"
+                      dataType="str"
+                      length="6"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_tipo_act]"
+                      name="id_tipo_act"
+                      dataType="str"
+                      length="6"
+                      codePage="1252" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_personal]"
+                      name="id_personal"
+                      dataType="i4" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  name="OLE DB Source Error Output"
+                  isErrorOut="true">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_actividad]"
+                      name="id_actividad"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_actividad]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_personal]"
+                      name="id_personal"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_personal]"
+                      dataType="i4" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
+                      name="id_comite"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_comite]"
+                      length="6"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
+                      name="id_tipo_act"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_tipo_act]"
+                      length="6"
+                      dataType="str"
+                      codePage="1252" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      lineageId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cargar tabla FactPersonal.Paths[OLE DB Source Output]"
+              name="OLE DB Source Output"
+              startId="Package\Cargar tabla FactPersonal\OLE DB Source.Outputs[OLE DB Source Output]"
+              endId="Package\Cargar tabla FactPersonal\OLE DB Destination.Inputs[OLE DB Destination Input]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Limpiar tablas de modelo"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:ThreadHint="0"
@@ -1945,7 +2659,7 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="200,42"
           Id="Package\Cargar tabla DimActividad"
@@ -1962,6 +2676,40 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
           Size="196,42"
           Id="Package\Limpiar tablas de modelo"
           TopLeft="473,19" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="539.666666666667,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-68.1666666666666,71"
+              Start="0,0"
+              End="-68.1666666666666,63.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.7449392712551" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.7449392712551"
+                    Point2="0,28.7449392712551"
+                    Point3="-4,28.7449392712551" />
+                  <mssgle:LineSegment
+                    End="-64.1666666666666,28.7449392712551" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-64.1666666666666,28.7449392712551"
+                    Point2="-68.1666666666666,28.7449392712551"
+                    Point3="-68.1666666666666,32.744939271255" />
+                  <mssgle:LineSegment
+                    End="-68.1666666666666,63.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="618,61">
@@ -2030,40 +2778,14 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="539.666666666667,61">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-68.1666666666666,71"
-              Start="0,0"
-              End="-68.1666666666666,63.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.7449392712551" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.7449392712551"
-                    Point2="0,28.7449392712551"
-                    Point3="-4,28.7449392712551" />
-                  <mssgle:LineSegment
-                    End="-64.1666666666666,28.7449392712551" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-64.1666666666666,28.7449392712551"
-                    Point2="-68.1666666666666,28.7449392712551"
-                    Point3="-68.1666666666666,32.744939271255" />
-                  <mssgle:LineSegment
-                    End="-68.1666666666666,63.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Cargar tabla FactParticipante"
+          TopLeft="100,227" />
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Cargar tabla FactPersonal"
+          TopLeft="358,229" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2247,6 +2969,124 @@ LEFT JOIN comite.TB_Presupuesto_Actividad D ON D.id_actividad = C.id_actividad</
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Cargar tabla FactInscripcion\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Cargar tabla FactParticipante">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Cargar tabla FactParticipante\OLE DB Destination"
+          TopLeft="509,80" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Cargar tabla FactParticipante\OLE DB Source"
+          TopLeft="179,76" />
+        <EdgeLayout
+          Id="Package\Cargar tabla FactParticipante.Paths[OLE DB Source Output]"
+          TopLeft="328,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="181,0"
+              Start="0,0"
+              End="173.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="173.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla FactParticipante\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla FactParticipante\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Cargar tabla FactPersonal">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Cargar tabla FactPersonal\OLE DB Destination"
+          TopLeft="509,80" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Cargar tabla FactPersonal\OLE DB Source"
+          TopLeft="179,76" />
+        <EdgeLayout
+          Id="Package\Cargar tabla FactPersonal.Paths[OLE DB Source Output]"
+          TopLeft="328,99">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="181,0"
+              Start="0,0"
+              End="173.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="173.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla FactPersonal\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar tabla FactPersonal\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

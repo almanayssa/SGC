@@ -1,4 +1,4 @@
-﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="PlantillaSGCInt.master.vb" Inherits="SGC_Int.PlantillaSGCInt" %>
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="PlantillaSGCInt.master.vb" Inherits="PlantillaSGCInt" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -6,6 +6,12 @@
 <head runat="server">
     <title>ACC El Bosque - Intranet</title>
     <link href="~/App_Themes/SGC/sgc.css" rel="stylesheet" type="text/css" />
+    <link href="~/App_Themes/SGC/dashboard.css" rel="stylesheet" type="text/css" />
+    <script type='text/javascript' language='javascript' src="../fusioncharts/fusioncharts.js"></script>
+    <script type='text/javascript' language='javascript' src="../fusioncharts/themes/fusioncharts.theme.carbon.js"></script>
+    <script type='text/javascript' language='javascript' src="../fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+    <script type='text/javascript' language='javascript' src="../fusioncharts/themes/fusioncharts.theme.ocean.js"></script>
+    <script type='text/javascript' language='javascript' src="../fusioncharts/themes/fusioncharts.theme.zune.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -27,22 +33,19 @@
         </div>
         <br />
         <ul id="menu-bar">
-            <li class="current"><a href="#">Semáforo</a>
+            <li class="current"><a href="frmDashboard.aspx">Dashboard</a>
+            </li>
+            <li><a href="#">Semáforo</a>
             <ul>
             <li><a href="frmSemaforoPorFechas.aspx">Por Fechas</a></li>
-            <li><a href="frmSemaforoPorMes.aspx">Por Mes</a></li>
+            <%--<li><a href="frmSemaforoPorMes.aspx">Por Mes</a></li>--%>
             </ul>
             </li>
             <li><a href="#">Comparativo</a>
             <ul>
             <li><a href="frmComparativoTipo.aspx">Tipo</a></li>
             </ul>
-            </li>
-            <li><a href="#">Reportes</a>
-            <ul>
-            <li><a href="frmReporteGeneral.aspx">Reporte General</a></li>
-            <li><a href="frmReporteComite.aspx">Reporte Comité</a></li>
-            <li><a href="frmReporteActividades.aspx">Reporte Tipo</a></li>
+            </li>            
             </ul>
             </li>
             <%--<li><a href="#">Parámetros</a>

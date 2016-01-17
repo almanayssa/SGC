@@ -82,6 +82,8 @@
     <Compile Include="Entidades\ComiteAnualBE.vb" />
     <Compile Include="Entidades\ComiteBE.vb" />
     <Compile Include="Entidades\ConceptoBE.vb" />
+    <Compile Include="Entidades\FactParticipanteBE.vb" />
+    <Compile Include="Entidades\FactPersonalBE.vb" />
     <Compile Include="Entidades\ParametroBE.vb" />
     <Compile Include="Entidades\ParametrosBE.vb" />
     <Compile Include="Entidades\FactActividadSumBE.vb" />
@@ -147,6 +149,8 @@
     <Compile Include="Interfaces\IAsistencia.vb" />
     <Compile Include="Interfaces\IDetallePresupuestoAct.vb" />
     <Compile Include="Interfaces\IEspacioRes.vb" />
+    <Compile Include="Interfaces\IFactParticipante.vb" />
+    <Compile Include="Interfaces\IFactPersonal.vb" />
     <Compile Include="Interfaces\IParametro.vb" />
     <Compile Include="Interfaces\IParametros.vb" />
     <Compile Include="Interfaces\IPresupuestoActividad.vb" />
@@ -193,6 +197,8 @@
     <Compile Include="Metodos\AsistenciaDL.vb" />
     <Compile Include="Metodos\AsistenciaPersonalDL.vb" />
     <Compile Include="Metodos\CatTipoActividadDL.vb" />
+    <Compile Include="Metodos\FactParticipanteDL.vb" />
+    <Compile Include="Metodos\FactPersonalDL.vb" />
     <Compile Include="Metodos\ParametroDL.vb" />
     <Compile Include="Metodos\ParametrosDL.vb" />
     <Compile Include="Metodos\FactActividadSumDL.vb" />
