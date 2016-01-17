@@ -117,9 +117,11 @@
     <Content Include="Privado\frmActualizarParametros.aspx" />
     <Content Include="Privado\frmComparativoTipo.aspx" />
     <Content Include="Privado\frmDashboard.aspx" />
+    <Content Include="Privado\frmPersonalParticipante.aspx" />
     <Content Include="Privado\frmReporteActividades.aspx" />
     <Content Include="Privado\frmReporteComite.aspx" />
     <Content Include="Privado\frmReporteGeneral.aspx" />
+    <Content Include="Privado\frmSatisfaccionPorComite.aspx" />
     <Content Include="Privado\frmSemaforoPorFechas.aspx" />
     <Content Include="Privado\frmSemaforoPorMes.aspx" />
     <Content Include="Web.config">
@@ -162,6 +164,13 @@
       <DependentUpon>frmDashboard.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Privado\frmPersonalParticipante.aspx.designer.vb">
+      <DependentUpon>frmPersonalParticipante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmPersonalParticipante.aspx.vb">
+      <DependentUpon>frmPersonalParticipante.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Privado\frmReporteActividades.aspx.designer.vb">
       <DependentUpon>frmReporteActividades.aspx</DependentUpon>
     </Compile>
@@ -200,6 +209,13 @@
     </Compile>
     <Compile Include="Privado\frmReporteGeneral.aspx.vb">
       <DependentUpon>frmReporteGeneral.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privado\frmSatisfaccionPorComite.aspx.designer.vb">
+      <DependentUpon>frmSatisfaccionPorComite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmSatisfaccionPorComite.aspx.vb">
+      <DependentUpon>frmSatisfaccionPorComite.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\frmSemaforoPorFechas.aspx.designer.vb">

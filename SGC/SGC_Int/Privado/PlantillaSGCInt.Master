@@ -45,7 +45,11 @@
             <ul>
             <li><a href="frmComparativoTipo.aspx">Tipo</a></li>
             </ul>
-            </li>            
+            </li>
+            <li><a href="#">Reportes</a>
+            <ul>
+            <li><a href="frmSatisfaccionPorComite.aspx">Satisfacción por Comité</a></li>
+            <li><a href="frmPersonalParticipante.aspx">Personal/Personas</a></li>
             </ul>
             </li>
             <%--<li><a href="#">Parámetros</a>

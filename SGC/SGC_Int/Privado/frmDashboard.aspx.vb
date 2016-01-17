@@ -34,7 +34,7 @@ Partial Class frmDashboard
         Dim participacion As New Chart()
         participacion.SetChartParameter(Chart.ChartParameter.chartId, "myChart")
         participacion.SetChartParameter(Chart.ChartParameter.chartType, "pie3d")
-        participacion.SetChartParameter(Chart.ChartParameter.chartWidth, "460")
+        participacion.SetChartParameter(Chart.ChartParameter.chartWidth, "450")
         participacion.SetChartParameter(Chart.ChartParameter.chartHeight, "212")
 
         Dim oComites As List(Of FactActividadSumBE)
@@ -57,7 +57,7 @@ Partial Class frmDashboard
         Dim participacion As New Chart()
         participacion.SetChartParameter(Chart.ChartParameter.chartId, "myChart2")
         participacion.SetChartParameter(Chart.ChartParameter.chartType, "pie3d")
-        participacion.SetChartParameter(Chart.ChartParameter.chartWidth, "460")
+        participacion.SetChartParameter(Chart.ChartParameter.chartWidth, "450")
         participacion.SetChartParameter(Chart.ChartParameter.chartHeight, "212")
 
         Dim oComites As List(Of FactActividadSumBE)
@@ -156,7 +156,7 @@ Partial Class frmDashboard
         Dim participantes As New Chart()
         participantes.SetChartParameter(Chart.ChartParameter.chartId, "myChart6")
         participantes.SetChartParameter(Chart.ChartParameter.chartType, "bar2d")
-        participantes.SetChartParameter(Chart.ChartParameter.chartWidth, "460")
+        participantes.SetChartParameter(Chart.ChartParameter.chartWidth, "450")
         participantes.SetChartParameter(Chart.ChartParameter.chartHeight, "152")
 
         Dim oListadoPersona As List(Of FactParticipanteBE)
@@ -193,7 +193,7 @@ Partial Class frmDashboard
         Dim personal As New Chart()
         personal.SetChartParameter(Chart.ChartParameter.chartId, "myChart7")
         personal.SetChartParameter(Chart.ChartParameter.chartType, "bar2d")
-        personal.SetChartParameter(Chart.ChartParameter.chartWidth, "460")
+        personal.SetChartParameter(Chart.ChartParameter.chartWidth, "450")
         personal.SetChartParameter(Chart.ChartParameter.chartHeight, "152")
 
         Dim oListadoPersonal As List(Of FactPersonalBE)
@@ -226,7 +226,7 @@ Partial Class frmDashboard
         Dim participantes As New Chart()
         participantes.SetChartParameter(Chart.ChartParameter.chartId, "myChart8")
         participantes.SetChartParameter(Chart.ChartParameter.chartType, "stackedcolumn2d")
-        participantes.SetChartParameter(Chart.ChartParameter.chartWidth, "940")
+        participantes.SetChartParameter(Chart.ChartParameter.chartWidth, "920")
         participantes.SetChartParameter(Chart.ChartParameter.chartHeight, "232")
 
         Dim oListadoParticipantes As List(Of FactParticipanteBE)
@@ -277,7 +277,7 @@ Partial Class frmDashboard
         Dim tasa As New Chart()
         tasa.SetChartParameter(Chart.ChartParameter.chartId, "myChart9")
         tasa.SetChartParameter(Chart.ChartParameter.chartType, "mscombidy2d")
-        tasa.SetChartParameter(Chart.ChartParameter.chartWidth, "940")
+        tasa.SetChartParameter(Chart.ChartParameter.chartWidth, "920")
         tasa.SetChartParameter(Chart.ChartParameter.chartHeight, "232")
 
         Dim oListadoActividad As List(Of FactActividadSumBE)

@@ -32,3 +32,10 @@
     width:115px;
     height:20px;    
 }
+
+a.linkD:visited {
+    color: #0A689B;
+}
+a.linkD:link {
+    color: #0A689B;    
+}
