@@ -10,6 +10,30 @@ Public Class PlantillaSGCInt
             If oUsuario IsNot Nothing Then
                 lblUsuario.Text = "Bienvenido: " & oUsuario.username
             End If
+
+            If Session("menu") = "dashboard" Then
+                liDashboard.Attributes.Add("class", "current")
+            Else
+                liDashboard.Attributes.Remove("class")
+            End If
+
+            If Session("menu") = "semaforo" Then
+                liSemaforo.Attributes.Add("class", "current")
+            Else
+                liSemaforo.Attributes.Remove("class")
+            End If
+
+            If Session("menu") = "comparativo" Then
+                liComparativo.Attributes.Add("class", "current")
+            Else
+                liComparativo.Attributes.Remove("class")
+            End If
+
+            If Session("menu") = "reportes" Then
+                liReportes.Attributes.Add("class", "current")
+            Else
+                liReportes.Attributes.Remove("class")
+            End If
         End If
     End Sub
 

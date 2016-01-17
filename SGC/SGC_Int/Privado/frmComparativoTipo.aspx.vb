@@ -8,6 +8,8 @@ Public Class frmComparativoTipo
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
+            Session("menu") = "comparativo"
+
             ListarComites()
             ListarTipoActividad()
             txtFechaInicio.Text = "01/01/2015"

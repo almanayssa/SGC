@@ -18,6 +18,8 @@ Partial Class frmDashboard
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Not Page.IsPostBack Then
+            Session("menu") = "dashboard"
+
             CargarParticipantesComite()
             CargarParticipantesTipo()
             CargarActividadesComite()
@@ -238,7 +240,7 @@ Partial Class frmDashboard
         str.Append("<categories>")
 
         For Each oParticipante As FactParticipanteBE In oListadoParticipantes
-            str.Append("<category label='").Append(oParticipante.anio_mes).Append("' />")
+            str.Append("<category label='").Append(oParticipante.anio_mes.Replace(" 2015", "")).Append("' />")
         Next
 
         str.Append("</categories>")

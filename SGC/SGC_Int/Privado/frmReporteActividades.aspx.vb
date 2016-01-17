@@ -8,6 +8,8 @@ Public Class frmReporteActividades
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not Page.IsPostBack Then
+            Session("menu") = "reportes"
+
             txtFechaInicio.Text = "01/01/2015"
             txtFechaFin.Text = Now.ToString("dd/MM/yyyy")
             CargarReporte()
