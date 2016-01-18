@@ -199,6 +199,11 @@
         Public Property nombre_tipo As String
         Public Property anio As String
 
+        Public Property nombre_mes As String
+        Public Property part1 As Integer
+        Public Property part2 As Integer
+        Public Property porc1 As Decimal
+        Public Property porc2 As Decimal
     End Class
 
 End Namespace

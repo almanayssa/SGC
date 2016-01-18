@@ -23,6 +23,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarTipoActividadVal(ByVal idTipo As String) As List(Of TipoActividadBE)
+            Try
+                Dim iTipoActividad As ITipoActividad
+                Dim oListadoTipoActividad As List(Of TipoActividadBE) = Nothing
+
+                iTipoActividad = New TipoActividadDL
+                oListadoTipoActividad = iTipoActividad.ListarTipoActividadVal(idTipo)
+
+                Return oListadoTipoActividad
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

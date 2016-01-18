@@ -114,6 +114,7 @@
     <Content Include="fusioncharts\themes\fusioncharts.theme.fint.js" />
     <Content Include="fusioncharts\themes\fusioncharts.theme.ocean.js" />
     <Content Include="fusioncharts\themes\fusioncharts.theme.zune.js" />
+    <Content Include="Privado\frmCorrelacion.aspx" />
     <Content Include="Privado\frmActualizarParametros.aspx" />
     <Content Include="Privado\frmComparativoTipo.aspx" />
     <Content Include="Privado\frmDashboard.aspx" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="frmLogin.aspx.vb">
       <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privado\frmCorrelacion.aspx.designer.vb">
+      <DependentUpon>frmCorrelacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmCorrelacion.aspx.vb">
+      <DependentUpon>frmCorrelacion.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\frmActualizarParametros.aspx.designer.vb">

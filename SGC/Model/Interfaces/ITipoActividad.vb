@@ -8,6 +8,8 @@ Namespace SGC.Model.Interfaces
 
         Function ListarTipoActividad() As List(Of TipoActividadBE)
 
+        Function ListarTipoActividadVal(ByVal idTipo As String) As List(Of TipoActividadBE)
+
 #End Region
 
     End Interface

@@ -247,6 +247,22 @@ Namespace SGC.Controller
                 Return Nothing
             End Try
         End Function
+
+        Public Function ListarCorrelacionMensual(ByVal id_comite As Integer, ByVal tipo_1 As String, ByVal tipo_2 As String, ByVal anio_fin As Integer) As List(Of FactActividadSumBE)
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
+
+                iFact = New FactActividadSumDL
+                oListadoFact = iFact.ListarCorrelacionMensual(id_comite, tipo_1, tipo_2, anio_fin)
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class
