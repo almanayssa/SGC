@@ -79,16 +79,25 @@ Public Class frmCorrelacion
     Private Sub GenerarCuadro()
         Dim id_tipo_1 As String = ddlTipoActividad.SelectedValue
         Dim id_tipo_2 As String = ddlTipoActividad2.SelectedValue
+        texto1 = ddlTipoActividad.SelectedItem.Text
+        texto2 = ddlTipoActividad2.SelectedItem.Text
 
-
-        Dim Listado As List(Of FactActividadSumBE) = bc.ListarCorrelacionMensual(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, Now.Year)
+        Dim Listado As List(Of SemaforoBE) = bc.ListarCorrelacionMensual(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, Now.Year)
         gvwSemaforo.DataSource = Listado
         gvwSemaforo.DataBind()
 
         If chkCoeficiente.Checked Then
+            gvwSemaforo.Columns.Item(8).Visible = True
+        Else
+            gvwSemaforo.Columns.Item(8).Visible = False
+        End If
+
+        If chkTasas.Checked Then
             gvwSemaforo.Columns.Item(3).Visible = True
+            gvwSemaforo.Columns.Item(6).Visible = True
         Else
             gvwSemaforo.Columns.Item(3).Visible = False
+            gvwSemaforo.Columns.Item(6).Visible = False
         End If
     End Sub
 
@@ -126,8 +135,29 @@ Public Class frmCorrelacion
 
     Private Sub gvwSemaforo_RowDataBound(sender As Object, e As System.Web.UI.WebControls.GridViewRowEventArgs) Handles gvwSemaforo.RowDataBound
         If e.Row.RowType = DataControlRowType.Header Then
-            e.Row.Cells(1).Text = texto1
-            e.Row.Cells(2).Text = texto2
+            e.Row.Cells(2).Text = texto1 & "<br/>(Participantes %)"
+            e.Row.Cells(5).Text = texto2 & "<br/>(Participantes %)"
+        End If
+
+        'Mes - Año - part1 - tasa1 - prom1 - part2 - tasa2 - prom2 - coef - conclusion - sugerencias
+
+
+        If e.Row.RowType = DataControlRowType.DataRow Then
+            If e.Row.RowIndex Mod 4 = 0 Then
+                e.Row.Cells(0).Attributes.Add("rowspan", "4")
+                e.Row.Cells(4).Attributes.Add("rowspan", "4")
+                e.Row.Cells(7).Attributes.Add("rowspan", "4")
+                e.Row.Cells(8).Attributes.Add("rowspan", "4")
+                e.Row.Cells(9).Attributes.Add("rowspan", "4")
+                e.Row.Cells(10).Attributes.Add("rowspan", "4")
+            Else
+                e.Row.Cells(0).Visible = False
+                e.Row.Cells(4).Visible = False
+                e.Row.Cells(7).Visible = False
+                e.Row.Cells(8).Visible = False
+                e.Row.Cells(9).Visible = False
+                e.Row.Cells(10).Visible = False
+            End If
         End If
     End Sub
 

@@ -68,6 +68,21 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarCorrelacionMensual(ByVal id_comite As Integer, ByVal tipo_1 As String, ByVal tipo_2 As String, ByVal anio_fin As Integer) As List(Of SemaforoBE)
+            Try
+                Dim iFact As ISemaforo
+                Dim oListadoFact As List(Of SemaforoBE) = Nothing
+
+                iFact = New SemaforoDL
+                oListadoFact = iFact.ListarCorrelacionMensual(id_comite, tipo_1, tipo_2, anio_fin)
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
 #End Region
 
     End Class

@@ -16,40 +16,67 @@
         <br />
         <table id="tblComite" runat="server" border="0" cellpadding="0" cellspacing="0" width="918px">
             <tr>
-                <td valign="top" style="width:700px;">
+                <td valign="top" style="width:720px;">
                     <asp:Label ID="lblMensaje" runat="server" Text="Para mostrar el semáforo, elegir los filtros deseados y hacer click en Generar."></asp:Label>
                     <asp:GridView ID="gvwSemaforo" runat="server" AutoGenerateColumns="false" AllowPaging="false"
-                        CssClass="tabla-grilla" Width="700px" BorderWidth="0px" BorderColor="White">
+                        CssClass="tabla-grilla" Width="720px" BorderWidth="0px" BorderColor="White">
                         <HeaderStyle CssClass="tabla-grilla-cabecera" />
                         <RowStyle CssClass="tabla-grilla-filas" />
                         <Columns>                            
-                            <asp:TemplateField HeaderText="Mes">
+                            <asp:TemplateField HeaderText="Mes" >
                                 <ItemTemplate>
                                     <asp:Label ID="lblMes" runat="server" Text='<%#Eval("nombre_mes") %>' ></asp:Label>
                                 </ItemTemplate>
-                            </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Porc1" Visible="false">
+                            </asp:TemplateField>   
+                            <asp:TemplateField HeaderText="Año" >
                                 <ItemTemplate>
-                                    <asp:Label ID="lblPorc1" runat="server" Text='<%#Eval("porc1") %>' ></asp:Label>
+                                    <asp:Label ID="lblAnio" runat="server" Text='<%#Eval("anio") %>' ></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>     
+                            <asp:TemplateField HeaderText="Participantes %" >
+                                <ItemTemplate>
+                                    <asp:Label ID="lblPart1" runat="server" Text='<%#Eval("porc1") & "% (" & Eval("participantes1") & ")" %>' ></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Porc2" Visible="false">
+                            <asp:TemplateField HeaderText="Tasa de Crecimiento % (base mismo mes del año anterior)" HeaderStyle-Width="100px">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblPorc2" runat="server" Text='<%#Eval("porc2") %>'></asp:Label>
+                                    <asp:Image ID="imgSemaforo" runat="server" ToolTip='<%#Eval("tasa1") %>' ImageUrl='<%#IIf(Eval("tasa1")>0,"~/App_Themes/img/aumentar.png",IIf(Eval("tasa1")<0,"~/App_Themes/img/disminuir.png","~/App_Themes/img/mantener.png")) %>' />
+                                    <asp:Label ID="lblTasa1" runat="server" Text='<%#Eval("tasa1") & "%" %>' ></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Coef" Visible="false" >
+                            <asp:TemplateField HeaderText="Promedio %" Visible="false">
                                 <ItemTemplate>
-                                    <asp:Label ID="lblCoef" runat="server" Text='<%#Eval("coeficiente") %>' ></asp:Label>
+                                    <asp:Label ID="lblPorc1" runat="server" Text='<%#Eval("promporc1") %>' ></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Conclusión">
+                            <asp:TemplateField HeaderText="Participantes %" >
                                 <ItemTemplate>
-                                    <asp:Image ID="imgSemaforo" runat="server" ToolTip='<%#Eval("coeficiente") %>' ImageUrl='<%#IIf(Eval("coeficiente")>0.5,"~/App_Themes/img/semaforo_verde.jpg",IIf(Eval("coeficiente")<-0.5,"~/App_Themes/img/semaforo_rojo.jpg","~/App_Themes/img/semaforo_amarillo.jpg")) %>' />
+                                    <asp:Label ID="lblPart2" runat="server" Text='<%#Eval("porc2") & "% (" & Eval("participantes2") & ")" %>' ></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Tasa de Crecimiento % (base mismo mes del año anterior)" HeaderStyle-Width="100px">
+                                <ItemTemplate>
+                                    <asp:Image ID="imgSemaforo" runat="server" ToolTip='<%#Eval("tasa2") %>' ImageUrl='<%#IIf(Eval("tasa2")>0,"~/App_Themes/img/aumentar.png",IIf(Eval("tasa2")<0,"~/App_Themes/img/disminuir.png","~/App_Themes/img/mantener.png")) %>' />
+                                    <asp:Label ID="lblTasa2" runat="server" Text='<%#Eval("tasa2") & "%" %>' ></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Promedio %" Visible="false">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblPorc2" runat="server" Text='<%#Eval("promporc2") %>'></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Coef">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblCoef" runat="server" Text='<%#Eval("correlacion") %>' ></asp:Label>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Conclusión" HeaderStyle-Width="130px">
+                                <ItemTemplate>
+                                    <asp:Image ID="imgSemaforo" runat="server" ToolTip='<%#Eval("correlacion") %>' ImageUrl='<%#IIf(Eval("correlacion")>0.5,"~/App_Themes/img/semaforo_verde.jpg",IIf(Eval("correlacion")<-0.5,"~/App_Themes/img/semaforo_rojo.jpg","~/App_Themes/img/semaforo_amarillo.jpg")) %>' />
                                     <%--<asp:Label ID="lblConclusion" runat="server" Text='<%#Eval("conclusion") %>'></asp:Label>--%>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Sugerencia">
+                            <asp:TemplateField HeaderText="Sugerencia" HeaderStyle-Width="130px">
                                 <ItemTemplate>
                                     <%--<asp:Label ID="lblSugerencia" runat="server" Text='<%#Eval("sugerencia") %>'></asp:Label>--%>
                                 </ItemTemplate>
@@ -75,7 +102,7 @@
                     </div>
                 </td>
                 <td style="width:10px;"></td>
-                <td valign="top" style="width:208px;">
+                <td valign="top" style="width:188px;">
                     <fieldset style="width:100%">
                         <legend>Filtros</legend>
                         <table border="0" cellpadding="0" cellspacing="0">

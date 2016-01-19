@@ -38,8 +38,6 @@ Namespace SGC.Model.Interfaces
 
         Function ListarParticipantesPorAnio() As List(Of FactActividadSumBE)
 
-        Function ListarCorrelacionMensual(ByVal id_comite As Integer, ByVal tipo_1 As String, ByVal tipo_2 As String, ByVal anio_fin As Integer) As List(Of FactActividadSumBE)
-
 #End Region
 
     End Interface

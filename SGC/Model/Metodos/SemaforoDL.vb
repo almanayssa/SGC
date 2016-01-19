@@ -144,6 +144,72 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ListarCorrelacionMensual(ByVal id_comite As Integer, ByVal tipo_1 As String, ByVal tipo_2 As String, ByVal anio_fin As Integer) As System.Collections.Generic.List(Of Entidades.SemaforoBE) Implements Interfaces.ISemaforo.ListarCorrelacionMensual
+            Dim oListadoFact As New List(Of SemaforoBE)
+            Dim oFact As SemaforoBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_RELACION_MENSUAL_X_TIPOS", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            Dim mes As String = ""
+            Dim part1 As Integer = 0
+            Dim part2 As Integer = 0
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.NVarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@tipo_1", SqlDbType.NVarChar).Value = tipo_1
+            sqlCmd.Parameters.Add("@tipo_2", SqlDbType.NVarChar).Value = tipo_2
+            sqlCmd.Parameters.Add("@anio_fin", SqlDbType.NVarChar).Value = anio_fin
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New SemaforoBE
+                    oFact.nombre_mes = dr("mes")
+                    oFact.anio = dr("anio")
+                    oFact.correlacion = dr("r")
+                    oFact.participantes1 = dr("part1")
+                    oFact.participantes2 = dr("part2")
+                    oFact.porc1 = dr("porc_part1")
+                    oFact.porc2 = dr("porc_part2")
+                    oFact.prompart1 = dr("prom_part1")
+                    oFact.prompart2 = dr("prom_part2")
+                    oFact.promporc1 = dr("prom_porc1")
+                    oFact.promporc2 = dr("prom_porc2")
+                    oFact.participantes = dr("total_part")
+                    If oFact.nombre_mes <> mes Then
+                        oFact.tasa1 = "0"
+                        oFact.tasa2 = "0"
+                        part1 = oFact.participantes1
+                        part2 = oFact.participantes2
+                        mes = oFact.nombre_mes
+                    Else
+                        If part1 = 0 Then
+                            oFact.tasa1 = 0
+                        Else
+                            oFact.tasa1 = Math.Round((oFact.participantes1 - part1) * 100.0 / part1, 2)
+                        End If
+                        If part2 = 0 Then
+                            oFact.tasa2 = 0
+                        Else
+                            oFact.tasa2 = Math.Round((oFact.participantes2 - part2) * 100.0 / part2, 2)
+                        End If
+
+                        part1 = oFact.participantes1
+                        part2 = oFact.participantes2
+                    End If
+                    oListadoFact.Add(oFact)
+                End While
+                dr.Close()
+                Return oListadoFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
 #End Region
 
     End Class

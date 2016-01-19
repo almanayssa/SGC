@@ -11,6 +11,8 @@ Namespace SGC.Model.Interfaces
         Function ListarSemaforoVariables(ByVal id_comite As String, ByVal id_tipo_1 As String, ByVal id_tipo_2 As String, ByVal anio_mes As String) As String
         Function ListarComparativoTipo(ByVal id_comite As String, ByVal id_tipo As String, ByVal fec_ini As DateTime, ByVal fec_fin As DateTime) As List(Of SemaforoBE)
 
+        Function ListarCorrelacionMensual(ByVal id_comite As Integer, ByVal tipo_1 As String, ByVal tipo_2 As String, ByVal anio_fin As Integer) As List(Of SemaforoBE)
+
 #End Region
 
     End Interface

@@ -102,6 +102,17 @@
             End Set
         End Property
 
+        Public Property nombre_mes As String
+        Public Property prompart1 As String
+        Public Property prompart2 As String
+        Public Property promporc1 As String
+        Public Property promporc2 As String
+        Public Property porc1 As String
+        Public Property porc2 As String
+        Public Property anio As String
+        Public Property tasa1 As String
+        Public Property tasa2 As String
+
 
     End Class
 

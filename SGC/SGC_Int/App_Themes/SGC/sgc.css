@@ -214,11 +214,13 @@ legend
 {
     height: 25px;
     font-size: 12px;
+    text-align: center;
+    border: 1px solid #69A603;
 }
 
 .tabla-grilla-celda
 {
-    border: 0px;
+    border: 1px;
     text-align: left;
     word-wrap: break-word;
     padding-left: 20px;

@@ -536,43 +536,6 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
-        Public Function ListarCorrelacionMensual(ByVal id_comite As Integer, ByVal tipo_1 As String, ByVal tipo_2 As String, ByVal anio_fin As Integer) As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarCorrelacionMensual
-            Dim oListadoFact As New List(Of FactActividadSumBE)
-            Dim oFact As FactActividadSumBE
-            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
-            Dim sqlConn As New SqlConnection(strConn)
-            Dim sqlCmd As New SqlCommand("USP_RELACION_MENSUAL_X_TIPOS", sqlConn)
-            Dim dr As SqlDataReader = Nothing
-            sqlCmd.CommandType = CommandType.StoredProcedure
-            sqlCmd.Parameters.Add("@id_comite", SqlDbType.NVarChar).Value = id_comite
-            sqlCmd.Parameters.Add("@tipo_1", SqlDbType.NVarChar).Value = tipo_1
-            sqlCmd.Parameters.Add("@tipo_2", SqlDbType.NVarChar).Value = tipo_2
-            sqlCmd.Parameters.Add("@anio_fin", SqlDbType.NVarChar).Value = anio_fin
-
-            Try
-                sqlConn.Open()
-                dr = sqlCmd.ExecuteReader()
-
-                While dr.Read()
-                    oFact = New FactActividadSumBE
-                    oFact.nombre_mes = dr("mes")
-                    oFact.coeficiente = dr("r")
-                    oFact.part1 = dr("prom_part1")
-                    oFact.part2 = dr("prom_part2")
-                    oFact.porc1 = dr("prom_porc1")
-                    oFact.porc2 = dr("prom_porc2")
-                    oFact.total_participantes = dr("total")
-                    oListadoFact.Add(oFact)
-                End While
-                dr.Close()
-                Return oListadoFact
-            Catch ex As System.Exception
-                Throw ex
-            Finally
-                sqlConn.Close()
-            End Try
-        End Function
-
 #End Region
 
     End Class
