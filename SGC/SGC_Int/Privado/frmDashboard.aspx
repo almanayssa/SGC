@@ -19,7 +19,7 @@
                                     <td>
                                         <table border="0" cellpadding="0" cellspacing="0" style="width:450px; height:152px; border: 1px solid #DADADA;">
                                             <tr>
-                                                <td class="dashboardTableTitle">CANTIDAD DE PARTICIPANTES POR COMITÉ</td>
+                                                <td class="dashboardTableTitle"><a href="frmParticipantesComite.aspx" class="linkD">CANTIDAD DE PARTICIPANTES POR COMITÉ</a></td>
                                             </tr>
                                             <tr>
                                                 <td><asp:Literal ID="ltrParticipantesComite" runat="server"></asp:Literal></td>
@@ -47,7 +47,7 @@
                                                 <td class="dashboardTableTitle">
                                                     <table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
                                                         <tr>
-                                                            <td>CANTIDAD DE ACTIVIDADES POR COMITÉ</td>
+                                                            <td><a href="frmActividadesComite.aspx" class="linkD">CANTIDAD DE ACTIVIDADES POR COMITÉ</a></td>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -101,7 +101,7 @@
                             <table border="0" cellpadding="0" cellspacing="0">
                                 <tr>
                                     <td>
-                                        <table border="0" cellpadding="0" cellspacing="0" style="width:450px; height:152px; border: 1px solid #DADADA;">
+                                        <table border="0" cellpadding="0" cellspacing="0" style="width:400px; height:152px; border: 1px solid #DADADA;">
                                             <tr>
                                                 <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAL MÁS SOLICITADO</a></td>
                                             </tr>
@@ -111,7 +111,7 @@
                                         </table>
                                     </td>
                                     <td style="padding-left:20px;">
-                                        <table border="0" cellpadding="0" cellspacing="0" style="width:450px; height:152px; border: 1px solid #DADADA;">
+                                        <table border="0" cellpadding="0" cellspacing="0" style="width:500px; height:152px; border: 1px solid #DADADA;">
                                             <tr>
                                                 <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAS MÁS PARTICIPATIVAS</a></td>
                                             </tr>

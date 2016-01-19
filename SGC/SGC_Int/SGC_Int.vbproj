@@ -117,10 +117,12 @@
     <Content Include="fusioncharts\themes\fusioncharts.theme.fint.js" />
     <Content Include="fusioncharts\themes\fusioncharts.theme.ocean.js" />
     <Content Include="fusioncharts\themes\fusioncharts.theme.zune.js" />
+    <Content Include="Privado\frmActividadesComite.aspx" />
     <Content Include="Privado\frmCorrelacion.aspx" />
     <Content Include="Privado\frmActualizarParametros.aspx" />
     <Content Include="Privado\frmComparativoTipo.aspx" />
     <Content Include="Privado\frmDashboard.aspx" />
+    <Content Include="Privado\frmParticipantesComite.aspx" />
     <Content Include="Privado\frmPersonalParticipante.aspx" />
     <Content Include="Privado\frmReporteActividades.aspx" />
     <Content Include="Privado\frmReporteComite.aspx" />
@@ -145,6 +147,13 @@
     </Compile>
     <Compile Include="frmLogin.aspx.vb">
       <DependentUpon>frmLogin.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privado\frmActividadesComite.aspx.designer.vb">
+      <DependentUpon>frmActividadesComite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmActividadesComite.aspx.vb">
+      <DependentUpon>frmActividadesComite.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\frmCorrelacion.aspx.designer.vb">
@@ -173,6 +182,13 @@
     </Compile>
     <Compile Include="Privado\frmDashboard.aspx.vb">
       <DependentUpon>frmDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Privado\frmParticipantesComite.aspx.designer.vb">
+      <DependentUpon>frmParticipantesComite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Privado\frmParticipantesComite.aspx.vb">
+      <DependentUpon>frmParticipantesComite.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Privado\frmPersonalParticipante.aspx.designer.vb">

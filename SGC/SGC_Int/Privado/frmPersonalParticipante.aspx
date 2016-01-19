@@ -10,16 +10,16 @@
         <table style="width: 100%; height: 450px" cellpadding="0" cellspacing="0" >
             <tr>
                 <td>
-                    <div style="position: relative; width: 450px; height: 450px; overflow: auto;"">
+                    <div style="position: relative; width: 430px; height: 450px; overflow: auto;"">
                         <asp:Literal ID="ltrPersonal" runat="server"></asp:Literal>
                     </div>
                 </td>
                 <td style="padding-left:20px">
-                    <div style="position: relative; width: 450px; height: 450px; overflow: auto; top: 0px; left: 0px;">
+                    <div style="position: relative; width: 470px; height: 450px; overflow: auto; top: 0px; left: 0px;">
                         <asp:Literal ID="ltrParticipante" runat="server"></asp:Literal>
                     </div>
                 </td>
             </tr>
-        </table>
+        </table>
     </div>
 </asp:Content>

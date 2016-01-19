@@ -40,15 +40,25 @@ Partial Class frmDashboard
         participacion.SetChartParameter(Chart.ChartParameter.chartHeight, "212")
 
         Dim oComites As List(Of FactActividadSumBE)
+        Dim oComite As FactActividadSumBE
         Dim str As New StringBuilder
+        Dim otros As Integer = 0
 
         oComites = bc.ListarComitesParticipacion()
 
-        str.Append("<chart caption='Cantidad de Participantes por Comité' showvalues='1' showLegend='1' animation='0' theme='fint'>")
+        str.Append("<chart caption='Cantidad de Participantes por Comité' formatnumberscale='0' showvalues='1' showLegend='1' animation='0' theme='fint'>")
 
-        For Each oComite As FactActividadSumBE In oComites
-            str.Append("<set label='").Append(oComite.nombre_comite).Append("' value='").Append(oComite.total_participantes).Append("' />")
+        For i As Integer = 0 To oComites.Count - 1
+            oComite = oComites.Item(i)
+
+            If i < 4 Then
+                str.Append("<set label='").Append(oComite.nombre_comite).Append("' value='").Append(oComite.total_participantes).Append("' />")
+            Else
+                otros += oComite.total_participantes
+            End If
         Next
+
+        str.Append("<set label='Otros' value='").Append(otros).Append("' />")
 
         str.Append("</chart>")
         participacion.SetData(str.ToString, Chart.DataFormat.xml)
@@ -67,7 +77,7 @@ Partial Class frmDashboard
 
         oComites = bc.ListarTiposParticipacion()
 
-        str.Append("<chart caption='Cantidad de Participantes por Tipo' showvalues='1' showLegend='1' animation='0' theme='fint'>")
+        str.Append("<chart caption='Cantidad de Participantes por Tipo' formatnumberscale='0' showvalues='1' showLegend='1' animation='0' theme='fint'>")
 
         For Each oComite As FactActividadSumBE In oComites
             str.Append("<set label='").Append(oComite.nombre_tipo).Append("' value='").Append(oComite.total_participantes).Append("' />")
@@ -114,15 +124,25 @@ Partial Class frmDashboard
         actividades.SetChartParameter(Chart.ChartParameter.chartHeight, "150")
 
         Dim oListadoActividad As List(Of FactActividadSumBE)
+        Dim oActividad As FactActividadSumBE
         Dim str As New StringBuilder
+        'Dim otros As Integer = 0
 
         oListadoActividad = bc.ListarComitesActividades()
 
-        str.Append("<chart caption='Actividades por Comité' xaxisname='Comité' yaxisname='Cantidad de Actividades' theme='fint'>")
+        str.Append("<chart caption='Actividades por Comité (Top 5)' formatnumberscale='0' xaxisname='Comité' yaxisname='Cantidad de Actividades' theme='fint'>")
 
-        For Each oActividad As FactActividadSumBE In oListadoActividad
+        For i As Integer = 0 To 4 'oListadoActividad.Count - 1
+            oActividad = oListadoActividad.Item(i)
+
+            'If i < 3 Then
             str.Append("<set label='").Append(oActividad.nombre_comite).Append("' value='").Append(oActividad.total_actividades).Append("' />")
+            'Else
+            'otros += oActividad.total_actividades
+            'End If
         Next
+
+        'str.Append("<set label='OTROS' value='").Append(otros).Append("' />")
 
         str.Append("</chart>")
 
@@ -142,7 +162,7 @@ Partial Class frmDashboard
 
         oListadoActividad = bc.ListarTiposActividades()
 
-        str.Append("<chart caption='Actividades por Tipo' xaxisname='Tipo de Actividad' yaxisname='Cantidad de Actividades' theme='fint'>")
+        str.Append("<chart caption='Actividades por Tipo' formatnumberscale='0' xaxisname='Tipo de Actividad' yaxisname='Cantidad de Actividades' theme='fint'>")
 
         For Each oActividad As FactActividadSumBE In oListadoActividad
             str.Append("<set label='").Append(oActividad.nombre_tipo).Append("' value='").Append(oActividad.total_actividades).Append("' />")
@@ -166,7 +186,7 @@ Partial Class frmDashboard
 
         oListadoPersona = bc.ListarPersonasMasParticipativas()
 
-        str.Append("<chart caption='Top 5' xaxisname='Persona' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
+        str.Append("<chart caption='Top 5' formatnumberscale='0' xaxisname='Persona' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
 
         If oListadoPersona IsNot Nothing AndAlso oListadoPersona.Count > 0 Then
             If oListadoPersona.Count <= 5 Then
@@ -203,7 +223,7 @@ Partial Class frmDashboard
 
         oListadoPersonal = bc.ListarPersonalMasSolicitado()
 
-        str.Append("<chart caption='Top 5' xaxisname='Personal' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
+        str.Append("<chart caption='Top 5' formatnumberscale='0' xaxisname='Personal' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
 
         If oListadoPersonal IsNot Nothing AndAlso oListadoPersonal.Count > 0 Then
             If oListadoPersonal.Count <= 5 Then
@@ -236,7 +256,7 @@ Partial Class frmDashboard
 
         oListadoParticipantes = bc.ListarParticipantesPorMes()
 
-        str.Append("<chart palette='2' caption='Rotación de Participantes Mes a Mes' subCaption='Para el año inmediato anterior (2015)' showlabels='1' showvalues='1' showsum='0' decimals='0' useroundedges='1' legendborderalpha='0' showborder='0' theme='fint'>")
+        str.Append("<chart palette='2' formatnumberscale='0' caption='Rotación de Participantes Mes a Mes' subCaption='Para el año inmediato anterior (2015)' showlabels='1' showvalues='1' showsum='0' decimals='0' useroundedges='1' legendborderalpha='0' showborder='0' theme='fint'>")
         str.Append("<categories>")
 
         For Each oParticipante As FactParticipanteBE In oListadoParticipantes
@@ -287,7 +307,7 @@ Partial Class frmDashboard
 
         oListadoActividad = bc.ListarParticipantesPorAnio()
 
-        str.Append("<chart caption='Tasa de Crecimiento Anual' subcaption='En relación al año inmediato anterior' showvalues='1' snumbersuffix='%' decimals='2' setadaptiveymin='1' setadaptivesymin='1' linethickness='2' pyaxisname='Cantidad de Participantes' syaxisname='Tasa de Crecimiento' theme='fint'>")
+        str.Append("<chart caption='Tasa de Crecimiento Anual' subcaption='En relación al año inmediato anterior' showvalues='1' snumbersuffix='%' pyaxisname='Cantidad de Participantes' syaxisname='Tasa de Crecimiento' formatnumberscale='0' theme='fint' valuefontcolor='#ffffff'>")
         str.Append("<categories>")
 
         For Each oActividad As FactActividadSumBE In oListadoActividad

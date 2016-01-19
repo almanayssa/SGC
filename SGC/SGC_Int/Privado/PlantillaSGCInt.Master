@@ -33,8 +33,7 @@
         </div>
         <br />
         <ul id="menu-bar">
-            <li id="liDashboard" runat="server"><a href="frmDashboard.aspx">Dashboard</a>
-            </li>
+            <li id="liDashboard" runat="server"><a href="frmDashboard.aspx">Dashboard</a></li>
             <li id="liSemaforo" runat="server"><a href="#">Semáforo</a>
             <ul>
             <li><a href="frmSemaforoPorFechas.aspx">Por Fechas</a></li>
@@ -48,6 +47,8 @@
             </li>
             <li id="liReportes" runat="server"><a href="#">Reportes</a>
             <ul>
+            <li><a href="frmParticipantesComite.aspx">Participantes por Comité</a></li>
+            <li><a href="frmActividadesComite.aspx">Actividades por Comité</a></li>
             <li><a href="frmSatisfaccionPorComite.aspx">Satisfacción por Comité</a></li>
             <li><a href="frmPersonalParticipante.aspx">Personal/Personas</a></li>
             </ul>
