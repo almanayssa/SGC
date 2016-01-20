@@ -89,7 +89,7 @@
                             </asp:TemplateField>--%>
                         </Columns>
                         <EmptyDataTemplate>
-                        <br/><asp:Label runat="server" ForeColor="Red"> No hay datos para la comparación elegida...</asp:Label>
+                        <br/><asp:Label runat="server" ForeColor="CadetBlue"> No hay datos para la comparación elegida...</asp:Label>
                         </EmptyDataTemplate>
                     </asp:GridView>
                     <div id="divLeyenda" runat="server" visible="false">
