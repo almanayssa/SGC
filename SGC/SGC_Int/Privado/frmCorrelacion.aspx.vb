@@ -95,9 +95,23 @@ Public Class frmCorrelacion
         If chkTasas.Checked Then
             gvwSemaforo.Columns.Item(3).Visible = True
             gvwSemaforo.Columns.Item(6).Visible = True
+            divTasa.Visible = True
+            'Image4.Visible = True
+            'Image5.Visible = True
+            'Image6.Visible = True
+            'Label4.Visible = True
+            'Label5.Visible = True
+            'Label6.Visible = True
         Else
             gvwSemaforo.Columns.Item(3).Visible = False
             gvwSemaforo.Columns.Item(6).Visible = False
+            divTasa.Visible = False
+            'Image4.Visible = False
+            'Image5.Visible = False
+            'Image6.Visible = False
+            'Label4.Visible = False
+            'Label5.Visible = False
+            'Label6.Visible = False
         End If
     End Sub
 

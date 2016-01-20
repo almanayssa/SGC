@@ -99,8 +99,11 @@
     <Content Include="App_Themes\img\disminuir.png" />
     <Content Include="App_Themes\img\mantener.png" />
     <Content Include="App_Themes\img\semaforo_amarillo.jpg" />
+    <Content Include="App_Themes\img\semaforo_amarillo.png" />
     <Content Include="App_Themes\img\semaforo_rojo.jpg" />
+    <Content Include="App_Themes\img\semaforo_rojo.png" />
     <Content Include="App_Themes\img\semaforo_verde.jpg" />
+    <Content Include="App_Themes\img\semaforo_verde.png" />
     <Content Include="App_Themes\SGC\dashboard.css" />
     <Content Include="App_Themes\SGC\sgc.css" />
     <Content Include="frmLogin.aspx" />

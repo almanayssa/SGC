@@ -112,6 +112,7 @@
         Public Property anio As String
         Public Property tasa1 As String
         Public Property tasa2 As String
+        Public Property sugerencia As String
 
 
     End Class

@@ -179,8 +179,8 @@ Namespace SGC.Model.Metodos
                     oFact.promporc2 = dr("prom_porc2")
                     oFact.participantes = dr("total_part")
                     If oFact.nombre_mes <> mes Then
-                        oFact.tasa1 = "0"
-                        oFact.tasa2 = "0"
+                        oFact.tasa1 = "0.00"
+                        oFact.tasa2 = "0.00"
                         part1 = oFact.participantes1
                         part2 = oFact.participantes2
                         mes = oFact.nombre_mes
@@ -188,17 +188,29 @@ Namespace SGC.Model.Metodos
                         If part1 = 0 Then
                             oFact.tasa1 = 0
                         Else
-                            oFact.tasa1 = Math.Round((oFact.participantes1 - part1) * 100.0 / part1, 2)
+                            oFact.tasa1 = Math.Round((oFact.participantes1 - part1) * 100.0 / part1 * 1.0, 2).ToString("##0.00")
                         End If
                         If part2 = 0 Then
                             oFact.tasa2 = 0
                         Else
-                            oFact.tasa2 = Math.Round((oFact.participantes2 - part2) * 100.0 / part2, 2)
+                            oFact.tasa2 = Math.Round((oFact.participantes2 - part2) * 100.0 / part2, 2).ToString("##0.00")
                         End If
 
                         part1 = oFact.participantes1
                         part2 = oFact.participantes2
                     End If
+
+                    oFact.sugerencia = "En base a la historia de los 4 años. Se sugiere aumentar cantidad de actividades en "
+                    If oFact.correlacion > 0.5 Then
+                        oFact.sugerencia &= "ambas"
+                    Else
+                        If oFact.promporc1 > oFact.promporc2 Then
+                            oFact.sugerencia &= dr("tipo1")
+                        Else
+                            oFact.sugerencia &= dr("tipo2")
+                        End If
+                    End If
+
                     oListadoFact.Add(oFact)
                 End While
                 dr.Close()

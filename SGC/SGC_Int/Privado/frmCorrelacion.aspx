@@ -28,7 +28,7 @@
                                     <asp:Label ID="lblMes" runat="server" Text='<%#Eval("nombre_mes") %>' ></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>   
-                            <asp:TemplateField HeaderText="Año" >
+                            <asp:TemplateField HeaderText="Año" HeaderStyle-Width="60px">
                                 <ItemTemplate>
                                     <asp:Label ID="lblAnio" runat="server" Text='<%#Eval("anio") %>' ></asp:Label>
                                 </ItemTemplate>
@@ -40,7 +40,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Tasa de Crecimiento % (base mismo mes del año anterior)" HeaderStyle-Width="100px">
                                 <ItemTemplate>
-                                    <asp:Image ID="imgSemaforo" runat="server" ToolTip='<%#Eval("tasa1") %>' ImageUrl='<%#IIf(Eval("tasa1")>0,"~/App_Themes/img/aumentar.png",IIf(Eval("tasa1")<0,"~/App_Themes/img/disminuir.png","~/App_Themes/img/mantener.png")) %>' />
+                                    <asp:Image ID="imgTasa1" ImageAlign="Left" runat="server" ToolTip='<%#Eval("tasa1") %>' ImageUrl='<%#IIf(Eval("tasa1")>0,"~/App_Themes/img/aumentar.png",IIf(Eval("tasa1")<0,"~/App_Themes/img/disminuir.png","~/App_Themes/img/mantener.png")) %>' />
                                     <asp:Label ID="lblTasa1" runat="server" Text='<%#Eval("tasa1") & "%" %>' ></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
@@ -56,7 +56,7 @@
                             </asp:TemplateField>
                             <asp:TemplateField HeaderText="Tasa de Crecimiento % (base mismo mes del año anterior)" HeaderStyle-Width="100px">
                                 <ItemTemplate>
-                                    <asp:Image ID="imgSemaforo" runat="server" ToolTip='<%#Eval("tasa2") %>' ImageUrl='<%#IIf(Eval("tasa2")>0,"~/App_Themes/img/aumentar.png",IIf(Eval("tasa2")<0,"~/App_Themes/img/disminuir.png","~/App_Themes/img/mantener.png")) %>' />
+                                    <asp:Image ID="imgTasa2" ImageAlign="Left" runat="server" ToolTip='<%#Eval("tasa2") %>' ImageUrl='<%#IIf(Eval("tasa2")>0,"~/App_Themes/img/aumentar.png",IIf(Eval("tasa2")<0,"~/App_Themes/img/disminuir.png","~/App_Themes/img/mantener.png")) %>' />
                                     <asp:Label ID="lblTasa2" runat="server" Text='<%#Eval("tasa2") & "%" %>' ></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
@@ -65,20 +65,20 @@
                                     <asp:Label ID="lblPorc2" runat="server" Text='<%#Eval("promporc2") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Coef">
+                            <asp:TemplateField HeaderText="Coeficiente de correlación" HeaderStyle-Width="70px">
                                 <ItemTemplate>
                                     <asp:Label ID="lblCoef" runat="server" Text='<%#Eval("correlacion") %>' ></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Conclusión" HeaderStyle-Width="130px">
+                            <asp:TemplateField HeaderText="Conclusión" HeaderStyle-Width="85px">
                                 <ItemTemplate>
-                                    <asp:Image ID="imgSemaforo" runat="server" ToolTip='<%#Eval("correlacion") %>' ImageUrl='<%#IIf(Eval("correlacion")>0.5,"~/App_Themes/img/semaforo_verde.jpg",IIf(Eval("correlacion")<-0.5,"~/App_Themes/img/semaforo_rojo.jpg","~/App_Themes/img/semaforo_amarillo.jpg")) %>' />
+                                    <asp:Image ID="imgSemaforo" runat="server" ToolTip='<%#Eval("correlacion") %>' ImageUrl='<%#IIf(Eval("correlacion")>0.5,"~/App_Themes/img/semaforo_verde.png",IIf(Eval("correlacion")<-0.5,"~/App_Themes/img/semaforo_rojo.png","~/App_Themes/img/semaforo_amarillo.png")) %>' />
                                     <%--<asp:Label ID="lblConclusion" runat="server" Text='<%#Eval("conclusion") %>'></asp:Label>--%>
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:TemplateField HeaderText="Sugerencia" HeaderStyle-Width="130px">
+                            <asp:TemplateField HeaderText="Sugerencia" HeaderStyle-Width="160px">
                                 <ItemTemplate>
-                                    <%--<asp:Label ID="lblSugerencia" runat="server" Text='<%#Eval("sugerencia") %>'></asp:Label>--%>
+                                    <asp:Label ID="lblSugerencia" runat="server" Text='<%#Eval("sugerencia") %>'></asp:Label>
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <%--<asp:TemplateField HeaderText="Correlación">
@@ -92,12 +92,20 @@
                     <div id="divLeyenda" runat="server" visible="true">
                         <fieldset>
                             <legend>Leyenda</legend>
-                            <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/img/semaforo_verde.jpg" />
+                            <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/img/semaforo_verde.png" />
                             <asp:Label ID="Label1" runat="server" Text="La relación de ambos tipos de actividad es positiva, ambos crecen o decrecen de una forma constante."></asp:Label><br />
-                            <asp:Image ID="Image2" runat="server" ImageUrl="~/App_Themes/img/semaforo_amarillo.jpg" />
+                            <asp:Image ID="Image2" runat="server" ImageUrl="~/App_Themes/img/semaforo_amarillo.png" />
                             <asp:Label ID="Label2" runat="server" Text="No hay una relación fuerte en el crecimiento de ambos tipos de actividad, el crecimiento de uno no influye en el crecimiento del otro tipo de actividad."></asp:Label><br />
-                            <asp:Image ID="Image3" runat="server" ImageUrl="~/App_Themes/img/semaforo_rojo.jpg" />
-                            <asp:Label ID="Label3" runat="server" Text="La relación entre las actividades de ambos tipos es negativa. Si una de ellas crece, la otra decrece."></asp:Label><br />                            
+                            <asp:Image ID="Image3" runat="server" ImageUrl="~/App_Themes/img/semaforo_rojo.png" />
+                            <asp:Label ID="Label3" runat="server" Text="La relación entre las actividades de ambos tipos es negativa. Si una de ellas crece, la otra decrece."></asp:Label><br />   
+                            <asp:Panel id="divTasa" runat="server" visible="false">
+                            <asp:Image ID="Image4" runat="server" ImageUrl="~/App_Themes/img/aumentar.png" />
+                            <asp:Label ID="Label4" runat="server" Text="El crecimiento es positivo respecto al año anterior"></asp:Label><br />
+                            <asp:Image ID="Image5" runat="server" ImageUrl="~/App_Themes/img/mantener.png" />
+                            <asp:Label ID="Label5" runat="server" Text="No hubo variación en el crecimiento respecto al año anterior"></asp:Label><br />
+                            <asp:Image ID="Image6" runat="server" ImageUrl="~/App_Themes/img/disminuir.png" />
+                            <asp:Label ID="Label6" runat="server" Text="El crecimiento fue negativo respecto al año anterior"></asp:Label><br />                          
+                            </asp:Panel>
                         </fieldset>                        
                     </div>
                 </td>
