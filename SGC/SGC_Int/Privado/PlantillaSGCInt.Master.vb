@@ -23,17 +23,17 @@ Public Class PlantillaSGCInt
                 liSemaforo.Attributes.Remove("class")
             End If
 
-            If Session("menu") = "comparativo" Then
-                liComparativo.Attributes.Add("class", "current")
-            Else
-                liComparativo.Attributes.Remove("class")
-            End If
+            'If Session("menu") = "comparativo" Then
+            '    liComparativo.Attributes.Add("class", "current")
+            'Else
+            '    liComparativo.Attributes.Remove("class")
+            'End If
 
-            If Session("menu") = "reportes" Then
-                liReportes.Attributes.Add("class", "current")
-            Else
-                liReportes.Attributes.Remove("class")
-            End If
+            'If Session("menu") = "reportes" Then
+            '    liReportes.Attributes.Add("class", "current")
+            'Else
+            '    liReportes.Attributes.Remove("class")
+            'End If
         End If
     End Sub
 

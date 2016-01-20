@@ -68,24 +68,6 @@ Partial Public Class PlantillaSGCInt
     Protected WithEvents liSemaforo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
 
     '''<summary>
-    '''liComparativo control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents liComparativo As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
-    '''liReportes control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents liReportes As Global.System.Web.UI.HtmlControls.HtmlGenericControl
-
-    '''<summary>
     '''MainContent control.
     '''</summary>
     '''<remarks>

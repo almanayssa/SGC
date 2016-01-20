@@ -138,16 +138,16 @@ Public Class frmBuscarDisponibilidadEspacio
     End Sub
 
     Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
-        Dim val As String = String.Empty
+        'Dim val As String = String.Empty
 
         For Each row As DataGridViewRow In dgvListado.Rows
             Dim value As Boolean = CType(dgvListado.Item(colSeleccionar.Index, row.Index).EditedFormattedValue, Boolean)
             Dim oEspacioRes As EspacioResBE = row.DataBoundItem
 
             If value Then
-                If val = String.Empty Then
-                    val = "1"
-                End If
+                'If val = String.Empty Then
+                '    val = "1"
+                'End If
 
                 If ListadoEspacioRes Is Nothing Then
                     ListadoEspacioRes = New List(Of EspacioResBE)
@@ -159,17 +159,17 @@ Public Class frmBuscarDisponibilidadEspacio
                 oEspacioRes.id_espacio = cboEspacio.SelectedValue
                 oEspacioRes.nombre_espacio = cboEspacio.GetItemText(cboEspacio.SelectedItem)
                 ListadoEspacioRes.Add(oEspacioRes)
-            Else
-                If val <> String.Empty Then
-                    val = "0"
-                    Exit For
-                End If
+                'Else
+                '    If val <> String.Empty Then
+                '        val = "0"
+                '        Exit For
+                '    End If
             End If
         Next
 
-        If val = "0" Then
-            MessageBox.Show("No se puede elegir horas salteadas", "Información")
-        End If
+        'If val = "0" Then
+        '    MessageBox.Show("No se puede elegir horas salteadas", "Información")
+        'End If
     End Sub
 
 #End Region

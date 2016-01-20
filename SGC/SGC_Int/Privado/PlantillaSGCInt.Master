@@ -34,25 +34,25 @@
         <br />
         <ul id="menu-bar">
             <li id="liDashboard" runat="server"><a href="frmDashboard.aspx">Dashboard</a></li>
-            <li id="liSemaforo" runat="server"><a href="#">Semáforo</a>
+            <li id="liSemaforo" runat="server"><a href="frmCorrelacion.aspx">Semáforo</a>
             <ul>
-            <li><a href="frmSemaforoPorFechas.aspx">Por Fechas</a></li>
+            <li><%--<a href="frmSemaforoPorFechas.aspx">Por Fechas</a>--%></li>
             <%--<li><a href="frmSemaforoPorMes.aspx">Por Mes</a></li>--%>
             </ul>
             </li>
-            <li id="liComparativo" runat="server"><a href="#">Comparativo</a>
+            <%--<li id="liComparativo" runat="server"><a href="#">Comparativo</a>
             <ul>
             <li><a href="frmComparativoTipo.aspx">Tipo</a></li>
             </ul>
-            </li>
-            <li id="liReportes" runat="server"><a href="#">Reportes</a>
-            <ul>
-            <li><a href="frmParticipantesComite.aspx">Participantes por Comité</a></li>
-            <li><a href="frmActividadesComite.aspx">Actividades por Comité</a></li>
-            <li><a href="frmSatisfaccionPorComite.aspx">Satisfacción por Comité</a></li>
+            </li>--%>
+            <%--<li id="liReportes" runat="server"><a href="#">Reportes</a>
+            <ul>--%>
+            <li><a href="frmParticipantesComite.aspx">Participantes</a></li>
+            <li><a href="frmActividadesComite.aspx">Actividades</a></li>
+            <li><a href="frmSatisfaccionPorComite.aspx">Satisfacción</a></li>
             <li><a href="frmPersonalParticipante.aspx">Personal/Personas</a></li>
-            </ul>
-            </li>
+            <%--</ul>
+            </li>--%>
             <%--<li><a href="#">Parámetros</a>
             <ul>
             <li><a href="frmActualizarParametros.aspx">Actualizar Parámetros</a></li>
