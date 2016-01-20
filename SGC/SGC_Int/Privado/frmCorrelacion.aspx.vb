@@ -83,6 +83,13 @@ Public Class frmCorrelacion
         texto2 = ddlTipoActividad2.SelectedItem.Text
 
         Dim Listado As List(Of SemaforoBE) = bc.ListarCorrelacionMensual(ddlComite.SelectedValue, id_tipo_1, id_tipo_2, Now.Year)
+
+        If Listado IsNot Nothing AndAlso Listado.Count > 0 Then
+            divLeyenda.Visible = True
+        Else
+            divLeyenda.Visible = False
+        End If
+
         gvwSemaforo.DataSource = Listado
         gvwSemaforo.DataBind()
 

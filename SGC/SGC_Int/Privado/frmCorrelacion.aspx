@@ -19,7 +19,7 @@
                 <td valign="top" style="width:720px;">
                     <asp:Label ID="lblMensaje" runat="server" Text="Para mostrar el semáforo, elegir los filtros deseados y hacer click en Generar."></asp:Label>
                     <asp:GridView ID="gvwSemaforo" runat="server" AutoGenerateColumns="false" AllowPaging="false"
-                        CssClass="tabla-grilla" Width="720px" BorderWidth="0px" BorderColor="White">
+                        CssClass="tabla-grilla" Width="720px" BorderWidth="0px" BorderColor="White"  >
                         <HeaderStyle CssClass="tabla-grilla-cabecera" />
                         <RowStyle CssClass="tabla-grilla-filas" />
                         <Columns>                            
@@ -88,8 +88,11 @@
                                 </ItemTemplate>
                             </asp:TemplateField>--%>
                         </Columns>
+                        <EmptyDataTemplate>
+                        <br/><asp:Label runat="server" ForeColor="Red"> No hay datos para la comparación elegida...</asp:Label>
+                        </EmptyDataTemplate>
                     </asp:GridView>
-                    <div id="divLeyenda" runat="server" visible="true">
+                    <div id="divLeyenda" runat="server" visible="false">
                         <fieldset>
                             <legend>Leyenda</legend>
                             <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/img/semaforo_verde.png" />
@@ -100,11 +103,11 @@
                             <asp:Label ID="Label3" runat="server" Text="La relación entre las actividades de ambos tipos es negativa. Si una de ellas crece, la otra decrece."></asp:Label><br />   
                             <asp:Panel id="divTasa" runat="server" visible="false">
                             <asp:Image ID="Image4" runat="server" ImageUrl="~/App_Themes/img/aumentar.png" />
-                            <asp:Label ID="Label4" runat="server" Text="El crecimiento es positivo respecto al año anterior"></asp:Label><br />
+                            <asp:Label ID="Label4" runat="server" Text="La tasa de crecimiento es positivo respecto al año anterior"></asp:Label><br />
                             <asp:Image ID="Image5" runat="server" ImageUrl="~/App_Themes/img/mantener.png" />
-                            <asp:Label ID="Label5" runat="server" Text="No hubo variación en el crecimiento respecto al año anterior"></asp:Label><br />
+                            <asp:Label ID="Label5" runat="server" Text="No hubo variación en la tasa de crecimiento respecto al año anterior"></asp:Label><br />
                             <asp:Image ID="Image6" runat="server" ImageUrl="~/App_Themes/img/disminuir.png" />
-                            <asp:Label ID="Label6" runat="server" Text="El crecimiento fue negativo respecto al año anterior"></asp:Label><br />                          
+                            <asp:Label ID="Label6" runat="server" Text="La tasa de crecimiento fue negativo respecto al año anterior"></asp:Label><br />                          
                             </asp:Panel>
                         </fieldset>                        
                     </div>
