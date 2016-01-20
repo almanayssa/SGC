@@ -37,10 +37,10 @@ Public Class frmPersonalParticipante
 
         oListadoPersona = bc.ListarPersonasMasParticipativas()
 
-        str.Append("<chart caption='Personas más participativas' subCaption='Respecto a la cantidad de actividades en que se involucró' xaxisname='Persona' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0' formatnumberscale='0'>")
+        str.Append("<chart caption='Personas más participativas' subCaption='(Respecto a la cantidad de actividades en que se involucró)' subCaptionFontBold = '0' xaxisname='Persona' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0' formatnumberscale='0'>")
 
         For Each oPersona As FactParticipanteBE In oListadoPersona
-            str.Append("<set label='").Append(oPersona.nombre_persona).Append("' value='").Append(oPersona.cant_actividades).Append("' tooltext='Número de actividades en las que participó la persona' />")
+            str.Append("<set label='").Append(oPersona.nombre_persona).Append("' value='").Append(oPersona.cant_actividades).Append("' tooltext='Número de actividades en las que participó la persona' color='#9ACEFE' />")
         Next
 
         Dim total As Integer = bc.ObtenerTotalActividades()
@@ -66,10 +66,10 @@ Public Class frmPersonalParticipante
 
         oListadoPersonal = bc.ListarPersonalMasSolicitado()
 
-        str.Append("<chart caption='Personal más solicitado' subCaption='Respecto a la cantidad de actividades en que se involucró' xaxisname='Personal' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0' formatnumberscale='0'>")
+        str.Append("<chart caption='Personal más solicitado' subCaption='(Respecto a la cantidad de actividades en que se involucró)' subCaptionFontBold = '0' xaxisname='Personal' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0' formatnumberscale='0'>")
 
         For Each oPersonal As FactPersonalBE In oListadoPersonal
-            str.Append("<set label='").Append(oPersonal.nombre_personal).Append("' value='").Append(oPersonal.cant_actividades).Append("' tooltext='Número de actividades en las que participó el personal' />")
+            str.Append("<set label='").Append(oPersonal.nombre_personal).Append("' value='").Append(oPersonal.cant_actividades).Append("' tooltext='Número de actividades en las que participó el personal' color='#92DAB0' />")
         Next
 
         str.Append("</chart>")
