@@ -172,7 +172,7 @@ Namespace SGC.Controller
                 If oActividad.ListaActividadDetalle IsNot Nothing Then
                     For Each oActividadDetalle As ActividadDetalleBE In oActividad.ListaActividadDetalle
                         oActividadDetalle.id_actividad = id_actividad
-                        oActividadDetalle.vacantes = oActividad.vacantes
+                        'oActividadDetalle.vacantes = oActividad.vacantes
                         iActividad.InsertarActividadDetalle(oActividadDetalle)
                     Next
                 End If
@@ -240,7 +240,7 @@ Namespace SGC.Controller
                 If oActividad.ListaActividadDetalle IsNot Nothing Then
                     For Each oActividadDetalle As ActividadDetalleBE In oActividad.ListaActividadDetalle
                         oActividadDetalle.id_actividad = oActividad.id_actividad
-                        oActividadDetalle.vacantes = oActividad.vacantes
+                        'oActividadDetalle.vacantes = oActividad.vacantes
                         affectedRows += iActividad.InsertarActividadDetalle(oActividadDetalle)
                     Next
                 End If

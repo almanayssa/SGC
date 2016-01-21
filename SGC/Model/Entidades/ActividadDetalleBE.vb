@@ -72,15 +72,15 @@
             End Set
         End Property
 
-        Private _vacantes As Integer?
-        Public Property vacantes() As Integer?
-            Get
-                Return _vacantes
-            End Get
-            Set(ByVal value As Integer?)
-                _vacantes = value
-            End Set
-        End Property
+        'Private _vacantes As Integer?
+        'Public Property vacantes() As Integer?
+        '    Get
+        '        Return _vacantes
+        '    End Get
+        '    Set(ByVal value As Integer?)
+        '        _vacantes = value
+        '    End Set
+        'End Property
 
         Private _des_sede As String
         Public Property des_sede() As String

@@ -492,7 +492,7 @@ Namespace SGC.Model.Metodos
             sqlCmd.Parameters.Add("@hora_fin", SqlDbType.Time).Value = oActividadDetalle.hora_fin
             sqlCmd.Parameters.Add("@id_sede", SqlDbType.VarChar).Value = oActividadDetalle.id_sede
             sqlCmd.Parameters.Add("@id_espacio", SqlDbType.Int).Value = oActividadDetalle.id_espacio
-            sqlCmd.Parameters.Add("@vacantes", SqlDbType.Int).Value = oActividadDetalle.vacantes
+            'sqlCmd.Parameters.Add("@vacantes", SqlDbType.Int).Value = oActividadDetalle.vacantes
 
             Try
                 sqlConn.Open()

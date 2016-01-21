@@ -307,7 +307,7 @@ Partial Class frmDashboard
 
         oListadoActividad = bc.ListarParticipantesPorAnio()
 
-        str.Append("<chart caption='Tasa de Crecimiento Anual' subcaption='En relación al año inmediato anterior' showvalues='1' snumbersuffix='%' pyaxisname='Cantidad de Participantes' syaxisname='Tasa de Crecimiento' formatnumberscale='0' theme='fint' valuefontcolor='#ffffff'>")
+        str.Append("<chart caption='Tasa de Crecimiento Anual de todos los Comités agregados' subcaption='(Para toda la historia se mide respecto al año anterior)' showvalues='1' snumbersuffix='%' pyaxisname='Incremento de Participantes respecto al año anterior' syaxisname='Tasa de Crecimiento' formatnumberscale='0' theme='fint' valuefontcolor='#000000'>")
         str.Append("<categories>")
 
         For Each oActividad As FactActividadSumBE In oListadoActividad
@@ -316,10 +316,19 @@ Partial Class frmDashboard
 
         str.Append("</categories>")
 
-        str.Append("<dataset seriesname='Cantidad de Participantes'>")
+        str.Append("<dataset seriesname='Incremento de Participantes'>")
 
-        For Each oActividad As FactActividadSumBE In oListadoActividad
-            str.Append("<set value='").Append(oActividad.total_participantes).Append("' />")
+        Dim oAct As FactActividadSumBE
+        Dim part_anio_anterior As Integer = 0
+
+        For i As Integer = 0 To oListadoActividad.Count - 1
+            oAct = oListadoActividad.Item(i)
+            If i = 0 Then
+                str.Append("<set value='0' />")
+            Else
+                str.Append("<set value='").Append(oAct.total_participantes - part_anio_anterior).Append("' />")
+            End If
+            part_anio_anterior = oAct.total_participantes
         Next
 
         str.Append("</dataset>")

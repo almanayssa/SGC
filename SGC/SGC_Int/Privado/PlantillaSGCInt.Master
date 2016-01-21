@@ -35,10 +35,10 @@
         <ul id="menu-bar">
             <li id="liDashboard" runat="server"><a href="frmDashboard.aspx">Dashboard</a></li>
             <li id="liSemaforo" runat="server"><a href="frmCorrelacion.aspx">Semáforo</a>
-            <ul>
-            <li><%--<a href="frmSemaforoPorFechas.aspx">Por Fechas</a>--%></li>
-            <%--<li><a href="frmSemaforoPorMes.aspx">Por Mes</a></li>--%>
-            </ul>
+            <%--<ul>
+            <li><a href="frmSemaforoPorFechas.aspx">Por Fechas</a></li>
+            <li><a href="frmSemaforoPorMes.aspx">Por Mes</a></li>
+            </ul>--%>
             </li>
             <%--<li id="liComparativo" runat="server"><a href="#">Comparativo</a>
             <ul>

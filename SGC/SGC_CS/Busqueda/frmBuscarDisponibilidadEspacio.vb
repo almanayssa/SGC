@@ -164,6 +164,7 @@ Public Class frmBuscarDisponibilidadEspacio
                 '        val = "0"
                 '        Exit For
                 '    End If
+                Me.Close()
             End If
         Next
 

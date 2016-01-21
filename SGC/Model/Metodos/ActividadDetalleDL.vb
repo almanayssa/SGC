@@ -38,7 +38,7 @@ Namespace SGC.Model.Metodos
                     oActividadDetalle.id_lugar = dr("id_lugar")
                     oActividadDetalle.id_espacio = dr("id_espacio")
                     oActividadDetalle.nombre_espacio = dr("nombre")
-                    oActividadDetalle.vacantes = dr("vacantes")
+                    'oActividadDetalle.vacantes = dr("vacantes")
                     oListadoActividadDetalles.Add(oActividadDetalle)
                 End While
                 dr.Close()
