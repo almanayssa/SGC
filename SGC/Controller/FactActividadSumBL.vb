@@ -128,6 +128,23 @@ Namespace SGC.Controller
             End Try
         End Function
 
+        Public Function ListarMesesParticipacion2(ByVal id_comite As String, ByVal anio_fin As Integer) As List(Of FactActividadSumBE)
+            Try
+                Dim iFact As IFactActividadSum
+                Dim oListadoFact As List(Of FactActividadSumBE) = Nothing
+
+                iFact = New FactActividadSumDL
+                oListadoFact = iFact.ListarMesesParticipacion2(id_comite, anio_fin)
+
+                Return oListadoFact
+
+            Catch ex As Exception
+                Return Nothing
+            End Try
+        End Function
+
+
+
         Public Function ListarComitesParticipacion() As List(Of FactActividadSumBE)
             Try
                 Dim iFact As IFactActividadSum

@@ -22,6 +22,8 @@ Namespace SGC.Model.Interfaces
 
         Function ListarMesesParticipacion(ByVal fecIni As Date, ByVal fecFin As Date, ByVal id_comite As String, ByVal id_tipo As String) As List(Of FactActividadSumBE)
 
+        Function ListarMesesParticipacion2(ByVal id_comite As String, ByVal anio_fin As Integer) As List(Of FactActividadSumBE)
+
         Function ListarComitesParticipacion() As List(Of FactActividadSumBE)
 
         Function ListarTiposParticipacion() As List(Of FactActividadSumBE)

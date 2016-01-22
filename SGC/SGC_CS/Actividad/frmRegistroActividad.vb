@@ -733,12 +733,19 @@ Public Class frmRegistroActividad
 
             msjTipo &= vbCrLf & "SUGERENCIA POR MES" & vbCrLf & vbCrLf
 
+            ''opcion por fechas
+            'Dim oListadoMes As List(Of FactActividadSumBE) = bc.ListarMesesParticipacion(fecIni, Now, cboComite.SelectedValue, Nothing)
 
-            Dim oListadoMes As List(Of FactActividadSumBE) = bc.ListarMesesParticipacion(fecIni, Now, cboComite.SelectedValue, Nothing)
-
+            '' opcion por meses
+            Dim oListadoMes As List(Of FactActividadSumBE) = bc.ListarMesesParticipacion2(cboComite.SelectedValue, Now.Year)
 
             For Each oFact As FactActividadSumBE In oListadoMes
-                msjTipo &= "- " & MonthName(oFact.mes.Substring(4, 2)).ToUpper & " " & oFact.mes.Substring(0, 4) & vbCrLf
+                ''opcion por fechas
+                'msjTipo &= "- " & MonthName(oFact.mes.Substring(4, 2)).ToUpper & " " & oFact.mes.Substring(0, 4) & vbCrLf
+
+                '' opcion por meses
+                msjTipo &= "- " & oFact.mes.ToUpper & vbCrLf
+
                 msjTipo &= "  " & oFact.obs_max_part & " pers.  "
                 If oFact.obs_min_part <> "" Then
                     msjTipo &= "  " & oFact.obs_min_part & " pers."

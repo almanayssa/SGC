@@ -320,6 +320,40 @@ Namespace SGC.Model.Metodos
             End Try
         End Function
 
+        Public Function ListarMesesParticipacion2(id_comite As String, anio_fin As Integer) As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarMesesParticipacion2
+            Dim oListadoFact As New List(Of FactActividadSumBE)
+            Dim oFact As FactActividadSumBE
+            Dim strConn As String = ConfigurationManager.ConnectionStrings("SGCBI").ConnectionString
+            Dim sqlConn As New SqlConnection(strConn)
+            Dim sqlCmd As New SqlCommand("USP_LISTAR_PARTICIPACION_X_MES2", sqlConn)
+            Dim dr As SqlDataReader = Nothing
+            sqlCmd.CommandType = CommandType.StoredProcedure
+            sqlCmd.Parameters.Add("@id_comite", SqlDbType.VarChar).Value = id_comite
+            sqlCmd.Parameters.Add("@anio_fin", SqlDbType.Int).Value = anio_fin
+
+            Try
+                sqlConn.Open()
+                dr = sqlCmd.ExecuteReader()
+
+                While dr.Read()
+                    oFact = New FactActividadSumBE
+                    oFact.mes = dr("mes")
+                    oFact.max_part = dr("TIPO_MX")
+                    oFact.min_part = dr("TIPO_MN")
+                    oFact.obs_max_part = dr("OBS_TIPO_MX")
+                    oFact.obs_min_part = dr("OBS_TIPO_MN")
+                    oFact.coeficiente = dr("R")
+                    oListadoFact.Add(oFact)
+                End While
+                dr.Close()
+                Return oListadoFact
+            Catch ex As System.Exception
+                Throw ex
+            Finally
+                sqlConn.Close()
+            End Try
+        End Function
+
         Public Function ListarComitesParticipacion() As System.Collections.Generic.List(Of Entidades.FactActividadSumBE) Implements Interfaces.IFactActividadSum.ListarComitesParticipacion
             Dim oListadoFact As New List(Of FactActividadSumBE)
             Dim oFact As FactActividadSumBE
