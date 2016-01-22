@@ -103,7 +103,7 @@
                                     <td>
                                         <table border="0" cellpadding="0" cellspacing="0" style="width:400px; height:152px; border: 1px solid #DADADA;">
                                             <tr>
-                                                <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAL MÁS SOLICITADO</a></td>
+                                                <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAL MÁS SOLICITADO</a><br />(Con respecto a toda la historia)</td>
                                             </tr>
                                             <tr>
                                                 <td><asp:Literal ID="ltrPersonal" runat="server"></asp:Literal></td>
@@ -113,7 +113,7 @@
                                     <td style="padding-left:20px;">
                                         <table border="0" cellpadding="0" cellspacing="0" style="width:500px; height:152px; border: 1px solid #DADADA;">
                                             <tr>
-                                                <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAS MÁS PARTICIPATIVAS</a></td>
+                                                <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAS MÁS PARTICIPATIVAS</a><br />(Con respecto a toda la historia)</td>
                                             </tr>
                                             <tr>
                                                 <td><asp:Literal ID="ltrParticipantes" runat="server"></asp:Literal></td>

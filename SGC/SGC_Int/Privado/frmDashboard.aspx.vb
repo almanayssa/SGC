@@ -178,7 +178,7 @@ Partial Class frmDashboard
         Dim participantes As New Chart()
         participantes.SetChartParameter(Chart.ChartParameter.chartId, "myChart6")
         participantes.SetChartParameter(Chart.ChartParameter.chartType, "bar2d")
-        participantes.SetChartParameter(Chart.ChartParameter.chartWidth, "450")
+        participantes.SetChartParameter(Chart.ChartParameter.chartWidth, "500")
         participantes.SetChartParameter(Chart.ChartParameter.chartHeight, "152")
 
         Dim oListadoPersona As List(Of FactParticipanteBE)
@@ -186,7 +186,7 @@ Partial Class frmDashboard
 
         oListadoPersona = bc.ListarPersonasMasParticipativas()
 
-        str.Append("<chart caption='Top 5' subCaption='(Con respecto a toda la historia)' subCaptionFontBold = '0' formatnumberscale='0' xaxisname='Persona' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' showvalues='1' showcanvasborder='0' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
+        str.Append("<chart caption='Top 5' formatnumberscale='0' xaxisname='Persona' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' showvalues='1' showcanvasborder='0' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
 
         If oListadoPersona IsNot Nothing AndAlso oListadoPersona.Count > 0 Then
             If oListadoPersona.Count <= 5 Then
@@ -215,7 +215,7 @@ Partial Class frmDashboard
         Dim personal As New Chart()
         personal.SetChartParameter(Chart.ChartParameter.chartId, "myChart7")
         personal.SetChartParameter(Chart.ChartParameter.chartType, "bar2d")
-        personal.SetChartParameter(Chart.ChartParameter.chartWidth, "450")
+        personal.SetChartParameter(Chart.ChartParameter.chartWidth, "400")
         personal.SetChartParameter(Chart.ChartParameter.chartHeight, "152")
 
         Dim oListadoPersonal As List(Of FactPersonalBE)
@@ -223,7 +223,7 @@ Partial Class frmDashboard
 
         oListadoPersonal = bc.ListarPersonalMasSolicitado()
 
-        str.Append("<chart caption='Top 5' subCaption='(Con respecto a toda la historia)' subCaptionFontBold = '0' formatnumberscale='0' xaxisname='Personal' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' showvalues='1' showcanvasborder='0' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'")
+        str.Append("<chart caption='Top 5' formatnumberscale='0' xaxisname='Personal' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' showvalues='1' showcanvasborder='0' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
 
         If oListadoPersonal IsNot Nothing AndAlso oListadoPersonal.Count > 0 Then
             If oListadoPersonal.Count <= 5 Then
