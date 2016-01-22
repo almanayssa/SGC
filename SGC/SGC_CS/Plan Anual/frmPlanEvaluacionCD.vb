@@ -232,7 +232,7 @@ Public Class frmPlanEvaluacionCD
                     MessageBox.Show("Error al aprobar", "Información")
                     Exit Sub
                 Else
-                    MessageBox.Show("La(s) actividad(es) fue(fueron) aprobada(s) satisfactoriamente", "Información")
+                    MessageBox.Show("El(Los) plan(es) fue(fueron) aprobado(s) satisfactoriamente", "Información")
                     ListarPlanes()
                 End If
             End If
@@ -263,7 +263,7 @@ Public Class frmPlanEvaluacionCD
             MessageBox.Show("Seleccione un Plan Anual al menos", "Información")
             Exit Sub
         Else
-            If MsgBox("Seguro que desea rechazar la(s) actividad(es)?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+            If MsgBox("Seguro que desea rechazar el(los) plan(es)?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 Dim affectedRows As Integer = 0
                 affectedRows = bc.InsertarSeguimientoPlanes(oNewListadoPlanes, 3, 5)
 

@@ -533,7 +533,7 @@ Public Class frmPlanEvaluacionPGC
                     MessageBox.Show("Error al enviar", "Información")
                     Exit Sub
                 Else
-                    MessageBox.Show("La(s) actividad(es) fue(fueron) enviada(s) satisfactoriamente", "Información")
+                    MessageBox.Show("El(Los) plan(es) fue(fueron) enviado(s) satisfactoriamente", "Información")
                     listarPlanes()
                 End If
             End If
