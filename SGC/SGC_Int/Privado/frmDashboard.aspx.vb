@@ -186,7 +186,7 @@ Partial Class frmDashboard
 
         oListadoPersona = bc.ListarPersonasMasParticipativas()
 
-        str.Append("<chart caption='Top 5' formatnumberscale='0' xaxisname='Persona' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
+        str.Append("<chart caption='Top 5' subCaption='(Con respecto a toda la historia)' subCaptionFontBold = '0' formatnumberscale='0' xaxisname='Persona' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' showvalues='1' showcanvasborder='0' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
 
         If oListadoPersona IsNot Nothing AndAlso oListadoPersona.Count > 0 Then
             If oListadoPersona.Count <= 5 Then
@@ -223,7 +223,7 @@ Partial Class frmDashboard
 
         oListadoPersonal = bc.ListarPersonalMasSolicitado()
 
-        str.Append("<chart caption='Top 5' formatnumberscale='0' xaxisname='Personal' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' divlinecolor='CCCCCC' showvalues='1' showcanvasborder='0' canvasbordercolor='CCCCCC' canvasborderthickness='1' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' numberscalevalue='1000,1000,1000' numberscaleunit='K,M,B' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'>")
+        str.Append("<chart caption='Top 5' subCaption='(Con respecto a toda la historia)' subCaptionFontBold = '0' formatnumberscale='0' xaxisname='Personal' yaxisname='Cantidad de Actividades' plotgradientcolor='' bgcolor='FFFFFF' showplotborder='0' showvalues='1' showcanvasborder='0' showyaxisvalues='0' showlegend='1' showshadow='0' labelsepchar=': ' basefontcolor='000000' labeldisplay='AUTO' palettecolors='#008ee4,#9b59b6,#6baa01,#e44a00,#f8bd19,#d35400,#bdc3c7,#95a5a6,#34495e,#1abc9c' showborder='0'")
 
         If oListadoPersonal IsNot Nothing AndAlso oListadoPersonal.Count > 0 Then
             If oListadoPersonal.Count <= 5 Then
