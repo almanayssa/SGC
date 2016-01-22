@@ -93,6 +93,8 @@ Public Class frmCorrelacion
         gvwSemaforo.DataSource = Listado
         gvwSemaforo.DataBind()
 
+        lblMensaje.Visible = False
+
         If chkCoeficiente.Checked Then
             gvwSemaforo.Columns.Item(8).Visible = True
         Else

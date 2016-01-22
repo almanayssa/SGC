@@ -11,7 +11,7 @@
     <ContentTemplate>
     <div class="contenedor-pagina">
         <div class="contenedor-pagina-titulo">
-            SEMÁFORO DE ACTIVIDADES POR RANGO DE FECHAS
+            SEMÁFORO DE ACTIVIDADES (Respecto a toda la historia)
         </div>
         <br />
         <table id="tblComite" runat="server" border="0" cellpadding="0" cellspacing="0" width="918px">
