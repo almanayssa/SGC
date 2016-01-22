@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="contenedor-pagina">
         <div class="contenedor-pagina-titulo">
-            NIVEL DE SATISFACCIÓN POR COMITÉ
+            NIVEL DE SATISFACCIÓN POR COMITÉ<br />(Con respecto a toda la historia)
         </div>
         <br />
         <table border="0" cellpadding="2" cellspacing="2" width="100%">

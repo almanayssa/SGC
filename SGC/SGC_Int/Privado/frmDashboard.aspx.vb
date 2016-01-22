@@ -307,7 +307,7 @@ Partial Class frmDashboard
 
         oListadoActividad = bc.ListarParticipantesPorAnio()
 
-        str.Append("<chart caption='Tasa de Crecimiento Anual de todos los Comités agregados' subcaption='(Para toda la historia se mide respecto al año anterior)' showvalues='1' snumbersuffix='%' pyaxisname='Incremento de Participantes respecto al año anterior' syaxisname='Tasa de Crecimiento' formatnumberscale='0' theme='fint' valuefontcolor='#000000'>")
+        str.Append("<chart caption='Tasa de Crecimiento Anual de todos los Comités agregados' subcaption='(Para toda la historia se mide con respecto al año inmediato anterior)' snumbersuffix='%' pyaxisname='Incremento de Participantes respecto al año anterior' syaxisname='Tasa de Crecimiento' formatnumberscale='0' theme='fint' valuefontcolor='#000000'>")
         str.Append("<categories>")
 
         For Each oActividad As FactActividadSumBE In oListadoActividad
@@ -316,7 +316,7 @@ Partial Class frmDashboard
 
         str.Append("</categories>")
 
-        str.Append("<dataset seriesname='Incremento de Participantes'>")
+        str.Append("<dataset seriesname='Incremento de Participantes' showvalues='0'>")
 
         Dim oAct As FactActividadSumBE
         Dim part_anio_anterior As Integer = 0
@@ -326,14 +326,14 @@ Partial Class frmDashboard
             If i = 0 Then
                 str.Append("<set value='0' />")
             Else
-                str.Append("<set value='").Append(oAct.total_participantes - part_anio_anterior).Append("' />")
+                str.Append("<set value='").Append(oAct.total_participantes - part_anio_anterior).Append("' color='#9ACEFE' />")
             End If
             part_anio_anterior = oAct.total_participantes
         Next
 
         str.Append("</dataset>")
 
-        str.Append("<dataset parentyaxis='S' seriesname='Tasa de Crecimiento' renderas='Line'>")
+        str.Append("<dataset parentyaxis='S' seriesname='Tasa de Crecimiento' renderas='Line' showvalues='1'>")
 
         Dim part_ant As Integer = 0
         Dim oFact As FactActividadSumBE

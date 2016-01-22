@@ -58,8 +58,18 @@ Public Class frmRegistroEncuesta
         txtDescripcion.Text = Encuesta.descripcion
 
         ListadoEncuestaDetalle = Encuesta.ListadoEncuestaDetalle
+
         dgvPreguntas.DataSource = Nothing
-        dgvPreguntas.DataSource = ListadoEncuestaDetalle
+
+        If ListadoEncuestaDetalle Is Nothing Then
+            AgregarPregunta()
+        Else
+            If ListadoEncuestaDetalle.Count = 0 Then
+                AgregarPregunta()
+            Else
+                dgvPreguntas.DataSource = ListadoEncuestaDetalle
+            End If
+        End If
     End Sub
 
     Private Sub AgregarPregunta()
@@ -86,11 +96,12 @@ Public Class frmRegistroEncuesta
         txtCodigo.Text = String.Empty
         txtActividad.Text = String.Empty
         txtDescripcion.Text = String.Empty
+        dgvPreguntas.DataSource = Nothing
 
         ListadoEncuestaDetalle = Nothing
         ListadoPreguntas = Nothing
 
-        AgregarPregunta()
+        'AgregarPregunta()
 
         txtDescripcion.Enabled = True
         dgvPreguntas.ReadOnly = False

@@ -29,7 +29,7 @@
                                     <td style="padding-left:20px;">
                                         <table border="0" cellpadding="0" cellspacing="0" style="width:450px; height:152px; border: 1px solid #DADADA;">
                                             <tr>
-                                                <td class="dashboardTableTitle">CANTIDAD DE PARTICIPANTES POR TIPO</td>
+                                                <td class="dashboardTableTitle">CANTIDAD DE PARTICIPANTES POR TIPO<br />(Con respecto a toda la historia)</td>
                                             </tr>
                                             <tr>
                                                 <td><asp:Literal ID="ltrParticipantesTipo" runat="server"></asp:Literal></td>
@@ -47,7 +47,7 @@
                                                 <td class="dashboardTableTitle">
                                                     <table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
                                                         <tr>
-                                                            <td><a href="frmActividadesComite.aspx" class="linkD">CANTIDAD DE ACTIVIDADES POR COMITÉ</a></td>
+                                                            <td><a href="frmActividadesComite.aspx" class="linkD">CANTIDAD DE ACTIVIDADES POR COMITÉ<br />(Con respecto a toda la historia)</a></td>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -65,7 +65,7 @@
                                                 <td class="dashboardTableTitle">
                                                     <table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
                                                         <tr>
-                                                            <td><a href="frmSatisfaccionPorComite.aspx" class="linkD">NIVEL DE SATISFACCIÓN</a></td>
+                                                            <td><a href="frmSatisfaccionPorComite.aspx" class="linkD">NIVEL DE SATISFACCIÓN<br />(Con respecto a toda la historia)</a></td>
                                                         </tr>
                                                     </table>                                                    
                                                 </td>
@@ -83,7 +83,7 @@
                                                 <td class="dashboardTableTitle">
                                                     <table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
                                                         <tr>
-                                                            <td>CANTIDAD DE ACTIVIDADES POR TIPO</td>
+                                                            <td>CANTIDAD DE ACTIVIDADES POR TIPO<br />(Con respecto a toda la historia)</td>
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -103,7 +103,7 @@
                                     <td>
                                         <table border="0" cellpadding="0" cellspacing="0" style="width:400px; height:152px; border: 1px solid #DADADA;">
                                             <tr>
-                                                <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAL MÁS SOLICITADO</a></td>
+                                                <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAL MÁS SOLICITADO<br />(Con respecto a toda la historia)</a></td>
                                             </tr>
                                             <tr>
                                                 <td><asp:Literal ID="ltrPersonal" runat="server"></asp:Literal></td>
@@ -113,7 +113,7 @@
                                     <td style="padding-left:20px;">
                                         <table border="0" cellpadding="0" cellspacing="0" style="width:500px; height:152px; border: 1px solid #DADADA;">
                                             <tr>
-                                                <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAS MÁS PARTICIPATIVAS</a></td>
+                                                <td class="dashboardTableTitle"><a href="frmPersonalParticipante.aspx" class="linkD">PERSONAS MÁS PARTICIPATIVAS<br />(Con respecto a toda la historia)</a></td>
                                             </tr>
                                             <tr>
                                                 <td><asp:Literal ID="ltrParticipantes" runat="server"></asp:Literal></td>
@@ -131,7 +131,7 @@
         <br />
         <table border="0" cellpadding="0" cellspacing="0" style="width:920px; height:232px; border: 1px solid #DADADA;">
             <tr>
-                <td class="dashboardTableTitle">CANTIDAD DE PARTICIPANTES RESPECTO AL ÚLTIMO AÑO (2015)</td>
+                <td class="dashboardTableTitle">CANTIDAD DE PARTICIPANTES POR MES RESPECTO AL ÚLTIMO AÑO FIJO (2015)</td>
             </tr>
             <tr>
                 <td><asp:Literal ID="ltrUltimoAnio" runat="server"></asp:Literal></td>
@@ -140,7 +140,7 @@
         <br />     
         <table border="0" cellpadding="0" cellspacing="0" style="width:920px; height:232px; border: 1px solid #DADADA;">
             <tr>
-                <td class="dashboardTableTitle">TASA DE CRECIMIENTO ANUAL</td>
+                <td class="dashboardTableTitle">TASA DE CRECIMIENTO ANUAL<br />(Con respecto a toda la historia)</td>
             </tr>
             <tr>
                 <td><asp:Literal ID="ltrTasaCrecimiento" runat="server"></asp:Literal></td>

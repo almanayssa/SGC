@@ -36,7 +36,7 @@ Public Class frmParticipantesComite
 
         oListadoActividad = bc.ListarComitesParticipacion()
 
-        str.Append("<chart caption='Cantidad de Participantes por Comité' formatnumberscale='0' xaxisname='Comité' yaxisname='Cantidad de Actividades' theme='fint'>")
+        str.Append("<chart caption='Cantidad de Participantes por Comité' subCaption='(Corresponde a toda la información histórica)' formatnumberscale='0' xaxisname='Comité' yaxisname='Cantidad de Participantes' theme='fint'>")
 
         For Each oActividad As FactActividadSumBE In oListadoActividad
             str.Append("<set label='").Append(oActividad.nombre_comite).Append("' value='").Append(oActividad.total_participantes).Append("' />")
